@@ -1,0 +1,3018 @@
+{
+  "schema_version": 1,
+  "build_steam": "6212414",
+  "idioma_textos": "en",
+  "natureza": "Referencia externa; extracao estatica da instalacao local. Nao e documentacao aprovada do projeto.",
+  "custo_pontos_por_upgrade": 1,
+  "talentos": [
+    {
+      "tipo": "ArcaneCritEnhancementTalent",
+      "id": 14,
+      "codigo": "ArcaneCritEnhancement",
+      "texto": {
+        "Type": 14,
+        "Name": "Enhanced Arcane",
+        "Description": "Critical damage is increased by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.6
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#ArcaneCritEnhancementTalent"
+    },
+    {
+      "tipo": "ArmorOfWindBoostTalent",
+      "id": 76,
+      "codigo": "ArmorOfWindAttributeBuff",
+      "texto": {
+        "Type": 76,
+        "Name": "Boost",
+        "Description": "While Armor of Wind is active, each shield grants shielded unit {type} by {rate}"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [
+        "ElementalWizard"
+      ],
+      "regra": "regras-talentos.json#ArmorOfWindBoostTalent"
+    },
+    {
+      "tipo": "ArmorOfWindExtraHitTalent",
+      "id": 75,
+      "codigo": "ArmorOfWindExtraHit",
+      "texto": {
+        "Type": 75,
+        "Name": "Extra Shield",
+        "Description": "Armor of Wind grants {number} additional shields"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "ExtraHit": 2
+      },
+      "herois": [
+        "ElementalWizard"
+      ],
+      "regra": "regras-talentos.json#ArmorOfWindExtraHitTalent"
+    },
+    {
+      "tipo": "AssassinDispelEnhancementTalent",
+      "id": 25,
+      "codigo": "AssassinDispelEnhancement",
+      "texto": {
+        "Type": 25,
+        "Name": "Enhanced Dispel",
+        "Description": "If target is not killed by skill damage, dispel {number} positive effects from each target"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "NumberOfDispel": 2
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#AssassinDispelEnhancementTalent"
+    },
+    {
+      "tipo": "AttributeBoostMemberOnKillBasedOnSelfRateTalent",
+      "id": 29,
+      "codigo": "AttributeBoostAllMemberOnKillBasedOnSelfRate",
+      "texto": {
+        "Type": 29,
+        "Name": "Enhanced Kill",
+        "Description": "Killing every enemy unit boosts all party members' {type} by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#AttributeBoostMemberOnKillBasedOnSelfRateTalent"
+    },
+    {
+      "tipo": "AttributeBoostOnHealByRateTalent",
+      "id": 21,
+      "codigo": "AttributeBoostOnHealByRate",
+      "texto": {
+        "Type": 21,
+        "Name": "Enhanced Heal",
+        "Description": "Increases targets' {type} by {rate}% on heal, up to {stack} layers, lasting 2 turns"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#AttributeBoostOnHealByRateTalent"
+    },
+    {
+      "tipo": "AttributeBoostOnKillTalentByRate",
+      "id": 7,
+      "codigo": "AttributeBoostOnKillByRate",
+      "texto": {
+        "Type": 7,
+        "Name": "Enhanced Kill",
+        "Description": "Caster's {type} will be increased by {rate}% for each unit kill done by skill, up to {stack} layers, lasting 2 turns"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#AttributeBoostOnKillTalentByRate"
+    },
+    {
+      "tipo": "AttributeDebuffByRateOnHitTalent",
+      "id": 2,
+      "codigo": "AttributeDebuffByRateOnHit",
+      "texto": {
+        "Type": 2,
+        "Name": "Weakening",
+        "Description": "Skill damage reduces targets' {type} by {rate}%，up to {stack} layers, lasting {seconds} seconds"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#AttributeDebuffByRateOnHitTalent"
+    },
+    {
+      "tipo": "AttributeDebuffByValueOnHitTalent",
+      "id": 11,
+      "codigo": "AttributeDebuffByValueOnHit",
+      "texto": {
+        "Type": 11,
+        "Name": "Weakening",
+        "Description": "Skill damage reduces targets' {type} by {rate}, up to {stack} layers, lasting {seconds} seconds"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#AttributeDebuffByValueOnHitTalent"
+    },
+    {
+      "tipo": "BlackBloodTalent",
+      "id": 58,
+      "codigo": "BlackBlood",
+      "texto": {
+        "Type": 58,
+        "Name": "Black Blood",
+        "Description": "Whenever receives direct damage, attackers are cursed by Gu: reduces Dodge Adjustment Rate and All Resistances per second for 5 seconds: current All Resistance reduction rate is {resistancetotal}% per second ({resistancerate}% per level), and current Dodge Adjustment Rate is {dodgetotal}% per second ({dodgerate}% per level)"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "ResistanceDecayRate": 0.08,
+        "DodgeDecayRate": 0.01,
+        "Seconds": 5,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "BunSister",
+        "Duelist",
+        "NightBlade",
+        "SnowMaiden",
+        "SoulThief",
+        "ToughWoman"
+      ],
+      "regra": "regras-talentos.json#BlackBloodTalent"
+    },
+    {
+      "tipo": "BloodCurseDepressionTalent",
+      "id": 82,
+      "codigo": "BloodCurseOutputDepression",
+      "texto": {
+        "Type": 82,
+        "Name": "Curse",
+        "Description": "While Blood Curse is active, caster decreases target's output capacity by {rate}% for {seconds} seconds with each direct damage"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.3,
+        "Seconds": 5
+      },
+      "herois": [
+        "FireCharger"
+      ],
+      "regra": "regras-talentos.json#BloodCurseDepressionTalent"
+    },
+    {
+      "tipo": "BloodCurseDispelOnHitTalent",
+      "id": 81,
+      "codigo": "BloodCurseDispelOnHit",
+      "texto": {
+        "Type": 81,
+        "Name": "Dispel",
+        "Description": "While Blood Curse is active, caster dispels {number} positive effect(s) with each direct damage"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Dispel": 1
+      },
+      "herois": [
+        "FireCharger"
+      ],
+      "regra": "regras-talentos.json#BloodCurseDispelOnHitTalent"
+    },
+    {
+      "tipo": "BloodCurseDispelPartyTalent",
+      "id": 80,
+      "codigo": "BloodCurseDispelAllMember",
+      "texto": {
+        "Type": 80,
+        "Name": "Mass Dispel",
+        "Description": "Dispel {number} negative effect(s) from all party members when Blood Curse is activated"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Dispel": 1
+      },
+      "herois": [
+        "FireCharger"
+      ],
+      "regra": "regras-talentos.json#BloodCurseDispelPartyTalent"
+    },
+    {
+      "tipo": "BrightCircleBoostEnhancementTalent",
+      "id": 35,
+      "codigo": "BrightCircleBoostEnhancement",
+      "texto": {
+        "Type": 35,
+        "Name": "Enhancement",
+        "Description": "Bright Circle also increases targets' {type} by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#BrightCircleBoostEnhancementTalent"
+    },
+    {
+      "tipo": "BrightCircleDispelEnhancementTalent",
+      "id": 36,
+      "codigo": "BrightCircleDispelEnhancement",
+      "texto": {
+        "Type": 36,
+        "Name": "Dispel",
+        "Description": "Bright Circle also dispels {number} negative effect(s) from each target"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "NumberOfDispels": 1
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#BrightCircleDispelEnhancementTalent"
+    },
+    {
+      "tipo": "BurningHeartDispelEnhancementTalent",
+      "id": 38,
+      "codigo": "BurningHeartDispelEnhancement",
+      "texto": {
+        "Type": 38,
+        "Name": "Dispel",
+        "Description": "{chance}% chance of dispelling {number} extra positive effect(s)"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "NumberOfDispels": 1,
+        "Chance": 0.6
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#BurningHeartDispelEnhancementTalent"
+    },
+    {
+      "tipo": "BurningHeartStrengthBurnEnhancementTalent",
+      "id": 37,
+      "codigo": "BurningHeartStrengthBurnEnhancement",
+      "texto": {
+        "Type": 37,
+        "Name": "Enhanced Burn",
+        "Description": "Burning Heart also reduces targets' strength"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#BurningHeartStrengthBurnEnhancementTalent"
+    },
+    {
+      "tipo": "CrashDispelTalent",
+      "id": 120,
+      "codigo": "CrashDispel",
+      "texto": {
+        "Type": 120,
+        "Name": "Dispel",
+        "Description": "Each Crash hit dispels {number} positive effect(s) from target"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Dispel": 1
+      },
+      "herois": [
+        "StreetMan"
+      ],
+      "regra": "regras-talentos.json#CrashDispelTalent"
+    },
+    {
+      "tipo": "CrashExtraDamageTalent",
+      "id": 118,
+      "codigo": "CrashExtraDamage",
+      "texto": {
+        "Type": 118,
+        "Name": "Damage Enhancement",
+        "Description": "Each Crash hit deals additional {rate}% of caster's output capacity as {type}"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.3
+      },
+      "herois": [
+        "StreetMan"
+      ],
+      "regra": "regras-talentos.json#CrashExtraDamageTalent"
+    },
+    {
+      "tipo": "CrashExtraHitTalent",
+      "id": 119,
+      "codigo": "CrashExtraHit",
+      "texto": {
+        "Type": 119,
+        "Name": "Extra Hit",
+        "Description": "Crash deals {number} additional hit"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Extra": 1
+      },
+      "herois": [
+        "StreetMan"
+      ],
+      "regra": "regras-talentos.json#CrashExtraHitTalent"
+    },
+    {
+      "tipo": "CritDamageBoostTalent",
+      "id": 67,
+      "codigo": "CritDamageBoost",
+      "texto": {
+        "Type": 67,
+        "Name": "Critical Damage Enhancement",
+        "Description": "Increases critical damage by {rate}%, current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 5,
+      "parametros": {
+        "Rate": 0.2,
+        "MaxLevel": 5
+      },
+      "herois": [
+        "ChubbyLady",
+        "Conjurer",
+        "Cube",
+        "DrunkReader",
+        "ElementalWizard",
+        "FashionBoy",
+        "FireAssassin",
+        "FirePlayer",
+        "Killer",
+        "RedHorn",
+        "RedMage",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#CritDamageBoostTalent"
+    },
+    {
+      "tipo": "CurseOfTheDeadEnhancementTalent",
+      "id": 86,
+      "codigo": "CurseOfTheDeadDamageBoost",
+      "texto": {
+        "Type": 86,
+        "Name": "Enhancement",
+        "Description": "Increases damage bonus rate for each dead unit by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "DamageRate": 0.5
+      },
+      "herois": [
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#CurseOfTheDeadEnhancementTalent"
+    },
+    {
+      "tipo": "DispelPositiveEffectOnHitTalent",
+      "id": 3,
+      "codigo": "DispelPositiveEffectsOnHit",
+      "texto": {
+        "Type": 3,
+        "Name": "Dispel",
+        "Description": "Skill damage has {chance}% chance of removing {number} positive effects from targets"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#DispelPositiveEffectOnHitTalent"
+    },
+    {
+      "tipo": "DivineEnhancementTalent",
+      "id": 63,
+      "codigo": "DivineEnhancement",
+      "texto": {
+        "Type": 63,
+        "Name": "Divine Effect Enhancement",
+        "Description": "Divine Effect enhanced: all direct damage have {total}% chance of sealing targets' passive effects for 6 seconds. Increases {rate}% per level."
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "Rate": 0.12,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "GoldenShaman",
+        "Missionary"
+      ],
+      "regra": "regras-talentos.json#DivineEnhancementTalent"
+    },
+    {
+      "tipo": "DivineHammerDamageShiftTalent",
+      "id": 20,
+      "codigo": "DivineHammerDamage",
+      "texto": {
+        "Type": 20,
+        "Name": "Shift",
+        "Description": "Divine Hammer no longer heals, but damage is increased by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "ExtraDamageRate": 2
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#DivineHammerDamageShiftTalent"
+    },
+    {
+      "tipo": "DivineHeartTalent",
+      "id": 59,
+      "codigo": "DivineHeart",
+      "texto": {
+        "Type": 59,
+        "Name": "Heart of Zen",
+        "Description": "Healer Enhancement: all direct heal have {total}% chance of clearing targets' tactic Cool Down, and grants tactic free cast(s). Chance is increased by {rate}% per level (starts from {start}%)"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "StartRate": 0.1,
+        "RatePerLevel": 0.1,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "GoldenShaman",
+        "Missionary"
+      ],
+      "regra": "regras-talentos.json#DivineHeartTalent"
+    },
+    {
+      "tipo": "DodgeEnhancementTalent",
+      "id": 42,
+      "codigo": "DodgeEnhancement",
+      "texto": {
+        "Type": 42,
+        "Name": "Dodge Rate Adjustment",
+        "Description": "Increase Dodge Rate Adjustment by {rate}% per level. Current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 5,
+      "parametros": {
+        "Rate": 0.02,
+        "MaxLevel": 5
+      },
+      "herois": [
+        "BunSister",
+        "ChubbyLady",
+        "Conjurer",
+        "Cube",
+        "DrunkReader",
+        "Duelist",
+        "ElementalWizard",
+        "FashionBoy",
+        "FireAssassin",
+        "FirePlayer",
+        "GoldenShaman",
+        "Killer",
+        "Missionary",
+        "NightBlade",
+        "RedHorn",
+        "RedMage",
+        "SnowMaiden",
+        "SoulThief",
+        "ToughWoman",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#DodgeEnhancementTalent"
+    },
+    {
+      "tipo": "DrunknessExtraEnhancementTalent",
+      "id": 100,
+      "codigo": "DrunknessExtraTargetEnhancement",
+      "texto": {
+        "Type": 100,
+        "Name": "Extra Target",
+        "Description": "Increases number of additional target granted by Drunkenness by {number}"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Extra": 1
+      },
+      "herois": [
+        "DrunkReader"
+      ],
+      "regra": "regras-talentos.json#DrunknessExtraEnhancementTalent"
+    },
+    {
+      "tipo": "EfficiencyTalent",
+      "id": 68,
+      "codigo": "EfficiencyBoost",
+      "texto": {
+        "Type": 68,
+        "Name": "Efficiency",
+        "Description": "Increases Rage Efficiency by {rate}% per level, current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 5,
+      "parametros": {
+        "Rate": 0.08,
+        "MaxLevel": 5
+      },
+      "herois": [
+        "BunSister",
+        "ChubbyLady",
+        "Conjurer",
+        "Cube",
+        "DrunkReader",
+        "Duelist",
+        "ElementalWizard",
+        "FashionBoy",
+        "FireAssassin",
+        "FirePlayer",
+        "FireCharger",
+        "GoldenShaman",
+        "IronSolider",
+        "Killer",
+        "Missionary",
+        "NightBlade",
+        "RedHorn",
+        "RedMage",
+        "SnowMaiden",
+        "SoulThief",
+        "StreetMan",
+        "Tactician",
+        "ToughWoman",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#EfficiencyTalent"
+    },
+    {
+      "tipo": "ElementDamageEnhancementTalent",
+      "id": 52,
+      "codigo": "ElementDamageEnhancement",
+      "texto": {
+        "Type": 52,
+        "Name": "Elemental Damage Enhancement",
+        "Description": "Increases all elemental damage dealt by {rate}%. Current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "Rate": 0.25,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "BunSister",
+        "ChubbyLady",
+        "Conjurer",
+        "Cube",
+        "DrunkReader",
+        "Duelist",
+        "ElementalWizard",
+        "FashionBoy",
+        "FireAssassin",
+        "FirePlayer",
+        "FireCharger",
+        "GoldenShaman",
+        "IronSolider",
+        "Killer",
+        "Missionary",
+        "NightBlade",
+        "Paladin",
+        "RedHorn",
+        "RedMage",
+        "SnowMaiden",
+        "SoulThief",
+        "StreetMan",
+        "Tactician",
+        "ToughWoman",
+        "Warrior",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#ElementDamageEnhancementTalent"
+    },
+    {
+      "tipo": "ElementalDamageIncreaseTalent",
+      "id": 1,
+      "codigo": "ElementalDamageIncrease",
+      "texto": {
+        "Type": 1,
+        "Name": "Damage Enhancement",
+        "Description": "Increase skill damage by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#ElementalDamageIncreaseTalent"
+    },
+    {
+      "tipo": "EmbraceShieldMemberOnKillTalent",
+      "id": 41,
+      "codigo": "EmbraceShieldMemberOnKill",
+      "texto": {
+        "Type": 41,
+        "Name": "Enhanced Shield",
+        "Description": "Embrace friendly unit with the least health ratio with {number} Embraced Shield(s) whenever kills an enemy unit"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "NumberOfShields": 1
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#EmbraceShieldMemberOnKillTalent"
+    },
+    {
+      "tipo": "EmbracedShieldDispelTalent",
+      "id": 78,
+      "codigo": "EmbracedShieldDispel",
+      "texto": {
+        "Type": 78,
+        "Name": "Dispel",
+        "Description": "Dispels {number} positive effect(s) from attacker while Embraced Shield is active"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Dispel": 1
+      },
+      "herois": [
+        "Tactician"
+      ],
+      "regra": "regras-talentos.json#EmbracedShieldDispelTalent"
+    },
+    {
+      "tipo": "EmbracedShieldExtraTalent",
+      "id": 77,
+      "codigo": "EmbracedShieldExtraHit",
+      "texto": {
+        "Type": 77,
+        "Name": "Extra Shield",
+        "Description": "Embraced Shield grants {number} additional shields"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Extra": 2
+      },
+      "herois": [
+        "Tactician"
+      ],
+      "regra": "regras-talentos.json#EmbracedShieldExtraTalent"
+    },
+    {
+      "tipo": "EnhancedEffectMasteryTalent",
+      "id": 48,
+      "codigo": "EnhancedEffects",
+      "texto": {
+        "Type": 48,
+        "Name": "Effect Mastery",
+        "Description": "Increase Effect Mastery by {rate}% per level. Current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 5,
+      "parametros": {
+        "Rate": 0.1,
+        "MaxLevel": 5
+      },
+      "herois": [
+        "BunSister",
+        "ChubbyLady",
+        "Conjurer",
+        "Cube",
+        "DrunkReader",
+        "Duelist",
+        "ElementalWizard",
+        "FashionBoy",
+        "FireAssassin",
+        "FirePlayer",
+        "FireCharger",
+        "GoldenShaman",
+        "IronSolider",
+        "Killer",
+        "Missionary",
+        "NightBlade",
+        "Paladin",
+        "RedHorn",
+        "RedMage",
+        "SnowMaiden",
+        "SoulThief",
+        "StreetMan",
+        "Tactician",
+        "ToughWoman",
+        "Warrior",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#EnhancedEffectMasteryTalent"
+    },
+    {
+      "tipo": "EnhancedResistancesTalent",
+      "id": 49,
+      "codigo": "EnhancedResistances",
+      "texto": {
+        "Type": 49,
+        "Name": "Resistance Enhancement",
+        "Description": "Increase All Resistances by {rate}% per level. Current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 5,
+      "parametros": {
+        "Rate": 0.02,
+        "MaxLevel": 5
+      },
+      "herois": [
+        "BunSister",
+        "ChubbyLady",
+        "Conjurer",
+        "Cube",
+        "DrunkReader",
+        "Duelist",
+        "ElementalWizard",
+        "FashionBoy",
+        "FireAssassin",
+        "FirePlayer",
+        "FireCharger",
+        "GoldenShaman",
+        "IronSolider",
+        "Killer",
+        "Missionary",
+        "NightBlade",
+        "Paladin",
+        "RedHorn",
+        "RedMage",
+        "SnowMaiden",
+        "SoulThief",
+        "StreetMan",
+        "Tactician",
+        "ToughWoman",
+        "Warrior",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#EnhancedResistancesTalent"
+    },
+    {
+      "tipo": "FireBreathFireSeedEnhancementTalent",
+      "id": 5,
+      "codigo": "FireBreathFireSeedEnhancement",
+      "texto": {
+        "Type": 5,
+        "Name": "Heavy Fire",
+        "Description": "Increase fire seed damage caused by fire breath by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.2
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#FireBreathFireSeedEnhancementTalent"
+    },
+    {
+      "tipo": "FireShieldTalent",
+      "id": 53,
+      "codigo": "FireShield",
+      "texto": {
+        "Type": 53,
+        "Name": "Shield of Fire",
+        "Description": "Whenever receives direct damage, attackers are planted with Fire Seeds: {rate}% output capacity per level, current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "Rate": 0.8,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "Cube",
+        "FashionBoy",
+        "FirePlayer",
+        "FireCharger",
+        "RedMage"
+      ],
+      "regra": "regras-talentos.json#FireShieldTalent"
+    },
+    {
+      "tipo": "FirebreathDamageAbsorbTalent",
+      "id": 10,
+      "codigo": "FireBreathAbsorbShield",
+      "texto": {
+        "Type": 10,
+        "Name": "Shield of Fire",
+        "Description": "{rate}% of damage ignited will be converted to absorption shield"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.008
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#FirebreathDamageAbsorbTalent"
+    },
+    {
+      "tipo": "FormlessDebuffTalent",
+      "id": 87,
+      "codigo": "FormlessAttributeDecay",
+      "texto": {
+        "Type": 87,
+        "Name": "Decay",
+        "Description": "Each critical hit decreases target's All Resistance by {rate}% of final damage value, for {seconds} seconds. Formless no longer deals damage to all units"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.08,
+        "Seconds": 5
+      },
+      "herois": [
+        "Cube"
+      ],
+      "regra": "regras-talentos.json#FormlessDebuffTalent"
+    },
+    {
+      "tipo": "FormlessDispelEnhancementTalent",
+      "id": 89,
+      "codigo": "FormlessDispel",
+      "texto": {
+        "Type": 89,
+        "Name": "Dispel",
+        "Description": "Each critical hit dispels {number} positive effect(s) from target. Formless no longer deals damage to all units"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Dispel": 1
+      },
+      "herois": [
+        "Cube"
+      ],
+      "regra": "regras-talentos.json#FormlessDispelEnhancementTalent"
+    },
+    {
+      "tipo": "FormlessExtraHitTalent",
+      "id": 88,
+      "codigo": "FormlessExtraHit",
+      "texto": {
+        "Type": 88,
+        "Name": "Extra Hit",
+        "Description": "Add {number} additional hit(s) for Formless"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Extra": 1
+      },
+      "herois": [
+        "Cube"
+      ],
+      "regra": "regras-talentos.json#FormlessExtraHitTalent"
+    },
+    {
+      "tipo": "FreezeEnhancementTalent",
+      "id": 13,
+      "codigo": "FreezeEnhancement",
+      "texto": {
+        "Type": 13,
+        "Name": "Freeze Enhancement",
+        "Description": "Targets are freezed up to {seconds} seconds"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "LastingSecondsToReplace": 5
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#FreezeEnhancementTalent"
+    },
+    {
+      "tipo": "FrenzyDispelTalent",
+      "id": 110,
+      "codigo": "FrenzyDispelEnhancement",
+      "texto": {
+        "Type": 110,
+        "Name": "Dispel",
+        "Description": "When embraced by Frenzy, each direct damage dealt dispels {number} positive effect(s) from target. No longer deals extra damage"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Dispel": 1
+      },
+      "herois": [
+        "IronSolider"
+      ],
+      "regra": "regras-talentos.json#FrenzyDispelTalent"
+    },
+    {
+      "tipo": "FrenzyPushTalent",
+      "id": 111,
+      "codigo": "FrenzyPushEnhancemednt",
+      "texto": {
+        "Type": 111,
+        "Name": "Pushback",
+        "Description": "When embraced by Frenzy, each direct damage dealt pushes {rate}% of target's turn progress. "
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Push": 0.04
+      },
+      "herois": [
+        "IronSolider"
+      ],
+      "regra": "regras-talentos.json#FrenzyPushTalent"
+    },
+    {
+      "tipo": "FrenzyStunTalent",
+      "id": 112,
+      "codigo": "FrenzyStunEnhancement",
+      "texto": {
+        "Type": 112,
+        "Name": "Stun",
+        "Description": "When embraced by Frenzy, each direct damage dealt stuns target for {seconds} second(s). No longer deals extra damage"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Stun": 1
+      },
+      "herois": [
+        "IronSolider"
+      ],
+      "regra": "regras-talentos.json#FrenzyStunTalent"
+    },
+    {
+      "tipo": "FurySpeedTalent",
+      "id": 46,
+      "codigo": "FurySpeed",
+      "texto": {
+        "Type": 46,
+        "Name": "Agility Enhancement",
+        "Description": "Increase Agility by {rate}% per level. Current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 5,
+      "parametros": {
+        "Rate": 0.015,
+        "MaxLevel": 5
+      },
+      "herois": [
+        "BunSister",
+        "Duelist",
+        "GoldenShaman",
+        "Missionary",
+        "NightBlade",
+        "Paladin",
+        "SnowMaiden",
+        "SoulThief",
+        "ToughWoman",
+        "Warrior"
+      ],
+      "regra": "regras-talentos.json#FurySpeedTalent"
+    },
+    {
+      "tipo": "GhostlySmokeConfusionTalent",
+      "id": 90,
+      "codigo": "GhostlySmokeConfusionEnhancement",
+      "texto": {
+        "Type": 90,
+        "Name": "Confusion",
+        "Description": "Increases chance of confusion by {chance}%, and decreases confusion duration to {seconds} second(s)"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Chance": 1,
+        "Seconds": 1
+      },
+      "herois": [
+        "SoulThief"
+      ],
+      "regra": "regras-talentos.json#GhostlySmokeConfusionTalent"
+    },
+    {
+      "tipo": "GodSeedStablizeTalent",
+      "id": 23,
+      "codigo": "GodSeedStablize",
+      "texto": {
+        "Type": 23,
+        "Name": "Enhanced Seed",
+        "Description": "God Seeds cannot be dispelled"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#GodSeedStablizeTalent"
+    },
+    {
+      "tipo": "GrandStrategyDamageEnhancementTalent",
+      "id": 39,
+      "codigo": "GrandStrategyDamageEnhancement",
+      "texto": {
+        "Type": 39,
+        "Name": "Enhanced Strategy",
+        "Description": "Increase chances of dealing extra damage on targets with positive effects to 100%, and damage is increased by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "ExtraDamageRate": 0.5
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#GrandStrategyDamageEnhancementTalent"
+    },
+    {
+      "tipo": "GrandStrategyDispelEnhancementTalent",
+      "id": 40,
+      "codigo": "GrandStrategyDispelEnhancement",
+      "texto": {
+        "Type": 40,
+        "Name": "Dispel",
+        "Description": "No longer deals extra damage, but has {chance}% chance of removing {number} positive effect(s) from each target"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Chance": 0.5,
+        "Dispels": 1
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#GrandStrategyDispelEnhancementTalent"
+    },
+    {
+      "tipo": "HeartlessExtraSeedTalent",
+      "id": 84,
+      "codigo": "HeartlessSeedEnhancement",
+      "texto": {
+        "Type": 84,
+        "Name": "Boost",
+        "Description": "Increases rate of Fire Seed per cast by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "ExtraRate": 0.75
+      },
+      "herois": [
+        "FirePlayer"
+      ],
+      "regra": "regras-talentos.json#HeartlessExtraSeedTalent"
+    },
+    {
+      "tipo": "HeartlessSingleHitTalent",
+      "id": 85,
+      "codigo": "HeartlessSingleHit",
+      "texto": {
+        "Type": 85,
+        "Name": "Kill",
+        "Description": "Heartless Fire no longer adds Fire Seed, and deals <caster>{rate}% of output capacity as caster's elemental damage</caster> to 1 enemy"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 5
+      },
+      "herois": [
+        "FirePlayer"
+      ],
+      "regra": "regras-talentos.json#HeartlessSingleHitTalent"
+    },
+    {
+      "tipo": "HeartlessTriggerTalent",
+      "id": 83,
+      "codigo": "HeartlessTrigger",
+      "texto": {
+        "Type": 83,
+        "Name": "Ignition",
+        "Description": "Heartless Fire no longer adds Fire Seed, and ignite Seeds instead"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [
+        "FirePlayer"
+      ],
+      "regra": "regras-talentos.json#HeartlessTriggerTalent"
+    },
+    {
+      "tipo": "HitRateEnhancementTalent",
+      "id": 50,
+      "codigo": "HitRateEnhancement",
+      "texto": {
+        "Type": 50,
+        "Name": "Hit Rate Enhancement",
+        "Description": "Increases Hit Adjustment Rate by {rate}%. Current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "Rate": 0.05,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "BunSister",
+        "ChubbyLady",
+        "Conjurer",
+        "Cube",
+        "DrunkReader",
+        "Duelist",
+        "ElementalWizard",
+        "FashionBoy",
+        "FireAssassin",
+        "FirePlayer",
+        "FireCharger",
+        "GoldenShaman",
+        "IronSolider",
+        "Killer",
+        "Missionary",
+        "NightBlade",
+        "Paladin",
+        "RedHorn",
+        "RedMage",
+        "SnowMaiden",
+        "SoulThief",
+        "StreetMan",
+        "Tactician",
+        "ToughWoman",
+        "Warrior",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#HitRateEnhancementTalent"
+    },
+    {
+      "tipo": "IceEnhancementTalent",
+      "id": 62,
+      "codigo": "IceEnhancement",
+      "texto": {
+        "Type": 62,
+        "Name": "Ice Effect Enhancement",
+        "Description": "Ice Effect enhanced: deals {total}% extra damage on frozen targets. Increases {rate}% per level"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "Rate": 1.5,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "SnowMaiden"
+      ],
+      "regra": "regras-talentos.json#IceEnhancementTalent"
+    },
+    {
+      "tipo": "KillerPowerTalent",
+      "id": 47,
+      "codigo": "KillerPower",
+      "texto": {
+        "Type": 47,
+        "Name": "Primary Attribute Enhancement",
+        "Description": "Increase primary attribute by {rate}% per level. Current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 10,
+      "parametros": {
+        "Rate": 0.005,
+        "MaxLevel": 10
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#KillerPowerTalent"
+    },
+    {
+      "tipo": "LifeRegenTalent",
+      "id": 43,
+      "codigo": "LifeRegen",
+      "texto": {
+        "Type": 43,
+        "Name": "Survival",
+        "Description": "Whenever health is below {minimum}%, wearer is granted with Rejuvenation: heals {total}% ({rate}% per level) health per second, for {seconds} seconds. Can only be triggered once per battle."
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 10,
+      "parametros": {
+        "MaxLevel": 10,
+        "MinimumLife": 0.3,
+        "RegenSeconds": 3,
+        "RegenRate": 0.02
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#LifeRegenTalent"
+    },
+    {
+      "tipo": "LightningShieldTalent",
+      "id": 64,
+      "codigo": "LightningShield",
+      "texto": {
+        "Type": 64,
+        "Name": "Shield of Lightning",
+        "Description": "Whenever receives direct damage. attackers' resilience is reduced by ({rateresilience}% per level, current rate is {totalresilience}%). In addition, wearer has a chance (increases {ratenegative}% per level, current rate is {totalnegative}%) of resisting negative effects received."
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "ResilienceRate": 0.15,
+        "NegativeResistancerate": 0.05,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "DrunkReader",
+        "ElementalWizard"
+      ],
+      "regra": "regras-talentos.json#LightningShieldTalent"
+    },
+    {
+      "tipo": "MeteoroliteElementalTalent",
+      "id": 109,
+      "codigo": "GrandMeteoroliteElementalChange",
+      "texto": {
+        "Type": 109,
+        "Name": "Shift",
+        "Description": "Grand Meteorite’s elements are shifted to {type} and caster's element, and increases damage rate by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.1
+      },
+      "herois": [
+        "FashionBoy"
+      ],
+      "regra": "regras-talentos.json#MeteoroliteElementalTalent"
+    },
+    {
+      "tipo": "NegativeEffectEnhancementTalent",
+      "id": 51,
+      "codigo": "NegativeEffectResistanceBoost",
+      "texto": {
+        "Type": 51,
+        "Name": "Negative Effect Speed-up",
+        "Description": "Reduces duration of all negative effects by {rate}%. Current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "Rate": 0.1,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "BunSister",
+        "ChubbyLady",
+        "Conjurer",
+        "Cube",
+        "DrunkReader",
+        "Duelist",
+        "ElementalWizard",
+        "FashionBoy",
+        "FireAssassin",
+        "FirePlayer",
+        "FireCharger",
+        "GoldenShaman",
+        "IronSolider",
+        "Killer",
+        "Missionary",
+        "NightBlade",
+        "Paladin",
+        "RedHorn",
+        "RedMage",
+        "SnowMaiden",
+        "SoulThief",
+        "StreetMan",
+        "Tactician",
+        "ToughWoman",
+        "Warrior",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#NegativeEffectEnhancementTalent"
+    },
+    {
+      "tipo": "NegativeEffectsRefreshTalent",
+      "id": 6,
+      "codigo": "NegativeEffectsRefresh",
+      "texto": {
+        "Type": 6,
+        "Name": "Endless Curse",
+        "Description": "Skill damage refresh {number} negative effects on targets"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Counts": 1
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#NegativeEffectsRefreshTalent"
+    },
+    {
+      "tipo": "PhysicalEnhancementTalent",
+      "id": 60,
+      "codigo": "PhysicalEnhancement",
+      "texto": {
+        "Type": 60,
+        "Name": "Physical Effect Enhancement",
+        "Description": "Physical Effect enhanced: reduces targets' Dodge Adjustment Rate by {total}% ({rate}% per level)"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "StartRate": 0.01,
+        "RatePerLevel": 0.01,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "BunSister",
+        "ChubbyLady",
+        "Duelist",
+        "FireAssassin",
+        "IronSolider",
+        "Paladin",
+        "RedHorn",
+        "StreetMan",
+        "Tactician",
+        "ToughWoman",
+        "Warrior"
+      ],
+      "regra": "regras-talentos.json#PhysicalEnhancementTalent"
+    },
+    {
+      "tipo": "PoisonEnhancementTalent",
+      "id": 57,
+      "codigo": "PoisonEnhancement",
+      "texto": {
+        "Type": 57,
+        "Name": "Poison Effect Enhancement",
+        "Description": "Poison Effect enhanced: increases bleeding damage per second by {total}%. Increases  by {rate}% per level (starts from {start}%)"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "DamageStart": 0.2,
+        "DamagePerLevel": 0.5,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "Killer",
+        "NightBlade"
+      ],
+      "regra": "regras-talentos.json#PoisonEnhancementTalent"
+    },
+    {
+      "tipo": "PoisonMistDispelEnhancementTalent",
+      "id": 94,
+      "codigo": "PoisonMistDispelEnhancement",
+      "texto": {
+        "Type": 94,
+        "Name": "Break",
+        "Description": "Prior tactic cast, dispels {number} shield(s) from all target(s)"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Dispel": 1
+      },
+      "herois": [
+        "NightBlade"
+      ],
+      "regra": "regras-talentos.json#PoisonMistDispelEnhancementTalent"
+    },
+    {
+      "tipo": "PrayDispelEnhancementTalent",
+      "id": 22,
+      "codigo": "PrayDispelEnhancement",
+      "texto": {
+        "Type": 22,
+        "Name": "Dispel",
+        "Description": "Increase dispel chance by {chance}%, and can dispel up to {number} negative effects from each target"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Chance": 1,
+        "DispelCounts": 2
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#PrayDispelEnhancementTalent"
+    },
+    {
+      "tipo": "PriorCastDecayTalent",
+      "id": 116,
+      "codigo": "ActiveTargetAttributeDecayPriorCast",
+      "texto": {
+        "Type": 116,
+        "Name": "Curse",
+        "Description": "Tactic decreases target(s)' {type} by {rate} for {seconds} seconds prior cast"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [
+        "RedHorn"
+      ],
+      "regra": "regras-talentos.json#PriorCastDecayTalent"
+    },
+    {
+      "tipo": "PriorCastDispelTalent",
+      "id": 117,
+      "codigo": "ActiveTargetDispelPositivePriorCast",
+      "texto": {
+        "Type": 117,
+        "Name": "Dispel",
+        "Description": "Tactic dispels {number} positive effect(s) from target(s) prior cast"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [
+        "RedHorn"
+      ],
+      "regra": "regras-talentos.json#PriorCastDispelTalent"
+    },
+    {
+      "tipo": "ProtectorTalent",
+      "id": 55,
+      "codigo": "ProtectorTalent",
+      "texto": {
+        "Type": 55,
+        "Name": "Protector",
+        "Description": "Reduces damage received by party members by {reduction}%, and takes reduced damage instead: ratio of received damage is decreased by {rate}% per level, current ratio is {total}%"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "DamageRateStart": 1,
+        "DamageRateReductionPerLevel": 0.15,
+        "DamageShareRate": 0.4,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "Paladin",
+        "Warrior"
+      ],
+      "regra": "regras-talentos.json#ProtectorTalent"
+    },
+    {
+      "tipo": "PushOnHitTalent",
+      "id": 9,
+      "codigo": "PushOnHit",
+      "texto": {
+        "Type": 9,
+        "Name": "Slowness",
+        "Description": "Skill damage pushes back targets' {rate}% turn progresses"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#PushOnHitTalent"
+    },
+    {
+      "tipo": "PushProgressTalent",
+      "id": 108,
+      "codigo": "ActiveTargetPushProgress",
+      "texto": {
+        "Type": 108,
+        "Name": "Pushback",
+        "Description": "Pushes back target's turn progress by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [
+        "BunSister"
+      ],
+      "regra": "regras-talentos.json#PushProgressTalent"
+    },
+    {
+      "tipo": "RageCostTalent",
+      "id": 107,
+      "codigo": "TacticRageCostChange",
+      "texto": {
+        "Type": 107,
+        "Name": "Rage Reduction",
+        "Description": "Rage cost is reduced to {cost}"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [
+        "BunSister"
+      ],
+      "regra": "regras-talentos.json#RageCostTalent"
+    },
+    {
+      "tipo": "RecoveryEnhancementTalent",
+      "id": 70,
+      "codigo": "RecoveryEnhancement",
+      "texto": {
+        "Type": 70,
+        "Name": "Recovery",
+        "Description": "Increases Battle Recovery by {rate}%, current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 5,
+      "parametros": {
+        "Rate": 0.04,
+        "MaxLevel": 5
+      },
+      "herois": [
+        "BunSister",
+        "Duelist",
+        "GoldenShaman",
+        "Missionary",
+        "NightBlade",
+        "Paladin",
+        "SnowMaiden",
+        "SoulThief",
+        "ToughWoman",
+        "Warrior"
+      ],
+      "regra": "regras-talentos.json#RecoveryEnhancementTalent"
+    },
+    {
+      "tipo": "RestrictionOfTimeTalent",
+      "id": 56,
+      "codigo": "RestrictionOfTime",
+      "texto": {
+        "Type": 56,
+        "Name": "Restriction of Time",
+        "Description": "Whenever being stunned, frozen or feared, increases caster's Dodge Adjustment Rate and grants Heal over Time effect for {seconds} seconds: increases Dodge Adjustment Rate by {dodgerate}% per level, current rate is {dodgetotal}%; increases heal per second by {healrate}% per level, current rate is {healtotal}%"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "DodgeRateBoost": 0.08,
+        "HealRate": 0.1,
+        "HealSeconds": 3,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "FireCharger",
+        "IronSolider",
+        "StreetMan",
+        "Tactician"
+      ],
+      "regra": "regras-talentos.json#RestrictionOfTimeTalent"
+    },
+    {
+      "tipo": "RoarTargetEnhancementTalent",
+      "id": 33,
+      "codigo": "RoarTargetEnhancement",
+      "texto": {
+        "Type": 33,
+        "Name": "Shift",
+        "Description": "Roar targets all enemy units instead, however resistance reduction is decreased by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "PenetrationDecayRate": 0.5
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#RoarTargetEnhancementTalent"
+    },
+    {
+      "tipo": "RotationDecayTalent",
+      "id": 106,
+      "codigo": "RotationAttributeDecay",
+      "texto": {
+        "Type": 106,
+        "Name": "Curse",
+        "Description": "Rotation decreases target's {type} by {rate} for {seconds} seconds with each critical hit"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.03,
+        "Seconds": 5
+      },
+      "herois": [
+        "ChubbyLady"
+      ],
+      "regra": "regras-talentos.json#RotationDecayTalent"
+    },
+    {
+      "tipo": "RotationDispelTalent",
+      "id": 105,
+      "codigo": "RotationDispelEnhancement",
+      "texto": {
+        "Type": 105,
+        "Name": "Dispel",
+        "Description": "Rotation dispels {number} positive effect(s) from target with each critical hit"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Dispel": 1
+      },
+      "herois": [
+        "ChubbyLady"
+      ],
+      "regra": "regras-talentos.json#RotationDispelTalent"
+    },
+    {
+      "tipo": "RotationShieldTalent",
+      "id": 104,
+      "codigo": "RotationShieldEnhancement",
+      "texto": {
+        "Type": 104,
+        "Name": "Shield",
+        "Description": "Rotation grants Damage Absorption Shield for each critical damage dealt, shield absorption equals to {rate}% of critical damage done"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.08
+      },
+      "herois": [
+        "ChubbyLady"
+      ],
+      "regra": "regras-talentos.json#RotationShieldTalent"
+    },
+    {
+      "tipo": "ScornChanceEnhancementTalent",
+      "id": 34,
+      "codigo": "ScornChanceEnhancement",
+      "texto": {
+        "Type": 34,
+        "Name": "Powerless",
+        "Description": "Rate of strength reduction is increased by {chance}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.2
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#ScornChanceEnhancementTalent"
+    },
+    {
+      "tipo": "SeductionCleanTalent",
+      "id": 115,
+      "codigo": "SeductionSelfCleanEnhancement",
+      "texto": {
+        "Type": 115,
+        "Name": "Clean",
+        "Description": "Seduction dispels all negative effects from caster"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [
+        "SnowMaiden"
+      ],
+      "regra": "regras-talentos.json#SeductionCleanTalent"
+    },
+    {
+      "tipo": "SeductionDecayTalent",
+      "id": 114,
+      "codigo": "SeductionAttributeDecayEnhancement",
+      "texto": {
+        "Type": 114,
+        "Name": "Curse",
+        "Description": "Seduction no longer dispels, and decreases target's {type} by {rate} for {seconds} seconds"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.5,
+        "Seconds": 6
+      },
+      "herois": [
+        "SnowMaiden"
+      ],
+      "regra": "regras-talentos.json#SeductionDecayTalent"
+    },
+    {
+      "tipo": "SeductionExtraTargetTalent",
+      "id": 113,
+      "codigo": "SeductionExtraTarget",
+      "texto": {
+        "Type": 113,
+        "Name": "Extra Target",
+        "Description": "Seduction has {chance}% chance of adding 1 random target"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Chance": 0.5
+      },
+      "herois": [
+        "SnowMaiden"
+      ],
+      "regra": "regras-talentos.json#SeductionExtraTargetTalent"
+    },
+    {
+      "tipo": "SeedsOfSinPetPushTalent",
+      "id": 19,
+      "codigo": "SeedsOfSinPetPush",
+      "texto": {
+        "Type": 19,
+        "Name": "Minion",
+        "Description": "Increases {rate}% of summoned pet's turn progress on skill cast"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "PushRate": 0.3
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#SeedsOfSinPetPushTalent"
+    },
+    {
+      "tipo": "SelfHealOnKillTalent",
+      "id": 15,
+      "codigo": "SelfHealOnKill",
+      "texto": {
+        "Type": 15,
+        "Name": "Enhanced Kill",
+        "Description": "Caster's health is recovered by {rate}% for each unit kill"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#SelfHealOnKillTalent"
+    },
+    {
+      "tipo": "ShadowEffectEnhancementTalent",
+      "id": 61,
+      "codigo": "ShadowEnhancement",
+      "texto": {
+        "Type": 61,
+        "Name": "Shadow Effect Enhancement",
+        "Description": "Shadow Effect enhanced: Shadow Spirits spread to {number} ({rate} per level) nearby unit(s) every 3 seconds."
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "Triggers": 1,
+        "MaxLevel": 3
+      },
+      "herois": [
+        "Conjurer",
+        "SoulThief",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#ShadowEffectEnhancementTalent"
+    },
+    {
+      "tipo": "ShadowOfGhostTalent",
+      "id": 54,
+      "codigo": "ShadowOfGhost",
+      "texto": {
+        "Type": 54,
+        "Name": "Shadow of Ghost",
+        "Description": "Whenever wearer misses a direct damage, attackers are cursed by bleeding effects for {seconds} seconds, dealing caster's elemental damage per second: {rate}% output capacity per level, current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.Third",
+      "nivel_maximo": 3,
+      "parametros": {
+        "Rate": 0.5,
+        "MaxLevel": 3,
+        "Seconds": 5
+      },
+      "herois": [
+        "ChubbyLady",
+        "Conjurer",
+        "Cube",
+        "DrunkReader",
+        "ElementalWizard",
+        "FashionBoy",
+        "FireAssassin",
+        "FirePlayer",
+        "Killer",
+        "RedHorn",
+        "RedMage",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#ShadowOfGhostTalent"
+    },
+    {
+      "tipo": "ShadowSacrificeExplosionEnhancementTalent",
+      "id": 16,
+      "codigo": "ShadowSacrificeExplosionEnhancement",
+      "texto": {
+        "Type": 16,
+        "Name": "Darkness",
+        "Description": "Increases shadow sacrifice explosion damage by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "ExtraRate": 0.15
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#ShadowSacrificeExplosionEnhancementTalent"
+    },
+    {
+      "tipo": "ShadowSacrificeHealOnExpTalent",
+      "id": 18,
+      "codigo": "ShadowSacrificeHealOnExplo",
+      "texto": {
+        "Type": 18,
+        "Name": "Returning Soul",
+        "Description": "Explosion recovers all party members' health by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "HealRate": 0.06
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#ShadowSacrificeHealOnExpTalent"
+    },
+    {
+      "tipo": "ShadowSacrificeStunEnhancementTalent",
+      "id": 17,
+      "codigo": "ShadowSacrificeStunEnhancement",
+      "texto": {
+        "Type": 17,
+        "Name": "Stun",
+        "Description": "Explosion stuns all targets by {seconds} seconds"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "StunSeconds": 1
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#ShadowSacrificeStunEnhancementTalent"
+    },
+    {
+      "tipo": "ShadowlessDamageEnhancementTalent",
+      "id": 28,
+      "codigo": "ShadowlessDamageEnhancement",
+      "texto": {
+        "Type": 28,
+        "Name": "Enhanced Damage",
+        "Description": "Increase damage bonus provided by agility difference by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "ExtraRate": 1
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#ShadowlessDamageEnhancementTalent"
+    },
+    {
+      "tipo": "ShieldOnKillTalent",
+      "id": 26,
+      "codigo": "ShieldOnKill",
+      "texto": {
+        "Type": 26,
+        "Name": "Shield of Killer",
+        "Description": "Killing enemy unit grants {number} damage immunity shield(s), lasting 1 turn"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#ShieldOnKillTalent"
+    },
+    {
+      "tipo": "SkillExtraTargetTalent",
+      "id": 12,
+      "codigo": "SkillExtraTarget",
+      "texto": {
+        "Type": 12,
+        "Name": "Extra Targeting",
+        "Description": "Increase {number} skill target(s)"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#SkillExtraTargetTalent"
+    },
+    {
+      "tipo": "SpellOfHolinessDamageTalent",
+      "id": 73,
+      "codigo": "SpellOfHolinessDamage",
+      "texto": {
+        "Type": 73,
+        "Name": "Shift",
+        "Description": "Spell of Holiness no longer dispels negative effects from friendly units, and it deals <caster>{rate}% of output capacity as caster’s elemental damage</caster> to all enemies, and dispels {number} positive effect(s)"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "DamageRate": 2,
+        "NumberOfDispels": 2
+      },
+      "herois": [
+        "Missionary"
+      ],
+      "regra": "regras-talentos.json#SpellOfHolinessDamageTalent"
+    },
+    {
+      "tipo": "SpellOfHolinessDispelHealTalent",
+      "id": 72,
+      "codigo": "SpellOfHolinessDispelHeal",
+      "texto": {
+        "Type": 72,
+        "Name": "Heal",
+        "Description": "Heals {rate}% of target's maximum health for each negative effect dispelled"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "HealRate": 0.1
+      },
+      "herois": [
+        "Missionary"
+      ],
+      "regra": "regras-talentos.json#SpellOfHolinessDispelHealTalent"
+    },
+    {
+      "tipo": "SpiritOfDemonPetTalent",
+      "id": 74,
+      "codigo": "SpiritOfDemonBoost",
+      "texto": {
+        "Type": 74,
+        "Name": "Spirit",
+        "Description": "Summons {type} at battle starts automatically. Occupies {cost} maximum Rage Points"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Cost": 20
+      },
+      "herois": [
+        "Conjurer"
+      ],
+      "regra": "regras-talentos.json#SpiritOfDemonPetTalent"
+    },
+    {
+      "tipo": "SpitFireDispelTalent",
+      "id": 93,
+      "codigo": "SpitFireDispelEnhancement",
+      "texto": {
+        "Type": 93,
+        "Name": "Clean",
+        "Description": "Dispels {number} negative effect(s) from a random friendly unit each second while Fire God is active"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Dispel": 1
+      },
+      "herois": [
+        "FireAssassin"
+      ],
+      "regra": "regras-talentos.json#SpitFireDispelTalent"
+    },
+    {
+      "tipo": "SpitFireFocusTalent",
+      "id": 92,
+      "codigo": "SpitFireFocusEnhancement",
+      "texto": {
+        "Type": 92,
+        "Name": "Focus",
+        "Description": "Fire God's duration is decreased to {seconds} seconds, and damage is increased by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Time": 5,
+        "DamageBoostRate": 0.8
+      },
+      "herois": [
+        "FireAssassin"
+      ],
+      "regra": "regras-talentos.json#SpitFireFocusTalent"
+    },
+    {
+      "tipo": "SpitFireSelfProtectionTalent",
+      "id": 91,
+      "codigo": "SpitFireProtectionEnhancement",
+      "texto": {
+        "Type": 91,
+        "Name": "Protection",
+        "Description": "Fire God increases caster's Damage Reduction Rate by {damagereduction}% and Strength by {strength}%. No longer deals damage per second"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "DamageReduction": 0.6,
+        "StrengthBoost": 0.05
+      },
+      "herois": [
+        "FireAssassin"
+      ],
+      "regra": "regras-talentos.json#SpitFireSelfProtectionTalent"
+    },
+    {
+      "tipo": "StealSoulDispelEnhancementTalent",
+      "id": 27,
+      "codigo": "StealSoulDispelEnhancement",
+      "texto": {
+        "Type": 27,
+        "Name": "Dispel",
+        "Description": "Number of dispels is increased to {number}"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "NumberOfDispels": 2
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#StealSoulDispelEnhancementTalent"
+    },
+    {
+      "tipo": "StunEnhancementTalent",
+      "id": 69,
+      "codigo": "StunEnhancement",
+      "texto": {
+        "Type": 69,
+        "Name": "Stun",
+        "Description": "Increases chance of Stun on Hit by {rate}%, current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 5,
+      "parametros": {
+        "Rate": 0.05,
+        "MaxLevel": 5
+      },
+      "herois": [
+        "ChubbyLady",
+        "Conjurer",
+        "Cube",
+        "DrunkReader",
+        "ElementalWizard",
+        "FashionBoy",
+        "FireAssassin",
+        "FirePlayer",
+        "FireCharger",
+        "IronSolider",
+        "Killer",
+        "RedHorn",
+        "RedMage",
+        "StreetMan",
+        "Tactician",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#StunEnhancementTalent"
+    },
+    {
+      "tipo": "StunOnDamageTalent",
+      "id": 24,
+      "codigo": "StunOnHit",
+      "texto": {
+        "Type": 24,
+        "Name": "Stun",
+        "Description": "Skill damage stuns targets for {seconds} seconds"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [],
+      "regra": "regras-talentos.json#StunOnDamageTalent"
+    },
+    {
+      "tipo": "SunderDecayTalent",
+      "id": 95,
+      "codigo": "SunderDepressionEnhancement",
+      "texto": {
+        "Type": 95,
+        "Name": "Enhancement",
+        "Description": "Increases All Resistance reduction rate to {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.45
+      },
+      "herois": [
+        "Warrior"
+      ],
+      "regra": "regras-talentos.json#SunderDecayTalent"
+    },
+    {
+      "tipo": "SunderTauntTalent",
+      "id": 96,
+      "codigo": "SunderTauntEnhancement",
+      "texto": {
+        "Type": 96,
+        "Name": "Taunt",
+        "Description": "Sunder has {chance}% chance of taunting target(s) for {seconds} seconds"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Seconds": 10,
+        "Chance": 1
+      },
+      "herois": [
+        "Warrior"
+      ],
+      "regra": "regras-talentos.json#SunderTauntTalent"
+    },
+    {
+      "tipo": "SwiftWindAgilityBoostTalent",
+      "id": 98,
+      "codigo": "SwiftWindAgilityBoostEnhancement",
+      "texto": {
+        "Type": 98,
+        "Name": "Agility Enhancement",
+        "Description": "Swift Wind no longer pushes party members' turn progress, and now boosts all party members' Agility by {rate}% of caster's total Agility"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.3
+      },
+      "herois": [
+        "ToughWoman"
+      ],
+      "regra": "regras-talentos.json#SwiftWindAgilityBoostTalent"
+    },
+    {
+      "tipo": "SwiftWindPushEnhancementTalent",
+      "id": 99,
+      "codigo": "SwiftWindPushBoostEnhancement",
+      "texto": {
+        "Type": 99,
+        "Name": "Turn Enhancement",
+        "Description": "Swift Wind no longer boosts party members' Agility, and boosts all party members' {rate}% turn progress instead."
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Pushrate": 0.6
+      },
+      "herois": [
+        "ToughWoman"
+      ],
+      "regra": "regras-talentos.json#SwiftWindPushEnhancementTalent"
+    },
+    {
+      "tipo": "SwiftwindDamageTalent",
+      "id": 97,
+      "codigo": "SwiftWindDamageSwitchEnhancement",
+      "texto": {
+        "Type": 97,
+        "Name": "Damage Enhancement",
+        "Description": "Swift Wind no longer buffs party members, and deals <caster>{rate}% of Agility as caster's elemental damage</caster> to all enemy units"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "DamageRate": 3.5
+      },
+      "herois": [
+        "ToughWoman"
+      ],
+      "regra": "regras-talentos.json#SwiftwindDamageTalent"
+    },
+    {
+      "tipo": "TacticTargetAttributeDebuffTalent",
+      "id": 66,
+      "codigo": "ActiveTargetDebuff",
+      "texto": {
+        "Type": 66,
+        "Name": "Curse",
+        "Description": "Decreases target(s)' {type} by {rate} for {seconds} seconds"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [
+        "BunSister",
+        "FashionBoy",
+        "NightBlade",
+        "SoulThief",
+        "Warrior",
+        "YoungWarlock"
+      ],
+      "regra": "regras-talentos.json#TacticTargetAttributeDebuffTalent"
+    },
+    {
+      "tipo": "TargetSelectionBuffTalent",
+      "id": 71,
+      "codigo": "TargetSelectionBuff",
+      "texto": {
+        "Type": 71,
+        "Name": "Boost",
+        "Description": "Increases target(s)' {type} by {rate}, for {seconds} seconds"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {},
+      "herois": [
+        "DrunkReader",
+        "Duelist",
+        "GoldenShaman",
+        "Missionary",
+        "Paladin"
+      ],
+      "regra": "regras-talentos.json#TargetSelectionBuffTalent"
+    },
+    {
+      "tipo": "TauntDamageEnhancementTalent",
+      "id": 30,
+      "codigo": "TauntDamageEnhancement",
+      "texto": {
+        "Type": 30,
+        "Name": "Shift",
+        "Description": "Cannot taunt targets, but damage is increased by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "DamageIncreaseRate": 0.15
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#TauntDamageEnhancementTalent"
+    },
+    {
+      "tipo": "TauntDebuffTalent",
+      "id": 32,
+      "codigo": "TauntDebuff",
+      "texto": {
+        "Type": 32,
+        "Name": "Weakening",
+        "Description": "If target is already taunted, decreases its {type} by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "ReductionRate": 0.15
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#TauntDebuffTalent"
+    },
+    {
+      "tipo": "TauntEnhancementTalent",
+      "id": 45,
+      "codigo": "TauntEnhancement",
+      "texto": {
+        "Type": 45,
+        "Name": "Taunt on Hit",
+        "Description": "Increase Taunt on Hit by {rate}% per level. Current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 5,
+      "parametros": {
+        "Rate": 0.14,
+        "MaxLevel": 5
+      },
+      "herois": [
+        "FireCharger",
+        "IronSolider",
+        "Paladin",
+        "StreetMan",
+        "Tactician",
+        "Warrior"
+      ],
+      "regra": "regras-talentos.json#TauntEnhancementTalent"
+    },
+    {
+      "tipo": "TauntTimeEnhancementTalent",
+      "id": 31,
+      "codigo": "TauntTimeEnhancement",
+      "texto": {
+        "Type": 31,
+        "Name": "Taunt Enhancement",
+        "Description": "Taunt effect on target lasts {seconds} seconds"
+      },
+      "tier": "AdventurerTalentTier.Second",
+      "nivel_maximo": 1,
+      "parametros": {
+        "TauntTime": 6
+      },
+      "herois": [],
+      "regra": "regras-talentos.json#TauntTimeEnhancementTalent"
+    },
+    {
+      "tipo": "ThousandKnivesDamageBoostTalent",
+      "id": 102,
+      "codigo": "ThousandKnivesDamageEnhancement",
+      "texto": {
+        "Type": 102,
+        "Name": "Damage Enhancement",
+        "Description": "Thousand Knives no longer dispels, and increases base damage rate to {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 3.5
+      },
+      "herois": [
+        "Killer"
+      ],
+      "regra": "regras-talentos.json#ThousandKnivesDamageBoostTalent"
+    },
+    {
+      "tipo": "ThousandKnivesDebuffTalent",
+      "id": 101,
+      "codigo": "ThousandKnivesDepressionEnhancement",
+      "texto": {
+        "Type": 101,
+        "Name": "Curse",
+        "Description": "Thousand Knives no longer dispels, and decreases targets' output capacity by {rate}% for {seconds} seconds"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Rate": 0.4,
+        "Seconds": 5
+      },
+      "herois": [
+        "Killer"
+      ],
+      "regra": "regras-talentos.json#ThousandKnivesDebuffTalent"
+    },
+    {
+      "tipo": "ThousandKnivesDispelTalent",
+      "id": 103,
+      "codigo": "ThousandKnivesDispelEnhancement",
+      "texto": {
+        "Type": 103,
+        "Name": "Dispel",
+        "Description": "Increases the number of dispels to {number}, and decreases damage rate of Thousand Knives by {rate}%"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "NumberOfDispels": 2,
+        "DamageReductionRate": 0.3
+      },
+      "herois": [
+        "Killer"
+      ],
+      "regra": "regras-talentos.json#ThousandKnivesDispelTalent"
+    },
+    {
+      "tipo": "VitalityEnhancementTalent",
+      "id": 44,
+      "codigo": "VitalityEnhancement",
+      "texto": {
+        "Type": 44,
+        "Name": "Vitality Enhancement",
+        "Description": "Increase Vitality by {rate}% per level. Current rate is {total}%"
+      },
+      "tier": "AdventurerTalentTier.First",
+      "nivel_maximo": 5,
+      "parametros": {
+        "Rate": 0.02,
+        "MaxLevel": 5
+      },
+      "herois": [
+        "FireCharger",
+        "IronSolider",
+        "Paladin",
+        "StreetMan",
+        "Tactician",
+        "Warrior"
+      ],
+      "regra": "regras-talentos.json#VitalityEnhancementTalent"
+    },
+    {
+      "tipo": "EmbracedShieldStunTalent",
+      "id": 79,
+      "codigo": "EmbracedStun",
+      "texto": {
+        "Type": 79,
+        "Name": "Stun",
+        "Description": "Stun attacker for {seconds} seconds while Embraced Shield is active"
+      },
+      "tier": "AdventurerTalentTier.Forth",
+      "nivel_maximo": 1,
+      "parametros": {
+        "Seconds": 3
+      },
+      "herois": [
+        "Tactician"
+      ],
+      "regra": "regras-talentos.json#EmbracedShieldStunTalent"
+    }
+  ],
+  "textos_originais": [
+    {
+      "Type": 0,
+      "Name": "",
+      "Description": ""
+    },
+    {
+      "Type": 1,
+      "Name": "Damage Enhancement",
+      "Description": "Increase skill damage by {rate}%"
+    },
+    {
+      "Type": 2,
+      "Name": "Weakening",
+      "Description": "Skill damage reduces targets' {type} by {rate}%，up to {stack} layers, lasting {seconds} seconds"
+    },
+    {
+      "Type": 3,
+      "Name": "Dispel",
+      "Description": "Skill damage has {chance}% chance of removing {number} positive effects from targets"
+    },
+    {
+      "Type": 5,
+      "Name": "Heavy Fire",
+      "Description": "Increase fire seed damage caused by fire breath by {rate}%"
+    },
+    {
+      "Type": 6,
+      "Name": "Endless Curse",
+      "Description": "Skill damage refresh {number} negative effects on targets"
+    },
+    {
+      "Type": 7,
+      "Name": "Enhanced Kill",
+      "Description": "Caster's {type} will be increased by {rate}% for each unit kill done by skill, up to {stack} layers, lasting 2 turns"
+    },
+    {
+      "Type": 9,
+      "Name": "Slowness",
+      "Description": "Skill damage pushes back targets' {rate}% turn progresses"
+    },
+    {
+      "Type": 10,
+      "Name": "Shield of Fire",
+      "Description": "{rate}% of damage ignited will be converted to absorption shield"
+    },
+    {
+      "Type": 11,
+      "Name": "Weakening",
+      "Description": "Skill damage reduces targets' {type} by {rate}, up to {stack} layers, lasting {seconds} seconds"
+    },
+    {
+      "Type": 12,
+      "Name": "Extra Targeting",
+      "Description": "Increase {number} skill target(s)"
+    },
+    {
+      "Type": 13,
+      "Name": "Freeze Enhancement",
+      "Description": "Targets are freezed up to {seconds} seconds"
+    },
+    {
+      "Type": 14,
+      "Name": "Enhanced Arcane",
+      "Description": "Critical damage is increased by {rate}%"
+    },
+    {
+      "Type": 15,
+      "Name": "Enhanced Kill",
+      "Description": "Caster's health is recovered by {rate}% for each unit kill"
+    },
+    {
+      "Type": 16,
+      "Name": "Darkness",
+      "Description": "Increases shadow sacrifice explosion damage by {rate}%"
+    },
+    {
+      "Type": 17,
+      "Name": "Stun",
+      "Description": "Explosion stuns all targets by {seconds} seconds"
+    },
+    {
+      "Type": 18,
+      "Name": "Returning Soul",
+      "Description": "Explosion recovers all party members' health by {rate}%"
+    },
+    {
+      "Type": 19,
+      "Name": "Minion",
+      "Description": "Increases {rate}% of summoned pet's turn progress on skill cast"
+    },
+    {
+      "Type": 20,
+      "Name": "Shift",
+      "Description": "Divine Hammer no longer heals, but damage is increased by {rate}%"
+    },
+    {
+      "Type": 21,
+      "Name": "Enhanced Heal",
+      "Description": "Increases targets' {type} by {rate}% on heal, up to {stack} layers, lasting 2 turns"
+    },
+    {
+      "Type": 22,
+      "Name": "Dispel",
+      "Description": "Increase dispel chance by {chance}%, and can dispel up to {number} negative effects from each target"
+    },
+    {
+      "Type": 23,
+      "Name": "Enhanced Seed",
+      "Description": "God Seeds cannot be dispelled"
+    },
+    {
+      "Type": 24,
+      "Name": "Stun",
+      "Description": "Skill damage stuns targets for {seconds} seconds"
+    },
+    {
+      "Type": 25,
+      "Name": "Enhanced Dispel",
+      "Description": "If target is not killed by skill damage, dispel {number} positive effects from each target"
+    },
+    {
+      "Type": 26,
+      "Name": "Shield of Killer",
+      "Description": "Killing enemy unit grants {number} damage immunity shield(s), lasting 1 turn"
+    },
+    {
+      "Type": 27,
+      "Name": "Dispel",
+      "Description": "Number of dispels is increased to {number}"
+    },
+    {
+      "Type": 28,
+      "Name": "Enhanced Damage",
+      "Description": "Increase damage bonus provided by agility difference by {rate}%"
+    },
+    {
+      "Type": 29,
+      "Name": "Enhanced Kill",
+      "Description": "Killing every enemy unit boosts all party members' {type} by {rate}%"
+    },
+    {
+      "Type": 30,
+      "Name": "Shift",
+      "Description": "Cannot taunt targets, but damage is increased by {rate}%"
+    },
+    {
+      "Type": 31,
+      "Name": "Taunt Enhancement",
+      "Description": "Taunt effect on target lasts {seconds} seconds"
+    },
+    {
+      "Type": 32,
+      "Name": "Weakening",
+      "Description": "If target is already taunted, decreases its {type} by {rate}%"
+    },
+    {
+      "Type": 33,
+      "Name": "Shift",
+      "Description": "Roar targets all enemy units instead, however resistance reduction is decreased by {rate}%"
+    },
+    {
+      "Type": 34,
+      "Name": "Powerless",
+      "Description": "Rate of strength reduction is increased by {chance}%"
+    },
+    {
+      "Type": 35,
+      "Name": "Enhancement",
+      "Description": "Bright Circle also increases targets' {type} by {rate}%"
+    },
+    {
+      "Type": 36,
+      "Name": "Dispel",
+      "Description": "Bright Circle also dispels {number} negative effect(s) from each target"
+    },
+    {
+      "Type": 37,
+      "Name": "Enhanced Burn",
+      "Description": "Burning Heart also reduces targets' strength"
+    },
+    {
+      "Type": 38,
+      "Name": "Dispel",
+      "Description": "{chance}% chance of dispelling {number} extra positive effect(s)"
+    },
+    {
+      "Type": 39,
+      "Name": "Enhanced Strategy",
+      "Description": "Increase chances of dealing extra damage on targets with positive effects to 100%, and damage is increased by {rate}%"
+    },
+    {
+      "Type": 40,
+      "Name": "Dispel",
+      "Description": "No longer deals extra damage, but has {chance}% chance of removing {number} positive effect(s) from each target"
+    },
+    {
+      "Type": 41,
+      "Name": "Enhanced Shield",
+      "Description": "Embrace friendly unit with the least health ratio with {number} Embraced Shield(s) whenever kills an enemy unit"
+    },
+    {
+      "Type": 42,
+      "Name": "Dodge Rate Adjustment",
+      "Description": "Increase Dodge Rate Adjustment by {rate}% per level. Current rate is {total}%"
+    },
+    {
+      "Type": 43,
+      "Name": "Survival",
+      "Description": "Whenever health is below {minimum}%, wearer is granted with Rejuvenation: heals {total}% ({rate}% per level) health per second, for {seconds} seconds. Can only be triggered once per battle."
+    },
+    {
+      "Type": 44,
+      "Name": "Vitality Enhancement",
+      "Description": "Increase Vitality by {rate}% per level. Current rate is {total}%"
+    },
+    {
+      "Type": 45,
+      "Name": "Taunt on Hit",
+      "Description": "Increase Taunt on Hit by {rate}% per level. Current rate is {total}%"
+    },
+    {
+      "Type": 46,
+      "Name": "Agility Enhancement",
+      "Description": "Increase Agility by {rate}% per level. Current rate is {total}%"
+    },
+    {
+      "Type": 47,
+      "Name": "Primary Attribute Enhancement",
+      "Description": "Increase primary attribute by {rate}% per level. Current rate is {total}%"
+    },
+    {
+      "Type": 48,
+      "Name": "Effect Mastery",
+      "Description": "Increase Effect Mastery by {rate}% per level. Current rate is {total}%"
+    },
+    {
+      "Type": 49,
+      "Name": "Resistance Enhancement",
+      "Description": "Increase All Resistances by {rate}% per level. Current rate is {total}%"
+    },
+    {
+      "Type": 50,
+      "Name": "Hit Rate Enhancement",
+      "Description": "Increases Hit Adjustment Rate by {rate}%. Current rate is {total}%"
+    },
+    {
+      "Type": 51,
+      "Name": "Negative Effect Speed-up",
+      "Description": "Reduces duration of all negative effects by {rate}%. Current rate is {total}%"
+    },
+    {
+      "Type": 52,
+      "Name": "Elemental Damage Enhancement",
+      "Description": "Increases all elemental damage dealt by {rate}%. Current rate is {total}%"
+    },
+    {
+      "Type": 53,
+      "Name": "Shield of Fire",
+      "Description": "Whenever receives direct damage, attackers are planted with Fire Seeds: {rate}% output capacity per level, current rate is {total}%"
+    },
+    {
+      "Type": 54,
+      "Name": "Shadow of Ghost",
+      "Description": "Whenever wearer misses a direct damage, attackers are cursed by bleeding effects for {seconds} seconds, dealing caster's elemental damage per second: {rate}% output capacity per level, current rate is {total}%"
+    },
+    {
+      "Type": 55,
+      "Name": "Protector",
+      "Description": "Reduces damage received by party members by {reduction}%, and takes reduced damage instead: ratio of received damage is decreased by {rate}% per level, current ratio is {total}%"
+    },
+    {
+      "Type": 56,
+      "Name": "Restriction of Time",
+      "Description": "Whenever being stunned, frozen or feared, increases caster's Dodge Adjustment Rate and grants Heal over Time effect for {seconds} seconds: increases Dodge Adjustment Rate by {dodgerate}% per level, current rate is {dodgetotal}%; increases heal per second by {healrate}% per level, current rate is {healtotal}%"
+    },
+    {
+      "Type": 57,
+      "Name": "Poison Effect Enhancement",
+      "Description": "Poison Effect enhanced: increases bleeding damage per second by {total}%. Increases  by {rate}% per level (starts from {start}%)"
+    },
+    {
+      "Type": 58,
+      "Name": "Black Blood",
+      "Description": "Whenever receives direct damage, attackers are cursed by Gu: reduces Dodge Adjustment Rate and All Resistances per second for 5 seconds: current All Resistance reduction rate is {resistancetotal}% per second ({resistancerate}% per level), and current Dodge Adjustment Rate is {dodgetotal}% per second ({dodgerate}% per level)"
+    },
+    {
+      "Type": 59,
+      "Name": "Heart of Zen",
+      "Description": "Healer Enhancement: all direct heal have {total}% chance of clearing targets' tactic Cool Down, and grants tactic free cast(s). Chance is increased by {rate}% per level (starts from {start}%)"
+    },
+    {
+      "Type": 60,
+      "Name": "Physical Effect Enhancement",
+      "Description": "Physical Effect enhanced: reduces targets' Dodge Adjustment Rate by {total}% ({rate}% per level)"
+    },
+    {
+      "Type": 61,
+      "Name": "Shadow Effect Enhancement",
+      "Description": "Shadow Effect enhanced: Shadow Spirits spread to {number} ({rate} per level) nearby unit(s) every 3 seconds."
+    },
+    {
+      "Type": 62,
+      "Name": "Ice Effect Enhancement",
+      "Description": "Ice Effect enhanced: deals {total}% extra damage on frozen targets. Increases {rate}% per level"
+    },
+    {
+      "Type": 63,
+      "Name": "Divine Effect Enhancement",
+      "Description": "Divine Effect enhanced: all direct damage have {total}% chance of sealing targets' passive effects for 6 seconds. Increases {rate}% per level."
+    },
+    {
+      "Type": 64,
+      "Name": "Shield of Lightning",
+      "Description": "Whenever receives direct damage. attackers' resilience is reduced by ({rateresilience}% per level, current rate is {totalresilience}%). In addition, wearer has a chance (increases {ratenegative}% per level, current rate is {totalnegative}%) of resisting negative effects received."
+    },
+    {
+      "Type": 71,
+      "Name": "Boost",
+      "Description": "Increases target(s)' {type} by {rate}, for {seconds} seconds"
+    },
+    {
+      "Type": 66,
+      "Name": "Curse",
+      "Description": "Decreases target(s)' {type} by {rate} for {seconds} seconds"
+    },
+    {
+      "Type": 67,
+      "Name": "Critical Damage Enhancement",
+      "Description": "Increases critical damage by {rate}%, current rate is {total}%"
+    },
+    {
+      "Type": 68,
+      "Name": "Efficiency",
+      "Description": "Increases Rage Efficiency by {rate}% per level, current rate is {total}%"
+    },
+    {
+      "Type": 69,
+      "Name": "Stun",
+      "Description": "Increases chance of Stun on Hit by {rate}%, current rate is {total}%"
+    },
+    {
+      "Type": 70,
+      "Name": "Recovery",
+      "Description": "Increases Battle Recovery by {rate}%, current rate is {total}%"
+    },
+    {
+      "Type": 72,
+      "Name": "Heal",
+      "Description": "Heals {rate}% of target's maximum health for each negative effect dispelled"
+    },
+    {
+      "Type": 73,
+      "Name": "Shift",
+      "Description": "Spell of Holiness no longer dispels negative effects from friendly units, and it deals <caster>{rate}% of output capacity as caster’s elemental damage</caster> to all enemies, and dispels {number} positive effect(s)"
+    },
+    {
+      "Type": 74,
+      "Name": "Spirit",
+      "Description": "Summons {type} at battle starts automatically. Occupies {cost} maximum Rage Points"
+    },
+    {
+      "Type": 75,
+      "Name": "Extra Shield",
+      "Description": "Armor of Wind grants {number} additional shields"
+    },
+    {
+      "Type": 76,
+      "Name": "Boost",
+      "Description": "While Armor of Wind is active, each shield grants shielded unit {type} by {rate}"
+    },
+    {
+      "Type": 77,
+      "Name": "Extra Shield",
+      "Description": "Embraced Shield grants {number} additional shields"
+    },
+    {
+      "Type": 78,
+      "Name": "Dispel",
+      "Description": "Dispels {number} positive effect(s) from attacker while Embraced Shield is active"
+    },
+    {
+      "Type": 79,
+      "Name": "Stun",
+      "Description": "Stun attacker for {seconds} seconds while Embraced Shield is active"
+    },
+    {
+      "Type": 80,
+      "Name": "Mass Dispel",
+      "Description": "Dispel {number} negative effect(s) from all party members when Blood Curse is activated"
+    },
+    {
+      "Type": 81,
+      "Name": "Dispel",
+      "Description": "While Blood Curse is active, caster dispels {number} positive effect(s) with each direct damage"
+    },
+    {
+      "Type": 82,
+      "Name": "Curse",
+      "Description": "While Blood Curse is active, caster decreases target's output capacity by {rate}% for {seconds} seconds with each direct damage"
+    },
+    {
+      "Type": 83,
+      "Name": "Ignition",
+      "Description": "Heartless Fire no longer adds Fire Seed, and ignite Seeds instead"
+    },
+    {
+      "Type": 84,
+      "Name": "Boost",
+      "Description": "Increases rate of Fire Seed per cast by {rate}%"
+    },
+    {
+      "Type": 85,
+      "Name": "Kill",
+      "Description": "Heartless Fire no longer adds Fire Seed, and deals <caster>{rate}% of output capacity as caster's elemental damage</caster> to 1 enemy"
+    },
+    {
+      "Type": 86,
+      "Name": "Enhancement",
+      "Description": "Increases damage bonus rate for each dead unit by {rate}%"
+    },
+    {
+      "Type": 87,
+      "Name": "Decay",
+      "Description": "Each critical hit decreases target's All Resistance by {rate}% of final damage value, for {seconds} seconds. Formless no longer deals damage to all units"
+    },
+    {
+      "Type": 88,
+      "Name": "Extra Hit",
+      "Description": "Add {number} additional hit(s) for Formless"
+    },
+    {
+      "Type": 89,
+      "Name": "Dispel",
+      "Description": "Each critical hit dispels {number} positive effect(s) from target. Formless no longer deals damage to all units"
+    },
+    {
+      "Type": 90,
+      "Name": "Confusion",
+      "Description": "Increases chance of confusion by {chance}%, and decreases confusion duration to {seconds} second(s)"
+    },
+    {
+      "Type": 91,
+      "Name": "Protection",
+      "Description": "Fire God increases caster's Damage Reduction Rate by {damagereduction}% and Strength by {strength}%. No longer deals damage per second"
+    },
+    {
+      "Type": 92,
+      "Name": "Focus",
+      "Description": "Fire God's duration is decreased to {seconds} seconds, and damage is increased by {rate}%"
+    },
+    {
+      "Type": 93,
+      "Name": "Clean",
+      "Description": "Dispels {number} negative effect(s) from a random friendly unit each second while Fire God is active"
+    },
+    {
+      "Type": 94,
+      "Name": "Break",
+      "Description": "Prior tactic cast, dispels {number} shield(s) from all target(s)"
+    },
+    {
+      "Type": 95,
+      "Name": "Enhancement",
+      "Description": "Increases All Resistance reduction rate to {rate}%"
+    },
+    {
+      "Type": 96,
+      "Name": "Taunt",
+      "Description": "Sunder has {chance}% chance of taunting target(s) for {seconds} seconds"
+    },
+    {
+      "Type": 97,
+      "Name": "Damage Enhancement",
+      "Description": "Swift Wind no longer buffs party members, and deals <caster>{rate}% of Agility as caster's elemental damage</caster> to all enemy units"
+    },
+    {
+      "Type": 98,
+      "Name": "Agility Enhancement",
+      "Description": "Swift Wind no longer pushes party members' turn progress, and now boosts all party members' Agility by {rate}% of caster's total Agility"
+    },
+    {
+      "Type": 99,
+      "Name": "Turn Enhancement",
+      "Description": "Swift Wind no longer boosts party members' Agility, and boosts all party members' {rate}% turn progress instead."
+    },
+    {
+      "Type": 100,
+      "Name": "Extra Target",
+      "Description": "Increases number of additional target granted by Drunkenness by {number}"
+    },
+    {
+      "Type": 101,
+      "Name": "Curse",
+      "Description": "Thousand Knives no longer dispels, and decreases targets' output capacity by {rate}% for {seconds} seconds"
+    },
+    {
+      "Type": 102,
+      "Name": "Damage Enhancement",
+      "Description": "Thousand Knives no longer dispels, and increases base damage rate to {rate}%"
+    },
+    {
+      "Type": 103,
+      "Name": "Dispel",
+      "Description": "Increases the number of dispels to {number}, and decreases damage rate of Thousand Knives by {rate}%"
+    },
+    {
+      "Type": 104,
+      "Name": "Shield",
+      "Description": "Rotation grants Damage Absorption Shield for each critical damage dealt, shield absorption equals to {rate}% of critical damage done"
+    },
+    {
+      "Type": 105,
+      "Name": "Dispel",
+      "Description": "Rotation dispels {number} positive effect(s) from target with each critical hit"
+    },
+    {
+      "Type": 106,
+      "Name": "Curse",
+      "Description": "Rotation decreases target's {type} by {rate} for {seconds} seconds with each critical hit"
+    },
+    {
+      "Type": 107,
+      "Name": "Rage Reduction",
+      "Description": "Rage cost is reduced to {cost}"
+    },
+    {
+      "Type": 108,
+      "Name": "Pushback",
+      "Description": "Pushes back target's turn progress by {rate}%"
+    },
+    {
+      "Type": 109,
+      "Name": "Shift",
+      "Description": "Grand Meteorite’s elements are shifted to {type} and caster's element, and increases damage rate by {rate}%"
+    },
+    {
+      "Type": 110,
+      "Name": "Dispel",
+      "Description": "When embraced by Frenzy, each direct damage dealt dispels {number} positive effect(s) from target. No longer deals extra damage"
+    },
+    {
+      "Type": 111,
+      "Name": "Pushback",
+      "Description": "When embraced by Frenzy, each direct damage dealt pushes {rate}% of target's turn progress. "
+    },
+    {
+      "Type": 112,
+      "Name": "Stun",
+      "Description": "When embraced by Frenzy, each direct damage dealt stuns target for {seconds} second(s). No longer deals extra damage"
+    },
+    {
+      "Type": 113,
+      "Name": "Extra Target",
+      "Description": "Seduction has {chance}% chance of adding 1 random target"
+    },
+    {
+      "Type": 114,
+      "Name": "Curse",
+      "Description": "Seduction no longer dispels, and decreases target's {type} by {rate} for {seconds} seconds"
+    },
+    {
+      "Type": 115,
+      "Name": "Clean",
+      "Description": "Seduction dispels all negative effects from caster"
+    },
+    {
+      "Type": 116,
+      "Name": "Curse",
+      "Description": "Tactic decreases target(s)' {type} by {rate} for {seconds} seconds prior cast"
+    },
+    {
+      "Type": 117,
+      "Name": "Dispel",
+      "Description": "Tactic dispels {number} positive effect(s) from target(s) prior cast"
+    },
+    {
+      "Type": 118,
+      "Name": "Damage Enhancement",
+      "Description": "Each Crash hit deals additional {rate}% of caster's output capacity as {type}"
+    },
+    {
+      "Type": 119,
+      "Name": "Extra Hit",
+      "Description": "Crash deals {number} additional hit"
+    },
+    {
+      "Type": 120,
+      "Name": "Dispel",
+      "Description": "Each Crash hit dispels {number} positive effect(s) from target"
+    }
+  ]
+}

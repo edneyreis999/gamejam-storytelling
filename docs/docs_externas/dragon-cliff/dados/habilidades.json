@@ -1,0 +1,1656 @@
+{
+  "schema_version": 1,
+  "build_steam": "6212414",
+  "idioma_textos": "en",
+  "natureza": "Referencia externa; extracao estatica da instalacao local. Nao e documentacao aprovada do projeto.",
+  "habilidades": [
+    {
+      "SkillType": 1,
+      "Title": "",
+      "Description": "",
+      "PassiveDescription": "",
+      "codigo": "WeaponEnchantment",
+      "implementacoes": []
+    },
+    {
+      "SkillType": 1001,
+      "Title": "Assassination",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy with least health points.",
+      "PassiveDescription": "",
+      "codigo": "Assassination",
+      "implementacoes": [
+        {
+          "tipo": "Assassination",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Assassination"
+        }
+      ]
+    },
+    {
+      "SkillType": 1002,
+      "Title": "Blade Rain",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to all enemy targets.",
+      "PassiveDescription": "",
+      "codigo": "BladeRain",
+      "implementacoes": [
+        {
+          "tipo": "BladeRain",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#BladeRain"
+        }
+      ]
+    },
+    {
+      "SkillType": 1003,
+      "Title": "Deadly Blade",
+      "Description": "Deals <poison>{maindamagerate}% (of output capacity) poison</poison> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> to an enemy with highest health points.\n",
+      "PassiveDescription": "",
+      "codigo": "DeadlyBlade",
+      "implementacoes": [
+        {
+          "tipo": "DeadlyBlade",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Poison",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#DeadlyBlade"
+        }
+      ]
+    },
+    {
+      "SkillType": 1004,
+      "Title": "Strike",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to a random enemy, deals additional damage if critically hit.",
+      "PassiveDescription": "",
+      "codigo": "Strike",
+      "implementacoes": [
+        {
+          "tipo": "Strike",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Strike"
+        }
+      ]
+    },
+    {
+      "SkillType": 1005,
+      "Title": "Multi-Strike",
+      "Description": "Hits a random enemy 3 times, Deals <poison>{maindamagerate}% (of output capacity) poison</poison> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage per hit. For each non-critical hit, caster will gain {boostrate}% crit rate boost for 1 turn.",
+      "PassiveDescription": "",
+      "codigo": "MultiStrike",
+      "implementacoes": [
+        {
+          "tipo": "MultiStrike",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Poison",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#MultiStrike"
+        }
+      ]
+    },
+    {
+      "SkillType": 1006,
+      "Title": "Steal Soul",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy with least health points, if critically hit then remove 1 positive effect from target.",
+      "PassiveDescription": "",
+      "codigo": "StealSoul",
+      "implementacoes": [
+        {
+          "tipo": "StealSoul",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#StealSoul"
+        }
+      ]
+    },
+    {
+      "SkillType": 1007,
+      "Title": "Stun",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy with highest agility, there is a {chance}% chance paralyzing target for 1 turn.",
+      "PassiveDescription": "",
+      "codigo": "Stun",
+      "implementacoes": [
+        {
+          "tipo": "Stun",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Stun"
+        }
+      ]
+    },
+    {
+      "SkillType": 1008,
+      "Title": "Taunt",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to all enemy targets, and taunt them for 4 seconds.",
+      "PassiveDescription": "",
+      "codigo": "Taunt",
+      "implementacoes": [
+        {
+          "tipo": "Taunt",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#Taunt"
+        }
+      ]
+    },
+    {
+      "SkillType": 1009,
+      "Title": "Roar",
+      "Description": "Deals <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to a random enemy，and decreases {decreaserate}% of target's physical resistance for 6 seconds, this effect is stackable.",
+      "PassiveDescription": "",
+      "codigo": "Roar",
+      "implementacoes": [
+        {
+          "tipo": "Roar",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Roar"
+        }
+      ]
+    },
+    {
+      "SkillType": 1010,
+      "Title": "Relentless",
+      "Description": "Deals <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy with highest health points, caster's physical resistance is decreased by {decreaserate}%, and strength is increased by {boostrate}% for 3 turns. This effect is stackable.",
+      "PassiveDescription": "",
+      "codigo": "Relentless",
+      "implementacoes": [
+        {
+          "tipo": "Relentless",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Relentless"
+        }
+      ]
+    },
+    {
+      "SkillType": 1011,
+      "Title": "Scorn",
+      "Description": "Deals <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy with highest strength. This hit has {chance}% chance of reducing target's strength by {decreaserate}% for 1 turn.",
+      "PassiveDescription": "",
+      "codigo": "Scorn",
+      "implementacoes": [
+        {
+          "tipo": "Scorn",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Scorn"
+        }
+      ]
+    },
+    {
+      "SkillType": 1012,
+      "Title": "Fireball",
+      "Description": "Deals <fire>{maindamagerate}% (of output capacity) fire</fire> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to a random enemy.",
+      "PassiveDescription": "",
+      "codigo": "FireBall",
+      "implementacoes": [
+        {
+          "tipo": "Fireball",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Fire",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Fireball"
+        }
+      ]
+    },
+    {
+      "SkillType": 1013,
+      "Title": "Meteorolite",
+      "Description": "Hits enemy with hightest health points 3 times, each hit Deals <fire>{maindamagerate}% (of output capacity) fire</fire> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage, with each critical hit enemy receives an additional hit.",
+      "PassiveDescription": "",
+      "codigo": "Meteorolite",
+      "implementacoes": [
+        {
+          "tipo": "Meteorolite",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Fire",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Meteorolite"
+        }
+      ]
+    },
+    {
+      "SkillType": 1014,
+      "Title": "Lightning",
+      "Description": "Deals <lightning>{maindamagerate}% (of output capacity) lightning</lightning> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to all enemy targets.",
+      "PassiveDescription": "",
+      "codigo": "Lightning",
+      "implementacoes": [
+        {
+          "tipo": "Lightning",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Lightening",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#Lightning"
+        }
+      ]
+    },
+    {
+      "SkillType": 1015,
+      "Title": "Freeze",
+      "Description": "Deals <ice>{maindamagerate}% (of output capacity) ice</ice> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy with highest agility, reduces target's agility by 30%, and has {chance}% chance of freezing target for 2 seconds.",
+      "PassiveDescription": "",
+      "codigo": "Freeze",
+      "implementacoes": [
+        {
+          "tipo": "Freeze",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Ice",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Freeze"
+        }
+      ]
+    },
+    {
+      "SkillType": 1016,
+      "Title": "Arcane",
+      "Description": "Deals <lightning>{maindamagerate}% (of output capacity) lightning</lightning> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to a random enemy，if critically hits then increases caster critical damage by 15% for 3 turns",
+      "PassiveDescription": "",
+      "codigo": "Arcane",
+      "implementacoes": [
+        {
+          "tipo": "Arcane",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Lightening",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Arcane"
+        }
+      ]
+    },
+    {
+      "SkillType": 1017,
+      "Title": "Divine Hammer",
+      "Description": "Deals <divine>{maindamagerate}% (of output capacity) divine</divine> damage to a random enemy, and recovers <heal>{healrate}% (of output capacity)</heal> life to a friendly unit with least health points.",
+      "PassiveDescription": "",
+      "codigo": "DivineHammer",
+      "implementacoes": [
+        {
+          "tipo": "DivineHammer",
+          "comando": null,
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.Divine",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#DivineHammer"
+        }
+      ]
+    },
+    {
+      "SkillType": 1018,
+      "Title": "Divine Light",
+      "Description": "Deals <divine>{maindamagerate}% (of output capacity) divine</divine> damage to all enemy units, and recovers <heal>{healrate}% (of output capacity)</heal> life to all friendly units.",
+      "PassiveDescription": "",
+      "codigo": "DivineLight",
+      "implementacoes": [
+        {
+          "tipo": "DivineLight",
+          "comando": null,
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.Divine",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#DivineLight"
+        }
+      ]
+    },
+    {
+      "SkillType": 1019,
+      "Title": "Pray",
+      "Description": "Recovers <heal>{healrate}% (of output capacity)</heal> life to a friendly unit with least health points, there is 50% chance of removing 1 negative effect from target",
+      "PassiveDescription": "",
+      "codigo": "Pray",
+      "implementacoes": [
+        {
+          "tipo": "Pray",
+          "comando": null,
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.Heal",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Pray"
+        }
+      ]
+    },
+    {
+      "SkillType": 1020,
+      "Title": "Blood Thirst",
+      "Description": "When dealing damage to enemies, they will bleed for 2 turns. Bleeding unit receives <poison>{mainovertimedamagerate}% (of output capacity) poison</poison> damage per turn. This effect is stackable.",
+      "PassiveDescription": "",
+      "codigo": "BloodThirst",
+      "implementacoes": [
+        {
+          "tipo": "BloodThirst",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.None",
+          "talentos": [],
+          "regra": "regras-combate.json#BloodThirst"
+        }
+      ]
+    },
+    {
+      "SkillType": 1021,
+      "Title": "Rage",
+      "Description": "Whenever a friendly unit is being critical hit, caster will be granted with {boostrate}% crit rate boost for 2 turns. This effect is stackable.",
+      "PassiveDescription": "",
+      "codigo": "Rage",
+      "implementacoes": [
+        {
+          "tipo": "Rage",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Rage"
+        }
+      ]
+    },
+    {
+      "SkillType": 1022,
+      "Title": "Principle",
+      "Description": "Whenever caster is healed, his/her all resistances will be increased by {boostrate}% 2 turns.",
+      "PassiveDescription": "",
+      "codigo": "Principle",
+      "implementacoes": [
+        {
+          "tipo": "Principle",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.None",
+          "talentos": [],
+          "regra": "regras-combate.json#Principle"
+        }
+      ]
+    },
+    {
+      "SkillType": 1023,
+      "Title": "Rebirth",
+      "Description": "Prevent caster from death for once per adventure, and heals <heal>{healrate}%</heal> of caster's maximum life.",
+      "PassiveDescription": "",
+      "codigo": "Rebirth",
+      "implementacoes": [
+        {
+          "tipo": "Rebirth",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Rebirth"
+        }
+      ]
+    },
+    {
+      "SkillType": 1025,
+      "Title": "Flesh to Stone",
+      "Description": "When caster is hit, there is a {chance}% chance caster enters 'stone phase', reduce all damage taken by {damagereductionrate}%.",
+      "PassiveDescription": "",
+      "codigo": "FleshToStone",
+      "implementacoes": [
+        {
+          "tipo": "FleshToStone",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.None",
+          "talentos": [],
+          "regra": "regras-combate.json#FleshToStone"
+        }
+      ]
+    },
+    {
+      "SkillType": 1026,
+      "Title": "Harmony",
+      "Description": "Increase {boostrate}% primary attribute (intelligence for caster, and strength for melee units).",
+      "PassiveDescription": "",
+      "codigo": "Harmony",
+      "implementacoes": [
+        {
+          "tipo": "Harmony",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Harmony"
+        }
+      ]
+    },
+    {
+      "SkillType": 1027,
+      "Title": "Flame",
+      "Description": "When dealing critical damage, targets receives flame effect for 2 turns. Flame deals <fire>{mainovertimedamagerate}% (of output capacity) fire</fire> damage per turn, stackable.",
+      "PassiveDescription": "",
+      "codigo": "Flame",
+      "implementacoes": [
+        {
+          "tipo": "Flame",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Fire",
+          "alvos": "TargetingType.None",
+          "talentos": [],
+          "regra": "regras-combate.json#Flame"
+        }
+      ]
+    },
+    {
+      "SkillType": 1028,
+      "Title": "Flourish",
+      "Description": "When caster critically heals targets, he/she will grant them {boostrate}% increased all resistance. This effect is stackable.",
+      "PassiveDescription": "",
+      "codigo": "Flourish",
+      "implementacoes": [
+        {
+          "tipo": "Flourish",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.None",
+          "talentos": [],
+          "regra": "regras-combate.json#Flourish"
+        }
+      ]
+    },
+    {
+      "SkillType": 1029,
+      "Title": "Lightning Speed",
+      "Description": "Any additional damage hits dealt to the same target before its next turn, will incur additional <lightning>{maindamagerate}% (of output capacity) lightning</lightning> damge.",
+      "PassiveDescription": "",
+      "codigo": "LightningSpeed",
+      "implementacoes": [
+        {
+          "tipo": "LightningSpeed",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Lightening",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#LightningSpeed"
+        }
+      ]
+    },
+    {
+      "SkillType": 1030,
+      "Title": "Wave",
+      "Description": "Every turn caster recovers <heal>{healrate}%</heal> of his/her max health points.",
+      "PassiveDescription": "",
+      "codigo": "Wave",
+      "implementacoes": [
+        {
+          "tipo": "Wave",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Wave"
+        }
+      ]
+    },
+    {
+      "SkillType": 1031,
+      "Title": "Stamina",
+      "Description": "Increase {boostvalue}% damage reduction rate.",
+      "PassiveDescription": "",
+      "codigo": "Stamina",
+      "implementacoes": [
+        {
+          "tipo": "Stamina",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Stamina"
+        }
+      ]
+    },
+    {
+      "SkillType": 1032,
+      "Title": "Swallow Fire",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to a random enemy，and consume all fire seeds on target. Caster's strength will be boosted by {boostrate}% of consumed fire damage.",
+      "PassiveDescription": "",
+      "codigo": "SwallowFire",
+      "implementacoes": [
+        {
+          "tipo": "SwallowFire",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#SwallowFire"
+        }
+      ]
+    },
+    {
+      "SkillType": 1033,
+      "Title": "Shadowless",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> damage to a random enemy, the final damage will be impacted by caster and target's agility difference, and high caster's agility is the higher final damage will be.",
+      "PassiveDescription": "",
+      "codigo": "Shadowless",
+      "implementacoes": [
+        {
+          "tipo": "Shadowless",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Shadowless"
+        }
+      ]
+    },
+    {
+      "SkillType": 1034,
+      "Title": "Will of Fight",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy with highest agility，reduces target's agility by {decreaserate}% for 1 turn.",
+      "PassiveDescription": "",
+      "codigo": "WillOfFight",
+      "implementacoes": [
+        {
+          "tipo": "WillOfFight",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#WillOfFight"
+        }
+      ]
+    },
+    {
+      "SkillType": 1035,
+      "Title": "Bright Circle",
+      "Description": "Boost all party members' all resistances by {baseboostvalue}+{additionalrate}% of caster's corresponding resistance value for 3 turn, stackable.",
+      "PassiveDescription": "",
+      "codigo": "BrightCircle",
+      "implementacoes": [
+        {
+          "tipo": "BrightCircle",
+          "comando": null,
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#BrightCircle"
+        }
+      ]
+    },
+    {
+      "SkillType": 1036,
+      "Title": "Corrupted Strength",
+      "Description": "Deals <poison>{maindamagerate}% (of output capacity) poison</poison> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to a random enemy, reduces {decreaserate}% of its strength.",
+      "PassiveDescription": "",
+      "codigo": "CorruptedPower",
+      "implementacoes": [
+        {
+          "tipo": "CorruptedPower",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#CorruptedPower"
+        }
+      ]
+    },
+    {
+      "SkillType": 1037,
+      "Title": "Burning Heart",
+      "Description": "Deals <shadow>{maindamagerate}% (of output capacity) shadow</shadow> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to a random enemy, reduces {decreaserate}% of its intelligence, and dispels one positive effect",
+      "PassiveDescription": "",
+      "codigo": "BurningHeart",
+      "implementacoes": [
+        {
+          "tipo": "BurningHeart",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#BurningHeart"
+        }
+      ]
+    },
+    {
+      "SkillType": 1038,
+      "Title": "Grand Strategy",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to all enemy targets, every positive effect on target has {chance}% chance of incurring additional damage.",
+      "PassiveDescription": "",
+      "codigo": "GrandStrategy",
+      "implementacoes": [
+        {
+          "tipo": "GrandStrategy",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#GrandStrategy"
+        }
+      ]
+    },
+    {
+      "SkillType": 1039,
+      "Title": "Poisonous Blade",
+      "Description": "Deals <poison>{maindamagerate}% (of output capacity) poison</poison> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy with least health points.",
+      "PassiveDescription": "",
+      "codigo": "PoisonBlade",
+      "implementacoes": [
+        {
+          "tipo": "PoisonBlade",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Poison",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#PoisonBlade"
+        }
+      ]
+    },
+    {
+      "SkillType": 1040,
+      "Title": "Pierce",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy with least armor rating.",
+      "PassiveDescription": "",
+      "codigo": "Pierce",
+      "implementacoes": [
+        {
+          "tipo": "Pierce",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Pierce"
+        }
+      ]
+    },
+    {
+      "SkillType": 1041,
+      "Title": "Spell Slayer",
+      "Description": "Deals <random>{maindamagerate}% (of output capacity) random elemental</random> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy with highest intelligence.",
+      "PassiveDescription": "",
+      "codigo": "SpellSlayer",
+      "implementacoes": [
+        {
+          "tipo": "SpellSlayer",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#SpellSlayer"
+        }
+      ]
+    },
+    {
+      "SkillType": 1042,
+      "Title": "Shadow Sacrifice",
+      "Description": "Deals <shadow>{maindamagerate}% (of output capacity) shadow</shadow> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy with least health points, if target is killed then an additional <shadow>{explosivedamagerate}% (of output capacity) shadow</shadow> damage will be dealt to all enemy units.",
+      "PassiveDescription": "",
+      "codigo": "ShadowSacrifice",
+      "implementacoes": [
+        {
+          "tipo": "ShadowSacrifice",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Shadow",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#ShadowSacrifice"
+        }
+      ]
+    },
+    {
+      "SkillType": 1043,
+      "Title": "Seeds Of Sin",
+      "Description": "Deals <shadow>{maindamagerate}% (of output capacity) shadow</shadow> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to a random enemy",
+      "PassiveDescription": "",
+      "codigo": "SeedsOfSin",
+      "implementacoes": [
+        {
+          "tipo": "SeedsOfSin",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Shadow",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#SeedsOfSin"
+        }
+      ]
+    },
+    {
+      "SkillType": 1044,
+      "Title": "Confusion",
+      "Description": "Deals <divine>{maindamagerate}% (of output capacity) divine</divine> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to all enemy units, and taunt them.",
+      "PassiveDescription": "",
+      "codigo": "Confusion",
+      "implementacoes": [
+        {
+          "tipo": "Confusion",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Divine",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#Confusion"
+        }
+      ]
+    },
+    {
+      "SkillType": 1045,
+      "Title": "Curse of Cube",
+      "Description": "Deals <divine>{maindamagerate}% (of output capacity) divine</divine> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to all enemy units, and plant 1 God Seed to all targets. Hitting enemies with God Seed will recover attacker <heal>{healrate}% (of output capacity)</heal> life, lasting for 6 seconds",
+      "PassiveDescription": "",
+      "codigo": "CurseOfCube",
+      "implementacoes": [
+        {
+          "tipo": "CurseOfCube",
+          "comando": null,
+          "categoria": "SkillCategory.Supportive",
+          "elemento": "OutputType.Divine",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#CurseOfCube"
+        }
+      ]
+    },
+    {
+      "SkillType": 1046,
+      "Title": "Shock",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to all enemy units, disperse 1 beneficial effects, and push back target's {progresschangerate}% turn progress.",
+      "PassiveDescription": "",
+      "codigo": "Shock",
+      "implementacoes": [
+        {
+          "tipo": "Shock",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#Shock"
+        }
+      ]
+    },
+    {
+      "SkillType": 1047,
+      "Title": "Fire Breath",
+      "Description": "Deals <fire>{maindamagerate}% (of output capacity) fire</fire> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to all enemy units. Plant 1 additional fire seed.",
+      "PassiveDescription": "",
+      "codigo": "FireBreath",
+      "implementacoes": [
+        {
+          "tipo": "FireBreath",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Fire",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#FireBreath"
+        }
+      ]
+    },
+    {
+      "SkillType": 1048,
+      "Title": "Fire Blast",
+      "Description": "Deals <fire>{maindamagerate}% (of output capacity) fire </fire>, <lightning>{additionaldamagerate}% (of output capacity) lightning </lightning> and <caster>{casterdamagerate}% (of output capacity) caster's elemental </caster> damage to all enemy units",
+      "PassiveDescription": "",
+      "codigo": "FireBlast",
+      "implementacoes": [
+        {
+          "tipo": "Fireblast",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Fire",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#Fireblast"
+        }
+      ]
+    },
+    {
+      "SkillType": 1049,
+      "Title": "Fist Punch",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> damage to {leastnumberoftargets} - {maxnumberoftargets} random enemies.",
+      "PassiveDescription": "",
+      "codigo": "FistPunch",
+      "implementacoes": [
+        {
+          "tipo": "FistPunch",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#FistPunch"
+        }
+      ]
+    },
+    {
+      "SkillType": 1050,
+      "Title": "Nightmare",
+      "Description": "Deals <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to a random enemy, and target will suffer nightmare for 5 seconds, receiving <shadow>{mainovertimedamagerate}% (of output capacity) shadow</shadow> damage per second.",
+      "PassiveDescription": "",
+      "codigo": "Nightmare",
+      "implementacoes": [
+        {
+          "tipo": "Nightmare",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Nightmare"
+        }
+      ]
+    },
+    {
+      "SkillType": 1051,
+      "Title": "狂舞",
+      "Description": "狂舞",
+      "PassiveDescription": "",
+      "codigo": "Dance",
+      "implementacoes": []
+    },
+    {
+      "SkillType": 1052,
+      "Title": "乱刺",
+      "Description": "乱刺",
+      "PassiveDescription": "",
+      "codigo": "FrenzeSpike",
+      "implementacoes": []
+    },
+    {
+      "SkillType": 1053,
+      "Title": "Stray",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> damage to a random enemy each second.",
+      "PassiveDescription": "",
+      "codigo": "Stray",
+      "implementacoes": [
+        {
+          "tipo": "Stray",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Stray"
+        }
+      ]
+    },
+    {
+      "SkillType": 1054,
+      "Title": "Swift",
+      "Description": "Whenever an enemy unit takes an action, there is {chance}% chance caster will boost his/her turn progress by 20%.",
+      "PassiveDescription": "",
+      "codigo": "Swift",
+      "implementacoes": [
+        {
+          "tipo": "Swift",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.None",
+          "talentos": [],
+          "regra": "regras-combate.json#Swift"
+        }
+      ]
+    },
+    {
+      "SkillType": 1055,
+      "Title": "Charged Bolt",
+      "Description": "Deals <lighning>{maindamagerate}% (of output capacity) lightning</lightning> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to 1 - 5 random enemy targets.",
+      "PassiveDescription": "",
+      "codigo": "ChargedBolt",
+      "implementacoes": [
+        {
+          "tipo": "ChargedBolt",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Lightening",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#ChargedBolt"
+        }
+      ]
+    },
+    {
+      "SkillType": 1056,
+      "Title": "Cleaning",
+      "Description": "Heal all party members <heal>{healrate}% (of output capacity)</heal> life, and has {chance}% chance of removing 0-3 negative effects from targets.",
+      "PassiveDescription": "",
+      "codigo": "Cleaning",
+      "implementacoes": [
+        {
+          "tipo": "Cleaning",
+          "comando": null,
+          "categoria": "SkillCategory.Supportive",
+          "elemento": "OutputType.Heal",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#Cleaning"
+        }
+      ]
+    },
+    {
+      "SkillType": 1057,
+      "Title": "净化",
+      "Description": "",
+      "PassiveDescription": "",
+      "codigo": "Purify",
+      "implementacoes": []
+    },
+    {
+      "SkillType": 1058,
+      "Title": "Shield Burn",
+      "Description": "Deals <divine>{maindamagerate}% (of output capacity) divine</divine> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to target with highest physical resistance, and causing target burning for 3 seconds, receiving <divine>{mainovertimedamagerate}% (of output capacity) divine</divine> and <caster>{casterovertimedamagerate}% (of output capacity) caster's elemental</caster> damage per second. If this effect is not dispersed, will further reduce target {decreaserate}% of all resistances after burn.",
+      "PassiveDescription": "",
+      "codigo": "ShieldBurn",
+      "implementacoes": [
+        {
+          "tipo": "ShieldBurn",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Divine",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#ShieldBurn"
+        }
+      ]
+    },
+    {
+      "SkillType": 1059,
+      "Title": "Plant Fire",
+      "Description": "Every second there is {chance}% chance of planting 1 fire seed on a random enemy target, each seed may cause <fire>100% (of output capacity) fire</fire> damage when ignited.",
+      "PassiveDescription": "",
+      "codigo": "LightFire",
+      "implementacoes": [
+        {
+          "tipo": "LightFire",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#LightFire"
+        }
+      ]
+    },
+    {
+      "SkillType": 1060,
+      "Title": "Soul Seeker",
+      "Description": "Whenever a unit dies, caster recovers <heal>{healrate}%</heal> of his/her max health points.",
+      "PassiveDescription": "",
+      "codigo": "SoulSeeker",
+      "implementacoes": [
+        {
+          "tipo": "SoulSeeker",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#SoulSeeker"
+        }
+      ]
+    },
+    {
+      "SkillType": 1062,
+      "Title": "Returning Soul",
+      "Description": "If caster is killed, all of his/her stats will be added to remaining party members for 3 turns.",
+      "PassiveDescription": "",
+      "codigo": "ReturningSoul",
+      "implementacoes": [
+        {
+          "tipo": "ReturnSoul",
+          "comando": "SkillCommandType.Secondary",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": "OutputType.None",
+          "alvos": "TargetingType.None",
+          "talentos": [],
+          "regra": "regras-combate.json#ReturnSoul"
+        }
+      ]
+    },
+    {
+      "SkillType": 1063,
+      "Title": "Fire Burst",
+      "Description": "Deals <fire>{maindamagerate}% (of output capacity) fire</fire> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to a random enemy target. Every fire seed on target has {chance}% chance of paralyzing enemy for 2 seconds",
+      "PassiveDescription": "",
+      "codigo": "FireBurst",
+      "implementacoes": [
+        {
+          "tipo": "FireBurst",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Fire",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#FireBurst"
+        }
+      ]
+    },
+    {
+      "SkillType": 1064,
+      "Title": "dummy",
+      "Description": "",
+      "PassiveDescription": "",
+      "codigo": "Dummy",
+      "implementacoes": [
+        {
+          "tipo": "DummyActive",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [],
+          "regra": "regras-combate.json#DummyActive"
+        }
+      ]
+    },
+    {
+      "SkillType": 1065,
+      "Title": "Spell of Holiness",
+      "Description": "Remove {numberofactivetriggers} negative effect from all friendly party members.",
+      "PassiveDescription": "Every turn there is {chance}% chance of removing {numberofpassivetriggers} negative effect(s) from a random friendly unit.",
+      "codigo": "SpellOfHoliness",
+      "implementacoes": [
+        {
+          "tipo": "SpellOfHoliness",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": null,
+          "alvos": "TargetingType.Single",
+          "talentos": [
+            "TargetSelectionBuffTalent",
+            "SpellOfHolinessDispelHealTalent",
+            "SpellOfHolinessDamageTalent"
+          ],
+          "regra": "regras-combate.json#SpellOfHoliness"
+        }
+      ]
+    },
+    {
+      "SkillType": 1066,
+      "Title": "Spirit of Demon",
+      "Description": "Summon a random spirit (healer/killer/tank) fight on your side. Increase skill level to increase spirit’s stats. ",
+      "PassiveDescription": "Boost all party members' output by{outputboostrate}%.",
+      "codigo": "SpiritOfDemon",
+      "implementacoes": [
+        {
+          "tipo": "SpiritOfDemon",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": null,
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "SpiritOfDemonPetTalent"
+          ],
+          "regra": "regras-combate.json#SpiritOfDemon"
+        }
+      ]
+    },
+    {
+      "SkillType": 1067,
+      "Title": "Iron Blood",
+      "Description": "Reduce all damage taken by party members by {damagereductionrate}%, for {lastingseconds} seconds.",
+      "PassiveDescription": "Whenever a friendly unit takes actions, there is {chance}% chance of being shielded, reducing all damage taken by {damagereductionrate}% for {lastingseconds} seconds.",
+      "codigo": "IronBlood",
+      "implementacoes": [
+        {
+          "tipo": "IronBlood",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": null,
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "TargetSelectionBuffTalent"
+          ],
+          "regra": "regras-combate.json#IronBlood"
+        }
+      ]
+    },
+    {
+      "SkillType": 1068,
+      "Title": "Armor of Wind",
+      "Description": "Shields all friendly units, prevent them from {numberofactiveshields} direct damage, lasting 2 turns. This effect is stackable.",
+      "PassiveDescription": "Every caster's turn there is {chance}% chance of shielding a friendly unit, prevent him/her from 1 direct damage for 2 turns. This effect is stackable.",
+      "codigo": "ArmorOfWind",
+      "implementacoes": [
+        {
+          "tipo": "ArmorOfWind",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": null,
+          "alvos": "TargetingType.Single",
+          "talentos": [
+            "ArmorOfWindExtraHitTalent",
+            "ArmorOfWindBoostTalent"
+          ],
+          "regra": "regras-combate.json#ArmorOfWind"
+        }
+      ]
+    },
+    {
+      "SkillType": 1069,
+      "Title": "Embraced Shield",
+      "Description": "Shields {numberofactiveshields} friendly unit(s) with the least health points, prevent them from 3 direct damage, and reflect damage back to attackers (Reflection rate is either 100% or shielded unit's Damage Reflection Rate, the maximum value is selected). Lasting for 1 turn. This effect is stackable.",
+      "PassiveDescription": "Every caster's turn there is {chance}% chance of shielding a friendly unit, prevent him/her from 1 direct damage and reflect damage back to attacker (Reflection rate is either 100% or shielded unit's Damage Reflection Rate, the maximum value is selected). Lasting for 1 turn. This effect is stackable.",
+      "codigo": "EmbracedShield",
+      "implementacoes": [
+        {
+          "tipo": "EmbracedShield",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": null,
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "EmbracedShieldExtraTalent",
+            "EmbracedShieldDispelTalent",
+            "EmbracedShieldStunTalent"
+          ],
+          "regra": "regras-combate.json#EmbracedShield"
+        }
+      ]
+    },
+    {
+      "SkillType": 1070,
+      "Title": "Curse of Blood",
+      "Description": "Increase caster's agility by {speedincreaserate}%, and output capacity by {lifeonhitincreaserate}%, lasting for 2 turns. Immediately removes all negative effects from caster.",
+      "PassiveDescription": "Increase caster's agility by {speedincreaserate}%, and output capacity by {lifeonhitincreaserate}%",
+      "codigo": "BloodCurse",
+      "implementacoes": [
+        {
+          "tipo": "BloodCurse",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": null,
+          "alvos": "TargetingType.Single",
+          "talentos": [
+            "BloodCurseDispelPartyTalent",
+            "BloodCurseDispelOnHitTalent",
+            "BloodCurseDepressionTalent"
+          ],
+          "regra": "regras-combate.json#BloodCurse"
+        }
+      ]
+    },
+    {
+      "SkillType": 1071,
+      "Title": "Heartless Fire",
+      "Description": "Plant fire seeds to all enemy units, each seed can cause <fire>{damagerate}% (of output capacity) fire</fire> damage when ignited.",
+      "PassiveDescription": "Every caster's turn there is {chance}% chance of planting fire seeds of 100%-200% output capacity to a random enemy unit.",
+      "codigo": "HeartlessFire",
+      "implementacoes": [
+        {
+          "tipo": "HeartlessFire",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": null,
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "HeartlessTriggerTalent",
+            "HeartlessExtraSeedTalent",
+            "HeartlessSingleHitTalent"
+          ],
+          "regra": "regras-combate.json#HeartlessFire"
+        }
+      ]
+    },
+    {
+      "SkillType": 1072,
+      "Title": "Curse of The Dead",
+      "Description": "Deals <shadow>{maindamagerate}% (of output capacity) shadow</shadow> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to all enemy units, every exising dead unit will cause additional <shadow>{maindamageperlayer}% (of output capacity) shadow</shadow> and <caster>{casterdamagerateperlayer}% (of output capacity) caster's elemental</caster> damage.",
+      "PassiveDescription": "Every dead unit recovers <heal>{healrate}%</heal> of caster's max health points each turn.",
+      "codigo": "CurseOfTheDead",
+      "implementacoes": [
+        {
+          "tipo": "CurseOfTheDead",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Shadow",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "CurseOfTheDeadEnhancementTalent",
+            "TacticTargetAttributeDebuffTalent"
+          ],
+          "regra": "regras-combate.json#CurseOfTheDead"
+        }
+      ]
+    },
+    {
+      "SkillType": 1073,
+      "Title": "Formless",
+      "Description": "Hits an enemy unit {numberofactivetriggers} times, each hit deals <divine>{maindamagerate}% (of output capacity) divine</divine> and <caster>{casterdamagerate}% (of output capacity) caster elemental</caster> damage. Every critical hit will cause additional <divine>{additionalmaindamagerate}% (of output capacity) divine</divine> and <caster>{additionalcasterdamagerate}% (of output capacity) caster's elemental</caster> damage to all enemy units.",
+      "PassiveDescription": "Every critical hit dealt further increase caster's crit rate by {boostrate}%",
+      "codigo": "Formless",
+      "implementacoes": [
+        {
+          "tipo": "Formless",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Divine",
+          "alvos": "TargetingType.Single",
+          "talentos": [
+            "FormlessDebuffTalent",
+            "FormlessExtraHitTalent",
+            "FormlessDispelEnhancementTalent"
+          ],
+          "regra": "regras-combate.json#Formless"
+        }
+      ]
+    },
+    {
+      "SkillType": 1074,
+      "Title": "Ghostly Smoke",
+      "Description": "Reduce all enemy units' agility by {decreaserate}%，and there is {chance}% chance of confusing target for 2 seconds, if target is already confused/stunned, dispels 3 positive effects instead",
+      "PassiveDescription": "Caster's attacks have {chance}% chance of confusing target for 2 seconds.",
+      "codigo": "GhostlySmoke",
+      "implementacoes": [
+        {
+          "tipo": "GhostlySmoke",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "GhostlySmokeConfusionTalent",
+            "TacticTargetAttributeDebuffTalent"
+          ],
+          "regra": "regras-combate.json#GhostlySmoke"
+        }
+      ]
+    },
+    {
+      "SkillType": 1075,
+      "Title": "Fire God",
+      "Description": "Enters 'Fire God' mode for {lastingseconds} seconds, deals <physical>{maindamagerate}% (of output capacity) physical</physical> damage to a random enemy target every second, and plant 1 fire seed on target, deals additional <fire>{additionalmaindamagerate}% (of output capacity) fire</fire> damage when ignited",
+      "PassiveDescription": "All caster's attacks have {chance}% chance of planting 1 fire seed on target, deals <fire>80% fire</fire> damage when ignited.",
+      "codigo": "GodsFire",
+      "implementacoes": [
+        {
+          "tipo": "SpitFire",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [
+            "SpitFireSelfProtectionTalent",
+            "SpitFireFocusTalent",
+            "SpitFireDispelTalent"
+          ],
+          "regra": "regras-combate.json#SpitFire"
+        }
+      ]
+    },
+    {
+      "SkillType": 1076,
+      "Title": "Poisonous Mist",
+      "Description": "Deals <poison>{maindamagerate}% (of output capacity) poison</poison> damage to all enemy units, and reduce heal received by {healreceivedreductionrate}%, lasting 6 seconds.",
+      "PassiveDescription": "Reduces all heal received by enemy units by {healreceivedreductionrate}%.",
+      "codigo": "PoisonousMist",
+      "implementacoes": [
+        {
+          "tipo": "PoisonousMist",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": null,
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "PoisonMistDispelEnhancementTalent",
+            "TacticTargetAttributeDebuffTalent"
+          ],
+          "regra": "regras-combate.json#PoisonousMist"
+        }
+      ]
+    },
+    {
+      "SkillType": 1077,
+      "Title": "Sunder",
+      "Description": "Dispels {numberofactivetriggers} positive effects from all enemy units, and reduces all resistances by {armordecreasevalue}% for {lastingseconds} seconds.",
+      "PassiveDescription": "Damage dealt by caster reduce target's all resistances by {armordecreasevalue}%, lasting {lastingseconds} seconds.",
+      "codigo": "Sunder",
+      "implementacoes": [
+        {
+          "tipo": "Sunder",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": null,
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "SunderDecayTalent",
+            "SunderTauntTalent",
+            "TacticTargetAttributeDebuffTalent"
+          ],
+          "regra": "regras-combate.json#Sunder"
+        }
+      ]
+    },
+    {
+      "SkillType": 1078,
+      "Title": "Swift Wind",
+      "Description": "Boosts {boostrate}% turn progresses for all party members, and increases their agility by {speedincreasevalue} for {lastingseconds} seconds.",
+      "PassiveDescription": "Increase caster's {speedincreasevalue} agility.",
+      "codigo": "SwiftWind",
+      "implementacoes": [
+        {
+          "tipo": "SwiftWind",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": null,
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "SwiftwindDamageTalent",
+            "SwiftWindAgilityBoostTalent",
+            "SwiftWindPushEnhancementTalent"
+          ],
+          "regra": "regras-combate.json#SwiftWind"
+        }
+      ]
+    },
+    {
+      "SkillType": 1079,
+      "Title": "Crash",
+      "Description": "Unleashes {numberofactivetriggers} hits to random enemy units, and each hit deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage.",
+      "PassiveDescription": "Increase all of caster's resistances by {boostrate}% .",
+      "codigo": "Crash",
+      "implementacoes": [
+        {
+          "tipo": "Crash",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "CrashExtraDamageTalent",
+            "CrashExtraHitTalent",
+            "CrashDispelTalent"
+          ],
+          "regra": "regras-combate.json#Crash"
+        }
+      ]
+    },
+    {
+      "SkillType": 1080,
+      "Title": "Drunkenness",
+      "Description": "Increase all party members' skill target number by {numberofadditionaltargets}, lasting 2 turns.",
+      "PassiveDescription": "Every turn there is {chance}% chance of adding {numberofadditionaltargets} skill target for caster.",
+      "codigo": "Drunkenness",
+      "implementacoes": [
+        {
+          "tipo": "Drunkenness",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": null,
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "DrunknessExtraEnhancementTalent",
+            "TargetSelectionBuffTalent"
+          ],
+          "regra": "regras-combate.json#Drunkenness"
+        }
+      ]
+    },
+    {
+      "SkillType": 1081,
+      "Title": "Thousand Knives",
+      "Description": "Dispels 1 positive effect from all enemy units, and deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage.",
+      "PassiveDescription": "Increase {boostrate}% of caster's strength.",
+      "codigo": "ThousandKnives",
+      "implementacoes": [
+        {
+          "tipo": "ThousandKnives",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "ThousandKnivesDebuffTalent",
+            "ThousandKnivesDamageBoostTalent",
+            "ThousandKnivesDispelTalent"
+          ],
+          "regra": "regras-combate.json#ThousandKnives"
+        }
+      ]
+    },
+    {
+      "SkillType": 1082,
+      "Title": "Encouragement",
+      "Description": "Increase all party members' effect resistance rating by {boostrate}, lasting {lastingseconds} seconds.",
+      "PassiveDescription": "Increase all of caster's resistances by {boostrate}% .",
+      "codigo": "Encouragement",
+      "implementacoes": [
+        {
+          "tipo": "Encouragement",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": null,
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "TargetSelectionBuffTalent"
+          ],
+          "regra": "regras-combate.json#Encouragement"
+        }
+      ]
+    },
+    {
+      "SkillType": 1083,
+      "Title": "Rotation",
+      "Description": "Hits enemy unit 3 times, each hit deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage，and each critical hit will recover all party members <heal>{healrate}%</heal> of damage dealt.",
+      "PassiveDescription": "All direct damage dealt by caster have {chance}% chance of recovering {healrate}% of damage dealt to all party members.",
+      "codigo": "Rotation",
+      "implementacoes": [
+        {
+          "tipo": "Rotation",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [
+            "RotationShieldTalent",
+            "RotationDispelTalent",
+            "RotationDecayTalent"
+          ],
+          "regra": "regras-combate.json#Rotation"
+        }
+      ]
+    },
+    {
+      "SkillType": 1084,
+      "Title": "Punishment",
+      "Description": "Deals real damage to all enemy units, damage value equals to <real>{damagerate}% of caster's maximum health points</real>.",
+      "PassiveDescription": "Deals real damage to a random enemy unit each turn, damage value equals to <real>{damagerate}% of caster's maximum health points</real>",
+      "codigo": "Punishment",
+      "implementacoes": [
+        {
+          "tipo": "Punishment",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": null,
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "RageCostTalent",
+            "PushProgressTalent",
+            "TacticTargetAttributeDebuffTalent"
+          ],
+          "regra": "regras-combate.json#Punishment"
+        }
+      ]
+    },
+    {
+      "SkillType": 1085,
+      "Title": "Grand Meteorolite",
+      "Description": "Deals <fire>{maindamagerate}% (of output capacity) fire</fire> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to all enemy units",
+      "PassiveDescription": "Increase {boostrate}% of caster's intelligence.",
+      "codigo": "GrandMeteorolite",
+      "implementacoes": [
+        {
+          "tipo": "GrandMeteorolite",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Fire",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "TacticTargetAttributeDebuffTalent",
+            "MeteoroliteElementalTalent"
+          ],
+          "regra": "regras-combate.json#GrandMeteorolite"
+        }
+      ]
+    },
+    {
+      "SkillType": 1086,
+      "Title": "Frenzy",
+      "Description": "All direct damage dealt by party members will cause <real>{additionaldamagerate}%</real> additional real damage, this effect lasts for 2 turns.",
+      "PassiveDescription": "All direct damage dealt by party members will cause <real>{additionaldamagerate}%</real> additional real damage.",
+      "codigo": "Frenzy",
+      "implementacoes": [
+        {
+          "tipo": "Frenzy",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": null,
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "FrenzyDispelTalent",
+            "FrenzyPushTalent",
+            "FrenzyStunTalent"
+          ],
+          "regra": "regras-combate.json#Frenzy"
+        }
+      ]
+    },
+    {
+      "SkillType": 1087,
+      "Title": "Seduction",
+      "Description": "Confuses target for {lastingseconds} seconds",
+      "PassiveDescription": "Increase {boostrate}% of caster's intelligence.",
+      "codigo": "Seduction",
+      "implementacoes": [
+        {
+          "tipo": "Seduction",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Supportive",
+          "elemento": null,
+          "alvos": "TargetingType.Single",
+          "talentos": [
+            "SeductionExtraTargetTalent",
+            "SeductionDecayTalent",
+            "SeductionCleanTalent"
+          ],
+          "regra": "regras-combate.json#Seduction"
+        }
+      ]
+    },
+    {
+      "SkillType": 1088,
+      "Title": "Divine Remedy",
+      "Description": "Recovers <heal>{healrate}% (of output capacity)</heal> health to all party members.",
+      "PassiveDescription": "Recovers <heal>{healrate}% (of output capacity)</heal> health to all party member every turn.",
+      "codigo": "DivineRemedy",
+      "implementacoes": [
+        {
+          "tipo": "DivineRemedy",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Defensive",
+          "elemento": "OutputType.Heal",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "TargetSelectionBuffTalent"
+          ],
+          "regra": "regras-combate.json#DivineRemedy"
+        }
+      ]
+    },
+    {
+      "SkillType": 1089,
+      "Title": "Brutality",
+      "Description": "Deal <fire>{maindamagerate}% (of output capacity) fire</fire> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to an enemy unit.",
+      "PassiveDescription": "Increase caster's strength by {boostrate}%",
+      "codigo": "Brutality",
+      "implementacoes": [
+        {
+          "tipo": "Brutality",
+          "comando": "SkillCommandType.Active",
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Multiple",
+          "talentos": [
+            "PriorCastDecayTalent",
+            "PriorCastDispelTalent"
+          ],
+          "regra": "regras-combate.json#Brutality"
+        }
+      ]
+    },
+    {
+      "SkillType": 1090,
+      "Title": "Swordsmanship",
+      "Description": "Deals <physical>{maindamagerate}% (of output capacity) physical</physical> and <caster>{casterdamagerate}% (of output capacity) caster's elemental</caster> damage to a random enemy unit.",
+      "PassiveDescription": "",
+      "codigo": "Swordmanship",
+      "implementacoes": [
+        {
+          "tipo": "Swordmanship",
+          "comando": null,
+          "categoria": "SkillCategory.Offensive",
+          "elemento": "OutputType.Physical",
+          "alvos": "TargetingType.Single",
+          "talentos": [],
+          "regra": "regras-combate.json#Swordmanship"
+        }
+      ]
+    }
+  ],
+  "observacao": "Placeholders como {maindamagerate} sao preservados; seus valores sao calculados pelas implementacoes."
+}

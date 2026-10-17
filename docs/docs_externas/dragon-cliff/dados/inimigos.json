@@ -1,0 +1,5461 @@
+{
+  "schema_version": 1,
+  "build_steam": "6212414",
+  "idioma_textos": "en",
+  "natureza": "Referencia externa; extracao estatica da instalacao local. Nao e documentacao aprovada do projeto.",
+  "observacoes": [
+    "Uma linha por configuracao concreta de inimigo, incluindo variantes e geradores dinamicos.",
+    "HP/dano finais nao sao constantes: dependem de nivel, dificuldade, funcao, efeitos e contexto. Regras herdadas ficam no arquivo associado.",
+    "habilidades_mencionadas_na_configuracao nao e uma lista final por encontro; base, dificuldade e overrides podem altera-la."
+  ],
+  "inimigos": [
+    {
+      "id": 20002,
+      "codigo": "GreenGoblin",
+      "nome": "Green Goblin",
+      "configuracao": "GreenGoblinConfiguration",
+      "heranca": [
+        "GreenGoblinConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenGoblinConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenGoblinConfiguration",
+        "linha_descompilada": 206179
+      }
+    },
+    {
+      "id": 20007,
+      "codigo": "PurpleSharpTeeth",
+      "nome": "Purple Sharp Teeth",
+      "configuracao": "PurpleSharpTeethConfiguration",
+      "heranca": [
+        "PurpleSharpTeethConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleSharpTeethConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleSharpTeethConfiguration",
+        "linha_descompilada": 206185
+      }
+    },
+    {
+      "id": 30008,
+      "codigo": "YellowGoblin",
+      "nome": "Yellow Goblin",
+      "configuracao": "YellowGoblinConfiguration",
+      "heranca": [
+        "YellowGoblinConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowGoblinConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowGoblinConfiguration",
+        "linha_descompilada": 206191
+      }
+    },
+    {
+      "id": 20035,
+      "codigo": "BloodyCreature",
+      "nome": "Sin Blade",
+      "configuracao": "OriginalBloodyCreature",
+      "heranca": [
+        "OriginalBloodyCreature",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#OriginalBloodyCreature",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "OriginalBloodyCreature",
+        "linha_descompilada": 206197
+      }
+    },
+    {
+      "id": 30033,
+      "codigo": "Ghoul",
+      "nome": "Skin",
+      "configuracao": "OriginalGhoul",
+      "heranca": [
+        "OriginalGhoul",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#OriginalGhoul",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "OriginalGhoul",
+        "linha_descompilada": 206203
+      }
+    },
+    {
+      "id": 10107,
+      "codigo": "Glutton",
+      "nome": "Glutton",
+      "configuracao": "OriginalGlutton",
+      "heranca": [
+        "OriginalGlutton",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#OriginalGlutton",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "OriginalGlutton",
+        "linha_descompilada": 206209
+      }
+    },
+    {
+      "id": 20037,
+      "codigo": "Ogre",
+      "nome": "Flesh Eater",
+      "configuracao": "OriginalOgre",
+      "heranca": [
+        "OriginalOgre",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalDefender",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#OriginalOgre",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "OriginalOgre",
+        "linha_descompilada": 206215
+      }
+    },
+    {
+      "id": 30031,
+      "codigo": "Piper",
+      "nome": "Wild Shaman",
+      "configuracao": "OriginalPiper",
+      "heranca": [
+        "OriginalPiper",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#OriginalPiper",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "OriginalPiper",
+        "linha_descompilada": 206221
+      }
+    },
+    {
+      "id": 20038,
+      "codigo": "Predator",
+      "nome": "Predator",
+      "configuracao": "OriginalPredator",
+      "heranca": [
+        "OriginalPredator",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#OriginalPredator",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "OriginalPredator",
+        "linha_descompilada": 206227
+      }
+    },
+    {
+      "id": 20039,
+      "codigo": "Puppeteer",
+      "nome": "Puppeteer",
+      "configuracao": "OriginalPuppeter",
+      "heranca": [
+        "OriginalPuppeter",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Healer",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#OriginalPuppeter",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "OriginalPuppeter",
+        "linha_descompilada": 206233
+      }
+    },
+    {
+      "id": 10110,
+      "codigo": "Stringy",
+      "nome": "Evil Whelp",
+      "configuracao": "OriginalStringy",
+      "heranca": [
+        "OriginalStringy",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#OriginalStringy",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "OriginalStringy",
+        "linha_descompilada": 206239
+      }
+    },
+    {
+      "id": 20042,
+      "codigo": "ZombieWarrior",
+      "nome": "Zombie Warrior",
+      "configuracao": "OriginalZombieWarrior",
+      "heranca": [
+        "OriginalZombieWarrior",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#OriginalZombieWarrior",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "OriginalZombieWarrior",
+        "linha_descompilada": 206245
+      }
+    },
+    {
+      "id": 20032,
+      "codigo": "Polymer",
+      "nome": "Evil Mud",
+      "configuracao": "Polymer",
+      "heranca": [
+        "Polymer",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellDefender",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Polymer",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Polymer",
+        "linha_descompilada": 206251
+      }
+    },
+    {
+      "id": 20046,
+      "codigo": "RedDevil",
+      "nome": "Red Devil",
+      "configuracao": "RedDevil",
+      "heranca": [
+        "RedDevil",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedDevil",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedDevil",
+        "linha_descompilada": 206257
+      }
+    },
+    {
+      "id": 10103,
+      "codigo": "SkeletonMage",
+      "nome": "Evil Skeleton",
+      "configuracao": "SkeletonMage",
+      "heranca": [
+        "SkeletonMage",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Healer",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#SkeletonMage",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "SkeletonMage",
+        "linha_descompilada": 206267
+      }
+    },
+    {
+      "id": 20033,
+      "codigo": "Werewolf",
+      "nome": "Bone Wolf",
+      "configuracao": "Werewolf",
+      "heranca": [
+        "Werewolf",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Werewolf",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Werewolf",
+        "linha_descompilada": 206273
+      }
+    },
+    {
+      "id": 20047,
+      "codigo": "YellowDevil",
+      "nome": "Yellow Devil",
+      "configuracao": "YellowDevil",
+      "heranca": [
+        "YellowDevil",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowDevil",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowDevil",
+        "linha_descompilada": 206279
+      }
+    },
+    {
+      "id": 20025,
+      "codigo": "Berserker",
+      "nome": "Berserker",
+      "configuracao": "Berserker",
+      "heranca": [
+        "Berserker",
+        "MistForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "Berserker.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1032,
+          "codigo": "SwallowFire"
+        },
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        },
+        {
+          "id": 1059,
+          "codigo": "LightFire"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Berserker",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Berserker",
+        "linha_descompilada": 208114
+      }
+    },
+    {
+      "id": 10116,
+      "codigo": "BirdMonsterRed",
+      "nome": "BirdMonsterRed",
+      "configuracao": "BirdMonsterRed",
+      "heranca": [
+        "BirdMonsterRed",
+        "ImperialMausoleumBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Divine",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BirdMonsterRed.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1016,
+          "codigo": "Arcane"
+        },
+        {
+          "id": 1026,
+          "codigo": "Harmony"
+        },
+        {
+          "id": 1025,
+          "codigo": "FleshToStone"
+        },
+        {
+          "id": 1046,
+          "codigo": "Shock"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BirdMonsterRed",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BirdMonsterRed",
+        "linha_descompilada": 208157
+      }
+    },
+    {
+      "id": 20034,
+      "codigo": "BloodDevil",
+      "nome": "Soul Reaper",
+      "configuracao": "BloodDevil",
+      "heranca": [
+        "BloodDevil",
+        "HellishPathBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BloodDevil.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1004,
+          "codigo": "Strike"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        },
+        {
+          "id": 1025,
+          "codigo": "FleshToStone"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BloodDevil",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BloodDevil",
+        "linha_descompilada": 208224
+      }
+    },
+    {
+      "id": 40011,
+      "codigo": "BlueBerserker",
+      "nome": "BlueBerserker",
+      "configuracao": "BlueBerserker",
+      "heranca": [
+        "BlueBerserker",
+        "MistForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BlueBerserker.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1007,
+          "codigo": "Stun"
+        },
+        {
+          "id": 1021,
+          "codigo": "Rage"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueBerserker",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueBerserker",
+        "linha_descompilada": 208269
+      }
+    },
+    {
+      "id": 30001,
+      "codigo": "BlueOrc",
+      "nome": "Blue Orc",
+      "configuracao": "BlueOrcConfiguration",
+      "heranca": [
+        "BlueOrcConfiguration",
+        "WoodenForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BlueOrcConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1003,
+          "codigo": "DeadlyBlade"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        },
+        {
+          "id": 1020,
+          "codigo": "BloodThirst"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueOrcConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueOrcConfiguration",
+        "linha_descompilada": 208305
+      }
+    },
+    {
+      "id": 10106,
+      "codigo": "DivineMage",
+      "nome": "Divine Mage",
+      "configuracao": "DivineMage",
+      "heranca": [
+        "DivineMage",
+        "HellishPathBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "DivineMage.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1058,
+          "codigo": "ShieldBurn"
+        },
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#DivineMage",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "DivineMage",
+        "linha_descompilada": 208343
+      }
+    },
+    {
+      "id": 20031,
+      "codigo": "EvilMask",
+      "nome": "Evil Mask",
+      "configuracao": "EvilMask",
+      "heranca": [
+        "EvilMask",
+        "BuriedTempleBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "EvilMask.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1005,
+          "codigo": "MultiStrike"
+        },
+        {
+          "id": 1023,
+          "codigo": "Rebirth"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#EvilMask",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "EvilMask",
+        "linha_descompilada": 208387
+      }
+    },
+    {
+      "id": 40012,
+      "codigo": "GreenBerserker",
+      "nome": "GreenBerserker",
+      "configuracao": "GreenBerserker",
+      "heranca": [
+        "GreenBerserker",
+        "MistForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "GreenBerserker.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1036,
+          "codigo": "CorruptedPower"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenBerserker",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenBerserker",
+        "linha_descompilada": 208417
+      }
+    },
+    {
+      "id": 20006,
+      "codigo": "GreenOrc",
+      "nome": "Green Orc",
+      "configuracao": "GreenOrcConfiguration",
+      "heranca": [
+        "GreenOrcConfiguration",
+        "WoodenForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "GreenOrcConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1002,
+          "codigo": "BladeRain"
+        },
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        },
+        {
+          "id": 1020,
+          "codigo": "BloodThirst"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenOrcConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenOrcConfiguration",
+        "linha_descompilada": 208465
+      }
+    },
+    {
+      "id": 10083,
+      "codigo": "GreenStoneGuard",
+      "nome": "Green Stone Guard",
+      "configuracao": "GreenStoneGuard",
+      "heranca": [
+        "GreenStoneGuard",
+        "HellishPathBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "GreenStoneGuard.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1032,
+          "codigo": "SwallowFire"
+        },
+        {
+          "id": 1059,
+          "codigo": "LightFire"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenStoneGuard",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenStoneGuard",
+        "linha_descompilada": 208506
+      }
+    },
+    {
+      "id": 20030,
+      "codigo": "HeartEater",
+      "nome": "Heart Eater",
+      "configuracao": "HeartEater",
+      "heranca": [
+        "HeartEater",
+        "BuriedTempleBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "HeartEater.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1058,
+          "codigo": "ShieldBurn"
+        },
+        {
+          "id": 1062,
+          "codigo": "ReturningSoul"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#HeartEater",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "HeartEater",
+        "linha_descompilada": 208542
+      }
+    },
+    {
+      "id": 30034,
+      "codigo": "IceSkull",
+      "nome": "Ice Skull",
+      "configuracao": "IceSkull",
+      "heranca": [
+        "IceSkull",
+        "HellishPathBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": "OutputType.Ice",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "IceSkull.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1007,
+          "codigo": "Stun"
+        },
+        {
+          "id": 1025,
+          "codigo": "FleshToStone"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#IceSkull",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "IceSkull",
+        "linha_descompilada": 208588
+      }
+    },
+    {
+      "id": 10101,
+      "codigo": "MagicAmor",
+      "nome": "Magic Amor",
+      "configuracao": "MagicAmor",
+      "heranca": [
+        "MagicAmor",
+        "BuriedTempleBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MagicAmor.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1048,
+          "codigo": "FireBlast"
+        },
+        {
+          "id": 1059,
+          "codigo": "LightFire"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#MagicAmor",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "MagicAmor",
+        "linha_descompilada": 208637
+      }
+    },
+    {
+      "id": 10102,
+      "codigo": "PoisonMage",
+      "nome": "Poison Mage",
+      "configuracao": "PoisonMage",
+      "heranca": [
+        "PoisonMage",
+        "ImperialMausoleumBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PoisonMage.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1050,
+          "codigo": "Nightmare"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PoisonMage",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PoisonMage",
+        "linha_descompilada": 208664
+      }
+    },
+    {
+      "id": 40010,
+      "codigo": "PurpleBerserker",
+      "nome": "PurpleBerserker",
+      "configuracao": "PurpleBerserker",
+      "heranca": [
+        "PurpleBerserker",
+        "MistForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PurpleBerserker.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1002,
+          "codigo": "BladeRain"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleBerserker",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleBerserker",
+        "linha_descompilada": 208697
+      }
+    },
+    {
+      "id": 10117,
+      "codigo": "PurpleBloodEye",
+      "nome": "PurpleBloodEye",
+      "configuracao": "PurpleBloodEye",
+      "heranca": [
+        "PurpleBloodEye",
+        "ImperialMausoleumBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Statue",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleBloodEye",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleBloodEye",
+        "linha_descompilada": 208727
+      }
+    },
+    {
+      "id": 10001,
+      "codigo": "PurpleOrc",
+      "nome": "Purple Orc",
+      "configuracao": "PurpleOrcConfiguration",
+      "heranca": [
+        "PurpleOrcConfiguration",
+        "WoodenForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PurpleOrcConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1008,
+          "codigo": "Taunt"
+        },
+        {
+          "id": 1023,
+          "codigo": "Rebirth"
+        },
+        {
+          "id": 1020,
+          "codigo": "BloodThirst"
+        },
+        {
+          "id": 1005,
+          "codigo": "MultiStrike"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleOrcConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleOrcConfiguration",
+        "linha_descompilada": 208790
+      }
+    },
+    {
+      "id": 10021,
+      "codigo": "RedBirdMonster",
+      "nome": "Red Bird Monster",
+      "configuracao": "RedBirdMonsterConfiguration",
+      "heranca": [
+        "RedBirdMonsterConfiguration",
+        "MistForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedBirdMonsterConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1050,
+          "codigo": "Nightmare"
+        },
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedBirdMonsterConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedBirdMonsterConfiguration",
+        "linha_descompilada": 208858
+      }
+    },
+    {
+      "id": 20018,
+      "codigo": "RedDoomFighter",
+      "nome": "Red Doom Fighter",
+      "configuracao": "RedDoomFighterConfiguration",
+      "heranca": [
+        "RedDoomFighterConfiguration",
+        "MistForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedDoomFighterConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1041,
+          "codigo": "SpellSlayer"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedDoomFighterConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedDoomFighterConfiguration",
+        "linha_descompilada": 208893
+      }
+    },
+    {
+      "id": 10065,
+      "codigo": "RedHighMage",
+      "nome": "Red High Mage",
+      "configuracao": "RedHighMage",
+      "heranca": [
+        "RedHighMage",
+        "SnowMountainBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedHighMage.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1046,
+          "codigo": "Shock"
+        },
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedHighMage",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedHighMage",
+        "linha_descompilada": 208930
+      }
+    },
+    {
+      "id": 30020,
+      "codigo": "RedMud",
+      "nome": "Red Mud",
+      "configuracao": "RedMudConfiguration",
+      "heranca": [
+        "RedMudConfiguration",
+        "MistForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalDefender",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedMudConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1035,
+          "codigo": "BrightCircle"
+        },
+        {
+          "id": 1023,
+          "codigo": "Rebirth"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedMudConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedMudConfiguration",
+        "linha_descompilada": 208961
+      }
+    },
+    {
+      "id": 20003,
+      "codigo": "RedOrc",
+      "nome": "Red Orc",
+      "configuracao": "RedOrcConfiguration",
+      "heranca": [
+        "RedOrcConfiguration",
+        "WoodenForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedOrcConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1005,
+          "codigo": "MultiStrike"
+        },
+        {
+          "id": 1021,
+          "codigo": "Rage"
+        },
+        {
+          "id": 1020,
+          "codigo": "BloodThirst"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedOrcConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedOrcConfiguration",
+        "linha_descompilada": 208997
+      }
+    },
+    {
+      "id": 10016,
+      "codigo": "RedShadowBat",
+      "nome": "Red Shadow Bat",
+      "configuracao": "RedShadowBatConfiguration",
+      "heranca": [
+        "RedShadowBatConfiguration",
+        "MistForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Healer",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedShadowBatConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1018,
+          "codigo": "DivineLight"
+        },
+        {
+          "id": 1026,
+          "codigo": "Harmony"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedShadowBatConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedShadowBatConfiguration",
+        "linha_descompilada": 209028
+      }
+    },
+    {
+      "id": 30029,
+      "codigo": "ShadowSkinner",
+      "nome": "Shadow Skinner",
+      "configuracao": "ShadowSkinner",
+      "heranca": [
+        "ShadowSkinner",
+        "BuriedTempleBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "ShadowSkinner.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1041,
+          "codigo": "SpellSlayer"
+        },
+        {
+          "id": 1021,
+          "codigo": "Rage"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#ShadowSkinner",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "ShadowSkinner",
+        "linha_descompilada": 209051
+      }
+    },
+    {
+      "id": 40027,
+      "codigo": "ThugBoss1",
+      "nome": "Thug",
+      "configuracao": "ThugBoss1",
+      "heranca": [
+        "ThugBoss1",
+        "NorthernTerritoryBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "ThugBoss1.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1009,
+          "codigo": "Roar"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#ThugBoss1",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "ThugBoss1",
+        "linha_descompilada": 209065
+      }
+    },
+    {
+      "id": 40028,
+      "codigo": "ThugBoss2",
+      "nome": "Thug",
+      "configuracao": "ThugBoss2",
+      "heranca": [
+        "ThugBoss2",
+        "NorthernTerritoryBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "ThugBoss2.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1011,
+          "codigo": "Scorn"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#ThugBoss2",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "ThugBoss2",
+        "linha_descompilada": 209079
+      }
+    },
+    {
+      "id": 10013,
+      "codigo": "YellowDragonPrayer",
+      "nome": "Yellow Dragon Prayer",
+      "configuracao": "YellowDragonPrayerConfiguration",
+      "heranca": [
+        "YellowDragonPrayerConfiguration",
+        "SnowMountainBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Divine",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowDragonPrayerConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1045,
+          "codigo": "CurseOfCube"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowDragonPrayerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowDragonPrayerConfiguration",
+        "linha_descompilada": 209093
+      }
+    },
+    {
+      "id": 10066,
+      "codigo": "YellowHighMage",
+      "nome": "Yellow High Mage",
+      "configuracao": "YellowHighMage",
+      "heranca": [
+        "YellowHighMage",
+        "SnowMountainBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowHighMage.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1043,
+          "codigo": "SeedsOfSin"
+        },
+        {
+          "id": 1060,
+          "codigo": "SoulSeeker"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowHighMage",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowHighMage",
+        "linha_descompilada": 209112
+      }
+    },
+    {
+      "id": 20004,
+      "codigo": "YellowOrc",
+      "nome": "Yellow Orc",
+      "configuracao": "YellowOrcConfiguration",
+      "heranca": [
+        "YellowOrcConfiguration",
+        "WoodenForestBossConfigurationBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowOrcConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1007,
+          "codigo": "Stun"
+        },
+        {
+          "id": 1062,
+          "codigo": "ReturningSoul"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowOrcConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowOrcConfiguration",
+        "linha_descompilada": 209142
+      }
+    },
+    {
+      "id": 30025,
+      "codigo": "YellowShadowKiller",
+      "nome": "Yellow Shadow Killer",
+      "configuracao": "YellowShadowKillerConfiguration",
+      "heranca": [
+        "YellowShadowKillerConfiguration",
+        "SnowMountainBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowShadowKillerConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1047,
+          "codigo": "FireBreath"
+        },
+        {
+          "id": 1026,
+          "codigo": "Harmony"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowShadowKillerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowShadowKillerConfiguration",
+        "linha_descompilada": 209179
+      }
+    },
+    {
+      "id": 20014,
+      "codigo": "YellowSpearer",
+      "nome": "Yellow Spearer",
+      "configuracao": "YellowSpearerConfiguration",
+      "heranca": [
+        "YellowSpearerConfiguration",
+        "SnowMountainBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowSpearerConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1037,
+          "codigo": "BurningHeart"
+        },
+        {
+          "id": 1020,
+          "codigo": "BloodThirst"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowSpearerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowSpearerConfiguration",
+        "linha_descompilada": 209213
+      }
+    },
+    {
+      "id": 30036,
+      "codigo": "BlueCyclops",
+      "nome": "BlueCyclops",
+      "configuracao": "BlueCyclops",
+      "heranca": [
+        "BlueCyclops",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BlueCyclops.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1037,
+          "codigo": "BurningHeart"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueCyclops",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueCyclops",
+        "linha_descompilada": 209285
+      }
+    },
+    {
+      "id": 10082,
+      "codigo": "BlueStoneGuard",
+      "nome": "Blue Stone Guard",
+      "configuracao": "BlueStoneGuard",
+      "heranca": [
+        "BlueStoneGuard",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BlueStoneGuard.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1033,
+          "codigo": "Shadowless"
+        },
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueStoneGuard",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueStoneGuard",
+        "linha_descompilada": 209318
+      }
+    },
+    {
+      "id": 10087,
+      "codigo": "BlueVampire",
+      "nome": "Blue Vampire",
+      "configuracao": "BlueVampire",
+      "heranca": [
+        "BlueVampire",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BlueVampire.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1055,
+          "codigo": "ChargedBolt"
+        },
+        {
+          "id": 1062,
+          "codigo": "ReturningSoul"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueVampire",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueVampire",
+        "linha_descompilada": 209346
+      }
+    },
+    {
+      "id": 30028,
+      "codigo": "Cyclops",
+      "nome": "Cyclops",
+      "configuracao": "Cyclops",
+      "heranca": [
+        "Cyclops",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellDefender",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Cyclops",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Cyclops",
+        "linha_descompilada": 209360
+      }
+    },
+    {
+      "id": 10088,
+      "codigo": "GreenVampire",
+      "nome": "Green Vampire",
+      "configuracao": "GreenVampire",
+      "heranca": [
+        "GreenVampire",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "GreenVampire.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1016,
+          "codigo": "Arcane"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenVampire",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenVampire",
+        "linha_descompilada": 209366
+      }
+    },
+    {
+      "id": 10034,
+      "codigo": "PurpleBat",
+      "nome": "Purple Bat",
+      "configuracao": "PurpleBat",
+      "heranca": [
+        "PurpleBat",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PurpleBat.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1042,
+          "codigo": "ShadowSacrifice"
+        },
+        {
+          "id": 1026,
+          "codigo": "Harmony"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleBat",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleBat",
+        "linha_descompilada": 209380
+      }
+    },
+    {
+      "id": 10022,
+      "codigo": "PurpleBirdMonster",
+      "nome": "Purple Bird Monster",
+      "configuracao": "PurpleBirdMonsterConfiguration",
+      "heranca": [
+        "PurpleBirdMonsterConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PurpleBirdMonsterConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1026,
+          "codigo": "Harmony"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleBirdMonsterConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleBirdMonsterConfiguration",
+        "linha_descompilada": 209394
+      }
+    },
+    {
+      "id": 20045,
+      "codigo": "PurpleDevil",
+      "nome": "Purple Devil",
+      "configuracao": "PurpleDevil",
+      "heranca": [
+        "PurpleDevil",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleDevil",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleDevil",
+        "linha_descompilada": 209407
+      }
+    },
+    {
+      "id": 20019,
+      "codigo": "PurpleDoomFighter",
+      "nome": "Purple Doom Fighter",
+      "configuracao": "PurpleDoomFighterConfiguration",
+      "heranca": [
+        "PurpleDoomFighterConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalDefender",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PurpleDoomFighterConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1008,
+          "codigo": "Taunt"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleDoomFighterConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleDoomFighterConfiguration",
+        "linha_descompilada": 209417
+      }
+    },
+    {
+      "id": 10011,
+      "codigo": "PurpleGrassFace",
+      "nome": "Purple Grass Face",
+      "configuracao": "PurpleGrassFaceConfiguration",
+      "heranca": [
+        "PurpleGrassFaceConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PurpleGrassFaceConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1014,
+          "codigo": "Lightning"
+        },
+        {
+          "id": 1021,
+          "codigo": "Rage"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleGrassFaceConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleGrassFaceConfiguration",
+        "linha_descompilada": 209431
+      }
+    },
+    {
+      "id": 10064,
+      "codigo": "PurpleHighMage",
+      "nome": "Purple High Mage",
+      "configuracao": "PurpleHighMage",
+      "heranca": [
+        "PurpleHighMage",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Healer",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PurpleHighMage.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1014,
+          "codigo": "Lightning"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleHighMage",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleHighMage",
+        "linha_descompilada": 209449
+      }
+    },
+    {
+      "id": 30022,
+      "codigo": "PurpleMud",
+      "nome": "Purple Mud",
+      "configuracao": "PurpleMudConfiguration",
+      "heranca": [
+        "PurpleMudConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellDefender",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PurpleMudConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1008,
+          "codigo": "Taunt"
+        },
+        {
+          "id": 1021,
+          "codigo": "Rage"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleMudConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleMudConfiguration",
+        "linha_descompilada": 209462
+      }
+    },
+    {
+      "id": 10017,
+      "codigo": "PurpleShadowBat",
+      "nome": "Purple Shadow Bat",
+      "configuracao": "PurpleShadowBatConfiguration",
+      "heranca": [
+        "PurpleShadowBatConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PurpleShadowBatConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1048,
+          "codigo": "FireBlast"
+        },
+        {
+          "id": 1026,
+          "codigo": "Harmony"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleShadowBatConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleShadowBatConfiguration",
+        "linha_descompilada": 209476
+      }
+    },
+    {
+      "id": 10007,
+      "codigo": "PurpleShaman",
+      "nome": "Purple Shaman",
+      "configuracao": "PurpleShamanConfiguration",
+      "heranca": [
+        "PurpleShamanConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PurpleShamanConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1063,
+          "codigo": "FireBurst"
+        },
+        {
+          "id": 1059,
+          "codigo": "LightFire"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleShamanConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleShamanConfiguration",
+        "linha_descompilada": 209490
+      }
+    },
+    {
+      "id": 10084,
+      "codigo": "PurpleStoneGuard",
+      "nome": "Purple Stone Guard",
+      "configuracao": "PurpleStoneGuard",
+      "heranca": [
+        "PurpleStoneGuard",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PurpleStoneGuard.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1011,
+          "codigo": "Scorn"
+        },
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleStoneGuard",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleStoneGuard",
+        "linha_descompilada": 209508
+      }
+    },
+    {
+      "id": 30014,
+      "codigo": "RedArcher",
+      "nome": "Red Archer",
+      "configuracao": "RedArcherConfiguration",
+      "heranca": [
+        "RedArcherConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedArcherConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1006,
+          "codigo": "StealSoul"
+        },
+        {
+          "id": 1023,
+          "codigo": "Rebirth"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedArcherConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedArcherConfiguration",
+        "linha_descompilada": 209522
+      }
+    },
+    {
+      "id": 10014,
+      "codigo": "RedDragonPrayer",
+      "nome": "Red Dragon Prayer",
+      "configuracao": "RedDragonPrayerConfiguration",
+      "heranca": [
+        "RedDragonPrayerConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Healer",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedDragonPrayerConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1017,
+          "codigo": "DivineHammer"
+        },
+        {
+          "id": 1026,
+          "codigo": "Harmony"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedDragonPrayerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedDragonPrayerConfiguration",
+        "linha_descompilada": 209536
+      }
+    },
+    {
+      "id": 30012,
+      "codigo": "RedGrassFace",
+      "nome": "Red Grass Face",
+      "configuracao": "RedGrassFaceConfiguration",
+      "heranca": [
+        "RedGrassFaceConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Healer",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedGrassFaceConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1043,
+          "codigo": "SeedsOfSin"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedGrassFaceConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedGrassFaceConfiguration",
+        "linha_descompilada": 209550
+      }
+    },
+    {
+      "id": 20023,
+      "codigo": "RedReaper",
+      "nome": "Red Reaper",
+      "configuracao": "RedReaperConfiguration",
+      "heranca": [
+        "RedReaperConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedReaperConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1034,
+          "codigo": "WillOfFight"
+        },
+        {
+          "id": 1022,
+          "codigo": "Principle"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedReaperConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedReaperConfiguration",
+        "linha_descompilada": 209563
+      }
+    },
+    {
+      "id": 10075,
+      "codigo": "RedScorpion",
+      "nome": "Red Scorpion",
+      "configuracao": "RedScorpion",
+      "heranca": [
+        "RedScorpion",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedScorpion.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1004,
+          "codigo": "Strike"
+        },
+        {
+          "id": 1020,
+          "codigo": "BloodThirst"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedScorpion",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedScorpion",
+        "linha_descompilada": 209577
+      }
+    },
+    {
+      "id": 30026,
+      "codigo": "RedShadowKiller",
+      "nome": "Red Shadow Killer",
+      "configuracao": "RedShadowKillerConfiguration",
+      "heranca": [
+        "RedShadowKillerConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedShadowKillerConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1043,
+          "codigo": "SeedsOfSin"
+        },
+        {
+          "id": 1023,
+          "codigo": "Rebirth"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedShadowKillerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedShadowKillerConfiguration",
+        "linha_descompilada": 209602
+      }
+    },
+    {
+      "id": 10006,
+      "codigo": "RedShaman",
+      "nome": "Red Shaman",
+      "configuracao": "RedShamanConfiguration",
+      "heranca": [
+        "RedShamanConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellDefender",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedShamanConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1018,
+          "codigo": "DivineLight"
+        },
+        {
+          "id": 1022,
+          "codigo": "Principle"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedShamanConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedShamanConfiguration",
+        "linha_descompilada": 209616
+      }
+    },
+    {
+      "id": 30009,
+      "codigo": "RedSharpTeeth",
+      "nome": "Red Sharp Teeth",
+      "configuracao": "RedSharpTeethConfiguration",
+      "heranca": [
+        "RedSharpTeethConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedSharpTeethConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedSharpTeethConfiguration",
+        "linha_descompilada": 209630
+      }
+    },
+    {
+      "id": 20012,
+      "codigo": "RedSpearer",
+      "nome": "Red Spearer",
+      "configuracao": "RedSpearerConfiguration",
+      "heranca": [
+        "RedSpearerConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedSpearerConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1002,
+          "codigo": "BladeRain"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedSpearerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedSpearerConfiguration",
+        "linha_descompilada": 209636
+      }
+    },
+    {
+      "id": 10085,
+      "codigo": "RedStoneGuard",
+      "nome": "Red Stone Guard",
+      "configuracao": "RedStoneGuard",
+      "heranca": [
+        "RedStoneGuard",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedStoneGuard.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1001,
+          "codigo": "Assassination"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedStoneGuard",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedStoneGuard",
+        "linha_descompilada": 209649
+      }
+    },
+    {
+      "id": 10090,
+      "codigo": "RedVampire",
+      "nome": "Red Vampire",
+      "configuracao": "RedVampire",
+      "heranca": [
+        "RedVampire",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedVampire.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1013,
+          "codigo": "Meteorolite"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedVampire",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedVampire",
+        "linha_descompilada": 209662
+      }
+    },
+    {
+      "id": 10004,
+      "codigo": "ScreamingShaman",
+      "nome": "Screaming Shaman",
+      "configuracao": "ScreamingShamanConfiguration",
+      "heranca": [
+        "ScreamingShamanConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "ScreamingShamanConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1016,
+          "codigo": "Arcane"
+        },
+        {
+          "id": 1026,
+          "codigo": "Harmony"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#ScreamingShamanConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "ScreamingShamanConfiguration",
+        "linha_descompilada": 209676
+      }
+    },
+    {
+      "id": 40022,
+      "codigo": "ThugLeader1",
+      "nome": "Thug Leader",
+      "configuracao": "ThugLeader1",
+      "heranca": [
+        "ThugLeader1",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "ThugLeader1.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1034,
+          "codigo": "WillOfFight"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#ThugLeader1",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "ThugLeader1",
+        "linha_descompilada": 209701
+      }
+    },
+    {
+      "id": 40023,
+      "codigo": "ThugLeader2",
+      "nome": "Thug Leader",
+      "configuracao": "ThugLeader2",
+      "heranca": [
+        "ThugLeader2",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "ThugLeader2.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1046,
+          "codigo": "Shock"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#ThugLeader2",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "ThugLeader2",
+        "linha_descompilada": 209736
+      }
+    },
+    {
+      "id": 40024,
+      "codigo": "ThugLeader3",
+      "nome": "Thug Leader",
+      "configuracao": "ThugLeader3",
+      "heranca": [
+        "ThugLeader3",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "ThugLeader3.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1058,
+          "codigo": "ShieldBurn"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#ThugLeader3",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "ThugLeader3",
+        "linha_descompilada": 209771
+      }
+    },
+    {
+      "id": 30017,
+      "codigo": "YellowArcher",
+      "nome": "Yellow Archer",
+      "configuracao": "YellowArcherConfiguration",
+      "heranca": [
+        "YellowArcherConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowArcherConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1010,
+          "codigo": "Relentless"
+        },
+        {
+          "id": 1022,
+          "codigo": "Principle"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowArcherConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowArcherConfiguration",
+        "linha_descompilada": 209806
+      }
+    },
+    {
+      "id": 10056,
+      "codigo": "YellowGoblinWizard",
+      "nome": "Yellow Goblin Wizard",
+      "configuracao": "YellowGoblinWizard",
+      "heranca": [
+        "YellowGoblinWizard",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellDefender",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowGoblinWizard.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1044,
+          "codigo": "Confusion"
+        },
+        {
+          "id": 1059,
+          "codigo": "LightFire"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowGoblinWizard",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowGoblinWizard",
+        "linha_descompilada": 209820
+      }
+    },
+    {
+      "id": 20022,
+      "codigo": "YellowReaper",
+      "nome": "Yellow Reaper",
+      "configuracao": "YellowReaperConfiguration",
+      "heranca": [
+        "YellowReaperConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowReaperConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1005,
+          "codigo": "MultiStrike"
+        },
+        {
+          "id": 1021,
+          "codigo": "Rage"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowReaperConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowReaperConfiguration",
+        "linha_descompilada": 209834
+      }
+    },
+    {
+      "id": 10076,
+      "codigo": "YellowScorpion",
+      "nome": "Yellow Scorpion",
+      "configuracao": "YellowScorpion",
+      "heranca": [
+        "YellowScorpion",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowScorpion.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1008,
+          "codigo": "Taunt"
+        },
+        {
+          "id": 1020,
+          "codigo": "BloodThirst"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowScorpion",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowScorpion",
+        "linha_descompilada": 209848
+      }
+    },
+    {
+      "id": 10008,
+      "codigo": "YellowShaman",
+      "nome": "Yellow Shaman",
+      "configuracao": "YellowShamanConfiguration",
+      "heranca": [
+        "YellowShamanConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowShamanConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1015,
+          "codigo": "Freeze"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowShamanConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowShamanConfiguration",
+        "linha_descompilada": 209862
+      }
+    },
+    {
+      "id": 10086,
+      "codigo": "YellowStoneGuard",
+      "nome": "Yellow Stone Guard",
+      "configuracao": "YellowStoneGuard",
+      "heranca": [
+        "YellowStoneGuard",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Protector",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowStoneGuard.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1006,
+          "codigo": "StealSoul"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowStoneGuard",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowStoneGuard",
+        "linha_descompilada": 209876
+      }
+    },
+    {
+      "id": 10091,
+      "codigo": "YellowVampire",
+      "nome": "Yellow Vampire",
+      "configuracao": "YellowVampire",
+      "heranca": [
+        "YellowVampire",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowVampire.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1007,
+          "codigo": "Stun"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowVampire",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowVampire",
+        "linha_descompilada": 209889
+      }
+    },
+    {
+      "id": 20041,
+      "codigo": "BlacksmithBrother",
+      "nome": "Blacksmith Wong, the Undead",
+      "configuracao": "BlacksmithBrother",
+      "heranca": [
+        "BlacksmithBrother",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalDefender",
+      "elemento_constante": "OutputType.Poison",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BlacksmithBrother.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1007,
+          "codigo": "Stun"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlacksmithBrother",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlacksmithBrother",
+        "linha_descompilada": 210014
+      }
+    },
+    {
+      "id": 40006,
+      "codigo": "BloodyEye",
+      "nome": "Bloody Eye",
+      "configuracao": "BloodyEye",
+      "heranca": [
+        "BloodyEye",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Shadow",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BloodyEye.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1044,
+          "codigo": "Confusion"
+        },
+        {
+          "id": 1062,
+          "codigo": "ReturningSoul"
+        },
+        {
+          "id": 1025,
+          "codigo": "FleshToStone"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BloodyEye",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BloodyEye",
+        "linha_descompilada": 210083
+      }
+    },
+    {
+      "id": 20053,
+      "codigo": "BlueHeartEater",
+      "nome": "Heart Eater",
+      "configuracao": "BlueHeartEater",
+      "heranca": [
+        "BlueHeartEater",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BlueHeartEater.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1037,
+          "codigo": "BurningHeart"
+        },
+        {
+          "id": 1021,
+          "codigo": "Rage"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueHeartEater",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueHeartEater",
+        "linha_descompilada": 210144
+      }
+    },
+    {
+      "id": 40008,
+      "codigo": "CorruptedHorn",
+      "nome": "Corrupted Horn",
+      "configuracao": "CorruptedHorn",
+      "heranca": [
+        "CorruptedHorn",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "CorruptedHorn.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1036,
+          "codigo": "CorruptedPower"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#CorruptedHorn",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "CorruptedHorn",
+        "linha_descompilada": 210202
+      }
+    },
+    {
+      "id": 20026,
+      "codigo": "DarkKnight",
+      "nome": "Dark Knight",
+      "configuracao": "DarkKnight",
+      "heranca": [
+        "DarkKnight",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#DarkKnight",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "DarkKnight",
+        "linha_descompilada": 210244
+      }
+    },
+    {
+      "id": 40007,
+      "codigo": "Death",
+      "nome": "Dark Executor",
+      "configuracao": "Death",
+      "heranca": [
+        "Death",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Shadow",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "Death.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1042,
+          "codigo": "ShadowSacrifice"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Death",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Death",
+        "linha_descompilada": 210280
+      }
+    },
+    {
+      "id": 40002,
+      "codigo": "DemonDragon",
+      "nome": "Demon Dragon",
+      "configuracao": "DemonDragon",
+      "heranca": [
+        "DemonDragon",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Fire",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "DemonDragon.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1012,
+          "codigo": "FireBall"
+        },
+        {
+          "id": 1060,
+          "codigo": "SoulSeeker"
+        },
+        {
+          "id": 1026,
+          "codigo": "Harmony"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#DemonDragon",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "DemonDragon",
+        "linha_descompilada": 210342
+      }
+    },
+    {
+      "id": 40000,
+      "codigo": "DemonSkull",
+      "nome": "Yan, the Skull Collector",
+      "configuracao": "DemonSkull",
+      "heranca": [
+        "DemonSkull",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": "OutputType.Poison",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "DemonSkull.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1006,
+          "codigo": "StealSoul"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#DemonSkull",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "DemonSkull",
+        "linha_descompilada": 210425
+      }
+    },
+    {
+      "id": 40001,
+      "codigo": "DevilMan",
+      "nome": "Bone Devil",
+      "configuracao": "DevilMan",
+      "heranca": [
+        "DevilMan",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": "OutputType.Fire",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "DevilMan.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1059,
+          "codigo": "LightFire"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        },
+        {
+          "id": 1005,
+          "codigo": "MultiStrike"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#DevilMan",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "DevilMan",
+        "linha_descompilada": 210534
+      }
+    },
+    {
+      "id": 10098,
+      "codigo": "FireMage",
+      "nome": "Hellfire Mage",
+      "configuracao": "FireMageKeeper",
+      "heranca": [
+        "FireMageKeeper",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "FireMageKeeper.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1047,
+          "codigo": "FireBreath"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#FireMageKeeper",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "FireMageKeeper",
+        "linha_descompilada": 210565
+      }
+    },
+    {
+      "id": 40003,
+      "codigo": "Golem",
+      "nome": "Stone Protector",
+      "configuracao": "Golem",
+      "heranca": [
+        "Golem",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Divine",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "Golem.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1058,
+          "codigo": "ShieldBurn"
+        },
+        {
+          "id": 1029,
+          "codigo": "LightningSpeed"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Golem",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Golem",
+        "linha_descompilada": 210615
+      }
+    },
+    {
+      "id": 40004,
+      "codigo": "GreedyMouth",
+      "nome": "Yitchin, the nest of thousand worms",
+      "configuracao": "GreedyMouth",
+      "heranca": [
+        "GreedyMouth",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Poison",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "GreedyMouth.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1050,
+          "codigo": "Nightmare"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreedyMouth",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreedyMouth",
+        "linha_descompilada": 210651
+      }
+    },
+    {
+      "id": 40009,
+      "codigo": "Hydra",
+      "nome": "Hydra",
+      "configuracao": "Hydra",
+      "heranca": [
+        "Hydra",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": "OutputType.Fire",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "Hydra.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1040,
+          "codigo": "Pierce"
+        },
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        },
+        {
+          "id": 1020,
+          "codigo": "BloodThirst"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Hydra",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Hydra",
+        "linha_descompilada": 210716
+      }
+    },
+    {
+      "id": 10100,
+      "codigo": "IceBeast",
+      "nome": "Ice Beast",
+      "configuracao": "Icebeast",
+      "heranca": [
+        "Icebeast",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Icebeast",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Icebeast",
+        "linha_descompilada": 210754
+      }
+    },
+    {
+      "id": 40005,
+      "codigo": "LavaBeast",
+      "nome": "Blood Stone Beast",
+      "configuracao": "LavaBeast",
+      "heranca": [
+        "LavaBeast",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Fire",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "LavaBeast.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1012,
+          "codigo": "FireBall"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        },
+        {
+          "id": 1047,
+          "codigo": "FireBreath"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#LavaBeast",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "LavaBeast",
+        "linha_descompilada": 210781
+      }
+    },
+    {
+      "id": 20036,
+      "codigo": "Mutant",
+      "nome": "Soul Chainer, Scorpion Queen",
+      "configuracao": "Mutant",
+      "heranca": [
+        "Mutant",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Mutant",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Mutant",
+        "linha_descompilada": 210951
+      }
+    },
+    {
+      "id": 40026,
+      "codigo": "Nameless",
+      "nome": "Nameless",
+      "configuracao": "Nameless",
+      "heranca": [
+        "Nameless",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "Nameless.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        },
+        {
+          "id": 1013,
+          "codigo": "Meteorolite"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Nameless",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Nameless",
+        "linha_descompilada": 211006
+      }
+    },
+    {
+      "id": 30035,
+      "codigo": "Pharmacist",
+      "nome": "Dragon Servant",
+      "configuracao": "Pharmacist",
+      "heranca": [
+        "Pharmacist",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Lightening",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "Pharmacist.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1046,
+          "codigo": "Shock"
+        },
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Pharmacist",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Pharmacist",
+        "linha_descompilada": 211071
+      }
+    },
+    {
+      "id": 30032,
+      "codigo": "Puppet",
+      "nome": "Undead Princess",
+      "configuracao": "Puppet",
+      "heranca": [
+        "Puppet",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": "OutputType.Fire",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "Puppet.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1050,
+          "codigo": "Nightmare"
+        },
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Puppet",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Puppet",
+        "linha_descompilada": 211119
+      }
+    },
+    {
+      "id": 10118,
+      "codigo": "PurpleIceBeast",
+      "nome": "PurpleIceBeast",
+      "configuracao": "PurpleIceBeast",
+      "heranca": [
+        "PurpleIceBeast",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleIceBeast",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleIceBeast",
+        "linha_descompilada": 211190
+      }
+    },
+    {
+      "id": 20055,
+      "codigo": "RedHeartEater",
+      "nome": "Soul Eater",
+      "configuracao": "RedHeartEater",
+      "heranca": [
+        "RedHeartEater",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedHeartEater.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1008,
+          "codigo": "Taunt"
+        },
+        {
+          "id": 1020,
+          "codigo": "BloodThirst"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedHeartEater",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedHeartEater",
+        "linha_descompilada": 211196
+      }
+    },
+    {
+      "id": 10119,
+      "codigo": "RedIceBeast",
+      "nome": "RedIceBeast",
+      "configuracao": "RedIceBeast",
+      "heranca": [
+        "RedIceBeast",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedIceBeast",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedIceBeast",
+        "linha_descompilada": 211247
+      }
+    },
+    {
+      "id": 20057,
+      "codigo": "RedMask",
+      "nome": "RedMask",
+      "configuracao": "RedMask",
+      "heranca": [
+        "RedMask",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": "OutputType.Fire",
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedMask.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1062,
+          "codigo": "ReturningSoul"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedMask",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedMask",
+        "linha_descompilada": 211253
+      }
+    },
+    {
+      "id": 20040,
+      "codigo": "Savagery",
+      "nome": "Beast of Atonement",
+      "configuracao": "Savagery",
+      "heranca": [
+        "Savagery",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Savagery",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Savagery",
+        "linha_descompilada": 211277
+      }
+    },
+    {
+      "id": 40025,
+      "codigo": "ThugLeaderBoss",
+      "nome": "Thug Leader",
+      "configuracao": "ThugLeader",
+      "heranca": [
+        "ThugLeader",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "ThugLeader.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        },
+        {
+          "id": 1007,
+          "codigo": "Stun"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#ThugLeader",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "ThugLeader",
+        "linha_descompilada": 211296
+      }
+    },
+    {
+      "id": 10104,
+      "codigo": "Trainer",
+      "nome": "Voodoo Shaman",
+      "configuracao": "Trainer",
+      "heranca": [
+        "Trainer",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "Trainer.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1013,
+          "codigo": "Meteorolite"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Trainer",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Trainer",
+        "linha_descompilada": 211356
+      }
+    },
+    {
+      "id": 20056,
+      "codigo": "YellowHeartEater",
+      "nome": "Sin Eater",
+      "configuracao": "YellowHeartEater",
+      "heranca": [
+        "YellowHeartEater",
+        "MajorQuestBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "YellowHeartEater.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1006,
+          "codigo": "StealSoul"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowHeartEater",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowHeartEater",
+        "linha_descompilada": 211406
+      }
+    },
+    {
+      "id": 20058,
+      "codigo": "BlacksmithBrother_Remnants",
+      "nome": "Undead Blacksmith",
+      "configuracao": "BlacksmithBrotherRm",
+      "heranca": [
+        "BlacksmithBrotherRm",
+        "RemnantsBossBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": "OutputType.Poison",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BlacksmithBrotherRm.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1007,
+          "codigo": "Stun"
+        },
+        {
+          "id": 1053,
+          "codigo": "Stray"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlacksmithBrotherRm",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlacksmithBrotherRm",
+        "linha_descompilada": 211463
+      }
+    },
+    {
+      "id": 20059,
+      "codigo": "BloodEye_Remnants",
+      "nome": "Blood Eye",
+      "configuracao": "BloodEyeRm",
+      "heranca": [
+        "BloodEyeRm",
+        "RemnantsBossBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Shadow",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BloodEyeRm.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1044,
+          "codigo": "Confusion"
+        },
+        {
+          "id": 1062,
+          "codigo": "ReturningSoul"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BloodEyeRm",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BloodEyeRm",
+        "linha_descompilada": 211538
+      }
+    },
+    {
+      "id": 20060,
+      "codigo": "CorruptedHorn_Remnants",
+      "nome": "Corrupted Horn",
+      "configuracao": "CorruptedHornRm",
+      "heranca": [
+        "CorruptedHornRm",
+        "RemnantsBossBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "CorruptedHornRm.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1036,
+          "codigo": "CorruptedPower"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#CorruptedHornRm",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "CorruptedHornRm",
+        "linha_descompilada": 211579
+      }
+    },
+    {
+      "id": 20061,
+      "codigo": "DarkKnight_Remnants",
+      "nome": "Dark Knight",
+      "configuracao": "DarkKnightRm",
+      "heranca": [
+        "DarkKnightRm",
+        "RemnantsBossBase",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": "OutputType.Fire",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "DarkKnightRm.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1032,
+          "codigo": "SwallowFire"
+        },
+        {
+          "id": 1027,
+          "codigo": "Flame"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#DarkKnightRm",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "DarkKnightRm",
+        "linha_descompilada": 211640
+      }
+    },
+    {
+      "id": 40029,
+      "codigo": "BlueDemonDragon",
+      "nome": null,
+      "configuracao": "BlueDemon",
+      "heranca": [
+        "BlueDemon",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Ice",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "BlueDemon.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1058,
+          "codigo": "ShieldBurn"
+        },
+        {
+          "id": 1059,
+          "codigo": "LightFire"
+        },
+        {
+          "id": 1025,
+          "codigo": "FleshToStone"
+        },
+        {
+          "id": 1020,
+          "codigo": "BloodThirst"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueDemon",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueDemon",
+        "linha_descompilada": 211789
+      }
+    },
+    {
+      "id": 10003,
+      "codigo": "GrassFace",
+      "nome": "Grass Face",
+      "configuracao": "GrassFaceConfiguration",
+      "heranca": [
+        "GrassFaceConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "GrassFaceConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1037,
+          "codigo": "BurningHeart"
+        },
+        {
+          "id": 1023,
+          "codigo": "Rebirth"
+        },
+        {
+          "id": 1054,
+          "codigo": "Swift"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GrassFaceConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GrassFaceConfiguration",
+        "linha_descompilada": 211930
+      }
+    },
+    {
+      "id": 10099,
+      "codigo": "ImmortalSeeker",
+      "nome": "Immortal Seeker",
+      "configuracao": "ImmortalSeeker",
+      "heranca": [
+        "ImmortalSeeker",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellDefender",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "ImmortalSeeker.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1043,
+          "codigo": "SeedsOfSin"
+        },
+        {
+          "id": 1021,
+          "codigo": "Rage"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#ImmortalSeeker",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "ImmortalSeeker",
+        "linha_descompilada": 211978
+      }
+    },
+    {
+      "id": 20029,
+      "codigo": "FireImp",
+      "nome": "Fire Imp",
+      "configuracao": "OriginalFireImp",
+      "heranca": [
+        "OriginalFireImp",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": "OutputType.Physical",
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "OriginalFireImp.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1063,
+          "codigo": "FireBurst"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#OriginalFireImp",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "OriginalFireImp",
+        "linha_descompilada": 212014
+      }
+    },
+    {
+      "id": 10109,
+      "codigo": "Skeleton",
+      "nome": "Blood Skeleton",
+      "configuracao": "OriginalSkeleton",
+      "heranca": [
+        "OriginalSkeleton",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#OriginalSkeleton",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "OriginalSkeleton",
+        "linha_descompilada": 212067
+      }
+    },
+    {
+      "id": 30030,
+      "codigo": "Parasite",
+      "nome": "Blue Parasite",
+      "configuracao": "Parasite",
+      "heranca": [
+        "Parasite",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Parasite",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Parasite",
+        "linha_descompilada": 212073
+      }
+    },
+    {
+      "id": 10111,
+      "codigo": "RedImmortalSeeker",
+      "nome": "Immortal Seeker",
+      "configuracao": "RedImmortalSeeker",
+      "heranca": [
+        "RedImmortalSeeker",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "RedImmortalSeeker.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1043,
+          "codigo": "SeedsOfSin"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedImmortalSeeker",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedImmortalSeeker",
+        "linha_descompilada": 212079
+      }
+    },
+    {
+      "id": 10032,
+      "codigo": "BlueBat",
+      "nome": "Blue Bat",
+      "configuracao": "BlueBat",
+      "heranca": [
+        "BlueBat",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueBat",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueBat",
+        "linha_descompilada": 212227
+      }
+    },
+    {
+      "id": 10033,
+      "codigo": "GreenBat",
+      "nome": "Green Bat",
+      "configuracao": "GreenBat",
+      "heranca": [
+        "GreenBat",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenBat",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenBat",
+        "linha_descompilada": 212233
+      }
+    },
+    {
+      "id": 10089,
+      "codigo": "PurpleVampire",
+      "nome": "Purple Vampire",
+      "configuracao": "PurpleVampire",
+      "heranca": [
+        "PurpleVampire",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleVampire",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleVampire",
+        "linha_descompilada": 212239
+      }
+    },
+    {
+      "id": 10035,
+      "codigo": "RedBat",
+      "nome": "Red Bat",
+      "configuracao": "RedBat",
+      "heranca": [
+        "RedBat",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedBat",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedBat",
+        "linha_descompilada": 212245
+      }
+    },
+    {
+      "id": 10036,
+      "codigo": "YellowBat",
+      "nome": "Yellow Bat",
+      "configuracao": "YellowBat",
+      "heranca": [
+        "YellowBat",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowBat",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowBat",
+        "linha_descompilada": 212251
+      }
+    },
+    {
+      "id": null,
+      "codigo": null,
+      "nome": null,
+      "configuracao": "EndlessDungeonBossConfiguration",
+      "heranca": [
+        "EndlessDungeonBossConfiguration",
+        "BossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": null,
+      "elemento_constante": null,
+      "regras_atributos": "BossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#EndlessDungeonBossConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "EndlessDungeonBossConfiguration",
+        "linha_descompilada": 212257
+      }
+    },
+    {
+      "id": null,
+      "codigo": null,
+      "nome": null,
+      "configuracao": "EndlessDungeonMinibossConfiguration",
+      "heranca": [
+        "EndlessDungeonMinibossConfiguration",
+        "MiniBossUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": null,
+      "elemento_constante": null,
+      "regras_atributos": "MiniBossUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "EndlessDungeonMinibossConfiguration.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#EndlessDungeonMinibossConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "EndlessDungeonMinibossConfiguration",
+        "linha_descompilada": 213680
+      }
+    },
+    {
+      "id": null,
+      "codigo": null,
+      "nome": null,
+      "configuracao": "EndlessDungeonMinionConfiguration",
+      "heranca": [
+        "EndlessDungeonMinionConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": null,
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#EndlessDungeonMinionConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "EndlessDungeonMinionConfiguration",
+        "linha_descompilada": 215041
+      }
+    },
+    {
+      "id": 10097,
+      "codigo": "Alchemist",
+      "nome": "Hell Alchemist",
+      "configuracao": "Alchemist",
+      "heranca": [
+        "Alchemist",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Healer",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Alchemist",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Alchemist",
+        "linha_descompilada": 215074
+      }
+    },
+    {
+      "id": 10105,
+      "codigo": "BlackMage",
+      "nome": "Voodoo Ghost",
+      "configuracao": "BlackMage",
+      "heranca": [
+        "BlackMage",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlackMage",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlackMage",
+        "linha_descompilada": 215080
+      }
+    },
+    {
+      "id": 10052,
+      "codigo": "BlueGoblinWizard",
+      "nome": "Blue Goblin Wizard",
+      "configuracao": "BlueGoblinWizard",
+      "heranca": [
+        "BlueGoblinWizard",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueGoblinWizard",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueGoblinWizard",
+        "linha_descompilada": 215096
+      }
+    },
+    {
+      "id": 10062,
+      "codigo": "BlueHighMage",
+      "nome": "Blue High Mage",
+      "configuracao": "BlueHighMage",
+      "heranca": [
+        "BlueHighMage",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueHighMage",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueHighMage",
+        "linha_descompilada": 215102
+      }
+    },
+    {
+      "id": 20044,
+      "codigo": "GreenDevil",
+      "nome": "Green Devil",
+      "configuracao": "GreenDevil",
+      "heranca": [
+        "GreenDevil",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Healer",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenDevil",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenDevil",
+        "linha_descompilada": 215108
+      }
+    },
+    {
+      "id": 10053,
+      "codigo": "GreenGoblinWizard",
+      "nome": "Green Goblin Wizard",
+      "configuracao": "GreenGoblinWizard",
+      "heranca": [
+        "GreenGoblinWizard",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenGoblinWizard",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenGoblinWizard",
+        "linha_descompilada": 215118
+      }
+    },
+    {
+      "id": 10063,
+      "codigo": "GreenHighMage",
+      "nome": "Green High Mage",
+      "configuracao": "GreenHighMage",
+      "heranca": [
+        "GreenHighMage",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenHighMage",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenHighMage",
+        "linha_descompilada": 215124
+      }
+    },
+    {
+      "id": 10108,
+      "codigo": "IceMage",
+      "nome": "Dragon Prayer",
+      "configuracao": "IceMage",
+      "heranca": [
+        "IceMage",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#IceMage",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "IceMage",
+        "linha_descompilada": 215130
+      }
+    },
+    {
+      "id": 10054,
+      "codigo": "PurpleGoblinWizard",
+      "nome": "Purple Goblin Wizard",
+      "configuracao": "PurpleGoblinWizard",
+      "heranca": [
+        "PurpleGoblinWizard",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleGoblinWizard",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleGoblinWizard",
+        "linha_descompilada": 215136
+      }
+    },
+    {
+      "id": 10055,
+      "codigo": "RedGoblinWizard",
+      "nome": "Red Goblin Wizard",
+      "configuracao": "RedGoblinWizard",
+      "heranca": [
+        "RedGoblinWizard",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedGoblinWizard",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedGoblinWizard",
+        "linha_descompilada": 215142
+      }
+    },
+    {
+      "id": 20048,
+      "codigo": "BlueCannibalBear",
+      "nome": "BlueCannibalBear",
+      "configuracao": "BlueCannibalBear",
+      "heranca": [
+        "BlueCannibalBear",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueCannibalBear",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueCannibalBear",
+        "linha_descompilada": 215148
+      }
+    },
+    {
+      "id": 20027,
+      "codigo": "CannibalBear",
+      "nome": "Cannibal Bear",
+      "configuracao": "CannibalBear",
+      "heranca": [
+        "CannibalBear",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#CannibalBear",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "CannibalBear",
+        "linha_descompilada": 215154
+      }
+    },
+    {
+      "id": 10113,
+      "codigo": "FireStone",
+      "nome": "FireStone",
+      "configuracao": "FireStone",
+      "heranca": [
+        "FireStone",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Statue",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#FireStone",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "FireStone",
+        "linha_descompilada": 215160
+      }
+    },
+    {
+      "id": 20049,
+      "codigo": "GreenCannibalBear",
+      "nome": "GreenCannibalBear",
+      "configuracao": "GreenCannibalBear",
+      "heranca": [
+        "GreenCannibalBear",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenCannibalBear",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenCannibalBear",
+        "linha_descompilada": 215188
+      }
+    },
+    {
+      "id": 10112,
+      "codigo": "HealingStone",
+      "nome": "HealingStone",
+      "configuracao": "HealingStone",
+      "heranca": [
+        "HealingStone",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Statue",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#HealingStone",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "HealingStone",
+        "linha_descompilada": 215198
+      }
+    },
+    {
+      "id": 10114,
+      "codigo": "LightningStone",
+      "nome": "LightningStone",
+      "configuracao": "LightningStone",
+      "heranca": [
+        "LightningStone",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Statue",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#LightningStone",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "LightningStone",
+        "linha_descompilada": 215224
+      }
+    },
+    {
+      "id": 10115,
+      "codigo": "PoisonStone",
+      "nome": "PoisonStone",
+      "configuracao": "PoisonStone",
+      "heranca": [
+        "PoisonStone",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Statue",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "PoisonStone.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [
+        {
+          "id": 1029,
+          "codigo": "LightningSpeed"
+        }
+      ],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PoisonStone",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PoisonStone",
+        "linha_descompilada": 215258
+      }
+    },
+    {
+      "id": 20050,
+      "codigo": "PurpleCannibalBear",
+      "nome": "PurpleCannibalBear",
+      "configuracao": "PurpleCannibalBear",
+      "heranca": [
+        "PurpleCannibalBear",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellDefender",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleCannibalBear",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleCannibalBear",
+        "linha_descompilada": 215285
+      }
+    },
+    {
+      "id": 20051,
+      "codigo": "RedCannibalBear",
+      "nome": "RedCannibalBear",
+      "configuracao": "RedCannibalBear",
+      "heranca": [
+        "RedCannibalBear",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#RedCannibalBear",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "RedCannibalBear",
+        "linha_descompilada": 215295
+      }
+    },
+    {
+      "id": 20052,
+      "codigo": "YellowCannibalBear",
+      "nome": "YellowCannibalBear",
+      "configuracao": "YellowCannibalBear",
+      "heranca": [
+        "YellowCannibalBear",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowCannibalBear",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowCannibalBear",
+        "linha_descompilada": 215305
+      }
+    },
+    {
+      "id": 10024,
+      "codigo": "BlueBirdMonster",
+      "nome": "Blue Bird Monster",
+      "configuracao": "BlueBirdMonsterConfiguration",
+      "heranca": [
+        "BlueBirdMonsterConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueBirdMonsterConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueBirdMonsterConfiguration",
+        "linha_descompilada": 216535
+      }
+    },
+    {
+      "id": 20020,
+      "codigo": "BlueDoomFighter",
+      "nome": "Blue Doom Fighter",
+      "configuracao": "BlueDoomFighterConfiguration",
+      "heranca": [
+        "BlueDoomFighterConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueDoomFighterConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueDoomFighterConfiguration",
+        "linha_descompilada": 216541
+      }
+    },
+    {
+      "id": 10020,
+      "codigo": "BlueShadowBat",
+      "nome": "Blue Shadow Bat",
+      "configuracao": "BlueShadowBatConfiguration",
+      "heranca": [
+        "BlueShadowBatConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueShadowBatConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueShadowBatConfiguration",
+        "linha_descompilada": 216547
+      }
+    },
+    {
+      "id": 10025,
+      "codigo": "GreenBirdMonster",
+      "nome": "Green Bird Monster",
+      "configuracao": "GreenBirdMonsterConfiguration",
+      "heranca": [
+        "GreenBirdMonsterConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenBirdMonsterConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenBirdMonsterConfiguration",
+        "linha_descompilada": 216553
+      }
+    },
+    {
+      "id": 20017,
+      "codigo": "GreenDoomFighter",
+      "nome": "Green Doom Fighter",
+      "configuracao": "GreenDoomFighterConfiguration",
+      "heranca": [
+        "GreenDoomFighterConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Protector",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenDoomFighterConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenDoomFighterConfiguration",
+        "linha_descompilada": 216559
+      }
+    },
+    {
+      "id": 30021,
+      "codigo": "GreenMud",
+      "nome": "Green Mud",
+      "configuracao": "GreenMudConfiguration",
+      "heranca": [
+        "GreenMudConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenMudConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenMudConfiguration",
+        "linha_descompilada": 216565
+      }
+    },
+    {
+      "id": 10019,
+      "codigo": "GreenShadowBat",
+      "nome": "Green Shadow Bat",
+      "configuracao": "GreenShadowBatConfiguration",
+      "heranca": [
+        "GreenShadowBatConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalDefender",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenShadowBatConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenShadowBatConfiguration",
+        "linha_descompilada": 216571
+      }
+    },
+    {
+      "id": 10023,
+      "codigo": "YellowBirdMonster",
+      "nome": "Yellow Bird Monster",
+      "configuracao": "YellowBirdMonsterConfiguration",
+      "heranca": [
+        "YellowBirdMonsterConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Healer",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowBirdMonsterConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowBirdMonsterConfiguration",
+        "linha_descompilada": 216577
+      }
+    },
+    {
+      "id": 30023,
+      "codigo": "YellowMud",
+      "nome": "Yellow Mud",
+      "configuracao": "YellowMudConfiguration",
+      "heranca": [
+        "YellowMudConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowMudConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowMudConfiguration",
+        "linha_descompilada": 216583
+      }
+    },
+    {
+      "id": 10018,
+      "codigo": "YellowShadowBat",
+      "nome": "Yellow Shadow Bat",
+      "configuracao": "YellowShadowBatConfiguration",
+      "heranca": [
+        "YellowShadowBatConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowShadowBatConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowShadowBatConfiguration",
+        "linha_descompilada": 216589
+      }
+    },
+    {
+      "id": 40016,
+      "codigo": "Thug1",
+      "nome": "Thug",
+      "configuracao": "Thug1Configuration",
+      "heranca": [
+        "Thug1Configuration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Thug1Configuration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Thug1Configuration",
+        "linha_descompilada": 216703
+      }
+    },
+    {
+      "id": 40017,
+      "codigo": "Thug2",
+      "nome": "Thug",
+      "configuracao": "Thug2Configuration",
+      "heranca": [
+        "Thug2Configuration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Thug2Configuration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Thug2Configuration",
+        "linha_descompilada": 216709
+      }
+    },
+    {
+      "id": 40018,
+      "codigo": "Thug3",
+      "nome": "Thug",
+      "configuracao": "Thug3Configuration",
+      "heranca": [
+        "Thug3Configuration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Thug3Configuration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Thug3Configuration",
+        "linha_descompilada": 216715
+      }
+    },
+    {
+      "id": 40019,
+      "codigo": "Thug4",
+      "nome": "Thug",
+      "configuracao": "Thug4Configuration",
+      "heranca": [
+        "Thug4Configuration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Thug4Configuration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Thug4Configuration",
+        "linha_descompilada": 216721
+      }
+    },
+    {
+      "id": 40020,
+      "codigo": "Thug5",
+      "nome": "Thug",
+      "configuracao": "Thug5Configuration",
+      "heranca": [
+        "Thug5Configuration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Thug5Configuration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Thug5Configuration",
+        "linha_descompilada": 216727
+      }
+    },
+    {
+      "id": 40021,
+      "codigo": "Thug6",
+      "nome": "Thug",
+      "configuracao": "Thug6Configuration",
+      "heranca": [
+        "Thug6Configuration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Thug6Configuration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Thug6Configuration",
+        "linha_descompilada": 216733
+      }
+    },
+    {
+      "id": 30015,
+      "codigo": "BlueArcher",
+      "nome": "Blue Archer",
+      "configuracao": "BlueArcherConfiguration",
+      "heranca": [
+        "BlueArcherConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueArcherConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueArcherConfiguration",
+        "linha_descompilada": 216757
+      }
+    },
+    {
+      "id": 10026,
+      "codigo": "BlueDragonPrayer",
+      "nome": "Blue Dragon Prayer",
+      "configuracao": "BlueDragonPrayerConfiguration",
+      "heranca": [
+        "BlueDragonPrayerConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Healer",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueDragonPrayerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueDragonPrayerConfiguration",
+        "linha_descompilada": 216763
+      }
+    },
+    {
+      "id": 30024,
+      "codigo": "BlueShadowKiller",
+      "nome": "Blue Shadow Killer",
+      "configuracao": "BlueShadowKillerConfiguration",
+      "heranca": [
+        "BlueShadowKillerConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueShadowKillerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueShadowKillerConfiguration",
+        "linha_descompilada": 216769
+      }
+    },
+    {
+      "id": 10012,
+      "codigo": "GreenDragonPrayer",
+      "nome": "Green Dragon Prayer",
+      "configuracao": "GreenDragonPrayerConfiguration",
+      "heranca": [
+        "GreenDragonPrayerConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenDragonPrayerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenDragonPrayerConfiguration",
+        "linha_descompilada": 216775
+      }
+    },
+    {
+      "id": 20021,
+      "codigo": "GreenReaper",
+      "nome": "Green Reaper",
+      "configuracao": "GreenReaperConfiguration",
+      "heranca": [
+        "GreenReaperConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenReaperConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenReaperConfiguration",
+        "linha_descompilada": 216781
+      }
+    },
+    {
+      "id": 20011,
+      "codigo": "GreenSpearer",
+      "nome": "Green Spearer",
+      "configuracao": "GreenSpearerConfiguration",
+      "heranca": [
+        "GreenSpearerConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenSpearerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenSpearerConfiguration",
+        "linha_descompilada": 216787
+      }
+    },
+    {
+      "id": 30016,
+      "codigo": "PurpleArcher",
+      "nome": "Purple Archer",
+      "configuracao": "PurpleArcherConfiguration",
+      "heranca": [
+        "PurpleArcherConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleArcherConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleArcherConfiguration",
+        "linha_descompilada": 216793
+      }
+    },
+    {
+      "id": 10015,
+      "codigo": "PurpleDragonPrayer",
+      "nome": "Purple Dragon Prayer",
+      "configuracao": "PurpleDragonPrayerConfiguration",
+      "heranca": [
+        "PurpleDragonPrayerConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.Protector",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleDragonPrayerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleDragonPrayerConfiguration",
+        "linha_descompilada": 216799
+      }
+    },
+    {
+      "id": 20024,
+      "codigo": "PurpleReaper",
+      "nome": "Purple Reaper",
+      "configuracao": "PurpleReaperConfiguration",
+      "heranca": [
+        "PurpleReaperConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleReaperConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleReaperConfiguration",
+        "linha_descompilada": 216805
+      }
+    },
+    {
+      "id": 30027,
+      "codigo": "PurpleShadowKiller",
+      "nome": "Purple Shadow Killer",
+      "configuracao": "PurpleShadowKillerConfiguration",
+      "heranca": [
+        "PurpleShadowKillerConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleShadowKillerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleShadowKillerConfiguration",
+        "linha_descompilada": 216811
+      }
+    },
+    {
+      "id": 20013,
+      "codigo": "PurpleSpearer",
+      "nome": "Purple Spearer",
+      "configuracao": "PurpleSpearerConfiguration",
+      "heranca": [
+        "PurpleSpearerConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleSpearerConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleSpearerConfiguration",
+        "linha_descompilada": 216817
+      }
+    },
+    {
+      "id": 20043,
+      "codigo": "BlueDevil",
+      "nome": "Blue Devil",
+      "configuracao": "BlueDevil",
+      "heranca": [
+        "BlueDevil",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueDevil",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueDevil",
+        "linha_descompilada": 217624
+      }
+    },
+    {
+      "id": 10010,
+      "codigo": "BlueGrassFace",
+      "nome": "Blue Grass Face",
+      "configuracao": "BlueGrassFaceConfiguration",
+      "heranca": [
+        "BlueGrassFaceConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueGrassFaceConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueGrassFaceConfiguration",
+        "linha_descompilada": 217634
+      }
+    },
+    {
+      "id": 10072,
+      "codigo": "BlueScorpion",
+      "nome": "Blue Scorpion",
+      "configuracao": "BlueScorpion",
+      "heranca": [
+        "BlueScorpion",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueScorpion",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueScorpion",
+        "linha_descompilada": 217640
+      }
+    },
+    {
+      "id": 10005,
+      "codigo": "BlueShaman",
+      "nome": "Blue Shaman",
+      "configuracao": "BlueShamanConfiguration",
+      "heranca": [
+        "BlueShamanConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueShamanConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueShamanConfiguration",
+        "linha_descompilada": 217646
+      }
+    },
+    {
+      "id": 30002,
+      "codigo": "BlueSharpTeeth",
+      "nome": "Blue Sharp Teeth",
+      "configuracao": "BlueSharpTeethConfiguration",
+      "heranca": [
+        "BlueSharpTeethConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#BlueSharpTeethConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "BlueSharpTeethConfiguration",
+        "linha_descompilada": 217652
+      }
+    },
+    {
+      "id": 20028,
+      "codigo": "Devil",
+      "nome": "Devil",
+      "configuracao": "Devil",
+      "heranca": [
+        "Devil",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#Devil",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "Devil",
+        "linha_descompilada": 217658
+      }
+    },
+    {
+      "id": 10073,
+      "codigo": "GreenScorpion",
+      "nome": "Green Scorpion",
+      "configuracao": "GreenScorpion",
+      "heranca": [
+        "GreenScorpion",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#GreenScorpion",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "GreenScorpion",
+        "linha_descompilada": 217664
+      }
+    },
+    {
+      "id": 10074,
+      "codigo": "PurpleScorpion",
+      "nome": "Purple Scorpion",
+      "configuracao": "PurpleScorpion",
+      "heranca": [
+        "PurpleScorpion",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalKiller",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#PurpleScorpion",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "PurpleScorpion",
+        "linha_descompilada": 217670
+      }
+    },
+    {
+      "id": 20005,
+      "codigo": "SharpTeeth",
+      "nome": "Sharp Teeth",
+      "configuracao": "SharpTeethConfiguration",
+      "heranca": [
+        "SharpTeethConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalSupporter",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#SharpTeethConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "SharpTeethConfiguration",
+        "linha_descompilada": 217676
+      }
+    },
+    {
+      "id": 30013,
+      "codigo": "YellowGrassFace",
+      "nome": "Yellow Grass Face",
+      "configuracao": "YellowGrassFaceConfiguration",
+      "heranca": [
+        "YellowGrassFaceConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.SpellWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowGrassFaceConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowGrassFaceConfiguration",
+        "linha_descompilada": 217682
+      }
+    },
+    {
+      "id": 10009,
+      "codigo": "YellowSharpTeeth",
+      "nome": "Yellow Sharp Teeth",
+      "configuracao": "YellowSharpTeethConfiguration",
+      "heranca": [
+        "YellowSharpTeethConfiguration",
+        "MinionUnitConfigurationBase",
+        "MonsterUnitConfigurationBase",
+        "UnitConfigurationBase"
+      ],
+      "funcao": "UnitClassStyle.PhysicalWarrior",
+      "elemento_constante": null,
+      "regras_atributos": "MinionUnitConfigurationBase.GetMonsterGrowthProfile",
+      "regras_habilidades": "MonsterUnitConfigurationBase.MonsterSkills",
+      "habilidades_mencionadas_na_configuracao": [],
+      "efeitos_mencionados_na_configuracao": [],
+      "regras": "regras-inimigos.json#YellowSharpTeethConfiguration",
+      "fonte": {
+        "assembly": "Assembly-CSharp.dll",
+        "tipo": "YellowSharpTeethConfiguration",
+        "linha_descompilada": 217688
+      }
+    }
+  ]
+}

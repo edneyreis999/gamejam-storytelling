@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "build_steam": "6212414",
+  "idioma_textos": "en",
+  "natureza": "Referencia externa; extracao estatica da instalacao local. Nao e documentacao aprovada do projeto.",
+  "data_analise": "2026-10-17",
+  "fontes": [
+    {
+      "arquivo": "game_Data/StreamingAssets/Localization-en.json",
+      "sha256": "e0b9f2d76b71a22f24f788175d10a02a7336594daa9d97bee3b74ffebf7e8a62"
+    },
+    {
+      "arquivo": "game_Data/Managed/Assembly-CSharp.dll",
+      "sha256": "bab10f7f5357b989588218845c3fcb397beceb7d6cc3ed9cb582b94c8dd2ae7b"
+    }
+  ],
+  "metodo": {
+    "descompilador": "ILSpy 9.1.0.7988",
+    "parser": "Roslyn C# do SDK .NET 8.0.301",
+    "execucao_do_jogo": false,
+    "avaliacao_dinamica_de_formulas": false,
+    "normalizacao": "Enums resolvidos, heranca preservada, literais extraidos, catalogos ligados por ID; tabela de XP reproduz a recorrencia inteira do codigo."
+  },
+  "contagens": {
+    "equipamentos": 353,
+    "templates_itens": 300,
+    "herois": 26,
+    "inimigos": 189,
+    "habilidades_localizadas": 89,
+    "talentos_implementados": 117,
+    "efeitos_batalha": 113,
+    "efeitos_especiais": 241,
+    "atributos": 48,
+    "itens": 793,
+    "tiers_raiz": 125
+  },
+  "arquivos": [
+    {
+      "arquivo": "catalogo-itens.json",
+      "bytes": 140241,
+      "sha256": "923ada0939ee8cc827fa8fe881bd42d6c6cedb4dc73eda9bead206a9ca489bd7"
+    },
+    {
+      "arquivo": "cidade-e-economia.json",
+      "bytes": 230335,
+      "sha256": "0219b803fad65b45d5161450a321e477f4e059788e6ad3305ed7be831ced71c6"
+    },
+    {
+      "arquivo": "encontros-e-missoes.json",
+      "bytes": 227501,
+      "sha256": "0ef9af2d483071bc532969c79ff72f9d9a3c3a156cebb51cff3ada3d8af9b2dd"
+    },
+    {
+      "arquivo": "equipamentos.json",
+      "bytes": 292191,
+      "sha256": "b46fe48757252d996c13e53b229f2c6c420ae0f39cb4f4830e8745bdd6249230"
+    },
+    {
+      "arquivo": "habilidades.json",
+      "bytes": 64153,
+      "sha256": "774c145d40ff353abf84edea2862ea673cc5fb5fb19f6bf479abe5b9a0ed02dc"
+    },
+    {
+      "arquivo": "herois.json",
+      "bytes": 78173,
+      "sha256": "6f554d120cbcc07f353de8f1c3e0610b799a33793775231041c8b1a8e0719d7a"
+    },
+    {
+      "arquivo": "identificadores.json",
+      "bytes": 123602,
+      "sha256": "d06efd7d358c0b70bba0bcfefd605693255439b139c6672d58021c8e156e8900"
+    },
+    {
+      "arquivo": "inimigos.json",
+      "bytes": 175974,
+      "sha256": "5fe06c9ccf1dee39e8a6b7dd2b01648a9c57c699b587e2c0635c65cb699efb8b"
+    },
+    {
+      "arquivo": "progressao-herois.json",
+      "bytes": 21393,
+      "sha256": "95b37c06726e47e207adb376c89c2d888cf51c141afa598850e56bd4ef2dbf5c"
+    },
+    {
+      "arquivo": "propriedades-equipamentos.json",
+      "bytes": 84958,
+      "sha256": "9853faac38e2a431c6e82f21848f45b61267ba2040a4f66fb9e51c4a2815a815"
+    },
+    {
+      "arquivo": "regras-combate.json",
+      "bytes": 2072276,
+      "sha256": "07b77d055850b71756fc73d4d67cf3373966f1a8548c9925450c7e1ce4c4b11d"
+    },
+    {
+      "arquivo": "regras-equipamentos.json",
+      "bytes": 873270,
+      "sha256": "384a2c869f677579c53cfef664a29956aa09751ee9eba741df95e86b13c1baf2"
+    },
+    {
+      "arquivo": "regras-inimigos.json",
+      "bytes": 787904,
+      "sha256": "479eb944e36b416f45b6c4b1036050482953c3f49d98d44ac6cccfd706bd236c"
+    },
+    {
+      "arquivo": "regras-progressao.json",
+      "bytes": 374936,
+      "sha256": "e34ff5343105528d378851b09f8ca0b11ed7592c1e74d7ab37afd4a0692dd50f"
+    },
+    {
+      "arquivo": "regras-talentos.json",
+      "bytes": 365584,
+      "sha256": "44e779c444cecf847f19c463c4a95be5b3a6de7282b1acfb61aa3e207d3edfca"
+    },
+    {
+      "arquivo": "status-e-efeitos.json",
+      "bytes": 135314,
+      "sha256": "ba2da35499802760d427e8ebdab96991a234440bc4e666595034d1713359ee4a"
+    },
+    {
+      "arquivo": "talentos.json",
+      "bytes": 89124,
+      "sha256": "7bdc489e79384e0894bd538830d45d30541cfcd6c5ce9cc73f3414d883e54989"
+    }
+  ],
+  "validacao": {
+    "jsons_parseados": 17,
+    "joins_herois_habilidades_talentos": true,
+    "faixas_experiencia_contiguas": true
+  },
+  "limites": [
+    "Presenca em catalogo ou codigo nao prova acesso em gameplay.",
+    "Regras C# sao evidencia estatica, nao um simulador portavel.",
+    "Descricao localizada pode estar antiga; prevalece a regra de runtime identificada.",
+    "Variantes dinamicas de inimigos nao foram enumeradas como instancias finais."
+  ]
+}
