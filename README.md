@@ -16,6 +16,9 @@ Limitation	???
 
 Status: em desenvolvimento.
 
+Projeto RPG Maker MZ: [Terminus](rpg-maker/Terminus/game.rmmzproject), com tela e área de UI configuradas em 1280 × 720 e o preset `coreto-default` (Design System 1.2.1). A base usa CoreEngine, MessageCore, OptionsCore, SaveCore e ExtMessageFunc. A [configuração da interface](docs/terminus/interface-coreto.md) registra o título e os ícones; mapas e personagens ainda são os recursos provisórios do MZ.
+
 - [Visão do jogo](docs/terminus/visao-do-jogo.md)
+- [Histórico de ajustes de design](docs/terminus/historico-ajustes-design.md)
 - [Apresentação atual da campanha — Decisões que se acumulam](docs/terminus/campanha-decisoes-acumuladas.html)
 - [Roteiro para a próxima entrevista](docs/terminus/proxima-entrevista.md)

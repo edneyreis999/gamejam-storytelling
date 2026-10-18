@@ -1,0 +1,52 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {openRuntime} from './test-runtime.mjs';
+import {setParameter} from './plugin-parameters.mjs';
+const native=process.argv.includes('--native'),withoutDS=process.argv.includes('--without-ds');
+const runtime=await openRuntime({native,fixtureName:'priority-native-'+withoutDS,pluginTransform:plugins=>{
+    if(withoutDS)plugins.find(p=>p.name==='Coreto_5_DesignSystem').status=false;
+    const set=(name,field,value)=>setParameter(plugins.find(p=>p.name==='VisuMZ_1_'+name+'Core').parameters,field.split('/'),value);
+    set('ElementStatus','StatusMenuList:arraystruct/0/Text:str','Categoria sentinela');
+    set('ElementStatus','StatusMenuList:arraystruct/0/DrawJS:func',"this.contents.fillRect(0,0,20,20,'#123456');this.contents.fontFace='CoretoAveria';this.contents.fontSize=31;this.changeTextColor('#345678');");
+    set('Battle','BattleLayout:struct/CommandWidth:num',333);
+    set('Battle','AutoBattle:struct/StartName:str','Automático sentinela');
+    set('Battle','ComboWindow:struct/CustomFontFace:str','CoretoAveria');
+    set('EventsMove','Label:struct/FontSize:num',31);
+    set('ItemsEquips','StatusWindow:struct/Width:num',401);
+    set('ItemsEquips','New:struct/FontFace:str','CoretoAveria');
+    set('MainMenu','Playtime:struct/WindowRect:func','return new Rectangle(13,540,377,60);');
+    set('MainMenu','CommandWindowStyle:str','default');
+    set('MainMenu','CommandList:arraystruct/0/TextStr:str','Itens sentinela');
+    set('SkillsStates','Costs:arraystruct/0/FontColor:str','#654321');
+}});
+const {page}=runtime,evidence={native,withoutDS,checks:[]};
+async function scene(name){await page.evaluate(name=>SceneManager.goto(window[name]),name);await page.waitForFunction(name=>SceneManager._scene?.constructor.name===name&&SceneManager._scene.isStarted()&&ImageManager.isReady()&&(name!=='Scene_Options'||SceneManager._scene._optionsWindow.maxItems()>0),name);}
+try{
+    await scene('Scene_Options');
+    assert.match(await page.evaluate(()=>SceneManager._scene._optionsWindow._list.find(r=>r.symbol==='autoBattleAtStart').name),/Automático sentinela$/);
+    evidence.checks.push('Battle label reaches OptionsCore');
+    await page.evaluate(()=>DataManager.setupNewGame());
+    await scene('Scene_Menu');
+    const menu=await page.evaluate(()=>{const s=SceneManager._scene,w=s._commandWindow;w._coretoDrawingIndex=w.index();w.changeTextColor('#123456');w.changePaintOpacity(false);return {label:w.commandName(0),rect:[s._playtimeWindow.x,s._playtimeWindow.width],color:w.contents.textColor,opacity:w.contents.paintOpacity};});
+    assert.match(menu.label,/Itens sentinela$/);assert.deepEqual(menu.rect,[13,377]);assert.equal(menu.color,'#123456');assert(menu.opacity<255);
+    evidence.checks.push('MainMenu rectangle, label, explicit color and disabled opacity');
+    await scene('Scene_Item');
+    const item=await page.evaluate(()=>({width:SceneManager._scene._statusWindow.width,font:VisuMZ.ItemsEquipsCore.Settings.New.FontFace}));
+    assert.equal(item.width,401);assert.equal(item.font,'CoretoAveria');evidence.checks.push('ItemsEquips width and font');
+    await scene('Scene_Status');
+    await page.waitForFunction(()=>SceneManager._scene._dataWindow.contents.getPixel(5,5)==='#123456');
+    const status=await page.evaluate(()=>{const s=SceneManager._scene,w=s._dataWindow;return {label:s._categoryWindow.commandName(0).replace(/\\I\[\d+\]/g,''),pixel:w.contents.getPixel(5,5),font:w.contents.fontFace,size:w.contents.fontSize,color:w.contents.textColor};});
+    assert.deepEqual(status,{label:'Categoria sentinela',pixel:'#123456',font:'CoretoAveria',size:31,color:'#345678'});
+    evidence.checks.push('ElementStatus authored callback pixels/font/size/color');
+    const settings=await page.evaluate(()=>({label:VisuMZ.EventsMoveCore.Settings.Label.FontSize,cost:VisuMZ.SkillsStatesCore.Settings.Costs[0].FontColor,battle:VisuMZ.BattleCore.Settings.BattleLayout.CommandWidth,combo:VisuMZ.BattleCore.Settings.ComboWindow.CustomFontFace}));
+    assert.deepEqual(settings,{label:31,cost:'#654321',battle:333,combo:'CoretoAveria'});
+    await scene('Scene_Map');
+    await page.evaluate(()=>{BattleManager.setup(1,true,true);SceneManager.push(Scene_Battle);});
+    await page.waitForFunction(()=>SceneManager._scene?.constructor.name==='Scene_Battle'&&SceneManager._scene.isStarted());
+    assert.equal(await page.evaluate(()=>SceneManager._scene._actorCommandWindow.width),333);
+    evidence.checks.push('Events label metrics, Skills cost color, Battle width and font');
+    assert.deepEqual(runtime.errors,[]);evidence.errors=runtime.errors;
+    fs.mkdirSync('.local-tools/visumz-review',{recursive:true});
+    fs.writeFileSync(`.local-tools/visumz-review/priority-${native?'native':'browser'}-${withoutDS?'off':'on'}.json`,JSON.stringify(evidence,null,2));
+    console.log(JSON.stringify(evidence));
+}finally{await runtime.close();}
