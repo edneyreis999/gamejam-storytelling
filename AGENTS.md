@@ -7,6 +7,5 @@
 
 # Planejamento e entregas
 
-- Ao planejar, executar, retomar ou verificar tarefas, aplique as ADRs G004–G006 em `docs/adrs/README.md`.
 - Siga `.gitmessage` ao preparar mensagens de commit.
 - Siga `.github/pull_request_template.md` ao preparar pull requests.
