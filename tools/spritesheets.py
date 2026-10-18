@@ -115,16 +115,20 @@ def export(source_path, destination, height):
     return report
 
 
+def active_sheet(entry):
+    return entry['arquivo_final'] if entry['estado'] == 'aprovado' else entry['arquivo_candidato']
+
+
 def gallery(manifest):
     data = json.loads(manifest.read_text(encoding='utf-8'))
     root = Path(__file__).resolve().parents[1]
     records = []
     status = {'pendente_de_correcao_visual': 'Correção visual pendente',
               'aguarda_aprovacao': 'Aguardando aprovação', 'aprovado': 'Aprovado'}
-    for entry in sorted(data['folhas'], key=lambda entry: entry['estado'] == 'aprovado'):
+    for entry in sorted(data['folhas'], key=lambda entry: (not bool(entry.get('revisao_movimento')), entry['estado'] == 'aprovado')):
         if not entry.get('arquivo_candidato'):
             continue
-        candidate = root / (entry.get('arquivo_final') or entry['arquivo_candidato'])
+        candidate = root / active_sheet(entry)
         name = entry['nome'] + (f" — {entry['forma']}" if entry.get('forma') else '')
         records.append({'id': entry['id'], 'nome': name, 'estado': status.get(entry['estado'], entry['estado']),
                         'resumo': entry['resumo'],

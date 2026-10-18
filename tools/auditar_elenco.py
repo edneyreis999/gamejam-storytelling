@@ -9,7 +9,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 from retocar_elenco import finish
 from retocar_pilotos import cell
-from spritesheets import inspect
+from spritesheets import inspect, active_sheet
+from corrigir_movimento import finish as correct_movement
 
 ROOT = Path(__file__).resolve().parents[1]
 ART = ROOT / 'docs/terminus/arte/personagens'
@@ -53,7 +54,7 @@ def board(entries, destination, scale=3, directions=(0,)):
     for i,entry in enumerate(entries):
         x,y = (i%columns)*width,(i//columns)*height
         draw.text((x+4,y+6),entry['id'],font=FONT,fill='#39352f')
-        sheet = Image.open(ROOT/(entry.get('arquivo_final') or entry['arquivo_candidato']))
+        sheet = Image.open(ROOT/active_sheet(entry))
         for j,row in enumerate(directions):
             frame = cell(sheet,row,1).resize((40*scale,55*scale),Image.Resampling.NEAREST)
             out.paste(frame,(x+(width-40*scale)//2,y+28+j*(55*scale+8)),frame)
@@ -70,7 +71,7 @@ def audit():
         if sha(ROOT/reference['path']) != reference['sha256']:
             report['erros'].append(f"Referência alterada: {reference['path']}")
     for entry in data['folhas']:
-        path = ROOT/(entry.get('arquivo_final') or entry['arquivo_candidato'])
+        path = ROOT/active_sheet(entry)
         result = inspect(path)
         errors = result['erros'][:]
         if sha(ROOT/entry['ficha']) != entry['ficha_sha256']:
@@ -78,12 +79,15 @@ def audit():
         if entry['estado']=='aprovado':
             if sha(path) != entry['arquivo_final_sha256']:
                 errors.append('Arquivo aprovado alterado')
-        elif entry['lote']>=3:
+        elif entry['lote']>=3 or entry.get('revisao_movimento'):
             reproduced = run/f"{entry['id']}.png"
-            finish(entry['id'],reproduced)
+            revised = bool(entry.get('revisao_movimento'))
+            method = correct_movement if revised else finish
+            script = 'tools/corrigir_movimento.py' if revised else 'tools/retocar_elenco.py'
+            method(entry['id'],reproduced)
             identical = sha(reproduced)==sha(path)
-            entry['reproducao'] = {'data':'2026-10-18','script':'tools/retocar_elenco.py',
-                'sha256_script':sha(ROOT/'tools/retocar_elenco.py'),'png_identico':identical,
+            entry['reproducao'] = {'data':'2026-10-18','script':script,
+                'sha256_script':sha(ROOT/script),'png_identico':identical,
                 'arquivo':reproduced.relative_to(ROOT).as_posix()}
             if not identical:
                 errors.append('Reprodução diferente da candidata')

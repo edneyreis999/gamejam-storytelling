@@ -1,6 +1,204 @@
 window.SPRITESHEETS = {
-  "resumo": "42 folhas disponíveis para inspeção; 14 de 42 folhas aprovadas.",
+  "resumo": "42 folhas disponíveis para inspeção; 4 de 42 folhas aprovadas.",
   "folhas": [
+    {
+      "id": "rheed",
+      "nome": "Theodor Rheed",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/rheed.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/rheed-v7-120x220.png"
+    },
+    {
+      "id": "nima",
+      "nome": "Nima Sete-Nós",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/nima.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/nima-v6-120x220.png"
+    },
+    {
+      "id": "nyra",
+      "nome": "Nyra do Caldeirão",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/nyra.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/nyra-v3-120x220.png"
+    },
+    {
+      "id": "neral-disfarce",
+      "nome": "Neral, apresentado como Savel — disfarce",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/neral.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/neral-disfarce-v3-120x220.png"
+    },
+    {
+      "id": "neral-revelado",
+      "nome": "Neral, apresentado como Savel — revelado",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/neral.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/neral-revelado-v3-120x220.png"
+    },
+    {
+      "id": "neral-transformado",
+      "nome": "Neral, apresentado como Savel — transformado",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/neral.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/neral-transformado-v3-120x220.png"
+    },
+    {
+      "id": "virmura",
+      "nome": "Virmura",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/virmura.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/virmura-v3-120x220.png"
+    },
+    {
+      "id": "dorga",
+      "nome": "Dorga Malho-Negro",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/dorga.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/dorga-v3-120x220.png"
+    },
+    {
+      "id": "torvak",
+      "nome": "Torvak Quebra-Ferro",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/torvak.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/torvak-v3-120x220.png"
+    },
+    {
+      "id": "meruna",
+      "nome": "Meruna Voss",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/meruna.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/meruna-v3-120x220.png"
+    },
+    {
+      "id": "odrik",
+      "nome": "Odrik Riso-de-Bronze",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/odrik.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/odrik-v3-120x220.png"
+    },
+    {
+      "id": "lethra",
+      "nome": "Lethra Passo-Justo",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/lethra.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/lethra-v3-120x220.png"
+    },
+    {
+      "id": "durn",
+      "nome": "Durn Sete-Rebites",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/durn.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/durn-v3-120x220.png"
+    },
+    {
+      "id": "elune",
+      "nome": "Elune Margem-Rasa",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/elune.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/elune-v3-120x220.png"
+    },
+    {
+      "id": "lurga",
+      "nome": "Lurga Duas-Risadas",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/lurga.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/lurga-v3-120x220.png"
+    },
+    {
+      "id": "sivren",
+      "nome": "Sivren Guarda-Folhas",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/sivren.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/sivren-v3-120x220.png"
+    },
+    {
+      "id": "ivara",
+      "nome": "Ivara Casa-Aberta",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/ivara.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/ivara-v4-120x220.png"
+    },
+    {
+      "id": "ossena",
+      "nome": "Ossena dos Quadros",
+      "estado": "Aguardando aprovação",
+      "resumo": "resumos/ossena.md",
+      "observacoes": [
+        "Nova candidata após o relato de falhas de movimento.",
+        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/ossena-v3-120x220.png"
+    },
     {
       "id": "darvek",
       "nome": "Darvek do Esteio",
@@ -101,28 +299,6 @@ window.SPRITESHEETS = {
       "imagem": "../../../../assets/terminus/personagens/em-revisao/mavren-v2-120x220.png"
     },
     {
-      "id": "odrik",
-      "nome": "Odrik Riso-de-Bronze",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/odrik.md",
-      "observacoes": [
-        "Orc adulto, cerca de 34 anos propostos. Pele verde, cabelo avermelhado alto, um dente quebrado; faixas coloridas e capa barata cuidadosamente remendada.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/odrik-v2-120x220.png"
-    },
-    {
-      "id": "lethra",
-      "nome": "Lethra Passo-Justo",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/lethra.md",
-      "observacoes": [
-        "Troll adulta, cerca de 31 anos propostos. Alta e esguia, pele cinza-violeta, cabelo preto preso em faixa; veste roupa de treino sem insígnias e carrega uma lâmina sem fio para aulas.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/lethra-v2-120x220.png"
-    },
-    {
       "id": "jorvi",
       "nome": "Jorvi Conta-Certa",
       "estado": "Aguardando aprovação",
@@ -132,28 +308,6 @@ window.SPRITESHEETS = {
         "Repouso e caminhada revisados em tamanho nativo e ampliado."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/jorvi-v2-120x220.png"
-    },
-    {
-      "id": "durn",
-      "nome": "Durn Sete-Rebites",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/durn.md",
-      "observacoes": [
-        "Anão adulto, cerca de 160 anos propostos. Barba preta com pontas brancas, braço esquerdo mais rígido, avental remendado; proteção auditiva de couro acolchoado.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/durn-v2-120x220.png"
-    },
-    {
-      "id": "elune",
-      "nome": "Elune Margem-Rasa",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/elune.md",
-      "observacoes": [
-        "Elfa adulta, cerca de 130 anos propostos. Pele castanha, cabelo claro preso com estilete rombo, olhos verdes; capas de mapa gastas e tinta nas pontas dos dedos.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/elune-v2-120x220.png"
     },
     {
       "id": "rask",
@@ -233,28 +387,6 @@ window.SPRITESHEETS = {
       "imagem": "../../../../assets/terminus/personagens/em-revisao/urdan-v3-120x220.png"
     },
     {
-      "id": "lurga",
-      "nome": "Lurga Duas-Risadas",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/lurga.md",
-      "observacoes": [
-        "Orc adulta, cerca de 39 anos propostos. Pele verde-escura, cabelo curto com uma mecha branca; nariz torto, roupa de treino remendada e pulseira de fichas sem valor monetário fixado.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/lurga-v2-120x220.png"
-    },
-    {
-      "id": "sivren",
-      "nome": "Sivren Guarda-Folhas",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/sivren.md",
-      "observacoes": [
-        "Elfo adulto, cerca de 210 anos propostos. Pele clara, cabelos castanhos já grisalhos, mãos finas; veste casaco cheio de pequenos rolos etiquetados.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/sivren-v2-120x220.png"
-    },
-    {
       "id": "baska",
       "nome": "Baska Vento-Baixo",
       "estado": "Aguardando aprovação",
@@ -277,17 +409,6 @@ window.SPRITESHEETS = {
       "imagem": "../../../../assets/terminus/personagens/em-revisao/moldren-v2-120x220.png"
     },
     {
-      "id": "ivara",
-      "nome": "Ivara Casa-Aberta",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/ivara.md",
-      "observacoes": [
-        "Orc madura, cerca de 86 anos propostos. Pele verde-clara, cabelo branco em trança curta, postura encurvada; chaves num cordão e uma manta sempre remendada.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/ivara-v3-120x220.png"
-    },
-    {
       "id": "nodri",
       "nome": "Nodri Pino-Solto",
       "estado": "Aguardando aprovação",
@@ -297,29 +418,6 @@ window.SPRITESHEETS = {
         "Repouso e caminhada revisados em tamanho nativo e ampliado."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/nodri-v2-120x220.png"
-    },
-    {
-      "id": "ossena",
-      "nome": "Ossena dos Quadros",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/ossena.md",
-      "observacoes": [
-        "Elfa mais velha, cerca de 320 anos propostos. Pele morena, cabelo branco preso alto, olhos escuros; veste roupas simples e leva quadros pequenos de madeira com peças móveis.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/ossena-v2-120x220.png"
-    },
-    {
-      "id": "rheed",
-      "nome": "Theodor Rheed",
-      "estado": "Aprovado",
-      "resumo": "resumos/rheed.md",
-      "observacoes": [
-        "Tapa-olho no olho direito anatômico; cabeças preservadas pixel a pixel.",
-        "Dois frascos fixados no quadril esquerdo anatômico.",
-        "Pernas alternadas e braços retocados nos perfis."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/rheed.png"
     },
     {
       "id": "ghork",
@@ -344,17 +442,6 @@ window.SPRITESHEETS = {
       "imagem": "../../../../assets/terminus/personagens/borun.png"
     },
     {
-      "id": "nima",
-      "nome": "Nima Sete-Nós",
-      "estado": "Aprovado",
-      "resumo": "resumos/nima.md",
-      "observacoes": [
-        "Cabeças preservadas da v2; a tentativa isolada v3 continua descartada.",
-        "Braços e pernas alternados nas duas vistas laterais."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/nima.png"
-    },
-    {
       "id": "sevrak",
       "nome": "Sevrak Vey",
       "estado": "Aprovado",
@@ -366,17 +453,6 @@ window.SPRITESHEETS = {
       "imagem": "../../../../assets/terminus/personagens/sevrak.png"
     },
     {
-      "id": "nyra",
-      "nome": "Nyra do Caldeirão",
-      "estado": "Aprovado",
-      "resumo": "resumos/nyra.md",
-      "observacoes": [
-        "Ogra adulta de porte largo, lenço, avental com bolsos e marcas antigas nas mãos.",
-        "Chaves no quadril esquerdo anatômico; podem ficar ocultas pelo braço durante a passada."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/nyra.png"
-    },
-    {
       "id": "crianca",
       "nome": "Criança jogadora",
       "estado": "Aprovado",
@@ -386,86 +462,9 @@ window.SPRITESHEETS = {
         "Cabelo curto, presas discretas e roupa simples; sem arma, insígnia ou parentesco inventado."
       ],
       "imagem": "../../../../assets/terminus/personagens/crianca.png"
-    },
-    {
-      "id": "neral-disfarce",
-      "nome": "Neral, apresentado como Savel — disfarce",
-      "estado": "Aprovado",
-      "resumo": "resumos/neral.md",
-      "observacoes": [
-        "Desenho do estudo aprovado: gola alta, luvas e corpo coberto.",
-        "Rosto e roupa mantidos; passos corrigidos sob o casaco."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/neral-disfarce.png"
-    },
-    {
-      "id": "neral-revelado",
-      "nome": "Neral, apresentado como Savel — revelado",
-      "estado": "Aprovado",
-      "resumo": "resumos/neral.md",
-      "observacoes": [
-        "Desenho do estudo aprovado: mãos alongadas sem luvas, palidez e marcas simples nos antebraços.",
-        "Sem poderes visuais adicionais; passos corrigidos sob o casaco."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/neral-revelado.png"
-    },
-    {
-      "id": "neral-transformado",
-      "nome": "Neral, apresentado como Savel — transformado",
-      "estado": "Aprovado",
-      "resumo": "resumos/neral.md",
-      "observacoes": [
-        "Desenho do estudo aprovado: porte ampliado, postura curvada e mangas rompidas.",
-        "Dois braços e duas pernas; rosto, cabelo e peças da roupa reconhecíveis."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/neral-transformado.png"
-    },
-    {
-      "id": "virmura",
-      "nome": "Virmura",
-      "estado": "Aprovado",
-      "resumo": "resumos/virmura.md",
-      "observacoes": [
-        "Orc musculosa, duas tranças negras, presas pequenas, cicatrizes e marcas faciais em sépia.",
-        "Túnica de cura simples, mãos livres e passos alternados."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/virmura.png"
-    },
-    {
-      "id": "dorga",
-      "nome": "Dorga Malho-Negro",
-      "estado": "Aprovado",
-      "resumo": "resumos/dorga.md",
-      "observacoes": [
-        "Orc robusta com laterais raspadas e presas aparadas.",
-        "Luva na mão esquerda anatômica; faixa do ombro direito ao quadril esquerdo, corrigida nos quadros invertidos."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/dorga.png"
-    },
-    {
-      "id": "torvak",
-      "nome": "Torvak Quebra-Ferro",
-      "estado": "Aprovado",
-      "resumo": "resumos/torvak.md",
-      "observacoes": [
-        "Orc veterano musculoso, trança curta com anéis e cicatrizes nos braços.",
-        "Trança mantida atrás na vista frontal; caminhada sem representar a debilitação posterior."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/torvak.png"
-    },
-    {
-      "id": "meruna",
-      "nome": "Meruna Voss",
-      "estado": "Aprovado",
-      "resumo": "resumos/meruna.md",
-      "observacoes": [
-        "Anã madura, mechas claras, trança com anéis, lentes pequenas e casaco de viagem.",
-        "Mãos manchadas de carvão; corpo menor que os adultos orcs."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/meruna.png"
     }
   ],
-  "proxima_condicao": "Aprovação visual do autor para as 28 candidatas dos lotes 3 a 9. Há 14 folhas aprovadas; autorização para produzir não aprova as novas imagens.",
+  "proxima_condicao": "Revisar as 18 novas candidatas de movimento. Dez substituem versões antes aprovadas, preservadas no histórico. As demais candidatas continuam aguardando aprovação.",
   "estudo_neral": {
     "estado": "Estudo aprovado",
     "imagem": "revisoes/neral-estudo-v1.png",
