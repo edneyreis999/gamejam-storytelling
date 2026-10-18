@@ -1,6 +1,7 @@
 ---
 status: em desenvolvimento
-publicacao: rascunho
+publicacao: publicado
+url: https://coretostudio.itch.io/terminus/devlog/1715283/devlog-3-getting-to-know-the-people-of-terminus
 commit: d58fe53
 idioma: en
 ---
