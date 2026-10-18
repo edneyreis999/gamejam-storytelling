@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Show DLC Run Setup Window", 0)]
+[Category("Game")]
+public class Flow_ShowDLCRunSetup : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIDLCRunSetupWindow uIDLCRunSetupWindow = GUIElements.Get<UIDLCRunSetupWindow>();
+			uIDLCRunSetupWindow.onClosed = delegate
+			{
+				onFinished.Call(flow);
+			};
+			uIDLCRunSetupWindow.Open();
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+	}
+}

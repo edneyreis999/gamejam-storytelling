@@ -1,0 +1,38 @@
+using System;
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Check Script Running", "")]
+public class uScriptAct_CheckScriptRunning : uScriptLogic
+{
+	public event uScript_GameObject.uScriptEventHandler Running;
+
+	public event uScript_GameObject.uScriptEventHandler NotRunning;
+
+	public void In([FriendlyName("Owner", "")] GameObject owner)
+	{
+		CustomUScript customUScript = null;
+		if (owner != null)
+		{
+			customUScript = owner.GetComponent<CustomUScript>();
+		}
+		bool flag = GameScript.IsAnyScriptRunning() || !string.IsNullOrEmpty(GameScriptStatic.cur_uscript);
+		if (flag && customUScript != null && customUScript.script_name == GameScriptStatic.cur_uscript)
+		{
+			flag = GameScriptStatic.prev_uscript != string.Empty;
+		}
+		if (flag)
+		{
+			if (this.Running != null)
+			{
+				this.Running(this, new EventArgs());
+			}
+		}
+		else if (this.NotRunning != null)
+		{
+			this.NotRunning(this, new EventArgs());
+		}
+	}
+}

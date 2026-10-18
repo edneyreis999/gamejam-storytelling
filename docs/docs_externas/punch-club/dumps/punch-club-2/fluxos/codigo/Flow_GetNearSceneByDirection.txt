@@ -1,0 +1,52 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Get Near Sewerage Scene", 0)]
+[Category("Game/Sewerage")]
+public class Flow_GetNearSceneByDirection : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<SewerageTransitionDirectionType> directionType;
+
+	private ValueOutput<UISewerageRoom> nearRoom;
+
+	private ValueOutput<string> nearRoomId;
+
+	private UISewerageRoom foundRoom;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), FindNear);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		directionType = AddValueInput<SewerageTransitionDirectionType>("directionType");
+		nearRoom = AddValueOutput("nearRoom", () => foundRoom);
+		nearRoomId = AddValueOutput("nearRoomId", () => foundRoom.id);
+	}
+
+	private void FindNear(Flow flow)
+	{
+		if (directionType.value != SewerageTransitionDirectionType.None)
+		{
+			UISewerageRoom currentRoom = GUIElements.Get<UISewerageWindow>().CurrentRoom;
+			if (currentRoom.id == "Exit")
+			{
+				foundRoom = GUIElements.Get<UISewerageWindow>().GetRoom("Sewerage_J8_Enter").GetNearSceneByDirection(directionType.value);
+			}
+			else if (currentRoom.id == "Exit_C7")
+			{
+				foundRoom = GUIElements.Get<UISewerageWindow>().GetRoom("Sewerage_C7").GetNearSceneByDirection(directionType.value);
+			}
+			else
+			{
+				foundRoom = currentRoom.GetNearSceneByDirection(directionType.value);
+			}
+		}
+		@out.Call(flow);
+	}
+}

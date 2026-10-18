@@ -1,0 +1,50 @@
+using System;
+using UnityEngine;
+
+[NodePath("Events/Custom Events")]
+[NodePropertiesPath("Properties/CustomEventColor")]
+[NodeCopyright("Copyright 2011 by Detox Studios LLC")]
+[NodeToolTip("Fires an event signal when Instance receives a custom event with a Color.")]
+[NodeAuthor("Detox Studios LLC", "http://www.detoxstudios.com")]
+[NodeHelp("http://docs.uscript.net/#3-Working_With_uScript/3.4-Nodes.htm")]
+[FriendlyName("Custom Event (Color)", "Fires an event signal when Instance receives a custom event with a Color.")]
+public class uScript_CustomEventColor : uScriptEvent
+{
+	public delegate void uScriptEventHandler(object sender, CustomEventColorArgs args);
+
+	public class CustomEventColorArgs : EventArgs
+	{
+		private string m_EventName;
+
+		private Color m_EventData;
+
+		private GameObject m_Sender;
+
+		[FriendlyName("Sender", "The GameObject that sent this event (if available).")]
+		public GameObject Sender => m_Sender;
+
+		[FriendlyName("Event Name", "The name of the custom event.")]
+		public string EventName => m_EventName;
+
+		[FriendlyName("Event Data", "The variable that was sent with this event.")]
+		public Color EventData => m_EventData;
+
+		public CustomEventColorArgs(string eventName, Color eventData, GameObject sender)
+		{
+			m_Sender = sender;
+			m_EventData = eventData;
+			m_EventName = eventName;
+		}
+	}
+
+	[FriendlyName("On Custom Event Color")]
+	public event uScriptEventHandler OnCustomEventColor;
+
+	private void CustomEvent(uScriptCustomEvent.CustomEventData cEventData)
+	{
+		if (this.OnCustomEventColor != null && cEventData.EventData != null && cEventData.EventData.GetType() == typeof(Color))
+		{
+			this.OnCustomEventColor(this, new CustomEventColorArgs(cEventData.EventName, (Color)cEventData.EventData, cEventData.Sender));
+		}
+	}
+}

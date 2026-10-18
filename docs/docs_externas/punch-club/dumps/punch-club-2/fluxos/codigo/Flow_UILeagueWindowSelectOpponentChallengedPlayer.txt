@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using DG.Tweening;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("UI League Window Select Opponent Challenged Player", 0)]
+[Category("Game/UI")]
+public class Flow_UILeagueWindowSelectOpponentChallengedPlayer : PC2CustomFlowNode
+{
+	public bool isToShow;
+
+	public bool addEventToButton = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UILeagueWindow leagueWindow = GUIElements.Get<UILeagueWindow>();
+			UILadderLeagueFighter opponent = leagueWindow.EloLeague.GetOpponentChallengedPlayer();
+			UITutorialWindow tutorialWindow = GUIElements.Get<UITutorialWindow>();
+			if (isToShow)
+			{
+				leagueWindow.EloLeague.AutoscrollToUILadderLeagueFighter(opponent, 0.5f, out var tween);
+				if (tween != null)
+				{
+					Tween tween2 = tween;
+					tween2.onComplete = (TweenCallback)Delegate.Combine(tween2.onComplete, (TweenCallback)delegate
+					{
+						tutorialWindow.ShowMask(opponent.TutorialSelection);
+					});
+				}
+				else
+				{
+					tutorialWindow.ShowMask(opponent.TutorialSelection);
+				}
+				if (addEventToButton)
+				{
+					leagueWindow.EloLeague.FightersScrollRectTutorial.vertical = false;
+					GamepadNavigationItem component = opponent.GetComponent<GamepadNavigationItem>();
+					leagueWindow.SortButtonTipsOverTutorialWindow();
+					leagueWindow.CustomItems = new List<GamepadNavigationItem> { component };
+					leagueWindow.OnInputSourceChanged();
+					UIElementsCustomEventHandlerManager.AddEvent(opponent.Button, UITutorialArrow.SignOrientationType.Left, delegate
+					{
+						leagueWindow.CustomItems = new List<GamepadNavigationItem> { leagueWindow.emptyTutorialItem };
+						leagueWindow.ReturnDefaultButtonTipsSorting();
+						leagueWindow.OnInputSourceChanged();
+						onClicked.Call(flow);
+						leagueWindow.EloLeague.FightersScrollRectTutorial.vertical = true;
+						tutorialWindow.HideMask(opponent.TutorialSelection);
+					});
+				}
+				else
+				{
+					LazyTimer.AddTimer(2f, delegate
+					{
+						tutorialWindow.HideMask(opponent.TutorialSelection);
+						opponent.Button.onClick?.Invoke();
+					});
+				}
+			}
+			@out.Call(flow);
+		});
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

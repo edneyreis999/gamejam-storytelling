@@ -1,0 +1,16 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Get Last Unlocked Tech Id", 0)]
+[Category("Game")]
+public class Flow_GetLastUnlockedTech : PC2CustomFlowNode
+{
+	private ValueOutput<string> techId;
+
+	protected override void RegisterPorts()
+	{
+		techId = AddValueOutput("techId", () => MainGame.me.gameSave.knowledgeSystem.obtainedTechs[MainGame.me.gameSave.knowledgeSystem.obtainedTechs.Count - 1]);
+	}
+}

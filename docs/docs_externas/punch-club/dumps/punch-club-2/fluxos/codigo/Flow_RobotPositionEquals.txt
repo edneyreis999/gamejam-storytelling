@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is Robot Station Position Equals", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_RobotPositionEquals : PC2CustomFlowNode
+{
+	public string walkNodeId;
+
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			Vector2 vector = DynamicScene.FindWalkNode(walkNodeId).transform.position;
+			if ((Vector2)DynamicScene.FindWGO("robots_hub_robot_station").transform.position == vector)
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,19 @@
+using System;
+
+[Serializable]
+public class Quest
+{
+	public string id;
+
+	public QuestState state;
+
+	public Quest()
+	{
+	}
+
+	public Quest(string id, QuestState state = QuestState.Invisible)
+	{
+		this.id = id;
+		this.state = state;
+	}
+}

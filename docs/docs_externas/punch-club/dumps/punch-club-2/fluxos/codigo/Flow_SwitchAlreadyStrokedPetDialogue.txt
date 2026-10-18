@@ -1,0 +1,83 @@
+using System.Collections.Generic;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Switch Already Stroked Pet Dialogue", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_SwitchAlreadyStrokedPetDialogue : Flow_SwitchPetBasePhrase
+{
+	private static List<PetPhraseData> phrasesHamborg = new List<PetPhraseData>
+	{
+		new PetPhraseData("hamborg_already_pet_1", activeByDefault: true),
+		new PetPhraseData("hamborg_already_pet_2", activeByDefault: true),
+		new PetPhraseData("hamborg_already_pet_3", activeByDefault: true)
+	};
+
+	private static List<PetPhraseData> phrasesCat = new List<PetPhraseData>
+	{
+		new PetPhraseData("sly_already_pet_1_1", activeByDefault: true),
+		new PetPhraseData("sly_already_pet_2_1", activeByDefault: true),
+		new PetPhraseData("sly_already_pet_3_1", activeByDefault: true),
+		new PetPhraseData("sly_already_pet_detective_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 1)),
+		new PetPhraseData("sly_already_pet_sergeant_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 2)),
+		new PetPhraseData("sly_already_pet_sensei_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 1)),
+		new PetPhraseData("sly_already_pet_master_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 2))
+	};
+
+	private static List<PetPhraseData> phrasesDog = new List<PetPhraseData>
+	{
+		new PetPhraseData("riley_already_pet_1", activeByDefault: true),
+		new PetPhraseData("riley_already_pet_2", activeByDefault: true),
+		new PetPhraseData("riley_already_pet_3", activeByDefault: true),
+		new PetPhraseData("riley_already_pet_detective_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 1)),
+		new PetPhraseData("riley_already_pet_sergeant_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 2)),
+		new PetPhraseData("riley_already_pet_sensei_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 1)),
+		new PetPhraseData("riley_already_pet_master_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 2))
+	};
+
+	private static List<PetPhraseData> phrasesCapy = new List<PetPhraseData>
+	{
+		new PetPhraseData("chuck_already_pet_1_1", activeByDefault: true),
+		new PetPhraseData("chuck_already_pet_2_1", activeByDefault: true),
+		new PetPhraseData("chuck_already_pet_3_1", activeByDefault: true),
+		new PetPhraseData("chuck_already_pet_4_1", activeByDefault: true),
+		new PetPhraseData("chuck_already_pet_any_cop_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfession("police_work")),
+		new PetPhraseData("chuck_already_pet_detective_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 1)),
+		new PetPhraseData("chuck_already_pet_sergeant_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 2)),
+		new PetPhraseData("chuck_already_pet_sensei_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 1)),
+		new PetPhraseData("chuck_already_pet_master_1", activeByDefault: false, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 2))
+	};
+
+	public override List<PetPhraseData> GetCurrentList()
+	{
+		List<PetPhraseData> result = new List<PetPhraseData>();
+		switch (petId)
+		{
+		case "npc_chuck":
+			result = phrasesCapy;
+			break;
+		case "npc_sly":
+			result = phrasesCat;
+			break;
+		case "npc_riley":
+			result = phrasesDog;
+			break;
+		case "npc_hamborg":
+			result = phrasesHamborg;
+			break;
+		}
+		return result;
+	}
+
+	public override List<string> GetCurrentRemainingList()
+	{
+		return MainGame.me.gameSave.knowledgeSystem.alreadyStrokedPetPhrasesRemaining;
+	}
+
+	public override List<string> GetCurrentSaidList()
+	{
+		return MainGame.me.gameSave.knowledgeSystem.alreadyStrokedPetPhrasesSaid;
+	}
+}

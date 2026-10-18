@@ -1,0 +1,336 @@
+using System;
+using UnityEngine;
+
+[Serializable]
+[NodePath("Graphs")]
+[FriendlyName("Untitled", "")]
+public class tutorial_garage_2 : uScriptLogic
+{
+	private delegate void ContinueExecution();
+
+	private GameObject parentGameObject;
+
+	private uScript_GUI thisScriptsOnGuiListener;
+
+	private bool m_RegisteredForEvents;
+
+	private ContinueExecution m_ContinueExecution;
+
+	private bool m_Breakpoint;
+
+	private const int MaxRelayCallCount = 1000;
+
+	private int relayCallCount;
+
+	private GameObject owner_Connection_2;
+
+	private uScriptAct_EndScript logic_uScriptAct_EndScript_uScriptAct_EndScript_1 = new uScriptAct_EndScript();
+
+	private CharacterGfx[] logic_uScriptAct_EndScript_chars_1 = new CharacterGfx[0];
+
+	private bool logic_uScriptAct_EndScript_enable_interaction_1 = true;
+
+	private uScriptAct_DreamBubble logic_uScriptAct_DreamBubble_uScriptAct_DreamBubble_3 = new uScriptAct_DreamBubble();
+
+	private bool logic_uScriptAct_DreamBubble_at_char_3 = true;
+
+	private string logic_uScriptAct_DreamBubble_name_3 = string.Empty;
+
+	private DreamBubble.Type logic_uScriptAct_DreamBubble_type_3 = DreamBubble.Type.Hungry;
+
+	private bool logic_uScriptAct_DreamBubble_Finished_3 = true;
+
+	private bool logic_uScriptAct_DreamBubble_Immediate_3 = true;
+
+	private bool logic_uScriptAct_DreamBubble_DrivenFunc_3;
+
+	private uScriptAct_CreateQuestMarker logic_uScriptAct_CreateQuestMarker_uScriptAct_CreateQuestMarker_4 = new uScriptAct_CreateQuestMarker();
+
+	private string logic_uScriptAct_CreateQuestMarker_zone_name_4 = "z_go_kitchen";
+
+	private GameObject logic_uScriptAct_CreateQuestMarker_game_object_4;
+
+	private QuestMarker logic_uScriptAct_CreateQuestMarker_q_4;
+
+	private bool logic_uScriptAct_CreateQuestMarker_block_others_4 = true;
+
+	private bool logic_uScriptAct_CreateQuestMarker_Out_4 = true;
+
+	private uScriptAct_SetGlobalInteration logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_5 = new uScriptAct_SetGlobalInteration();
+
+	private bool logic_uScriptAct_SetGlobalInteration_enabled_5;
+
+	private bool logic_uScriptAct_SetGlobalInteration_Out_5 = true;
+
+	private GameObject method_Detox_ScriptEditor_Plug_UnityEngine_GameObject_Instance_6;
+
+	private void SyncUnityHooks()
+	{
+		if (null == method_Detox_ScriptEditor_Plug_UnityEngine_GameObject_Instance_6 || !m_RegisteredForEvents)
+		{
+			method_Detox_ScriptEditor_Plug_UnityEngine_GameObject_Instance_6 = GameObject.Find("Main Camera");
+		}
+		SyncEventListeners();
+		if (!(null == owner_Connection_2) && m_RegisteredForEvents)
+		{
+			return;
+		}
+		owner_Connection_2 = parentGameObject;
+		if (null != owner_Connection_2)
+		{
+			uScript_CustomUScriptEvent uScript_CustomUScriptEvent2 = owner_Connection_2.GetComponent<uScript_CustomUScriptEvent>();
+			if (null == uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2 = owner_Connection_2.AddComponent<uScript_CustomUScriptEvent>();
+			}
+			if (null != uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2.uScriptStart += Instance_uScriptStart_0;
+			}
+		}
+	}
+
+	private void RegisterForUnityHooks()
+	{
+		SyncEventListeners();
+		if (!m_RegisteredForEvents && null != owner_Connection_2)
+		{
+			uScript_CustomUScriptEvent uScript_CustomUScriptEvent2 = owner_Connection_2.GetComponent<uScript_CustomUScriptEvent>();
+			if (null == uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2 = owner_Connection_2.AddComponent<uScript_CustomUScriptEvent>();
+			}
+			if (null != uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2.uScriptStart += Instance_uScriptStart_0;
+			}
+		}
+	}
+
+	private void SyncEventListeners()
+	{
+	}
+
+	private void UnregisterEventListeners()
+	{
+		if (null != owner_Connection_2)
+		{
+			uScript_CustomUScriptEvent component = owner_Connection_2.GetComponent<uScript_CustomUScriptEvent>();
+			if (null != component)
+			{
+				component.uScriptStart -= Instance_uScriptStart_0;
+			}
+		}
+	}
+
+	public override void SetParent(GameObject g)
+	{
+		parentGameObject = g;
+		logic_uScriptAct_EndScript_uScriptAct_EndScript_1.SetParent(g);
+		logic_uScriptAct_DreamBubble_uScriptAct_DreamBubble_3.SetParent(g);
+		logic_uScriptAct_CreateQuestMarker_uScriptAct_CreateQuestMarker_4.SetParent(g);
+		logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_5.SetParent(g);
+		owner_Connection_2 = parentGameObject;
+	}
+
+	public void Awake()
+	{
+	}
+
+	public void Start()
+	{
+		SyncUnityHooks();
+		m_RegisteredForEvents = true;
+	}
+
+	public void OnEnable()
+	{
+		RegisterForUnityHooks();
+		m_RegisteredForEvents = true;
+	}
+
+	public void OnDisable()
+	{
+		UnregisterEventListeners();
+		m_RegisteredForEvents = false;
+	}
+
+	public void Update()
+	{
+		if (relayCallCount < 1000)
+		{
+			relayCallCount = 0;
+		}
+		if (m_ContinueExecution != null)
+		{
+			ContinueExecution continueExecution = m_ContinueExecution;
+			m_ContinueExecution = null;
+			m_Breakpoint = false;
+			continueExecution();
+			return;
+		}
+		UpdateEditorValues();
+		SyncEventListeners();
+		if (logic_uScriptAct_DreamBubble_DrivenFunc_3)
+		{
+			Relay_DrivenFunc_3();
+		}
+	}
+
+	public void OnDestroy()
+	{
+	}
+
+	private void Instance_uScriptStart_0(object o, EventArgs e)
+	{
+		if (relayCallCount < 1000)
+		{
+			relayCallCount = 0;
+		}
+		Relay_uScriptStart_0();
+	}
+
+	private void Relay_uScriptStart_0()
+	{
+		if (!CheckDebugBreak("6a75ce72-1e61-47e1-8c8a-e2d863914607", "Custom_uScript_Events", Relay_uScriptStart_0))
+		{
+			Relay_In_5();
+			Relay_StopActivity_6();
+		}
+	}
+
+	private void Relay_In_1()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("923dd428-4072-419c-bb50-26412f2ce380", "End_Script", Relay_In_1))
+			{
+				logic_uScriptAct_EndScript_uScriptAct_EndScript_1.In(logic_uScriptAct_EndScript_chars_1, logic_uScriptAct_EndScript_enable_interaction_1);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript tutorial_garage_2.uscript at End Script.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_3()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("775dff16-5338-4cf1-b961-dc211ca354e5", "Dream", Relay_In_3))
+			{
+				logic_uScriptAct_DreamBubble_uScriptAct_DreamBubble_3.In(logic_uScriptAct_DreamBubble_at_char_3, logic_uScriptAct_DreamBubble_name_3, logic_uScriptAct_DreamBubble_type_3);
+				logic_uScriptAct_DreamBubble_DrivenFunc_3 = true;
+				if (logic_uScriptAct_DreamBubble_uScriptAct_DreamBubble_3.Finished)
+				{
+					Relay_In_4();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript tutorial_garage_2.uscript at Dream.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_DrivenFunc_3()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			logic_uScriptAct_DreamBubble_DrivenFunc_3 = logic_uScriptAct_DreamBubble_uScriptAct_DreamBubble_3.DrivenFunc();
+			if (logic_uScriptAct_DreamBubble_DrivenFunc_3 && logic_uScriptAct_DreamBubble_uScriptAct_DreamBubble_3.Finished)
+			{
+				Relay_In_4();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript tutorial_garage_2.uscript at Dream.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_4()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("b072026b-61da-4a88-aaf4-e123dc673fdb", "Create_Quest_Marker", Relay_In_4))
+			{
+				logic_uScriptAct_CreateQuestMarker_uScriptAct_CreateQuestMarker_4.In(logic_uScriptAct_CreateQuestMarker_zone_name_4, logic_uScriptAct_CreateQuestMarker_game_object_4, out logic_uScriptAct_CreateQuestMarker_q_4, logic_uScriptAct_CreateQuestMarker_block_others_4);
+				if (logic_uScriptAct_CreateQuestMarker_uScriptAct_CreateQuestMarker_4.Out)
+				{
+					Relay_In_1();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript tutorial_garage_2.uscript at Create Quest Marker.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_5()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("f65d0caa-d6f7-4780-a747-57de6f298d90", "Set_Interaction", Relay_In_5))
+			{
+				logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_5.In(logic_uScriptAct_SetGlobalInteration_enabled_5);
+				if (logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_5.Out)
+				{
+					Relay_In_3();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript tutorial_garage_2.uscript at Set Interaction.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_StopActivity_6()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a741454c-4104-43aa-986e-c49668f327d2", "MainGame", Relay_StopActivity_6))
+			{
+				MainGame component = method_Detox_ScriptEditor_Plug_UnityEngine_GameObject_Instance_6.GetComponent<MainGame>();
+				if (null != component)
+				{
+					component.StopActivity();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript tutorial_garage_2.uscript at MainGame.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void UpdateEditorValues()
+	{
+	}
+
+	private bool CheckDebugBreak(string guid, string name, ContinueExecution method)
+	{
+		if (m_Breakpoint)
+		{
+			return true;
+		}
+		if (uScript_MasterComponent.FindBreakpoint(guid))
+		{
+			if (!(uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint == guid))
+			{
+				uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint = guid;
+				UpdateEditorValues();
+				Debug.Log("uScript BREAK Node:" + name + " ((Time: " + Time.time + string.Empty);
+				Debug.Break();
+				m_ContinueExecution = method.Invoke;
+				m_Breakpoint = true;
+				return true;
+			}
+			uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint = string.Empty;
+		}
+		return false;
+	}
+}

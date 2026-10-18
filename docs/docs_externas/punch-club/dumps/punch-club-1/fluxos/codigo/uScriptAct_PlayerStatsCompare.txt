@@ -1,0 +1,60 @@
+using System;
+
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Player Stats Compare", "")]
+public class uScriptAct_PlayerStatsCompare : uScriptLogic
+{
+	public enum CompareType
+	{
+		Equal,
+		More,
+		Less,
+		MoreEqual,
+		LessEqual
+	}
+
+	public event uScript_GameObject.uScriptEventHandler True;
+
+	public event uScript_GameObject.uScriptEventHandler False;
+
+	public void In([FriendlyName("ResType", "")] GameRes.ResType res_type, [FriendlyName("Comp", "")] CompareType comp, [FriendlyName("Value", "")] int val)
+	{
+		int num = MainGame.save.ch.char_res.GetInt(res_type);
+		if (res_type == GameRes.ResType._agl || res_type == GameRes.ResType._str || res_type == GameRes.ResType._stm)
+		{
+			num = MainGame.save.ch.char_res.GetLevelOf(res_type);
+		}
+		bool flag = false;
+		switch (comp)
+		{
+		case CompareType.Equal:
+			flag = num == val;
+			break;
+		case CompareType.Less:
+			flag = num < val;
+			break;
+		case CompareType.LessEqual:
+			flag = num <= val;
+			break;
+		case CompareType.More:
+			flag = num > val;
+			break;
+		case CompareType.MoreEqual:
+			flag = num >= val;
+			break;
+		}
+		if (flag)
+		{
+			if (this.True != null)
+			{
+				this.True(this, new EventArgs());
+			}
+		}
+		else if (this.False != null)
+		{
+			this.False(this, new EventArgs());
+		}
+	}
+}

@@ -1,0 +1,52 @@
+using System;
+using DG.Tweening;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set Music Multiplier", 0)]
+[Category("Game")]
+public class Flow_SetMusicMultiplier : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool instant;
+
+	private ValueInput<float> multiplierValue;
+
+	private ValueInput<float> tweenTime;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (instant)
+			{
+				GameSettings.Instance.MusicMultiplier = multiplierValue.value;
+			}
+			else
+			{
+				Tween tween = GameSettings.Instance.TweenMusicMultiplier(multiplierValue.value, tweenTime.value);
+				tween.onComplete = (TweenCallback)Delegate.Combine(tween.onComplete, (TweenCallback)delegate
+				{
+					onFinished.Call(flow);
+				});
+			}
+			@out.Call(flow);
+		});
+		multiplierValue = AddValueInput<float>("multiplierValue".CapitalizeFirst());
+		if (!instant)
+		{
+			tweenTime = AddValueInput<float>("tweenTime".CapitalizeFirst());
+			onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		}
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,327 @@
+using System;
+using UnityEngine;
+
+public class LadderDialog : MonoBehaviour
+{
+	[Flags]
+	public enum AnimType
+	{
+		Alpha = 1,
+		Position = 2,
+		AlphaAndPosition = 3
+	}
+
+	[SerializeField]
+	[Range(0f, 2f)]
+	private float appearing_time = 0.3f;
+
+	[SerializeField]
+	[Range(0f, 2f)]
+	private float disappearing_time = 0.2f;
+
+	[SerializeField]
+	private UILabel _header;
+
+	[SerializeField]
+	private UILabel _message;
+
+	[SerializeField]
+	private UITable _table;
+
+	[SerializeField]
+	private GameObject close_button;
+
+	[SerializeField]
+	private LadderDialogButton[] vertical_buttons;
+
+	[SerializeField]
+	private LadderDialogButton[] pair_buttons;
+
+	[SerializeField]
+	private Sprite _button_red;
+
+	[SerializeField]
+	private Sprite _button_blue;
+
+	[SerializeField]
+	private Sprite _button_green;
+
+	[SerializeField]
+	private Color _outline_red;
+
+	[SerializeField]
+	private Color _outline_blue;
+
+	[SerializeField]
+	private Color _outline_green;
+
+	[SerializeField]
+	private UIWidget _back;
+
+	private AnimType _anim_type;
+
+	private int _button_height = -1;
+
+	private int _padding;
+
+	private UIWidget _w;
+
+	private bool _appeared;
+
+	private bool _can_be_closed_by_esc;
+
+	private bool _apply_first_by_enter;
+
+	private bool _close_after_press;
+
+	private bool _skip_press;
+
+	private bool _using_horizontal;
+
+	private GJCommons.VoidDelegate _on_close;
+
+	public bool shown => base.gameObject.activeSelf;
+
+	public UIWidget widget => _w ?? (_w = GetComponent<UIWidget>());
+
+	public void Open(string header, string message, LadderDialogButtonData[] datas, GJCommons.VoidDelegate on_close = null, bool show_close_button = true, bool close_after_press = true, bool can_be_closed_by_esc = true, bool apply_first_by_enter = false, AnimType anim_type = AnimType.Alpha, bool show_back = true, bool transition_from_previous = false, bool use_horizontal_pair = false)
+	{
+		if (shown && !transition_from_previous)
+		{
+			return;
+		}
+		_can_be_closed_by_esc = can_be_closed_by_esc;
+		_apply_first_by_enter = apply_first_by_enter;
+		_close_after_press = close_after_press;
+		close_button.SetActive(show_close_button);
+		CalcHeights();
+		int num = 38;
+		if (header.IsNullOrEmpty())
+		{
+			_header.Deactivate();
+		}
+		else
+		{
+			_header.Activate();
+			_header.text = header + "\n";
+			num += _header.height + _padding;
+		}
+		if (message.IsNullOrEmpty())
+		{
+			_message.Deactivate();
+		}
+		else
+		{
+			_message.Activate();
+			_message.text = message + "\n";
+			num += _message.height + _padding;
+		}
+		if (use_horizontal_pair && datas.Length == 2)
+		{
+			for (int i = 0; i < datas.Length; i++)
+			{
+				pair_buttons[i].Activate();
+				pair_buttons[i].Init(this, datas[i]);
+			}
+			LadderDialogButton[] array = vertical_buttons;
+			foreach (LadderDialogButton behaviour in array)
+			{
+				behaviour.Deactivate();
+			}
+			num += _button_height;
+			_using_horizontal = true;
+		}
+		else
+		{
+			for (int k = 0; k < datas.Length; k++)
+			{
+				if (k < vertical_buttons.Length)
+				{
+					vertical_buttons[k].Init(this, datas[k]);
+					num += _button_height;
+				}
+			}
+			for (int l = datas.Length; l < vertical_buttons.Length; l++)
+			{
+				vertical_buttons[l].Deactivate();
+			}
+			LadderDialogButton[] array2 = pair_buttons;
+			foreach (LadderDialogButton behaviour2 in array2)
+			{
+				behaviour2.Deactivate();
+			}
+			_using_horizontal = false;
+		}
+		widget.height = num;
+		_table.repositionNow = true;
+		_on_close = on_close;
+		if (shown && transition_from_previous)
+		{
+			_skip_press = true;
+			return;
+		}
+		_anim_type = anim_type;
+		if (show_back)
+		{
+			_back.Activate();
+			_back.ChangeAlpha(0f, 1f, appearing_time);
+		}
+		else
+		{
+			_back.Deactivate();
+		}
+		if (anim_type.Is(AnimType.Position))
+		{
+			widget.Open(appearing_time, delegate
+			{
+				_appeared = true;
+			});
+		}
+		if (anim_type.Is(AnimType.Alpha))
+		{
+			widget.ChangeAlpha(0f, 1f, appearing_time, delegate
+			{
+				_appeared = true;
+			});
+		}
+		base.gameObject.SetActive(value: true);
+	}
+
+	public void AskYesNo(string header, string message, GJCommons.VoidDelegate on_yes, GJCommons.VoidDelegate on_no)
+	{
+		Open(header, message, new LadderDialogButtonData[2]
+		{
+			new LadderDialogButtonData
+			{
+				text = GJL.L("Yes"),
+				color = LadderButtonColor.Green,
+				on_pressed = on_yes
+			},
+			new LadderDialogButtonData
+			{
+				text = GJL.L("No"),
+				color = LadderButtonColor.Red,
+				on_pressed = on_no
+			}
+		}, null, show_close_button: false, close_after_press: true, can_be_closed_by_esc: true, apply_first_by_enter: true, AnimType.Alpha, show_back: true, transition_from_previous: true, use_horizontal_pair: true);
+	}
+
+	public void Message(string header, string message, GJCommons.VoidDelegate on_accept = null)
+	{
+		Open(header, message, new LadderDialogButtonData[1]
+		{
+			new LadderDialogButtonData
+			{
+				text = GJL.L("MM_BACK"),
+				color = LadderButtonColor.Green,
+				on_pressed = on_accept
+			}
+		}, null, show_close_button: false, close_after_press: true, can_be_closed_by_esc: true, apply_first_by_enter: true, AnimType.Alpha, show_back: true, transition_from_previous: true);
+	}
+
+	public void OnPressed()
+	{
+		if (_skip_press)
+		{
+			_skip_press = false;
+		}
+		else if (_close_after_press)
+		{
+			Close();
+		}
+	}
+
+	public void OnClosePressed()
+	{
+		Ladder.Click();
+		Close();
+	}
+
+	public void HideBack(bool animated = true)
+	{
+		if (animated)
+		{
+			_back.ChangeAlpha(1f, 0f, disappearing_time, delegate
+			{
+				_back.Deactivate();
+			});
+		}
+		else
+		{
+			_back.Deactivate();
+		}
+	}
+
+	private void CalcHeights()
+	{
+		_padding = (int)_table.padding.y;
+		_button_height = vertical_buttons[0].GetComponent<UIWidget>().height + _padding;
+	}
+
+	public void Close()
+	{
+		_appeared = false;
+		if (_anim_type.Is(AnimType.Position))
+		{
+			widget.Hide(disappearing_time, delegate
+			{
+				base.gameObject.SetActive(value: false);
+			});
+		}
+		if (_anim_type.Is(AnimType.Alpha))
+		{
+			widget.ChangeAlpha(1f, 0f, disappearing_time, delegate
+			{
+				base.gameObject.SetActive(value: false);
+				widget.alpha = 1f;
+			});
+		}
+		HideBack();
+		if (_on_close != null)
+		{
+			_on_close();
+		}
+	}
+
+	private void Update()
+	{
+		if (_appeared && _apply_first_by_enter && Input.GetKeyDown(KeyCode.Return))
+		{
+			if (_using_horizontal)
+			{
+				pair_buttons[0].OnPressed();
+			}
+			else
+			{
+				vertical_buttons[0].OnPressed();
+			}
+		}
+		if (_appeared && _can_be_closed_by_esc && Input.GetKeyDown(KeyCode.Escape))
+		{
+			Ladder.Click();
+			Close();
+		}
+	}
+
+	public Sprite GetButtonSprite(LadderButtonColor color)
+	{
+		return color switch
+		{
+			LadderButtonColor.Blue => _button_blue, 
+			LadderButtonColor.Green => _button_green, 
+			LadderButtonColor.Red => _button_red, 
+			_ => null, 
+		};
+	}
+
+	public Color GetOutlineColor(LadderButtonColor color)
+	{
+		return color switch
+		{
+			LadderButtonColor.Blue => _outline_blue, 
+			LadderButtonColor.Green => _outline_green, 
+			LadderButtonColor.Red => _outline_red, 
+			_ => Color.white, 
+		};
+	}
+}

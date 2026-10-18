@@ -1,0 +1,53 @@
+using System.Collections.Generic;
+using LazyBearTechnology;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "BubblePresetContainer", menuName = "Punch Club 2/BubblePresetContainer", order = 1)]
+public class SpeechBubblePresetContainer : ScriptableObject
+{
+	[SerializeField]
+	private List<BubblePresetSettings> presetSettingsList;
+
+	[SerializeField]
+	private SpeechBubblePreset npcBubbleSettings;
+
+	[SerializeField]
+	private SpeechBubblePreset unknownVoice;
+
+	[SerializeField]
+	private SpeechBubblePreset final;
+
+	[SerializeField]
+	private SpeechBubblePreset finalThink;
+
+	public SpeechBubblePreset NpcBubbleSettings => npcBubbleSettings;
+
+	public SpeechBubblePreset UnknownVoice => unknownVoice;
+
+	public SpeechBubblePreset GetFinal(SpeechBubbleType type)
+	{
+		if (type == SpeechBubbleType.Think)
+		{
+			return finalThink;
+		}
+		return final;
+	}
+
+	public SpeechBubblePreset Get(SpeechBubbleType type)
+	{
+		SpeechBubblePreset speechBubblePreset = null;
+		foreach (BubblePresetSettings presetSettings in presetSettingsList)
+		{
+			if (presetSettings.type == type)
+			{
+				speechBubblePreset = presetSettings.preset;
+				break;
+			}
+		}
+		if (speechBubblePreset == null)
+		{
+			Debug.LogError($"preset for type {type} not defined");
+		}
+		return speechBubblePreset;
+	}
+}

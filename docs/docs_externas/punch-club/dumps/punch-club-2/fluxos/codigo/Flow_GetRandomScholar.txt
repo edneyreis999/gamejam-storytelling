@@ -1,0 +1,34 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Random Scholar", 0)]
+[Category("Game/MickGym")]
+public class Flow_GetRandomScholar : PC2CustomFlowNode
+{
+	public bool onlyDefaultScholars;
+
+	private ValueOutput<WGO> scholar;
+
+	protected override void RegisterPorts()
+	{
+		scholar = AddValueOutput("scholar".CapitalizeFirst(), delegate
+		{
+			List<WGO> list = new List<WGO>();
+			int num = (onlyDefaultScholars ? 4 : LazyConsts.mickScholarsIds.Count);
+			for (int i = 0; i < num; i++)
+			{
+				WGO wGO = DynamicScene.FindWGO(LazyConsts.mickScholarsIds[i]);
+				if (wGO.WgoState.GetStateOnScene("MikesOldHouse", out var isActive) && isActive)
+				{
+					list.Add(wGO);
+				}
+			}
+			return list[Random.Range(0, list.Count - 1)];
+		});
+	}
+}

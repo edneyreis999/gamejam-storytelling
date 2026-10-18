@@ -1,0 +1,99 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Check Flag On Obj", 0)]
+[Category("Game")]
+public class Flow_CheckFlagOnObj : PC2CustomFlowNode
+{
+	public enum GetWGOType
+	{
+		ByString,
+		ByObject
+	}
+
+	[GatherPortsCallback]
+	public bool isPlayer = true;
+
+	[ShowIf("isPlayer", 0)]
+	[GatherPortsCallback]
+	public GetWGOType getWgoType = GetWGOType.ByObject;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueInput<string> wgoId;
+
+	private ValueInput<string> paramNameForCheck;
+
+	private ValueOutput<bool> valueOutput;
+
+	public override string name
+	{
+		get
+		{
+			if (isPlayer)
+			{
+				return "Check Flag On Player";
+			}
+			return "Check Flag On WGO";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		if (!isPlayer)
+		{
+			switch (getWgoType)
+			{
+			case GetWGOType.ByObject:
+				wgo = AddValueInput<WGO>("WGO");
+				break;
+			case GetWGOType.ByString:
+				wgoId = AddValueInput<string>("wgoId");
+				break;
+			}
+		}
+		paramNameForCheck = AddValueInput<string>("paramNameForCheck".CapitalizeFirst());
+		valueOutput = AddValueOutput("valueOutput", () => Check());
+	}
+
+	private bool Check()
+	{
+		if (isPlayer)
+		{
+			if (MainGame.me.PlayerRes.GetInt(paramNameForCheck.value) == 0)
+			{
+				return false;
+			}
+			return true;
+		}
+		switch (getWgoType)
+		{
+		case GetWGOType.ByObject:
+		{
+			WGO wGO = WGOParamOrSelf(wgo);
+			if (wGO != null)
+			{
+				if (wGO.WgoState.gameRes.GetInt(paramNameForCheck.value) == 0)
+				{
+					return false;
+				}
+				return true;
+			}
+			Debug.LogError("Tried to check GameRes on null WGO");
+			return true;
+		}
+		case GetWGOType.ByString:
+			if (MainGame.me.gameSave.worldData.GetWGOParamValue(wgoId.value, paramNameForCheck.value) == 0f)
+			{
+				return false;
+			}
+			return true;
+		default:
+			return true;
+		}
+	}
+}

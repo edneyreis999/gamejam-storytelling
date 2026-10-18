@@ -1,0 +1,55 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Change GMO State", 0)]
+[Category("Game/GameMap")]
+public class Flow_ChangeGMOState : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool severalIds;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<List<string>> ids;
+
+	private ValueInput<string> id;
+
+	private ValueInput<bool> isVisible;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ChangeState);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (severalIds)
+		{
+			ids = AddValueInput<List<string>>("ids".CapitalizeFirst());
+		}
+		else
+		{
+			id = AddValueInput<string>("id".CapitalizeFirst());
+		}
+		isVisible = AddValueInput<bool>("isVisible".CapitalizeFirst());
+	}
+
+	private void ChangeState(Flow flow)
+	{
+		if (severalIds)
+		{
+			foreach (string item in ids.value)
+			{
+				MainGame.me.gameSave.worldData.SetGameMapObjectState(item, isVisible.value);
+			}
+		}
+		else
+		{
+			MainGame.me.gameSave.worldData.SetGameMapObjectState(id.value, isVisible.value);
+		}
+		@out.Call(flow);
+	}
+}

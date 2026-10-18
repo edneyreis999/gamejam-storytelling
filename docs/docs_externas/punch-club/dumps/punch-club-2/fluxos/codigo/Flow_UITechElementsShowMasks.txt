@@ -1,0 +1,44 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Tech Elements Show Masks", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UITechElementsShowMasks : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	private ValueInput<List<RectTransform>> rects;
+
+	public override string name => "UI Tech Elements " + (isToShow.value ? "Show" : "Hide") + " Masks";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			foreach (RectTransform item in rects.value)
+			{
+				if (isToShow.value)
+				{
+					item.gameObject.SetActive(value: true);
+				}
+				else
+				{
+					item.gameObject.SetActive(value: false);
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		rects = AddValueInput<List<RectTransform>>("rects");
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

@@ -1,0 +1,22 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/Zones")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Set Visible", "")]
+public class uScriptAct_ZoneSetVisible : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Zone", "")] string zone_name, [FriendlyName("Visible", "")] bool vis, [FriendlyName("Interact", "")][DefaultValue(true)][SocketState(false, false)] bool interactive)
+	{
+		SceneZoneGfx zoneByName = SceneRoot.me.GetZoneByName(zone_name);
+		if (zoneByName == null)
+		{
+			Debug.LogError("Zone '" + zone_name + "' not found!");
+			return;
+		}
+		zoneByName.gameObject.SetActive(vis);
+		zoneByName.zone_enabled = interactive;
+	}
+}

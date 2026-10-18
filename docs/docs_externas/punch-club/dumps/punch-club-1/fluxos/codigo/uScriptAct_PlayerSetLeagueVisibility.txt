@@ -1,0 +1,19 @@
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("League Visibility", "")]
+public class uScriptAct_PlayerSetLeagueVisibility : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("League id", "")] int id, [FriendlyName("Visible?", "")] bool vis)
+	{
+		LeagueState league = MainGame.save.ch.all_leagues.GetLeague(id);
+		if (league != null)
+		{
+			league.hidden = !vis;
+			SceneRoot.me.UpdateInventoryVisibility();
+			MainGame.me.gui_elements.hud.Redraw();
+		}
+	}
+}

@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Clear Profession Duty Complete States", 0)]
+[Category("Game")]
+public class Flow_ClearCompleteDutyStates : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> professionId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			ProfessionData profession = MainGame.me.gameSave.professionSystem.GetProfession(professionId.value);
+			if (profession != null)
+			{
+				profession.ClearDutyStates();
+			}
+			else
+			{
+				Debug.LogError("Null profession data:[" + professionId.value + "]");
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		professionId = AddValueInput<string>("professionId".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,44 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("Switch Current Robot Work Param", 0)]
+[Category("Game/UI")]
+public class Flow_SwitchCurrentRobotWorkParam : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput metal;
+
+	private FlowOutput chip;
+
+	private FlowOutput wire;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			@out.Call(flow);
+			switch (MainGame.me.gameSave.robotSystem.CurrentRobotWorkParam)
+			{
+			case "_robot_metal":
+				metal.Call(flow);
+				break;
+			case "_robot_chip":
+				chip.Call(flow);
+				break;
+			case "_robot_wire":
+				wire.Call(flow);
+				break;
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		metal = AddFlowOutput("metal".CapitalizeFirst());
+		chip = AddFlowOutput("chip".CapitalizeFirst());
+		wire = AddFlowOutput("wire".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,16 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Get Player", "")]
+public class uScriptAct_GetPlayer : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("CharGfx", "The CharacterGfx.")] out CharacterGfx ch, [FriendlyName("CharGO", "")][SocketState(false, false)] out GameObject go)
+	{
+		ch = MainGame.save.ch.char_gfx;
+		go = ch.gameObject;
+	}
+}

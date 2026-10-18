@@ -1,0 +1,45 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Fighter Window Add Event\nTo Last School Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIFighterWindowAddEventToLastSchoolButton : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIFighterWindow window = GUIElements.Get<UIFighterWindow>();
+			Button schoolButton = window.LastSchool.SchoolButton;
+			GamepadNavigationItem component = window.LastSchool.GetComponent<GamepadNavigationItem>();
+			window.CustomItems = new List<GamepadNavigationItem> { component };
+			window.TutorialGamepadNavigation = true;
+			window.LockPressBack = true;
+			window.SortButtonTipsOverTutorialWindow();
+			window.OnInputSourceChanged();
+			UIElementsCustomEventHandlerManager.AddEvent(schoolButton, UITutorialArrow.SignOrientationType.Right, delegate
+			{
+				window.CustomItems = null;
+				window.LockPressBack = false;
+				window.ReturnDefaultButtonTipsSorting();
+				window.TutorialGamepadNavigation = false;
+				onClicked.Call(flow);
+			});
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+}

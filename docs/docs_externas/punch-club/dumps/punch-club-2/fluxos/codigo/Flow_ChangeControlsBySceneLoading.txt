@@ -1,0 +1,41 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Scene Control Disable", 0)]
+[Category("Game/Player")]
+public class Flow_ChangeControlsBySceneLoading : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isEnable;
+
+	public override string name
+	{
+		get
+		{
+			if (!isEnable.value)
+			{
+				return "<color=#ff8a8a>Scene Control Disable</color>";
+			}
+			return "<color=#8aff92>Scene Control Enable</color>";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), SetControl);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isEnable = AddValueInput<bool>("isEnable".CapitalizeFirst());
+	}
+
+	private void SetControl(Flow flow)
+	{
+		PlayerController.Instance.ChangeControls(ControlState.BySceneLoading, isEnable.value);
+		@out.Call(flow);
+	}
+}

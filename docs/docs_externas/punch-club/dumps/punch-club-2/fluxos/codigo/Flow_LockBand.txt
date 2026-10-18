@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Lock Band", 0)]
+[Category("Game")]
+public class Flow_LockBand : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToUnlock = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<BandType> bandType;
+
+	public override string name => (isToUnlock ? "Unlock" : "Lock") + " Band";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToUnlock)
+			{
+				MainGame.me.gameSave.uiSystem.UnLockBand(bandType.value);
+			}
+			else
+			{
+				MainGame.me.gameSave.uiSystem.LockBand(bandType.value);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		bandType = AddValueInput<BandType>("bandType");
+	}
+}

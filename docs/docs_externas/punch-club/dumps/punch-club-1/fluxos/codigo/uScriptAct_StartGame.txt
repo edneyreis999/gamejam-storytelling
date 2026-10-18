@@ -1,0 +1,14 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Start Game", "")]
+public class uScriptAct_StartGame : uScriptLogic
+{
+	public void In()
+	{
+		PlayerPrefs.SetInt("IntroViewed", 1);
+		PrologSceneScript.OnSkipPrologPressed();
+	}
+}

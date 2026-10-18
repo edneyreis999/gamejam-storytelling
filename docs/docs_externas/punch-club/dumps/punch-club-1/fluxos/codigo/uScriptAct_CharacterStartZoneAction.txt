@@ -1,0 +1,24 @@
+using System;
+
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Char: ZnAction", "")]
+public class uScriptAct_CharacterStartZoneAction : uScriptLogic
+{
+	public bool Immidiate => true;
+
+	public event uScript_GameObject.uScriptEventHandler CameToPoint;
+
+	public void In([FriendlyName("Zone", "")] string zone_name, [FriendlyName("Immid?", "Start action immidiate?")] bool immid)
+	{
+		MainGame.save.ch.char_gfx.DoAction(zone_name, immid);
+		MainGame.save.ch.char_gfx.AddCallback_OnCameToLastPoint(delegate
+		{
+			if (this.CameToPoint != null)
+			{
+				this.CameToPoint(this, new EventArgs());
+			}
+		}, call_only_once: true);
+	}
+}

@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open Robot Customization Window", 0)]
+[Category("Game")]
+public class Flow_OpenRobotCustomizationWindow : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClosed;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in", delegate(Flow flow)
+		{
+			UIRobotCustomizationWindow uIRobotCustomizationWindow = GUIElements.Get<UIRobotCustomizationWindow>();
+			uIRobotCustomizationWindow.onClosed = delegate
+			{
+				onClosed.Call(flow);
+			};
+			uIRobotCustomizationWindow.Open();
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClosed = AddFlowOutput("onClosed".CapitalizeFirst());
+	}
+}

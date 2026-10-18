@@ -1,0 +1,55 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/GUI")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Create Quest Marker", "Creates a new (!)")]
+public class uScriptAct_CreateQuestMarker : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Zone", "")][SocketState(false, false)][DefaultValue("")] string zone_name, [FriendlyName("Position", "")][SocketState(false, false)] GameObject game_object, [FriendlyName("QMark", "The new Quest Mark.")] out QuestMarker q, [FriendlyName("Block others?", "")][SocketState(false, false)] bool block_others)
+	{
+		SceneZoneGfx sceneZoneGfx = null;
+		Vector2 vector = Vector2.zero;
+		if (zone_name != string.Empty)
+		{
+			sceneZoneGfx = SceneRoot.me.GetZoneByName(zone_name);
+			if (sceneZoneGfx == null)
+			{
+				Debug.LogError("Zone '" + zone_name + "' not found!");
+			}
+			q = QuestMarker.Create(sceneZoneGfx);
+			if (sceneZoneGfx != null)
+			{
+				if (sceneZoneGfx.mark_pos != null)
+				{
+					vector = sceneZoneGfx.mark_pos.transform.position;
+					Debug.Log("taking pos " + vector);
+				}
+				sceneZoneGfx.anim.BlinkWithHilight();
+			}
+			if (block_others)
+			{
+				MainGame.single_interaction_zone = zone_name;
+				TwitchGameEngine.OnSingleInteraction(zone_name);
+			}
+		}
+		else
+		{
+			if (game_object != null)
+			{
+				vector = game_object.transform.position;
+				if (game_object.transform.parent != null)
+				{
+					sceneZoneGfx = game_object.GetComponentInParent<SceneZoneGfx>();
+				}
+			}
+			q = QuestMarker.Create(vector);
+		}
+		if (sceneZoneGfx != null)
+		{
+			sceneZoneGfx.quest_marker = q;
+		}
+	}
+}

@@ -1,0 +1,250 @@
+using System;
+using UnityEngine;
+
+[Serializable]
+[NodePath("Graphs")]
+[FriendlyName("Untitled", "")]
+public class cutscene_storage : uScriptLogic
+{
+	private delegate void ContinueExecution();
+
+	private GameObject parentGameObject;
+
+	private uScript_GUI thisScriptsOnGuiListener;
+
+	private bool m_RegisteredForEvents;
+
+	private ContinueExecution m_ContinueExecution;
+
+	private bool m_Breakpoint;
+
+	private const int MaxRelayCallCount = 1000;
+
+	private int relayCallCount;
+
+	private string local_1_System_String = string.Empty;
+
+	private uScriptAct_SetIntroStatus logic_uScriptAct_SetIntroStatus_uScriptAct_SetIntroStatus_2 = new uScriptAct_SetIntroStatus();
+
+	private bool logic_uScriptAct_SetIntroStatus_status_2 = true;
+
+	private bool logic_uScriptAct_SetIntroStatus_Out_2 = true;
+
+	private uScriptAct_CutsceneEnded logic_uScriptAct_CutsceneEnded_uScriptAct_CutsceneEnded_3 = new uScriptAct_CutsceneEnded();
+
+	private uScriptCon_CompareString logic_uScriptCon_CompareString_uScriptCon_CompareString_4 = new uScriptCon_CompareString();
+
+	private string logic_uScriptCon_CompareString_A_4 = string.Empty;
+
+	private string logic_uScriptCon_CompareString_B_4 = "end";
+
+	private bool logic_uScriptCon_CompareString_Same_4 = true;
+
+	private bool logic_uScriptCon_CompareString_Different_4 = true;
+
+	private GameObject event_UnityEngine_GameObject_Sender_0;
+
+	private string event_UnityEngine_GameObject_EventName_0 = string.Empty;
+
+	private GameObject event_UnityEngine_GameObject_Instance_0;
+
+	private void SyncUnityHooks()
+	{
+		SyncEventListeners();
+	}
+
+	private void RegisterForUnityHooks()
+	{
+		SyncEventListeners();
+	}
+
+	private void SyncEventListeners()
+	{
+		if (!(null == event_UnityEngine_GameObject_Instance_0) && m_RegisteredForEvents)
+		{
+			return;
+		}
+		event_UnityEngine_GameObject_Instance_0 = uScript_MasterComponent.LatestMaster;
+		if (null != event_UnityEngine_GameObject_Instance_0)
+		{
+			uScript_CustomEvent uScript_CustomEvent2 = event_UnityEngine_GameObject_Instance_0.GetComponent<uScript_CustomEvent>();
+			if (null == uScript_CustomEvent2)
+			{
+				uScript_CustomEvent2 = event_UnityEngine_GameObject_Instance_0.AddComponent<uScript_CustomEvent>();
+			}
+			if (null != uScript_CustomEvent2)
+			{
+				uScript_CustomEvent2.OnCustomEvent += Instance_OnCustomEvent_0;
+			}
+		}
+	}
+
+	private void UnregisterEventListeners()
+	{
+		if (null != event_UnityEngine_GameObject_Instance_0)
+		{
+			uScript_CustomEvent component = event_UnityEngine_GameObject_Instance_0.GetComponent<uScript_CustomEvent>();
+			if (null != component)
+			{
+				component.OnCustomEvent -= Instance_OnCustomEvent_0;
+			}
+		}
+	}
+
+	public override void SetParent(GameObject g)
+	{
+		parentGameObject = g;
+		logic_uScriptAct_SetIntroStatus_uScriptAct_SetIntroStatus_2.SetParent(g);
+		logic_uScriptAct_CutsceneEnded_uScriptAct_CutsceneEnded_3.SetParent(g);
+		logic_uScriptCon_CompareString_uScriptCon_CompareString_4.SetParent(g);
+	}
+
+	public void Awake()
+	{
+	}
+
+	public void Start()
+	{
+		SyncUnityHooks();
+		m_RegisteredForEvents = true;
+	}
+
+	public void OnEnable()
+	{
+		RegisterForUnityHooks();
+		m_RegisteredForEvents = true;
+	}
+
+	public void OnDisable()
+	{
+		UnregisterEventListeners();
+		m_RegisteredForEvents = false;
+	}
+
+	public void Update()
+	{
+		if (relayCallCount < 1000)
+		{
+			relayCallCount = 0;
+		}
+		if (m_ContinueExecution != null)
+		{
+			ContinueExecution continueExecution = m_ContinueExecution;
+			m_ContinueExecution = null;
+			m_Breakpoint = false;
+			continueExecution();
+		}
+		else
+		{
+			UpdateEditorValues();
+			SyncEventListeners();
+		}
+	}
+
+	public void OnDestroy()
+	{
+	}
+
+	private void Instance_OnCustomEvent_0(object o, uScript_CustomEvent.CustomEventBoolArgs e)
+	{
+		if (relayCallCount < 1000)
+		{
+			relayCallCount = 0;
+		}
+		event_UnityEngine_GameObject_Sender_0 = e.Sender;
+		event_UnityEngine_GameObject_EventName_0 = e.EventName;
+		Relay_OnCustomEvent_0();
+	}
+
+	private void Relay_OnCustomEvent_0()
+	{
+		if (!CheckDebugBreak("2be53080-2ff9-4f23-9f7e-2a4cb2e4d141", "Custom_Event", Relay_OnCustomEvent_0))
+		{
+			local_1_System_String = event_UnityEngine_GameObject_EventName_0;
+			Relay_In_2();
+		}
+	}
+
+	private void Relay_In_2()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a0bfb5fa-8e0a-49f7-a1aa-8212881a7c9d", "Set_Intro_Status", Relay_In_2))
+			{
+				logic_uScriptAct_SetIntroStatus_uScriptAct_SetIntroStatus_2.In(logic_uScriptAct_SetIntroStatus_status_2);
+				if (logic_uScriptAct_SetIntroStatus_uScriptAct_SetIntroStatus_2.Out)
+				{
+					Relay_In_4();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript cutscene_storage.uscript at Set Intro Status.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_3()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("8a0dbdb2-2ce4-490c-90ad-b7ed69857871", "Cutscene_end", Relay_In_3))
+			{
+				logic_uScriptAct_CutsceneEnded_uScriptAct_CutsceneEnded_3.In();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript cutscene_storage.uscript at Cutscene end.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_4()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("39d2f5e8-7946-4544-bb28-d87204288f1a", "Compare_String", Relay_In_4))
+			{
+				logic_uScriptCon_CompareString_A_4 = local_1_System_String;
+				logic_uScriptCon_CompareString_uScriptCon_CompareString_4.In(logic_uScriptCon_CompareString_A_4, logic_uScriptCon_CompareString_B_4);
+				if (logic_uScriptCon_CompareString_uScriptCon_CompareString_4.Same)
+				{
+					Relay_In_3();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript cutscene_storage.uscript at Compare String.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void UpdateEditorValues()
+	{
+		uScript_MasterComponent.LatestMasterComponent.UpdateNodeValue("cutscene_storage.uscript:1", local_1_System_String);
+		uScript_MasterComponent.LatestMasterComponent.UpdateNodeValue("1af2993f-c62b-48b8-8b9e-c8775d74b07b", local_1_System_String);
+	}
+
+	private bool CheckDebugBreak(string guid, string name, ContinueExecution method)
+	{
+		if (m_Breakpoint)
+		{
+			return true;
+		}
+		if (uScript_MasterComponent.FindBreakpoint(guid))
+		{
+			if (!(uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint == guid))
+			{
+				uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint = guid;
+				UpdateEditorValues();
+				Debug.Log("uScript BREAK Node:" + name + " ((Time: " + Time.time + string.Empty);
+				Debug.Break();
+				m_ContinueExecution = method.Invoke;
+				m_Breakpoint = true;
+				return true;
+			}
+			uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint = string.Empty;
+		}
+		return false;
+	}
+}

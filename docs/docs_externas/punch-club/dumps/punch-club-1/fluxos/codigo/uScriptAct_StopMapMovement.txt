@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/GUI")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Stop map move", "")]
+public class uScriptAct_StopMapMovement : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In()
+	{
+		MainGame.me.gui_elements.game_map.marker.StopAnyMovement();
+	}
+}

@@ -1,0 +1,45 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Change UI State Tutorial", 0)]
+[Category("Game")]
+public class Flow_ChangeUIStateTutorial : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isHudVisible;
+
+	private ValueInput<bool> isMapButtonVisible;
+
+	private ValueInput<bool> isTooltipVisible;
+
+	private ValueInput<bool> isOSRVisible;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ChangeState);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isHudVisible = AddValueInput<bool>("isHudVisible".CapitalizeFirst());
+		isMapButtonVisible = AddValueInput<bool>("isMapButtonVisible".CapitalizeFirst());
+		isTooltipVisible = AddValueInput<bool>("isTooltipVisible".CapitalizeFirst());
+		isOSRVisible = AddValueInput<bool>("isOSRVisible".CapitalizeFirst());
+	}
+
+	private void ChangeState(Flow flow)
+	{
+		MainGame.me.gameSave.uiSystem.ChangeCharacterPanelState(isHudVisible.value);
+		MainGame.me.gameSave.uiSystem.ChangeMapButtonState(isMapButtonVisible.value);
+		MainGame.me.gameSave.uiSystem.ChangeTooltipsState(isTooltipVisible.value);
+		MainGame.me.gameSave.uiSystem.ChangeOSRState(isOSRVisible.value);
+		if (isOSRVisible.value)
+		{
+			GUIElements.Get<UICharacter>().EnableOSR();
+		}
+		@out.Call(flow);
+	}
+}

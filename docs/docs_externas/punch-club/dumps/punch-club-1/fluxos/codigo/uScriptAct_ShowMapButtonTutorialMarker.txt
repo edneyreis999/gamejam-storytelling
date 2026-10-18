@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Show map btn arrow", "")]
+public class uScriptAct_ShowMapButtonTutorialMarker : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In()
+	{
+		QuestMarker.CreateMarkerOnCityMapButton();
+	}
+}

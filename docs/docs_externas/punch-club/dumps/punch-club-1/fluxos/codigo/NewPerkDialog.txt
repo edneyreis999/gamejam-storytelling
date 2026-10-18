@@ -1,0 +1,55 @@
+public class NewPerkDialog : BaseGUI
+{
+	public UILabel l_name;
+
+	public UILabel l_descr;
+
+	public UILabel l_header;
+
+	public SimpleButton btn_1;
+
+	public UI2DSprite spr_icon;
+
+	public static GJCommons.VoidDelegate on_close;
+
+	public void Open(PerkData perk, GJCommons.VoidDelegate on_close_delegate = null, bool adding_perk = true)
+	{
+		MainGame.me.gui_elements.game_map.marker.StopAnyMovement();
+		if (MainGame.me.gui_elements.dialog_gui.IsShown())
+		{
+			MainGame.me.gui_elements.dialog_gui.Hide();
+		}
+		if (MainGame.me.gui_elements.working_animation.IsShown())
+		{
+			MainGame.me.gui_elements.working_animation.Hide();
+		}
+		on_close = on_close_delegate;
+		Open();
+		l_name.text = perk.display_name;
+		l_header.text = GJL.L(((!adding_perk) ? "hdr_lose_" : "hdr_new_") + ((!(perk.buff_len_days > 0f)) ? "perk" : "buff"));
+		spr_icon.sprite2D = EasySpritesCollection.GetSprite("perk " + perk.name);
+		l_descr.text = perk.description_text;
+		MainGame.me.gui_elements.perk_buffs.Redraw();
+		btn_1.SetText("(Action1)" + GJL.L("OK"));
+	}
+
+	public override void Hide()
+	{
+		if (shown)
+		{
+			base.Hide();
+			Sound.Play(Sound.SoundID.Click);
+		}
+	}
+
+	protected override void OnHideDone()
+	{
+		base.OnHideDone();
+		if (on_close != null)
+		{
+			GJCommons.VoidDelegate voidDelegate = on_close;
+			on_close = null;
+			voidDelegate();
+		}
+	}
+}

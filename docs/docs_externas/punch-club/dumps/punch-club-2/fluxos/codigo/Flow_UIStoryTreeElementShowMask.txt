@@ -1,0 +1,55 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Story Tree Element Show Masks", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIStoryTreeElementShowMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	private ValueInput<string> elementId;
+
+	public override string name => "UI Story Tree Element " + (isToShow.value ? "Show" : "Hide") + " Masks";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIStoryElement elementById = GUIElements.Get<UIStoryTreeWindow>().GetElementById(elementId.value);
+			RectTransform tutorialRect = elementById.TutorialRect;
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(tutorialRect);
+				Canvas canvas = elementById.gameObject.AddComponent<Canvas>();
+				canvas.overrideSorting = true;
+				canvas.sortingOrder = 999;
+				elementById.gameObject.AddComponent<GraphicRaycaster>();
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(tutorialRect);
+				if (elementById.TryGetComponent<GraphicRaycaster>(out var component))
+				{
+					Object.Destroy(component);
+				}
+				if (elementById.TryGetComponent<Canvas>(out var component2))
+				{
+					Object.Destroy(component2);
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		elementId = AddValueInput<string>("elementId".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow".CapitalizeFirst());
+	}
+}

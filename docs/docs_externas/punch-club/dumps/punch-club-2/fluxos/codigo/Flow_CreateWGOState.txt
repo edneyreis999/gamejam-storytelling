@@ -1,0 +1,29 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Create WGO State", 0)]
+[Category("Game/WGO")]
+public class Flow_CreateWGOState : PC2CustomFlowNode
+{
+	private WGOState createdWGOState;
+
+	protected override void RegisterPorts()
+	{
+		ValueInput<string> wgoId = AddValueInput<string>("wgoId");
+		ValueInput<bool> isActive = AddValueInput<bool>("isActive");
+		AddValueOutput("wgoStateOut", () => createdWGOState);
+		FlowOutput @out = AddFlowOutput("out".CapitalizeFirst());
+		AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			createdWGOState = MainGame.me.gameSave.worldData.CreateWGOState(wgoId.value, new List<ActiveOnScene>
+			{
+				new ActiveOnScene(DynamicScene.current.SceneName, isActive.value)
+			});
+			@out.Call(flow);
+		});
+	}
+}

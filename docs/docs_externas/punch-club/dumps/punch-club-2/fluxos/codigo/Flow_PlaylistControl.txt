@@ -1,0 +1,87 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Playlist Control", 0)]
+[Category("Game/Sound")]
+public class Flow_PlaylistControl : PC2CustomFlowNode
+{
+	public enum ControlType
+	{
+		Play,
+		Pause,
+		Stop,
+		NextTrack,
+		PlayTrack,
+		SetWeight,
+		AddWeight,
+		StopForever
+	}
+
+	[GatherPortsCallback]
+	public ControlType controlType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> playlistId;
+
+	private ValueInput<string> trackId;
+
+	private ValueInput<float> weight;
+
+	public override string name => $"{base.name} \n<color=#58BF2B>{controlType}</color>" + (playlistId.isDefaultValue ? "<color=#F73B3B>\nPlaylistId is NULL</color>" : string.Empty);
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Control);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		playlistId = AddValueInput<string>("playlistId".CapitalizeFirst());
+		switch (controlType)
+		{
+		case ControlType.PlayTrack:
+			trackId = AddValueInput<string>("trackId");
+			break;
+		case ControlType.SetWeight:
+		case ControlType.AddWeight:
+			trackId = AddValueInput<string>("trackId");
+			weight = AddValueInput<float>("weight");
+			break;
+		}
+	}
+
+	private void Control(Flow flow)
+	{
+		switch (controlType)
+		{
+		case ControlType.Play:
+			SmartPlaylistController.PlayPlaylist(playlistId.value, reset: true);
+			break;
+		case ControlType.Pause:
+			SmartPlaylistController.PausePlaylist(playlistId.value);
+			break;
+		case ControlType.Stop:
+			SmartPlaylistController.StopPlaylist(playlistId.value);
+			break;
+		case ControlType.NextTrack:
+			SmartPlaylistController.PlayNextTrack(playlistId.value);
+			break;
+		case ControlType.PlayTrack:
+			SmartPlaylistController.PlayTrackInPlaylist(trackId.value, playlistId.value);
+			break;
+		case ControlType.SetWeight:
+			SmartPlaylistController.SetWeightTrackInPlaylist(trackId.value, playlistId.value, weight.value);
+			break;
+		case ControlType.AddWeight:
+			SmartPlaylistController.AddWeightTrackInPlaylist(trackId.value, playlistId.value, weight.value);
+			break;
+		case ControlType.StopForever:
+			SmartPlaylistController.StopPlaylistForever(playlistId.value);
+			break;
+		}
+		@out.Call(flow);
+	}
+}

@@ -1,0 +1,44 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Event to SchoolSelection Mobile Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_AddEventToSchoolSelectionMobileButton : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput onClicked;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), AddEvent);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+
+	private void AddEvent(Flow flow)
+	{
+		Button button = null;
+		button = GUIElements.Get<SchoolSelectionWindow>().MobileApplyButton;
+		if (button != null)
+		{
+			UIElementsCustomEventHandlerManager.AddEvent(button, UITutorialArrow.SignOrientationType.Right, delegate
+			{
+				onClicked.Call(flow);
+			});
+		}
+		else
+		{
+			Debug.LogError("Selected button is null SchoolSelectionWindow.MobileApplyButton");
+			onClicked.Call(flow);
+		}
+		@out.Call(flow);
+	}
+}

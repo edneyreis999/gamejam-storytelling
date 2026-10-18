@@ -1,0 +1,48 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Sound Fade", 0)]
+[Category("Game/Sound")]
+public class Flow_SoundFade : PC2CustomFlowNode
+{
+	public enum FadeType
+	{
+		In,
+		Out
+	}
+
+	[GatherPortsCallback]
+	public FadeType fadeType;
+
+	private ValueInput<float> duration;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), DoFade);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		duration = AddValueInput<float>("duration".CapitalizeFirst());
+	}
+
+	private void DoFade(Flow flow)
+	{
+		switch (fadeType)
+		{
+		case FadeType.In:
+			SnapshotController.Instance.SetSnapshot(SnapshotController.SnapshotType.SceneFade, duration.value);
+			break;
+		case FadeType.Out:
+			SnapshotController.Instance.SetSnapshot(SnapshotController.SnapshotType.Default, duration.value);
+			break;
+		}
+		@out.Call(flow);
+	}
+}

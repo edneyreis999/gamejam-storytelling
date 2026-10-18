@@ -1,0 +1,56 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Start Fight Behaviour", 0)]
+[Category("Game")]
+public class Flow_StartFightBehaviour : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowInput onSkipped;
+
+	private FlowOutput @out;
+
+	private ValueInput<WGO> wgoInput;
+
+	private ValueInput<WGO> wgoInputWithData;
+
+	private FightBehaviour fightBehaviour;
+
+	private bool isSubscribed;
+
+	protected override void RegisterPorts()
+	{
+		onSkipped = AddFlowInput("onSkipped".CapitalizeFirst(), delegate(Flow flow)
+		{
+			Unsubscribe();
+			@out.Call(flow);
+		});
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			fightBehaviour = wgoInput.value.GetComponent<FightBehaviour>();
+			fightBehaviour.fightData = wgoInputWithData.value.GetComponent<FightBehaviour>().fightData;
+			fightBehaviour.OnTickAnimationEnded += fightBehaviour.NextTick;
+			fightBehaviour.OnFightTickListCompleted += Unsubscribe;
+			isSubscribed = true;
+			fightBehaviour.StartFight();
+			@out.Call(flow);
+		});
+		wgoInput = AddValueInput<WGO>("wgoInput".CapitalizeFirst());
+		wgoInputWithData = AddValueInput<WGO>("wgoInputWithData".CapitalizeFirst());
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+
+	private void Unsubscribe()
+	{
+		if (isSubscribed)
+		{
+			fightBehaviour.OnTickAnimationEnded -= fightBehaviour.NextTick;
+			fightBehaviour.OnFightTickListCompleted -= Unsubscribe;
+			isSubscribed = false;
+		}
+	}
+}

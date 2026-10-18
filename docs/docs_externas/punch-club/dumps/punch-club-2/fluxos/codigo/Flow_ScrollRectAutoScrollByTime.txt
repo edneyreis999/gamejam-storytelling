@@ -1,0 +1,115 @@
+using System;
+using System.Collections;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("ScrollRect AutoScroll By Time", 0)]
+[Category("Game/Tutorial")]
+public class Flow_ScrollRectAutoScrollByTime : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool HasCustomTargetPosition;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private ValueInput<ScrollRect> scrollRect;
+
+	private ValueInput<float> evaluationTime;
+
+	private Flow cachedFlow;
+
+	private ValueInput<Vector2> customTargetPosition;
+
+	public override string name => base.name + ((!scrollRect.isConnected) ? "\n<color=red>Scroll Rect isn't set</color>" : "");
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			cachedFlow = flow;
+			RectTransform contentRect = scrollRect.value.content;
+			Vector2 startAnchoredPosition = contentRect.anchoredPosition;
+			float customDistanceHorizontal = 0f;
+			bool positiveDirectionHorizontal = false;
+			float customDistanceVertical = 0f;
+			bool positiveDirectionVertical = false;
+			if (HasCustomTargetPosition)
+			{
+				customDistanceHorizontal = customTargetPosition.value.x - startAnchoredPosition.x;
+				positiveDirectionHorizontal = customDistanceHorizontal > 0f;
+				customDistanceVertical = customTargetPosition.value.y - startAnchoredPosition.y;
+				positiveDirectionVertical = customDistanceVertical > 0f;
+			}
+			StartCoroutine(CountDown(evaluationTime.value, delegate(float normalizedTime)
+			{
+				if (scrollRect.value.vertical)
+				{
+					if (HasCustomTargetPosition)
+					{
+						if (positiveDirectionVertical)
+						{
+							contentRect.anchoredPosition = ((contentRect.anchoredPosition.y < customTargetPosition.value.y) ? new Vector2(0f, startAnchoredPosition.y + normalizedTime * customDistanceVertical) : customTargetPosition.value);
+						}
+						else
+						{
+							contentRect.anchoredPosition = ((contentRect.anchoredPosition.y > customTargetPosition.value.y) ? new Vector2(0f, startAnchoredPosition.y + normalizedTime * customDistanceVertical) : customTargetPosition.value);
+						}
+					}
+					else if (scrollRect.value.horizontalNormalizedPosition < 1f)
+					{
+						contentRect.anchoredPosition = new Vector2(0f, normalizedTime * contentRect.sizeDelta.y);
+					}
+				}
+				else if (scrollRect.value.horizontal)
+				{
+					if (HasCustomTargetPosition)
+					{
+						if (positiveDirectionHorizontal)
+						{
+							contentRect.anchoredPosition = ((contentRect.anchoredPosition.x < customTargetPosition.value.x) ? new Vector2(startAnchoredPosition.x + normalizedTime * customDistanceHorizontal, 0f) : customTargetPosition.value);
+						}
+						else
+						{
+							contentRect.anchoredPosition = ((contentRect.anchoredPosition.x > customTargetPosition.value.x) ? new Vector2(startAnchoredPosition.x + normalizedTime * customDistanceHorizontal, 0f) : customTargetPosition.value);
+						}
+					}
+					else if (scrollRect.value.horizontalNormalizedPosition < 1f)
+					{
+						contentRect.anchoredPosition = new Vector2(normalizedTime * contentRect.sizeDelta.x, 0f);
+					}
+				}
+			}));
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		scrollRect = AddValueInput<ScrollRect>("scrollRect");
+		evaluationTime = AddValueInput<float>("evaluationTime");
+		if (HasCustomTargetPosition)
+		{
+			customTargetPosition = AddValueInput<Vector2>("customTargetPosition".CapitalizeFirst());
+		}
+	}
+
+	private IEnumerator CountDown(float durationTime, Action<float> implBody)
+	{
+		float timeCount = 0f;
+		float stepTime = 0.01f;
+		while (timeCount < durationTime)
+		{
+			implBody(timeCount / durationTime);
+			timeCount += stepTime;
+			yield return new WaitForSeconds(stepTime);
+		}
+		onFinished.Call(cachedFlow);
+	}
+}

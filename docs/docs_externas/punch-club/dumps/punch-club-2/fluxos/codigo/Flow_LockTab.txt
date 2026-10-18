@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Lock Tab", 0)]
+[Category("Game")]
+public class Flow_LockTab : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToUnlock = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<HeaderTabType> tab;
+
+	public override string name => (isToUnlock ? "Unlock" : "Lock") + " Tab";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToUnlock)
+			{
+				MainGame.me.gameSave.uiSystem.UnLockTab(tab.value);
+			}
+			else
+			{
+				MainGame.me.gameSave.uiSystem.LockTab(tab.value);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		tab = AddValueInput<HeaderTabType>("tab");
+	}
+}

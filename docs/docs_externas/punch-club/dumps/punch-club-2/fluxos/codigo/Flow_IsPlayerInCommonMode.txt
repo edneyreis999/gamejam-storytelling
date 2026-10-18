@@ -1,0 +1,17 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Is Player In Common Mode", 0)]
+[Category("Game")]
+public class Flow_IsPlayerInCommonMode : PC2CustomFlowNode
+{
+	private ValueOutput<bool> isCommon;
+
+	protected override void RegisterPorts()
+	{
+		isCommon = AddValueOutput("isCommon".CapitalizeFirst(), () => MainGame.me.gameSave.playerData.playerMode == PlayerMode.Common);
+	}
+}

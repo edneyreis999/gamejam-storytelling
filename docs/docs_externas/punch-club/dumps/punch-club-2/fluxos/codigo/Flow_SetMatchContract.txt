@@ -1,0 +1,33 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set Match Contract", 0)]
+[Category("Game")]
+public class Flow_SetMatchContract : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isContract;
+
+	private ValueInput<string> leagueId;
+
+	private ValueInput<int> fighterId;
+
+	protected override void RegisterPorts()
+	{
+		isContract = AddValueInput<bool>("isContract".CapitalizeFirst());
+		fighterId = AddValueInput<int>("fighterId".CapitalizeFirst());
+		leagueId = AddValueInput<string>("leagueId".CapitalizeFirst());
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.leaguesSystem.GetLeague(leagueId.value).SetMatchContract(fighterId.value, isContract.value);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

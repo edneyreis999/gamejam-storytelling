@@ -1,0 +1,42 @@
+using UnityEngine;
+
+[ExecuteInEditMode]
+[RequireComponent(typeof(UIWidget))]
+public class SpeechBubbleGUIInWidget : MonoBehaviour
+{
+	private SpeechBubbleGUI _sp;
+
+	private Vector3 _scale = Vector3.zero;
+
+	public GameObject obj;
+
+	public void Start()
+	{
+		_sp = base.transform.parent.GetComponent<SpeechBubbleGUI>();
+	}
+
+	public void Update()
+	{
+		if (_sp == null)
+		{
+			return;
+		}
+		Vector3 localScale = _sp.transform.localScale;
+		if (localScale != _scale)
+		{
+			_scale = localScale;
+			base.transform.localScale = localScale;
+			GetComponent<UIWidget>().UpdateAnchors();
+			Vector2 zero = Vector2.zero;
+			if (localScale.y < 0f)
+			{
+				zero.y = -5f;
+			}
+			if (localScale.x < 0f && localScale.y > 0f && _sp.speech_type != SpeechBubbleGUI.Type.Think)
+			{
+				zero.x = -11f;
+			}
+			obj.transform.localPosition = zero;
+		}
+	}
+}

@@ -1,0 +1,51 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Has Profession", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_HasProfession : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	private ValueInput<string> professionId;
+
+	private ValueInput<bool> checkInPoolToo;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (checkInPoolToo.value)
+			{
+				if (MainGame.me.gameSave.professionSystem.professionDatas.Find((ProfessionData p) => p.id == professionId.value) != null || MainGame.me.gameSave.professionSystem.professionDataPool.Find((ProfessionData p) => p.id == professionId.value) != null)
+				{
+					yes.Call(flow);
+				}
+				else
+				{
+					no.Call(flow);
+				}
+			}
+			else if (MainGame.me.gameSave.professionSystem.professionDatas.Find((ProfessionData p) => p.id == professionId.value) != null)
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+		professionId = AddValueInput<string>("professionId".CapitalizeFirst());
+		checkInPoolToo = AddValueInput<bool>("checkInPoolToo".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,30 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Set All Basic Techs Visible", 0)]
+[Category("Game")]
+public class Flow_SetAllBasicTechsVisible : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			for (int i = 0; i < GameBalance.Me.techData.Count; i++)
+			{
+				if (GameBalance.Me.techData[i].id != "mafia_promotion_1" && GameBalance.Me.techData[i].id != "yakuza_promotion_1" && GameBalance.Me.techData[i].id != "bobo_promotion_1" && GameBalance.Me.techData[i].State == TechState.Hidden && GameBalance.Me.techData[i].techBranchType == TechBranchType.Basic)
+				{
+					MainGame.me.gameSave.knowledgeSystem.RevealTech(GameBalance.Me.techData[i].id);
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

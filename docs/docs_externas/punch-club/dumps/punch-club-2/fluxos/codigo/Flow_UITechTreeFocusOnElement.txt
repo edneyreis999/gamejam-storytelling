@@ -1,0 +1,35 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("UI Tech Tree Focus On Element", 0)]
+[Category("Game/UI")]
+public class Flow_UITechTreeFocusOnElement : PC2CustomFlowNode
+{
+	public float scrollTime = 3f;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private ValueInput<string> techId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GUIElements.Get<UITechWindow>().FocusOnTechElement(techId.value, delegate
+			{
+				onFinished.Call(flow);
+			}, scrollTime);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		techId = AddValueInput<string>("techId");
+	}
+}

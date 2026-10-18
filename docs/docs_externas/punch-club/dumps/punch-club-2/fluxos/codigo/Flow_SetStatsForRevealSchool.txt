@@ -1,0 +1,109 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Set Stats", 0)]
+[Category("Game")]
+public class Flow_SetStatsForRevealSchool : PC2CustomFlowNode
+{
+	public enum School
+	{
+		AglSchool,
+		StrSchool,
+		StmSchool
+	}
+
+	[GatherPortsCallback]
+	public bool setStatsForRevealSchool;
+
+	[GatherPortsCallback]
+	[ShowIf("setStatsForRevealSchool", 1)]
+	public School school;
+
+	[GatherPortsCallback]
+	[ShowIf("setStatsForRevealSchool", 0)]
+	public int aglLvl;
+
+	[GatherPortsCallback]
+	[ShowIf("setStatsForRevealSchool", 0)]
+	public int stmLvl;
+
+	[GatherPortsCallback]
+	[ShowIf("setStatsForRevealSchool", 0)]
+	public int strLvl;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private GameRes defaultGameRes = new GameRes();
+
+	public override string name
+	{
+		get
+		{
+			if (!setStatsForRevealSchool)
+			{
+				return "Set Stats";
+			}
+			return school switch
+			{
+				School.AglSchool => "Set Stats For Reveal AGL School", 
+				School.StmSchool => "Set Stats For Reveal STM School", 
+				School.StrSchool => "Set Stats For Reveal STR School", 
+				_ => "Set Stats", 
+			};
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate
+		{
+			GameRes gameRes = MainGame.me.gameSave.playerData.gameRes;
+			if (gameRes == null)
+			{
+				Debug.LogWarning("Player is null, use default");
+				gameRes = defaultGameRes;
+			}
+			if (setStatsForRevealSchool)
+			{
+				if (gameRes.GetInt("_agl_lvl") < 12)
+				{
+					MainGame.me.gameSave.playerData.SetExp("_agl_lvl", 12f);
+				}
+				if (gameRes.GetInt("_stm_lvl") < 12)
+				{
+					MainGame.me.gameSave.playerData.SetExp("_stm_lvl", 12f);
+				}
+				if (gameRes.GetInt("_str_lvl") < 12)
+				{
+					MainGame.me.gameSave.playerData.SetExp("_str_lvl", 12f);
+				}
+				switch (school)
+				{
+				case School.AglSchool:
+					MainGame.me.gameSave.playerData.SetExp("_agl_lvl", 17f);
+					break;
+				case School.StmSchool:
+					MainGame.me.gameSave.playerData.SetExp("_stm_lvl", 17f);
+					break;
+				case School.StrSchool:
+					MainGame.me.gameSave.playerData.SetExp("_str_lvl", 17f);
+					break;
+				}
+			}
+			else
+			{
+				MainGame.me.gameSave.playerData.SetExp("_agl_lvl", aglLvl);
+				MainGame.me.gameSave.playerData.SetExp("_stm_lvl", stmLvl);
+				MainGame.me.gameSave.playerData.SetExp("_str_lvl", strLvl);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

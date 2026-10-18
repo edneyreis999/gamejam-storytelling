@@ -1,0 +1,40 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Fought With In League", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_FoughtWithInLeague : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	private ValueInput<string> opponentId;
+
+	private ValueOutput<bool> has;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (MainGame.me.gameSave.leaguesSystem.fightedWithOpponents.Contains(opponentId.value))
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+		opponentId = AddValueInput<string>("opponentId".CapitalizeFirst());
+		has = AddValueOutput("has", () => MainGame.me.gameSave.leaguesSystem.fightedWithOpponents.Contains(opponentId.value));
+	}
+}

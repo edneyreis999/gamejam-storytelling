@@ -1,0 +1,28 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Scholars Count", 0)]
+[Category("Game")]
+public class Flow_ScholarsCount : PC2CustomFlowNode
+{
+	private ValueOutput<int> scholarCount;
+
+	protected override void RegisterPorts()
+	{
+		scholarCount = AddValueOutput("scholarCount", delegate
+		{
+			int num = 0;
+			for (int i = 0; i < LazyConsts.mickScholarsIds.Count; i++)
+			{
+				WGOState wGOState = MainGame.me.gameSave.worldData.GetWGOState(LazyConsts.mickScholarsIds[i]);
+				if (wGOState != null && wGOState.gameRes.GetInt("is_unlocked") == 1)
+				{
+					num++;
+				}
+			}
+			return num;
+		});
+	}
+}

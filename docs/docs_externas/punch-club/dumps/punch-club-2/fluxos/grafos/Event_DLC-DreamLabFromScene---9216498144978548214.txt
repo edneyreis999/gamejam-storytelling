@@ -1,0 +1,380 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": -9216498144978548214,
+  "serialized_graph_sha256": "17c63288b2b3742af4cfc914ccbf5775ed888fb5c414aac54e832c2b1cd073bd",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "Event_DLC-DreamLabFromScene",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"_position\":{\"x\":522.0964,\"y\":508.3332},\"$type\":\"FlowCanvas.Nodes.StartEvent\",\"$id\":\"0\"},{\"_position\":{\"x\":699.7892,\"y\":509.3333},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetControlActive\",\"$id\":\"1\"},{\"_inputPortValues\":{\"Phrase\":{\"$content\":\"ev_dlc1_start_dream_lab_2\",\"$type\":\"System.String\"}},\"_color\":{\"r\":0.003921569,\"g\":0.003921569,\"b\":0.003921569,\"a\":1.0},\"_position\":{\"x\":1047.876,\"y\":507.9399},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_AddPhraseToBlackList\",\"$id\":\"2\"},{\"identifier\":\"Emmit\",\"_UID\":\"e807cd38-8b91-4fa7-b12f-a4d80d5d0bcb\",\"_position\":{\"x\":1512.437,\"y\":496.6678},\"$type\":\"FlowCanvas.Nodes.RelayValueInput`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\",\"$id\":\"3\"},{\"_position\":{\"x\":1678.596,\"y\":505.2955},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EnableLazyAnimationController\",\"$id\":\"4\"},{\"walkType\":2,\"_position\":{\"x\":1991.684,\"y\":503.3337},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_GoTo\",\"$id\":\"5\"},{\"_inputPortValues\":{\"direction\":{\"$content\":2,\"$type\":\"HumanLikeDirections+Direction\"}},\"_position\":{\"x\":2573.0,\"y\":505.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetDirection\",\"$id\":\"6\"},{\"_inputPortValues\":{\"text\":{\"$content\":\"ev_dlc1_start_dream_lab_1\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2855.0,\"y\":505.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_Talk\",\"$id\":\"7\"},{\"isPlayer\":true,\"_inputPortValues\":{\"text\":{\"$content\":\"ev_dlc1_start_dream_lab_2\",\"$type\":\"System.String\"}},\"_position\":{\"x\":3362.0,\"y\":503.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_Talk\",\"$id\":\"8\"},{\"_inputPortValues\":{\"ScriptName\":{\"$content\":\"Event_DLC-DreamLabBoth\",\"$type\":\"System.String\"}},\"_position\":{\"x\":3845.0,\"y\":506.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_RunScript\",\"$id\":\"9\"},{\"_position\":{\"x\":4181.0,\"y\":572.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"10\"},{\"_inputPortValues\":{\"id\":{\"$content\":\"emmit_stand_node\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1736.678,\"y\":636.6617},\"$type\":\"PunchClub2.FlowCanvas.Flow_GetWalkNodeById\",\"$id\":\"11\"},{\"_inputPortValues\":{\"wgoId\":{\"$content\":\"npc_emmit\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1323.436,\"y\":638.6678},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_FindWGO\",\"$id\":\"12\"},{\"_sourceInputUID\":\"e807cd38-8b91-4fa7-b12f-a4d80d5d0bcb\",\"_position\":{\"x\":2640.0,\"y\":655.0},\"$type\":\"FlowCanvas.Nodes.RelayValueOutput`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\",\"$id\":\"13\"},{\"_sourceInputUID\":\"e807cd38-8b91-4fa7-b12f-a4d80d5d0bcb\",\"_color\":{\"r\":0.5254902,\"g\":0.4,\"b\":0.5764706,\"a\":1.0},\"_position\":{\"x\":1544.802,\"y\":635.6749},\"$type\":\"FlowCanvas.Nodes.RelayValueOutput`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\",\"$id\":\"14\"}],\"connections\":[{\"_sourcePortName\":\"Once\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"Set\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\" \",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"4\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"OnFinished\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"6\"},\"_targetNode\":{\"$ref\":\"7\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"On Finished\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"7\"},\"_targetNode\":{\"$ref\":\"8\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"On Finished\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"8\"},\"_targetNode\":{\"$ref\":\"9\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"9\"},\"_targetNode\":{\"$ref\":\"10\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"walkNode\",\"_targetPortName\":\"destination\",\"_sourceNode\":{\"$ref\":\"11\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"},{\"_sourcePortName\":\"WGO\",\"_targetPortName\":\"Value\",\"_sourceNode\":{\"$ref\":\"12\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"},{\"_sourcePortName\":\"Value\",\"_targetPortName\":\"WGO\",\"_sourceNode\":{\"$ref\":\"13\"},\"_targetNode\":{\"$ref\":\"7\"},\"$type\":\"FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"},{\"_sourcePortName\":\"Value\",\"_targetPortName\":\"GameObject\",\"_sourceNode\":{\"$ref\":\"14\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection`1[[UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": -1179.0,
+        "y": 125.0
+      },
+      "_zoomFactor": 0.7500889897346497
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "_position": {
+          "x": 522.0964,
+          "y": 508.3332
+        },
+        "$type": "FlowCanvas.Nodes.StartEvent",
+        "$id": "0"
+      },
+      {
+        "_position": {
+          "x": 699.7892,
+          "y": 509.3333
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetControlActive",
+        "$id": "1"
+      },
+      {
+        "_inputPortValues": {
+          "Phrase": {
+            "$content": "ev_dlc1_start_dream_lab_2",
+            "$type": "System.String"
+          }
+        },
+        "_color": {
+          "r": 0.003921569,
+          "g": 0.003921569,
+          "b": 0.003921569,
+          "a": 1.0
+        },
+        "_position": {
+          "x": 1047.876,
+          "y": 507.9399
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_AddPhraseToBlackList",
+        "$id": "2"
+      },
+      {
+        "identifier": "Emmit",
+        "_UID": "e807cd38-8b91-4fa7-b12f-a4d80d5d0bcb",
+        "_position": {
+          "x": 1512.437,
+          "y": 496.6678
+        },
+        "$type": "FlowCanvas.Nodes.RelayValueInput`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "$id": "3"
+      },
+      {
+        "_position": {
+          "x": 1678.596,
+          "y": 505.2955
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EnableLazyAnimationController",
+        "$id": "4"
+      },
+      {
+        "walkType": 2,
+        "_position": {
+          "x": 1991.684,
+          "y": 503.3337
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_GoTo",
+        "$id": "5"
+      },
+      {
+        "_inputPortValues": {
+          "direction": {
+            "$content": 2,
+            "$type": "HumanLikeDirections+Direction"
+          }
+        },
+        "_position": {
+          "x": 2573.0,
+          "y": 505.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetDirection",
+        "$id": "6"
+      },
+      {
+        "_inputPortValues": {
+          "text": {
+            "$content": "ev_dlc1_start_dream_lab_1",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2855.0,
+          "y": 505.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_Talk",
+        "$id": "7"
+      },
+      {
+        "isPlayer": true,
+        "_inputPortValues": {
+          "text": {
+            "$content": "ev_dlc1_start_dream_lab_2",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 3362.0,
+          "y": 503.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_Talk",
+        "$id": "8"
+      },
+      {
+        "_inputPortValues": {
+          "ScriptName": {
+            "$content": "Event_DLC-DreamLabBoth",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 3845.0,
+          "y": 506.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_RunScript",
+        "$id": "9"
+      },
+      {
+        "_position": {
+          "x": 4181.0,
+          "y": 572.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "10"
+      },
+      {
+        "_inputPortValues": {
+          "id": {
+            "$content": "emmit_stand_node",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1736.678,
+          "y": 636.6617
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_GetWalkNodeById",
+        "$id": "11"
+      },
+      {
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "npc_emmit",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1323.436,
+          "y": 638.6678
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_FindWGO",
+        "$id": "12"
+      },
+      {
+        "_sourceInputUID": "e807cd38-8b91-4fa7-b12f-a4d80d5d0bcb",
+        "_position": {
+          "x": 2640.0,
+          "y": 655.0
+        },
+        "$type": "FlowCanvas.Nodes.RelayValueOutput`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "$id": "13"
+      },
+      {
+        "_sourceInputUID": "e807cd38-8b91-4fa7-b12f-a4d80d5d0bcb",
+        "_color": {
+          "r": 0.5254902,
+          "g": 0.4,
+          "b": 0.5764706,
+          "a": 1.0
+        },
+        "_position": {
+          "x": 1544.802,
+          "y": 635.6749
+        },
+        "$type": "FlowCanvas.Nodes.RelayValueOutput`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "$id": "14"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Once",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "Set",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": " ",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "4"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "OnFinished",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "6"
+        },
+        "_targetNode": {
+          "$ref": "7"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "On Finished",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "7"
+        },
+        "_targetNode": {
+          "$ref": "8"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "On Finished",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "8"
+        },
+        "_targetNode": {
+          "$ref": "9"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "9"
+        },
+        "_targetNode": {
+          "$ref": "10"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "walkNode",
+        "_targetPortName": "destination",
+        "_sourceNode": {
+          "$ref": "11"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      {
+        "_sourcePortName": "WGO",
+        "_targetPortName": "Value",
+        "_sourceNode": {
+          "$ref": "12"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      {
+        "_sourcePortName": "Value",
+        "_targetPortName": "WGO",
+        "_sourceNode": {
+          "$ref": "13"
+        },
+        "_targetNode": {
+          "$ref": "7"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      {
+        "_sourcePortName": "Value",
+        "_targetPortName": "GameObject",
+        "_sourceNode": {
+          "$ref": "14"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {}
+    }
+  }
+}

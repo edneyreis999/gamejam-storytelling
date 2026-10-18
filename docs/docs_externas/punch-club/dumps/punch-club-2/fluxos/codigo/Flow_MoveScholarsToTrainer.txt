@@ -1,0 +1,154 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Move Scholars to trainer point & start Training", 0)]
+[Category("Game/MickGym")]
+public class Flow_MoveScholarsToTrainer : PC2CustomFlowNode
+{
+	private static readonly int state = Animator.StringToHash("State");
+
+	private const string SWITCHABLE_COLLIDERS_WGO = "switchable_colliders";
+
+	[GatherPortsCallback]
+	public bool isToStart;
+
+	public bool instant;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onReadyToStartProfAction;
+
+	private FlowOutput onStopped;
+
+	private List<WGO> comingScholars;
+
+	private bool allAdded;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToStart)
+			{
+				return "Stop Scholars Training";
+			}
+			return "Move Scholars to trainer point & start Training";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			WGO wGO = DynamicScene.FindWGO("switchable_colliders");
+			if (wGO != null)
+			{
+				wGO.Animator.SetInteger(state, isToStart.ToInt());
+			}
+			comingScholars = new List<WGO>();
+			for (int i = 0; i < LazyConsts.mickScholarsIds.Count; i++)
+			{
+				WGO scholar = DynamicScene.FindWGO(LazyConsts.mickScholarsIds[i]);
+				if (!(scholar == null) && scholar.WgoState.GetStateOnScene("MikesOldHouse", out var isActive) && isActive)
+				{
+					comingScholars.Add(scholar);
+					int i2 = i;
+					if (isToStart)
+					{
+						Vector3 vector = DynamicScene.FindWalkNode(LazyConsts.mickScholarsTrainerPointsIds[i2]).transform.position;
+						Vector3 benchPos = DynamicScene.FindWalkNode(LazyConsts.mickScholarsBenchPointsIds[i2]).transform.position;
+						scholar.Movement.Stop();
+						if ((Vector2)scholar.transform.position == (Vector2)vector)
+						{
+							LazyTimer.AddTimer(0f, delegate
+							{
+								StartTraining(scholar, DynamicScene.FindWGO(LazyConsts.mickScholarsTrainersIds[i2]), flow);
+							});
+						}
+						else
+						{
+							LazyTimer.AddTimer(0f, delegate
+							{
+								if ((Vector2)scholar.transform.position == (Vector2)benchPos)
+								{
+									Vector3 vector2 = DynamicScene.FindWalkNode(LazyConsts.mickScholarsBenchPointsIds[i2] + "_tp").transform.position;
+									scholar.transform.position = vector2;
+									scholar.Animator.SetInteger(state, 0);
+									scholar.Movement.SetDirection(HumanLikeDirections.GetDirectionVectorByEnum(HumanLikeDirections.Direction.Right));
+								}
+								scholar.Move(DynamicScene.FindWalkNode(LazyConsts.mickScholarsTrainerPointsIds[i2]).transform.position, MovementComponent.MovementType.AStar, delegate
+								{
+									StartTraining(scholar, DynamicScene.FindWGO(LazyConsts.mickScholarsTrainersIds[i2]), flow);
+								}, Random.Range(150f, 165f));
+							});
+						}
+					}
+					else if (instant)
+					{
+						UIInteractionTooltip.Hide(force: true);
+						CharacterParamBubble.ForceHide();
+						StopTraining(scholar, DynamicScene.FindWGO(LazyConsts.mickScholarsTrainersIds[i2]), flow);
+					}
+					else
+					{
+						LazyTimer.AddTimer(0f, delegate
+						{
+							StopTraining(scholar, DynamicScene.FindWGO(LazyConsts.mickScholarsTrainersIds[i2]), flow);
+						});
+					}
+				}
+			}
+			allAdded = true;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isToStart)
+		{
+			onReadyToStartProfAction = AddFlowOutput("onReadyToStartProfAction".CapitalizeFirst());
+		}
+		else
+		{
+			onStopped = AddFlowOutput("onStopped".CapitalizeFirst());
+		}
+	}
+
+	private void StartTraining(WGO currentScholar, WGO linkedTrainer, Flow flow)
+	{
+		Vector2 direction = (PlayerController.Instance.transform.position - currentScholar.transform.position).normalized;
+		currentScholar.SetDirection(direction);
+		comingScholars.Remove(currentScholar);
+		if (comingScholars.Count <= 0 && allAdded)
+		{
+			onReadyToStartProfAction.Call(flow);
+			allAdded = false;
+		}
+		currentScholar.gameObject.SetActive(value: false);
+		linkedTrainer.ActionAnimationComponent.AnimateInteraction(AnimationComponent.AnimationStateType.MickGymTraining);
+		linkedTrainer.WgoState.notInteractableAtAll = true;
+	}
+
+	private void StopTraining(WGO currentScholar, WGO linkedTrainer, Flow flow)
+	{
+		if (MainGame.me.gameSave.professionSystem.IsDutyActiveForScene("mick_gym"))
+		{
+			currentScholar.gameObject.SetActive(value: true);
+		}
+		linkedTrainer.ActionAnimationComponent.StopInteraction();
+		linkedTrainer.WgoState.notInteractableAtAll = false;
+		comingScholars.Remove(currentScholar);
+		if (comingScholars.Count <= 0 && allAdded)
+		{
+			onStopped.Call(flow);
+			allAdded = false;
+		}
+		PlayerController.Instance.TrySelectCurrentWGOFromGamepad();
+	}
+}

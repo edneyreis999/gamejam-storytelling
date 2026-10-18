@@ -1,0 +1,279 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameBalance : ScriptableObject
+{
+	private struct NameOrID
+	{
+		public bool is_id;
+
+		public int id;
+
+		public string name;
+
+		public override string ToString()
+		{
+			return (!is_id) ? name : id.ToString();
+		}
+	}
+
+	public static GameBalance me;
+
+	public List<ActionData> action_data = new List<ActionData>();
+
+	public List<ObjectData> object_data = new List<ObjectData>();
+
+	public List<SceneData> scene_data = new List<SceneData>();
+
+	public List<ObjectDialogData> obj_dialog_data = new List<ObjectDialogData>();
+
+	public List<QuestDescription> quests_data = new List<QuestDescription>();
+
+	public List<PerkData> perks_data = new List<PerkData>();
+
+	public List<ResDesc> reses_data = new List<ResDesc>();
+
+	public List<MapZoneData> map_zones_data = new List<MapZoneData>();
+
+	public List<FightLeagueData> fight_league_data = new List<FightLeagueData>();
+
+	public List<FightData> fight_data = new List<FightData>();
+
+	public List<FightOpponentData> fight_opponent_data = new List<FightOpponentData>();
+
+	public List<SkillData> skills_data = new List<SkillData>();
+
+	public List<TechData> tech_data = new List<TechData>();
+
+	public List<AbilityData> abilities_data = new List<AbilityData>();
+
+	public List<WorkData> work_data = new List<WorkData>();
+
+	public List<Old_TechnologyData> techs_data = new List<Old_TechnologyData>();
+
+	public List<TechnologyTierData> tech_tiers = new List<TechnologyTierData>();
+
+	public List<FightBuffData> fight_buffs = new List<FightBuffData>();
+
+	public List<GoalData> goals_data = new List<GoalData>();
+
+	public List<RandomEventData> random_events = new List<RandomEventData>();
+
+	public List<UpgradeData> upgrades = new List<UpgradeData>();
+
+	[NonSerialized]
+	private List<IList> _datas = new List<IList>();
+
+	[NonSerialized]
+	private List<Type> _types = new List<Type>();
+
+	public LevelGrades grades_str = new LevelGrades();
+
+	public LevelGrades grades_stm = new LevelGrades();
+
+	public LevelGrades grades_agl = new LevelGrades();
+
+	private List<TechData> _techs_unlocked_by_default;
+
+	public GameBalance()
+	{
+		me = this;
+		InitBalance();
+	}
+
+	private void InitBalance()
+	{
+		_datas.Clear();
+		_types.Clear();
+		_datas.AddRange(new IList[21]
+		{
+			action_data, object_data, scene_data, obj_dialog_data, quests_data, perks_data, reses_data, map_zones_data, fight_league_data, fight_data,
+			fight_opponent_data, skills_data, tech_data, abilities_data, work_data, techs_data, tech_tiers, fight_buffs, goals_data, random_events,
+			upgrades
+		});
+		foreach (IList data in _datas)
+		{
+			_types.Add(data.GetType().GetGenericArguments()[0]);
+		}
+		if (_datas.Count != _types.Count)
+		{
+			Debug.LogError("FATAL ERROR! _datas and _types don't match!");
+		}
+	}
+
+	public void ClearBalance()
+	{
+		InitBalance();
+		foreach (IList data in _datas)
+		{
+			data.Clear();
+		}
+		grades_str = new LevelGrades();
+		grades_stm = new LevelGrades();
+		grades_agl = new LevelGrades();
+	}
+
+	public static DT DataNotFound<DT>(string identifier) where DT : BalanceBase
+	{
+		if (typeof(DT) == typeof(ResDesc))
+		{
+			return new ResDesc() as DT;
+		}
+		Debug.LogWarning(string.Concat("No data for object [", typeof(DT), "] with id = \"", identifier, "\""));
+		return (DT)null;
+	}
+
+	private static bool HaveCollectionSameID<DT>(List<DT> list, DT data) where DT : BalanceBase
+	{
+		return list.FindIndex((DT p) => p.id == data.id) != -1;
+	}
+
+	private static bool HaveCollectionSameName<DT>(List<DT> list, DT data) where DT : BalanceBase
+	{
+		return list.FindIndex((DT p) => p.name == data.name) != -1;
+	}
+
+	private static DT GetElementByNameOrID<DT>(List<DT> list, NameOrID name_or_id) where DT : BalanceBase
+	{
+		return (!name_or_id.is_id) ? list.Find((DT p) => p.name == name_or_id.name) : list.Find((DT p) => p.id == name_or_id.id);
+	}
+
+	private string AddToDataCollections<DT>(List<DT> list, DT data_to_add) where DT : BalanceBase
+	{
+		if (HaveCollectionSameID(list, data_to_add))
+		{
+			DT data = GetData<DT>(data_to_add.id);
+			return "Can't add: same id already exist (id = " + data_to_add.id + ", name = " + data_to_add.name + "), dup name = " + data.name;
+		}
+		if (HaveCollectionSameName(list, data_to_add))
+		{
+			return "Can't add: same name already exist (id = " + data_to_add.id + ", name = " + data_to_add.name + ")";
+		}
+		list.Add(data_to_add);
+		return string.Empty;
+	}
+
+	public string AddData<DT>(DT data_to_add) where DT : BalanceBase
+	{
+		int num = _types.IndexOf(typeof(DT));
+		if (num == -1)
+		{
+			Debug.LogError("Unknown type at AddData: " + typeof(DT));
+			return null;
+		}
+		return AddToDataCollections(_datas[num] as List<DT>, data_to_add);
+	}
+
+	private DT GetData<DT>(NameOrID name_or_id) where DT : BalanceBase
+	{
+		int num = _types.IndexOf(typeof(DT));
+		if (num == -1)
+		{
+			Debug.LogError("Unknown type at GetData: " + typeof(DT));
+			return (DT)null;
+		}
+		return GetElementByNameOrID(_datas[num] as List<DT>, name_or_id) ?? DataNotFound<DT>(name_or_id.ToString());
+	}
+
+	public DT GetData<DT>(int obj_id) where DT : BalanceBase
+	{
+		return GetData<DT>(new NameOrID
+		{
+			is_id = true,
+			id = obj_id
+		});
+	}
+
+	public DT GetData<DT>(string obj_name) where DT : BalanceBase
+	{
+		DT data = GetData<DT>(new NameOrID
+		{
+			is_id = false,
+			name = obj_name
+		});
+		if (data == null)
+		{
+			Debug.LogError(string.Concat("Couldn't find [", typeof(DT), "] with name: \"", obj_name, "\""));
+		}
+		return data;
+	}
+
+	public List<ObjectData> GetDialogObjects(string dialog_name)
+	{
+		List<ObjectData> list = new List<ObjectData>();
+		foreach (ObjectData object_datum in object_data)
+		{
+			if (object_datum.dialogs.Contains(dialog_name) && (object_datum.object_type != ObjectData.Type.RemovableGoods || MainGame.save.IsGoodUnlocked(object_datum)))
+			{
+				list.Add(object_datum);
+			}
+		}
+		return list;
+	}
+
+	public List<ObjectData> GetObjectsForZone(string zone_name)
+	{
+		return object_data.FindAll((ObjectData obj) => obj.zone_name == zone_name);
+	}
+
+	public LevelGrades GetLevelGrades(GameRes.ResType res_type)
+	{
+		switch (res_type)
+		{
+		case GameRes.ResType._str:
+			return grades_str;
+		case GameRes.ResType._stm:
+			return grades_stm;
+		case GameRes.ResType._agl:
+			return grades_agl;
+		default:
+			Debug.LogError("Unknown res type: " + res_type);
+			return null;
+		}
+	}
+
+	private void OnBalanceLoaded()
+	{
+	}
+
+	public static void LoadGameBalance()
+	{
+		me = Resources.Load<GameBalance>("game_data");
+		if (me == null)
+		{
+			Debug.LogError("Game data load failed");
+		}
+		else
+		{
+			me.OnBalanceLoaded();
+		}
+	}
+
+	public TechData GetFirstTechnologyOfBranch(int branch)
+	{
+		foreach (TechData tech_datum in tech_data)
+		{
+			if (tech_datum.branch == branch && tech_datum.depth == 0)
+			{
+				return tech_datum;
+			}
+		}
+		Debug.LogError("Not found staring technology for branch " + branch);
+		return null;
+	}
+
+	public UpgradeData GetUpgradeData(int n, int cur_phase)
+	{
+		foreach (UpgradeData upgrade in me.upgrades)
+		{
+			if (upgrade.type == ManagerGUI.GetManagerType() && upgrade.n == n && upgrade.phase_n == cur_phase + 1)
+			{
+				return upgrade;
+			}
+		}
+		Debug.LogError("Upgrade data not found for n = " + n + ", phase = " + cur_phase);
+		return null;
+	}
+}

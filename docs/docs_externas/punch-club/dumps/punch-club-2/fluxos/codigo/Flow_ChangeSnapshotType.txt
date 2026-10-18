@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Change Snapshot Type", 0)]
+[Category("Game/Camera")]
+public class Flow_ChangeSnapshotType : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public SnapshotController.SnapshotType snapshotType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<float> timeToReach;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ChangeSnapshotType);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		timeToReach = AddValueInput<float>("timeToReach".CapitalizeFirst());
+	}
+
+	private void ChangeSnapshotType(Flow flow)
+	{
+		SnapshotController.Instance.SetSnapshot(snapshotType, timeToReach.value);
+		@out.Call(flow);
+	}
+}

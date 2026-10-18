@@ -1,0 +1,45 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Replace Player To Player Fighter", 0)]
+[Category("Fight")]
+public class Flow_ReplacePlayerToPlayerFighter : PC2CustomFlowNode
+{
+	public bool toFightMode;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name
+	{
+		get
+		{
+			if (!toFightMode)
+			{
+				return "Replace Player Fighter To Player";
+			}
+			return "Replace Player To Player Fighter";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (toFightMode)
+			{
+				FightBehaviour.ReplacePlayerToPlayerFighter(HumanLikeDirections.Direction.Left);
+			}
+			else
+			{
+				FightBehaviour.ReplacePlayerFighterToPlayer(HumanLikeDirections.Direction.Left);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

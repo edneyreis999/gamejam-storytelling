@@ -1,0 +1,30 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/Common")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeToolTip("")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Set Anim Trigger", "")]
+public class uScriptAct_SetAnimationTrigger : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("GameObject", "")] string go_name, [FriendlyName("Trigger", "")] string trigger)
+	{
+		GameObject gameObject = GameObject.Find(go_name);
+		if (gameObject == null)
+		{
+			Debug.LogError("GameObject not found: " + go_name);
+			return;
+		}
+		Animator component = gameObject.GetComponent<Animator>();
+		if (component == null)
+		{
+			Debug.LogError("Animator not found:" + trigger, gameObject);
+		}
+		else
+		{
+			component.SetTrigger(trigger);
+		}
+	}
+}

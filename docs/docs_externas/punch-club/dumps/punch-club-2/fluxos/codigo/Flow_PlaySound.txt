@@ -1,0 +1,77 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Play Sound", 0)]
+[Category("Game/Sound")]
+public class Flow_PlaySound : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isPlay = true;
+
+	[GatherPortsCallback]
+	public bool useTransform;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> soundId;
+
+	private ValueInput<Transform> transform;
+
+	public override string name
+	{
+		get
+		{
+			if (!isPlay)
+			{
+				return "Stop Sound";
+			}
+			return "Play Sound";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), PlaySound);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		soundId = AddValueInput<string>("soundId");
+		if (isPlay && useTransform)
+		{
+			transform = AddValueInput<Transform>("transform".CapitalizeFirst());
+		}
+	}
+
+	private void PlaySound(Flow flow)
+	{
+		if (isPlay)
+		{
+			if (useTransform)
+			{
+				Transform value = transform.value;
+				if (value != null)
+				{
+					PC2PlayAudio.PlayAtGameObjectWithAutoPause(soundId.value, value, SpatialType.sound3D);
+				}
+				else
+				{
+					Debug.LogError("Transform is null");
+				}
+			}
+			else
+			{
+				PC2PlayAudio.PlayWithAutoPause(soundId.value);
+			}
+		}
+		else
+		{
+			LazyAudio.Stop(soundId.value);
+		}
+		@out.Call(flow);
+	}
+}

@@ -1,0 +1,24 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Cycles Count for 10 soc percents", 0)]
+[Category("Game")]
+public class Flow_GetCyclesCountFor10PercentSoc : PC2CustomFlowNode
+{
+	private ValueInput<string> actionId;
+
+	private ValueOutput<int> cyclesCount;
+
+	protected override void RegisterPorts()
+	{
+		actionId = AddValueInput<string>("actionId".CapitalizeFirst());
+		cyclesCount = AddValueOutput("cyclesCount".CapitalizeFirst(), delegate
+		{
+			ProfessionActionDefinition data = GameBalance.Me.GetData<ProfessionActionDefinition>(actionId.value);
+			return (int)((float)(int)((float)data.barSize * 0.1f) / data.actionRewardRes.expression.EvaluateFloat());
+		});
+	}
+}

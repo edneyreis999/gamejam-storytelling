@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Check Cutscene Overrode From Multianswer", 0)]
+[Description("Many cutscenes are executed from SceneScript as cutscenes, this checking let override this cutsceneas it ran from multianswer like a not-cutscene")]
+[Category("Game")]
+public class Flow_CheckCutsceneOverrodeFromMultianswer : PC2CustomFlowNode
+{
+	private const string TYPE_RES_TO_CHECK = "is_cutscene_from_multianswer_variant";
+
+	private FlowInput @in;
+
+	private FlowOutput @true;
+
+	private FlowOutput @false;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Check);
+		@false = AddFlowOutput("<color=green>✔</color>", ">= 1");
+		@true = AddFlowOutput("<color=red>✘</color>", "== 0");
+	}
+
+	private void Check(Flow flow)
+	{
+		if (MainGame.me.PlayerRes.GetInt("is_cutscene_from_multianswer_variant") == 0)
+		{
+			@true.Call(flow);
+		}
+		else
+		{
+			@false.Call(flow);
+		}
+	}
+}

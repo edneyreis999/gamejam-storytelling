@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Robot Customization Revert Show Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_RobotCustomizationRevertShowMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIRobotCustomizationWindow uIRobotCustomizationWindow = GUIElements.Get<UIRobotCustomizationWindow>();
+			RectTransform revertRect = uIRobotCustomizationWindow.RevertRect;
+			if (isToShow.value)
+			{
+				uIRobotCustomizationWindow.OnCheckmarkButtonClick();
+				GUIElements.Get<UITutorialWindow>().ShowMask(revertRect);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(revertRect);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

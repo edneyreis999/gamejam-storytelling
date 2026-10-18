@@ -1,0 +1,61 @@
+using System;
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("Lazy Bear Games", "http://www.lazybeargames.com")]
+[FriendlyName("Random Event", "")]
+public class uScriptAct_RandomEvent : uScriptLogic
+{
+	private RandomEventData _event;
+
+	public event uScript_GameObject.uScriptEventHandler Out;
+
+	public void In([FriendlyName("Group", "")] int group_id)
+	{
+		_event = MainGame.save.RollRandomEvent(group_id);
+		if (_event == null)
+		{
+			Debug.LogError("No random events found");
+			DoOut();
+			return;
+		}
+		uScriptAct_Cutscene.me = null;
+		uScriptAct_Cutscene.is_random_event = true;
+		uScriptAct_Cutscene.load_scene_after = _event.scene_after;
+		uScriptAct_Cutscene._char_pos = Vector3.zero;
+		uScriptAct_Cutscene.additional_out_event = DoOut;
+		MainGame.me.ShowCutscene("cutscene_r_" + group_id);
+	}
+
+	protected void DoOut()
+	{
+		if (this.Out != null)
+		{
+			this.Out(this, new EventArgs());
+		}
+		MainGame.interaction_enabled = true;
+		ActionData linked_action = _event.linked_action;
+		if (linked_action == null)
+		{
+			return;
+		}
+		ActionResult res = linked_action.ProcessActionForChar(MainGame.save.ch);
+		if (res.lua != string.Empty)
+		{
+			MainGame.save.ch.char_gfx.ProcessAction(res);
+			return;
+		}
+		string pr = res.result.ToDescStr(", ");
+		pr = GameRes.MakeIconsNotOutlined(pr);
+		MainGame.me.gui_elements.pic_dialog.Open(GJL.L("HDR_BAR_ROY"), GJL.L("TXT_BAR_" + _event.name) + "\n\n" + pr, "pic_bar", new SimpleDialog.ButtonDescription
+		{
+			color = SimpleButton.ButtonColor.Green,
+			text = "(Action1)" + GJL.L("OK"),
+			on_click = delegate
+			{
+				MainGame.save.ch.char_gfx.ProcessAction(res);
+			}
+		}, null, btn1_enabled: true, btn2_enabled: true, PictureDialogGUI.CloseButtonFunction.PressBtn1, null, string.Empty);
+	}
+}

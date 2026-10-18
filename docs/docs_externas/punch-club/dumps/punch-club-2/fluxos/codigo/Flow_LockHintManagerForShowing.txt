@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Lock Hint Manager", 0)]
+[Category("Game")]
+public class Flow_LockHintManagerForShowing : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToUnlock = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name => (isToUnlock ? "Unlock" : "Lock") + " Hint Manager";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToUnlock)
+			{
+				UIHintManager.Instance.IsHintManagerLocked = false;
+			}
+			else
+			{
+				UIHintManager.Instance.IsHintManagerLocked = true;
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

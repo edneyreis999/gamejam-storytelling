@@ -1,0 +1,31 @@
+using System;
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Wait For Any Dialog Close", "")]
+public class uScriptAct_WaitForAnyDialogClose : uScriptLogic
+{
+	public event uScript_GameObject.uScriptEventHandler Out;
+
+	public void In()
+	{
+		if (this.Out == null)
+		{
+			Debug.LogError("Out not defined!");
+		}
+		else if (MainGame.me.gui_elements.pic_dialog.IsShown())
+		{
+			PictureDialogGUI pic_dialog = MainGame.me.gui_elements.pic_dialog;
+			pic_dialog.on_close = (Action)Delegate.Combine(pic_dialog.on_close, (Action)delegate
+			{
+				this.Out(this, new EventArgs());
+			});
+		}
+		else
+		{
+			this.Out(this, new EventArgs());
+		}
+	}
+}

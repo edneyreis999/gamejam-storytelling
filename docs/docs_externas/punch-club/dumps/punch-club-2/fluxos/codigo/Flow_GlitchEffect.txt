@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Glitch Effect", 0)]
+[Category("Game/Player")]
+public class Flow_GlitchEffect : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GlitchEffect component = ScreenCamera.me.GetComponent<GlitchEffect>();
+			PC2PlayAudio.PlayWithAutoPause("pizza_glitch");
+			component.DoGlitch(0.75f, 0.75f, 0.65f, 1f, 0f, 0f, 1f, 0f, delegate
+			{
+				onFinished.Call(flow);
+			});
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+	}
+}

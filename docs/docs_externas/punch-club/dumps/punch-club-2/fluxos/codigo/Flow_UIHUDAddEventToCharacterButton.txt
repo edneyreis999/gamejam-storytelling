@@ -1,0 +1,79 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Event To Character Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIHUDAddEventToCharacterButton : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToAdd;
+
+	private FlowInput @in;
+
+	private FlowOutput onClicked;
+
+	private FlowOutput @out;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToAdd)
+			{
+				return " Remove Event From Character Button";
+			}
+			return "Add Event To Character Button";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), AddEvent);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isToAdd)
+		{
+			onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+		}
+	}
+
+	private void AddEvent(Flow flow)
+	{
+		if (isToAdd)
+		{
+			Button button = null;
+			button = GUIElements.Get<HUD>().CharacterButton;
+			if (button != null)
+			{
+				UIElementsCustomEventHandlerManager.AddEvent(button, UITutorialArrow.SignOrientationType.Right, delegate
+				{
+					onClicked.Call(flow);
+				});
+			}
+			else
+			{
+				Debug.LogError("Selected button is null for map button");
+				onClicked.Call(flow);
+			}
+		}
+		else
+		{
+			Button button2 = null;
+			button2 = GUIElements.Get<HUD>().CharacterButton;
+			if (button2 != null)
+			{
+				UIElementsCustomEventHandlerManager.RemoveEvent(button2);
+			}
+			else
+			{
+				Debug.LogError("Selected button is null for map button");
+				onClicked.Call(flow);
+			}
+		}
+		@out.Call(flow);
+	}
+}

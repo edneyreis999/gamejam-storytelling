@@ -1,0 +1,42 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Item Data", 0)]
+[Category("Game")]
+public class Flow_ItemData : PC2CustomFlowNode
+{
+	private ValueInput<string> itemId;
+
+	private ValueOutput<float> satiety;
+
+	private ValueOutput<float> price;
+
+	protected override void RegisterPorts()
+	{
+		satiety = AddValueOutput("satiety", delegate
+		{
+			ItemDefinition data = GameBalance.Me.GetData<ItemDefinition>(itemId.value);
+			if (data == null)
+			{
+				Debug.LogError("No item with id:[" + itemId.value + "]");
+				return 0f;
+			}
+			return data.GameResOnApply.List.Find((GameResAtom r) => r.type == "_satiety").value;
+		});
+		price = AddValueOutput("price", delegate
+		{
+			ItemDefinition data = GameBalance.Me.GetData<ItemDefinition>(itemId.value);
+			if (data == null)
+			{
+				Debug.LogError("No item with id:[" + itemId.value + "]");
+				return 0f;
+			}
+			return data.price.EvaluateInt();
+		});
+		itemId = AddValueInput<string>("itemId");
+	}
+}

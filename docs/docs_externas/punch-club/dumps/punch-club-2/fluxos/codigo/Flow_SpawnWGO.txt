@@ -1,0 +1,76 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Spawn WGO", 0)]
+[Category("Game/WGO")]
+public class Flow_SpawnWGO : PC2CustomFlowNode
+{
+	public enum SpawnAt
+	{
+		Position,
+		Transform
+	}
+
+	[GatherPortsCallback]
+	public SpawnAt spawnAtType = SpawnAt.Transform;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<Transform> transform;
+
+	private new ValueInput<Vector3> position;
+
+	private ValueOutput<WGO> outWGO;
+
+	private ValueInput<string> id;
+
+	private WGO innerWGO;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Spawn);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		id = AddValueInput<string>("id");
+		outWGO = AddValueOutput("WGO", () => innerWGO);
+		switch (spawnAtType)
+		{
+		case SpawnAt.Position:
+			position = AddValueInput<Vector3>("position");
+			break;
+		case SpawnAt.Transform:
+			transform = AddValueInput<Transform>("transform");
+			break;
+		}
+	}
+
+	private void Spawn(Flow flow)
+	{
+		innerWGO = null;
+		switch (spawnAtType)
+		{
+		case SpawnAt.Transform:
+		{
+			Transform value = transform.value;
+			if (value != null)
+			{
+				innerWGO = DynamicScene.SpawnWGO(id.value, value.position);
+			}
+			else
+			{
+				Debug.LogError("Tried to spawn WGO " + id.value + " at null transform");
+			}
+			break;
+		}
+		case SpawnAt.Position:
+			innerWGO = DynamicScene.SpawnWGO(id.value, position.value);
+			break;
+		}
+		@out.Call(flow);
+	}
+}

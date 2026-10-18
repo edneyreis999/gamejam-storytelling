@@ -1,0 +1,58 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Load Sewerage Room", 0)]
+[Category("Game/Sewerage")]
+public class Flow_OpenSceneForRoom : PC2CustomFlowNode
+{
+	public bool isDefaultSewerageMovement;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onSceneIsReady;
+
+	private ValueInput<UISewerageRoom> room;
+
+	private ValueInput<LoadSceneType> loadSceneType;
+
+	private ValueInput<SewerageTransitionDirectionType> directionType;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), LoadRoom);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onSceneIsReady = AddFlowOutput("onSceneIsReady".CapitalizeFirst());
+		loadSceneType = AddValueInput<LoadSceneType>("Load Scene Type");
+		loadSceneType.SetDefaultAndSerializedValue(LoadSceneType.Fade);
+		room = AddValueInput<UISewerageRoom>("room");
+		directionType = AddValueInput<SewerageTransitionDirectionType>("directionType");
+	}
+
+	private void LoadRoom(Flow flow)
+	{
+		if (room.value != null)
+		{
+			GUIElements.Get<UISewerageWindow>().DirectionTypeBeforeLastRoom = directionType.value;
+			GUIElements.Get<UISewerageWindow>().OpenScene(room.value, loadSceneType.value, delegate
+			{
+				if (isDefaultSewerageMovement)
+				{
+					PlayerController.Instance.MovementComponent.Stop();
+					PlayerController.Instance.ChangeControls(ControlState.ByFlow, isEnabled: true);
+				}
+				onSceneIsReady.Call(flow);
+			});
+		}
+		else
+		{
+			Debug.LogError("Room wasn't set");
+		}
+		@out.Call(flow);
+	}
+}

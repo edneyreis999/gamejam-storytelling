@@ -1,0 +1,59 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Show Prof Ability Selection Mask & Add Event To Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIProfSelectionShowFirstAbilMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIProfSelectionWindow window = GUIElements.Get<UIProfSelectionWindow>();
+			UIProfSelectionElement firstElement = window.FirstElement;
+			RectTransform tutorialMask = firstElement.TutorialMask;
+			if (isToShow.value)
+			{
+				window.CustomItems = new List<GamepadNavigationItem> { firstElement.SelectButton.transform.parent.GetComponent<GamepadNavigationItem>() };
+				window.TutorialGamepadNavigation = true;
+				window.LockPressBack = true;
+				window.SortButtonTipsOverTutorialWindow();
+				window.OnInputSourceChanged();
+				UIElementsCustomEventHandlerManager.AddEvent(firstElement.SelectButton, UITutorialArrow.SignOrientationType.Right, delegate
+				{
+					onClicked.Call(flow);
+					window.CustomItems = null;
+					window.TutorialGamepadNavigation = false;
+					window.LockPressBack = false;
+					window.ReturnDefaultButtonTipsSorting();
+					window.OnInputSourceChanged();
+				});
+				GUIElements.Get<UITutorialWindow>().ShowMask(tutorialMask);
+				window.ScrollRect.vertical = false;
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(tutorialMask);
+				window.ScrollRect.vertical = true;
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+}

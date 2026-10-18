@@ -1,0 +1,27 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Change School List Lock State\nIn UIFighterCharacterWindow", 0)]
+[Category("Game/UI")]
+public class Flow_ChangeFightSchoolListLockState : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isLocked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.uiSystem.uiCharacterFighterWindowData.isSchoolListLocked = isLocked.value;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isLocked = AddValueInput<bool>("isLocked");
+	}
+}

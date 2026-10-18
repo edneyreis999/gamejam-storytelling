@@ -1,0 +1,19 @@
+[NodePath("Actions/VHS Story/GUI")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("HUD Button", "")]
+public class uScriptAct_GUI_HUDButton : uScriptLogic
+{
+	public enum HUDButton
+	{
+		LeaguesBtn,
+		MapBtn
+	}
+
+	public bool Out => true;
+
+	public void In([FriendlyName("Button", "")] HUDButton button, [FriendlyName("Show", "")] bool show)
+	{
+		MainGame.save.ModifyHUDButton(button, show);
+	}
+}

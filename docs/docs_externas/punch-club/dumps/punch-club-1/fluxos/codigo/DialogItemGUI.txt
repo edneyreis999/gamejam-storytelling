@@ -1,0 +1,138 @@
+using UnityEngine;
+
+public class DialogItemGUI : MonoBehaviour
+{
+	public delegate bool BoolDelegate();
+
+	public UILabel label_price;
+
+	public UILabel item_text;
+
+	public UILabel item_descr;
+
+	public UILabel button_text;
+
+	public UI2DSprite icon;
+
+	public UI2DSprite icon2;
+
+	public UIButton button;
+
+	public UILabel item_subdescr;
+
+	protected ObjectDialogData.Types type;
+
+	public GameObject amount_go;
+
+	public UILabel amount_n;
+
+	private ObjectData _obj_data;
+
+	private string _price;
+
+	public Animator buy_animator;
+
+	private bool _button_active;
+
+	private BoolDelegate _button_active_delegate;
+
+	public void Start()
+	{
+	}
+
+	public void FillItem(ObjectData data, string price, ObjectDialogData.Types dlg_type, bool button_active = true, BoolDelegate button_active_delegate = null)
+	{
+		_obj_data = data;
+		_price = price;
+		type = dlg_type;
+		_button_active_delegate = button_active_delegate;
+		_button_active = button_active;
+		if (_button_active_delegate != null)
+		{
+			_button_active = _button_active_delegate();
+		}
+		UI2DSprite uI2DSprite = icon;
+		Sprite sprite = EasySpritesCollection.GetSprite("item_" + data.id);
+		icon2.sprite2D = sprite;
+		uI2DSprite.sprite2D = sprite;
+		item_text.text = GJL.L("item_" + data.name);
+		item_descr.text = GJL.L("item_d_" + data.name);
+		if (button == null)
+		{
+			return;
+		}
+		BoxCollider2D component = button.GetComponent<BoxCollider2D>();
+		if (component != null)
+		{
+			component.enabled = _button_active;
+		}
+		button.SetState((!_button_active) ? UIButtonColor.State.Disabled : UIButtonColor.State.Normal, immediate: true);
+		if (data.object_actions.Count == 0)
+		{
+			Debug.LogError("Object " + data.name + " has no actions!");
+			return;
+		}
+		ActionData actionData = data.object_actions[0];
+		string pr = actionData.dep_res.GetDependRes(MainGame.save.ch, actionData).ToDescStr(" ", null, show_zeros: false, new GameRes.ResType[2]
+		{
+			GameRes.ResType._hunger,
+			GameRes.ResType._energy
+		});
+		item_subdescr.text = GameRes.MakeIconsNotOutlined(pr);
+		switch (dlg_type)
+		{
+		case ObjectDialogData.Types.Buy:
+		case ObjectDialogData.Types.BuyMulti:
+		case ObjectDialogData.Types.BuyAndUse:
+			button_text.text = price;
+			label_price.text = string.Empty;
+			break;
+		case ObjectDialogData.Types.Use:
+			button_text.text = GJL.L("Use");
+			label_price.text = price;
+			if (VHSConst.GAMEPAD_IS_CURRENT_CONTROLLER)
+			{
+				button.transform.parent.gameObject.SetActive(value: false);
+			}
+			break;
+		}
+		if (amount_go == null)
+		{
+			Debug.LogError("amount go is null", this);
+			return;
+		}
+		amount_go.gameObject.SetActive(value: false);
+		if (dlg_type == ObjectDialogData.Types.BuyMulti)
+		{
+			int amount = MainGame.save.ch.inventory.GetAmount(data.id);
+			if (amount > 0)
+			{
+				amount_go.gameObject.SetActive(value: true);
+				amount_n.text = amount + string.Empty;
+			}
+		}
+	}
+
+	public void Redraw()
+	{
+		Debug.Log("Redraw item", this);
+		FillItem(_obj_data, _price, type, _button_active, _button_active_delegate);
+	}
+
+	public void OnPressed()
+	{
+		Debug.Log("item OnPressed " + _obj_data.name);
+		switch (type)
+		{
+		case ObjectDialogData.Types.Buy:
+		case ObjectDialogData.Types.BuyMulti:
+			Sound.Play(Sound.SoundID.Click);
+			break;
+		case ObjectDialogData.Types.Use:
+		case ObjectDialogData.Types.BuyAndUse:
+			Sound.Play(Sound.SoundID.Eat);
+			break;
+		}
+		MainGame.me.gui_elements.dialog_gui.OnItemPressed(_obj_data, this);
+	}
+}

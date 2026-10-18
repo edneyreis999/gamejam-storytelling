@@ -1,0 +1,46 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Affect Cinematic", 0)]
+[Category("Game")]
+public class Flow_CinematicToggle : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onEffectFinished;
+
+	private ValueInput<bool> isImmediate;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Toggle);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onEffectFinished = AddFlowOutput("onEffectFinished".CapitalizeFirst());
+		isImmediate = AddValueInput<bool>("isImmediate");
+	}
+
+	private void Toggle(Flow flow)
+	{
+		GUICinematic gUICinematic = GUIElements.Get<GUICinematic>();
+		if (!gUICinematic.IsActive)
+		{
+			gUICinematic.EnableCinematic(delegate
+			{
+				onEffectFinished.Call(flow);
+			}, isImmediate.value);
+		}
+		else
+		{
+			gUICinematic.DisableCinematic(delegate
+			{
+				onEffectFinished.Call(flow);
+			}, isImmediate.value);
+		}
+		@out.Call(flow);
+	}
+}

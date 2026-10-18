@@ -1,0 +1,52 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Show Cutscene Portraits", 0)]
+[Category("Game")]
+public class Flow_ShowCutscenePortraits : PC2CustomFlowNode
+{
+	public List<string> portraits = new List<string> { "player", "carla" };
+
+	public float time;
+
+	[GatherPortsCallback]
+	public bool isToShow;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToShow)
+			{
+				return "Hide Cutscene Portraits";
+			}
+			return "Show Cutscene Portraits";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UICutsceneWindow uICutsceneWindow = GUIElements.Get<UICutsceneWindow>();
+			if (isToShow)
+			{
+				uICutsceneWindow.UpdatePortraits(enabledPortraits: true, portraits, time);
+			}
+			else
+			{
+				uICutsceneWindow.UpdatePortraits(enabledPortraits: false, new List<string>(), time);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

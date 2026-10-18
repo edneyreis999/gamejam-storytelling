@@ -1,0 +1,63 @@
+using System;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Wait For Robot Before Next Action", 0)]
+public class Flow_WaitForRobotBeforeNextAction : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput onFinished;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			float num = 0f;
+			switch (MainGame.me.gameSave.robotSystem.CurrentState)
+			{
+			case RobotState.Working:
+				if (DynamicScene.current.SceneName == "RobotsHub")
+				{
+					WGO wGO = DynamicScene.FindWGO("robots_hub_robot_station");
+					wGO.Animator.ResetTrigger("start_work");
+					wGO.Animator.ResetTrigger("stop_work");
+					wGO.Animator.SetTrigger("stop_work");
+					WGO wGO2 = DynamicScene.FindWGO("robots_hub_work_station");
+					WGO wGO3 = DynamicScene.FindWGO("robots_hub_work_screen");
+					wGO2.Animator.ResetTrigger("screen_off");
+					wGO2.Animator.SetTrigger("screen_off");
+					wGO3.Animator.ResetTrigger("screen_off");
+					wGO3.Animator.SetTrigger("screen_off");
+				}
+				num = 1.2f;
+				break;
+			default:
+				throw new ArgumentOutOfRangeException();
+			case RobotState.Empty:
+			case RobotState.Charging:
+			case RobotState.Training:
+			case RobotState.Repairing:
+				break;
+			}
+			if (num <= 0f)
+			{
+				onFinished.Call(flow);
+			}
+			else
+			{
+				PlayerController.Instance.ChangeControls(ControlState.ByRobotWaiting, isEnabled: false);
+				LazyTimer.AddTimer(num, delegate
+				{
+					PlayerController.Instance.ChangeControls(ControlState.ByRobotWaiting, isEnabled: true);
+					onFinished.Call(flow);
+				});
+			}
+		});
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,36 @@
+using System.Collections.Generic;
+
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeToolTip("Creates a new Character")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Create Character", "Creates a new Character")]
+public class uScriptAct_CreateCharacter : uScriptLogic
+{
+	public static List<CharacterGfx> all_chars = new List<CharacterGfx>();
+
+	public bool Out => true;
+
+	public void In([FriendlyName("Name", "The name given to the new GameObject.")][DefaultValue("char_1")] string Name, [FriendlyName("Preset", "")] string preset_name, [FriendlyName("Mirror", "")][SocketState(false, false)] bool mirror, [FriendlyName("Node", "")][SocketState(false, false)][DefaultValue("")] string node_name, [FriendlyName("Animation", "")][SocketState(false, false)][DefaultValue("")] string anim_name, [FriendlyName("CharGfx", "The new CharacterGfx.")] out CharacterGfx ch)
+	{
+		ch = CharacterGfx.Create(preset_name);
+		if (node_name != string.Empty)
+		{
+			ch.SetCurrentTreeNode(node_name);
+		}
+		if (anim_name != string.Empty)
+		{
+			ch.PlayAnimation(anim_name, string.Empty);
+		}
+		ch.SetMirror(mirror);
+		all_chars.Add(ch);
+	}
+
+	public static void SetAllCharsVis(bool vis)
+	{
+		foreach (CharacterGfx all_char in all_chars)
+		{
+			all_char.gameObject.SetActive(vis);
+		}
+	}
+}

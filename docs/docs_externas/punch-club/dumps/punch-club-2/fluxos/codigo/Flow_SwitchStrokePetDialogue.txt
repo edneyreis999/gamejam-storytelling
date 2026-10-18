@@ -1,0 +1,182 @@
+using System.Collections.Generic;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Switch After Stroke Pet Dialogue", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_SwitchStrokePetDialogue : Flow_SwitchPetBasePhrase
+{
+	private static List<PetPhraseData> phrasesHamborg = new List<PetPhraseData>
+	{
+		new PetPhraseData("any_pet_after_pet_1_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_2_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_3_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_4_1", activeByDefault: true, () => MainGame.me.gameSave.playerData.GetInventory("LazyConsts.CHARACTER_INVENTORY_ID").AvailableSlotsCount <= 2),
+		new PetPhraseData("any_pet_after_pet_5_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_6_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_7_1", activeByDefault: true, () => !MainGame.me.gameSave.uiSystem.IsTabLocked(HeaderTabType.Software)),
+		new PetPhraseData("any_pet_after_pet_8_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_9_1", activeByDefault: true, () => MainGame.me.gameSave.visitedScenes.Contains("UnderBridge") && MainGame.me.PlayerRes.GetInt("unlock_under_bridge_to_sewerage_entry") <= 0),
+		new PetPhraseData("hamborg_after_pet_1_1", activeByDefault: true),
+		new PetPhraseData("hamborg_after_pet_2_1", activeByDefault: true),
+		new PetPhraseData("hamborg_after_pet_3_1", activeByDefault: true),
+		new PetPhraseData("hamborg_after_pet_4_1", activeByDefault: true),
+		new PetPhraseData("hamborg_after_pet_5_1", activeByDefault: true),
+		new PetPhraseData("hamborg_after_pet_6_1", activeByDefault: true),
+		new PetPhraseData("hamborg_after_pet_7_1", activeByDefault: true),
+		new PetPhraseData("hamborg_after_pet_8_1", activeByDefault: true),
+		new PetPhraseData("hamborg_after_pet_9_1", activeByDefault: true),
+		new PetPhraseData("hamborg_after_pet_10_1", activeByDefault: true),
+		new PetPhraseData("hamborg_after_pet_11_1", activeByDefault: true),
+		new PetPhraseData("hamborg_after_pet_silver_l_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Silvers league")),
+		new PetPhraseData("hamborg_after_pet_div_ii_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Division II")),
+		new PetPhraseData("hamborg_after_pet_div_i_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Division I")),
+		new PetPhraseData("hamborg_after_pet_adriana_sick", activeByDefault: true, () => MainGame.me.gameSave.knowledgeSystem.GetOrCreateQuest("adriana_sick_3").state == QuestState.Revealed),
+		new PetPhraseData("hamborg_after_pet_become_cop_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 0)),
+		new PetPhraseData("hamborg_after_pet_become_trainer_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 0)),
+		new PetPhraseData("hamborg_after_pet_sky_apartment_1", activeByDefault: true, oneTime: true, () => DynamicScene.current.SceneName == "SkyApartment"),
+		new PetPhraseData("hamborg_after_pet_mick_cabinet_1", activeByDefault: true, oneTime: true, () => DynamicScene.current.SceneName == "MikesOldHouseCabinet"),
+		new PetPhraseData("hamborg_after_pet_hack_device_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.knowledgeSystem.GetOrCreateQuest("ii_hack_device").state == QuestState.Closed)
+	};
+
+	private static List<PetPhraseData> phrasesCat = new List<PetPhraseData>
+	{
+		new PetPhraseData("any_pet_after_pet_1_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_2_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_3_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_4_1", activeByDefault: true, () => MainGame.me.gameSave.playerData.GetInventory("LazyConsts.CHARACTER_INVENTORY_ID").AvailableSlotsCount <= 2),
+		new PetPhraseData("any_pet_after_pet_5_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_6_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_7_1", activeByDefault: true, () => !MainGame.me.gameSave.uiSystem.IsTabLocked(HeaderTabType.Software)),
+		new PetPhraseData("any_pet_after_pet_8_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_9_1", activeByDefault: true, () => MainGame.me.gameSave.visitedScenes.Contains("UnderBridge") && MainGame.me.PlayerRes.GetInt("unlock_under_bridge_to_sewerage_entry") <= 0),
+		new PetPhraseData("sly_after_pet_1_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_2_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_3_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_4_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_5_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_6_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_7_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_8_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_9_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_10_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_11_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_12_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_13_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_14_1", activeByDefault: true),
+		new PetPhraseData("sly_after_pet_silver_l_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Silvers league")),
+		new PetPhraseData("sly_after_pet_div_ii_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Division II")),
+		new PetPhraseData("sly_after_pet_div_i_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Division I")),
+		new PetPhraseData("sly_after_pet_adriana_sick_1", activeByDefault: true, () => MainGame.me.gameSave.knowledgeSystem.GetOrCreateQuest("adriana_sick_3").state == QuestState.Revealed),
+		new PetPhraseData("sly_after_pet_become_cop_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 0)),
+		new PetPhraseData("sly_after_pet_become_trainer_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 0)),
+		new PetPhraseData("sly_after_pet_sky_apartment_1", activeByDefault: true, oneTime: true, () => DynamicScene.current.SceneName == "SkyApartment"),
+		new PetPhraseData("sly_after_pet_mick_cabinet_1", activeByDefault: true, oneTime: true, () => DynamicScene.current.SceneName == "MikesOldHouseCabinet"),
+		new PetPhraseData("sly_after_pet_hack_device_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.knowledgeSystem.GetOrCreateQuest("ii_hack_device").state == QuestState.Closed)
+	};
+
+	private static List<PetPhraseData> phrasesDog = new List<PetPhraseData>
+	{
+		new PetPhraseData("any_pet_after_pet_1_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_2_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_3_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_4_1", activeByDefault: true, () => MainGame.me.gameSave.playerData.GetInventory("LazyConsts.CHARACTER_INVENTORY_ID").AvailableSlotsCount <= 2),
+		new PetPhraseData("any_pet_after_pet_5_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_6_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_7_1", activeByDefault: true, () => !MainGame.me.gameSave.uiSystem.IsTabLocked(HeaderTabType.Software)),
+		new PetPhraseData("any_pet_after_pet_8_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_9_1", activeByDefault: true, () => MainGame.me.gameSave.visitedScenes.Contains("UnderBridge") && MainGame.me.PlayerRes.GetInt("unlock_under_bridge_to_sewerage_entry") <= 0),
+		new PetPhraseData("riley_after_pet_1_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_2_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_3_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_4_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_5_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_6_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_7_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_8_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_9_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_10_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_11_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_12_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_13_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_14_1", activeByDefault: true),
+		new PetPhraseData("riley_after_pet_silver_l_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Silvers league")),
+		new PetPhraseData("riley_after_pet_div_ii_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Division II")),
+		new PetPhraseData("riley_after_pet_div_i_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Division I")),
+		new PetPhraseData("riley_after_pet_adriana_sick_1", activeByDefault: true, () => MainGame.me.gameSave.knowledgeSystem.GetOrCreateQuest("adriana_sick_3").state == QuestState.Revealed),
+		new PetPhraseData("riley_after_pet_become_cop_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 0)),
+		new PetPhraseData("riley_after_pet_become_trainer_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 0)),
+		new PetPhraseData("riley_after_pet_sky_apartment_1", activeByDefault: true, oneTime: true, () => DynamicScene.current.SceneName == "SkyApartment"),
+		new PetPhraseData("riley_after_pet_mick_cabinet_1", activeByDefault: true, oneTime: true, () => DynamicScene.current.SceneName == "MikesOldHouseCabinet"),
+		new PetPhraseData("riley_after_pet_hack_device_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.knowledgeSystem.GetOrCreateQuest("ii_hack_device").state == QuestState.Closed)
+	};
+
+	private static List<PetPhraseData> phrasesCapy = new List<PetPhraseData>
+	{
+		new PetPhraseData("any_pet_after_pet_1_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_2_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_3_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_4_1", activeByDefault: true, () => MainGame.me.gameSave.playerData.GetInventory("LazyConsts.CHARACTER_INVENTORY_ID").AvailableSlotsCount <= 2),
+		new PetPhraseData("any_pet_after_pet_5_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_6_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_7_1", activeByDefault: true, () => !MainGame.me.gameSave.uiSystem.IsTabLocked(HeaderTabType.Software)),
+		new PetPhraseData("any_pet_after_pet_8_1", activeByDefault: true),
+		new PetPhraseData("any_pet_after_pet_9_1", activeByDefault: true, () => MainGame.me.gameSave.visitedScenes.Contains("UnderBridge") && MainGame.me.PlayerRes.GetInt("unlock_under_bridge_to_sewerage_entry") <= 0),
+		new PetPhraseData("chuck_after_pet_1_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_2_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_3_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_4_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_5_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_6_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_7_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_8_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_9_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_10_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_11_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_12_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_13_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_14_1", activeByDefault: true),
+		new PetPhraseData("chuck_after_pet_silver_l_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Silvers league")),
+		new PetPhraseData("chuck_after_pet_div_ii_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Division II")),
+		new PetPhraseData("chuck_after_pet_div_i_1", activeByDefault: true, () => MainGame.me.gameSave.leaguesSystem.completedLeagues.Contains("Division I")),
+		new PetPhraseData("chuck_after_pet_adriana_sick_1", activeByDefault: true, () => MainGame.me.gameSave.knowledgeSystem.GetOrCreateQuest("adriana_sick_3").state == QuestState.Revealed),
+		new PetPhraseData("chuck_after_pet_become_cop_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 0)),
+		new PetPhraseData("chuck_after_pet_become_trainer_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 0)),
+		new PetPhraseData("chuck_after_pet_sky_apartment_1", activeByDefault: true, oneTime: true, () => DynamicScene.current.SceneName == "SkyApartment"),
+		new PetPhraseData("chuck_after_pet_mick_cabinet_1", activeByDefault: true, oneTime: true, () => DynamicScene.current.SceneName == "MikesOldHouseCabinet"),
+		new PetPhraseData("chuck_after_pet_hack_device_1", activeByDefault: true, oneTime: true, () => MainGame.me.gameSave.knowledgeSystem.GetOrCreateQuest("ii_hack_device").state == QuestState.Closed)
+	};
+
+	public override List<PetPhraseData> GetCurrentList()
+	{
+		List<PetPhraseData> result = new List<PetPhraseData>();
+		switch (petId)
+		{
+		case "npc_chuck":
+			result = phrasesCapy;
+			break;
+		case "npc_sly":
+			result = phrasesCat;
+			break;
+		case "npc_riley":
+			result = phrasesDog;
+			break;
+		case "npc_hamborg":
+			result = phrasesHamborg;
+			break;
+		}
+		return result;
+	}
+
+	public override List<string> GetCurrentRemainingList()
+	{
+		return MainGame.me.gameSave.knowledgeSystem.strokePetPhrasesRemaining;
+	}
+
+	public override List<string> GetCurrentSaidList()
+	{
+		return MainGame.me.gameSave.knowledgeSystem.strokePetPhrasesSaid;
+	}
+}

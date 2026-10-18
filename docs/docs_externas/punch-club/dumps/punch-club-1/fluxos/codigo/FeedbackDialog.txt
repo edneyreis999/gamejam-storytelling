@@ -1,0 +1,76 @@
+using System.Text;
+using UnityEngine;
+
+public class FeedbackDialog : BaseGUI
+{
+	public UIButton btn;
+
+	public UIInput i_message;
+
+	public UIInput i_email;
+
+	private WWW www;
+
+	public override void Open()
+	{
+		base.Open();
+		UIInput uIInput = i_message;
+		bool flag = true;
+		btn.enabled = flag;
+		flag = flag;
+		i_email.enabled = flag;
+		uIInput.enabled = flag;
+	}
+
+	public void OnSendClicked()
+	{
+		i_message.enabled = false;
+		i_email.enabled = false;
+		btn.enabled = false;
+		WWWForm wWWForm = new WWWForm();
+		btn.GetComponentInChildren<UILabel>().text = "Sending...";
+		wWWForm.AddField("from", i_email.value);
+		wWWForm.AddField("encoding", Encoding.Default.ToString());
+		string value = i_message.value;
+		Debug.Log("default encoding = " + Encoding.Default);
+		wWWForm.AddField("msg", value + "\n\n---\nver: a.1.32");
+		wWWForm.headers["Content-Type"] = "text/xml; charset=utf-8";
+		www = new WWW("http://vhs-story.com/send_feedback.php", wWWForm);
+	}
+
+	public void OnMessageChanged()
+	{
+		btn.enabled = i_message.value.Length > 2;
+	}
+
+	public new void Update()
+	{
+		if (www != null && www.isDone)
+		{
+			Hide();
+			if (string.IsNullOrEmpty(www.error))
+			{
+				MainGame.me.gui_elements.simple_dialog.Open("Thank you", "Your feedback was successfully sent!\n\nThank you!", new SimpleDialog.ButtonDescription
+				{
+					color = SimpleButton.ButtonColor.Green,
+					on_click = delegate
+					{
+					},
+					text = "OK"
+				});
+			}
+			else
+			{
+				MainGame.me.gui_elements.simple_dialog.Open("Error", "An error occurred while sending feedback to server:\n\n" + www.error, new SimpleDialog.ButtonDescription
+				{
+					color = SimpleButton.ButtonColor.Green,
+					on_click = delegate
+					{
+					},
+					text = "OK"
+				});
+			}
+			www = null;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+using System;
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeToolTip("")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Char: Play anim", "")]
+public class uScriptAct_CharacterPlayAnimation : uScriptLogic
+{
+	public enum BooleanSet
+	{
+		NoChange,
+		True,
+		False
+	}
+
+	public bool Out => true;
+
+	[FriendlyName("Finished")]
+	public event uScript_GameObject.uScriptEventHandler Finished;
+
+	public void In([FriendlyName("CharGfx", "The CharacterGfx.")] CharacterGfx ch, [FriendlyName("Animation", "")] string anim_name, [FriendlyName("Mirror", "")][SocketState(false, false)][DefaultValue(BooleanSet.NoChange)] BooleanSet mirror)
+	{
+		ch.CancelWalking();
+		ch.PlayAnimation(anim_name, string.Empty);
+		if (anim_name == "idle")
+		{
+			ch.SetFightMode(fight_mode: false);
+			Animator componentInChildren = ch.GetComponentInChildren<Animator>();
+			if (componentInChildren != null)
+			{
+				componentInChildren.SetTrigger("return_to_idle");
+			}
+		}
+		if (mirror != BooleanSet.NoChange)
+		{
+			ch.SetMirror(mirror == BooleanSet.True);
+		}
+		ch.OnAnimationEndedCallback = (GJCommons.VoidDelegate)Delegate.Combine(ch.OnAnimationEndedCallback, (GJCommons.VoidDelegate)delegate
+		{
+			if (this.Finished != null)
+			{
+				this.Finished(this, new EventArgs());
+			}
+		});
+	}
+}

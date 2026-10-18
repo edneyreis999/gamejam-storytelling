@@ -1,0 +1,27 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Robot Training Window Init \nCustom Gamepad Items", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIRobotTrainingWindowInitCustomGamepadItems : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isTrainingsWithPlayer;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GUIElements.Get<UIRobotTrainingWindow>().TutorialInitCustomGamepadItems(isTrainingsWithPlayer.value);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isTrainingsWithPlayer = AddValueInput<bool>("isTrainingsWithPlayer");
+	}
+}

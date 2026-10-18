@@ -1,0 +1,16 @@
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Get Player Stats", "")]
+public class uScriptAct_GetPlayerStats : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("str", "")] out int str, [FriendlyName("agl", "")] out int agl, [FriendlyName("stm", "")] out int stm, [FriendlyName("ResType", "")] GameRes.ResType res_type, [FriendlyName("ResName", "")] string res_name, [FriendlyName("Value", "")] out int val)
+	{
+		str = MainGame.save.ch.char_res.GetLevelOf(GameRes.ResType._str);
+		stm = MainGame.save.ch.char_res.GetLevelOf(GameRes.ResType._stm);
+		agl = MainGame.save.ch.char_res.GetLevelOf(GameRes.ResType._agl);
+		val = ((!(res_name != string.Empty)) ? MainGame.save.ch.char_res.GetInt(res_type) : MainGame.save.ch.char_res.GetInt(res_name));
+	}
+}

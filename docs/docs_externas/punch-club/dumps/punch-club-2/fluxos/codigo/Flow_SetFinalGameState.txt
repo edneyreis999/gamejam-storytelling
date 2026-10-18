@@ -1,0 +1,28 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Set Final Game State", 0)]
+[Category("Game")]
+public class Flow_SetFinalGameState : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.uiSystem.ChangeTooltipsState(visibleState: false);
+			MainGame.me.gameSave.uiSystem.ChangeMapButtonState(visibleState: false);
+			MainGame.me.gameSave.uiSystem.ChangeNoticeCornerEnabled(enabled: false);
+			MainGame.me.gameSave.uiSystem.ChangeCharacterPanelState(visibleState: false);
+			MainGame.me.gameSave.uiSystem.ChangeCameraOutlineState(isDefault: false);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

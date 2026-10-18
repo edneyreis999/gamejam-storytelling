@@ -1,0 +1,52 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Check Active Scene", 0)]
+[Category("Game")]
+public class Flow_CheckActiveScene : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @true;
+
+	private FlowOutput @false;
+
+	private ValueInput<Scene> scene;
+
+	private ValueInput<string> sceneId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Check);
+		@true = AddFlowOutput("<color=green>✔</color>", ">= 1");
+		@false = AddFlowOutput("<color=red>✘</color>", "== 0");
+		sceneId = AddValueInput<string>("sceneId");
+	}
+
+	private void Check(Flow flow)
+	{
+		if (!string.IsNullOrEmpty(sceneId.value))
+		{
+			if (sceneId.value == LazySceneManager.ActiveSceneName)
+			{
+				Debug.Log("Scene " + sceneId.value + " is active");
+				@true.Call(flow);
+			}
+			else
+			{
+				Debug.Log("Scene " + sceneId.value + " is inactive");
+				@false.Call(flow);
+			}
+		}
+		else
+		{
+			Debug.LogError("Tried to check null Scene for Active Scene");
+			@false.Call(flow);
+		}
+	}
+}

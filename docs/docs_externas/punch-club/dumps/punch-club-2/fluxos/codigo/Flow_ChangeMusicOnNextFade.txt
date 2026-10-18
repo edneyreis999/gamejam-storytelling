@@ -1,0 +1,87 @@
+using System;
+using DG.Tweening;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Change Playlist On Next Fade", 0)]
+[Category("Game/Sound")]
+public class Flow_ChangeMusicOnNextFade : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool changePlaylistOnNextFade;
+
+	private ValueInput<string> newPlaylistId;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name
+	{
+		get
+		{
+			if (!changePlaylistOnNextFade)
+			{
+				return "Change Music Volume Only On Next fade";
+			}
+			return "Change Playlist On Next Fade";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		if (changePlaylistOnNextFade)
+		{
+			newPlaylistId = AddValueInput<string>("newPlaylistId");
+		}
+		@in = AddFlowInput("in".CapitalizeFirst(), ChangePlaylist);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+
+	private void ChangePlaylist(Flow flow)
+	{
+		string currentScene = DynamicScene.current.SceneName;
+		bool subscribedOnFadeIn = false;
+		MainGame.OnFadeInStart += OnFadeInStart;
+		subscribedOnFadeIn = true;
+		MainGame.OnFadeOutStart += OnFadeOutStart;
+		@out.Call(flow);
+		void OnFadeInStart()
+		{
+			string playListToStop = MainGame.me.scenePlaylistData.GetByName(currentScene).scenePlaylistId;
+			if (string.IsNullOrEmpty(playListToStop))
+			{
+				playListToStop = "regular_radio_playlist";
+			}
+			Tween tween = GameSettings.Instance.TweenMusicMultiplier(0f, 1f);
+			tween.onComplete = (TweenCallback)Delegate.Combine(tween.onComplete, (TweenCallback)delegate
+			{
+				if (changePlaylistOnNextFade)
+				{
+					SmartPlaylistController.StopPlaylist(playListToStop);
+				}
+			});
+			MainGame.OnFadeInStart -= OnFadeInStart;
+		}
+		void OnFadeOutStart(float duration)
+		{
+			if (changePlaylistOnNextFade)
+			{
+				if (currentScene != DynamicScene.current.SceneName)
+				{
+					DynamicScene.current.UseOverrodePlaylistOnScene();
+				}
+				SmartPlaylistController.PlayPlaylist(newPlaylistId.value);
+			}
+			GameSettings.Instance.TweenMusicMultiplier(1f, 1f);
+			MainGame.OnFadeOutStart -= OnFadeOutStart;
+			if (subscribedOnFadeIn)
+			{
+				MainGame.OnFadeInStart -= OnFadeInStart;
+			}
+		}
+	}
+}

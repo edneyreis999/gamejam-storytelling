@@ -1,0 +1,29 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Disable Story Tree Scroll", 0)]
+[Category("Game/Tutorial")]
+public class Flow_DisableStoryTreeScroll : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isEnable;
+
+	public override string name => "Story Tree Scroll " + (isEnable.value ? "Enable" : "Disable");
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GUIElements.Get<UIStoryTreeWindow>().ScrollRectComponent.horizontal = isEnable.value;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isEnable = AddValueInput<bool>("isEnable");
+	}
+}

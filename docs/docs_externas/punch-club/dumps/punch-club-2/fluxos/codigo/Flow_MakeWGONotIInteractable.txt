@@ -1,0 +1,75 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Make WGO not interactable", 0)]
+[Category("Game")]
+public class Flow_MakeWGONotIInteractable : PC2CustomFlowNode
+{
+	public bool interactable;
+
+	[GatherPortsCallback]
+	public Flow_GetGameResFromObj.GetWGOType getWgoType = Flow_GetGameResFromObj.GetWGOType.ByObject;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<WGO> wgoInput;
+
+	private ValueInput<string> wgoId;
+
+	public override string name
+	{
+		get
+		{
+			if (!interactable)
+			{
+				return "Make WGO not interactable";
+			}
+			return "Make WGO interactable";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			switch (getWgoType)
+			{
+			case Flow_GetGameResFromObj.GetWGOType.ByObject:
+			{
+				WGO wGO = WGOParamOrSelf(wgoInput);
+				if (wGO != null)
+				{
+					wGO.WgoState.notInteractableAtAll = !interactable;
+				}
+				break;
+			}
+			case Flow_GetGameResFromObj.GetWGOType.ByString:
+			{
+				WGOState wGOState = MainGame.me.gameSave.worldData.GetWGOState(wgoId.value);
+				if (wGOState != null)
+				{
+					wGOState.notInteractableAtAll = !interactable;
+				}
+				break;
+			}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		switch (getWgoType)
+		{
+		case Flow_GetGameResFromObj.GetWGOType.ByObject:
+			wgoInput = AddValueInput<WGO>("WGO");
+			break;
+		case Flow_GetGameResFromObj.GetWGOType.ByString:
+			wgoId = AddValueInput<string>("wgoId");
+			break;
+		}
+	}
+}

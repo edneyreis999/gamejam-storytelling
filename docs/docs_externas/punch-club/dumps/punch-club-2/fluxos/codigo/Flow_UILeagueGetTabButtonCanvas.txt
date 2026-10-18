@@ -1,0 +1,19 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI League Get Tab Button Canvas", 0)]
+[Category("Game/UI")]
+public class Flow_UILeagueGetTabButtonCanvas : PC2CustomFlowNode
+{
+	private ValueOutput<Canvas> canvas;
+
+	private Canvas canvasInternal;
+
+	protected override void RegisterPorts()
+	{
+		canvas = AddValueOutput("canvas", () => GUIElements.Get<UILeagueWindow>().EloLeague.Header.FightsTabTutorialCanvas);
+	}
+}

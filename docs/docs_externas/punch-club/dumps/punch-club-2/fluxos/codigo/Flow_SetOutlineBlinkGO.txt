@@ -1,0 +1,54 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set OutlineBlink To GO", 0)]
+[Category("Game")]
+public class Flow_SetOutlineBlinkGO : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<GameObject> gameObject;
+
+	private ValueInput<float> time;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), SetOutlineBlink);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		gameObject = AddValueInput<GameObject>("gameObject".CapitalizeFirst());
+		time = AddValueInput<float>("time".CapitalizeFirst());
+	}
+
+	private void SetOutlineBlink(Flow flow)
+	{
+		GameObject value = gameObject.value;
+		WGO component = value.GetComponent<WGO>();
+		if (value != null)
+		{
+			if (component != null)
+			{
+				List<GameObject> overrodeOutline = component.OverrodeOutline;
+				if (overrodeOutline == null || overrodeOutline.Count != 0)
+				{
+					MainGame.me.outlineBehaviour.SetOutlineBlink(component.OverrodeOutline, time.value, 0.5f);
+					goto IL_008f;
+				}
+			}
+			MainGame.me.outlineBehaviour.SetOutlineBlink(value, time.value, 0.5f);
+		}
+		else
+		{
+			Debug.LogError("Tried to SetOutLineBlink to null GO");
+		}
+		goto IL_008f;
+		IL_008f:
+		@out.Call(flow);
+	}
+}

@@ -1,0 +1,44 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open Game Purchase Window", 0)]
+[Category("Game")]
+public class Flow_OpenGamePurchaseWindow : PC2CustomFlowNode
+{
+	public bool fullGame;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in", delegate(Flow flow)
+		{
+			MainGame.OnFadeInComplete += OnFadeIn;
+			MainGame.me.SaveGameAndGoToMenu();
+			UIMainMenuWindow.OnEnterMainMenu += OnEnterMenu;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		static void OnEnterMenu()
+		{
+			GUIElements.Get<UIMainMenuWindow>().OpenFullGamePurchase();
+			UIMainMenuWindow.OnEnterMainMenu -= OnEnterMenu;
+		}
+		static void OnFadeIn()
+		{
+			MainGame.me.gameSave.uiSystem.isMapButtonVisible = true;
+			SmartPlaylistController.PauseCurrentAndPlayMenu();
+			SmartPlaylistController.SetMenuPlaylistAsCurrent();
+			PlayerController.Instance.ChangeControls(ControlState.ByFlow, isEnabled: true);
+			UITutorialWindow uITutorialWindow = GUIElements.Get<UITutorialWindow>();
+			uITutorialWindow.HideAssistant();
+			uITutorialWindow.Hide(playOpenSound: false);
+			MainGame.OnFadeInComplete -= OnFadeIn;
+		}
+	}
+}

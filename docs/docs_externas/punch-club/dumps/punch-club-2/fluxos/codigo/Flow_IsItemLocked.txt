@@ -1,0 +1,37 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is item Locked", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_IsItemLocked : PC2CustomFlowNode
+{
+	private ValueInput<string> itemId;
+
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (MainGame.me.gameSave.knowledgeSystem.IsItemLocked(itemId.value))
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+		itemId = AddValueInput<string>("itemId".CapitalizeFirst());
+	}
+}

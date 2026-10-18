@@ -1,0 +1,29 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Buy Tech Window Change Sorting", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UITechBuyWindowChangeSorting : PC2CustomFlowNode
+{
+	private const int DEFAULT_SORTING = 107;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToDefault;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GUIElements.Get<UIBuyTechWindow>().SelfCanvas.sortingOrder = (isToDefault.value ? 107 : 999);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToDefault = AddValueInput<bool>("isToDefault".CapitalizeFirst());
+	}
+}

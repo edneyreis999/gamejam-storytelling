@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Teleport Player", 0)]
+[Category("Game/Player")]
+public class Flow_SetPlayerPosition : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<Transform> transform;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			Transform value = transform.value;
+			if (value != null)
+			{
+				PlayerController.Instance.SetPlayerPosition(value.position);
+			}
+			else
+			{
+				Debug.LogError("Tried to teleport player to the null transform");
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		transform = AddValueInput<Transform>("transform");
+	}
+}

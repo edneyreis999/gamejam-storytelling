@@ -1,0 +1,55 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Show Fake Credits", 0)]
+[Category("Game/UI")]
+public class Flow_ShowFakeCredits : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToHide;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToHide)
+			{
+				return "Show Fake Credits";
+			}
+			return "Hide Fake Credits";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			@out.Call(flow);
+			DLC1Credits dLC1Credits = GUIElements.Get<DLC1Credits>();
+			if (isToHide)
+			{
+				dLC1Credits.Hide();
+			}
+			else
+			{
+				dLC1Credits.Open();
+				dLC1Credits.onComplete = (Action)Delegate.Combine(dLC1Credits.onComplete, (Action)delegate
+				{
+					onFinished.Call(flow);
+				});
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+	}
+}

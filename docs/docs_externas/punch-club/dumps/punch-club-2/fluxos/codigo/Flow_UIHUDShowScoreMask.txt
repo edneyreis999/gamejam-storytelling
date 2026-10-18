@@ -1,0 +1,46 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI HUD Show Score Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIHUDShowScoreMask : PC2CustomFlowNode
+{
+	public ScoreType scoreType = ScoreType.GPP;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI HUD Score" + (isToShow.value ? "Show" : "Hide") + " Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform rectTransform = ((scoreType == ScoreType.GPP) ? GUIElements.Get<HUD>().Character.ScoreTutorialRect : GUIElements.Get<HUD>().Character.ScoreTutorialRectOSR);
+			RectTransform zoomIconPosition = ((scoreType == ScoreType.GPP) ? GUIElements.Get<HUD>().Character.ScoreTutorialZoomIcon : GUIElements.Get<HUD>().Character.ScoreTutorialZoomIconOSR);
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(rectTransform);
+				GUIElements.Get<ZoomEffect>().ZoomEnable(rectTransform, 3, zoomIconPosition, new Vector2(50f, 50f), ZoomDirection.RightDown);
+				@out.Call(flow);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(rectTransform);
+				GUIElements.Get<ZoomEffect>().ZoomDisable(delegate
+				{
+					@out.Call(flow);
+				});
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

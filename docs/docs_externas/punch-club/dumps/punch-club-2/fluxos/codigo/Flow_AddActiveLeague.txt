@@ -1,0 +1,57 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Active League", 0)]
+[Category("Game/Fight")]
+public class Flow_AddActiveLeague : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public ActiveLeagueState state;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> id;
+
+	private ValueInput<int> index;
+
+	public override string name => state switch
+	{
+		ActiveLeagueState.Add => "Add Active League", 
+		ActiveLeagueState.Set => "Set Active League", 
+		ActiveLeagueState.Remove => "Remove Active League", 
+		_ => base.name, 
+	};
+
+	protected override void RegisterPorts()
+	{
+		id = AddValueInput<string>("id".CapitalizeFirst());
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			switch (state)
+			{
+			case ActiveLeagueState.Add:
+				MainGame.me.gameSave.leaguesSystem.AddActiveLeague(id.value);
+				@out.Call(flow);
+				break;
+			case ActiveLeagueState.Set:
+				MainGame.me.gameSave.leaguesSystem.SetActiveLeague(id.value, index.value);
+				@out.Call(flow);
+				break;
+			case ActiveLeagueState.Remove:
+				MainGame.me.gameSave.leaguesSystem.RemoveActiveLeague(id.value);
+				@out.Call(flow);
+				break;
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (state == ActiveLeagueState.Set)
+		{
+			index = AddValueInput<int>("index".CapitalizeFirst());
+		}
+	}
+}

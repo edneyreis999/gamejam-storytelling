@@ -1,0 +1,46 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+[Name("OpenTutorialWindow", 0)]
+[Category("Game/UI")]
+public class Flow_OpenTutorialWindow : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToOpen;
+
+	public bool withActiveHUD;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name => (isToOpen ? "Open " : "Close ") + "Tutorial Window";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UITutorialWindow uITutorialWindow = GUIElements.Get<UITutorialWindow>();
+			HUD hUD = GUIElements.Get<HUD>();
+			if (isToOpen)
+			{
+				if (withActiveHUD)
+				{
+					hUD.AddUIWithActiveHUDOpened(uITutorialWindow);
+				}
+				uITutorialWindow.Open(playOpenSound: false);
+			}
+			else
+			{
+				if (withActiveHUD)
+				{
+					hUD.RemoveUIWithActiveHUDOpened(uITutorialWindow);
+				}
+				uITutorialWindow.Hide(playOpenSound: false);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

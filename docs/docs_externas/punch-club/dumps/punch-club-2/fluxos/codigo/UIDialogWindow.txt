@@ -1,0 +1,109 @@
+using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
+
+public class UIDialogWindow : BaseGUI
+{
+	[SerializeField]
+	private TextMeshProUGUI windowName;
+
+	[SerializeField]
+	private Image windowImage;
+
+	[FormerlySerializedAs("text")]
+	[SerializeField]
+	private TextMeshProUGUI message;
+
+	[SerializeField]
+	private Button closeButton;
+
+	[SerializeField]
+	private TextMeshProUGUI button1Text;
+
+	[SerializeField]
+	private Button button1;
+
+	[SerializeField]
+	private TextMeshProUGUI button2Text;
+
+	[SerializeField]
+	private Button button2;
+
+	[SerializeField]
+	private TextMeshProUGUI button3Text;
+
+	[SerializeField]
+	private Button button3;
+
+	public override void Init()
+	{
+		base.Init();
+		closeButton.onClick.AddListener(delegate
+		{
+			Hide();
+		});
+	}
+
+	public void OpenYesNo(string name, Sprite image, string text, Action action_1, Action action_2 = null)
+	{
+		Open(name, image, text, "Yes", action_1, "No", action_2 ?? new Action(OnCloseButtonClickHandler));
+	}
+
+	public void OpenOK(string name, Sprite image, string text, Action action = null)
+	{
+		Open(name, image, text, "ok", action ?? new Action(OnCloseButtonClickHandler));
+	}
+
+	private void OnCloseButtonClickHandler()
+	{
+		Hide();
+	}
+
+	public void Open(string name, Sprite image, string text, string buttons_1, Action action_1, string buttons_2 = null, Action action_2 = null, string buttons_3 = null, Action action_3 = null)
+	{
+		base.Open();
+		windowName.text = name;
+		windowImage.sprite = image;
+		message.text = text;
+		if (action_1 != null)
+		{
+			button1.gameObject.SetActive(value: true);
+			button1Text.text = buttons_1;
+			button1.onClick.AddListener(action_1.Invoke);
+		}
+		else
+		{
+			button1.gameObject.SetActive(value: false);
+		}
+		if (action_2 != null)
+		{
+			button2.gameObject.SetActive(value: true);
+			button2Text.text = buttons_2;
+			button2.onClick.AddListener(action_2.Invoke);
+		}
+		else
+		{
+			button2.gameObject.SetActive(value: false);
+		}
+		if (action_3 != null)
+		{
+			button3.gameObject.SetActive(value: true);
+			button3Text.text = buttons_3;
+			button3.onClick.AddListener(action_3.Invoke);
+		}
+		else
+		{
+			button3.gameObject.SetActive(value: false);
+		}
+	}
+
+	public override void Hide(bool playOpenSound = true)
+	{
+		button1.onClick.RemoveAllListeners();
+		button2.onClick.RemoveAllListeners();
+		button3.onClick.RemoveAllListeners();
+		base.Hide(playOpenSound);
+	}
+}

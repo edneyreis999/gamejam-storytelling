@@ -1,0 +1,48 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open Robot League Window", 0)]
+[Category("Game")]
+public class Flow_OpenRobotLeagueWindow : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToOpen;
+
+	public override string name => (isToOpen.value ? "Open " : "Close ") + "Robot League Window";
+
+	protected override void RegisterPorts()
+	{
+		isToOpen = AddValueInput<bool>("isToOpen".CapitalizeFirst());
+		@in = AddFlowInput("in", delegate(Flow flow)
+		{
+			UIRobotLeagueWindow leagueWindow = GUIElements.Get<UIRobotLeagueWindow>();
+			if (isToOpen.value)
+			{
+				leagueWindow.OnOpenAnimFinished += CallOutOpen;
+				leagueWindow.Open();
+			}
+			else
+			{
+				leagueWindow.OnCloseAnimFinished += CallOutClose;
+				leagueWindow.Hide();
+			}
+			void CallOutClose()
+			{
+				@out.Call(flow);
+				leagueWindow.OnCloseAnimFinished -= CallOutClose;
+			}
+			void CallOutOpen()
+			{
+				@out.Call(flow);
+				leagueWindow.OnOpenAnimFinished -= CallOutOpen;
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

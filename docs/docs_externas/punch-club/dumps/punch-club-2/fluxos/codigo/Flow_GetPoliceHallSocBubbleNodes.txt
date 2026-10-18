@@ -1,0 +1,45 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Police Soc Bubble Nodes", 0)]
+[Category("Game/MickGym")]
+public class Flow_GetPoliceHallSocBubbleNodes : PC2CustomFlowNode
+{
+	private ValueOutput<List<Transform>> bubbleNodes;
+
+	private ValueOutput<List<Transform>> playerNodes;
+
+	protected override void RegisterPorts()
+	{
+		bubbleNodes = AddValueOutput("bubbleNodes".CapitalizeFirst(), delegate
+		{
+			List<Transform> list = new List<Transform>();
+			WGO wGO = DynamicScene.FindWGO("police_office_cards_cop_1");
+			if (wGO.gameObject.activeSelf)
+			{
+				list.Add(wGO.TalkNode);
+			}
+			WGO wGO2 = DynamicScene.FindWGO("police_office_cards_cop_2");
+			if (wGO2.gameObject.activeSelf)
+			{
+				list.Add(wGO2.TalkNode);
+			}
+			return list;
+		});
+		playerNodes = AddValueOutput("playerNodes".CapitalizeFirst(), delegate
+		{
+			List<Transform> list = new List<Transform>();
+			WGO wGO = DynamicScene.FindWGO("police_office_cards_table");
+			if (wGO.gameObject.activeSelf)
+			{
+				list.Add(wGO.TalkNode);
+			}
+			return list;
+		});
+	}
+}

@@ -1,0 +1,63 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Show Hint", 0)]
+[Category("Game/UI")]
+public class Flow_ShowHint : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToHide;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<HintType> hintType;
+
+	private ValueInput<Transform> target;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToHide)
+			{
+				return "Show " + hintType.value.ToString() + " Hint";
+			}
+			return "Hide Hint";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (target == null)
+			{
+				Debug.LogError("Target transform is null!!!");
+			}
+			else
+			{
+				if (isToHide)
+				{
+					UIHintManager.Hide(target.value);
+				}
+				else
+				{
+					UIHintManager.Show(target.value, hintType.value);
+				}
+				@out.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (!isToHide)
+		{
+			hintType = AddValueInput<HintType>("hintType".CapitalizeFirst());
+		}
+		target = AddValueInput<Transform>("target".CapitalizeFirst());
+	}
+}

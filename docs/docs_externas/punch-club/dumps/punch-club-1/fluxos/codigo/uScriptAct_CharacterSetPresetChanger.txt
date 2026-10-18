@@ -1,0 +1,14 @@
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeToolTip("")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Set Preset Changer", "")]
+public class uScriptAct_CharacterSetPresetChanger : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Set", "")] bool b)
+	{
+		MainGame.save.ch.char_gfx.SetPresetMagic(b);
+	}
+}

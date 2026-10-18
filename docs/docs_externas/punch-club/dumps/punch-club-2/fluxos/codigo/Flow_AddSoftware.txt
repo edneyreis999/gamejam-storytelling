@@ -1,0 +1,42 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Add Software", 0)]
+[Category("Game")]
+public class Flow_AddSoftware : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToAdd = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> softwareId;
+
+	private ValueInput<bool> silent;
+
+	public override string name => (isToAdd ? "Add" : "Remove") + " Software";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToAdd)
+			{
+				MainGame.me.gameSave.playerData.AddSoftware(softwareId.value);
+			}
+			else
+			{
+				MainGame.me.gameSave.playerData.RemoveSoftware(softwareId.value, silent.value);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		softwareId = AddValueInput<string>("softwareId");
+		silent = AddValueInput<bool>("silent");
+	}
+}

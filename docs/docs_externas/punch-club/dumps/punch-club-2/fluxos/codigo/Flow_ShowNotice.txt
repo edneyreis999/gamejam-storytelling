@@ -1,0 +1,119 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Show Notice", 0)]
+[Category("Game/UI")]
+public class Flow_ShowNotice : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public NoticeType noticeType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> contextId;
+
+	private ValueInput<string> contextIdSecond;
+
+	private ValueInput<string> contextIdThird;
+
+	private ValueInput<string> contextIdFourth;
+
+	private ValueInput<int> contextInt;
+
+	public override string name => $"Show {noticeType} Notice";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			switch (noticeType)
+			{
+			case NoticeType.ReceivedMoney:
+				UINoticeWindow.ShowNotice(new NoticeData(NoticeType.ReceivedMoney, contextInt.value.ToString())
+				{
+					contextIdThird = contextIdThird.value
+				});
+				break;
+			case NoticeType.IncomingCall:
+				UINoticeWindow.ShowNotice(new NoticeData(NoticeType.IncomingCall, contextId.value, contextIdSecond.value, contextIdThird.value, contextIdFourth.value));
+				break;
+			case NoticeType.WorkStarted:
+				UINoticeWindow.ShowNotice(new NoticeData(NoticeType.WorkStarted, contextId.value));
+				break;
+			case NoticeType.JokeReceived:
+				UINoticeWindow.ShowNotice(new NoticeData(NoticeType.JokeReceived));
+				break;
+			case NoticeType.ReceivedSatisfaction:
+				UINoticeWindow.ShowNotice(new NoticeData(NoticeType.ReceivedSatisfaction, contextInt.value.ToString()));
+				break;
+			case NoticeType.Music:
+				MainGame.me.gameSave.playerData.RemoveAllNoticesWithType(NoticeType.Music);
+				UINoticeWindow.ShowNotice(new NoticeData(NoticeType.Music));
+				break;
+			default:
+				throw new ArgumentOutOfRangeException();
+			case NoticeType.AddItem:
+			case NoticeType.RemoveItem:
+			case NoticeType.AddBuff:
+			case NoticeType.RemoveBuff:
+			case NoticeType.BuffChange:
+			case NoticeType.LeagueSigningAvailable:
+			case NoticeType.LeagueFightAvailable:
+			case NoticeType.LeagueSigningEnds:
+			case NoticeType.LeagueFightEnds:
+			case NoticeType.SoftwareDailyNotice:
+			case NoticeType.StoryReveal:
+			case NoticeType.StoryResolve:
+			case NoticeType.LilBoboSoft:
+			case NoticeType.NewTech:
+				break;
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		switch (noticeType)
+		{
+		case NoticeType.ReceivedMoney:
+			contextInt = AddValueInput<int>("Money");
+			contextIdThird = AddValueInput<string>("Custom Header");
+			break;
+		case NoticeType.IncomingCall:
+			contextId = AddValueInput<string>("Caller");
+			contextIdSecond = AddValueInput<string>("Icon");
+			contextIdThird = AddValueInput<string>("Accept Call Script");
+			contextIdFourth = AddValueInput<string>("Decline Call Script");
+			break;
+		case NoticeType.WorkStarted:
+			contextId = AddValueInput<string>("WorkId");
+			break;
+		case NoticeType.ReceivedSatisfaction:
+			contextInt = AddValueInput<int>("Satisfaction");
+			break;
+		default:
+			throw new ArgumentOutOfRangeException();
+		case NoticeType.AddItem:
+		case NoticeType.RemoveItem:
+		case NoticeType.AddBuff:
+		case NoticeType.RemoveBuff:
+		case NoticeType.BuffChange:
+		case NoticeType.LeagueSigningAvailable:
+		case NoticeType.LeagueFightAvailable:
+		case NoticeType.LeagueSigningEnds:
+		case NoticeType.LeagueFightEnds:
+		case NoticeType.SoftwareDailyNotice:
+		case NoticeType.StoryReveal:
+		case NoticeType.StoryResolve:
+		case NoticeType.LilBoboSoft:
+		case NoticeType.NewTech:
+		case NoticeType.JokeReceived:
+		case NoticeType.Music:
+			break;
+		}
+	}
+}

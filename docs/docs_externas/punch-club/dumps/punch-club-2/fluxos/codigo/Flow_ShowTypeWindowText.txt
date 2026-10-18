@@ -1,0 +1,51 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+[Name("Type Window Text", 0)]
+[Category("Game/UI")]
+public class Flow_ShowTypeWindowText : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToShow;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> text;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToShow)
+			{
+				return "Hide Type Window";
+			}
+			return "Show Type Window Text";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIScreenTypeWindow uIScreenTypeWindow = GUIElements.Get<UIScreenTypeWindow>();
+			if (isToShow)
+			{
+				uIScreenTypeWindow.ShowMessage(text.value);
+			}
+			else
+			{
+				uIScreenTypeWindow.Hide(playHideSound: false);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isToShow)
+		{
+			text = AddValueInput<string>("text");
+		}
+	}
+}

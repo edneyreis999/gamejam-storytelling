@@ -1,0 +1,53 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Switch Pet", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_SwitchPet : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput cat;
+
+	private FlowOutput dog;
+
+	private FlowOutput capy;
+
+	private FlowOutput ham;
+
+	private FlowOutput nothing;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			switch (MainGame.me.gameSave.worldData.petId)
+			{
+			case "npc_chuck":
+				capy.Call(flow);
+				break;
+			case "npc_sly":
+				cat.Call(flow);
+				break;
+			case "npc_riley":
+				dog.Call(flow);
+				break;
+			case "npc_hamborg":
+				ham.Call(flow);
+				break;
+			default:
+				nothing.Call(flow);
+				break;
+			}
+		});
+		cat = AddFlowOutput("cat".CapitalizeFirst());
+		capy = AddFlowOutput("capy".CapitalizeFirst());
+		ham = AddFlowOutput("ham".CapitalizeFirst());
+		dog = AddFlowOutput("dog".CapitalizeFirst());
+		nothing = AddFlowOutput("nothing".CapitalizeFirst());
+	}
+}

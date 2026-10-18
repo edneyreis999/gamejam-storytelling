@@ -1,0 +1,1492 @@
+using System;
+using UnityEngine;
+
+[Serializable]
+[NodePath("Graphs")]
+[FriendlyName("Untitled", "Loaded scene")]
+public class on_pot : uScriptLogic
+{
+	private delegate void ContinueExecution();
+
+	private GameObject parentGameObject;
+
+	private uScript_GUI thisScriptsOnGuiListener;
+
+	private bool m_RegisteredForEvents;
+
+	private ContinueExecution m_ContinueExecution;
+
+	private bool m_Breakpoint;
+
+	private const int MaxRelayCallCount = 1000;
+
+	private int relayCallCount;
+
+	private int local_adder_System_Int32;
+
+	private int local_val_System_Int32;
+
+	private GameObject owner_Connection_1;
+
+	private uScriptAct_EndScript logic_uScriptAct_EndScript_uScriptAct_EndScript_2 = new uScriptAct_EndScript();
+
+	private CharacterGfx[] logic_uScriptAct_EndScript_chars_2 = new CharacterGfx[0];
+
+	private bool logic_uScriptAct_EndScript_enable_interaction_2 = true;
+
+	private uScriptAct_SetGlobalInteration logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_3 = new uScriptAct_SetGlobalInteration();
+
+	private bool logic_uScriptAct_SetGlobalInteration_enabled_3;
+
+	private bool logic_uScriptAct_SetGlobalInteration_Out_3 = true;
+
+	private uScriptAct_PlayerVarStatSwitch logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4 = new uScriptAct_PlayerVarStatSwitch();
+
+	private string logic_uScriptAct_PlayerVarStatSwitch_res_type_4 = "#last_pot";
+
+	private int[] logic_uScriptAct_PlayerVarStatSwitch_val_4 = new int[5] { 1, 2, 3, 4, 5 };
+
+	private uScriptAct_SetCharRes logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_5 = new uScriptAct_SetCharRes();
+
+	private string logic_uScriptAct_SetCharRes_name_5 = "#last_pot";
+
+	private int logic_uScriptAct_SetCharRes_val_5;
+
+	private bool logic_uScriptAct_SetCharRes_Out_5 = true;
+
+	private uScriptAct_CharResModify logic_uScriptAct_CharResModify_uScriptAct_CharResModify_6 = new uScriptAct_CharResModify();
+
+	private string[] logic_uScriptAct_CharResModify_modifs_6 = new string[1] { "#potion+=1" };
+
+	private bool logic_uScriptAct_CharResModify_Out_6 = true;
+
+	private uScriptAct_GivePerk logic_uScriptAct_GivePerk_uScriptAct_GivePerk_7 = new uScriptAct_GivePerk();
+
+	private string logic_uScriptAct_GivePerk_perk_7 = "pot_1";
+
+	private bool logic_uScriptAct_GivePerk_Out_7 = true;
+
+	private uScriptAct_GivePerk logic_uScriptAct_GivePerk_uScriptAct_GivePerk_8 = new uScriptAct_GivePerk();
+
+	private string logic_uScriptAct_GivePerk_perk_8 = "pot_2";
+
+	private bool logic_uScriptAct_GivePerk_Out_8 = true;
+
+	private uScriptAct_GivePerk logic_uScriptAct_GivePerk_uScriptAct_GivePerk_9 = new uScriptAct_GivePerk();
+
+	private string logic_uScriptAct_GivePerk_perk_9 = "pot_3";
+
+	private bool logic_uScriptAct_GivePerk_Out_9 = true;
+
+	private uScriptAct_GivePerk logic_uScriptAct_GivePerk_uScriptAct_GivePerk_10 = new uScriptAct_GivePerk();
+
+	private string logic_uScriptAct_GivePerk_perk_10 = "pot_4";
+
+	private bool logic_uScriptAct_GivePerk_Out_10 = true;
+
+	private uScriptAct_GivePerk logic_uScriptAct_GivePerk_uScriptAct_GivePerk_11 = new uScriptAct_GivePerk();
+
+	private string logic_uScriptAct_GivePerk_perk_11 = "pot_5";
+
+	private bool logic_uScriptAct_GivePerk_Out_11 = true;
+
+	private uScriptAct_Passthrough logic_uScriptAct_Passthrough_uScriptAct_Passthrough_12 = new uScriptAct_Passthrough();
+
+	private bool logic_uScriptAct_Passthrough_Out_12 = true;
+
+	private uScriptAct_GetPlayerStats logic_uScriptAct_GetPlayerStats_uScriptAct_GetPlayerStats_13 = new uScriptAct_GetPlayerStats();
+
+	private int logic_uScriptAct_GetPlayerStats_str_13;
+
+	private int logic_uScriptAct_GetPlayerStats_agl_13;
+
+	private int logic_uScriptAct_GetPlayerStats_stm_13;
+
+	private GameRes.ResType logic_uScriptAct_GetPlayerStats_res_type_13;
+
+	private string logic_uScriptAct_GetPlayerStats_res_name_13 = "#last_pot";
+
+	private int logic_uScriptAct_GetPlayerStats_val_13;
+
+	private bool logic_uScriptAct_GetPlayerStats_Out_13 = true;
+
+	private uScriptAct_SetCharRes logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_15 = new uScriptAct_SetCharRes();
+
+	private string logic_uScriptAct_SetCharRes_name_15 = "#get_pot";
+
+	private int logic_uScriptAct_SetCharRes_val_15;
+
+	private bool logic_uScriptAct_SetCharRes_Out_15 = true;
+
+	private uScriptAct_PlayerHasPerk logic_uScriptAct_PlayerHasPerk_uScriptAct_PlayerHasPerk_17 = new uScriptAct_PlayerHasPerk();
+
+	private string logic_uScriptAct_PlayerHasPerk_perk_name_17 = "bad pot";
+
+	private uScriptAct_LosePerk logic_uScriptAct_LosePerk_uScriptAct_LosePerk_18 = new uScriptAct_LosePerk();
+
+	private string logic_uScriptAct_LosePerk_perk_18 = "bad pot";
+
+	private bool logic_uScriptAct_LosePerk_Out_18 = true;
+
+	private uScriptAct_ModifyMainStat logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_19 = new uScriptAct_ModifyMainStat();
+
+	private GameRes.ResType logic_uScriptAct_ModifyMainStat_res_type_19 = GameRes.ResType._stm;
+
+	private int logic_uScriptAct_ModifyMainStat_lvl_19;
+
+	private bool logic_uScriptAct_ModifyMainStat_Out_19 = true;
+
+	private uScriptAct_ModifyMainStat logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_20 = new uScriptAct_ModifyMainStat();
+
+	private GameRes.ResType logic_uScriptAct_ModifyMainStat_res_type_20 = GameRes.ResType._agl;
+
+	private int logic_uScriptAct_ModifyMainStat_lvl_20;
+
+	private bool logic_uScriptAct_ModifyMainStat_Out_20 = true;
+
+	private uScriptAct_ModifyMainStat logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_21 = new uScriptAct_ModifyMainStat();
+
+	private GameRes.ResType logic_uScriptAct_ModifyMainStat_res_type_21 = GameRes.ResType._str;
+
+	private int logic_uScriptAct_ModifyMainStat_lvl_21;
+
+	private bool logic_uScriptAct_ModifyMainStat_Out_21 = true;
+
+	private uScriptAct_SetGoal logic_uScriptAct_SetGoal_uScriptAct_SetGoal_22 = new uScriptAct_SetGoal();
+
+	private string logic_uScriptAct_SetGoal_name_22 = "potion";
+
+	private GoalState.State logic_uScriptAct_SetGoal_state_22 = GoalState.State.Completed;
+
+	private bool logic_uScriptAct_SetGoal_Out_22 = true;
+
+	private uScriptAct_LosePerk logic_uScriptAct_LosePerk_uScriptAct_LosePerk_23 = new uScriptAct_LosePerk();
+
+	private string logic_uScriptAct_LosePerk_perk_23 = "pot_5";
+
+	private bool logic_uScriptAct_LosePerk_Out_23 = true;
+
+	private uScriptAct_LosePerk logic_uScriptAct_LosePerk_uScriptAct_LosePerk_24 = new uScriptAct_LosePerk();
+
+	private string logic_uScriptAct_LosePerk_perk_24 = "pot_2";
+
+	private bool logic_uScriptAct_LosePerk_Out_24 = true;
+
+	private uScriptAct_LosePerk logic_uScriptAct_LosePerk_uScriptAct_LosePerk_25 = new uScriptAct_LosePerk();
+
+	private string logic_uScriptAct_LosePerk_perk_25 = "pot_4";
+
+	private bool logic_uScriptAct_LosePerk_Out_25 = true;
+
+	private uScriptAct_LosePerk logic_uScriptAct_LosePerk_uScriptAct_LosePerk_26 = new uScriptAct_LosePerk();
+
+	private string logic_uScriptAct_LosePerk_perk_26 = "pot_1";
+
+	private bool logic_uScriptAct_LosePerk_Out_26 = true;
+
+	private uScriptAct_LosePerk logic_uScriptAct_LosePerk_uScriptAct_LosePerk_27 = new uScriptAct_LosePerk();
+
+	private string logic_uScriptAct_LosePerk_perk_27 = "pot_3";
+
+	private bool logic_uScriptAct_LosePerk_Out_27 = true;
+
+	private uScriptAct_PlayerVarStatSwitch logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28 = new uScriptAct_PlayerVarStatSwitch();
+
+	private string logic_uScriptAct_PlayerVarStatSwitch_res_type_28 = "#get_pot";
+
+	private int[] logic_uScriptAct_PlayerVarStatSwitch_val_28 = new int[5] { 1, 2, 3, 4, 5 };
+
+	private uScriptAct_PlayerVarStatCompare logic_uScriptAct_PlayerVarStatCompare_uScriptAct_PlayerVarStatCompare_29 = new uScriptAct_PlayerVarStatCompare();
+
+	private string logic_uScriptAct_PlayerVarStatCompare_res_type_29 = "#bad_pot_count";
+
+	private uScriptAct_PlayerVarStatCompare.CompareType logic_uScriptAct_PlayerVarStatCompare_comp_29;
+
+	private int logic_uScriptAct_PlayerVarStatCompare_val_29 = 1;
+
+	private uScriptAct_SetInt logic_uScriptAct_SetInt_uScriptAct_SetInt_30 = new uScriptAct_SetInt();
+
+	private int logic_uScriptAct_SetInt_Value_30 = 1;
+
+	private int logic_uScriptAct_SetInt_Target_30;
+
+	private bool logic_uScriptAct_SetInt_Out_30 = true;
+
+	private uScriptAct_SetInt logic_uScriptAct_SetInt_uScriptAct_SetInt_31 = new uScriptAct_SetInt();
+
+	private int logic_uScriptAct_SetInt_Value_31 = 2;
+
+	private int logic_uScriptAct_SetInt_Target_31;
+
+	private bool logic_uScriptAct_SetInt_Out_31 = true;
+
+	private void SyncUnityHooks()
+	{
+		SyncEventListeners();
+		if (!(null == owner_Connection_1) && m_RegisteredForEvents)
+		{
+			return;
+		}
+		owner_Connection_1 = parentGameObject;
+		if (null != owner_Connection_1)
+		{
+			uScript_CustomUScriptEvent uScript_CustomUScriptEvent2 = owner_Connection_1.GetComponent<uScript_CustomUScriptEvent>();
+			if (null == uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2 = owner_Connection_1.AddComponent<uScript_CustomUScriptEvent>();
+			}
+			if (null != uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2.uScriptStart += Instance_uScriptStart_0;
+			}
+		}
+	}
+
+	private void RegisterForUnityHooks()
+	{
+		SyncEventListeners();
+		if (!m_RegisteredForEvents && null != owner_Connection_1)
+		{
+			uScript_CustomUScriptEvent uScript_CustomUScriptEvent2 = owner_Connection_1.GetComponent<uScript_CustomUScriptEvent>();
+			if (null == uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2 = owner_Connection_1.AddComponent<uScript_CustomUScriptEvent>();
+			}
+			if (null != uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2.uScriptStart += Instance_uScriptStart_0;
+			}
+		}
+	}
+
+	private void SyncEventListeners()
+	{
+	}
+
+	private void UnregisterEventListeners()
+	{
+		if (null != owner_Connection_1)
+		{
+			uScript_CustomUScriptEvent component = owner_Connection_1.GetComponent<uScript_CustomUScriptEvent>();
+			if (null != component)
+			{
+				component.uScriptStart -= Instance_uScriptStart_0;
+			}
+		}
+	}
+
+	public override void SetParent(GameObject g)
+	{
+		parentGameObject = g;
+		logic_uScriptAct_EndScript_uScriptAct_EndScript_2.SetParent(g);
+		logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_3.SetParent(g);
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.SetParent(g);
+		logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_5.SetParent(g);
+		logic_uScriptAct_CharResModify_uScriptAct_CharResModify_6.SetParent(g);
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_7.SetParent(g);
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_8.SetParent(g);
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_9.SetParent(g);
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_10.SetParent(g);
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_11.SetParent(g);
+		logic_uScriptAct_Passthrough_uScriptAct_Passthrough_12.SetParent(g);
+		logic_uScriptAct_GetPlayerStats_uScriptAct_GetPlayerStats_13.SetParent(g);
+		logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_15.SetParent(g);
+		logic_uScriptAct_PlayerHasPerk_uScriptAct_PlayerHasPerk_17.SetParent(g);
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_18.SetParent(g);
+		logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_19.SetParent(g);
+		logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_20.SetParent(g);
+		logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_21.SetParent(g);
+		logic_uScriptAct_SetGoal_uScriptAct_SetGoal_22.SetParent(g);
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_23.SetParent(g);
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_24.SetParent(g);
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_25.SetParent(g);
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_26.SetParent(g);
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_27.SetParent(g);
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.SetParent(g);
+		logic_uScriptAct_PlayerVarStatCompare_uScriptAct_PlayerVarStatCompare_29.SetParent(g);
+		logic_uScriptAct_SetInt_uScriptAct_SetInt_30.SetParent(g);
+		logic_uScriptAct_SetInt_uScriptAct_SetInt_31.SetParent(g);
+		owner_Connection_1 = parentGameObject;
+	}
+
+	public void Awake()
+	{
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.A1 += uScriptAct_PlayerVarStatSwitch_A1_4;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.A2 += uScriptAct_PlayerVarStatSwitch_A2_4;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.A3 += uScriptAct_PlayerVarStatSwitch_A3_4;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.A4 += uScriptAct_PlayerVarStatSwitch_A4_4;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.A5 += uScriptAct_PlayerVarStatSwitch_A5_4;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.Other += uScriptAct_PlayerVarStatSwitch_Other_4;
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_7.ClosedWindow += uScriptAct_GivePerk_ClosedWindow_7;
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_8.ClosedWindow += uScriptAct_GivePerk_ClosedWindow_8;
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_9.ClosedWindow += uScriptAct_GivePerk_ClosedWindow_9;
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_10.ClosedWindow += uScriptAct_GivePerk_ClosedWindow_10;
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_11.ClosedWindow += uScriptAct_GivePerk_ClosedWindow_11;
+		logic_uScriptAct_PlayerHasPerk_uScriptAct_PlayerHasPerk_17.True += uScriptAct_PlayerHasPerk_True_17;
+		logic_uScriptAct_PlayerHasPerk_uScriptAct_PlayerHasPerk_17.False += uScriptAct_PlayerHasPerk_False_17;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_18.ClosedWindow += uScriptAct_LosePerk_ClosedWindow_18;
+		logic_uScriptAct_SetGoal_uScriptAct_SetGoal_22.ClosedWindow += uScriptAct_SetGoal_ClosedWindow_22;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_23.ClosedWindow += uScriptAct_LosePerk_ClosedWindow_23;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_24.ClosedWindow += uScriptAct_LosePerk_ClosedWindow_24;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_25.ClosedWindow += uScriptAct_LosePerk_ClosedWindow_25;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_26.ClosedWindow += uScriptAct_LosePerk_ClosedWindow_26;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_27.ClosedWindow += uScriptAct_LosePerk_ClosedWindow_27;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.A1 += uScriptAct_PlayerVarStatSwitch_A1_28;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.A2 += uScriptAct_PlayerVarStatSwitch_A2_28;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.A3 += uScriptAct_PlayerVarStatSwitch_A3_28;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.A4 += uScriptAct_PlayerVarStatSwitch_A4_28;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.A5 += uScriptAct_PlayerVarStatSwitch_A5_28;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.Other += uScriptAct_PlayerVarStatSwitch_Other_28;
+		logic_uScriptAct_PlayerVarStatCompare_uScriptAct_PlayerVarStatCompare_29.True += uScriptAct_PlayerVarStatCompare_True_29;
+		logic_uScriptAct_PlayerVarStatCompare_uScriptAct_PlayerVarStatCompare_29.False += uScriptAct_PlayerVarStatCompare_False_29;
+	}
+
+	public void Start()
+	{
+		SyncUnityHooks();
+		m_RegisteredForEvents = true;
+	}
+
+	public void OnEnable()
+	{
+		RegisterForUnityHooks();
+		m_RegisteredForEvents = true;
+	}
+
+	public void OnDisable()
+	{
+		UnregisterEventListeners();
+		m_RegisteredForEvents = false;
+	}
+
+	public void Update()
+	{
+		if (relayCallCount < 1000)
+		{
+			relayCallCount = 0;
+		}
+		if (m_ContinueExecution != null)
+		{
+			ContinueExecution continueExecution = m_ContinueExecution;
+			m_ContinueExecution = null;
+			m_Breakpoint = false;
+			continueExecution();
+		}
+		else
+		{
+			UpdateEditorValues();
+			SyncEventListeners();
+		}
+	}
+
+	public void OnDestroy()
+	{
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.A1 -= uScriptAct_PlayerVarStatSwitch_A1_4;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.A2 -= uScriptAct_PlayerVarStatSwitch_A2_4;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.A3 -= uScriptAct_PlayerVarStatSwitch_A3_4;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.A4 -= uScriptAct_PlayerVarStatSwitch_A4_4;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.A5 -= uScriptAct_PlayerVarStatSwitch_A5_4;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.Other -= uScriptAct_PlayerVarStatSwitch_Other_4;
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_7.ClosedWindow -= uScriptAct_GivePerk_ClosedWindow_7;
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_8.ClosedWindow -= uScriptAct_GivePerk_ClosedWindow_8;
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_9.ClosedWindow -= uScriptAct_GivePerk_ClosedWindow_9;
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_10.ClosedWindow -= uScriptAct_GivePerk_ClosedWindow_10;
+		logic_uScriptAct_GivePerk_uScriptAct_GivePerk_11.ClosedWindow -= uScriptAct_GivePerk_ClosedWindow_11;
+		logic_uScriptAct_PlayerHasPerk_uScriptAct_PlayerHasPerk_17.True -= uScriptAct_PlayerHasPerk_True_17;
+		logic_uScriptAct_PlayerHasPerk_uScriptAct_PlayerHasPerk_17.False -= uScriptAct_PlayerHasPerk_False_17;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_18.ClosedWindow -= uScriptAct_LosePerk_ClosedWindow_18;
+		logic_uScriptAct_SetGoal_uScriptAct_SetGoal_22.ClosedWindow -= uScriptAct_SetGoal_ClosedWindow_22;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_23.ClosedWindow -= uScriptAct_LosePerk_ClosedWindow_23;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_24.ClosedWindow -= uScriptAct_LosePerk_ClosedWindow_24;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_25.ClosedWindow -= uScriptAct_LosePerk_ClosedWindow_25;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_26.ClosedWindow -= uScriptAct_LosePerk_ClosedWindow_26;
+		logic_uScriptAct_LosePerk_uScriptAct_LosePerk_27.ClosedWindow -= uScriptAct_LosePerk_ClosedWindow_27;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.A1 -= uScriptAct_PlayerVarStatSwitch_A1_28;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.A2 -= uScriptAct_PlayerVarStatSwitch_A2_28;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.A3 -= uScriptAct_PlayerVarStatSwitch_A3_28;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.A4 -= uScriptAct_PlayerVarStatSwitch_A4_28;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.A5 -= uScriptAct_PlayerVarStatSwitch_A5_28;
+		logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.Other -= uScriptAct_PlayerVarStatSwitch_Other_28;
+		logic_uScriptAct_PlayerVarStatCompare_uScriptAct_PlayerVarStatCompare_29.True -= uScriptAct_PlayerVarStatCompare_True_29;
+		logic_uScriptAct_PlayerVarStatCompare_uScriptAct_PlayerVarStatCompare_29.False -= uScriptAct_PlayerVarStatCompare_False_29;
+	}
+
+	private void Instance_uScriptStart_0(object o, EventArgs e)
+	{
+		if (relayCallCount < 1000)
+		{
+			relayCallCount = 0;
+		}
+		Relay_uScriptStart_0();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_A1_4(object o, EventArgs e)
+	{
+		Relay_A1_4();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_A2_4(object o, EventArgs e)
+	{
+		Relay_A2_4();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_A3_4(object o, EventArgs e)
+	{
+		Relay_A3_4();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_A4_4(object o, EventArgs e)
+	{
+		Relay_A4_4();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_A5_4(object o, EventArgs e)
+	{
+		Relay_A5_4();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_Other_4(object o, EventArgs e)
+	{
+		Relay_Other_4();
+	}
+
+	private void uScriptAct_GivePerk_ClosedWindow_7(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_7();
+	}
+
+	private void uScriptAct_GivePerk_ClosedWindow_8(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_8();
+	}
+
+	private void uScriptAct_GivePerk_ClosedWindow_9(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_9();
+	}
+
+	private void uScriptAct_GivePerk_ClosedWindow_10(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_10();
+	}
+
+	private void uScriptAct_GivePerk_ClosedWindow_11(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_11();
+	}
+
+	private void uScriptAct_PlayerHasPerk_True_17(object o, EventArgs e)
+	{
+		Relay_True_17();
+	}
+
+	private void uScriptAct_PlayerHasPerk_False_17(object o, EventArgs e)
+	{
+		Relay_False_17();
+	}
+
+	private void uScriptAct_LosePerk_ClosedWindow_18(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_18();
+	}
+
+	private void uScriptAct_SetGoal_ClosedWindow_22(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_22();
+	}
+
+	private void uScriptAct_LosePerk_ClosedWindow_23(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_23();
+	}
+
+	private void uScriptAct_LosePerk_ClosedWindow_24(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_24();
+	}
+
+	private void uScriptAct_LosePerk_ClosedWindow_25(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_25();
+	}
+
+	private void uScriptAct_LosePerk_ClosedWindow_26(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_26();
+	}
+
+	private void uScriptAct_LosePerk_ClosedWindow_27(object o, EventArgs e)
+	{
+		Relay_ClosedWindow_27();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_A1_28(object o, EventArgs e)
+	{
+		Relay_A1_28();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_A2_28(object o, EventArgs e)
+	{
+		Relay_A2_28();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_A3_28(object o, EventArgs e)
+	{
+		Relay_A3_28();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_A4_28(object o, EventArgs e)
+	{
+		Relay_A4_28();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_A5_28(object o, EventArgs e)
+	{
+		Relay_A5_28();
+	}
+
+	private void uScriptAct_PlayerVarStatSwitch_Other_28(object o, EventArgs e)
+	{
+		Relay_Other_28();
+	}
+
+	private void uScriptAct_PlayerVarStatCompare_True_29(object o, EventArgs e)
+	{
+		Relay_True_29();
+	}
+
+	private void uScriptAct_PlayerVarStatCompare_False_29(object o, EventArgs e)
+	{
+		Relay_False_29();
+	}
+
+	private void Relay_uScriptStart_0()
+	{
+		if (!CheckDebugBreak("82fca2cb-b3d4-48ca-8210-b900a4fc9258", "Custom_uScript_Events", Relay_uScriptStart_0))
+		{
+			Relay_In_3();
+		}
+	}
+
+	private void Relay_In_2()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("8a403781-c94e-4bbe-9ee6-5790cc07f1cf", "End_Script", Relay_In_2))
+			{
+				logic_uScriptAct_EndScript_uScriptAct_EndScript_2.In(logic_uScriptAct_EndScript_chars_2, logic_uScriptAct_EndScript_enable_interaction_2);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at End Script.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_3()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("b9a6b069-380f-4366-b137-0141cdd229e2", "Set_Interaction", Relay_In_3))
+			{
+				logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_3.In(logic_uScriptAct_SetGlobalInteration_enabled_3);
+				if (logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_3.Out)
+				{
+					Relay_In_13();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Set Interaction.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_A1_4()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a34f36d9-d8c4-4061-8baf-445f6370c177", "Player_Var_Stat_Switch", Relay_A1_4))
+			{
+				Relay_In_21();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_A2_4()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a34f36d9-d8c4-4061-8baf-445f6370c177", "Player_Var_Stat_Switch", Relay_A2_4))
+			{
+				Relay_In_20();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_A3_4()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a34f36d9-d8c4-4061-8baf-445f6370c177", "Player_Var_Stat_Switch", Relay_A3_4))
+			{
+				Relay_In_9();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_A4_4()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a34f36d9-d8c4-4061-8baf-445f6370c177", "Player_Var_Stat_Switch", Relay_A4_4))
+			{
+				Relay_In_19();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_A5_4()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a34f36d9-d8c4-4061-8baf-445f6370c177", "Player_Var_Stat_Switch", Relay_A5_4))
+			{
+				Relay_In_11();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_Other_4()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a34f36d9-d8c4-4061-8baf-445f6370c177", "Player_Var_Stat_Switch", Relay_Other_4))
+			{
+				Relay_In_12();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_4()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a34f36d9-d8c4-4061-8baf-445f6370c177", "Player_Var_Stat_Switch", Relay_In_4))
+			{
+				logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_4.In(logic_uScriptAct_PlayerVarStatSwitch_res_type_4, logic_uScriptAct_PlayerVarStatSwitch_val_4);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_5()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("54aad1af-3931-4607-a291-40f6e71ad286", "Set_Char_Res", Relay_In_5))
+			{
+				logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_5.In(logic_uScriptAct_SetCharRes_name_5, logic_uScriptAct_SetCharRes_val_5);
+				if (logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_5.Out)
+				{
+					Relay_In_22();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Set Char Res.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_6()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("92478394-3e9e-4d44-9722-41a147c27204", "Char_Res_Modify", Relay_In_6))
+			{
+				logic_uScriptAct_CharResModify_uScriptAct_CharResModify_6.In(logic_uScriptAct_CharResModify_modifs_6);
+				if (logic_uScriptAct_CharResModify_uScriptAct_CharResModify_6.Out)
+				{
+					Relay_In_5();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Char Res Modify.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_7()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a0f305a0-0fca-4576-9c25-3aa66e47f21b", "Give_Perk", Relay_ClosedWindow_7))
+			{
+				Relay_In_6();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Give Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_7()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a0f305a0-0fca-4576-9c25-3aa66e47f21b", "Give_Perk", Relay_In_7))
+			{
+				logic_uScriptAct_GivePerk_uScriptAct_GivePerk_7.In(logic_uScriptAct_GivePerk_perk_7);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Give Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_8()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("299fb80a-72be-4ba5-af02-d5eadc8fffa1", "Give_Perk", Relay_ClosedWindow_8))
+			{
+				Relay_In_6();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Give Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_8()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("299fb80a-72be-4ba5-af02-d5eadc8fffa1", "Give_Perk", Relay_In_8))
+			{
+				logic_uScriptAct_GivePerk_uScriptAct_GivePerk_8.In(logic_uScriptAct_GivePerk_perk_8);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Give Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_9()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("5f991663-669b-4765-9c6d-4ecb749823b3", "Give_Perk", Relay_ClosedWindow_9))
+			{
+				Relay_In_6();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Give Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_9()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("5f991663-669b-4765-9c6d-4ecb749823b3", "Give_Perk", Relay_In_9))
+			{
+				logic_uScriptAct_GivePerk_uScriptAct_GivePerk_9.In(logic_uScriptAct_GivePerk_perk_9);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Give Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_10()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("8faba14c-66b7-4e11-aca4-34b4189ade67", "Give_Perk", Relay_ClosedWindow_10))
+			{
+				Relay_In_6();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Give Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_10()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("8faba14c-66b7-4e11-aca4-34b4189ade67", "Give_Perk", Relay_In_10))
+			{
+				logic_uScriptAct_GivePerk_uScriptAct_GivePerk_10.In(logic_uScriptAct_GivePerk_perk_10);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Give Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_11()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("f5ae7eaf-7739-4cf0-96d5-eccf91e23d29", "Give_Perk", Relay_ClosedWindow_11))
+			{
+				Relay_In_6();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Give Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_11()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("f5ae7eaf-7739-4cf0-96d5-eccf91e23d29", "Give_Perk", Relay_In_11))
+			{
+				logic_uScriptAct_GivePerk_uScriptAct_GivePerk_11.In(logic_uScriptAct_GivePerk_perk_11);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Give Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_12()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("7194ced8-7b2b-44ae-80de-c2aecdbb69da", "Pass", Relay_In_12))
+			{
+				logic_uScriptAct_Passthrough_uScriptAct_Passthrough_12.In();
+				if (logic_uScriptAct_Passthrough_uScriptAct_Passthrough_12.Out)
+				{
+					Relay_In_5();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Pass.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_13()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("c4342be3-abf7-4955-b2a1-52c738b2394f", "Get_Player_Stats", Relay_In_13))
+			{
+				logic_uScriptAct_GetPlayerStats_uScriptAct_GetPlayerStats_13.In(out logic_uScriptAct_GetPlayerStats_str_13, out logic_uScriptAct_GetPlayerStats_agl_13, out logic_uScriptAct_GetPlayerStats_stm_13, logic_uScriptAct_GetPlayerStats_res_type_13, logic_uScriptAct_GetPlayerStats_res_name_13, out logic_uScriptAct_GetPlayerStats_val_13);
+				local_val_System_Int32 = logic_uScriptAct_GetPlayerStats_val_13;
+				if (logic_uScriptAct_GetPlayerStats_uScriptAct_GetPlayerStats_13.Out)
+				{
+					Relay_In_28();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Get Player Stats.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_15()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("f4324ef8-621e-4e4e-88dc-4406c7664e8c", "Set_Char_Res", Relay_In_15))
+			{
+				logic_uScriptAct_SetCharRes_val_15 = local_val_System_Int32;
+				logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_15.In(logic_uScriptAct_SetCharRes_name_15, logic_uScriptAct_SetCharRes_val_15);
+				if (logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_15.Out)
+				{
+					Relay_In_2();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Set Char Res.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_True_17()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("117ed5b5-830b-400c-872d-c4b525db77d0", "Has_perk", Relay_True_17))
+			{
+				Relay_In_18();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Has perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_False_17()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("117ed5b5-830b-400c-872d-c4b525db77d0", "Has_perk", Relay_False_17))
+			{
+				Relay_In_29();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Has perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_17()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("117ed5b5-830b-400c-872d-c4b525db77d0", "Has_perk", Relay_In_17))
+			{
+				logic_uScriptAct_PlayerHasPerk_uScriptAct_PlayerHasPerk_17.In(logic_uScriptAct_PlayerHasPerk_perk_name_17);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Has perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_18()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("05a3f564-5b13-49b1-bce7-aff4232a521e", "Lose_Perk", Relay_ClosedWindow_18))
+			{
+				Relay_In_29();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_18()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("05a3f564-5b13-49b1-bce7-aff4232a521e", "Lose_Perk", Relay_In_18))
+			{
+				logic_uScriptAct_LosePerk_uScriptAct_LosePerk_18.In(logic_uScriptAct_LosePerk_perk_18);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_19()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("cc63c80e-abca-4e28-bf82-56a3472b1bd1", "Modify_Main_Stat", Relay_In_19))
+			{
+				logic_uScriptAct_ModifyMainStat_lvl_19 = local_adder_System_Int32;
+				logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_19.In(logic_uScriptAct_ModifyMainStat_res_type_19, logic_uScriptAct_ModifyMainStat_lvl_19);
+				if (logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_19.Out)
+				{
+					Relay_In_10();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Modify Main Stat.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_20()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("132a0a49-9254-4008-84d6-3024a6cce096", "Modify_Main_Stat", Relay_In_20))
+			{
+				logic_uScriptAct_ModifyMainStat_lvl_20 = local_adder_System_Int32;
+				logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_20.In(logic_uScriptAct_ModifyMainStat_res_type_20, logic_uScriptAct_ModifyMainStat_lvl_20);
+				if (logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_20.Out)
+				{
+					Relay_In_8();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Modify Main Stat.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_21()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("0203424d-c1a6-4b48-aa83-d01a8138972b", "Modify_Main_Stat", Relay_In_21))
+			{
+				logic_uScriptAct_ModifyMainStat_lvl_21 = local_adder_System_Int32;
+				logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_21.In(logic_uScriptAct_ModifyMainStat_res_type_21, logic_uScriptAct_ModifyMainStat_lvl_21);
+				if (logic_uScriptAct_ModifyMainStat_uScriptAct_ModifyMainStat_21.Out)
+				{
+					Relay_In_7();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Modify Main Stat.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_22()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("67f12860-c154-4005-9a78-afd96dc5fe2d", "Set_Goal", Relay_ClosedWindow_22))
+			{
+				Relay_In_15();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Set Goal.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_22()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("67f12860-c154-4005-9a78-afd96dc5fe2d", "Set_Goal", Relay_In_22))
+			{
+				logic_uScriptAct_SetGoal_uScriptAct_SetGoal_22.In(logic_uScriptAct_SetGoal_name_22, logic_uScriptAct_SetGoal_state_22);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Set Goal.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_23()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("c3e3de80-be6e-4b74-99cb-3113d510df13", "Lose_Perk", Relay_ClosedWindow_23))
+			{
+				Relay_In_17();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_23()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("c3e3de80-be6e-4b74-99cb-3113d510df13", "Lose_Perk", Relay_In_23))
+			{
+				logic_uScriptAct_LosePerk_uScriptAct_LosePerk_23.In(logic_uScriptAct_LosePerk_perk_23);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_24()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("df8d8f68-d732-49e2-ac77-36860903119e", "Lose_Perk", Relay_ClosedWindow_24))
+			{
+				Relay_In_17();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_24()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("df8d8f68-d732-49e2-ac77-36860903119e", "Lose_Perk", Relay_In_24))
+			{
+				logic_uScriptAct_LosePerk_uScriptAct_LosePerk_24.In(logic_uScriptAct_LosePerk_perk_24);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_25()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("8ed048cb-deb7-4b3d-a0f0-19e98d5958a6", "Lose_Perk", Relay_ClosedWindow_25))
+			{
+				Relay_In_17();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_25()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("8ed048cb-deb7-4b3d-a0f0-19e98d5958a6", "Lose_Perk", Relay_In_25))
+			{
+				logic_uScriptAct_LosePerk_uScriptAct_LosePerk_25.In(logic_uScriptAct_LosePerk_perk_25);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_26()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("8a500431-c6d4-456f-af08-38efa3ae1c51", "Lose_Perk", Relay_ClosedWindow_26))
+			{
+				Relay_In_17();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_26()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("8a500431-c6d4-456f-af08-38efa3ae1c51", "Lose_Perk", Relay_In_26))
+			{
+				logic_uScriptAct_LosePerk_uScriptAct_LosePerk_26.In(logic_uScriptAct_LosePerk_perk_26);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_ClosedWindow_27()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("4e30a51a-bd91-45b3-9a6b-5888bfc9db3a", "Lose_Perk", Relay_ClosedWindow_27))
+			{
+				Relay_In_17();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_27()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("4e30a51a-bd91-45b3-9a6b-5888bfc9db3a", "Lose_Perk", Relay_In_27))
+			{
+				logic_uScriptAct_LosePerk_uScriptAct_LosePerk_27.In(logic_uScriptAct_LosePerk_perk_27);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Lose Perk.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_A1_28()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("76f43f4e-7cd7-4e7b-b62f-5565fbff4674", "Player_Var_Stat_Switch", Relay_A1_28))
+			{
+				Relay_In_26();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_A2_28()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("76f43f4e-7cd7-4e7b-b62f-5565fbff4674", "Player_Var_Stat_Switch", Relay_A2_28))
+			{
+				Relay_In_24();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_A3_28()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("76f43f4e-7cd7-4e7b-b62f-5565fbff4674", "Player_Var_Stat_Switch", Relay_A3_28))
+			{
+				Relay_In_27();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_A4_28()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("76f43f4e-7cd7-4e7b-b62f-5565fbff4674", "Player_Var_Stat_Switch", Relay_A4_28))
+			{
+				Relay_In_25();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_A5_28()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("76f43f4e-7cd7-4e7b-b62f-5565fbff4674", "Player_Var_Stat_Switch", Relay_A5_28))
+			{
+				Relay_In_23();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_Other_28()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("76f43f4e-7cd7-4e7b-b62f-5565fbff4674", "Player_Var_Stat_Switch", Relay_Other_28))
+			{
+				Relay_In_17();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_28()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("76f43f4e-7cd7-4e7b-b62f-5565fbff4674", "Player_Var_Stat_Switch", Relay_In_28))
+			{
+				logic_uScriptAct_PlayerVarStatSwitch_uScriptAct_PlayerVarStatSwitch_28.In(logic_uScriptAct_PlayerVarStatSwitch_res_type_28, logic_uScriptAct_PlayerVarStatSwitch_val_28);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Switch.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_True_29()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("9f42ae8d-7446-4a57-a87c-180f44170a64", "Player_Var_Stat_Compare", Relay_True_29))
+			{
+				Relay_In_30();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Compare.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_False_29()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("9f42ae8d-7446-4a57-a87c-180f44170a64", "Player_Var_Stat_Compare", Relay_False_29))
+			{
+				Relay_In_31();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Compare.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_29()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("9f42ae8d-7446-4a57-a87c-180f44170a64", "Player_Var_Stat_Compare", Relay_In_29))
+			{
+				logic_uScriptAct_PlayerVarStatCompare_uScriptAct_PlayerVarStatCompare_29.In(logic_uScriptAct_PlayerVarStatCompare_res_type_29, logic_uScriptAct_PlayerVarStatCompare_comp_29, logic_uScriptAct_PlayerVarStatCompare_val_29);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Player Var Stat Compare.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_30()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("a67de37b-bb46-4e81-97d4-637ef4009042", "Set_Int", Relay_In_30))
+			{
+				logic_uScriptAct_SetInt_uScriptAct_SetInt_30.In(logic_uScriptAct_SetInt_Value_30, out logic_uScriptAct_SetInt_Target_30);
+				local_adder_System_Int32 = logic_uScriptAct_SetInt_Target_30;
+				if (logic_uScriptAct_SetInt_uScriptAct_SetInt_30.Out)
+				{
+					Relay_In_4();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Set Int.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_31()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("069a586e-b352-47fd-a89b-be2ff4a41720", "Set_Int", Relay_In_31))
+			{
+				logic_uScriptAct_SetInt_uScriptAct_SetInt_31.In(logic_uScriptAct_SetInt_Value_31, out logic_uScriptAct_SetInt_Target_31);
+				local_adder_System_Int32 = logic_uScriptAct_SetInt_Target_31;
+				if (logic_uScriptAct_SetInt_uScriptAct_SetInt_31.Out)
+				{
+					Relay_In_4();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript on_pot.uscript at Set Int.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void UpdateEditorValues()
+	{
+		uScript_MasterComponent.LatestMasterComponent.UpdateNodeValue("on_pot.uscript:val", local_val_System_Int32);
+		uScript_MasterComponent.LatestMasterComponent.UpdateNodeValue("1a01a6ca-f29d-4400-9a4a-cf816eee98dd", local_val_System_Int32);
+		uScript_MasterComponent.LatestMasterComponent.UpdateNodeValue("on_pot.uscript:adder", local_adder_System_Int32);
+		uScript_MasterComponent.LatestMasterComponent.UpdateNodeValue("546853bb-e02b-469d-99ca-d146e6c72fcc", local_adder_System_Int32);
+	}
+
+	private bool CheckDebugBreak(string guid, string name, ContinueExecution method)
+	{
+		if (m_Breakpoint)
+		{
+			return true;
+		}
+		if (uScript_MasterComponent.FindBreakpoint(guid))
+		{
+			if (!(uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint == guid))
+			{
+				uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint = guid;
+				UpdateEditorValues();
+				Debug.Log("uScript BREAK Node:" + name + " ((Time: " + Time.time + string.Empty);
+				Debug.Break();
+				m_ContinueExecution = method.Invoke;
+				m_Breakpoint = true;
+				return true;
+			}
+			uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint = string.Empty;
+		}
+		return false;
+	}
+}

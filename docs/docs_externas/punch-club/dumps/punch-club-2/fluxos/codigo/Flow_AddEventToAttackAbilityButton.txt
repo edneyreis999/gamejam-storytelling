@@ -1,0 +1,69 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Add Event To Attack Ability Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_AddEventToAttackAbilityButton : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput onClicked;
+
+	private FlowOutput @out;
+
+	private FlowOutput onSelectWindowClosed;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UISelectAbilityWindow selectAbilityWindow = GUIElements.Get<UISelectAbilityWindow>();
+			Button button = selectAbilityWindow.Ability[0].Button;
+			GamepadNavigationItem component = selectAbilityWindow.Ability[0].GetComponent<GamepadNavigationItem>();
+			_ = selectAbilityWindow.Ability[0];
+			if (button != null)
+			{
+				BaseGUI.OnWindowClosed += selectWindowCloseHandler;
+				selectAbilityWindow.LockPressBack = true;
+				selectAbilityWindow.TutorialGamepadNavigation = true;
+				selectAbilityWindow.CustomItems = new List<GamepadNavigationItem> { component };
+				selectAbilityWindow.SortButtonTipsOverTutorialWindow();
+				selectAbilityWindow.OnInputSourceChanged();
+				UIElementsCustomEventHandlerManager.AddEvent(button, UITutorialArrow.SignOrientationType.Right, delegate
+				{
+					TutorialAction();
+				});
+			}
+			else
+			{
+				Debug.LogError("Selected button is null for attack button");
+				onClicked.Call(flow);
+			}
+			@out.Call(flow);
+			void TutorialAction()
+			{
+				selectAbilityWindow.TutorialGamepadNavigation = false;
+				selectAbilityWindow.LockPressBack = false;
+				selectAbilityWindow.CustomItems = null;
+				selectAbilityWindow.ReturnDefaultButtonTipsSorting();
+				selectAbilityWindow.OnInputSourceChanged();
+				onClicked.Call(flow);
+			}
+			void selectWindowCloseHandler(BaseGUI window)
+			{
+				onSelectWindowClosed.Call(flow);
+				BaseGUI.OnWindowClosed -= selectWindowCloseHandler;
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+		onSelectWindowClosed = AddFlowOutput("onSelectWindowClosed".CapitalizeFirst());
+	}
+}

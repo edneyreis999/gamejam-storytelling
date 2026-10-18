@@ -1,0 +1,26 @@
+using System;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Picture Dialog", "")]
+public class uScriptAct_PictureDialog : uScriptLogic
+{
+	public event uScript_GameObject.uScriptEventHandler Out;
+
+	public void In([FriendlyName("Header", "")] string header, [FriendlyName("Text", "")] string txt, [FriendlyName("Picture", "")] string picture)
+	{
+		MainGame.me.gui_elements.pic_dialog.Open(GJL.L(header), GJL.L(txt), picture, new SimpleDialog.ButtonDescription
+		{
+			text = "(Action1)" + GJL.L("OK"),
+			color = SimpleButton.ButtonColor.Green,
+			on_click = delegate
+			{
+				if (this.Out != null)
+				{
+					this.Out(this, new EventArgs());
+				}
+			}
+		}, null, btn1_enabled: true, btn2_enabled: false, PictureDialogGUI.CloseButtonFunction.Hidden, null, string.Empty);
+	}
+}

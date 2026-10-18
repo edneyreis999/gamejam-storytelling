@@ -1,0 +1,28 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Enable Cutscene Skip", 0)]
+[Category("Game/Skip")]
+public class Flow_EnableCutsceneSkip : PC2CustomFlowNode
+{
+	public bool enable;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name => (enable ? "<color=#8aff92>Enable</color>" : "<color=#ff8a8a>Disable</color>") + " Cutscene Skip";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UICutsceneWindow.SKIP_ENABLED = enable;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

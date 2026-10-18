@@ -1,0 +1,171 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": -6912238782306947857,
+  "serialized_graph_sha256": "2a9e3bf64cbf51da1fb741c868aa2bc1a3bc05a886685658779e9517629797a4",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "OnItemUseAglTrainFocus",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"_position\":{\"x\":219.0003,\"y\":492.6666},\"$type\":\"FlowCanvas.Nodes.StartEvent\",\"$id\":\"0\"},{\"_position\":{\"x\":647.0,\"y\":492.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SoftwareVendorWindowOpen\",\"$id\":\"1\"},{\"_inputPortValues\":{\"IsToOpen\":{\"$content\":true,\"$type\":\"System.Boolean\"},\"SoftwareId\":{\"$content\":\"agl_train_focus\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1094.0,\"y\":491.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_OpenSoftwareInstallWindow\",\"$id\":\"2\"},{\"_inputPortValues\":{\"eventName\":{\"$content\":\"soft_vendor\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1675.0,\"y\":488.0},\"$type\":\"PunchClub2.FlowCanvas.Flow_FireEventOnWGO\",\"$id\":\"3\"},{\"_position\":{\"x\":1971.036,\"y\":488.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"4\"},{\"_inputPortValues\":{\"wgoId\":{\"$content\":\"npc_emmit\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1489.978,\"y\":636.018},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_FindWGO\",\"$id\":\"5\"}],\"connections\":[{\"_sourcePortName\":\"Once\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"in\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"OnWindowClosed\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"WGO\",\"_targetPortName\":\"WGO\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": -1030.0,
+        "y": 23.0
+      },
+      "_zoomFactor": 1.0
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "_position": {
+          "x": 219.0003,
+          "y": 492.6666
+        },
+        "$type": "FlowCanvas.Nodes.StartEvent",
+        "$id": "0"
+      },
+      {
+        "_position": {
+          "x": 647.0,
+          "y": 492.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SoftwareVendorWindowOpen",
+        "$id": "1"
+      },
+      {
+        "_inputPortValues": {
+          "IsToOpen": {
+            "$content": true,
+            "$type": "System.Boolean"
+          },
+          "SoftwareId": {
+            "$content": "agl_train_focus",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1094.0,
+          "y": 491.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_OpenSoftwareInstallWindow",
+        "$id": "2"
+      },
+      {
+        "_inputPortValues": {
+          "eventName": {
+            "$content": "soft_vendor",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1675.0,
+          "y": 488.0
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_FireEventOnWGO",
+        "$id": "3"
+      },
+      {
+        "_position": {
+          "x": 1971.036,
+          "y": 488.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "4"
+      },
+      {
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "npc_emmit",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1489.978,
+          "y": 636.018
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_FindWGO",
+        "$id": "5"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Once",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "in",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "OnWindowClosed",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "WGO",
+        "_targetPortName": "WGO",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {}
+    }
+  }
+}

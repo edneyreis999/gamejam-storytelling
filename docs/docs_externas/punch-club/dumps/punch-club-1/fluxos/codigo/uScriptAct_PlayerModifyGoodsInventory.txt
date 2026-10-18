@@ -1,0 +1,22 @@
+using UnityEngine;
+
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Modify Goods Inv.", "")]
+public class uScriptAct_PlayerModifyGoodsInventory : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Obj name", "")] string item_name, [FriendlyName("Add?", "")] bool add)
+	{
+		ObjectData data = GameBalance.me.GetData<ObjectData>(item_name);
+		if (data == null)
+		{
+			Debug.LogError("Object not found: " + item_name);
+			return;
+		}
+		MainGame.save.ModifyGoodsInventory(data, add);
+		SceneRoot.me.UpdateInventoryVisibility();
+	}
+}

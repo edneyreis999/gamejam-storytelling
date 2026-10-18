@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Time To Next Duty Day Start", 0)]
+[Category("Player")]
+public class Flow_GetTImeToNextDutyDayStart : PC2CustomFlowNode
+{
+	private ValueInput<string> professionId;
+
+	private ValueOutput<int> time;
+
+	protected override void RegisterPorts()
+	{
+		professionId = AddValueInput<string>("professionId".CapitalizeFirst());
+		time = AddValueOutput("time".CapitalizeFirst(), delegate
+		{
+			if (string.IsNullOrEmpty(professionId.value))
+			{
+				Debug.Log("Empty professionId.value!!!");
+				return 0;
+			}
+			ProfessionData professionData = MainGame.me.gameSave.professionSystem.professionDatas.Find((ProfessionData p) => p.id == professionId.value);
+			if (professionData == null)
+			{
+				ProfessionDefinition data = GameBalance.Me.GetData<ProfessionDefinition>(professionId.value);
+				int daysToNextDuty = data.DaysToNextDuty;
+				return TimeManager.GetTimeToEndOFDay() + 1440 * (daysToNextDuty - 1) + TimeManager.ConvertHoursMinutesToQuantums(data.startTime);
+			}
+			return MainGame.me.gameSave.professionSystem.GetIntTimeToNextDuty(professionData);
+		});
+	}
+}

@@ -1,0 +1,27 @@
+using UnityEngine;
+
+public static class GameScriptStatic
+{
+	public static bool need_redraw;
+
+	public static string cur_uscript = string.Empty;
+
+	public static string last_uscript = string.Empty;
+
+	public static string prev_uscript = string.Empty;
+
+	public static void OnuScriptStarted(string uscript_name)
+	{
+		Debug.Log("<color=yellow>Executing uScript</color>: " + uscript_name);
+		prev_uscript = cur_uscript;
+		last_uscript = (cur_uscript = uscript_name);
+		need_redraw = true;
+	}
+
+	public static void OnuScriptStopped(string uscript_name)
+	{
+		Debug.Log("<color=yellow>Terminating uScript:</color> " + uscript_name);
+		prev_uscript = (cur_uscript = string.Empty);
+		need_redraw = true;
+	}
+}

@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Player Vis", "")]
+public class uScriptAct_SetPlayerVisible : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Visible", "")] bool vis)
+	{
+		MainGame.save.ch.char_gfx.visible = vis;
+	}
+}

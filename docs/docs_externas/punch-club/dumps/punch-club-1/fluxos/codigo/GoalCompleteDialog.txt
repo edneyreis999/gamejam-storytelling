@@ -1,0 +1,113 @@
+using UnityEngine;
+
+public class GoalCompleteDialog : BaseGUI
+{
+	public UILabel l_name;
+
+	public UILabel l_descr;
+
+	public UILabel l_header;
+
+	public SimpleButton btn_1;
+
+	public UI2DSprite spr_icon;
+
+	public UI2DSprite spr_icon_left;
+
+	public static GJCommons.VoidDelegate on_close;
+
+	private GoalData _goal;
+
+	private GoalState.State _goal_state;
+
+	public void Start()
+	{
+		spr_icon.onRender = OnRender;
+		spr_icon_left.onRender = OnRender;
+	}
+
+	public void Open(GoalData goal, GoalState.State state, GJCommons.VoidDelegate on_close_delegate = null)
+	{
+		if (MainGame.me.gui_elements.dialog_gui.IsShown())
+		{
+			MainGame.me.gui_elements.dialog_gui.Hide();
+		}
+		if (MainGame.me.gui_elements.leagues.IsShown())
+		{
+			MainGame.me.gui_elements.leagues.Hide();
+		}
+		_goal = goal;
+		_goal_state = state;
+		GJStats.OnGoalComplete(state, goal);
+		Debug.Log(string.Concat("Show goal dialog, goal = ", goal.name, ", state = ", state, ", on_close_delegate = ", on_close_delegate));
+		Open();
+		on_close = on_close_delegate;
+		l_name.text = GJL.L("goal_" + goal.name);
+		l_header.text = GJL.L((state != GoalState.State.Completed) ? "hdr_new_goal" : "hdr_goal_complete");
+		UI2DSprite uI2DSprite = spr_icon_left;
+		Sprite sprite = EasySpritesCollection.GetSprite("goal_" + goal.name);
+		spr_icon.sprite2D = sprite;
+		uI2DSprite.sprite2D = sprite;
+		l_descr.text = GJL.L("goal_" + ((state != GoalState.State.Completed) ? "a" : "d") + "_" + goal.name);
+		btn_1.SetText("(Action1) " + GJL.L("OK"));
+		if (state == GoalState.State.Completed)
+		{
+			spr_icon_left.shader = Shader.Find("Unlit/Transparent Colored Satur");
+			spr_icon.shader = Shader.Find("Unlit/Transparent Colored");
+			spr_icon_left.gameObject.transform.parent.GetComponent<UI2DSprite>().sprite2D = EasySpritesCollection.GetSprite("goal_back");
+			spr_icon.gameObject.transform.parent.GetComponent<UI2DSprite>().sprite2D = EasySpritesCollection.GetSprite("goal_back_active");
+			PlatformSpecific.OnGoalComplete(goal);
+		}
+		else
+		{
+			spr_icon_left.shader = Shader.Find("Unlit/Transparent Colored");
+			spr_icon.shader = Shader.Find("Unlit/Transparent Colored Satur");
+			spr_icon_left.sprite2D = EasySpritesCollection.GetSprite("goal_unknown");
+			spr_icon_left.gameObject.transform.parent.GetComponent<UI2DSprite>().sprite2D = EasySpritesCollection.GetSprite("goal_back");
+			spr_icon.gameObject.transform.parent.GetComponent<UI2DSprite>().sprite2D = EasySpritesCollection.GetSprite("goal_back");
+		}
+		Start();
+	}
+
+	public override void Hide()
+	{
+		base.Hide();
+		Sound.Play(Sound.SoundID.Click);
+	}
+
+	protected override void OnHideDone()
+	{
+		if (!hide_done)
+		{
+			base.OnHideDone();
+			if (on_close != null)
+			{
+				GJCommons.VoidDelegate voidDelegate = on_close;
+				on_close = null;
+				voidDelegate();
+			}
+		}
+	}
+
+	private void OnRender(Material mat)
+	{
+		mat.SetFloat("_Saturation", 0f);
+	}
+
+	protected override void OnBackColliderClicked()
+	{
+		Hide();
+	}
+
+	protected override void OnShowDone()
+	{
+		base.OnShowDone();
+		if (_goal_state != GoalState.State.ShownUnknown && !MainGame.me.gui_elements.goals.IsShown())
+		{
+			GJTimer.AddTimer(0.1f, delegate
+			{
+				MainGame.me.gui_elements.new_goal_animation.ShowIconAnimation(_goal, _goal_state);
+			});
+		}
+	}
+}

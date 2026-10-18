@@ -1,0 +1,14 @@
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Game Save", "")]
+public class uScriptAct_GameSave : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Enabled?", "")] bool en)
+	{
+		MainGame.autosave_enabled = en;
+		MainGame.save.SaveToCurrentSlot();
+	}
+}

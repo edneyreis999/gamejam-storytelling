@@ -1,0 +1,265 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": -2909731889125494749,
+  "serialized_graph_sha256": "bc3e6234dae8826de61f20ee8923adfd40f51ee0db36aa0511af3dd8f45889c4",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "SIDE-AdrianaPan",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"_position\":{\"x\":503.2477,\"y\":993.5364},\"$type\":\"FlowCanvas.Nodes.StartEvent\",\"$id\":\"0\"},{\"_position\":{\"x\":1202.781,\"y\":853.9734},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_IsSideQuestsEnabled\",\"$id\":\"1\"},{\"_inputPortValues\":{\"sceneId\":{\"$content\":\"OldHouse\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1038.826,\"y\":993.4353},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_CheckActiveScene\",\"$id\":\"2\"},{\"isSetByString\":true,\"_inputPortValues\":{\"inputWGOId\":{\"$content\":\"npc_adriana\",\"$type\":\"System.String\"},\"LabelType\":{\"$content\":2,\"$type\":\"WGOCustomEventsHandler+GUILabelType\"},\"EventName\":{\"$content\":\"SIDE-AdrianaPan\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2044.641,\"y\":1314.264},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_AddCustomEvent\",\"$id\":\"3\"},{\"_position\":{\"x\":2762.618,\"y\":1311.861},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"4\"},{\"isPlayer\":false,\"getWgoType\":0,\"_inputPortValues\":{\"wgoId\":{\"$content\":\"npc_adriana\",\"$type\":\"System.String\"},\"ParamName\":{\"$content\":\"is_sleep\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1699.053,\"y\":993.4354},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj\",\"$id\":\"5\"},{\"_inputPortValues\":{\"RunningScript\":{\"$content\":\"SIDE-AdrianaPan\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2262.0,\"y\":993.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_AddDefferedEvent\",\"$id\":\"6\"},{\"_inputPortValues\":{\"LogicId\":{\"$content\":\"adriana_wake_up\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2000.0,\"y\":1102.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_GetTimeToStartLogic\",\"$id\":\"7\"}],\"connections\":[{\"_sourcePortName\":\"Once\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Yes\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"No\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"== 0\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\">= 1\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"== 0\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\">= 1\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"6\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Time\",\"_targetPortName\":\"LifeTime\",\"_sourceNode\":{\"$ref\":\"7\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": -669.8613891601562,
+        "y": -551.1564331054688
+      },
+      "_zoomFactor": 0.9658535122871399
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "_position": {
+          "x": 503.2477,
+          "y": 993.5364
+        },
+        "$type": "FlowCanvas.Nodes.StartEvent",
+        "$id": "0"
+      },
+      {
+        "_position": {
+          "x": 1202.781,
+          "y": 853.9734
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_IsSideQuestsEnabled",
+        "$id": "1"
+      },
+      {
+        "_inputPortValues": {
+          "sceneId": {
+            "$content": "OldHouse",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1038.826,
+          "y": 993.4353
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_CheckActiveScene",
+        "$id": "2"
+      },
+      {
+        "isSetByString": true,
+        "_inputPortValues": {
+          "inputWGOId": {
+            "$content": "npc_adriana",
+            "$type": "System.String"
+          },
+          "LabelType": {
+            "$content": 2,
+            "$type": "WGOCustomEventsHandler+GUILabelType"
+          },
+          "EventName": {
+            "$content": "SIDE-AdrianaPan",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2044.641,
+          "y": 1314.264
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_AddCustomEvent",
+        "$id": "3"
+      },
+      {
+        "_position": {
+          "x": 2762.618,
+          "y": 1311.861
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "4"
+      },
+      {
+        "isPlayer": false,
+        "getWgoType": 0,
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "npc_adriana",
+            "$type": "System.String"
+          },
+          "ParamName": {
+            "$content": "is_sleep",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1699.053,
+          "y": 993.4354
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj",
+        "$id": "5"
+      },
+      {
+        "_inputPortValues": {
+          "RunningScript": {
+            "$content": "SIDE-AdrianaPan",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2262.0,
+          "y": 993.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_AddDefferedEvent",
+        "$id": "6"
+      },
+      {
+        "_inputPortValues": {
+          "LogicId": {
+            "$content": "adriana_wake_up",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2000.0,
+          "y": 1102.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_GetTimeToStartLogic",
+        "$id": "7"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Once",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Yes",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "No",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "== 0",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": ">= 1",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "== 0",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": ">= 1",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "6"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Time",
+        "_targetPortName": "LifeTime",
+        "_sourceNode": {
+          "$ref": "7"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {}
+    }
+  }
+}

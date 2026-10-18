@@ -1,0 +1,53 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+[Name("Show Tutorial Assistant", 0)]
+[Category("Game/UI")]
+public class Flow_ShowTutorialAssistant : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToOpen = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<RectTransform> point;
+
+	public override string name
+	{
+		get
+		{
+			string text = (isToOpen ? "Show " : "Hide ") + "Tutorial Assistant";
+			if (point != null && !point.isConnected && isToOpen)
+			{
+				text += "\n<color=#EE0000>Point isn't connected</color>";
+			}
+			return text;
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UITutorialWindow uITutorialWindow = GUIElements.Get<UITutorialWindow>();
+			if (isToOpen)
+			{
+				uITutorialWindow.ShowAssistant(point.value);
+			}
+			else
+			{
+				uITutorialWindow.HideAssistant();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isToOpen)
+		{
+			point = AddValueInput<RectTransform>("point");
+		}
+	}
+}

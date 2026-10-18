@@ -1,0 +1,55 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Fire Event On WGO", 0)]
+[Category("Game/WGO")]
+public class Flow_FireEventOnWGO : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<WGO> wgoInput;
+
+	private ValueInput<string> eventName;
+
+	private ValueInput<float> delayTime;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), FireEvent);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		wgoInput = AddValueInput<WGO>("WGO");
+		eventName = AddValueInput<string>("eventName");
+		delayTime = AddValueInput<float>("delayTime");
+	}
+
+	private void FireEvent(Flow flow)
+	{
+		WGO wgo = WGOParamOrSelf(wgoInput);
+		if (wgo != null)
+		{
+			if (delayTime.value <= 0f)
+			{
+				wgo.FireEvent(eventName.value);
+			}
+			else
+			{
+				LazyTimer.AddTimer(delayTime.value, delegate
+				{
+					wgo.FireEvent(eventName.value);
+				});
+			}
+		}
+		else
+		{
+			Debug.LogError("Tried to fire event \"" + eventName.value + "\" for null WGO");
+		}
+		@out.Call(flow);
+	}
+}

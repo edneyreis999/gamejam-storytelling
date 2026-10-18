@@ -1,0 +1,109 @@
+using System;
+using DG.Tweening;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("LoadScene", 0)]
+[Category("Game/Scene")]
+public class Flow_LoadScene : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public LoadSceneType loadSceneType = LoadSceneType.Fade;
+
+	[GatherPortsCallback]
+	public bool unloadAdditionalScene;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onSceneIsReady;
+
+	private FlowOutput onFadeIsFinished;
+
+	private FlowOutput onFadeInIsFinished;
+
+	private ValueInput<string> sceneName;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), LoadScene);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onSceneIsReady = AddFlowOutput("onSceneIsReady".CapitalizeFirst());
+		if (loadSceneType == LoadSceneType.Fade)
+		{
+			onFadeIsFinished = AddFlowOutput("onFadeIsFinished".CapitalizeFirst());
+			onFadeInIsFinished = AddFlowOutput("onFadeInIsFinished".CapitalizeFirst());
+		}
+		sceneName = AddValueInput<string>("sceneName");
+	}
+
+	private void LoadScene(Flow flow)
+	{
+		if (unloadAdditionalScene)
+		{
+			MainGame.me.UnloadAdditionalScene(LoadSceneType.None);
+		}
+		string currentScene;
+		switch (loadSceneType)
+		{
+		case LoadSceneType.None:
+			MainGame.me.LoadScene(sceneName.value, loadSceneType, delegate
+			{
+				SnapshotController.Instance.SetSnapshot(SnapshotController.SnapshotType.Default);
+				onSceneIsReady.Call(flow);
+			});
+			break;
+		case LoadSceneType.Fade:
+		{
+			byte[] autoSave = null;
+			if (MainGame.me.CanAutoSave())
+			{
+				autoSave = MainGame.me.gameSave.GetSerialized();
+			}
+			currentScene = DynamicScene.current.SceneName;
+			string value = sceneName.value;
+			if (MainGame.me.scenePlaylistData.GetByName(value).scenePlaylistId != MainGame.me.scenePlaylistData.GetByName(currentScene).scenePlaylistId && !GUIElements.Get<UICutsceneWindow>().IsShown)
+			{
+				MainGame.OnFadeInStart += OnFadeInStart;
+				MainGame.OnFadeOutStart += OnFadeOutStart;
+			}
+			MainGame.me.LoadScene(sceneName.value, loadSceneType, delegate
+			{
+				SnapshotController.Instance.SetSnapshot(SnapshotController.SnapshotType.Default);
+				onSceneIsReady.Call(flow);
+			}, delegate
+			{
+				onFadeInIsFinished.Call(flow);
+			}, delegate
+			{
+				onFadeIsFinished.Call(flow);
+			}, autoSave);
+			break;
+		}
+		}
+		@out.Call(flow);
+		void OnFadeInStart()
+		{
+			string playListToStop = MainGame.me.scenePlaylistData.GetByName(currentScene).scenePlaylistId;
+			if (string.IsNullOrEmpty(playListToStop))
+			{
+				playListToStop = "regular_radio_playlist";
+			}
+			Tween tween = GameSettings.Instance.TweenMusicMultiplier(0f, 0.6f);
+			tween.onComplete = (TweenCallback)Delegate.Combine(tween.onComplete, (TweenCallback)delegate
+			{
+				SmartPlaylistController.StopPlaylist(playListToStop);
+			});
+			MainGame.OnFadeInStart -= OnFadeInStart;
+		}
+		static void OnFadeOutStart(float duration)
+		{
+			GameSettings.Instance.TweenMusicMultiplier(1f, 1f);
+			MainGame.OnFadeOutStart -= OnFadeOutStart;
+		}
+	}
+}

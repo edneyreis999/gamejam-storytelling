@@ -1,0 +1,40 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Select Ability Scroll\nShow Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_SelectAbilityWindowScrollShowMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI Select Ability Scroll\n" + (isToShow.value ? "Show" : "Hide") + " Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform scrollTutorialRectTransform = GUIElements.Get<UISelectAbilityWindow>().ScrollTutorialRectTransform;
+			if (isToShow.value)
+			{
+				scrollTutorialRectTransform.gameObject.SetActive(value: true);
+				GUIElements.Get<UITutorialWindow>().ShowMask(scrollTutorialRectTransform);
+			}
+			else
+			{
+				scrollTutorialRectTransform.gameObject.SetActive(value: false);
+				GUIElements.Get<UITutorialWindow>().HideMask(scrollTutorialRectTransform);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

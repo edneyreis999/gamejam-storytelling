@@ -1,0 +1,14 @@
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Get Cur Action", "")]
+public class uScriptAct_GetCurrentActionName : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Action name", "Current action name")] out string act_name)
+	{
+		ActionData current_action = MainGame.save.ch.char_gfx.current_action;
+		act_name = ((current_action != null) ? current_action.name : string.Empty);
+	}
+}

@@ -1,0 +1,377 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": 4173991370930825101,
+  "serialized_graph_sha256": "c20bfbd3eb78c214a96cf10bdbff34c4daaf58f872679efdc1a06272fe7f6f8a",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "Sewerage_L7",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"_position\":{\"x\":286.0,\"y\":482.0},\"$type\":\"FlowCanvas.Nodes.StartEvent\",\"$id\":\"0\"},{\"_inputPortValues\":{\"ParamName\":{\"$content\":\"cat_conference_active\",\"$type\":\"System.String\"}},\"_position\":{\"x\":567.1591,\"y\":481.4529},\"_comment\":\"\",\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj\",\"$id\":\"1\"},{\"_position\":{\"x\":1078.0,\"y\":216.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"2\"},{\"_inputPortValues\":{\"ParamName\":{\"$content\":\"has_anti_cube_tech\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1023.147,\"y\":502.7932},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj\",\"$id\":\"3\"},{\"_inputPortValues\":{\"ScriptName\":{\"$content\":\"Event_DLC-CubeSecretSociety\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1749.0,\"y\":523.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_RunScript\",\"$id\":\"4\"},{\"_position\":{\"x\":2210.0,\"y\":541.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"5\"},{\"_inputPortValues\":{\"wgoId\":{\"$content\":\"npc_mysterious_robot\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1525.34,\"y\":68.69421},\"$type\":\"PunchClub2.FlowCanvas.Flow_ChangeWGOState\",\"$id\":\"6\"},{\"_inputPortValues\":{\"wgoId\":{\"$content\":\"npc_mysterious_robot2\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1800.34,\"y\":67.69421},\"$type\":\"PunchClub2.FlowCanvas.Flow_ChangeWGOState\",\"$id\":\"7\"},{\"_inputPortValues\":{\"wgoId\":{\"$content\":\"npc_mysterious_robot3\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2083.34,\"y\":66.69421},\"$type\":\"PunchClub2.FlowCanvas.Flow_ChangeWGOState\",\"$id\":\"8\"},{\"_inputPortValues\":{\"wgoId\":{\"$content\":\"npc_ultimate_robot\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2384.34,\"y\":66.69421},\"$type\":\"PunchClub2.FlowCanvas.Flow_ChangeWGOState\",\"$id\":\"9\"},{\"_inputPortValues\":{\"TriggerName\":{\"$content\":\"flyer\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2739.568,\"y\":65.63262},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetTriggerToAnimator\",\"$id\":\"10\"},{\"_position\":{\"x\":3269.676,\"y\":65.97073},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_MakeWGONotIInteractable\",\"$id\":\"11\"},{\"_position\":{\"x\":3662.086,\"y\":63.57103},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"12\"},{\"_inputPortValues\":{\"wgoId\":{\"$content\":\"robot_secret_society_pedestal\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2359.416,\"y\":273.1869},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_FindWGO\",\"$id\":\"13\"}],\"connections\":[{\"_sourcePortName\":\"Once\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\">= 1\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"== 0\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"== 0\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\">= 1\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"4\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"6\"},\"_targetNode\":{\"$ref\":\"7\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"7\"},\"_targetNode\":{\"$ref\":\"8\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"8\"},\"_targetNode\":{\"$ref\":\"9\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"9\"},\"_targetNode\":{\"$ref\":\"10\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"10\"},\"_targetNode\":{\"$ref\":\"11\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"11\"},\"_targetNode\":{\"$ref\":\"12\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"WGO\",\"_targetPortName\":\"GameObject\",\"_sourceNode\":{\"$ref\":\"13\"},\"_targetNode\":{\"$ref\":\"10\"},\"$type\":\"FlowCanvas.BinderConnection`1[[UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"},{\"_sourcePortName\":\"WGO\",\"_targetPortName\":\"WGO\",\"_sourceNode\":{\"$ref\":\"13\"},\"_targetNode\":{\"$ref\":\"11\"},\"$type\":\"FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"}],\"canvasGroups\":[{\"name\":\"Is logic needed?\",\"rect\":{\"xMin\":931.0,\"yMin\":94.0,\"xMax\":1300.0,\"yMax\":406.0}}],\"localBlackboard\":{\"_variables\":{}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": -1382.15185546875,
+        "y": 481.434326171875
+      },
+      "_zoomFactor": 1.0
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "_position": {
+          "x": 286.0,
+          "y": 482.0
+        },
+        "$type": "FlowCanvas.Nodes.StartEvent",
+        "$id": "0"
+      },
+      {
+        "_inputPortValues": {
+          "ParamName": {
+            "$content": "cat_conference_active",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 567.1591,
+          "y": 481.4529
+        },
+        "_comment": "",
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj",
+        "$id": "1"
+      },
+      {
+        "_position": {
+          "x": 1078.0,
+          "y": 216.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "2"
+      },
+      {
+        "_inputPortValues": {
+          "ParamName": {
+            "$content": "has_anti_cube_tech",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1023.147,
+          "y": 502.7932
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj",
+        "$id": "3"
+      },
+      {
+        "_inputPortValues": {
+          "ScriptName": {
+            "$content": "Event_DLC-CubeSecretSociety",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1749.0,
+          "y": 523.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_RunScript",
+        "$id": "4"
+      },
+      {
+        "_position": {
+          "x": 2210.0,
+          "y": 541.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "5"
+      },
+      {
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "npc_mysterious_robot",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1525.34,
+          "y": 68.69421
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_ChangeWGOState",
+        "$id": "6"
+      },
+      {
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "npc_mysterious_robot2",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1800.34,
+          "y": 67.69421
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_ChangeWGOState",
+        "$id": "7"
+      },
+      {
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "npc_mysterious_robot3",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2083.34,
+          "y": 66.69421
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_ChangeWGOState",
+        "$id": "8"
+      },
+      {
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "npc_ultimate_robot",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2384.34,
+          "y": 66.69421
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_ChangeWGOState",
+        "$id": "9"
+      },
+      {
+        "_inputPortValues": {
+          "TriggerName": {
+            "$content": "flyer",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2739.568,
+          "y": 65.63262
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetTriggerToAnimator",
+        "$id": "10"
+      },
+      {
+        "_position": {
+          "x": 3269.676,
+          "y": 65.97073
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_MakeWGONotIInteractable",
+        "$id": "11"
+      },
+      {
+        "_position": {
+          "x": 3662.086,
+          "y": 63.57103
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "12"
+      },
+      {
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "robot_secret_society_pedestal",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2359.416,
+          "y": 273.1869
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_FindWGO",
+        "$id": "13"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Once",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": ">= 1",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "== 0",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "== 0",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": ">= 1",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "4"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "6"
+        },
+        "_targetNode": {
+          "$ref": "7"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "7"
+        },
+        "_targetNode": {
+          "$ref": "8"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "8"
+        },
+        "_targetNode": {
+          "$ref": "9"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "9"
+        },
+        "_targetNode": {
+          "$ref": "10"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "10"
+        },
+        "_targetNode": {
+          "$ref": "11"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "11"
+        },
+        "_targetNode": {
+          "$ref": "12"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "WGO",
+        "_targetPortName": "GameObject",
+        "_sourceNode": {
+          "$ref": "13"
+        },
+        "_targetNode": {
+          "$ref": "10"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      {
+        "_sourcePortName": "WGO",
+        "_targetPortName": "WGO",
+        "_sourceNode": {
+          "$ref": "13"
+        },
+        "_targetNode": {
+          "$ref": "11"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      }
+    ],
+    "canvasGroups": [
+      {
+        "name": "Is logic needed?",
+        "rect": {
+          "xMin": 931.0,
+          "yMin": 94.0,
+          "xMax": 1300.0,
+          "yMax": 406.0
+        }
+      }
+    ],
+    "localBlackboard": {
+      "_variables": {}
+    }
+  }
+}

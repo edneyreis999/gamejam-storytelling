@@ -1,0 +1,45 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Get WalkNode Direction", 0)]
+[Category("Game/WalkNode")]
+public class Flow_GetWalkNodeDirection : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<WalkNode> walkNode;
+
+	private ValueOutput<HumanLikeDirections.Direction> direction;
+
+	private HumanLikeDirections.Direction outDirectionValue;
+
+	public override string name => base.name + ((!walkNode.isConnected) ? "\n<color=#ff5757>WalkNode is NULL</color>" : "");
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), GetDirection);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		walkNode = AddValueInput<WalkNode>("walkNode");
+		direction = AddValueOutput("direction", () => outDirectionValue);
+	}
+
+	private void GetDirection(Flow flow)
+	{
+		WalkNode value = walkNode.value;
+		if (value != null)
+		{
+			outDirectionValue = value.StandNodeDirection;
+		}
+		else
+		{
+			Debug.LogError("WalkNode is null");
+		}
+		@out.Call(flow);
+	}
+}

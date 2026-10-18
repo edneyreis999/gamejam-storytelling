@@ -1,0 +1,21 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Find WalkNode By ID", 0)]
+[Category("Game/WalkNode")]
+public class Flow_GetWalkNodeById : PC2CustomFlowNode
+{
+	private ValueInput<string> id;
+
+	private ValueOutput<WalkNode> walkNode;
+
+	private WalkNode outWalkNode;
+
+	protected override void RegisterPorts()
+	{
+		id = AddValueInput<string>("id");
+		walkNode = AddValueOutput("walkNode", () => DynamicScene.FindWalkNode(id.value));
+	}
+}

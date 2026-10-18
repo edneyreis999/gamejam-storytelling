@@ -1,0 +1,16 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Get Current Location Scene Name", 0)]
+[Category("Game")]
+public class Flow_GetCurrentLocationSceneName : PC2CustomFlowNode
+{
+	private ValueOutput<string> sceneName;
+
+	protected override void RegisterPorts()
+	{
+		sceneName = AddValueOutput("sceneName", () => LazySceneManager.ActiveSceneName);
+	}
+}

@@ -1,0 +1,56 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set Cutscene Overrode From Multianswer", 0)]
+[Description("Many cutscenes are executed from SceneScript as cutscenes, this checking let override this cutsceneas it ran from multianswer like a not-cutscene")]
+[Category("Game")]
+public class Flow_SetResetCutsceneOverrodeFromMultianswer : PC2CustomFlowNode
+{
+	public enum setType
+	{
+		Set,
+		Reset
+	}
+
+	private const string TYPE_RES = "is_cutscene_from_multianswer_variant";
+
+	public setType type;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name
+	{
+		get
+		{
+			if (type != setType.Set)
+			{
+				return $"<color=red>{type}</color> Cutscene Overrode From Multianswer";
+			}
+			return $"<color=green>{type}</color> Cutscene Overrode From Multianswer";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Set);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+
+	private void Set(Flow flow)
+	{
+		if (type == setType.Set)
+		{
+			MainGame.me.PlayerRes.Set("is_cutscene_from_multianswer_variant", 1f);
+		}
+		else
+		{
+			MainGame.me.PlayerRes.Set("is_cutscene_from_multianswer_variant", 0f);
+		}
+		@out.Call(flow);
+	}
+}

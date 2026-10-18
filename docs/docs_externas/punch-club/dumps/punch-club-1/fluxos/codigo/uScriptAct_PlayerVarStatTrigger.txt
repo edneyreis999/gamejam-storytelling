@@ -1,0 +1,34 @@
+using System;
+
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Player Var Stat Trigger", "")]
+public class uScriptAct_PlayerVarStatTrigger : uScriptLogic
+{
+	public event uScript_GameObject.uScriptEventHandler Set;
+
+	public event uScript_GameObject.uScriptEventHandler Unset;
+
+	public void In([FriendlyName("Resource", "")] string res_type, [FriendlyName(">=", "")] int val)
+	{
+		bool flag = MainGame.save.ch.char_res.GetInt(res_type) >= val;
+		bool flag2 = MainGame.save.ch.char_res.GetInt(res_type + "_trg") >= 1;
+		if (flag && !flag2)
+		{
+			MainGame.save.ch.char_res.Set(res_type + "_trg", 1f);
+			if (this.Set != null)
+			{
+				this.Set(this, new EventArgs());
+			}
+		}
+		else if (!flag && flag2)
+		{
+			MainGame.save.ch.char_res.Set(res_type + "_trg", 0f);
+			if (this.Unset != null)
+			{
+				this.Unset(this, new EventArgs());
+			}
+		}
+	}
+}

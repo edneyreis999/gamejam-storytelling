@@ -1,0 +1,103 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Run ActionProcessor", 0)]
+[Category("Game/WGO")]
+public class Flow_RunActionProcessor : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isEnable;
+
+	public bool notShowHints;
+
+	private bool canRunProcessor;
+
+	private bool canStopProcessor;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onStopped;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueOutput<bool> canRun;
+
+	private ValueOutput<bool> canStop;
+
+	private ValueInput<string> actionName;
+
+	public override string name
+	{
+		get
+		{
+			if (!isEnable)
+			{
+				return "Stop ActionProcessor";
+			}
+			return "Run ActionProcessor";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), RunProcessor);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isEnable)
+		{
+			onStopped = AddFlowOutput("onStopped".CapitalizeFirst());
+			wgo = AddValueInput<WGO>("WGO");
+			actionName = AddValueInput<string>("actionName".CapitalizeFirst());
+		}
+		if (isEnable)
+		{
+			canRun = AddValueOutput("canRun".CapitalizeFirst(), () => canRunProcessor);
+		}
+		else
+		{
+			canStop = AddValueOutput("canStop".CapitalizeFirst(), () => canStopProcessor);
+		}
+	}
+
+	private void RunProcessor(Flow flow)
+	{
+		if (isEnable)
+		{
+			WGO wGO = WGOParamOrSelf(wgo);
+			if (wGO != null)
+			{
+				ActionDefinition data = GameBalance.Me.GetData<ActionDefinition>(actionName.value);
+				if (data != null)
+				{
+					MainGame.me.ActionProcessor.OnStopped += OnStoppedAction;
+					canRunProcessor = MainGame.me.ActionProcessor.Run(data, wGO, new List<Transform> { wGO.ShowBubbleParamNode }, wGO.DistanceToShowParamBubbles, isOnWorkScene: false, -1, isActionCouldInterrupted: true, notShowHints);
+				}
+				else
+				{
+					Debug.LogError("Failed to run action processor for row " + actionName.value);
+				}
+			}
+			else
+			{
+				Debug.LogError("Tried to Run Action Processor on the null wgo");
+			}
+		}
+		else
+		{
+			canStopProcessor = MainGame.me.ActionProcessor.IsActive;
+			MainGame.me.ActionProcessor.Stop();
+		}
+		@out.Call(flow);
+		void OnStoppedAction(WGO wgo)
+		{
+			MainGame.me.ActionProcessor.OnStopped -= OnStoppedAction;
+			onStopped.Call(flow);
+		}
+	}
+}

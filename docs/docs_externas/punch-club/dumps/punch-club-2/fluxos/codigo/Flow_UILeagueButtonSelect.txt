@@ -1,0 +1,61 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("UI League Button Tutorial Select", 0)]
+[Category("Game/UI")]
+public class Flow_UILeagueButtonSelect : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToShow;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<UILeagueButton> leagueButton;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToShow)
+			{
+				return "Hide UI League Button Tutorial Select";
+			}
+			return "Show UI League Button Tutorial Select";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (leagueButton.value == null)
+			{
+				Debug.Log("Null leagueButton!!!");
+				@out.Call(flow);
+			}
+			else
+			{
+				UITutorialWindow uITutorialWindow = GUIElements.Get<UITutorialWindow>();
+				if (isToShow)
+				{
+					uITutorialWindow.ShowMask(leagueButton.value.TutorialSelection);
+					leagueButton.value.Button.interactable = false;
+				}
+				else
+				{
+					uITutorialWindow.HideMask(leagueButton.value.TutorialSelection);
+					leagueButton.value.Init(leagueButton.value.League, GUIElements.Get<UILeagueWindow>().OnLeagueOver);
+				}
+				@out.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		leagueButton = AddValueInput<UILeagueButton>("leagueButton");
+	}
+}

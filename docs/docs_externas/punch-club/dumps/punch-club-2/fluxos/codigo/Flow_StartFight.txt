@@ -1,0 +1,141 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Start Fight", 0)]
+[Category("Game")]
+public class Flow_StartFight : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onPrepareFightOpened;
+
+	[GatherPortsCallback]
+	public bool hasBeforeFightAction;
+
+	public bool fadeIfAnotherFightOnSameScene = true;
+
+	public float fadeInTimeForSceneLoad;
+
+	private FlowOutput onFinished;
+
+	private FlowOutput onFinishedBeforeFadeIn;
+
+	private ValueInput<string> fightId;
+
+	public bool overrodeSceneIsSewerageRoom;
+
+	public string overrodeWinSceneAfterFight;
+
+	public string overrodeLoseSceneAfterFight;
+
+	private ValueOutput<bool> hasPlayerWon;
+
+	private bool hasPlayerWonValue;
+
+	private FlowOutput onBeforeFightStarted;
+
+	[GatherPortsCallback]
+	private FlowInput finishPrefightFlow;
+
+	private GUICinematic guiCinematic;
+
+	private bool isGUICinematicActive;
+
+	public override string name
+	{
+		get
+		{
+			if (hasBeforeFightAction)
+			{
+				if (!finishPrefightFlow.isConnected)
+				{
+					return "Start Fight\n<color=#FF2019>!!!Flow Input FinishPrefightFlow is Empty!!!</color>";
+				}
+				return "Start Fight";
+			}
+			return "Start Fight";
+		}
+		set
+		{
+			base.name = value;
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			guiCinematic = GUIElements.Get<GUICinematic>();
+			if (hasBeforeFightAction)
+			{
+				Fight.Start(fightId.value, delegate(bool isPlayerWon)
+				{
+					TryToChangeGUICinematicState();
+					hasPlayerWonValue = isPlayerWon;
+					onFinished.Call(flow);
+				}, delegate
+				{
+					TryToChangeGUICinematicState();
+					onPrepareFightOpened.Call(flow);
+				}, delegate
+				{
+					onBeforeFightStarted.Call(flow);
+				}, overrodeWinSceneAfterFight, overrodeLoseSceneAfterFight, delegate(bool isPlayerWon)
+				{
+					hasPlayerWonValue = isPlayerWon;
+					onFinishedBeforeFadeIn.Call(flow);
+				}, fadeIfAnotherFightOnSameScene, fadeInTimeForSceneLoad, overrodeSceneIsSewerageRoom);
+			}
+			else
+			{
+				Fight.Start(fightId.value, delegate(bool isPlayerWon)
+				{
+					TryToChangeGUICinematicState();
+					hasPlayerWonValue = isPlayerWon;
+					onFinished.Call(flow);
+				}, delegate
+				{
+					TryToChangeGUICinematicState();
+					onPrepareFightOpened.Call(flow);
+				}, null, overrodeWinSceneAfterFight, overrodeLoseSceneAfterFight, delegate(bool isPlayerWon)
+				{
+					hasPlayerWonValue = isPlayerWon;
+					onFinishedBeforeFadeIn.Call(flow);
+				}, fadeIfAnotherFightOnSameScene, fadeInTimeForSceneLoad, overrodeSceneIsSewerageRoom);
+			}
+			@out.Call(flow);
+		});
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		onFinishedBeforeFadeIn = AddFlowOutput("onFinishedBeforeFadeIn".CapitalizeFirst());
+		onPrepareFightOpened = AddFlowOutput("onPrepareFightOpened".CapitalizeFirst());
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		fightId = AddValueInput<string>("fightId".CapitalizeFirst());
+		hasPlayerWon = AddValueOutput("hasPlayerWon", () => hasPlayerWonValue);
+		if (hasBeforeFightAction)
+		{
+			onBeforeFightStarted = AddFlowOutput("onBeforeFightStarted".CapitalizeFirst());
+			finishPrefightFlow = AddFlowInput("finishPrefightFlow".CapitalizeFirst(), delegate
+			{
+				Fight.FinishBeforeFightStartedAction();
+			});
+		}
+	}
+
+	public void TryToChangeGUICinematicState()
+	{
+		if (guiCinematic.IsActive)
+		{
+			isGUICinematicActive = true;
+			guiCinematic.DisableCinematic(null, immediately: true);
+		}
+		else if (isGUICinematicActive)
+		{
+			guiCinematic.EnableCinematic();
+		}
+	}
+}

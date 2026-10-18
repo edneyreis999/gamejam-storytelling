@@ -1,0 +1,37 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Change Character Active State", 0)]
+[Category("Game/Player")]
+public class Flow_ChangeCharacterActiveState : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isEnabled;
+
+	private ValueInput<ActiveState> state;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isEnabled.value)
+			{
+				PlayerController.Instance.ChangeCharacterActiveState(state.value, isEnabled: true);
+			}
+			else
+			{
+				PlayerController.Instance.ChangeCharacterActiveState(state.value, isEnabled: false);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isEnabled = AddValueInput<bool>("isEnabled");
+		state = AddValueInput<ActiveState>("state");
+	}
+}

@@ -1,0 +1,53 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Copy WGOState", 0)]
+[Category("Game/WGO")]
+public class Flow_CopyWGOState : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<WGOState> inputState;
+
+	private ValueOutput<WGOState> copy;
+
+	private WGOState copyState;
+
+	public override string name
+	{
+		get
+		{
+			if (!inputState.isConnected)
+			{
+				return base.name + "\n<color=#FF2020>Input doesn't connected!</color>";
+			}
+			return base.name;
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			WGOState value = inputState.value;
+			if (value != null)
+			{
+				copyState = new WGOState(value);
+			}
+			else
+			{
+				Debug.LogError("Input WGOState is null");
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		inputState = AddValueInput<WGOState>("inputState");
+		copy = AddValueOutput("copyState", () => copyState);
+	}
+}

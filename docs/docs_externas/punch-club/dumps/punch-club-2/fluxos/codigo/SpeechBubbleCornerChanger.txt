@@ -1,0 +1,25 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpeechBubbleCornerChanger : MonoBehaviour
+{
+	public List<GameObject> commonCorners;
+
+	public List<GameObject> cutsceneCorners;
+
+	public void ChangeState(bool isForCutscene)
+	{
+		foreach (GameObject cutsceneCorner in cutsceneCorners)
+		{
+			cutsceneCorner.SetActive(isForCutscene);
+		}
+		if (!isForCutscene)
+		{
+			return;
+		}
+		foreach (GameObject commonCorner in commonCorners)
+		{
+			commonCorner.SetActive(value: false);
+		}
+	}
+}

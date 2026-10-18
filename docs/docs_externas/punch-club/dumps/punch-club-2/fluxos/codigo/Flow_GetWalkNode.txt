@@ -1,0 +1,30 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get WalkNode's Transform", 0)]
+[Category("Game/WalkNode")]
+public class Flow_GetWalkNode : PC2CustomFlowNode
+{
+	private ValueInput<string> nodeId;
+
+	private ValueOutput<Transform> walkNode;
+
+	protected override void RegisterPorts()
+	{
+		nodeId = AddValueInput<string>("nodeId".CapitalizeFirst());
+		walkNode = AddValueOutput("walkNode".CapitalizeFirst(), delegate
+		{
+			WalkNode walkNode = DynamicScene.FindWalkNode(nodeId.value);
+			Transform result = null;
+			if (walkNode != null)
+			{
+				result = walkNode.transform;
+			}
+			return result;
+		});
+	}
+}

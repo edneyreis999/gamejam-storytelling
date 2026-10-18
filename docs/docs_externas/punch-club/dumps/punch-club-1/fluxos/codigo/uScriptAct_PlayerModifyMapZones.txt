@@ -1,0 +1,29 @@
+using UnityEngine;
+
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Map Zone", "")]
+public class uScriptAct_PlayerModifyMapZones : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Zone name", "")] string zone_name, [FriendlyName("Add?", "")] bool add = true)
+	{
+		MapZoneData data = GameBalance.me.GetData<MapZoneData>(zone_name);
+		if (data == null)
+		{
+			Debug.LogError("Zone not found: " + zone_name);
+			return;
+		}
+		if (add)
+		{
+			MainGame.save.ch.inventory.AddMapZoneToInventory(zone_name);
+		}
+		else
+		{
+			MainGame.save.ch.inventory.RemoveMapZoneFromInventory(zone_name);
+		}
+		SceneRoot.me.UpdateInventoryVisibility();
+	}
+}

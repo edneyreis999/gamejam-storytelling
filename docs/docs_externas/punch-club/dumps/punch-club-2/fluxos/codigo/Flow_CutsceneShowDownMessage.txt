@@ -1,0 +1,74 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Show Cutscene Down Message", 0)]
+[Category("Game")]
+public class Flow_CutsceneShowDownMessage : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToHide;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private FlowOutput onTextAnimationEnd;
+
+	private ValueInput<string> text;
+
+	private ValueInput<int> voiceId;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToHide)
+			{
+				return "Show Cutscene Down Message";
+			}
+			return "Hide Cutscene Down Message";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UICutsceneWindow uICutsceneWindow = GUIElements.Get<UICutsceneWindow>();
+			if (isToHide)
+			{
+				uICutsceneWindow.HideDownMessage(delegate
+				{
+					onFinished.Call(flow);
+				});
+			}
+			else
+			{
+				VoiceID voiceID = new VoiceID(voiceId.value);
+				uICutsceneWindow.ShowDownMessage(text.value, voiceID, delegate
+				{
+					onFinished.Call(flow);
+				}, delegate
+				{
+					onTextAnimationEnd.Call(flow);
+				});
+			}
+			@out.Call(flow);
+		});
+		if (!isToHide)
+		{
+			voiceId = AddValueInput<int>("voiceId".CapitalizeFirst());
+			voiceId.SetDefaultAndSerializedValue(1);
+			text = AddValueInput<string>("text".CapitalizeFirst());
+			onTextAnimationEnd = AddFlowOutput("onTextAnimationEnd".CapitalizeFirst());
+		}
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+	}
+}

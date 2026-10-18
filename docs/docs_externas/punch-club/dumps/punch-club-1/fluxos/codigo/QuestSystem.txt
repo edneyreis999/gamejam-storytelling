@@ -1,0 +1,211 @@
+using System;
+using System.Collections.Generic;
+using LinqTools;
+using UniLua;
+using UnityEngine;
+
+[Serializable]
+public class QuestSystem : GJSerializableObject
+{
+	private List<int> failed_quests = new List<int>();
+
+	private List<int> succed_quests = new List<int>();
+
+	private List<QuestState> currnet_quests = new List<QuestState>();
+
+	private Dictionary<string, List<QuestDescription>> quests_by_staring_key = new Dictionary<string, List<QuestDescription>>();
+
+	private List<QuestState> _ending_quests = new List<QuestState>();
+
+	public bool ending_quests_in_progress;
+
+	public bool starting_quests_in_progress;
+
+	private List<QuestDescription> _quest_ready_to_start = new List<QuestDescription>();
+
+	public bool IsQuestCurrent(int q_id)
+	{
+		return currnet_quests.FindIndex((QuestState p) => p.description.id == q_id) != -1;
+	}
+
+	public bool IsQuestFaild(int q_id)
+	{
+		return failed_quests.Contains(q_id);
+	}
+
+	public bool IsQuestSucced(int q_id)
+	{
+		return succed_quests.Contains(q_id);
+	}
+
+	public bool CheckKeyQuests(string key)
+	{
+		if (Ladder.mode_is_active)
+		{
+			return false;
+		}
+		string empty = string.Empty;
+		bool result = false;
+		if (quests_by_staring_key.ContainsKey(key))
+		{
+			List<QuestDescription> list = quests_by_staring_key[key];
+			if (list == null)
+			{
+				return false;
+			}
+			empty = "quests: " + list.Count;
+			foreach (QuestDescription item in list)
+			{
+				if (!IsQuestInUse(item) && item.IsReadyToStart())
+				{
+					Debug.Log("quest added to starting list id = " + item.id);
+					_quest_ready_to_start.Add(item);
+					result = true;
+				}
+			}
+			ProcessNextStartingQuest();
+		}
+		else
+		{
+			empty = "unused key";
+		}
+		CheckQuestsState();
+		return result;
+	}
+
+	public void StartQuest(QuestDescription q_d)
+	{
+		Debug.Log("Start Quest id = " + q_d.id);
+		QuestState questState = new QuestState();
+		questState.description = q_d;
+		currnet_quests.Add(questState);
+		OnQuestStart(questState);
+	}
+
+	private static void OnQuestStart(QuestState q_state)
+	{
+		q_state.description.InitQuestEndTriggers();
+		q_state.description.StartStartingScripts();
+		MainGame.save.ch.OnQuestExecuted(q_state.description.id);
+	}
+
+	public void CheckQuestsState()
+	{
+		int num = 0;
+		while (num < currnet_quests.Count)
+		{
+			QuestState questState = currnet_quests[num];
+			questState.state = questState.CheckQuestProgress();
+			if (questState.state == 0)
+			{
+				num++;
+				continue;
+			}
+			_ending_quests.Add(questState);
+			currnet_quests.RemoveAt(num);
+		}
+		ProcessNextEndingQuest();
+	}
+
+	public void ProcessNextEndingQuest()
+	{
+		if (_ending_quests.Count != 0 && !QuestScriptInProgress())
+		{
+			ending_quests_in_progress = true;
+			QuestState q_to_end = _ending_quests.Last();
+			_ending_quests.RemoveAt(_ending_quests.Count - 1);
+			EndQuest(q_to_end);
+		}
+	}
+
+	private void ProcessNextStartingQuest()
+	{
+		if (_quest_ready_to_start.Count != 0 && !QuestScriptInProgress())
+		{
+			starting_quests_in_progress = true;
+			QuestDescription q_d = _quest_ready_to_start[0];
+			_quest_ready_to_start.RemoveAt(0);
+			StartQuest(q_d);
+		}
+	}
+
+	private bool QuestScriptInProgress()
+	{
+		return starting_quests_in_progress && ending_quests_in_progress;
+	}
+
+	private void EndQuest(QuestState q_to_end)
+	{
+		Debug.Log("EndQuest #" + q_to_end.description.id + ", success = " + q_to_end.state);
+		if (q_to_end.state == 1)
+		{
+			OnQuestSucceed(q_to_end);
+		}
+		else
+		{
+			OnQuestFailed(q_to_end);
+		}
+	}
+
+	private void OnQuestSucceed(QuestState q_to_end)
+	{
+		succed_quests.Add(q_to_end.description.id);
+		MainGame.save.ch.AddCharRes(q_to_end.description.rew_on_success.GetDependRes(MainGame.save.ch));
+		q_to_end.description.StartSucceedScript();
+	}
+
+	private void OnQuestFailed(QuestState q_to_end)
+	{
+		failed_quests.Add(q_to_end.description.id);
+		MainGame.save.ch.AddCharRes(q_to_end.description.rew_on_fail.GetDependRes(MainGame.save.ch));
+		q_to_end.description.StartFailedScript();
+	}
+
+	public bool IsQuestInUse(QuestDescription quest_desc)
+	{
+		return ((failed_quests.Contains(quest_desc.id) || succed_quests.Contains(quest_desc.id)) && quest_desc.one_time_quest) || IsQuestCurrent(quest_desc.id);
+	}
+
+	public void InitQuestSystem()
+	{
+		foreach (QuestDescription quests_datum in GameBalance.me.quests_data)
+		{
+			quests_datum.InitQuestStartTriggers();
+		}
+		FillQuestCheckDic();
+	}
+
+	private void FillQuestCheckDic()
+	{
+		quests_by_staring_key.Clear();
+		foreach (QuestDescription quests_datum in GameBalance.me.quests_data)
+		{
+			if (IsQuestInUse(quests_datum))
+			{
+				continue;
+			}
+			foreach (string item in quests_datum.start_key)
+			{
+				if (!quests_by_staring_key.ContainsKey(item))
+				{
+					quests_by_staring_key.Add(item, new List<QuestDescription>());
+				}
+				quests_by_staring_key[item].Add(quests_datum);
+			}
+		}
+	}
+
+	public static int L_OnStartScriptFinished(ILuaState s)
+	{
+		MainGame.save.ch.quests.starting_quests_in_progress = false;
+		MainGame.save.ch.quests.ProcessNextStartingQuest();
+		return 1;
+	}
+
+	public static int L_OnEndScriptFinished(ILuaState s)
+	{
+		MainGame.me.quest_system.ending_quests_in_progress = false;
+		MainGame.me.quest_system.ProcessNextEndingQuest();
+		return 1;
+	}
+}

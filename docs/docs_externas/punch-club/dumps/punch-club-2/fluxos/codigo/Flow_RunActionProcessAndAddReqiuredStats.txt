@@ -1,0 +1,78 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Run ActionProcessor And Add Req stats for count", 0)]
+[Category("Game/WGO")]
+public class Flow_RunActionProcessAndAddReqiuredStats : PC2CustomFlowNode
+{
+	public bool notShowHints;
+
+	public int cyclesCount;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onStopped;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueInput<string> actionName;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), RunProcessor);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onStopped = AddFlowOutput("onStopped".CapitalizeFirst());
+		wgo = AddValueInput<WGO>("WGO");
+		actionName = AddValueInput<string>("actionName".CapitalizeFirst());
+	}
+
+	private void RunProcessor(Flow flow)
+	{
+		WGO wGO = WGOParamOrSelf(wgo);
+		if (wGO != null)
+		{
+			ActionDefinition data = GameBalance.Me.GetData<ActionDefinition>(actionName.value);
+			if (data != null)
+			{
+				MainGame.me.ActionProcessor.OnStopped += OnStoppedAction;
+				GameRes gameRes = new GameRes(data.GameRes * cyclesCount);
+				for (int i = 0; i < gameRes.List.Count; i++)
+				{
+					GameResAtom gameResAtom = gameRes.List[i];
+					if (gameResAtom.value < 0f)
+					{
+						float num = MainGame.me.PlayerRes.Get(gameResAtom.type);
+						if (num <= gameResAtom.value)
+						{
+							Debug.Log($"#DEV# Add required stat:[{gameResAtom.type}] val:[{gameResAtom.value - num}] because start action:[{data.id}] for cycles:[{cyclesCount}]");
+							MainGame.me.PlayerRes.Add(gameResAtom.type, gameResAtom.value - num);
+						}
+					}
+				}
+				MainGame.me.ActionProcessor.Run(data, wGO, new List<Transform> { wGO.ShowBubbleParamNode }, wGO.DistanceToShowParamBubbles, isOnWorkScene: false, notShowHints: notShowHints, cyclesCount: cyclesCount);
+			}
+			else
+			{
+				Debug.LogError("Failed to run action processor for row " + actionName.value);
+			}
+		}
+		else
+		{
+			Debug.LogError("Tried to Run Action Processor on the null wgo");
+		}
+		@out.Call(flow);
+		void OnStoppedAction(WGO wgo)
+		{
+			MainGame.me.ActionProcessor.OnStopped -= OnStoppedAction;
+			onStopped.Call(flow);
+		}
+	}
+}

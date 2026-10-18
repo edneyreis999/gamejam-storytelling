@@ -1,0 +1,44 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Vendor Window Item Time\nShow Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIVendorWindowItemTimeShowMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI Vendor Window Item Time\n" + (isToShow.value ? "Show" : "Hide") + " Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform tutorialTimeRect = GUIElements.Get<UIVendorWindow>().TutorialFridgeElement.TutorialTimeRect;
+			RectTransform tutorialTimeZoomIcon = GUIElements.Get<UIVendorWindow>().TutorialFridgeElement.TutorialTimeZoomIcon;
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(tutorialTimeRect);
+				GUIElements.Get<ZoomEffect>().ZoomEnable(tutorialTimeRect, 3, tutorialTimeZoomIcon, new Vector2(50f, 50f), ZoomDirection.LeftDown);
+				@out.Call(flow);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(tutorialTimeRect);
+				GUIElements.Get<ZoomEffect>().ZoomDisable(delegate
+				{
+					@out.Call(flow);
+				});
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

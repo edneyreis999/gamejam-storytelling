@@ -1,0 +1,279 @@
+using System.Collections;
+using System.Collections.Generic;
+using LazyBearTechnology;
+using UnityEngine;
+
+public class GameBalance : GameBalanceBase
+{
+	public List<ActionDefinition> actionData = new List<ActionDefinition>();
+
+	public List<WGODefinition> wgoData = new List<WGODefinition>();
+
+	public List<FightActionDefinition> fightActionData = new List<FightActionDefinition>();
+
+	public List<FightBuffDefinition> fightBuffsData = new List<FightBuffDefinition>();
+
+	public List<FightDefinition> fightDefinitionData = new List<FightDefinition>();
+
+	public List<FightOpponentDefinition> fightOpponentData = new List<FightOpponentDefinition>();
+
+	public List<VendorDefinition> vendorsData = new List<VendorDefinition>();
+
+	public List<ItemDefinition> itemsData = new List<ItemDefinition>();
+
+	public List<WorkDefinition> workData = new List<WorkDefinition>();
+
+	public List<OldSchoolTrainingDefinition> oldSchoolTrainingData = new List<OldSchoolTrainingDefinition>();
+
+	public List<FightSchoolDefinition> fightSchoolData = new List<FightSchoolDefinition>();
+
+	public List<FightLeagueDefinition> fightLeagueData = new List<FightLeagueDefinition>();
+
+	public List<FightActionDataDefinition> fightActionsDataList = new List<FightActionDataDefinition>();
+
+	public List<PerkDefinition> perkData = new List<PerkDefinition>();
+
+	public List<TechDefinition> techData = new List<TechDefinition>();
+
+	public List<FightRuleDefinition> fightRulesData = new List<FightRuleDefinition>();
+
+	public List<LevelCurvesDefinition> levelCurvesData = new List<LevelCurvesDefinition>();
+
+	public List<NeurotrainingDefinition> neirotrainingData = new List<NeurotrainingDefinition>();
+
+	public List<GameMapObjectDefinition> gameMapData = new List<GameMapObjectDefinition>();
+
+	public List<QuestDefinition> questData = new List<QuestDefinition>();
+
+	public List<SoftwareDefinition> softwareData = new List<SoftwareDefinition>();
+
+	public List<LogicDefinition> logicData = new List<LogicDefinition>();
+
+	public List<SatisfactionDefinition> satisfactionData = new List<SatisfactionDefinition>();
+
+	public List<PlayerRankDefinition> playerRankData = new List<PlayerRankDefinition>();
+
+	public List<EventDefinition> eventData = new List<EventDefinition>();
+
+	public List<TapeDefinition> tapesData = new List<TapeDefinition>();
+
+	public List<InventoryDefinition> inventoriesData = new List<InventoryDefinition>();
+
+	public List<ConstsDefinition> constsData = new List<ConstsDefinition>();
+
+	public List<SoftwareCheckboxDefinition> softwareCheckboxesData = new List<SoftwareCheckboxDefinition>();
+
+	public List<ProfessionDefinition> professionData = new List<ProfessionDefinition>();
+
+	public List<ProfessionActionDefinition> professionActionData = new List<ProfessionActionDefinition>();
+
+	public List<AchievementDefinition> achievementData = new List<AchievementDefinition>();
+
+	private static GameBalance instance;
+
+	public LevelData strLevel = new LevelData();
+
+	public LevelData aglLevel = new LevelData();
+
+	public LevelData stmLevel = new LevelData();
+
+	private List<PerkDefinition> cachedGoldBuffs = new List<PerkDefinition>();
+
+	public static GameBalance Me
+	{
+		get
+		{
+			if ((bool)instance)
+			{
+				return instance;
+			}
+			LoadGameBalance();
+			return instance;
+		}
+	}
+
+	public override Dictionary<string, IList> GetAllDataListsAndGoogleTabs()
+	{
+		return new Dictionary<string, IList>
+		{
+			{ "Actions", actionData },
+			{ "WGOs", wgoData },
+			{ "FightActions", fightActionData },
+			{ "FightBuffs", fightBuffsData },
+			{ "Fights", fightDefinitionData },
+			{ "FightOpponent", fightOpponentData },
+			{ "Vendors", vendorsData },
+			{ "Items", itemsData },
+			{ "Work", workData },
+			{ "OldSchoolTrainings", oldSchoolTrainingData },
+			{ "FightSchools", fightSchoolData },
+			{ "FightActionsData", fightActionsDataList },
+			{ "Perks", perkData },
+			{ "FightLeague", fightLeagueData },
+			{ "Techs", techData },
+			{ "FightRules", fightRulesData },
+			{ "LevelCurves", levelCurvesData },
+			{ "Neurotraining", neirotrainingData },
+			{ "GMOs", gameMapData },
+			{ "Quests", questData },
+			{ "Software", softwareData },
+			{ "Logics", logicData },
+			{ "Satisfaction", satisfactionData },
+			{ "PlayerRank", playerRankData },
+			{ "Events", eventData },
+			{ "Tapes", tapesData },
+			{ "Inventories", inventoriesData },
+			{ "Consts", constsData },
+			{ "SoftwareCheckboxes", softwareCheckboxesData },
+			{ "Profession", professionData },
+			{ "ProfessionAction", professionActionData },
+			{ "Achievements", achievementData }
+		};
+	}
+
+	public static void LoadGameBalance()
+	{
+		instance = Resources.Load<GameBalance>("GameBalance");
+		if (instance == null)
+		{
+			Debug.LogError("Game data load failed");
+			return;
+		}
+		instance.CreateIDsCache();
+		instance.stmLevel.levels.Clear();
+		instance.stmLevel.id = "stm";
+		instance.aglLevel.levels.Clear();
+		instance.aglLevel.id = "agl";
+		instance.strLevel.levels.Clear();
+		instance.strLevel.id = "str";
+		foreach (LevelCurvesDefinition levelCurvesDatum in instance.levelCurvesData)
+		{
+			instance.aglLevel.levels.Add(levelCurvesDatum.agl);
+			instance.aglLevel.fuels.Add(levelCurvesDatum.aglFuel);
+			instance.strLevel.levels.Add(levelCurvesDatum.str);
+			instance.strLevel.fuels.Add(levelCurvesDatum.strFuel);
+			instance.stmLevel.levels.Add(levelCurvesDatum.stm);
+			instance.stmLevel.fuels.Add(levelCurvesDatum.stmFuel);
+		}
+	}
+
+	public static void Editor_Validate()
+	{
+		BalanceValidator.Validate();
+	}
+
+	public ActionDefinition GetActionDefinitionByLinkedWGO(string wgoId)
+	{
+		foreach (ActionDefinition actionDatum in actionData)
+		{
+			if (actionDatum.linkedWgo == wgoId)
+			{
+				return actionDatum;
+			}
+		}
+		Debug.LogError("Cannot find ActionDefinition for linked wgo id: " + wgoId);
+		return null;
+	}
+
+	public OldSchoolTrainingDefinition GetOldSchoolTrainingDefinitionByLinkedWGO(string wgoId)
+	{
+		foreach (OldSchoolTrainingDefinition oldSchoolTrainingDatum in oldSchoolTrainingData)
+		{
+			if (oldSchoolTrainingDatum.linkedWgo == wgoId)
+			{
+				return oldSchoolTrainingDatum;
+			}
+		}
+		Debug.LogError("Cannot find OldSchoolTrainingDefinition for linked wgo id: " + wgoId);
+		return null;
+	}
+
+	public List<ItemDefinition> GetItemsByTypes(List<string> types)
+	{
+		List<ItemDefinition> list = new List<ItemDefinition>();
+		for (int i = 0; i < itemsData.Count; i++)
+		{
+			if (itemsData[i].HasAnyType(types))
+			{
+				list.Add(itemsData[i]);
+			}
+		}
+		return list;
+	}
+
+	public FightSchoolDefinition GetSchoolById(string schoolId)
+	{
+		for (int i = 0; i < fightSchoolData.Count; i++)
+		{
+			FightSchoolDefinition fightSchoolDefinition = fightSchoolData[i];
+			if (schoolId == fightSchoolDefinition.id)
+			{
+				return fightSchoolDefinition;
+			}
+		}
+		return null;
+	}
+
+	public PerkDefinition GetPerkById(string perkId)
+	{
+		if (string.IsNullOrEmpty(perkId))
+		{
+			return null;
+		}
+		if (perkId.StartsWith("gold_buff_"))
+		{
+			PerkDefinition perkDefinition = cachedGoldBuffs.Find((PerkDefinition p) => p.id == perkId);
+			if (perkDefinition != null)
+			{
+				return perkDefinition;
+			}
+			perkDefinition = new PerkDefinition();
+			perkDefinition.id = perkId;
+			perkDefinition.description = perkId + "_d";
+			perkDefinition.definiotionType = PerkDefinitionType.Fight;
+			perkDefinition.duration = 4320;
+			perkDefinition.sortingOrder = 0;
+			string text = perkId.Replace("d_act_", "");
+			text = text.Replace("act_", "");
+			perkDefinition.icon = text;
+			perkDefinition.type = PerkType.AsNew;
+			cachedGoldBuffs.Add(perkDefinition);
+			return perkDefinition;
+		}
+		for (int num = 0; num < perkData.Count; num++)
+		{
+			PerkDefinition perkDefinition = perkData[num];
+			if (perkId == perkDefinition.id)
+			{
+				return perkDefinition;
+			}
+		}
+		return null;
+	}
+
+	public FightActionDataDefinition GetFightActionById(string actionId)
+	{
+		for (int i = 0; i < fightActionsDataList.Count; i++)
+		{
+			FightActionDataDefinition fightActionDataDefinition = fightActionsDataList[i];
+			if (actionId == fightActionDataDefinition.id)
+			{
+				return fightActionDataDefinition;
+			}
+		}
+		return null;
+	}
+
+	public int GetVoiceIdByWGOId(string wgoId)
+	{
+		for (int i = 0; i < wgoData.Count; i++)
+		{
+			if (wgoData[i].id == wgoId)
+			{
+				return wgoData[i].voiceId;
+			}
+		}
+		Debug.LogError("Can't find VoiceId for WGO with id: " + wgoId);
+		return 0;
+	}
+}

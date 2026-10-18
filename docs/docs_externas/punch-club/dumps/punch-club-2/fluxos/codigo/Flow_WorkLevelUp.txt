@@ -1,0 +1,62 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Work Level Up", 0)]
+[Category("Game/Work")]
+public class Flow_WorkLevelUp : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> workId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), LevelUp);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		workId = AddValueInput<string>("workId");
+	}
+
+	private void LevelUp(Flow flow)
+	{
+		int num = MainGame.me.PlayerRes.GetInt(workId.value + "_lvl");
+		if (num == 0)
+		{
+			MainGame.me.PlayerRes.Set(workId.value + "_lvl", 1f);
+			num = 1;
+		}
+		string text = $"{workId.value}_{num}";
+		WorkDefinition data = GameBalance.Me.GetData<WorkDefinition>(text);
+		if (data == null)
+		{
+			Debug.Log("No special WorkDefinition for work " + text + ". Getting Default WorkDefinition.");
+			text = workId.value + "_-1";
+			data = GameBalance.Me.GetData<WorkDefinition>(text);
+		}
+		if (data != null)
+		{
+			string stype = workId.value + "_lvl";
+			string stype2 = data.id + "_cycle";
+			string stype3 = data.id + "_can_lvlup";
+			MainGame.me.PlayerRes.Add(stype, 1f);
+			MainGame.me.PlayerRes.Set(stype3, 0f);
+			MainGame.me.PlayerRes.Set(stype2, 0f);
+			GameRes levelReward = data.levelReward;
+			for (int i = 0; i < levelReward.List.Count; i++)
+			{
+				MainGame.me.gameSave.playerData.AddExpTo(levelReward.List[i].type, levelReward.List[i].value);
+			}
+		}
+		else
+		{
+			Debug.LogError("WorkDefinition by workId: " + text);
+		}
+		@out.Call(flow);
+	}
+}

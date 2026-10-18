@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Blink All Available Trainers", 0)]
+[Category("Game")]
+public class Flow_BlinkAvailableTrainers : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<float> time;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Blink);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		time = AddValueInput<float>("time".CapitalizeFirst());
+	}
+
+	private void Blink(Flow flow)
+	{
+		for (int i = 0; i < LazyConsts.mickScholarsTrainersIds.Count; i++)
+		{
+			WGO wGO = DynamicScene.FindWGO(LazyConsts.mickScholarsTrainersIds[i]);
+			if (wGO != null && wGO.gameObject.activeInHierarchy)
+			{
+				MainGame.me.outlineBehaviour.SetOutlineBlink(wGO.gameObject, time.value, 0.5f);
+			}
+		}
+		@out.Call(flow);
+	}
+}

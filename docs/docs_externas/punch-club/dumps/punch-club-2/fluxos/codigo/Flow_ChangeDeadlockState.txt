@@ -1,0 +1,29 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Change Deadlock State", 0)]
+[Category("Game")]
+public class Flow_ChangeDeadlockState : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isDeadlockEnabled;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ChangeState);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isDeadlockEnabled = AddValueInput<bool>("isDeadlockEnabled".CapitalizeFirst());
+	}
+
+	private void ChangeState(Flow flow)
+	{
+		MainGame.me.gameSave.playerData.isDeadLockEnabled = isDeadlockEnabled.value;
+		@out.Call(flow);
+	}
+}

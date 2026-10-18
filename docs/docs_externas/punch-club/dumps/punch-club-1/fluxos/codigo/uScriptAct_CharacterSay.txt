@@ -1,0 +1,54 @@
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Char: Say", "")]
+public class uScriptAct_CharacterSay : uScriptLogic
+{
+	public enum Side
+	{
+		Default,
+		Right,
+		Left,
+		Front
+	}
+
+	private bool _finished;
+
+	private bool _do_finished;
+
+	public bool Finished => _finished;
+
+	public bool Out => true;
+
+	public void In([FriendlyName("CharGfx", "The CharacterGfx.")] CharacterGfx ch, [FriendlyName("Think", "")][DefaultValue(false)][SocketState(false, false)] bool think, [FriendlyName("Text", "")] string txt, [FriendlyName("Mirr X", "")][DefaultValue(false)][SocketState(false, false)] bool force_mirror_x, [FriendlyName("Mirr Y", "")][DefaultValue(false)][SocketState(false, false)] bool force_mirror_y, [FriendlyName("Side", "")][SocketState(false, false)][DefaultValue(Side.Default)] Side side = Side.Default)
+	{
+		if (MainGame.me.gui_elements.game_map.IsShown())
+		{
+			MainGame.me.gui_elements.game_map.Hide();
+		}
+		_finished = false;
+		if (ch == null)
+		{
+			ch = MainGame.save.ch.char_gfx;
+		}
+		ch.ShowSpeechBubble(GJL.L(txt), think ? SpeechBubbleGUI.Type.Think : SpeechBubbleGUI.Type.Speak, force_mirror_x, force_mirror_y, side);
+		ch.AddCallback_OnBubbleDisappear(delegate
+		{
+			_finished = true;
+		});
+	}
+
+	[Driven]
+	public bool DrivenFunc()
+	{
+		if (_do_finished)
+		{
+			return false;
+		}
+		if (_finished)
+		{
+			_do_finished = true;
+		}
+		return true;
+	}
+}

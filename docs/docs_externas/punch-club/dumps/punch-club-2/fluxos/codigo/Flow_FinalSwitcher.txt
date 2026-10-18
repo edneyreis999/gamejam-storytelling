@@ -1,0 +1,49 @@
+using System;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Go To Final Quest Switcher", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_FinalSwitcher : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GUIElements.Get<UIGenericWindow>().Open(LLBase.L("ui_final_are_you_sure_header"), null, null, LLBase.L("ui_final_are_you_sure_text"), null, new Action[2]
+			{
+				delegate
+				{
+					GUIElements.Get<UIGenericWindow>().Hide();
+					yes.Call(flow);
+				},
+				delegate
+				{
+					GUIElements.Get<UIGenericWindow>().Hide();
+					no.Call(flow);
+				}
+			}, new string[2]
+			{
+				LLBase.L("Yes"),
+				LLBase.L("No")
+			}, aspectMatter: true, new UIButtonType[2]
+			{
+				UIButtonType.Green,
+				UIButtonType.Red
+			}, null, sortOverAll: true);
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+	}
+}

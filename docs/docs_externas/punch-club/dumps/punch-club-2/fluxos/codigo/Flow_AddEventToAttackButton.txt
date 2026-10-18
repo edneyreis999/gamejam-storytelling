@@ -1,0 +1,59 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Add Event To Attack Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_AddEventToAttackButton : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput onClicked;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> text;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIPrepareFightWindow prepareFightWindow = GUIElements.Get<UIPrepareFightWindow>();
+			Button button = prepareFightWindow.PlayerAbilities.Attacks[0].Button;
+			RectTransform rectTransform = prepareFightWindow.PlayerAbilities.Attacks[0].RectTransform;
+			if (button != null)
+			{
+				GUIElements.Instance.isSelectorActive = true;
+				prepareFightWindow.TutorialGamepadNavigation = true;
+				prepareFightWindow.CustomItems = new List<GamepadNavigationItem> { button.GetComponent<GamepadNavigationItem>() };
+				prepareFightWindow.OnInputSourceChanged();
+				prepareFightWindow.SortButtonTipsOverTutorialWindow();
+				GUIElements.Get<UITutorialWindow>().ShowMask(rectTransform);
+				UIElementsCustomEventHandlerManager.AddEvent(button, UITutorialArrow.SignOrientationType.Right, delegate
+				{
+					prepareFightWindow.TutorialGamepadNavigation = false;
+					prepareFightWindow.CustomItems = null;
+					prepareFightWindow.ReturnDefaultButtonTipsSorting();
+					prepareFightWindow.OnInputSourceChanged();
+					GUIElements.Get<UITutorialWindow>().HideMask(rectTransform);
+					onClicked.Call(flow);
+				}, text.value);
+			}
+			else
+			{
+				Debug.LogError("Selected button is null for attack button");
+				onClicked.Call(flow);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+		text = AddValueInput<string>("text");
+	}
+}

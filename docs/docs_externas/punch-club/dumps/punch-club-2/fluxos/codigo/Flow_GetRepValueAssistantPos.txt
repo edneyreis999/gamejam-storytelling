@@ -1,0 +1,17 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get RepValue Assistant Pos", 0)]
+public class Flow_GetRepValueAssistantPos : PC2CustomFlowNode
+{
+	private ValueOutput<Transform> pos;
+
+	protected override void RegisterPorts()
+	{
+		pos = AddValueOutput("pos".CapitalizeFirst(), (ValueHandler<Transform>)(() => GUIElements.Get<UIRepValue>().assistantPosition), "");
+	}
+}

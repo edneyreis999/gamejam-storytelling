@@ -1,0 +1,55 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Cursor State", 0)]
+[Category("Game")]
+public class Flow_AddCursorState : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToAdd;
+
+	public ValueInput<FlowCursorChanger> flowCursorChangerIn;
+
+	private ValueOutput<FlowCursorChanger> flowCursorChangerOut;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowCursorChanger flowCursorChanger;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToAdd)
+			{
+				return "Remove Cursor State";
+			}
+			return "Add Cursor State";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToAdd)
+			{
+				flowCursorChanger = flowCursorChangerIn.value;
+				CursorController.AddCursorState(flowCursorChangerIn.value.cursorType, flowCursorChangerIn.value);
+			}
+			else
+			{
+				CursorController.RemoveCursorState(flowCursorChangerIn.value);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		flowCursorChangerIn = AddValueInput<FlowCursorChanger>("flowCursorChangerIn".CapitalizeFirst());
+		flowCursorChangerOut = AddValueOutput("flowCursorChangerOut".CapitalizeFirst(), () => flowCursorChanger);
+	}
+}

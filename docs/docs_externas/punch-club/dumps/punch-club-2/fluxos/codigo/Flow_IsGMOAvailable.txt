@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is GMO Available", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_IsGMOAvailable : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	private ValueInput<string> gmoId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GameMapObjectDefinition data = GameBalance.Me.GetData<GameMapObjectDefinition>(gmoId.value);
+			if (TimeManager.IsTimeInsideBorders("0:00", data.from, data.to, includeRightBorder: false))
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+			}
+		});
+		gmoId = AddValueInput<string>("gmoId".CapitalizeFirst());
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+	}
+}

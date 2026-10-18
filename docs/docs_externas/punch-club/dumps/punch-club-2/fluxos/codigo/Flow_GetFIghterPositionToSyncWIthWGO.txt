@@ -1,0 +1,21 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Fighter Sync Position", 0)]
+[Category("Game")]
+[Color("ff4800")]
+public class Flow_GetFIghterPositionToSyncWIthWGO : PC2CustomFlowNode
+{
+	private ValueInput<FightCharacterBehaviour> fightCharacter;
+
+	private new ValueOutput<Transform> position;
+
+	protected override void RegisterPorts()
+	{
+		fightCharacter = AddValueInput<FightCharacterBehaviour>("Fight Character");
+		position = AddValueOutput("Position", () => fightCharacter.value.PositionToSyncWithWGO);
+	}
+}

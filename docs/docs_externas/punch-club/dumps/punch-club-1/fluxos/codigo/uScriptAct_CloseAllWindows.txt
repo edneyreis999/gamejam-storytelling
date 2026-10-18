@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Close all windows", "")]
+public class uScriptAct_CloseAllWindows : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In()
+	{
+		MainGame.me.gui_elements.dialog_gui.Hide();
+	}
+}

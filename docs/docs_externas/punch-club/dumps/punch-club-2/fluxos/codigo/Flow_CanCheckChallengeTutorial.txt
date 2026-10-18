@@ -1,0 +1,28 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Check Challenge Tutorial Possibility", 0)]
+[Category("Game/Tutorial")]
+[Color("cf35c1")]
+public class Flow_CanCheckChallengeTutorial : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> canCheck;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.leaguesSystem.canCheckChallengeTutorial = canCheck.value;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		canCheck = AddValueInput<bool>("canCheck");
+	}
+}

@@ -1,0 +1,67 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Show Punch Card Unlock Window", 0)]
+[Category("Game/UI")]
+public class Flow_ShowPunchcardUnlockWindow : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToHide;
+
+	public bool firstTime;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClosed;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToHide)
+			{
+				return "Show Punch Card Unlock Window";
+			}
+			return "Hide Punch Card Unlock Window";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIPunchcardUnlockWindow uIPunchcardUnlockWindow = GUIElements.Get<UIPunchcardUnlockWindow>();
+			if (isToHide)
+			{
+				uIPunchcardUnlockWindow.Hide();
+			}
+			else
+			{
+				uIPunchcardUnlockWindow.onClosed = (Action)Delegate.Combine(uIPunchcardUnlockWindow.onClosed, (Action)delegate
+				{
+					onClosed.Call(flow);
+				});
+				if (firstTime)
+				{
+					uIPunchcardUnlockWindow.ShowAsFirstTime();
+				}
+				else
+				{
+					uIPunchcardUnlockWindow.ShowAsSecondTime();
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (!isToHide)
+		{
+			onClosed = AddFlowOutput("onClosed".CapitalizeFirst());
+		}
+	}
+}

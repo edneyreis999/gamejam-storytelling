@@ -1,0 +1,45 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine.Rendering.PostProcessing;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Set LUT", 0)]
+[Category("Game")]
+public class Flow_SetLUT : PC2CustomFlowNode
+{
+	public bool forceDay;
+
+	public bool forceNight;
+
+	public float switchDuration = 1f;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<PostProcessProfile> day;
+
+	private ValueInput<PostProcessProfile> night;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			ScreenCamera.SceneLUT.UpdateLUTProfiles(day.value, night.value);
+			if (forceDay)
+			{
+				ScreenCamera.SceneLUT.SwitchLut(isDay: true, switchDuration);
+			}
+			if (forceNight)
+			{
+				ScreenCamera.SceneLUT.SwitchLut(isDay: false, switchDuration);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		day = AddValueInput<PostProcessProfile>("day");
+		night = AddValueInput<PostProcessProfile>("night");
+	}
+}

@@ -1,0 +1,57 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open Tech Window", 0)]
+[Category("Game")]
+public class Flow_OpenTechWindow : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToHide;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClosed;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToHide)
+			{
+				return "Open Tech Window";
+			}
+			return "Close Tech Window";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in", delegate(Flow flow)
+		{
+			UIHeaderWindow uIHeaderWindow = GUIElements.Get<UIHeaderWindow>();
+			uIHeaderWindow.CurrentTab = HeaderTabType.Tech;
+			if (isToHide)
+			{
+				uIHeaderWindow.CloseWindow(playOpenSound: false, delegate
+				{
+					onClosed.Call(flow);
+				});
+			}
+			else
+			{
+				uIHeaderWindow.OpenTechWindow();
+			}
+			@out.Call(flow);
+		});
+		if (isToHide)
+		{
+			onClosed = AddFlowOutput("onClosed".CapitalizeFirst());
+		}
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Has Quest Item", 0)]
+[Category("Game")]
+public class Flow_HasQuestItem : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput hasItem;
+
+	private FlowOutput hasNotItem;
+
+	private ValueInput<string> itemId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (InventoryUtils.HasItemInInventory(itemId.value))
+			{
+				hasItem.Call(flow);
+			}
+			else
+			{
+				hasNotItem.Call(flow);
+			}
+		});
+		hasItem = AddFlowOutput("hasItem".CapitalizeFirst());
+		hasNotItem = AddFlowOutput("hasNotItem".CapitalizeFirst());
+		itemId = AddValueInput<string>("itemId");
+	}
+}

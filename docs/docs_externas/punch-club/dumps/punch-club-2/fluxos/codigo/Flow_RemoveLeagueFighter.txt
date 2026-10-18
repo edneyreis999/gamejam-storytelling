@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Remove League Fighter", 0)]
+[Category("Game/Dialogue")]
+public class Flow_RemoveLeagueFighter : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> fighterId;
+
+	private ValueInput<string> leagueId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in", delegate(Flow flow)
+		{
+			League league = MainGame.me.gameSave.leaguesSystem.GetLeague(leagueId.value);
+			if (league == null)
+			{
+				Debug.Log("#league# Can't remove fighter:[" + fighterId.value + "] from null league:[" + leagueId.value + "]");
+			}
+			else
+			{
+				league.RemoveFighterById(fighterId.value);
+			}
+			@out.Call(flow);
+		});
+		fighterId = AddValueInput<string>("fighterId".CapitalizeFirst());
+		leagueId = AddValueInput<string>("leagueId".CapitalizeFirst());
+		@out = AddFlowOutput("out");
+	}
+}

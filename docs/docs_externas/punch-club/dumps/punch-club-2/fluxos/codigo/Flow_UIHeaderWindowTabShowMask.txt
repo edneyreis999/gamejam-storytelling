@@ -1,0 +1,47 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Header Window Tab\nShow Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIHeaderWindowTabShowMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	private ValueInput<HeaderTabType> tabType;
+
+	public override string name => $"UI Header {tabType.value} Window Tab\n" + (isToShow.value ? "Show" : "Hide") + " Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIHeaderWindow uIHeaderWindow = GUIElements.Get<UIHeaderWindow>();
+			UIHeaderButton tab = uIHeaderWindow.GetTab(tabType.value);
+			if (isToShow.value)
+			{
+				tab.TutorialLeftSelection.gameObject.SetActive(value: true);
+				tab.TutorialRightSelection.gameObject.SetActive(value: true);
+				uIHeaderWindow.DisableAllButtonsButOne(tabType.value);
+				uIHeaderWindow.UpdateButtons();
+			}
+			else
+			{
+				tab.TutorialLeftSelection.gameObject.SetActive(value: false);
+				tab.TutorialRightSelection.gameObject.SetActive(value: false);
+				uIHeaderWindow.EnableAllButtons();
+				uIHeaderWindow.UpdateButtons();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+		tabType = AddValueInput<HeaderTabType>("tabType".CapitalizeFirst());
+	}
+}

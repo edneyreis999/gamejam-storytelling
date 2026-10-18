@@ -1,0 +1,40 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Try To Remove Random Item From Inventory", 0)]
+[Category("Game")]
+public class Flow_TryRemoveRandomItemFromInventory : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> inventoryID;
+
+	private ValueOutput<bool> removed;
+
+	private bool itemRemoved;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow f)
+		{
+			Inventory inventory = MainGame.me.gameSave.playerData.GetInventory(inventoryID.value);
+			if (inventory.itemsList.Count > 0)
+			{
+				Item random = inventory.itemsList.GetRandom();
+				if (random != null)
+				{
+					itemRemoved = InventoryUtils.RemoveItemFromInventory(random.id);
+				}
+			}
+			@out.Call(f);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		inventoryID = AddValueInput<string>("inventoryID".CapitalizeFirst());
+		removed = AddValueOutput("removed".CapitalizeFirst(), () => itemRemoved);
+	}
+}

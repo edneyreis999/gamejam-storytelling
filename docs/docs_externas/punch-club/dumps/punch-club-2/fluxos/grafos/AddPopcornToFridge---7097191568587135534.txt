@@ -1,0 +1,310 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": -7097191568587135534,
+  "serialized_graph_sha256": "845c144486a10381d46344c8410b0c3324147032b2ee89d09abd4d5949302b7a",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "AddPopcornToFridge",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"_position\":{\"x\":-38.2467,\"y\":785.9113},\"$type\":\"FlowCanvas.Nodes.StartEvent\",\"$id\":\"0\"},{\"_inputPortValues\":{\"dlcVersion\":{\"$content\":1,\"$type\":\"DLCVersion\"}},\"_position\":{\"x\":257.0,\"y\":785.0},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_IsDLCAvailable\",\"$id\":\"1\"},{\"_position\":{\"x\":504.5825,\"y\":1016.727},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"2\"},{\"_inputPortValues\":{\"ParamName\":{\"$content\":\"popcorn_in_fridge_active\",\"$type\":\"System.String\"}},\"_position\":{\"x\":681.126,\"y\":785.911},\"_comment\":\"\",\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj\",\"$id\":\"3\"},{\"_position\":{\"x\":1041.642,\"y\":978.986},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"4\"},{\"_inputPortValues\":{\"inventoryId\":{\"$content\":\"fridge_inventory\",\"$type\":\"System.String\"},\"itemId\":{\"$content\":\"popcorn_in_fridge\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1210.24,\"y\":786.0702},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_GetItemCountVendorInventory\",\"$id\":\"5\"},{\"_position\":{\"x\":1573.726,\"y\":786.3441},\"$type\":\"FlowCanvas.Nodes.SwitchComparison\",\"$id\":\"6\"},{\"_inputPortValues\":{\"itemId\":{\"$content\":\"popcorn_in_fridge\",\"$type\":\"System.String\"},\"itemCount\":{\"$content\":1,\"$type\":\"System.Int32\"}},\"_position\":{\"x\":1924.992,\"y\":844.2109},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_AddItemToVendorInventory\",\"$id\":\"7\"},{\"_position\":{\"x\":2345.935,\"y\":844.1885},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"8\"},{\"_position\":{\"x\":1866.936,\"y\":665.1887},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"9\"},{\"value\":{\"_name\":\"maxPopcornCount\",\"_targetVariableID\":\"bbc436fd-89b8-4cd0-b399-0d059560a2d4\"},\"_position\":{\"x\":1276.0,\"y\":980.0},\"$type\":\"FlowCanvas.Nodes.GetVariable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\",\"$id\":\"10\"}],\"connections\":[{\"_sourcePortName\":\"Once\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"No\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Yes\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"== 0\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\">= 1\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"itemCount\",\"_targetPortName\":\"A\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.IComparable, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"<\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"6\"},\"_targetNode\":{\"$ref\":\"7\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"==\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"6\"},\"_targetNode\":{\"$ref\":\"9\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\">\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"6\"},\"_targetNode\":{\"$ref\":\"9\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"7\"},\"_targetNode\":{\"$ref\":\"8\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Value\",\"_targetPortName\":\"B\",\"_sourceNode\":{\"$ref\":\"10\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.IComparable, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{\"maxPopcornCount\":{\"_value\":3,\"_name\":\"maxPopcornCount\",\"_id\":\"bbc436fd-89b8-4cd0-b399-0d059560a2d4\",\"$type\":\"NodeCanvas.Framework.Variable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"}}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": 411.0656433105469,
+        "y": 114.59518432617188
+      },
+      "_zoomFactor": 0.5671065449714661
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "_position": {
+          "x": -38.2467,
+          "y": 785.9113
+        },
+        "$type": "FlowCanvas.Nodes.StartEvent",
+        "$id": "0"
+      },
+      {
+        "_inputPortValues": {
+          "dlcVersion": {
+            "$content": 1,
+            "$type": "DLCVersion"
+          }
+        },
+        "_position": {
+          "x": 257.0,
+          "y": 785.0
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_IsDLCAvailable",
+        "$id": "1"
+      },
+      {
+        "_position": {
+          "x": 504.5825,
+          "y": 1016.727
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "2"
+      },
+      {
+        "_inputPortValues": {
+          "ParamName": {
+            "$content": "popcorn_in_fridge_active",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 681.126,
+          "y": 785.911
+        },
+        "_comment": "",
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj",
+        "$id": "3"
+      },
+      {
+        "_position": {
+          "x": 1041.642,
+          "y": 978.986
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "4"
+      },
+      {
+        "_inputPortValues": {
+          "inventoryId": {
+            "$content": "fridge_inventory",
+            "$type": "System.String"
+          },
+          "itemId": {
+            "$content": "popcorn_in_fridge",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1210.24,
+          "y": 786.0702
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_GetItemCountVendorInventory",
+        "$id": "5"
+      },
+      {
+        "_position": {
+          "x": 1573.726,
+          "y": 786.3441
+        },
+        "$type": "FlowCanvas.Nodes.SwitchComparison",
+        "$id": "6"
+      },
+      {
+        "_inputPortValues": {
+          "itemId": {
+            "$content": "popcorn_in_fridge",
+            "$type": "System.String"
+          },
+          "itemCount": {
+            "$content": 1,
+            "$type": "System.Int32"
+          }
+        },
+        "_position": {
+          "x": 1924.992,
+          "y": 844.2109
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_AddItemToVendorInventory",
+        "$id": "7"
+      },
+      {
+        "_position": {
+          "x": 2345.935,
+          "y": 844.1885
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "8"
+      },
+      {
+        "_position": {
+          "x": 1866.936,
+          "y": 665.1887
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "9"
+      },
+      {
+        "value": {
+          "_name": "maxPopcornCount",
+          "_targetVariableID": "bbc436fd-89b8-4cd0-b399-0d059560a2d4"
+        },
+        "_position": {
+          "x": 1276.0,
+          "y": 980.0
+        },
+        "$type": "FlowCanvas.Nodes.GetVariable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]",
+        "$id": "10"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Once",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "No",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Yes",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "== 0",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": ">= 1",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "itemCount",
+        "_targetPortName": "A",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.IComparable, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "<",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "6"
+        },
+        "_targetNode": {
+          "$ref": "7"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "==",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "6"
+        },
+        "_targetNode": {
+          "$ref": "9"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": ">",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "6"
+        },
+        "_targetNode": {
+          "$ref": "9"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "7"
+        },
+        "_targetNode": {
+          "$ref": "8"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Value",
+        "_targetPortName": "B",
+        "_sourceNode": {
+          "$ref": "10"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.IComparable, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {
+        "maxPopcornCount": {
+          "_value": 3,
+          "_name": "maxPopcornCount",
+          "_id": "bbc436fd-89b8-4cd0-b399-0d059560a2d4",
+          "$type": "NodeCanvas.Framework.Variable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+        }
+      }
+    }
+  }
+}

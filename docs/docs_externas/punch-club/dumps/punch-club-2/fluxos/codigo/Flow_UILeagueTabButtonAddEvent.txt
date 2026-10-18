@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI League Tab Button\nAdd Event", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UILeagueTabButtonAddEvent : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UILeagueWindow leagueWindow = GUIElements.Get<UILeagueWindow>();
+			Button fightsTabButtonTutorial = leagueWindow.EloLeague.Header.FightsTabButtonTutorial;
+			leagueWindow.SortGamepadHelpersOverTutorialWindow();
+			leagueWindow.LockSwitchTab = false;
+			leagueWindow.OnInputSourceChanged();
+			UIElementsCustomEventHandlerManager.AddEvent(fightsTabButtonTutorial, UITutorialArrow.SignOrientationType.Left, delegate
+			{
+				leagueWindow.ReturnGamepadHelpersSortingToDefault();
+				leagueWindow.LockSwitchTab = true;
+				onClicked.Call(flow);
+			});
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+}

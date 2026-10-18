@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Show Tutorial Fight Buttons", 0)]
+[Category("Game/Tutorial")]
+public class Flow_ShowTutorialFightButtons : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToShow;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name => (isToShow ? "Show" : "Hide") + " Tutorial Fight Buttons Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform tutorialSkillsRectTransform = GUIElements.Get<UIPrepareFightWindow>().PlayerAbilities.TutorialSkillsRectTransform;
+			if (isToShow)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(tutorialSkillsRectTransform);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(tutorialSkillsRectTransform);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

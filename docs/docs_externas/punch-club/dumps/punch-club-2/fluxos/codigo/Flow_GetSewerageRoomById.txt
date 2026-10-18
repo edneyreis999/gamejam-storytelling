@@ -1,0 +1,34 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Get Sewerage Room By Id", 0)]
+[Category("Game/Sewerage")]
+public class Flow_GetSewerageRoomById : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> roomId;
+
+	private ValueOutput<UISewerageRoom> sewerageRoom;
+
+	private UISewerageRoom sewerageRoomValue;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), GetRoom);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		roomId = AddValueInput<string>("roomId");
+		sewerageRoom = AddValueOutput("sewerageRoom", () => sewerageRoomValue);
+	}
+
+	private void GetRoom(Flow flow)
+	{
+		sewerageRoomValue = GUIElements.Get<UISewerageWindow>().GetRoom(roomId.value);
+		@out.Call(flow);
+	}
+}

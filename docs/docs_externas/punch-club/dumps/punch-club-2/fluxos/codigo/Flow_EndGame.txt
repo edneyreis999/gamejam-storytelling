@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("End Game", 0)]
+[Category("Game")]
+public class Flow_EndGame : PC2CustomFlowNode
+{
+	public bool skipFadeIn;
+
+	public bool endGamePlaylistLogic;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (endGamePlaylistLogic)
+			{
+				SmartPlaylistController.ignoreOnReset.Add("final_credits_playlist");
+			}
+			GUIElements.Get<UICreditsWindow>().OpenForEndGame(skipFadeIn, endGamePlaylistLogic);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

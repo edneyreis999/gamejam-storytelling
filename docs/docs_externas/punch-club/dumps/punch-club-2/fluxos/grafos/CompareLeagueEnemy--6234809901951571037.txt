@@ -1,0 +1,228 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": 6234809901951571037,
+  "serialized_graph_sha256": "4863f008fac2c44789bc52e6d7a229a09a91ad924291d4c30cefd9c8acaf8886",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7662125865501683068
+    },
+    "m_Name": "CompareLeagueEnemy",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.Macros.Macro\",\"nodes\":[{\"_position\":{\"x\":195.0,\"y\":165.0},\"$type\":\"FlowCanvas.Macros.MacroInputNode\",\"$id\":\"0\"},{\"_position\":{\"x\":195.0,\"y\":330.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_CurrentLeagueEnemyId\",\"$id\":\"1\"},{\"_method\":{\"_baseInfo\":\"System.String|Equals|System.Boolean\",\"_paramsInfo\":\"System.String\"},\"_position\":{\"x\":465.0,\"y\":330.0},\"$type\":\"FlowCanvas.Nodes.ReflectedMethodNodeWrapper\",\"$id\":\"2\"},{\"_position\":{\"x\":555.0,\"y\":180.0},\"$type\":\"FlowCanvas.Nodes.SwitchBool\",\"$id\":\"3\"},{\"_position\":{\"x\":915.0,\"y\":165.0},\"$type\":\"FlowCanvas.Macros.MacroOutputNode\",\"$id\":\"4\"}],\"connections\":[{\"_sourcePortName\":\"7f88fd30-df55-4a32-ae02-4ba71b7a033b\",\"_targetPortName\":\"leagueId\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"},{\"_sourcePortName\":\"3c41c9e5-a311-4853-9021-9d4ba88769a1\",\"_targetPortName\":\"value\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"},{\"_sourcePortName\":\"d1ad6cfe-74fe-4434-a5ee-57a568074c3b\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"opponent\",\"_targetPortName\":\"String\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"},{\"_sourcePortName\":\"Value\",\"_targetPortName\":\"Condition\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"},{\"_sourcePortName\":\"True\",\"_targetPortName\":\"8585879d-b934-4917-a681-3c5717c44321\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"False\",\"_targetPortName\":\"5c64e68f-3a5c-4467-8f28-e6452bbea5d5\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{}},\"derivedData\":{\"inputDefinitions\":[{\"_ID\":\"7f88fd30-df55-4a32-ae02-4ba71b7a033b\",\"_name\":\"League Id\",\"_type\":\"System.String\"},{\"_ID\":\"3c41c9e5-a311-4853-9021-9d4ba88769a1\",\"_name\":\"Fighter Id\",\"_type\":\"System.String\"},{\"_ID\":\"d1ad6cfe-74fe-4434-a5ee-57a568074c3b\",\"_name\":\"Flow Input\",\"_type\":\"FlowCanvas.Flow\"}],\"outputDefinitions\":[{\"_ID\":\"8585879d-b934-4917-a681-3c5717c44321\",\"_name\":\"True\",\"_type\":\"FlowCanvas.Flow\"},{\"_ID\":\"5c64e68f-3a5c-4467-8f28-e6452bbea5d5\",\"_name\":\"False\",\"_type\":\"FlowCanvas.Flow\"}],\"$type\":\"FlowCanvas.Macros.Macro+DerivedSerializationData\"}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": 206.0,
+        "y": 160.0
+      },
+      "_zoomFactor": 1.0
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "inputDefinitions": [
+      {
+        "_ID": "7f88fd30-df55-4a32-ae02-4ba71b7a033b",
+        "_name": "League Id",
+        "_type": "System.String"
+      },
+      {
+        "_ID": "3c41c9e5-a311-4853-9021-9d4ba88769a1",
+        "_name": "Fighter Id",
+        "_type": "System.String"
+      },
+      {
+        "_ID": "d1ad6cfe-74fe-4434-a5ee-57a568074c3b",
+        "_name": "Flow Input",
+        "_type": "FlowCanvas.Flow"
+      }
+    ],
+    "outputDefinitions": [
+      {
+        "_ID": "8585879d-b934-4917-a681-3c5717c44321",
+        "_name": "True",
+        "_type": "FlowCanvas.Flow"
+      },
+      {
+        "_ID": "5c64e68f-3a5c-4467-8f28-e6452bbea5d5",
+        "_name": "False",
+        "_type": "FlowCanvas.Flow"
+      }
+    ]
+  },
+  "graph": {
+    "type": "FlowCanvas.Macros.Macro",
+    "nodes": [
+      {
+        "_position": {
+          "x": 195.0,
+          "y": 165.0
+        },
+        "$type": "FlowCanvas.Macros.MacroInputNode",
+        "$id": "0"
+      },
+      {
+        "_position": {
+          "x": 195.0,
+          "y": 330.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_CurrentLeagueEnemyId",
+        "$id": "1"
+      },
+      {
+        "_method": {
+          "_baseInfo": "System.String|Equals|System.Boolean",
+          "_paramsInfo": "System.String"
+        },
+        "_position": {
+          "x": 465.0,
+          "y": 330.0
+        },
+        "$type": "FlowCanvas.Nodes.ReflectedMethodNodeWrapper",
+        "$id": "2"
+      },
+      {
+        "_position": {
+          "x": 555.0,
+          "y": 180.0
+        },
+        "$type": "FlowCanvas.Nodes.SwitchBool",
+        "$id": "3"
+      },
+      {
+        "_position": {
+          "x": 915.0,
+          "y": 165.0
+        },
+        "$type": "FlowCanvas.Macros.MacroOutputNode",
+        "$id": "4"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "7f88fd30-df55-4a32-ae02-4ba71b7a033b",
+        "_targetPortName": "leagueId",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      },
+      {
+        "_sourcePortName": "3c41c9e5-a311-4853-9021-9d4ba88769a1",
+        "_targetPortName": "value",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      },
+      {
+        "_sourcePortName": "d1ad6cfe-74fe-4434-a5ee-57a568074c3b",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "opponent",
+        "_targetPortName": "String",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      },
+      {
+        "_sourcePortName": "Value",
+        "_targetPortName": "Condition",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      },
+      {
+        "_sourcePortName": "True",
+        "_targetPortName": "8585879d-b934-4917-a681-3c5717c44321",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "False",
+        "_targetPortName": "5c64e68f-3a5c-4467-8f28-e6452bbea5d5",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {}
+    },
+    "derivedData": {
+      "inputDefinitions": [
+        {
+          "_ID": "7f88fd30-df55-4a32-ae02-4ba71b7a033b",
+          "_name": "League Id",
+          "_type": "System.String"
+        },
+        {
+          "_ID": "3c41c9e5-a311-4853-9021-9d4ba88769a1",
+          "_name": "Fighter Id",
+          "_type": "System.String"
+        },
+        {
+          "_ID": "d1ad6cfe-74fe-4434-a5ee-57a568074c3b",
+          "_name": "Flow Input",
+          "_type": "FlowCanvas.Flow"
+        }
+      ],
+      "outputDefinitions": [
+        {
+          "_ID": "8585879d-b934-4917-a681-3c5717c44321",
+          "_name": "True",
+          "_type": "FlowCanvas.Flow"
+        },
+        {
+          "_ID": "5c64e68f-3a5c-4467-8f28-e6452bbea5d5",
+          "_name": "False",
+          "_type": "FlowCanvas.Flow"
+        }
+      ],
+      "$type": "FlowCanvas.Macros.Macro+DerivedSerializationData"
+    }
+  }
+}

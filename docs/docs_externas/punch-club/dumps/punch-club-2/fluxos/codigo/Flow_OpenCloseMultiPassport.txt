@@ -1,0 +1,55 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("Open MultiPassport", 0)]
+[Category("Game/UI")]
+public class Flow_OpenCloseMultiPassport : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onAnimationComplete;
+
+	private ValueInput<bool> isToOpen;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToOpen.value)
+			{
+				return "Close MultiPassport";
+			}
+			return "Open MultiPassport";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToOpen.value)
+			{
+				GUIElements.Get<UIHeaderWindow>().Open(delegate
+				{
+					onAnimationComplete.Call(flow);
+				});
+			}
+			else
+			{
+				GUIElements.Get<UIHeaderWindow>().Hide(playOpenSound: true, delegate
+				{
+					onAnimationComplete.Call(flow);
+				});
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onAnimationComplete = AddFlowOutput("onAnimationComplete".CapitalizeFirst());
+		isToOpen = AddValueInput<bool>("isToOpen");
+	}
+}

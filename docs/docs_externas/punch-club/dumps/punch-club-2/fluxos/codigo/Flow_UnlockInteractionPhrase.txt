@@ -1,0 +1,55 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Unlock Interaction Phrase", 0)]
+[Category("Game")]
+public class Flow_UnlockInteractionPhrase : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToUnlock = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<List<string>> phrases;
+
+	public override string name => (isToUnlock ? "Unlock" : "Lock") + " Interaction Phrase";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (phrases.value == null)
+			{
+				Debug.Log("#phrase# null list of interaction phrases for unlock");
+				@out.Call(flow);
+			}
+			else
+			{
+				if (isToUnlock)
+				{
+					foreach (string item in phrases.value)
+					{
+						MainGame.me.gameSave.interactionPhrasesSystem.AddPhraseToPool(item);
+					}
+				}
+				else
+				{
+					foreach (string item2 in phrases.value)
+					{
+						MainGame.me.gameSave.interactionPhrasesSystem.RemovePhraseFromPool(item2);
+					}
+				}
+				@out.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		phrases = AddValueInput<List<string>>("phrases");
+	}
+}

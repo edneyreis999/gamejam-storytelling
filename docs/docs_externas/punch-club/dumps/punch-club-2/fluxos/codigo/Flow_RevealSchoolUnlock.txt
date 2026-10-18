@@ -1,0 +1,44 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Reveal School Unlock", 0)]
+[Category("Game")]
+public class Flow_RevealSchoolUnlock : PC2CustomFlowNode
+{
+	public bool showUnlockWindow = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClosed;
+
+	private ValueInput<string> schoolId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.UnlockSchool(schoolId.value);
+			if (showUnlockWindow)
+			{
+				GUIElements.Get<UINewSchoolWindow>().Open(schoolId.value, delegate
+				{
+					onClosed.Call(flow);
+					GUIElements.Get<UINewSchoolWindow>().Hide();
+				});
+			}
+			else
+			{
+				onClosed.Call(flow);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClosed = AddFlowOutput("onClosed".CapitalizeFirst());
+		schoolId = AddValueInput<string>("schoolId");
+	}
+}

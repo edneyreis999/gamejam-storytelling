@@ -1,0 +1,35 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Get Item Count", 0)]
+[Category("Game")]
+public class Flow_GetItemCountVendorInventory : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> inventoryId;
+
+	private ValueInput<string> itemId;
+
+	private ValueOutput<int> itemCount;
+
+	private int itemCountValue;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			itemCountValue = InventoryUtils.GetItemCountFromInventory(itemId.value);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		inventoryId = AddValueInput<string>("inventoryId");
+		itemId = AddValueInput<string>("itemId");
+		itemCount = AddValueOutput("itemCount", () => itemCountValue);
+	}
+}

@@ -1,0 +1,131 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Select Items In Vendor Window\nAnd Add Events", 0)]
+[Category("Game/Tutorial")]
+public class Flow_SelectItemsInVendorWindow : PC2CustomFlowNode
+{
+	[Range(1f, 5f)]
+	[GatherPortsCallback]
+	public int itemCount = 1;
+
+	private FlowInput selectItems;
+
+	private FlowInput addEventToItems;
+
+	private FlowOutput selectOut;
+
+	private FlowOutput addEventOut;
+
+	private List<FlowOutput> onClickedItems = new List<FlowOutput>();
+
+	private FlowOutput onClickedItemsAll;
+
+	private List<ValueInput<string>> itemNames = new List<ValueInput<string>>();
+
+	private List<bool> onClickedItemFlags = new List<bool>();
+
+	private (bool horizontal, bool vertical) cashedScrollRect;
+
+	protected override void RegisterPorts()
+	{
+		selectItems = AddFlowInput("selectItems".CapitalizeFirst(), SelectItems);
+		addEventToItems = AddFlowInput("addEventToItems".CapitalizeFirst(), AddEventToItems);
+		selectOut = AddFlowOutput("selectOut".CapitalizeFirst());
+		addEventOut = AddFlowOutput("addEventOut".CapitalizeFirst());
+		for (int i = 0; i < itemCount; i++)
+		{
+			itemNames.Add(AddValueInput<string>($"itemName_{i}"));
+			onClickedItems.Add(AddFlowOutput($"onClickedItem_{i}"));
+			onClickedItemFlags.Add(item: false);
+		}
+		onClickedItemsAll = AddFlowOutput("onClickedItemsAll".CapitalizeFirst());
+	}
+
+	private void SelectItems(Flow flow)
+	{
+		UIVendorWindow uIVendorWindow = GUIElements.Get<UIVendorWindow>();
+		UITutorialWindow uITutorialWindow = GUIElements.Get<UITutorialWindow>();
+		cashedScrollRect = (horizontal: uIVendorWindow.ScrollRect.horizontal, vertical: uIVendorWindow.ScrollRect.vertical);
+		uIVendorWindow.ScrollRect.vertical = false;
+		for (int i = 0; i < itemCount; i++)
+		{
+			UIVendorElement uIVendorElement = uIVendorWindow.GetUIVendorElement(itemNames[i].value);
+			uITutorialWindow.ShowMask(uIVendorElement.TutorialRect);
+		}
+		selectOut.Call(flow);
+	}
+
+	private void AddEventToItems(Flow flow)
+	{
+		Button button = null;
+		UIVendorWindow vendorWindow = GUIElements.Get<UIVendorWindow>();
+		List<GamepadNavigationItem> itemsToBuy = new List<GamepadNavigationItem>();
+		for (int i = 0; i < itemCount; i++)
+		{
+			itemsToBuy.Add(vendorWindow.GetUIVendorElement(itemNames[i].value).GamepadNavigationItem);
+		}
+		for (int j = 0; j < itemCount; j++)
+		{
+			UIVendorElement uIVendorElement = vendorWindow.GetUIVendorElement(itemNames[j].value);
+			RectTransform tutorialRect = uIVendorElement.TutorialRect;
+			button = uIVendorElement?.BuyButton;
+			if (button != null)
+			{
+				int k = j;
+				RectTransform clickedRectTransform = tutorialRect;
+				UIVendorElement element = uIVendorElement;
+				UIElementsCustomEventHandlerManager.AddEvent(button, UITutorialArrow.SignOrientationType.Right, delegate
+				{
+					CheckAllButtonsClicked(k, clickedRectTransform, flow);
+					onClickedItems[k].Call(flow);
+					if (itemsToBuy.Count > 0)
+					{
+						itemsToBuy.Remove(element.GamepadNavigationItem);
+					}
+					if (itemsToBuy.Count > 0)
+					{
+						vendorWindow.OnInputSourceChanged();
+					}
+					else
+					{
+						vendorWindow.TutorialGamepadNavigation = false;
+						vendorWindow.LockPressBack = false;
+						vendorWindow.ReturnDefaultButtonTipsSorting();
+						vendorWindow.CustomItems = null;
+						vendorWindow.OnInputSourceChanged();
+					}
+				});
+				vendorWindow.TutorialGamepadNavigation = true;
+				vendorWindow.CustomItems = itemsToBuy;
+				vendorWindow.LockPressBack = true;
+				vendorWindow.SortButtonTipsOverTutorialWindow();
+				vendorWindow.OnInputSourceChanged();
+			}
+			else
+			{
+				Debug.LogError("Selected button is null for buttonType for item " + itemNames[j].value);
+			}
+		}
+		addEventOut.Call(flow);
+	}
+
+	private void CheckAllButtonsClicked(int i, RectTransform rectTransform, Flow flow)
+	{
+		onClickedItemFlags[i] = true;
+		GUIElements.Get<UITutorialWindow>().HideMask(rectTransform);
+		if (!onClickedItemFlags.Contains(item: false))
+		{
+			GUIElements.Get<UIVendorWindow>().ScrollRect.horizontal = cashedScrollRect.horizontal;
+			GUIElements.Get<UIVendorWindow>().ScrollRect.vertical = cashedScrollRect.vertical;
+			onClickedItemsAll.Call(flow);
+		}
+	}
+}

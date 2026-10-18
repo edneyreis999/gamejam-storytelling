@@ -1,0 +1,44 @@
+using System;
+using LazyBearTechnology;
+
+public static class KnowledgeSystemManager
+{
+	private static KnowledgeSystem KnowledgeSystem => MainGame.me.gameSave.knowledgeSystem;
+
+	public static void SetQuestStatus(string id, QuestState state, bool silent = false, Action onFinished = null)
+	{
+		QuestState state2 = KnowledgeSystem.GetOrCreateQuest(id).state;
+		KnowledgeSystem.SetQuestStatus(id, state, silent);
+		if (state == QuestState.Closed && state2 != state)
+		{
+			QuestDefinition data = GameBalance.Me.GetData<QuestDefinition>(id);
+			if (data != null)
+			{
+				foreach (LazyExpression closedLazyExpression in data.closedLazyExpressions)
+				{
+					closedLazyExpression.EvaluateFloat();
+				}
+			}
+		}
+		if (!silent)
+		{
+			if (ConstsDefinition.Get("use_notices_in_story_reveal").BoolValue)
+			{
+				LazyTimer.AddTimer(ConstsDefinition.Get("story_notice_flow_delay").FloatValue, delegate
+				{
+					onFinished?.Invoke();
+				});
+				return;
+			}
+			GUIElements.Get<UIStoryRevealWindow>().Open(state2, GameBalance.Me.GetData<QuestDefinition>(id), delegate
+			{
+				GUIElements.Get<UIGenericWindow>().Hide();
+				onFinished?.Invoke();
+			});
+		}
+		else
+		{
+			onFinished?.Invoke();
+		}
+	}
+}

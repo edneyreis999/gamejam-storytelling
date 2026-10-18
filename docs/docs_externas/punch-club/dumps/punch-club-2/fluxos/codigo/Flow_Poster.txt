@@ -1,0 +1,64 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Poster", 0)]
+[Category("Game")]
+public class Flow_Poster : PC2CustomFlowNode
+{
+	public bool isEnable;
+
+	[ShowIf("isEnable", 1)]
+	public bool isHidingLocked;
+
+	[ShowIf("isHidingLocked", 1)]
+	public float lockingTime;
+
+	public UIPosterWindow.PosterType posterType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClosed;
+
+	private ValueOutput<UIPosterWindow> posterWindow;
+
+	public override string name => (isEnable ? "Enable" : "Disable") + " Poster";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIPosterWindow poster = GUIElements.Get<UIPosterWindow>();
+			if (isEnable)
+			{
+				poster.onClosed = delegate
+				{
+					onClosed.Call(flow);
+				};
+				poster.Open();
+				poster.SetPosterImage(posterType);
+				if (isHidingLocked)
+				{
+					poster.SetPosterLockState(isLocked: true);
+					LazyTimer.AddTimer(lockingTime, delegate
+					{
+						poster.SetPosterLockState(isLocked: false);
+					});
+				}
+			}
+			else
+			{
+				poster.Hide();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClosed = AddFlowOutput("onClosed".CapitalizeFirst());
+		posterWindow = AddValueOutput("posterWindow".CapitalizeFirst(), () => GUIElements.Get<UIPosterWindow>());
+	}
+}

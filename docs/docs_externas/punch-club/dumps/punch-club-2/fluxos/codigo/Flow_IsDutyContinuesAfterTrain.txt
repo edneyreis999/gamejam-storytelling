@@ -1,0 +1,40 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is Duty Continues After Training?", 0)]
+[Category("Game/Profession")]
+public class Flow_IsDutyContinuesAfterTrain : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private ValueInput<string> professionId;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.professionSystem.MarkFirstDutyAsComplete(professionId.value);
+			Debug.Log("Training Duty is over");
+			if (MainGame.me.gameSave.professionSystem.IsDutyTime(professionId.value))
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				MainGame.me.gameSave.professionSystem.CheckProfessionActionEnds(professionId.value);
+				no.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+		professionId = AddValueInput<string>("professionId".CapitalizeFirst());
+	}
+}

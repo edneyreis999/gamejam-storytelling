@@ -1,0 +1,82 @@
+using System;
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("Lazy Bear Games", "http://www.lazybeargames.com")]
+[FriendlyName("Cut scene", "")]
+public class uScriptAct_Cutscene : uScriptLogic
+{
+	public static string load_scene_after = string.Empty;
+
+	public static uScriptAct_Cutscene me = null;
+
+	public static Vector3 _char_pos = Vector3.zero;
+
+	public static bool is_random_event = false;
+
+	public static CommonStatic.VoidDelegate additional_out_event = null;
+
+	public event uScript_GameObject.uScriptEventHandler Out;
+
+	public void In([FriendlyName("Scene name", "")] string scene_name, [FriendlyName("Scene after", "")] string scene_after = "")
+	{
+		MainGame.me.gui_elements.zone_name_label.gameObject.SetActive(value: false);
+		me = this;
+		additional_out_event = null;
+		load_scene_after = scene_after;
+		is_random_event = false;
+		_char_pos = MainGame.save.ch.char_gfx.transform.position;
+		MainGame.me.ShowCutscene(scene_name);
+	}
+
+	protected void DoOut()
+	{
+		if (this.Out != null)
+		{
+			this.Out(this, new EventArgs());
+		}
+		me = null;
+	}
+
+	public static void OnCutsceneEnded()
+	{
+		Debug.Log("OnCutsceneEnded");
+		DynamicScene.loading_fight_scene = false;
+		MainGame.movie_playing = false;
+		MainGame.is_in_intro = false;
+		LoadingScreen.LoadScene(load_scene_after, LoadingScreen.FadeType.OnlyFadeIn);
+		Sound.ResumeMusic();
+		GJTimer.AddTimer(0.01f, delegate
+		{
+			MainGame.is_in_intro = false;
+		});
+		MainGame.interaction_enabled = false;
+		DynamicScene.on_awaken = (GJCommons.VoidDelegate)Delegate.Combine(DynamicScene.on_awaken, (GJCommons.VoidDelegate)delegate
+		{
+			if (!is_random_event)
+			{
+				MainGame.save.ch.char_gfx.transform.position = _char_pos;
+			}
+			uScriptAct_CreateCharacter.SetAllCharsVis(vis: true);
+			MainGame.save.ch.char_gfx.gameObject.SetActive(value: true);
+			MainGame.me.gui_elements.ShowHUD(show: true);
+			if (!is_random_event)
+			{
+				GJTimer.AddTimer(0.01f, delegate
+				{
+					MainGame.interaction_enabled = false;
+				});
+				MainGame.interaction_enabled = false;
+			}
+			if (me != null)
+			{
+				me.DoOut();
+			}
+			if (additional_out_event != null)
+			{
+				additional_out_event();
+			}
+		});
+	}
+}

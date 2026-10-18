@@ -1,0 +1,57 @@
+using System;
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Dream", "")]
+public class uScriptAct_DreamBubble : uScriptLogic
+{
+	private bool _finished;
+
+	private bool _do_finished;
+
+	private DreamBubble _bubble;
+
+	public bool Finished => _finished;
+
+	public bool Immediate => true;
+
+	public void In([FriendlyName("Char?", "")][DefaultValue(true)] bool at_char, [FriendlyName("GameObj Name", "")][SocketState(false, false)] string name, [FriendlyName("Type", "")] DreamBubble.Type type)
+	{
+		_finished = false;
+		if (at_char)
+		{
+			_bubble = DreamBubble.Create((int)type, MainGame.save.ch.char_gfx);
+		}
+		else
+		{
+			GameObject gameObject = GameObject.Find(name);
+			if (gameObject == null)
+			{
+				Debug.LogError("GameObject '" + name + "' not found!");
+				return;
+			}
+			_bubble = DreamBubble.Create((int)type, gameObject.transform.position);
+		}
+		DreamBubble bubble = _bubble;
+		bubble.on_disappear = (GJCommons.VoidDelegate)Delegate.Combine(bubble.on_disappear, (GJCommons.VoidDelegate)delegate
+		{
+			_finished = true;
+		});
+	}
+
+	[Driven]
+	public bool DrivenFunc()
+	{
+		if (_do_finished)
+		{
+			return false;
+		}
+		if (_finished)
+		{
+			_do_finished = true;
+		}
+		return true;
+	}
+}

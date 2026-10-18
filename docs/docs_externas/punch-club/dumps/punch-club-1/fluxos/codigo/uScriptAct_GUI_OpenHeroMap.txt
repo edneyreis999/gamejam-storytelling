@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/GUI")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Open Hero Map", "")]
+public class uScriptAct_GUI_OpenHeroMap : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Zone", "")] string zone_name)
+	{
+		MainGame.me.gui_elements.game_map.OpenHeroMap(zone_name);
+	}
+}

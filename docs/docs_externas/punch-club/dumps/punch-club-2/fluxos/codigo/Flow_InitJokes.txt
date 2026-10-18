@@ -1,0 +1,44 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Init Jokes", 0)]
+[Category("Game")]
+public class Flow_InitJokes : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool reinitAllJokes;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public List<JokePhrasesSystem.Joke> allJokes;
+
+	public override string name => (reinitAllJokes ? "Reinit All " : "Init ") + "Jokes";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), InitJokes);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+
+	private void InitJokes(Flow flow)
+	{
+		if (reinitAllJokes)
+		{
+			MainGame.me.gameSave.jokePhrasesSystem.ReinitAllJokes();
+		}
+		else
+		{
+			foreach (JokePhrasesSystem.Joke allJoke in allJokes)
+			{
+				MainGame.me.gameSave.jokePhrasesSystem.InitJokes(allJoke);
+			}
+		}
+		@out.Call(flow);
+	}
+}

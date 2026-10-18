@@ -1,0 +1,44 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI League Player's Opponent\nAdd Event to Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UILeaguePlayersOpponentAddButtonEvent : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UILeagueWindow leagueWindow = GUIElements.Get<UILeagueWindow>();
+			Button characterOpponentButton = leagueWindow.EloLeague.FirstMatch.GetCharacterOpponentButton();
+			GamepadNavigationItem item = characterOpponentButton.GetComponent<GamepadNavigationItem>();
+			item.Active = true;
+			leagueWindow.CustomItems = new List<GamepadNavigationItem> { item };
+			leagueWindow.SortButtonTipsOverTutorialWindow();
+			leagueWindow.OnInputSourceChanged();
+			UIElementsCustomEventHandlerManager.AddEvent(characterOpponentButton, UITutorialArrow.SignOrientationType.Right, delegate
+			{
+				item.Active = false;
+				leagueWindow.CustomItems = new List<GamepadNavigationItem> { leagueWindow.emptyTutorialItem };
+				leagueWindow.ReturnDefaultButtonTipsSorting();
+				leagueWindow.OnInputSourceChanged();
+				onClicked.Call(flow);
+			});
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+}

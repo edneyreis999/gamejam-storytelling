@@ -1,0 +1,2774 @@
+[
+  {
+    "_name": "qests",
+    "_id": 100,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"q1\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "0"
+    },
+    "fail_trigger": {
+      "lua_script": "tr.varless(\"_str\",0)"
+    },
+    "start_key": [
+      "//map_go"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [
+          "_sp"
+        ],
+        "_res_v": [
+          0.0
+        ]
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [
+          "_sp"
+        ],
+        "_res_v": [
+          0.0
+        ]
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": "vhs.HUD(0)\n--tr.varadd(\"q1\",1)\nvhs.SwitchZone(\"street\")\nlocal c1 = CharacterGfx()\nc1.create(\"c1\", \"char_big\")\nc1.mirror(0)\nc1.setpos(\"n_2\")\nc1.animate(\"f_idle\")\n\nlocal c2 = CharacterGfx()\nc2.create(\"c2\", \"char_black\")\nc2.mirror(1)\nc2.setpos(\"n_3\")\nc2.animate(\"f_idle\")\nc2.preset(\"opp_lmb\")\n\nchar.animate(\"idle\")\nchar.mirror(1)\nchar.setpos(\"n_1\")\n\nc1.say(\"I need your clothes, your boots and your motorcycle\")\nc1.wait_bubble()\nc2.say(\"Yep!\")\nc2.wait_bubble()\n\nchar.animate(\"f_idle\")\nchar.mirror(0)\n\nvhs.ShowMultiAnswer(\"Try to catch me! (run away)\", \"No way! (start fight)\", \"\")\nswitch_answer {\n        case 1:\n                vhs.trace(1)\n                vhs.BlackScreen(\"You are not fast enough to run away. So Have to fight!\")\n                vhs.StartFight(77,7)\n                end,\n        case 2:\n                vhs.trace(2)\n                \n                vhs.StartFight(77,7)\n                end,\n}",
+    "success_lua": "vhs.BlackScreen(\"Quest #4 succed\")",
+    "fail_lua": "vhs.BlackScreen(\"Quest #4 failed\")"
+  },
+  {
+    "_name": "quests",
+    "_id": 10,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"q1\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "0"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "map_go"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [
+          "_sp"
+        ],
+        "_res_v": [
+          0.0
+        ]
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [
+          "_sp"
+        ],
+        "_res_v": [
+          0.0
+        ]
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":tutorial_street_robbery",
+    "success_lua": "vhs.BlackScreen(\"Quest #4 succed\")",
+    "fail_lua": "vhs.BlackScreen(\"Quest #4 failed\")"
+  },
+  {
+    "_name": "if_win",
+    "_id": 11,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"q1\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "0"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "//sc_street"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [
+          "_sp"
+        ],
+        "_res_v": [
+          0.0
+        ]
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [
+          "_sp"
+        ],
+        "_res_v": [
+          0.0
+        ]
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": "tr.varadd(\"q1\",2)\n--local t1 = CharacterGfx()\n-- local t2 = CharacterGfx()\n-- t1.get(\"c1\"); t2.get(\"c2\"); t1.destroy(); t2.destroy()\n--local c1 = CharacterGfx()\n--c1.create(\"c1\", \"npc_coach\")\n--c1.mirror(0)\n--c1.setpos(\"n_2\")\n--c1.animate(\"f_idle\")\n--c1.say(\"You were great\")\n--c1.wait_bubble()\n--c1.say(\"But my help can be useful.\")\n--c1.destroy()\nvhs.BlackScreen(\"I should train harder!\")\n--vhs.SwitchZone(\"house_1\")\nvhs.OpenMap()",
+    "success_lua": "vhs.BlackScreen(\"Quest #4 succed\")",
+    "fail_lua": "vhs.BlackScreen(\"Quest #4 failed\")"
+  },
+  {
+    "_name": "if_loose",
+    "_id": 12,
+    "start_trigger": {
+      "lua_script": "tr.varless(\"q1\",3)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [
+          "_sp"
+        ],
+        "_res_v": [
+          0.0
+        ]
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [
+          "_sp"
+        ],
+        "_res_v": [
+          0.0
+        ]
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":after_street_fight",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "garage tutorial",
+    "_id": 10000,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"q_tutorial_1\",0) * tr.vareq(\"tutorial_s\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_house_1"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [
+          "q_tutorial_1"
+        ],
+        "_res_v": [
+          1.0
+        ]
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":tutorial_garage",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "garage - закончил отжиматься",
+    "_id": 10001,
+    "start_trigger": {
+      "lua_script": "tr.varless(\"_hunger\",20) * tr.vareq(\"q_tutorial_2\",0) * tr.vareq(\"q_tutorial_1\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "addres"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [
+          "q_tutorial_2"
+        ],
+        "_res_v": [
+          1.0
+        ]
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":tutorial_garage_2",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "переход из гаража на кухню",
+    "_id": 10002,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"q_tutorial_2\",1) * tr.vareq(\"q_tutorial_3\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_house_1_kitchen"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [
+          "q_tutorial_3"
+        ],
+        "_res_v": [
+          1.0
+        ]
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":tutorial_kitchen_from_garage",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "10003",
+    "_id": 10003,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"q_tutorial_4\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "fridge_use"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [
+          "q_tutorial_4"
+        ],
+        "_res_v": [
+          1.0
+        ]
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":tutorial_eat",
+    "success_lua": "\n",
+    "fail_lua": ""
+  },
+  {
+    "_name": "gym_tutirial",
+    "_id": 10005,
+    "start_trigger": {
+      "lua_script": "tr.varless(\"q_tutorial_gym\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_ring_gym"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":tutorial_gym_trainer",
+    "success_lua": "tr.varadd(\"q_tutorial_gym\",1)",
+    "fail_lua": ""
+  },
+  {
+    "_name": "gym_tutirial_2",
+    "_id": 10006,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"tutorial_gym_fight\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":tutorial_gym_trainer2",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "ограбление магазина",
+    "_id": 10007,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"rob_fight\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_shop"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":shop_robber",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после драки в магазине",
+    "_id": 10008,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"rob_fight\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":shop_robber2",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "Croc 1: After fight",
+    "_id": 10010,
+    "start_trigger": {
+      "lua_script": "tr.varmore(\"croc_fight\", 0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":sewers_after_fight",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "Sewers: enter location",
+    "_id": 10011,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_sewers"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":sewers_1",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "goal 5 place",
+    "_id": 20001,
+    "start_trigger": {
+      "lua_script": "tr.lplace(1, 5)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": "vhs.SetGoal(\"5p_league\", 3)\nvhs.Delay(0.3)\nvhs.SetGoal(\"win_league\", 2)",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "goal win league",
+    "_id": 20002,
+    "start_trigger": {
+      "lua_script": "tr.lplace(1, 1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": "vhs.SetGoal(\"win_league\", 3)",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "goal train hard 1",
+    "_id": 20003,
+    "start_trigger": {
+      "lua_script": "tr.varmoreeq(\"_str\",5)+tr.varmoreeq(\"_agl\",5)+tr.varmoreeq(\"_stm\",5)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "addres"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": "vhs.SetGoal(\"hard_train1\", 3)",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "goal 5w_fightclub",
+    "_id": 20004,
+    "start_trigger": {
+      "lua_script": "tr.varmoreeq(\"fightclub_win\",5)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":fight_club_5",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "goal tyler",
+    "_id": 20005,
+    "start_trigger": {
+      "lua_script": "tr.varmore(\"_str\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "//sc_bar_backyard"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": "vhs.SetGoal(\"tyler\", 3)\nvhs.Delay(0.3)\nvhs.SetGoal(\"5w_fightclub\", 2)",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "посещение лавки тренера",
+    "_id": 20006,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"mick_visited\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_museum"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":mick_visit",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "нападение на улице",
+    "_id": 20007,
+    "start_trigger": {
+      "lua_script": "tr.varmoreeq(\"_time\",500)*tr.varless(\"robed_tired\",10)*tr.varprob(\"_money\",150,600) - tr.lplace(1, 1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "map_go"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":rnd_street_rob",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после драки на улице",
+    "_id": 20008,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"after_rob\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":after_rob_fight",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "заход на сцену gym",
+    "_id": 20009,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_gym"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":gym_enter_scene",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "заход на сцену ангара",
+    "_id": 20010,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"good_brother\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_storage"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":warhouse1",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "первый бой",
+    "_id": 20011,
+    "start_trigger": {
+      "lua_script": "0"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": "vhs.SetGoal(\"ult_fight\", 3)\nvhs.Delay(0.3)\nvhs.SetGoal(\"ult_yelow\", 2)",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "желтая зона",
+    "_id": 20012,
+    "start_trigger": {
+      "lua_script": "tr.lscore(2, 100)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":after_yellow_win",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "красная зона",
+    "_id": 20013,
+    "start_trigger": {
+      "lua_script": "tr.lscore(2, 260)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":after_red_win",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после подпольных боев",
+    "_id": 20014,
+    "start_trigger": {
+      "lua_script": "tr.varmore(\"ult_loos\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":after_ult",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "убирание травм",
+    "_id": 20015,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "day_end_close"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":after_day",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "победа в 3 бою лиги",
+    "_id": 20016,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"rookie_win\",3)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":after_3_rookie_fights",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "кейси рассказывает о травмах",
+    "_id": 20018,
+    "start_trigger": {
+      "lua_script": "tr.hasperk(\"broken_leg\")+tr.hasperk(\"broken_arm\")+tr.hasperk(\"broken_head\")"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_cafe"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":casey_trauma",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "большая сцена лагеря",
+    "_id": 20019,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"meet_the_bandits\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_camp"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":camp",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "3 место в руки лиге",
+    "_id": 20020,
+    "start_trigger": {
+      "lua_script": "tr.lplace(1, 3)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":third_place_rookie",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "1 место в руки лиге медальон",
+    "_id": 20023,
+    "start_trigger": {
+      "lua_script": "tr.lplace(1, 1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "map_go"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":first_place_rookie",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "Выиграл плейофф",
+    "_id": 20024,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "playoff_end_3"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":playoff_win",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "После боя с Бобо",
+    "_id": 20025,
+    "start_trigger": {
+      "lua_script": "tr.varmoreeq(\"bobo_fight\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":bobo_after_fight",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "Согласился работать на дона - встреча с миком",
+    "_id": 20026,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"mick_street\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "map_go"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":mick_street",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "встреча и бой с кейси",
+    "_id": 20027,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"casey_street\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_china"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":casey_street",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "победа в 4 бою лиги",
+    "_id": 20028,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"rookie_win\",5)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":after_4_rookie_fights",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "После попадания в тюрьму",
+    "_id": 30001,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_prison"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":prison_start",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "Выход в тюремный двор",
+    "_id": 30002,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_prisonyard"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":prison_yard",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "После тюремных боев",
+    "_id": 30003,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"prison_fight\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":prison_afterfight",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "Приезд в россию",
+    "_id": 40001,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_huthome"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":russia_start",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "После боев",
+    "_id": 40002,
+    "start_trigger": {
+      "lua_script": "tr.varmoreeq(\"russia_fight\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":russia_afterfight",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после России",
+    "_id": 50001,
+    "start_trigger": {
+      "lua_script": "0"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_museum"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":after_russia",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после тюрьмы",
+    "_id": 50002,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"medallion_p\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_sidewalk"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":after_prison",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после тюрьмы к брата",
+    "_id": 50003,
+    "start_trigger": {
+      "lua_script": "tr.varmoreeq(\"good_brother\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_storage"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":good_brother",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "win ranked",
+    "_id": 50004,
+    "start_trigger": {
+      "lua_script": "tr.lplace(4, 1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":win_ranked",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "win ultimate",
+    "_id": 50005,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "playoff_end_5"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":end_playoff",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "final island",
+    "_id": 50006,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_island"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":fianl",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "uber final",
+    "_id": 50007,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"final_fight\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":fianl_after",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "phone_guide",
+    "_id": 50008,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#kitchen_1\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_house_1_kitchen"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":phone_guide",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "red_hi",
+    "_id": 50009,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#red_first_hi\",0)*tr.vareq(\"good_brother\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_house_red"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":red_hi",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "sister_hi",
+    "_id": 50010,
+    "start_trigger": {
+      "lua_script": "tr.varmoreeq(\"good_brother\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_house_red"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":sister_hi",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "chem_hi",
+    "_id": 50011,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#chem_start\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_sporting_goods"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":chem_start",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "after_4_loose",
+    "_id": 50012,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"rookie_loos\",2)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":after_4_lose",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "manager_hi",
+    "_id": 50013,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_comf_home"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":manager_hi",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "lair_hi",
+    "_id": 50014,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_cheap_home"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":lair_hi",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "win unranked",
+    "_id": 50015,
+    "start_trigger": {
+      "lua_script": "tr.lplace(7, 1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":win_unranked",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "fix_russia",
+    "_id": 50016,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"russia_fight\", 1)&apos;"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_comf_home"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [
+          "russia_fight"
+        ],
+        "_res_v": [
+          -1.0
+        ]
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": "",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после боя у бобо",
+    "_id": 8800,
+    "start_trigger": {
+      "lua_script": "tr.varmore(\"#c_camp\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":ambush_after_fight",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "герой: преступление у роя",
+    "_id": 8801,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_house_red"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":crime_roy",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "разговор с майки на крыше",
+    "_id": 8802,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_roof"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":roof_hi",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "бой на мосту",
+    "_id": 8803,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#no_c_bridge\",0)*tr.varless(\"#hero\",12)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_bridge"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":bridge_hi",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "герой: преступление апу",
+    "_id": 8804,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_shop"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":crime_apu",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "герой: преступление химик",
+    "_id": 8805,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_sporting_goods"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":crime_sport",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "герой: преступление склады",
+    "_id": 8806,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_storage"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":crime_bro",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "герой: преступление бобо",
+    "_id": 8807,
+    "start_trigger": {
+      "lua_script": "tr.varless(\"#hero\",10)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_camp"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":crime_bobo",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после боя на мосту",
+    "_id": 8808,
+    "start_trigger": {
+      "lua_script": "tr.varmore(\"#c_bridge\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":bridge_afterfight",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "лазер на крыше",
+    "_id": 8809,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#hero\",10)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_roof"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":cat_laser",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после боя на крыше",
+    "_id": 8810,
+    "start_trigger": {
+      "lua_script": "tr.varmore(\"#c_roof\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":cat_afterfight",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "у дока слизь",
+    "_id": 8811,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#hero\",11)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_sporting_goods"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":doc_laser",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "ничего не понял",
+    "_id": 8812,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#hero\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_house_1_kitchen"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":ups",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "бой в подводной базе",
+    "_id": 8813,
+    "start_trigger": {
+      "lua_script": "tr.varmore(\"#hero\",11)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_underwater"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":power",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после первой брони",
+    "_id": 8814,
+    "start_trigger": {
+      "lua_script": "tr.varmore(\"#c_power\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":mutant_power",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "знакомство с маком",
+    "_id": 8815,
+    "start_trigger": {
+      "lua_script": "1"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_rancho"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 1,
+    "start_lua": ":mack_hi",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "драка на технодроме",
+    "_id": 8816,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#power_figt\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_technodrome"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":power_fight",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после драки на технодроме",
+    "_id": 8817,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#power_figt\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "series_end_1005"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":mack_power",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "n2",
+    "_id": 8818,
+    "start_trigger": {
+      "lua_script": "tr.varmoreeq(\"#hero\",17)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_comf_home"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":set_no",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "n1",
+    "_id": 8819,
+    "start_trigger": {
+      "lua_script": "tr.varmoreeq(\"#hero\",17)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_cheap_home"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":set_no",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после драки на технодроме 2",
+    "_id": 8820,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#power_figt\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":mack_power",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после драки на технодроме 3",
+    "_id": 8821,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#power_figt\",1)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "series_end_1008"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":mack_power",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "бой на мосту рандомный",
+    "_id": 8822,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#no_c_bridge\",0)*tr.varmoreeq(\"#hero\",12)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_bridge"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":bridge_rnd",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "бой в китае рандомный",
+    "_id": 8823,
+    "start_trigger": {
+      "lua_script": "tr.vareq(\"#no_c_bridge\",0)*tr.varmoreeq(\"#hero\",12)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "sc_n_china"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":china_rnd",
+    "success_lua": "",
+    "fail_lua": ""
+  },
+  {
+    "_name": "после случайных боев",
+    "_id": 8824,
+    "start_trigger": {
+      "lua_script": "tr.varmoreeq(\"#hero\",12)*tr.varmore(\"#h_rnd\",0)"
+    },
+    "success_trigger": {
+      "lua_script": "1"
+    },
+    "fail_trigger": {
+      "lua_script": "0"
+    },
+    "start_key": [
+      "close_endoffight"
+    ],
+    "rew_on_success": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "rew_on_fail": {
+      "_res": {
+        "_res_type": [],
+        "_res_v": []
+      }
+    },
+    "one_time_quest": 0,
+    "start_lua": ":after_rnd",
+    "success_lua": "",
+    "fail_lua": ""
+  }
+]

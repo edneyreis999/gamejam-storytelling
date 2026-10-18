@@ -1,0 +1,26 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Interaction Phrase From Pool", 0)]
+[Category("Player")]
+public class Flow_GetInteractionPhraseFromPool : PC2CustomFlowNode
+{
+	public bool random = true;
+
+	private ValueInput<string> wgoId;
+
+	private ValueOutput<string> phrase;
+
+	protected override void RegisterPorts()
+	{
+		wgoId = AddValueInput<string>("wgoId".CapitalizeFirst());
+		phrase = AddValueOutput("phrase".CapitalizeFirst(), delegate
+		{
+			WGODefinition data = GameBalance.Me.GetData<WGODefinition>(wgoId.value);
+			return (data == null) ? "..." : data.GetInteractionPhraseFromPool(random);
+		});
+	}
+}

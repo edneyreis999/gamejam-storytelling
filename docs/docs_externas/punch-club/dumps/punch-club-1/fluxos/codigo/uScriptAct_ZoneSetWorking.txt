@@ -1,0 +1,35 @@
+using System;
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/Zones")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Set Working", "Set working mode")]
+public class uScriptAct_ZoneSetWorking : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Zone", "")] string zone_name, [FriendlyName("Working", "")] bool set_working)
+	{
+		Debug.Log("uScriptAct_ZoneSetWorking " + zone_name + ", working =" + set_working);
+		SceneZoneGfx zone = SceneRoot.me.GetZoneByName(zone_name);
+		if (zone == null)
+		{
+			Debug.LogError("Zone '" + zone_name + "' not found!");
+			return;
+		}
+		MainGame.save.ch.char_gfx.gameObject.SetActive(!set_working);
+		zone.SetWorkingAnimImmidiate(set_working);
+		if (set_working)
+		{
+			MainGame.save.ch.char_gfx.MoveTo(zone.GetComponentInChildren<SceneNode>().transform.position);
+			CharacterPlayer ch = MainGame.save.ch;
+			ch.on_stop_current_activity = (GJCommons.VoidDelegate)Delegate.Combine(ch.on_stop_current_activity, (GJCommons.VoidDelegate)delegate
+			{
+				Debug.Log("on_any_action_started");
+				MainGame.save.ch.char_gfx.gameObject.SetActive(value: true);
+				zone.animator.SetBool("work", value: false);
+			});
+		}
+	}
+}

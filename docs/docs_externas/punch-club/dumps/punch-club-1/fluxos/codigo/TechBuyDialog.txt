@@ -1,0 +1,173 @@
+using UnityEngine;
+
+public class TechBuyDialog : SimpleDialog
+{
+	public TechnologyGUI tech_gui;
+
+	public TechnologyGUI tech_gui2;
+
+	public TechnologyGUI tech_gui3;
+
+	public GameObject tech_1;
+
+	public GameObject tech_2;
+
+	public void Open(TechData tech, bool can_buy, bool enough_sp, bool is_tooltip_mode = false)
+	{
+		Sound.Play(Sound.SoundID.Click);
+		string text = tech.GetPrice() + string.Empty;
+		if (!enough_sp)
+		{
+			text = "[c][ff4444]" + text + "[-][/c]";
+		}
+		btn_1.gameObject.SetActive(!MainGame.save.ch.IsTechPurchased(tech));
+		GetComponentsInChildren<UIGrid>(includeInactive: true)[0].repositionNow = true;
+		GJCommons.VoidDelegate on_click = delegate
+		{
+			Debug.Log("Purchase technology: " + tech);
+			int price = tech.GetPrice();
+			if (MainGame.save.ch.char_res.IsEnough(new GameRes(GameRes.ResType._sp, price)))
+			{
+				MainGame.save.ch.char_res.Sub(GameRes.ResType._sp, price);
+				MainGame.save.ch.PurchaseTech(tech);
+				MainGame.me.gui_elements.tech_tree.UpdateState();
+				if (Ladder.mode_is_active)
+				{
+					MainGame.me.gui_elements.ladder_gui.hud.Redraw();
+				}
+				else
+				{
+					MainGame.me.gui_elements.hud.Redraw();
+				}
+				if (tech.unlock_obj_name == "Tactics Learner")
+				{
+					MainGame.me.gui_elements.tech_tree.Open();
+				}
+				else
+				{
+					MainGame.me.gui_elements.tech_tree.RefreshTabs();
+					MainGame.me.gui_elements.tech_tree.RefreshPrices();
+				}
+			}
+		};
+		Open(string.Empty, string.Empty, new ButtonDescription
+		{
+			text = "(Action1) " + GJL.L("SKILL_BUY") + " (_sp) " + text,
+			color = SimpleButton.ButtonColor.Green,
+			on_click = on_click
+		}, new ButtonDescription
+		{
+			text = "(Action2) " + GJL.L("CANCEL"),
+			color = SimpleButton.ButtonColor.Red
+		});
+		tech_gui.SetTechnologyData(tech);
+		tech_gui.SetSpriteState(TechnologyGUI.TechState.Available);
+		tech_gui3.SetTechnologyData(tech);
+		tech_gui3.SetSpriteState(TechnologyGUI.TechState.Available);
+		if (tech.replaces != string.Empty && !is_tooltip_mode)
+		{
+			tech_1.SetActive(value: false);
+			tech_2.SetActive(value: true);
+			TechData techData = new TechData();
+			techData.type = tech.type;
+			techData.unlock_obj_name = tech.replaces;
+			techData.lock_res = new GameRes();
+			TechData technologyData = techData;
+			TechData.TechnologyType type = tech.type;
+			if (type == TechData.TechnologyType.TechTech)
+			{
+				tech_gui2.SetTechnologyData(GameBalance.me.GetData<TechData>(tech.replaces));
+			}
+			else
+			{
+				tech_gui2.SetTechnologyData(technologyData);
+			}
+			tech_gui2.SetSpriteState(TechnologyGUI.TechState.Available);
+		}
+		else
+		{
+			tech_2.SetActive(value: false);
+			tech_1.SetActive(value: true);
+		}
+		btn_1.SetEnabled(can_buy);
+		string text2 = "\n\n[c][7f5b09]" + GJL.L("locks_require") + "[-][/c]";
+		string statsAsString = tech.lock_res.GetStatsAsString("      ");
+		text2 = ((!(statsAsString == string.Empty)) ? (text2 + "\n" + statsAsString) : string.Empty);
+		if (is_tooltip_mode)
+		{
+			text2 = string.Empty;
+		}
+		string text3 = tech_gui.GetTechDescription(false || MainGame.me.gui_elements.tech_tree.IsShown()).Replace("|H^", "\n");
+		text_label.text = text3 + text2;
+		SetHeader(tech.GetTechName());
+		if (MainGame.save.ch.IsTechPurchased(tech))
+		{
+			if (!is_tooltip_mode)
+			{
+				UILabel uILabel = text_label;
+				uILabel.text = uILabel.text + "\n\n" + GJL.L("ALREADY_UNLOCKED");
+			}
+			btn_2.Init(SimpleButton.ButtonColor.Green, "(Action1)" + GJL.L("OK"), delegate
+			{
+				Sound.Play(Sound.SoundID.Click);
+				Hide();
+			});
+		}
+	}
+
+	private void SetHeader(string header)
+	{
+		header_label.text = GJCommons.RemoveLineDashes(header);
+		header_label.effectColor = new Color(0f, 0f, 0.2f);
+	}
+
+	public void OpenMobileHint(TechData t, bool is_in_active_row, bool is_player, GJCommons.VoidDelegate on_click, bool btn_enabled)
+	{
+		Open(t, can_buy: true, enough_sp: true, is_tooltip_mode: true);
+		btn_1.SetEnabled(is_player);
+		btn_1.gameObject.SetActive(is_player);
+		btn_1.Init(SimpleButton.ButtonColor.Green, string.Empty, delegate
+		{
+			Hide();
+			on_click();
+		});
+		string text = ((!is_in_active_row) ? "($up) " : "($dn) ");
+		string text2 = GJL.L((!is_in_active_row) ? "SK_ADD" : "SK_REMOVE") + " ";
+		btn_1.text_label.text = "[00000000]" + text + "[-]" + text2;
+		btn_1.text_label_dup.text = "[a][ffffffff]" + text + "[-][/a]" + text2;
+		if (is_in_active_row && !MainGame.me.IsTutorialCompleted())
+		{
+			btn_1.SetEnabled(is_enabled: false);
+		}
+		if (!is_in_active_row && is_player && !btn_enabled)
+		{
+			btn_1.SetEnabled(is_enabled: false);
+		}
+	}
+
+	public void OpenMobileHintPerk(PerkData perk)
+	{
+		if (perk != null)
+		{
+			Sound.Play(Sound.SoundID.Click);
+			Open(string.Empty, string.Empty, new ButtonDescription
+			{
+				color = SimpleButton.ButtonColor.Green,
+				text = "(Action1)" + GJL.L("OK")
+			});
+			tech_2.SetActive(value: false);
+			tech_1.SetActive(value: true);
+			SetHeader(perk.display_name);
+			text_label.text = perk.description_text;
+			tech_gui.skill_item.gameObject.SetActive(value: false);
+			tech_gui.perk_icon.gameObject.SetActive(value: true);
+			tech_gui.perk_icon.SetPerk(perk);
+			GetComponentInChildren<UIGrid>().repositionNow = true;
+		}
+	}
+
+	protected override void OnBackColliderClicked()
+	{
+		Hide();
+	}
+}

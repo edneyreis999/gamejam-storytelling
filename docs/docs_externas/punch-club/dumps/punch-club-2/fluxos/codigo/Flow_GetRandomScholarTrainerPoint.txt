@@ -1,0 +1,40 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Random Scholar Trainer Node", 0)]
+[Category("Game/MickGym")]
+public class Flow_GetRandomScholarTrainerPoint : PC2CustomFlowNode
+{
+	private ValueOutput<Transform> nodeTransform;
+
+	private ValueOutput<HumanLikeDirections.Direction> nodeDirection;
+
+	private ScholarTrainerComeNode node;
+
+	protected override void RegisterPorts()
+	{
+		nodeTransform = AddValueOutput("nodeTransform".CapitalizeFirst(), delegate
+		{
+			List<ScholarTrainerComeNode> list = new List<ScholarTrainerComeNode>();
+			for (int i = 0; i < LazyConsts.mickScholarsIds.Count; i++)
+			{
+				if (DynamicScene.FindWGO(LazyConsts.mickScholarsIds[i]).WgoState.GetStateOnScene("MikesOldHouse", out var _))
+				{
+					WGO wGO = DynamicScene.FindWGO(LazyConsts.mickScholarsTrainersIds[i]);
+					if (wGO != null && wGO.gameObject.activeSelf)
+					{
+						list.Add(wGO.ScholarTrainerComeNode);
+					}
+				}
+			}
+			node = list[Random.Range(0, list.Count - 1)];
+			return node.transform;
+		});
+		nodeDirection = AddValueOutput("nodeDirection".CapitalizeFirst(), () => node.onCameDirection);
+	}
+}

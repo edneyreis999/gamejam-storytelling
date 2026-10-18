@@ -1,0 +1,65 @@
+using System.Collections.Generic;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Switch Fight Perk Pet Dialogue", 0)]
+[Category("Game")]
+[Color("cf35c2")]
+public class Flow_SwitchFightPerkPetDialogue : Flow_SwitchPetBasePhrase
+{
+	private static List<PetPhraseData> phrasesHamborg = new List<PetPhraseData>
+	{
+		new PetPhraseData("hamborg_need_fight_1_1", activeByDefault: true),
+		new PetPhraseData("hamborg_need_fight_2_1", activeByDefault: true)
+	};
+
+	private static List<PetPhraseData> phrasesCat = new List<PetPhraseData>
+	{
+		new PetPhraseData("sly_need_fight_1_1", activeByDefault: true),
+		new PetPhraseData("sly_need_fight_2_1", activeByDefault: true)
+	};
+
+	private static List<PetPhraseData> phrasesDog = new List<PetPhraseData>
+	{
+		new PetPhraseData("riley_need_fight_1_1", activeByDefault: true),
+		new PetPhraseData("riley_need_fight_2_1", activeByDefault: true)
+	};
+
+	private static List<PetPhraseData> phrasesCapy = new List<PetPhraseData>
+	{
+		new PetPhraseData("chuck_need_fight_1_1", activeByDefault: true),
+		new PetPhraseData("chuck_need_fight_2_1", activeByDefault: true)
+	};
+
+	public override List<PetPhraseData> GetCurrentList()
+	{
+		List<PetPhraseData> result = new List<PetPhraseData>();
+		switch (petId)
+		{
+		case "npc_chuck":
+			result = phrasesCapy;
+			break;
+		case "npc_sly":
+			result = phrasesCat;
+			break;
+		case "npc_riley":
+			result = phrasesDog;
+			break;
+		case "npc_hamborg":
+			result = phrasesHamborg;
+			break;
+		}
+		return result;
+	}
+
+	public override List<string> GetCurrentRemainingList()
+	{
+		return MainGame.me.gameSave.knowledgeSystem.fightPetPhrasesRemaining;
+	}
+
+	public override List<string> GetCurrentSaidList()
+	{
+		return MainGame.me.gameSave.knowledgeSystem.fightPetPhrasesSaid;
+	}
+}

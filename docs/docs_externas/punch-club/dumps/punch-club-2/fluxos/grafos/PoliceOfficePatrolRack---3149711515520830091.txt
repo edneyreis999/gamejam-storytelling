@@ -1,0 +1,175 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": -3149711515520830091,
+  "serialized_graph_sha256": "2774496568c30348ee96cfa23dfc1e608710e4ed4f38c02cee4906323343978a",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "PoliceOfficePatrolRack",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"eventName\":{\"_value\":\"interaction\"},\"target\":{},\"targets\":{},\"_position\":{\"x\":500.0,\"y\":479.0},\"$type\":\"PunchClub2.FlowCanvas.CustomLazyEvent\",\"$id\":\"0\"},{\"isToStart\":true,\"ignoreChecks\":true,\"_inputPortValues\":{\"actionId\":{\"$content\":\"police_work_patrol\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1118.0,\"y\":479.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_StartProfessionAction\",\"$id\":\"1\"},{\"eventName\":{\"_value\":\"event_ii_pol3__patrol\"},\"target\":{},\"targets\":{},\"_position\":{\"x\":488.0,\"y\":846.0},\"$type\":\"PunchClub2.FlowCanvas.CustomLazyEvent\",\"$id\":\"2\"},{\"_position\":{\"x\":920.0,\"y\":846.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetControlActive\",\"$id\":\"3\"},{\"isToStart\":true,\"ignoreTime\":true,\"ignoreChecks\":true,\"_inputPortValues\":{\"actionId\":{\"$content\":\"police_work_patrol\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1119.0,\"y\":849.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_StartProfessionAction\",\"$id\":\"4\"},{\"_inputPortValues\":{\"scriptName\":{\"$content\":\"Event_II-Pol3BecomeAPoliceman\",\"$type\":\"System.String\"},\"eventName\":{\"$content\":\"PatrolComplete\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1471.0,\"y\":850.0},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_FireEventOnGlobalScript\",\"$id\":\"5\"}],\"connections\":[{\"_sourcePortName\":\"Received\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Received\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"OnFinished\",\"_targetPortName\":\"in\",\"_sourceNode\":{\"$ref\":\"4\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": -270.0,
+        "y": -296.0
+      },
+      "_zoomFactor": 1.0
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "eventName": {
+          "_value": "interaction"
+        },
+        "target": {},
+        "targets": {},
+        "_position": {
+          "x": 500.0,
+          "y": 479.0
+        },
+        "$type": "PunchClub2.FlowCanvas.CustomLazyEvent",
+        "$id": "0"
+      },
+      {
+        "isToStart": true,
+        "ignoreChecks": true,
+        "_inputPortValues": {
+          "actionId": {
+            "$content": "police_work_patrol",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1118.0,
+          "y": 479.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_StartProfessionAction",
+        "$id": "1"
+      },
+      {
+        "eventName": {
+          "_value": "event_ii_pol3__patrol"
+        },
+        "target": {},
+        "targets": {},
+        "_position": {
+          "x": 488.0,
+          "y": 846.0
+        },
+        "$type": "PunchClub2.FlowCanvas.CustomLazyEvent",
+        "$id": "2"
+      },
+      {
+        "_position": {
+          "x": 920.0,
+          "y": 846.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetControlActive",
+        "$id": "3"
+      },
+      {
+        "isToStart": true,
+        "ignoreTime": true,
+        "ignoreChecks": true,
+        "_inputPortValues": {
+          "actionId": {
+            "$content": "police_work_patrol",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1119.0,
+          "y": 849.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_StartProfessionAction",
+        "$id": "4"
+      },
+      {
+        "_inputPortValues": {
+          "scriptName": {
+            "$content": "Event_II-Pol3BecomeAPoliceman",
+            "$type": "System.String"
+          },
+          "eventName": {
+            "$content": "PatrolComplete",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1471.0,
+          "y": 850.0
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_FireEventOnGlobalScript",
+        "$id": "5"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Received",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Received",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "OnFinished",
+        "_targetPortName": "in",
+        "_sourceNode": {
+          "$ref": "4"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {}
+    }
+  }
+}

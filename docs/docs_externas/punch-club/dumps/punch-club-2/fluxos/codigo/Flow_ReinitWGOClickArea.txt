@@ -1,0 +1,64 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Reinit WGO Click Area", 0)]
+[Category("Game/WGO")]
+public class Flow_ReinitWGOClickArea : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool getClickAreaByIndex;
+
+	[ShowIf("getClickAreaByIndex", 1)]
+	public int clickAreaIndex;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<WGO> wgoInput;
+
+	private ValueInput<ClickArea> newClickArea;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			WGO wGO = WGOParamOrSelf(wgoInput);
+			if (wGO == null)
+			{
+				Debug.LogError("WGO is null");
+				@out.Call(flow);
+			}
+			else
+			{
+				ClickArea[] componentsInChildren = wGO.GetComponentsInChildren<ClickArea>(includeInactive: true);
+				ClickArea clickArea = (getClickAreaByIndex ? componentsInChildren[clickAreaIndex] : newClickArea.value);
+				if (clickArea != null)
+				{
+					ClickArea[] array = componentsInChildren;
+					for (int i = 0; i < array.Length; i++)
+					{
+						array[i].gameObject.SetActive(value: false);
+					}
+					clickArea.gameObject.SetActive(value: true);
+					wgoInput.value.ReinitClickArea(clickArea);
+				}
+				else
+				{
+					Debug.LogError("New ClickArea is null");
+				}
+				@out.Call(flow);
+			}
+		});
+		if (!getClickAreaByIndex)
+		{
+			newClickArea = AddValueInput<ClickArea>("ClickArea");
+		}
+		wgoInput = AddValueInput<WGO>("WGO");
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

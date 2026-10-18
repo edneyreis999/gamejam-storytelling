@@ -1,0 +1,20 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Is Player Signed League", 0)]
+[Category("Game")]
+public class Flow_IsPlayerSignedLeague : PC2CustomFlowNode
+{
+	private ValueInput<string> leagueId;
+
+	private ValueOutput<bool> isSigned;
+
+	protected override void RegisterPorts()
+	{
+		leagueId = AddValueInput<string>("leagueId".CapitalizeFirst());
+		isSigned = AddValueOutput("isSigned".CapitalizeFirst(), () => MainGame.me.gameSave.leaguesSystem.IsPlayerSignedLeague(leagueId.value));
+	}
+}

@@ -1,0 +1,389 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": 7541529958035221043,
+  "serialized_graph_sha256": "7a76d18e9534a22ee5850ba63052989c37e746289dc7d9723f2d2f7c8bf51a96",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "AirPodsLeft",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"eventName\":{\"_value\":\"interaction\"},\"target\":{},\"targets\":{},\"_position\":{\"x\":163.8447,\"y\":481.3038},\"$type\":\"PunchClub2.FlowCanvas.CustomLazyEvent\",\"$id\":\"0\"},{\"_position\":{\"x\":611.1831,\"y\":480.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetControlActive\",\"$id\":\"1\"},{\"_inputPortValues\":{\"TriggerName\":{\"$content\":\"do_grab\",\"$type\":\"System.String\"}},\"_position\":{\"x\":867.433,\"y\":480.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetTriggerToAnimator\",\"$id\":\"2\"},{\"_simplexNode\":{},\"_inputPortValues\":{\"time\":{\"$content\":1.2,\"$type\":\"System.Single\"}},\"_position\":{\"x\":1138.737,\"y\":480.0},\"$type\":\"FlowCanvas.Nodes.SimplexNodeWrapper`1[[FlowCanvas.Nodes.Wait, FlowCanvas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\",\"$id\":\"3\"},{\"_inputPortValues\":{\"IsEnable\":{\"$content\":true,\"$type\":\"System.Boolean\"}},\"_position\":{\"x\":1352.003,\"y\":477.406},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetControlActive\",\"$id\":\"4\"},{\"_inputPortValues\":{\"itemId\":{\"$content\":\"airpods_right\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1694.084,\"y\":477.1004},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_HasQuestItem\",\"$id\":\"5\"},{\"_inputPortValues\":{\"itemId\":{\"$content\":\"airpods_left\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2089.548,\"y\":495.3237},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_AddQuestItem\",\"$id\":\"6\"},{\"_inputPortValues\":{\"Phrase\":{\"$content\":\"i_airpods_grandpa_one_airpod_1\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2381.349,\"y\":496.3549},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_AddPhraseToUnlockedList\",\"$id\":\"7\"},{\"_inputPortValues\":{\"wgoId\":{\"$content\":\"sewerage_airpods_left\",\"$type\":\"System.String\"}},\"_position\":{\"x\":3306.288,\"y\":497.4265},\"$type\":\"PunchClub2.FlowCanvas.Flow_ChangeWGOState\",\"$id\":\"8\"},{\"_inputPortValues\":{\"itemId\":{\"$content\":\"airpods_both\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2082.649,\"y\":315.545},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_AddQuestItem\",\"$id\":\"9\"},{\"isToRemove\":true,\"_inputPortValues\":{\"itemId\":{\"$content\":\"airpods_right\",\"$type\":\"System.String\"},\"notShowNotice\":{\"$content\":true,\"$type\":\"System.Boolean\"}},\"_position\":{\"x\":2308.688,\"y\":316.4178},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_AddQuestItem\",\"$id\":\"10\"},{\"_inputPortValues\":{\"Phrase\":{\"$content\":\"i_airpods_grandpa_one_airpod_1\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2512.077,\"y\":315.4177},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_AddPhraseToBlackList\",\"$id\":\"11\"},{\"_inputPortValues\":{\"Phrase\":{\"$content\":\"i_airpods_grandpa_two_airpods_1\",\"$type\":\"System.String\"}},\"_position\":{\"x\":2777.625,\"y\":315.3667},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_AddPhraseToUnlockedList\",\"$id\":\"12\"},{\"_position\":{\"x\":657.433,\"y\":660.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_GetPlayer\",\"$id\":\"13\"}],\"connections\":[{\"_sourcePortName\":\"Received\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Done\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"4\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"HasNotItem\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"HasItem\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"9\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"6\"},\"_targetNode\":{\"$ref\":\"7\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"7\"},\"_targetNode\":{\"$ref\":\"8\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"9\"},\"_targetNode\":{\"$ref\":\"10\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"10\"},\"_targetNode\":{\"$ref\":\"11\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"11\"},\"_targetNode\":{\"$ref\":\"12\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"12\"},\"_targetNode\":{\"$ref\":\"8\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"PlayerObject\",\"_targetPortName\":\"GameObject\",\"_sourceNode\":{\"$ref\":\"13\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection`1[[UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": -1483.0,
+        "y": 175.0
+      },
+      "_zoomFactor": 1.0
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "eventName": {
+          "_value": "interaction"
+        },
+        "target": {},
+        "targets": {},
+        "_position": {
+          "x": 163.8447,
+          "y": 481.3038
+        },
+        "$type": "PunchClub2.FlowCanvas.CustomLazyEvent",
+        "$id": "0"
+      },
+      {
+        "_position": {
+          "x": 611.1831,
+          "y": 480.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetControlActive",
+        "$id": "1"
+      },
+      {
+        "_inputPortValues": {
+          "TriggerName": {
+            "$content": "do_grab",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 867.433,
+          "y": 480.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetTriggerToAnimator",
+        "$id": "2"
+      },
+      {
+        "_simplexNode": {},
+        "_inputPortValues": {
+          "time": {
+            "$content": 1.2,
+            "$type": "System.Single"
+          }
+        },
+        "_position": {
+          "x": 1138.737,
+          "y": 480.0
+        },
+        "$type": "FlowCanvas.Nodes.SimplexNodeWrapper`1[[FlowCanvas.Nodes.Wait, FlowCanvas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "$id": "3"
+      },
+      {
+        "_inputPortValues": {
+          "IsEnable": {
+            "$content": true,
+            "$type": "System.Boolean"
+          }
+        },
+        "_position": {
+          "x": 1352.003,
+          "y": 477.406
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetControlActive",
+        "$id": "4"
+      },
+      {
+        "_inputPortValues": {
+          "itemId": {
+            "$content": "airpods_right",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1694.084,
+          "y": 477.1004
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_HasQuestItem",
+        "$id": "5"
+      },
+      {
+        "_inputPortValues": {
+          "itemId": {
+            "$content": "airpods_left",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2089.548,
+          "y": 495.3237
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_AddQuestItem",
+        "$id": "6"
+      },
+      {
+        "_inputPortValues": {
+          "Phrase": {
+            "$content": "i_airpods_grandpa_one_airpod_1",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2381.349,
+          "y": 496.3549
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_AddPhraseToUnlockedList",
+        "$id": "7"
+      },
+      {
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "sewerage_airpods_left",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 3306.288,
+          "y": 497.4265
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_ChangeWGOState",
+        "$id": "8"
+      },
+      {
+        "_inputPortValues": {
+          "itemId": {
+            "$content": "airpods_both",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2082.649,
+          "y": 315.545
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_AddQuestItem",
+        "$id": "9"
+      },
+      {
+        "isToRemove": true,
+        "_inputPortValues": {
+          "itemId": {
+            "$content": "airpods_right",
+            "$type": "System.String"
+          },
+          "notShowNotice": {
+            "$content": true,
+            "$type": "System.Boolean"
+          }
+        },
+        "_position": {
+          "x": 2308.688,
+          "y": 316.4178
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_AddQuestItem",
+        "$id": "10"
+      },
+      {
+        "_inputPortValues": {
+          "Phrase": {
+            "$content": "i_airpods_grandpa_one_airpod_1",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2512.077,
+          "y": 315.4177
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_AddPhraseToBlackList",
+        "$id": "11"
+      },
+      {
+        "_inputPortValues": {
+          "Phrase": {
+            "$content": "i_airpods_grandpa_two_airpods_1",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 2777.625,
+          "y": 315.3667
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_AddPhraseToUnlockedList",
+        "$id": "12"
+      },
+      {
+        "_position": {
+          "x": 657.433,
+          "y": 660.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_GetPlayer",
+        "$id": "13"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Received",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Done",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "4"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "HasNotItem",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "HasItem",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "9"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "6"
+        },
+        "_targetNode": {
+          "$ref": "7"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "7"
+        },
+        "_targetNode": {
+          "$ref": "8"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "9"
+        },
+        "_targetNode": {
+          "$ref": "10"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "10"
+        },
+        "_targetNode": {
+          "$ref": "11"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "11"
+        },
+        "_targetNode": {
+          "$ref": "12"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "12"
+        },
+        "_targetNode": {
+          "$ref": "8"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "PlayerObject",
+        "_targetPortName": "GameObject",
+        "_sourceNode": {
+          "$ref": "13"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {}
+    }
+  }
+}

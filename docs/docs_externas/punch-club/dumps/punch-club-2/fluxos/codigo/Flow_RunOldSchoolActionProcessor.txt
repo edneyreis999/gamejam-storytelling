@@ -1,0 +1,69 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+[Name("Run OldSchool Action Processor", 0)]
+[Category("Game/WGO")]
+public class Flow_RunOldSchoolActionProcessor : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isEnable = true;
+
+	private FlowInput @in;
+
+	private FlowOutput onStopped;
+
+	private FlowOutput @out;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueInput<string> actionName;
+
+	public override string name => (isEnable ? "Run " : "Stop ") + "OldSchool Action Processor";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isEnable)
+			{
+				WGO wGO = WGOParamOrSelf(wgo);
+				if (wGO != null)
+				{
+					OldSchoolTrainingDefinition data = GameBalance.Me.GetData<OldSchoolTrainingDefinition>(actionName.value);
+					if (data != null)
+					{
+						MainGame.me.OldSchoolActionProcessor.OnStopped += OnStoppedAction;
+						MainGame.me.OldSchoolActionProcessor.Run(data, wGO);
+					}
+					else
+					{
+						Debug.LogError("Failed to Run OldSchool Action Processor for row " + actionName.value);
+					}
+				}
+				else
+				{
+					Debug.LogError("Tried to Run OldSchool Action Processor on the null wgo");
+				}
+			}
+			else
+			{
+				MainGame.me.OldSchoolActionProcessor.Stop();
+			}
+			@out.Call(flow);
+			void OnStoppedAction(WGO wgo)
+			{
+				MainGame.me.OldSchoolActionProcessor.OnStopped -= OnStoppedAction;
+				onStopped.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isEnable)
+		{
+			onStopped = AddFlowOutput("onStopped".CapitalizeFirst());
+			wgo = AddValueInput<WGO>("WGO");
+			actionName = AddValueInput<string>("actionName");
+		}
+	}
+}

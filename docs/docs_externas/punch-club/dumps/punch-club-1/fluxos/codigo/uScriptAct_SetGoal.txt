@@ -1,0 +1,26 @@
+using System;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Set Goal", "")]
+public class uScriptAct_SetGoal : uScriptLogic
+{
+	public bool Out => true;
+
+	public event uScript_GameObject.uScriptEventHandler ClosedWindow;
+
+	public void In([FriendlyName("Goal Name", "")] string name, GoalState.State state)
+	{
+		if (!MainGame.save.ch.SetGoalState(name, state, show_windows: true, delegate
+		{
+			if (this.ClosedWindow != null)
+			{
+				this.ClosedWindow(this, new EventArgs());
+			}
+		}) && this.ClosedWindow != null)
+		{
+			this.ClosedWindow(this, new EventArgs());
+		}
+	}
+}

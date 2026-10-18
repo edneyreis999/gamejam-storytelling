@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Single Interaction", "Set single interaction mode")]
+public class uScriptAct_SetSingleInteraction : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Zone name", "")] string zone_name)
+	{
+		MainGame.single_interaction_zone = zone_name;
+	}
+}

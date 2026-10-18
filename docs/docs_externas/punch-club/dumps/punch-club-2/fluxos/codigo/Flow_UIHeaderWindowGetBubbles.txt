@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Header Window Get Bubbles", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIHeaderWindowGetBubbles : PC2CustomFlowNode
+{
+	private ValueOutput<RectTransform> bubble1;
+
+	private ValueOutput<RectTransform> bubble2;
+
+	private ValueOutput<RectTransform> bubble3;
+
+	private ValueOutput<RectTransform> forTechBuyWindow;
+
+	private ValueOutput<RectTransform> forTechBuyWindow2;
+
+	private ValueOutput<RectTransform> dlcRunSetup;
+
+	protected override void RegisterPorts()
+	{
+		bubble1 = AddValueOutput("bubble1", () => GUIElements.Get<UIHeaderWindow>().BubbleTutorial1);
+		bubble2 = AddValueOutput("bubble2", () => GUIElements.Get<UIHeaderWindow>().BubbleTutorial2);
+		bubble3 = AddValueOutput("bubble3", () => GUIElements.Get<UIHeaderWindow>().BubbleTutorial3);
+		forTechBuyWindow = AddValueOutput("forTechBuyWindow", () => GUIElements.Get<UIHeaderWindow>().ForTechBuyWindow);
+		forTechBuyWindow2 = AddValueOutput("forTechBuyWindow2", () => GUIElements.Get<UIHeaderWindow>().ForTechBuyWindow2);
+		dlcRunSetup = AddValueOutput("dlcRunSetup", () => GUIElements.Get<UIDLCRunSetupWindow>().TutorialPoint);
+	}
+}

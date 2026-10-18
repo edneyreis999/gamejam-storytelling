@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Scholar for LvlUp", 0)]
+[Category("Game")]
+public class Flow_GetScholarForLvlUp : PC2CustomFlowNode
+{
+	public bool isFromLastTier;
+
+	private ValueOutput<string> outWGOIdInput;
+
+	protected override void RegisterPorts()
+	{
+		outWGOIdInput = AddValueOutput("WGO Id", () => (!isFromLastTier) ? FindValidScholarInRange(4, 7) : FindValidScholarInRange(7, 10));
+	}
+
+	private string FindValidScholarInRange(int startIndex, int endIndex)
+	{
+		for (int i = startIndex; i < endIndex; i++)
+		{
+			WGOState wGOState = MainGame.me.gameSave.worldData.GetWGOState(LazyConsts.mickScholarsTrainersIds[i]);
+			WGOState wGOState2 = MainGame.me.gameSave.worldData.GetWGOState(LazyConsts.mickScholarsIds[i]);
+			if (wGOState != null && wGOState.GetStateOnScene("MikesOldHouse", out var isActive) && isActive)
+			{
+				if (wGOState2 == null)
+				{
+					return LazyConsts.mickScholarsIds[i];
+				}
+				if (wGOState2.gameRes.GetInt("is_unlocked") != 1)
+				{
+					return LazyConsts.mickScholarsIds[i];
+				}
+			}
+		}
+		return string.Empty;
+	}
+}

@@ -1,0 +1,16 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("Lazy Bear Games", "http://www.lazybeargames.com")]
+[FriendlyName("Play Music", "")]
+public class uScriptAct_PlayMusic : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Song", "")] Sound.SoundID music_id)
+	{
+		Debug.Log("Play : " + music_id);
+		Sound.PlayMusic(music_id);
+	}
+}

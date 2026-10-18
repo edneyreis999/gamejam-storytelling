@@ -1,0 +1,69 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set WGO State", 0)]
+[Category("Game/WGO")]
+public class Flow_SetWGOState : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool severalIds;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<WGOState> wgoState;
+
+	private ValueInput<string> id;
+
+	private ValueInput<List<string>> ids;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ChangeState);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (severalIds)
+		{
+			ids = AddValueInput<List<string>>("ids".CapitalizeFirst());
+		}
+		else
+		{
+			id = AddValueInput<string>("id".CapitalizeFirst());
+		}
+		wgoState = AddValueInput<WGOState>("wgoState".CapitalizeFirst());
+	}
+
+	private void ChangeState(Flow flow)
+	{
+		WGOState value = wgoState.value;
+		if (severalIds)
+		{
+			foreach (string item in ids.value)
+			{
+				MainGame.me.gameSave.worldData.SetWGOState(item, value.activeOnScenes, value.gameRes);
+				WGO wGO = DynamicScene.FindWGO(item);
+				if (wGO != null)
+				{
+					wGO.HandleWGOState();
+				}
+			}
+		}
+		else
+		{
+			MainGame.me.gameSave.worldData.SetWGOState(id.value, value.activeOnScenes, value.gameRes);
+			if (DynamicScene.current != null)
+			{
+				WGO wGO2 = DynamicScene.FindWGO(id.value);
+				if (wGO2 != null)
+				{
+					wGO2.HandleWGOState();
+				}
+			}
+		}
+		@out.Call(flow);
+	}
+}

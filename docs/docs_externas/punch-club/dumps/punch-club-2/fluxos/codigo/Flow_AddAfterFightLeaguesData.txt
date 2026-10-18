@@ -1,0 +1,148 @@
+using System;
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add After Fight Leagues Data", 0)]
+[Category("Game")]
+public class Flow_AddAfterFightLeaguesData : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isLeftFighterWon;
+
+	public bool addAsFirstPlaceData;
+
+	public bool afterAnyFight;
+
+	public bool onlyFadeInWhenLoad;
+
+	public bool asFirst;
+
+	public string id;
+
+	[GatherPortsCallback]
+	[ShowIf("afterAnyFight", 0)]
+	public LeaguesSystem.LeaguesAfterFightData.LeagueAfterFightDataType leagueAfterFightDataType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> sceneID;
+
+	private ValueInput<string> markerPosition;
+
+	private ValueInput<string> opponentID;
+
+	private ValueInput<string> flagSet;
+
+	private new ValueInput<int> position;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), AddAfterFightLeaguesData);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		sceneID = AddValueInput<string>("sceneID".CapitalizeFirst());
+		markerPosition = AddValueInput<string>("markerPosition".CapitalizeFirst());
+		switch (leagueAfterFightDataType)
+		{
+		case LeaguesSystem.LeaguesAfterFightData.LeagueAfterFightDataType.CheckOpponent:
+			opponentID = AddValueInput<string>("opponentID".CapitalizeFirst());
+			break;
+		case LeaguesSystem.LeaguesAfterFightData.LeagueAfterFightDataType.CheckPositionMoreOrEquals:
+			position = AddValueInput<int>("position".CapitalizeFirst());
+			break;
+		case LeaguesSystem.LeaguesAfterFightData.LeagueAfterFightDataType.LoseOpponentTwice:
+			flagSet = AddValueInput<string>("flagSet".CapitalizeFirst());
+			break;
+		default:
+			throw new ArgumentOutOfRangeException();
+		case LeaguesSystem.LeaguesAfterFightData.LeagueAfterFightDataType.CheckWin:
+			break;
+		}
+	}
+
+	private void AddAfterFightLeaguesData(Flow flow)
+	{
+		LeaguesSystem.LeaguesAfterFightData leaguesAfterFightData = new LeaguesSystem.LeaguesAfterFightData();
+		leaguesAfterFightData.sceneAfterFight = sceneID.value;
+		leaguesAfterFightData.markerAfterFight = markerPosition.value;
+		leaguesAfterFightData.leagueAfterFightDataType = leagueAfterFightDataType;
+		leaguesAfterFightData.afterAnyFight = afterAnyFight;
+		leaguesAfterFightData.id = id;
+		leaguesAfterFightData.onlyFadeInWhenLoad = onlyFadeInWhenLoad;
+		switch (leagueAfterFightDataType)
+		{
+		case LeaguesSystem.LeaguesAfterFightData.LeagueAfterFightDataType.CheckOpponent:
+			leaguesAfterFightData.opponentID = opponentID.value;
+			break;
+		case LeaguesSystem.LeaguesAfterFightData.LeagueAfterFightDataType.CheckPositionMoreOrEquals:
+			leaguesAfterFightData.positionToCheck = position.value;
+			break;
+		case LeaguesSystem.LeaguesAfterFightData.LeagueAfterFightDataType.LoseOpponentTwice:
+			leaguesAfterFightData.flagSet = flagSet.value;
+			break;
+		default:
+			throw new ArgumentOutOfRangeException();
+		case LeaguesSystem.LeaguesAfterFightData.LeagueAfterFightDataType.CheckWin:
+			break;
+		}
+		if (addAsFirstPlaceData)
+		{
+			MainGame.me.gameSave.leaguesSystem.firstPlaceAfterFightData = leaguesAfterFightData;
+		}
+		else
+		{
+			if (afterAnyFight)
+			{
+				if (asFirst)
+				{
+					MainGame.me.gameSave.leaguesSystem.afterAnyFight.Insert(0, leaguesAfterFightData);
+				}
+				else
+				{
+					MainGame.me.gameSave.leaguesSystem.afterAnyFight.Add(leaguesAfterFightData);
+				}
+			}
+			if (isLeftFighterWon)
+			{
+				if (asFirst)
+				{
+					MainGame.me.gameSave.leaguesSystem.afterWin.Insert(0, leaguesAfterFightData);
+				}
+				else
+				{
+					MainGame.me.gameSave.leaguesSystem.afterWin.Add(leaguesAfterFightData);
+				}
+			}
+			else
+			{
+				if (asFirst)
+				{
+					MainGame.me.gameSave.leaguesSystem.afterLose.Insert(0, leaguesAfterFightData);
+				}
+				else
+				{
+					MainGame.me.gameSave.leaguesSystem.afterLose.Add(leaguesAfterFightData);
+				}
+				List<LeaguesSystem.LeaguesAfterFightData> list = new List<LeaguesSystem.LeaguesAfterFightData>();
+				for (int i = 0; i < MainGame.me.gameSave.leaguesSystem.afterLose.Count; i++)
+				{
+					if (MainGame.me.gameSave.leaguesSystem.afterLose[i].leagueAfterFightDataType == LeaguesSystem.LeaguesAfterFightData.LeagueAfterFightDataType.LoseOpponentTwice)
+					{
+						list.Add(MainGame.me.gameSave.leaguesSystem.afterLose[i]);
+					}
+				}
+				for (int j = 0; j < list.Count; j++)
+				{
+					MainGame.me.gameSave.leaguesSystem.afterLose.Remove(list[j]);
+					MainGame.me.gameSave.leaguesSystem.afterLose.Add(list[j]);
+				}
+			}
+		}
+		@out.Call(flow);
+	}
+}

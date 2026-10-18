@@ -1,0 +1,35 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open Demo End Window", 0)]
+[Category("Game")]
+public class Flow_OpenDemoEndWindow : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToHide;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in", delegate(Flow flow)
+		{
+			UIDemoEnd uIDemoEnd = GUIElements.Get<UIDemoEnd>();
+			if (isToHide)
+			{
+				uIDemoEnd.Hide();
+			}
+			else
+			{
+				uIDemoEnd.Open();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,52 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+[Name("Talk Tutorial Assistant", 0)]
+[Category("Game/UI")]
+public class Flow_TalkTutorialAssistant : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool couldBeSkipped;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private FlowOutput onTextAppeared;
+
+	private ValueInput<string> text;
+
+	private Flow flow;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			this.flow = flow;
+			Action onDisappeared = ((!couldBeSkipped) ? null : new Action(OnFinished));
+			GUIElements.Get<UITutorialWindow>().ShowMessage(text.value, onDisappeared, OnTextAppeared);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		text = AddValueInput<string>("text");
+		if (couldBeSkipped)
+		{
+			onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		}
+		onTextAppeared = AddFlowOutput("onTextAppeared".CapitalizeFirst());
+	}
+
+	private void OnFinished()
+	{
+		onFinished.Call(flow);
+	}
+
+	private void OnTextAppeared()
+	{
+		onTextAppeared.Call(flow);
+	}
+}

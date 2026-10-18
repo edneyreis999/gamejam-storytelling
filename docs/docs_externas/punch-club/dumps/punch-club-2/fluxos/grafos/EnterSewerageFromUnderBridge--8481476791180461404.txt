@@ -1,0 +1,315 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": 8481476791180461404,
+  "serialized_graph_sha256": "87a713ef181fc7984d32446e06fb74cd92e026a8c34b3667f9479e7897e6b321",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "EnterSewerageFromUnderBridge",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"_position\":{\"x\":471.9758,\"y\":513.3871},\"$type\":\"FlowCanvas.Nodes.StartEvent\",\"$id\":\"0\"},{\"_inputPortValues\":{\"ParamName\":{\"$content\":\"huey_sewerage_d7_ready\",\"$type\":\"System.String\"}},\"_position\":{\"x\":689.5577,\"y\":513.2578},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj\",\"$id\":\"1\"},{\"forceUnlock\":true,\"_inputPortValues\":{\"roomId\":{\"$content\":\"Exit_C7\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1136.0,\"y\":508.0},\"$type\":\"PunchClub2.FlowCanvas.Flow_SetSewerageRoomState\",\"$id\":\"2\"},{\"_inputPortValues\":{\"roomId\":{\"$content\":\"Sewerage_C7\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1405.193,\"y\":508.0215},\"$type\":\"PunchClub2.FlowCanvas.Flow_GetSewerageRoomById\",\"$id\":\"3\"},{\"_position\":{\"x\":1748.193,\"y\":507.0215},\"$type\":\"PunchClub2.FlowCanvas.Flow_OpenSceneForRoom\",\"$id\":\"4\"},{\"_position\":{\"x\":2123.192,\"y\":527.0215},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetPlayerPosition\",\"$id\":\"5\"},{\"_position\":{\"x\":2505.266,\"y\":525.5285},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"6\"},{\"forceUnlock\":true,\"_inputPortValues\":{\"roomId\":{\"$content\":\"Exit_C7\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1127.05,\"y\":384.7587},\"$type\":\"PunchClub2.FlowCanvas.Flow_SetSewerageRoomState\",\"$id\":\"7\"},{\"_inputPortValues\":{\"roomId\":{\"$content\":\"Sewerage_D7\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1410.68,\"y\":384.7802},\"$type\":\"PunchClub2.FlowCanvas.Flow_GetSewerageRoomById\",\"$id\":\"8\"},{\"_position\":{\"x\":1741.649,\"y\":333.2514},\"$type\":\"PunchClub2.FlowCanvas.Flow_OpenSceneForRoom\",\"$id\":\"9\"},{\"_inputPortValues\":{\"id\":{\"$content\":\"under_bridge_entry\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1828.193,\"y\":692.0215},\"$type\":\"PunchClub2.FlowCanvas.Flow_GetWalkNodeById\",\"$id\":\"10\"}],\"connections\":[{\"_sourcePortName\":\"Once\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"== 0\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\">= 1\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"7\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"sewerageRoom\",\"_targetPortName\":\"room\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection`1[[UISewerageRoom, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"OnSceneIsReady\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"4\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"7\"},\"_targetNode\":{\"$ref\":\"8\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"8\"},\"_targetNode\":{\"$ref\":\"9\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"sewerageRoom\",\"_targetPortName\":\"room\",\"_sourceNode\":{\"$ref\":\"8\"},\"_targetNode\":{\"$ref\":\"9\"},\"$type\":\"FlowCanvas.BinderConnection`1[[UISewerageRoom, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"},{\"_sourcePortName\":\"OnSceneIsReady\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"9\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"walkNode\",\"_targetPortName\":\"transform\",\"_sourceNode\":{\"$ref\":\"10\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": 136.0780029296875,
+        "y": 151.75563049316406
+      },
+      "_zoomFactor": 0.7500888705253601
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "_position": {
+          "x": 471.9758,
+          "y": 513.3871
+        },
+        "$type": "FlowCanvas.Nodes.StartEvent",
+        "$id": "0"
+      },
+      {
+        "_inputPortValues": {
+          "ParamName": {
+            "$content": "huey_sewerage_d7_ready",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 689.5577,
+          "y": 513.2578
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj",
+        "$id": "1"
+      },
+      {
+        "forceUnlock": true,
+        "_inputPortValues": {
+          "roomId": {
+            "$content": "Exit_C7",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1136.0,
+          "y": 508.0
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_SetSewerageRoomState",
+        "$id": "2"
+      },
+      {
+        "_inputPortValues": {
+          "roomId": {
+            "$content": "Sewerage_C7",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1405.193,
+          "y": 508.0215
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_GetSewerageRoomById",
+        "$id": "3"
+      },
+      {
+        "_position": {
+          "x": 1748.193,
+          "y": 507.0215
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_OpenSceneForRoom",
+        "$id": "4"
+      },
+      {
+        "_position": {
+          "x": 2123.192,
+          "y": 527.0215
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetPlayerPosition",
+        "$id": "5"
+      },
+      {
+        "_position": {
+          "x": 2505.266,
+          "y": 525.5285
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "6"
+      },
+      {
+        "forceUnlock": true,
+        "_inputPortValues": {
+          "roomId": {
+            "$content": "Exit_C7",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1127.05,
+          "y": 384.7587
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_SetSewerageRoomState",
+        "$id": "7"
+      },
+      {
+        "_inputPortValues": {
+          "roomId": {
+            "$content": "Sewerage_D7",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1410.68,
+          "y": 384.7802
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_GetSewerageRoomById",
+        "$id": "8"
+      },
+      {
+        "_position": {
+          "x": 1741.649,
+          "y": 333.2514
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_OpenSceneForRoom",
+        "$id": "9"
+      },
+      {
+        "_inputPortValues": {
+          "id": {
+            "$content": "under_bridge_entry",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1828.193,
+          "y": 692.0215
+        },
+        "$type": "PunchClub2.FlowCanvas.Flow_GetWalkNodeById",
+        "$id": "10"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Once",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "== 0",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": ">= 1",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "7"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "sewerageRoom",
+        "_targetPortName": "room",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[UISewerageRoom, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "OnSceneIsReady",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "4"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "7"
+        },
+        "_targetNode": {
+          "$ref": "8"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "8"
+        },
+        "_targetNode": {
+          "$ref": "9"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "sewerageRoom",
+        "_targetPortName": "room",
+        "_sourceNode": {
+          "$ref": "8"
+        },
+        "_targetNode": {
+          "$ref": "9"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[UISewerageRoom, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      {
+        "_sourcePortName": "OnSceneIsReady",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "9"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "walkNode",
+        "_targetPortName": "transform",
+        "_sourceNode": {
+          "$ref": "10"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {}
+    }
+  }
+}

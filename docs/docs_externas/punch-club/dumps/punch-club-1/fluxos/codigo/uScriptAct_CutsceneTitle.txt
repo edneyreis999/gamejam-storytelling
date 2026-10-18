@@ -1,0 +1,52 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Cutscene title", "")]
+public class uScriptAct_CutsceneTitle : uScriptLogic
+{
+	private bool _finished;
+
+	private bool _do_finished;
+
+	public bool Finished => _finished;
+
+	public bool Out => true;
+
+	public void In([FriendlyName("Text", "")] string txt, [FriendlyName("Add delay", "")] float add_delay)
+	{
+		_finished = false;
+		SpeechBubbleGUI speechBubbleGUI = SpeechBubbleGUI.CreateSpeechBubble(GJL.L(txt), SpeechBubbleGUI.Type.CutsceneTitle, Vector2.zero, auto_dissappear: true, force_mirror_x: false, force_mirror_y: true);
+		if (speechBubbleGUI == null)
+		{
+			GJTimer.AddTimer(2.7f + add_delay, delegate
+			{
+				Debug.Log("Simulating speech bubble end");
+				_finished = true;
+			});
+		}
+		else
+		{
+			speechBubbleGUI.AddMoreTime(add_delay);
+			speechBubbleGUI.AddOnDestroyListener(delegate
+			{
+				_finished = true;
+			});
+		}
+	}
+
+	[Driven]
+	public bool DrivenFunc()
+	{
+		if (_do_finished)
+		{
+			return false;
+		}
+		if (_finished)
+		{
+			_do_finished = true;
+		}
+		return true;
+	}
+}

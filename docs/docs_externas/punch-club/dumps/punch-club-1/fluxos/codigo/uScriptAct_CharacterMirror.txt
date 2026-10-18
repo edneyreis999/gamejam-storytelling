@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Char: Mirror", "")]
+public class uScriptAct_CharacterMirror : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("CharGfx", "The CharacterGfx.")] CharacterGfx ch, [FriendlyName("Mirror", "")] bool mirror)
+	{
+		ch.SetMirror(mirror);
+	}
+}

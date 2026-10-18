@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Hero preset", "")]
+public class uScriptAct_SetHeroPreset : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Preset", "")] string n)
+	{
+		MainGame.me.SetCustomHeroPreset(n);
+	}
+}

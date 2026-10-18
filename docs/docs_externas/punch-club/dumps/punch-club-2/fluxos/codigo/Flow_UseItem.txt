@@ -1,0 +1,54 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Use Item", 0)]
+[Category("Game")]
+public class Flow_UseItem : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> itemId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			ItemDefinition data = GameBalance.Me.GetData<ItemDefinition>(itemId.value);
+			if (data == null)
+			{
+				Debug.LogError("No item with id:[" + itemId.value + "]");
+				@out.Call(flow);
+			}
+			else
+			{
+				MainGame.me.gameSave.playerData.AddGameReses(data.GameResOnApply);
+				MainGame.me.PlayerRes.Add(data.GameResOnApplyHidden);
+				float num = data.useTime.EvaluateInt();
+				if (num != 0f)
+				{
+					TimeManager.AddTimeWithAnimation((int)num);
+				}
+				if (!string.IsNullOrEmpty(data.flowScript))
+				{
+					GameScriptUtility.RunGlobalScript(data.flowScript);
+				}
+				if (data.useLazyExpressions != null)
+				{
+					foreach (LazyExpression useLazyExpression in data.useLazyExpressions)
+					{
+						useLazyExpression.EvaluateFloat();
+					}
+				}
+				@out.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		itemId = AddValueInput<string>("itemId");
+	}
+}

@@ -1,0 +1,37 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Update WGO GUI Element Visibility", 0)]
+[Category("Game")]
+public class Flow_UpdateWGOGUIElementVisibility : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<WGO> wgoInput;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			WGO wGO = WGOParamOrSelf(wgoInput);
+			if (wGO == null)
+			{
+				Debug.Log("#ss#Null WGO, can not update gui element visibility");
+				@out.Call(flow);
+			}
+			else
+			{
+				WGOCustomEventsHandler.UpdateGUIElement(wGO);
+				@out.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		wgoInput = AddValueInput<WGO>("wgoInput");
+	}
+}

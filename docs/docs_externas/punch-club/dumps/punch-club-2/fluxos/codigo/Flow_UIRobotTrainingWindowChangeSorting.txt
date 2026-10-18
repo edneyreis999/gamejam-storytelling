@@ -1,0 +1,51 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Robot Training Window Change Sorting", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIRobotTrainingWindowChangeSorting : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToDefault;
+
+	public override string name => "UI Robot Training Window Change Sorting" + (isToDefault.value ? "\nTo Default" : string.Empty);
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIRobotTrainingWindow uIRobotTrainingWindow = GUIElements.Get<UIRobotTrainingWindow>();
+			if (isToDefault.value)
+			{
+				if (uIRobotTrainingWindow.ScrollRect.TryGetComponent<GraphicRaycaster>(out var component))
+				{
+					Object.Destroy(component);
+				}
+				if (uIRobotTrainingWindow.ScrollRect.TryGetComponent<Canvas>(out var component2))
+				{
+					Object.Destroy(component2);
+				}
+				UITooltip.ChangeUITooltipSorting(isToDefault: true);
+			}
+			else
+			{
+				Canvas canvas = uIRobotTrainingWindow.ScrollRect.gameObject.AddComponent<Canvas>();
+				canvas.overrideSorting = true;
+				canvas.sortingOrder = 999;
+				uIRobotTrainingWindow.ScrollRect.gameObject.AddComponent<GraphicRaycaster>();
+				UITooltip.ChangeUITooltipSorting(isToDefault: false);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToDefault = AddValueInput<bool>("isToDefault".CapitalizeFirst());
+	}
+}

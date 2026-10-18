@@ -1,0 +1,74 @@
+using System;
+using System.Collections;
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Load Scene", "")]
+public class uScriptAct_LoadScene : uScriptLogic
+{
+	public enum SceneEffect
+	{
+		NoFade,
+		Glitch,
+		OnlyFadeIn
+	}
+
+	private bool _finished;
+
+	private bool _do_finished;
+
+	public bool Out => _finished;
+
+	protected IEnumerator OnSceneLoaded()
+	{
+		yield return new WaitForEndOfFrame();
+		_finished = true;
+		Debug.Log("OnSceneLoaded script");
+	}
+
+	public void In([FriendlyName("Scene name", "")] string scene_name, [FriendlyName("Effect", "")] SceneEffect effect = SceneEffect.NoFade, [FriendlyName("Fight", "")][DefaultValue(false)][SocketState(false, false)] bool is_fight_scene = false)
+	{
+		_do_finished = false;
+		_finished = false;
+		if (MainGame.me.gui_elements.game_map.marker != null)
+		{
+			MainGame.me.gui_elements.game_map.marker.StopAnyMovement();
+		}
+		DynamicScene.loading_fight_scene = is_fight_scene;
+		switch (effect)
+		{
+		case SceneEffect.NoFade:
+			LoadingScreen.LoadScene(scene_name, LoadingScreen.FadeType.FadeBoth);
+			break;
+		case SceneEffect.OnlyFadeIn:
+			LoadingScreen.LoadScene(scene_name, LoadingScreen.FadeType.OnlyFadeIn);
+			break;
+		case SceneEffect.Glitch:
+			MainGame.me.StartGlitchEffect(delegate
+			{
+				LoadingScreen.LoadScene(scene_name, LoadingScreen.FadeType.NoFade);
+			});
+			break;
+		}
+		DynamicScene.on_awaken = (GJCommons.VoidDelegate)Delegate.Combine(DynamicScene.on_awaken, (GJCommons.VoidDelegate)delegate
+		{
+			MainGame.me.StartCoroutine(OnSceneLoaded());
+		});
+	}
+
+	[Driven]
+	public bool DrivenFunc()
+	{
+		if (_do_finished)
+		{
+			return false;
+		}
+		if (_finished)
+		{
+			_do_finished = true;
+		}
+		return true;
+	}
+}

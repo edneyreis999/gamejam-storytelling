@@ -1,0 +1,44 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI School Selection Object\nAdd Event To Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UISchoolSelectionObjectButtonAddEvent : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			SchoolSelectionWindow window = GUIElements.Get<SchoolSelectionWindow>();
+			Button tutorialButton = window.TutorialSchoolObject.Button;
+			window.SortButtonTipsOverTutorialWindow();
+			window.LockPressBack = true;
+			window.TutorialGamepadNavigation = true;
+			window.OnInputSourceChanged();
+			UIElementsCustomEventHandlerManager.AddEvent(tutorialButton, UITutorialArrow.SignOrientationType.Right, delegate
+			{
+				window.ReturnDefaultButtonTipsSorting();
+				window.LockPressBack = false;
+				window.TutorialGamepadNavigation = false;
+				window.OnInputSourceChanged();
+				onClicked.Call(flow);
+				tutorialButton.GetComponent<GamepadNavigationItem>().SyncOnSelectWithButton();
+			});
+			tutorialButton.GetComponent<GamepadNavigationItem>().SyncOnSelectWithButton();
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+}

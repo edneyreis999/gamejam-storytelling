@@ -1,0 +1,58 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Story Tree Invisible If Revealed or Visible", 0)]
+[Category("Game/Story Tree")]
+[Icon("FS", false, "")]
+public class Flow_SetStoryHiddenIfRevealed : PC2CustomFlowNode
+{
+	[ShowIf("severalIds", 1)]
+	public List<string> severalIdsList = new List<string>();
+
+	[GatherPortsCallback]
+	public bool severalIds;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> questId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), SetQuestStatus);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (!severalIds)
+		{
+			questId = AddValueInput<string>("Quest Id");
+		}
+	}
+
+	private void SetQuestStatus(Flow flow)
+	{
+		if (severalIds)
+		{
+			for (int i = 0; i < severalIdsList.Count; i++)
+			{
+				Quest orCreateQuest = MainGame.me.gameSave.knowledgeSystem.GetOrCreateQuest(severalIdsList[i]);
+				if (orCreateQuest != null && (orCreateQuest.state == QuestState.Revealed || orCreateQuest.state == QuestState.Visible))
+				{
+					KnowledgeSystemManager.SetQuestStatus(severalIdsList[i], QuestState.Invisible, silent: true);
+				}
+			}
+		}
+		else
+		{
+			Quest orCreateQuest2 = MainGame.me.gameSave.knowledgeSystem.GetOrCreateQuest(questId.value);
+			if (orCreateQuest2 != null && (orCreateQuest2.state == QuestState.Revealed || orCreateQuest2.state == QuestState.Visible))
+			{
+				KnowledgeSystemManager.SetQuestStatus(questId.value, QuestState.Invisible, silent: true);
+			}
+		}
+		@out.Call(flow);
+	}
+}

@@ -1,0 +1,62 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Say", "")]
+public class uScriptAct_Say : uScriptLogic
+{
+	private bool _finished;
+
+	private bool _do_finished;
+
+	private SpeechBubbleGUI sp;
+
+	public bool Finished => _finished;
+
+	public bool Immediate => true;
+
+	public void In([FriendlyName("GameObj", "")] string name, [FriendlyName("Think", "")][DefaultValue(false)][SocketState(false, false)] bool think, [FriendlyName("Text", "")] string txt, [FriendlyName("Mirr X", "")][DefaultValue(false)][SocketState(false, false)] bool force_mirror_x, [FriendlyName("Mirr Y", "")][DefaultValue(false)][SocketState(false, false)] bool force_mirror_y, [FriendlyName("Add delay", "")][DefaultValue(0)][SocketState(false, false)] float add_delay = 0f)
+	{
+		_finished = false;
+		GameObject gameObject = GameObject.Find(name);
+		if (gameObject == null)
+		{
+			Debug.LogError("GameObject '" + name + "' not found!");
+			_finished = true;
+			return;
+		}
+		Debug.Log("Say " + txt + ", object: " + name + ", pos: " + gameObject.transform.position, gameObject);
+		sp = SpeechBubbleGUI.CreateSpeechBubble(GJL.L(txt), think ? SpeechBubbleGUI.Type.Think : SpeechBubbleGUI.Type.Speak, gameObject.transform.position / 2f, auto_dissappear: true, force_mirror_x, force_mirror_y);
+		if (sp == null)
+		{
+			GJTimer.AddTimer(2.7f + add_delay, delegate
+			{
+				Debug.Log("Simulating speech bubble end");
+				_finished = true;
+			});
+		}
+		else
+		{
+			sp.AddMoreTime(add_delay);
+			sp.AddOnDestroyListener(delegate
+			{
+				_finished = true;
+			});
+		}
+	}
+
+	[Driven]
+	public bool DrivenFunc()
+	{
+		if (_do_finished)
+		{
+			return false;
+		}
+		if (_finished)
+		{
+			_do_finished = true;
+		}
+		return true;
+	}
+}

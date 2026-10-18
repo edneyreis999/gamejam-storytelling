@@ -1,0 +1,66 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Set Tutorial Gamepad Navigation", 0)]
+[Category("Game/Tutorial")]
+public class Flow_SetTutorialGamepadNavigation : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> windowName;
+
+	public bool isOsrTutorial;
+
+	public bool focusOnFirstActive;
+
+	[GatherPortsCallback]
+	public bool isEnable;
+
+	[GatherPortsCallback]
+	[ShowIf("isEnable", 1)]
+	public bool lockPressBack = true;
+
+	public override string name => (isEnable ? "Enable " : "Disable ") + "UI " + windowName.value + "\n Tutorial Gamepad Navigation";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			BaseGUI byName = GUIElements.GetByName<BaseGUI>(windowName.value);
+			byName.TutorialGamepadNavigation = isEnable;
+			if (byName is UITechWindow uITechWindow)
+			{
+				uITechWindow.isOsrTutorial = isOsrTutorial;
+			}
+			if (!isEnable)
+			{
+				lockPressBack = false;
+			}
+			byName.LockPressBack = lockPressBack;
+			if (LazyInput.IsGamepadActive)
+			{
+				if (isEnable)
+				{
+					byName.GamepadNavigationController.Enable(focusOnFirstActive);
+				}
+				else if (byName.IsShown)
+				{
+					byName.GamepadNavigationController.Enable(focusOnFirstActive);
+				}
+			}
+			if (!isEnable)
+			{
+				byName.UnlockAllGamepadNavigationDirections();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		windowName = AddValueInput<string>("windowName");
+	}
+}

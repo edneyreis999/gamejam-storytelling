@@ -1,0 +1,122 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Param Compare", 0)]
+[Category("Game")]
+public class Flow_GameResCompare : PC2CustomFlowNode
+{
+	public enum ObjectCompareType
+	{
+		Player,
+		WGO
+	}
+
+	public enum GetWGOType
+	{
+		ByString,
+		ByObject
+	}
+
+	[GatherPortsCallback]
+	public ObjectCompareType objectCompareType;
+
+	[ShowIf("objectCompareType", 1)]
+	[GatherPortsCallback]
+	public GetWGOType getWgoType = GetWGOType.ByObject;
+
+	private FlowInput @in;
+
+	private FlowOutput equally;
+
+	private FlowOutput notEqually;
+
+	private FlowOutput more;
+
+	private FlowOutput less;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueInput<string> wgoId;
+
+	private ValueInput<string> paramName;
+
+	private ValueInput<float> compareValue;
+
+	public override string name => $"{base.name} on {objectCompareType}";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Compare);
+		equally = AddFlowOutput("==");
+		notEqually = AddFlowOutput("!=");
+		more = AddFlowOutput(">");
+		less = AddFlowOutput("<");
+		if (objectCompareType == ObjectCompareType.WGO)
+		{
+			switch (getWgoType)
+			{
+			case GetWGOType.ByString:
+				wgoId = AddValueInput<string>("wgoId");
+				break;
+			case GetWGOType.ByObject:
+				wgo = AddValueInput<WGO>("WGO");
+				break;
+			}
+		}
+		paramName = AddValueInput<string>("paramName".CapitalizeFirst());
+		compareValue = AddValueInput<float>("compareValue".CapitalizeFirst());
+	}
+
+	private void Compare(Flow flow)
+	{
+		float num = 0f;
+		switch (objectCompareType)
+		{
+		case ObjectCompareType.Player:
+			num = MainGame.me.PlayerRes.Get(paramName.value);
+			break;
+		case ObjectCompareType.WGO:
+			switch (getWgoType)
+			{
+			case GetWGOType.ByObject:
+			{
+				WGO wGO = WGOParamOrSelf(wgo);
+				if (wGO != null)
+				{
+					num = wGO.WgoState.gameRes.Get(paramName.value);
+				}
+				else
+				{
+					Debug.LogError("Tried to get GameRes value from WGOState");
+				}
+				break;
+			}
+			case GetWGOType.ByString:
+				num = MainGame.me.gameSave.worldData.GetWGOParamValue(wgoId.value, paramName.value);
+				break;
+			}
+			break;
+		}
+		if (Math.Abs(num - compareValue.value) < 0.0001f)
+		{
+			equally.Call(flow);
+		}
+		else
+		{
+			notEqually.Call(flow);
+		}
+		if (num > compareValue.value)
+		{
+			more.Call(flow);
+		}
+		if (num < compareValue.value)
+		{
+			less.Call(flow);
+		}
+	}
+}

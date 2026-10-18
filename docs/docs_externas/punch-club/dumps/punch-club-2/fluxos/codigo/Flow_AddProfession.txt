@@ -1,0 +1,46 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Add Profession", 0)]
+[Category("Game")]
+public class Flow_AddProfession : PC2CustomFlowNode
+{
+	public bool notRunDutyScript;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> professionId;
+
+	private ValueInput<bool> startWhenCreate;
+
+	private ValueInput<bool> startOnSchedule;
+
+	private ValueInput<bool> isDutyFirst;
+
+	private ValueOutput<bool> startInstant;
+
+	private bool canStartInstant;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			canStartInstant = startWhenCreate.value && MainGame.me.gameSave.professionSystem.IsDutyTime(GameBalance.Me.GetData<ProfessionDefinition>(professionId.value));
+			MainGame.me.gameSave.professionSystem.AddProfession(professionId.value, startWhenCreate.value, notRunDutyScript, isDutyFirst.value, startOnSchedule.value);
+			MainGame.me.PlayerRes.Set(GameBalance.Me.GetData<ProfessionDefinition>(professionId.value).socializationRes, ConstsDefinition.Get("prof_start_soc").IntValue);
+			DynamicScene.current.UpdateProfessionWidgetState();
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		professionId = AddValueInput<string>("professionId".CapitalizeFirst());
+		startWhenCreate = AddValueInput<bool>("startWhenCreate".CapitalizeFirst());
+		startOnSchedule = AddValueInput<bool>("startOnSchedule".CapitalizeFirst());
+		isDutyFirst = AddValueInput<bool>("isDutyFirst".CapitalizeFirst());
+		startInstant = AddValueOutput("startInstant", () => canStartInstant);
+	}
+}

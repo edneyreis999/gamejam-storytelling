@@ -1,0 +1,54 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Show Hints For Abilities", 0)]
+[Category("Game/Tutorial")]
+[Description("Shows hints for abilities in PrefightWindow for tutorial")]
+public class Flow_ShowAbilitiesHints : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToShow;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> attackHint;
+
+	private ValueInput<string> defenceHint;
+
+	private ValueInput<string> perkHint;
+
+	public override string name => (isToShow ? "Show" : "Hide") + " Hints For Abilities";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UICharacterAbilities playerAbilities = GUIElements.Get<UIPrepareFightWindow>().PlayerAbilities;
+			if (isToShow)
+			{
+				UITutorialHint.ShowOnButton(playerAbilities.Attacks[0].Button, attackHint.value);
+				UITutorialHint.ShowOnButton(playerAbilities.Defences[0].Button, defenceHint.value);
+				UITutorialHint.ShowOnButton(playerAbilities.Perks[0].Button, perkHint.value);
+			}
+			else
+			{
+				UITutorialHint.HideOnButton(playerAbilities.Attacks[0].Button);
+				UITutorialHint.HideOnButton(playerAbilities.Defences[0].Button);
+				UITutorialHint.HideOnButton(playerAbilities.Perks[0].Button);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isToShow)
+		{
+			attackHint = AddValueInput<string>("attackHint");
+			defenceHint = AddValueInput<string>("defenceHint");
+			perkHint = AddValueInput<string>("perkHint");
+		}
+	}
+}

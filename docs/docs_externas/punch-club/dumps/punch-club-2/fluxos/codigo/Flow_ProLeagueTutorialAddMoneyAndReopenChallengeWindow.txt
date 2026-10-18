@@ -1,0 +1,31 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("Pro League Tutorial Add Money & Reopen Challenge Window", 0)]
+[Category("Game/UI")]
+public class Flow_ProLeagueTutorialAddMoneyAndReopenChallengeWindow : PC2CustomFlowNode
+{
+	public bool isToShow;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIFightChallengeWindow uIFightChallengeWindow = GUIElements.Get<UIFightChallengeWindow>();
+			int price = uIFightChallengeWindow.Price;
+			int num = MainGame.me.PlayerRes.GetInt("_money");
+			MainGame.me.PlayerRes.Add("_money", Math.Abs(price) - num + 20);
+			uIFightChallengeWindow.Show(uIFightChallengeWindow.Player, uIFightChallengeWindow.Opponent, uIFightChallengeWindow.Price, uIFightChallengeWindow.OnFight, uIFightChallengeWindow.OnCancel);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,56 @@
+using System;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+[Name("Talk PipBoy Tooltip", 0)]
+[Category("Game/Dialogue")]
+public sealed class Flow_TalkPipBoyTooltip : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private ValueInput<string> wgoId;
+
+	private ValueInput<string> text;
+
+	private ValueInput<SpeechBubbleType> speechType;
+
+	private ValueOutput<string> wgoIdOutput;
+
+	private Flow flow;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			this.flow = flow;
+			Action onDisappeared = OnFinished;
+			UITooltipPipBoy.EnableVoice();
+			string value = text.value;
+			SpeechBubbleType value2 = speechType.value;
+			Transform speechBubble = UITooltipPipBoy.SpeechBubble;
+			int hashCode = speechBubble.GetHashCode();
+			VoiceID voiceId = new VoiceID(GameBalance.Me.GetData<WGODefinition>(wgoId.value).voiceId);
+			Bubble.ShowSpeechBubble(hashCode, value, voiceId, speechBubble, value2, isPlayer: false, onDisappeared, UITooltipPipBoy.DisableVoice, worldToScreen: false);
+			@out.Call(flow);
+		});
+		wgoId = AddValueInput<string>("WGO ID");
+		text = AddValueInput<string>("text");
+		speechType = AddValueInput<SpeechBubbleType>("Speech type");
+		speechType.SetDefaultAndSerializedValue(SpeechBubbleType.Speech);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		wgoIdOutput = AddValueOutput("WGO ID", () => wgoId.value);
+	}
+
+	private void OnFinished()
+	{
+		onFinished.Call(flow);
+	}
+}

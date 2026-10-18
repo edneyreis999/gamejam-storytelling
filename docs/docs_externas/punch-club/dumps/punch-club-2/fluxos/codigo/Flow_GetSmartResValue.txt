@@ -1,0 +1,83 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Smart Res Value", 0)]
+[Category("Game")]
+public class Flow_GetSmartResValue : PC2CustomFlowNode
+{
+	public enum ObjectType
+	{
+		Player,
+		WGO
+	}
+
+	public enum GetWGOType
+	{
+		ByString,
+		ByObject
+	}
+
+	[GatherPortsCallback]
+	public ObjectType objectType;
+
+	[ShowIf("objectType", 1)]
+	[GatherPortsCallback]
+	public GetWGOType getWgoType;
+
+	private ValueInput<string> id;
+
+	private ValueOutput<float> smartResValue;
+
+	private ValueInput<string> wgoId;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueOutput<WGO> outWGO;
+
+	private WGO outWGOStored;
+
+	protected override void RegisterPorts()
+	{
+		id = AddValueInput<string>("id");
+		if (objectType == ObjectType.WGO)
+		{
+			switch (getWgoType)
+			{
+			case GetWGOType.ByString:
+				wgoId = AddValueInput<string>("wgoId");
+				break;
+			case GetWGOType.ByObject:
+				wgo = AddValueInput<WGO>("wgo");
+				outWGO = AddValueOutput("outWGO", () => outWGOStored);
+				break;
+			}
+		}
+		smartResValue = AddValueOutput("smartResValue", delegate
+		{
+			switch (objectType)
+			{
+			case ObjectType.Player:
+				return MainGame.me.PlayerRes.Get(id.value);
+			case ObjectType.WGO:
+				switch (getWgoType)
+				{
+				case GetWGOType.ByString:
+					return MainGame.me.gameSave.worldData.GetWGOParamValue(wgoId.value, id.value);
+				case GetWGOType.ByObject:
+					outWGOStored = wgo.value;
+					if (outWGOStored != null)
+					{
+						return MainGame.me.gameSave.worldData.GetWGOParamValue(outWGOStored.Id, id.value);
+					}
+					Debug.LogError("WGO is null");
+					break;
+				}
+				break;
+			}
+			return 0f;
+		});
+	}
+}

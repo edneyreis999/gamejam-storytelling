@@ -1,0 +1,147 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using PunchClub2.FlowCanvasNodes;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Change WGO State", 0)]
+[Category("Game/WGO")]
+public class Flow_ChangeWGOState : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isOnActiveScene = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> wgoId;
+
+	private ValueInput<string> sceneName;
+
+	private ValueInput<bool> isActive;
+
+	[GatherPortsCallback]
+	public Flow_SetGameResToObject.GameResGiveType giveType = Flow_SetGameResToObject.GameResGiveType.Add;
+
+	private ValueInput<List<GameResAtom>> gameResAtoms;
+
+	[GatherPortsCallback]
+	public Flow_SetGameResToObject.GetWGOType getWgoType;
+
+	private new ValueInput<WGO> wgo;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			WGOState wGOState = null;
+			switch (getWgoType)
+			{
+			case Flow_SetGameResToObject.GetWGOType.ByObject:
+			{
+				WGO wGO = WGOParamOrSelf(wgo);
+				if (wGO != null)
+				{
+					wGOState = wGO.WgoState;
+				}
+				break;
+			}
+			case Flow_SetGameResToObject.GetWGOType.ByString:
+				wGOState = MainGame.me.gameSave.worldData.GetWGOState(wgoId.value);
+				break;
+			}
+			if (wGOState == null)
+			{
+				wGOState = MainGame.me.gameSave.worldData.CreateWGOState(wgoId.value, new List<ActiveOnScene>
+				{
+					new ActiveOnScene(isOnActiveScene ? DynamicScene.current.SceneName : sceneName.value, isActive.value)
+				});
+			}
+			else if (isOnActiveScene)
+			{
+				wGOState.SetStateOnScene(DynamicScene.current.SceneName, isActive.value);
+			}
+			else
+			{
+				wGOState.SetStateOnScene(sceneName.value, isActive.value);
+			}
+			switch (giveType)
+			{
+			case Flow_SetGameResToObject.GameResGiveType.Set:
+			{
+				GameRes gameRes2 = new GameRes();
+				if (gameResAtoms.value != null)
+				{
+					foreach (GameResAtom item in gameResAtoms.value)
+					{
+						gameRes2.List.Add(item);
+					}
+				}
+				foreach (GameResAtom item2 in gameRes2.List)
+				{
+					wGOState.gameRes.Set(item2.type, item2.value);
+				}
+				break;
+			}
+			case Flow_SetGameResToObject.GameResGiveType.Add:
+			{
+				GameRes gameRes = new GameRes();
+				if (gameResAtoms.value != null)
+				{
+					foreach (GameResAtom item3 in gameResAtoms.value)
+					{
+						gameRes.List.Add(item3);
+					}
+				}
+				foreach (GameResAtom item4 in gameRes.List)
+				{
+					wGOState.gameRes.Add(item4.type, item4.value);
+				}
+				break;
+			}
+			}
+			switch (getWgoType)
+			{
+			case Flow_SetGameResToObject.GetWGOType.ByObject:
+			{
+				WGO wGO3 = WGOParamOrSelf(wgo);
+				if (wGO3 != null)
+				{
+					wGO3.HandleWGOState();
+				}
+				break;
+			}
+			case Flow_SetGameResToObject.GetWGOType.ByString:
+			{
+				WGO wGO2 = DynamicScene.FindWGO(wgoId.value);
+				if (wGO2 != null)
+				{
+					wGO2.HandleWGOState();
+				}
+				break;
+			}
+			}
+			@out.Call(flow);
+		});
+		switch (getWgoType)
+		{
+		case Flow_SetGameResToObject.GetWGOType.ByObject:
+			wgo = AddValueInput<WGO>("WGO");
+			break;
+		case Flow_SetGameResToObject.GetWGOType.ByString:
+			wgoId = AddValueInput<string>("wgoId");
+			break;
+		}
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (!isOnActiveScene)
+		{
+			sceneName = AddValueInput<string>("sceneName");
+		}
+		isActive = AddValueInput<bool>("isActive".CapitalizeFirst());
+		gameResAtoms = AddValueInput<List<GameResAtom>>("gameResAtoms".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,260 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": 3347276760984879919,
+  "serialized_graph_sha256": "580d3e471675185e19732cc6d1cea5500d1b757ee52eea7e3c33465a774254b9",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "PoliceOfficeDocsTable",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"eventName\":{\"_value\":\"interaction\"},\"target\":{},\"targets\":{},\"_position\":{\"x\":90.0,\"y\":470.0},\"$type\":\"PunchClub2.FlowCanvas.CustomLazyEvent\",\"$id\":\"0\"},{\"isToStart\":true,\"_inputPortValues\":{\"actionId\":{\"$content\":\"police_work_docs\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1017.0,\"y\":474.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_StartProfessionAction\",\"$id\":\"1\"},{\"eventName\":{\"_value\":\"event_ii_pol3__docs\"},\"target\":{},\"targets\":{},\"_position\":{\"x\":84.0,\"y\":901.0},\"$type\":\"PunchClub2.FlowCanvas.CustomLazyEvent\",\"$id\":\"2\"},{\"_position\":{\"x\":534.0,\"y\":896.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetControlActive\",\"$id\":\"3\"},{\"isToStart\":true,\"overwriteCyclesCount\":true,\"ignoreTime\":true,\"ignoreChecks\":true,\"_inputPortValues\":{\"actionId\":{\"$content\":\"police_work_docs\",\"$type\":\"System.String\"}},\"_position\":{\"x\":725.6666,\"y\":895.3334},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_StartProfessionAction\",\"$id\":\"4\"},{\"_inputPortValues\":{\"scriptName\":{\"$content\":\"Event_II-Pol3BecomeAPoliceman\",\"$type\":\"System.String\"},\"eventName\":{\"$content\":\"CompleteDocs\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1239.0,\"y\":897.0},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_FireEventOnGlobalScript\",\"$id\":\"5\"},{\"_position\":{\"x\":375.0,\"y\":653.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_GetPoliceWorkDocsBubbleNodes\",\"$id\":\"6\"},{\"_position\":{\"x\":65.0,\"y\":1073.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_GetPoliceWorkDocsBubbleNodes\",\"$id\":\"7\"},{\"_inputPortValues\":{\"ActionId\":{\"$content\":\"police_work_docs\",\"$type\":\"System.String\"}},\"_position\":{\"x\":385.0,\"y\":1117.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_GetCyclesCountForOneProfAction\",\"$id\":\"8\"}],\"connections\":[{\"_sourcePortName\":\"Received\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Received\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"OnFinished\",\"_targetPortName\":\"in\",\"_sourceNode\":{\"$ref\":\"4\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"BubbleNodes\",\"_targetPortName\":\"showParamBubbleNodes\",\"_sourceNode\":{\"$ref\":\"6\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.Collections.Generic.List`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"},{\"_sourcePortName\":\"BubbleNodes\",\"_targetPortName\":\"showParamBubbleNodesPlayer\",\"_sourceNode\":{\"$ref\":\"6\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.Collections.Generic.List`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"},{\"_sourcePortName\":\"BubbleNodes\",\"_targetPortName\":\"showParamBubbleNodes\",\"_sourceNode\":{\"$ref\":\"7\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.Collections.Generic.List`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"},{\"_sourcePortName\":\"BubbleNodes\",\"_targetPortName\":\"showParamBubbleNodesPlayer\",\"_sourceNode\":{\"$ref\":\"7\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.Collections.Generic.List`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"},{\"_sourcePortName\":\"CyclesCount\",\"_targetPortName\":\"cyclesCount\",\"_sourceNode\":{\"$ref\":\"8\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": 498.0,
+        "y": -34.0
+      },
+      "_zoomFactor": 0.5497296452522278
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "eventName": {
+          "_value": "interaction"
+        },
+        "target": {},
+        "targets": {},
+        "_position": {
+          "x": 90.0,
+          "y": 470.0
+        },
+        "$type": "PunchClub2.FlowCanvas.CustomLazyEvent",
+        "$id": "0"
+      },
+      {
+        "isToStart": true,
+        "_inputPortValues": {
+          "actionId": {
+            "$content": "police_work_docs",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1017.0,
+          "y": 474.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_StartProfessionAction",
+        "$id": "1"
+      },
+      {
+        "eventName": {
+          "_value": "event_ii_pol3__docs"
+        },
+        "target": {},
+        "targets": {},
+        "_position": {
+          "x": 84.0,
+          "y": 901.0
+        },
+        "$type": "PunchClub2.FlowCanvas.CustomLazyEvent",
+        "$id": "2"
+      },
+      {
+        "_position": {
+          "x": 534.0,
+          "y": 896.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetControlActive",
+        "$id": "3"
+      },
+      {
+        "isToStart": true,
+        "overwriteCyclesCount": true,
+        "ignoreTime": true,
+        "ignoreChecks": true,
+        "_inputPortValues": {
+          "actionId": {
+            "$content": "police_work_docs",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 725.6666,
+          "y": 895.3334
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_StartProfessionAction",
+        "$id": "4"
+      },
+      {
+        "_inputPortValues": {
+          "scriptName": {
+            "$content": "Event_II-Pol3BecomeAPoliceman",
+            "$type": "System.String"
+          },
+          "eventName": {
+            "$content": "CompleteDocs",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1239.0,
+          "y": 897.0
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_FireEventOnGlobalScript",
+        "$id": "5"
+      },
+      {
+        "_position": {
+          "x": 375.0,
+          "y": 653.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_GetPoliceWorkDocsBubbleNodes",
+        "$id": "6"
+      },
+      {
+        "_position": {
+          "x": 65.0,
+          "y": 1073.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_GetPoliceWorkDocsBubbleNodes",
+        "$id": "7"
+      },
+      {
+        "_inputPortValues": {
+          "ActionId": {
+            "$content": "police_work_docs",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 385.0,
+          "y": 1117.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_GetCyclesCountForOneProfAction",
+        "$id": "8"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Received",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Received",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "OnFinished",
+        "_targetPortName": "in",
+        "_sourceNode": {
+          "$ref": "4"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "BubbleNodes",
+        "_targetPortName": "showParamBubbleNodes",
+        "_sourceNode": {
+          "$ref": "6"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.Collections.Generic.List`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      },
+      {
+        "_sourcePortName": "BubbleNodes",
+        "_targetPortName": "showParamBubbleNodesPlayer",
+        "_sourceNode": {
+          "$ref": "6"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.Collections.Generic.List`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      },
+      {
+        "_sourcePortName": "BubbleNodes",
+        "_targetPortName": "showParamBubbleNodes",
+        "_sourceNode": {
+          "$ref": "7"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.Collections.Generic.List`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      },
+      {
+        "_sourcePortName": "BubbleNodes",
+        "_targetPortName": "showParamBubbleNodesPlayer",
+        "_sourceNode": {
+          "$ref": "7"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.Collections.Generic.List`1[[UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      },
+      {
+        "_sourcePortName": "CyclesCount",
+        "_targetPortName": "cyclesCount",
+        "_sourceNode": {
+          "$ref": "8"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {}
+    }
+  }
+}

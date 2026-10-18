@@ -1,0 +1,24 @@
+using System;
+
+[NodeAutoAssignMasterInstance(true)]
+[NodePath("Events/Application Events")]
+[NodeCopyright("Copyright 2011 by Detox Studios LLC")]
+[NodeToolTip("Fires an event signal when the application is going to quit.")]
+[NodeAuthor("Detox Studios LLC", "http://www.detoxstudios.com")]
+[NodeHelp("http://docs.uscript.net/#3-Working_With_uScript/3.4-Nodes.htm")]
+[FriendlyName("Application Quit", "Fires an event signal when the application is going to quit.")]
+public class uScript_ApplicationQuit : uScriptEvent
+{
+	public delegate void uScriptEventHandler(object sender, EventArgs args);
+
+	[FriendlyName("On Quit")]
+	public event uScriptEventHandler QuitEvent;
+
+	private void OnApplicationQuit()
+	{
+		if (this.QuitEvent != null)
+		{
+			this.QuitEvent(this, new EventArgs());
+		}
+	}
+}

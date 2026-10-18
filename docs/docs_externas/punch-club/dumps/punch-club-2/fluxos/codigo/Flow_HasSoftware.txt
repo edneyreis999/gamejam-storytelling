@@ -1,0 +1,40 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Has Software", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_HasSoftware : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	private ValueInput<string> software;
+
+	private ValueOutput<bool> has;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (MainGame.me.gameSave.playerData.HasSoftware(software.value))
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+		software = AddValueInput<string>("software".CapitalizeFirst());
+		has = AddValueOutput("has", () => MainGame.me.gameSave.playerData.HasSoftware(software.value));
+	}
+}

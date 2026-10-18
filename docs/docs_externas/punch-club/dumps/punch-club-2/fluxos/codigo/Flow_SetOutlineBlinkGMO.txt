@@ -1,0 +1,49 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set Outline Blink To GMO", 0)]
+[Category("Game")]
+public class Flow_SetOutlineBlinkGMO : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinish;
+
+	private ValueInput<GameMapObject> gameMapObject;
+
+	private ValueInput<float> time;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), SetOutlineBlink);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinish = AddFlowOutput("onFinish".CapitalizeFirst());
+		gameMapObject = AddValueInput<GameMapObject>("gameMapObject".CapitalizeFirst());
+		time = AddValueInput<float>("time".CapitalizeFirst());
+	}
+
+	private void SetOutlineBlink(Flow flow)
+	{
+		GameMapObject value = gameMapObject.value;
+		if (value != null)
+		{
+			value.BlinkOutline(time.value);
+		}
+		else
+		{
+			Debug.LogError("Tried to SetOutLineBlink to null GMO");
+		}
+		LazyTimer.AddTimer(time.value, delegate
+		{
+			onFinish.Call(flow);
+		});
+		@out.Call(flow);
+	}
+}

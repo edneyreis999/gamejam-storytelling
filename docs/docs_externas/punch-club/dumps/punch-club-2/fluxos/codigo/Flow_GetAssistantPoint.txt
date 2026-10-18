@@ -1,0 +1,49 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+[Name("Get Assistant Point", 0)]
+[Category("Game/UI")]
+public class Flow_GetAssistantPoint : PC2CustomFlowNode
+{
+	public enum UIType
+	{
+		VendorWindow,
+		UIStatChangeWindow,
+		RobotCustomizationWindow,
+		VendorWindow2,
+		FakeDLCCredits
+	}
+
+	private ValueInput<UIType> uiType;
+
+	private ValueOutput<RectTransform> point;
+
+	protected override void RegisterPorts()
+	{
+		uiType = AddValueInput<UIType>("uiType");
+		point = AddValueOutput("point", delegate
+		{
+			RectTransform result = null;
+			switch (uiType.value)
+			{
+			case UIType.VendorWindow:
+				result = GUIElements.Get<UIVendorWindow>().AssistantPosition;
+				break;
+			case UIType.UIStatChangeWindow:
+				result = GUIElements.Get<UIStatChangeWindow>().TutorialPoint;
+				break;
+			case UIType.RobotCustomizationWindow:
+				result = GUIElements.Get<UIRobotCustomizationWindow>().TutorialPoint;
+				break;
+			case UIType.VendorWindow2:
+				result = GUIElements.Get<UIVendorWindow>().AssistantPosition2;
+				break;
+			case UIType.FakeDLCCredits:
+				result = GUIElements.Get<DLC1Credits>().TutorialPoint;
+				break;
+			}
+			return result;
+		});
+	}
+}

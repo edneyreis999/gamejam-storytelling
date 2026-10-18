@@ -1,0 +1,70 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Add Event To Customization Detail", 0)]
+[Category("Game/Tutorial")]
+public class Flow_AddEventToCustomizationDetail : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput onClicked;
+
+	private FlowOutput @out;
+
+	private List<string> availableRobotParts = new List<string>
+	{
+		"robot_detail_hands_250", "robot_detail_hands_252", "robot_detail_hands_253", "robot_detail_hands_254", "robot_detail_hands_255", "robot_detail_legs_250", "robot_detail_legs_252", "robot_detail_legs_253", "robot_detail_legs_254", "robot_detail_legs_255",
+		"robot_detail_top_250", "robot_detail_top_252", "robot_detail_top_253", "robot_detail_top_254", "robot_detail_top_255"
+	};
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIRobotCustomizationWindow customizationWindow = GUIElements.Get<UIRobotCustomizationWindow>();
+			UIRobotCustomizationDetail detailByType = customizationWindow.GetDetailByType(GetUnlockedDetailType());
+			if (!(detailByType == null))
+			{
+				GamepadNavigationItem component = detailByType.GetComponent<GamepadNavigationItem>();
+				customizationWindow.LockPressBack = true;
+				customizationWindow.TutorialGamepadNavigation = true;
+				customizationWindow.CustomItems = new List<GamepadNavigationItem> { component };
+				customizationWindow.SortButtonTipsOverTutorialWindow();
+				customizationWindow.OnInputSourceChanged();
+				UIElementsCustomEventHandlerManager.AddEvent(detailByType.Button, UITutorialArrow.SignOrientationType.Right, delegate
+				{
+					TutorialAction();
+				});
+				@out.Call(flow);
+			}
+			void TutorialAction()
+			{
+				customizationWindow.TutorialGamepadNavigation = false;
+				customizationWindow.LockPressBack = false;
+				customizationWindow.CustomItems = null;
+				customizationWindow.ReturnDefaultButtonTipsSorting();
+				customizationWindow.OnInputSourceChanged();
+				onClicked.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+
+	private string GetUnlockedDetailType()
+	{
+		foreach (string availableRobotPart in availableRobotParts)
+		{
+			if (InventoryUtils.HasItemInInventory(availableRobotPart))
+			{
+				return availableRobotPart;
+			}
+		}
+		return string.Empty;
+	}
+}

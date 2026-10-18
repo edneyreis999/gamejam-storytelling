@@ -1,0 +1,96 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Move Scholars to bench point", 0)]
+[Category("Game/MickGym")]
+public class Flow_MoveScholarsToBench : PC2CustomFlowNode, ICursorChanger
+{
+	private static readonly int state = Animator.StringToHash("State");
+
+	public bool moveToTp = true;
+
+	public bool lockControl = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private List<WGO> comingScholars;
+
+	private bool allAdded;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			comingScholars = new List<WGO>();
+			if (lockControl)
+			{
+				PlayerController.Instance.ChangeControls(ControlState.ByMovingScholars, isEnabled: false);
+				CursorController.AddCursorState(CursorType.Waiting, this);
+			}
+			for (int i = 0; i < LazyConsts.mickScholarsIds.Count; i++)
+			{
+				WGO scholar = DynamicScene.FindWGO(LazyConsts.mickScholarsIds[i]);
+				if (scholar.WgoState.GetStateOnScene("MikesOldHouse", out var isActive) && isActive)
+				{
+					comingScholars.Add(scholar);
+					int index = i;
+					bool flag = (Vector2)scholar.transform.position == (Vector2)DynamicScene.FindWalkNode(LazyConsts.mickScholarsBenchPointsIds[index] ?? "").transform.position;
+					string nodeId = ((!moveToTp || flag) ? (LazyConsts.mickScholarsBenchPointsIds[index] ?? "") : (LazyConsts.mickScholarsBenchPointsIds[index] + "_tp"));
+					Vector3 nodePos = DynamicScene.FindWalkNode(nodeId).transform.position;
+					scholar.Movement.Stop();
+					if ((Vector2)scholar.transform.position == (Vector2)nodePos)
+					{
+						LazyTimer.AddTimer(0f, delegate
+						{
+							CheckAllComes(scholar, flow);
+						});
+					}
+					else
+					{
+						int i3 = i;
+						LazyTimer.AddTimer(0f, delegate
+						{
+							int i4 = i3;
+							scholar.Move(nodePos, MovementComponent.MovementType.AStar, delegate
+							{
+								scholar.SetPosition(DynamicScene.FindWalkNode(LazyConsts.mickScholarsBenchPointsIds[i4]).transform.position);
+								CheckAllComes(scholar, flow);
+							}, Random.Range(150f, 165f));
+						});
+					}
+				}
+			}
+			allAdded = true;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+	}
+
+	private void CheckAllComes(WGO currentFinished, Flow flow)
+	{
+		comingScholars.Remove(currentFinished);
+		currentFinished.SetDirection(HumanLikeDirections.GetDirectionVectorByEnum(HumanLikeDirections.Direction.Right));
+		currentFinished.Animator.SetInteger(state, 3);
+		if (comingScholars.Count <= 0 && allAdded)
+		{
+			onFinished.Call(flow);
+			allAdded = false;
+			if (lockControl)
+			{
+				PlayerController.Instance.ChangeControls(ControlState.ByMovingScholars, isEnabled: true);
+				CursorController.RemoveCursorState(this);
+			}
+		}
+	}
+}

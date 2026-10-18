@@ -1,0 +1,54 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Unlock First Chapter Techs", 0)]
+[Category("Game")]
+public class Flow_UnlockFirstChapterTechs : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<FightStyle> style;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			for (int i = 0; i < GameBalance.Me.techData.Count; i++)
+			{
+				TechDefinition techDefinition = GameBalance.Me.techData[i];
+				FightActionDataDefinition fightActionById = GameBalance.Me.GetFightActionById(techDefinition.id);
+				if (fightActionById != null && fightActionById.FightStyle(forPlayer: true) == FightStyle.Basic && techDefinition.techBranchType == TechBranchType.Basic)
+				{
+					MainGame.me.gameSave.knowledgeSystem.ObtainTech(techDefinition.id);
+				}
+				else if (fightActionById != null && fightActionById.FightStyle(forPlayer: true) == style.value && techDefinition.techBranchType == TechBranchType.Basic)
+				{
+					MainGame.me.gameSave.knowledgeSystem.ObtainTech(techDefinition.id);
+				}
+			}
+			MainGame.me.gameSave.knowledgeSystem.ObtainTech("mafia_promotion_1");
+			MainGame.me.gameSave.knowledgeSystem.ObtainTech("yakuza_promotion_1");
+			MainGame.me.gameSave.knowledgeSystem.ObtainTech("bobo_promotion_1");
+			switch (style.value)
+			{
+			case FightStyle.STR:
+				MainGame.me.gameSave.knowledgeSystem.ObtainTech("str_branch");
+				break;
+			case FightStyle.AGL:
+				MainGame.me.gameSave.knowledgeSystem.ObtainTech("agl_branch");
+				break;
+			case FightStyle.STM:
+				MainGame.me.gameSave.knowledgeSystem.ObtainTech("stm_branch");
+				break;
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		style = AddValueInput<FightStyle>("style");
+	}
+}

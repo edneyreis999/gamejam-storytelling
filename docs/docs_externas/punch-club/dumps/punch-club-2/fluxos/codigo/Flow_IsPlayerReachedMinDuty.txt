@@ -1,0 +1,48 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is Player Reached Min Duty", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_IsPlayerReachedMinDuty : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	private ValueInput<string> professionId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			ProfessionData professionData = MainGame.me.gameSave.professionSystem.professionDatas.Find((ProfessionData p) => p.id == professionId.value);
+			if (professionData == null)
+			{
+				Debug.Log("Can't find prof data for id:[" + professionId.value + "]");
+				no.Call(flow);
+			}
+			else
+			{
+				Debug.Log($"#DEV# prof:[{professionData.id}] Is Player Reached Min Duty?:[{professionData.lastDutyActionPoint >= (float)professionData.Definition.minDuty}] professionData.lastDutyActionPoint:[{professionData.lastDutyActionPoint}] professionData.Definition.minDuty:[{professionData.Definition.minDuty}]");
+				if (professionData.lastDutyActionPoint >= (float)professionData.Definition.minDuty)
+				{
+					yes.Call(flow);
+				}
+				else
+				{
+					no.Call(flow);
+				}
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+		professionId = AddValueInput<string>("professionId".CapitalizeFirst());
+	}
+}

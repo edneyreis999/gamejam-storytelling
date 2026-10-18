@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Start Work", "")]
+public class uScriptAct_StartWork : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Work name", "")] string work_name, [FriendlyName("Auto", "")] bool auto_work)
+	{
+		MainGame.me.gui_elements.working_animation.OpenWork(work_name, auto_work);
+	}
+}

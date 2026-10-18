@@ -1,0 +1,118 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Camera Fade", 0)]
+[Category("Game/Camera")]
+public class Flow_CameraFade : PC2CustomFlowNode
+{
+	public enum FadeType
+	{
+		InOut,
+		In,
+		Out
+	}
+
+	[GatherPortsCallback]
+	public FadeType fadeType;
+
+	[GatherPortsCallback]
+	[ShowIf("fadeType", 1)]
+	public bool useFadeInSettings;
+
+	[GatherPortsCallback]
+	[ShowIf("fadeType", 2)]
+	public bool useFadeOutSettings;
+
+	public bool resetAlpha = true;
+
+	private ValueInput<float> endValue;
+
+	private ValueInput<float> duration;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onMiddle;
+
+	private FlowOutput onFinished;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), DoFade);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		switch (fadeType)
+		{
+		case FadeType.InOut:
+			onMiddle = AddFlowOutput("onMiddle".CapitalizeFirst());
+			break;
+		case FadeType.In:
+			if (useFadeInSettings)
+			{
+				endValue = AddValueInput<float>("endValue".CapitalizeFirst());
+				duration = AddValueInput<float>("duration".CapitalizeFirst());
+			}
+			break;
+		case FadeType.Out:
+			if (useFadeOutSettings)
+			{
+				duration = AddValueInput<float>("duration".CapitalizeFirst());
+			}
+			break;
+		}
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+	}
+
+	private void DoFade(Flow flow)
+	{
+		switch (fadeType)
+		{
+		case FadeType.InOut:
+			MainGame.me.FadeIn(0.6f, delegate
+			{
+				onMiddle.Call(flow);
+				MainGame.me.FadeOut(0.6f, delegate
+				{
+					onFinished.Call(flow);
+				});
+			}, useUnscaledTime: false, 1f, resetAlpha);
+			break;
+		case FadeType.In:
+			if (useFadeInSettings)
+			{
+				MainGame.me.FadeIn(duration.value, delegate
+				{
+					onFinished.Call(flow);
+				}, useUnscaledTime: false, endValue.value, resetAlpha: false);
+			}
+			else
+			{
+				MainGame.me.FadeIn(0.6f, delegate
+				{
+					onFinished.Call(flow);
+				}, useUnscaledTime: false, 1f, resetAlpha);
+			}
+			break;
+		case FadeType.Out:
+			if (useFadeOutSettings)
+			{
+				MainGame.me.FadeOut(duration.value, delegate
+				{
+					onFinished.Call(flow);
+				});
+			}
+			else
+			{
+				MainGame.me.FadeOut(0.6f, delegate
+				{
+					onFinished.Call(flow);
+				});
+			}
+			break;
+		}
+		@out.Call(flow);
+	}
+}

@@ -1,0 +1,27 @@
+using System;
+
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Has perk", "")]
+public class uScriptAct_PlayerHasPerk : uScriptLogic
+{
+	public event uScript_GameObject.uScriptEventHandler True;
+
+	public event uScript_GameObject.uScriptEventHandler False;
+
+	public void In([FriendlyName("Perk", "")] string perk_name)
+	{
+		if (MainGame.save.ch.HasPerk(perk_name))
+		{
+			if (this.True != null)
+			{
+				this.True(this, new EventArgs());
+			}
+		}
+		else if (this.False != null)
+		{
+			this.False(this, new EventArgs());
+		}
+	}
+}

@@ -1,0 +1,52 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Set WGO Colors", 0)]
+[Category("Game")]
+public class Flow_SetWGOColors : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<WGO> wgoInput;
+
+	private ValueInput<float> time;
+
+	private ValueInput<Color> color;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			WGO wGO = WGOParamOrSelf(wgoInput);
+			if (wGO == null)
+			{
+				Debug.Log("Null wgo!!!");
+				@out.Call(flow);
+			}
+			else
+			{
+				WGOSetColor component = wGO.GetComponent<WGOSetColor>();
+				if (component == null)
+				{
+					Debug.Log("Null WGOSetColor component!!!");
+					@out.Call(flow);
+				}
+				else
+				{
+					component.DoColor(color.value, time.value);
+					@out.Call(flow);
+				}
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		wgoInput = AddValueInput<WGO>("wgoInput");
+		time = AddValueInput<float>("time");
+		color = AddValueInput<Color>("color");
+	}
+}

@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Set Interaction", "Set global interaction mode")]
+public class uScriptAct_SetGlobalInteration : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Enabled", "")] bool enabled)
+	{
+		MainGame.interaction_enabled = enabled;
+	}
+}

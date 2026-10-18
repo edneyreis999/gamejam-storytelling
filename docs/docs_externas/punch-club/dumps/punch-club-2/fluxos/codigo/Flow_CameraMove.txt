@@ -1,0 +1,59 @@
+using System;
+using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Camera Move", 0)]
+[Category("Game")]
+public class Flow_CameraMove : PC2CustomFlowNode
+{
+	public Vector2 pos;
+
+	public float time;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			@out.Call(flow);
+			AutoSyncWithCamera[] syncers = null;
+			if (DynamicScene.current != null)
+			{
+				syncers = DynamicScene.current.GetComponentsInChildren<AutoSyncWithCamera>(includeInactive: true);
+			}
+			TweenerCore<Vector3, Vector3, VectorOptions> tweenerCore = ScreenCamera.me.transform.DOMove(pos, time).SetEase(Ease.Linear);
+			tweenerCore.onUpdate = delegate
+			{
+				if (syncers != null)
+				{
+					for (int i = 0; i < syncers.Length; i++)
+					{
+						if (syncers[i] != null)
+						{
+							syncers[i].SetPos();
+						}
+					}
+				}
+			};
+			tweenerCore.onComplete = (TweenCallback)Delegate.Combine(tweenerCore.onComplete, (TweenCallback)delegate
+			{
+				onFinished?.Call(flow);
+			});
+			ScreenCamera.me.physicsRaycastCamera.transform.DOMove(pos / 3f, time);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+	}
+}

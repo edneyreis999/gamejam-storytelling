@@ -1,0 +1,42 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("End Script", "")]
+public class uScriptAct_EndScript : uScriptLogic
+{
+	private GameObject _parent;
+
+	public void In([FriendlyName("Destroy chars", "")][SocketState(false, false)] CharacterGfx[] chars, [FriendlyName("Enabl intrct", "Enable interaction after script end?")][SocketState(true, false)][DefaultValue(false)] bool enable_interaction = false)
+	{
+		foreach (CharacterGfx characterGfx in chars)
+		{
+			characterGfx.DestroyMe();
+		}
+		if (enable_interaction)
+		{
+			MainGame.interaction_enabled = true;
+		}
+		Debug.Log("<color=yellow>End uScript:</color> " + _parent.name);
+		CustomUScript component = _parent.GetComponent<CustomUScript>();
+		if (component != null)
+		{
+			component.TerminateMe();
+		}
+		else
+		{
+			Object.Destroy(_parent);
+		}
+		if (MainGame.save != null && MainGame.save.ch != null)
+		{
+			MainGame.save.ch.OnScriptEnded(_parent.name);
+		}
+	}
+
+	public override void SetParent(GameObject parent)
+	{
+		base.SetParent(parent);
+		_parent = parent;
+	}
+}

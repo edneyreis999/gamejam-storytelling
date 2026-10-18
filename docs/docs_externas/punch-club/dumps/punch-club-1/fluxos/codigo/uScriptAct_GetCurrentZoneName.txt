@@ -1,0 +1,14 @@
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Get Cur Zone", "")]
+public class uScriptAct_GetCurrentZoneName : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Zone name", "Current zone name")] out string zone_name)
+	{
+		SceneZoneGfx current_action_zone = MainGame.save.ch.char_gfx.current_action_zone;
+		zone_name = ((!(current_action_zone == null)) ? current_action_zone.zone_name : string.Empty);
+	}
+}

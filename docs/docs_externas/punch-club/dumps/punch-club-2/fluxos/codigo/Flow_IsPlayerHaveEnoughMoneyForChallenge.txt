@@ -1,0 +1,40 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Challenge Window Is Enough Money For Challenge", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_IsPlayerHaveEnoughMoneyForChallenge : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			League currentLeague = GUIElements.Get<UILeagueWindow>().CurrentLeague;
+			int num = currentLeague.Division_CalculatePay(currentLeague.GetFighterById(-1), GUIElements.Get<UIFightChallengeWindow>().Opponent);
+			if (num > 0)
+			{
+				yes.Call(flow);
+			}
+			else if (MainGame.me.PlayerRes.GetInt("_money") < -num)
+			{
+				no.Call(flow);
+			}
+			else
+			{
+				yes.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+	}
+}

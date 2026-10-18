@@ -1,0 +1,32 @@
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Tutorial Action", "")]
+public class uScriptAct_TutorialAction : uScriptLogic
+{
+	public enum Action
+	{
+		EnableMapButton,
+		EndDemo,
+		HilightTechButton
+	}
+
+	public bool Out => true;
+
+	public void In([FriendlyName("Action", "")] Action action, [FriendlyName("Param", "")] float param)
+	{
+		switch (action)
+		{
+		case Action.EnableMapButton:
+			MainGame.me.gui_elements.hud_left.EnableButton("map", param > 0f);
+			break;
+		case Action.EndDemo:
+			MainGame.me.gui_elements.in_game_menu_demo.Open();
+			MainGame.me.gui_elements.in_game_menu_demo.close_btn.gameObject.SetActive(value: false);
+			break;
+		case Action.HilightTechButton:
+			QuestMarker.CreateMarkerOnTechButton();
+			break;
+		}
+	}
+}

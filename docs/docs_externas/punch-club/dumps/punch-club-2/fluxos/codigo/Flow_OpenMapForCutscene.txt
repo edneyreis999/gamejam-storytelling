@@ -1,0 +1,51 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open GameMap for cutscene", 0)]
+[Category("Game/GameMap")]
+public class Flow_OpenMapForCutscene : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToOpen;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<Vector2> mapPosition;
+
+	public override string name => (isToOpen ? "Open" : "Close") + " GameMap for cutscene";
+
+	protected override void RegisterPorts()
+	{
+		mapPosition = AddValueInput<Vector2>("mapPosition".CapitalizeFirst());
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToOpen)
+			{
+				if (!MainGame.me.gameMap.IsOpen)
+				{
+					MainGame.me.gameMap.OpenMapForCutscene(mapPosition.value);
+				}
+				else
+				{
+					Debug.LogWarning("GameMap is already opened");
+				}
+			}
+			else if (MainGame.me.gameMap.IsOpen)
+			{
+				MainGame.me.gameMap.CloseMap();
+			}
+			else
+			{
+				Debug.LogWarning("GameMap is already closed");
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

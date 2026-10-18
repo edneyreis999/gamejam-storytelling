@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Eat Pet Food", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_EatPetFood : PC2CustomFlowNode
+{
+	public bool daily;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (daily)
+			{
+				MainGame.me.gameSave.worldData.isPetEatFoodToday = false;
+				MainGame.me.gameSave.playerData.SetExp("pet_was_strokked_today", 0f);
+			}
+			if (!MainGame.me.gameSave.worldData.isPetEatFoodToday && MainGame.me.PlayerRes.GetInt("pet_food") > 0)
+			{
+				MainGame.me.gameSave.worldData.isPetEatFoodToday = true;
+				MainGame.me.PlayerRes.Sub("pet_food", 1f);
+				WGOCustomEventsHandler.RemoveCustomEvent(MainGame.me.gameSave.worldData.petId, "pet_hungry_event", WGOCustomEventsHandler.GUILabelType.Speech);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

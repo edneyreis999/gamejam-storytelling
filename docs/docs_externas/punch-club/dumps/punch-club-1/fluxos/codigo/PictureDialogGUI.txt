@@ -1,0 +1,225 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PictureDialogGUI : BaseGUI
+{
+	public enum CloseButtonFunction
+	{
+		Close,
+		PressBtn1,
+		PressBtn2,
+		Hidden
+	}
+
+	public UILabel txt_label;
+
+	public UILabel txt_label_dup;
+
+	public UILabel txt_header;
+
+	public UILabel txt_bold;
+
+	public SimpleButton btn_1;
+
+	public SimpleButton btn_2;
+
+	public UIButton btn_close;
+
+	public UI2DSprite spr_picture;
+
+	private CloseButtonFunction _close_button_function;
+
+	private GJCommons.VoidDelegate _on_btn_1;
+
+	private GJCommons.VoidDelegate _on_btn_2;
+
+	private GJCommons.VoidDelegate _on_closed_by_cross;
+
+	public Action on_close;
+
+	private int _buttons = 1;
+
+	public void OnClosePressed()
+	{
+		Hide();
+		if (_on_closed_by_cross != null)
+		{
+			_on_closed_by_cross();
+		}
+		switch (_close_button_function)
+		{
+		case CloseButtonFunction.PressBtn1:
+			if (_on_btn_1 != null)
+			{
+				_on_btn_1();
+			}
+			break;
+		case CloseButtonFunction.PressBtn2:
+			if (_on_btn_2 != null)
+			{
+				_on_btn_2();
+			}
+			break;
+		default:
+			TwitchGameEngine.OnGlobalEvent(TwitchGameEngine.GlobalEvent.PictureDialogCanceled);
+			break;
+		}
+	}
+
+	public void Open(string hdr, string txt, string picture, SimpleDialog.ButtonDescription btn1, SimpleDialog.ButtonDescription? btn2, bool btn1_enabled = true, bool btn2_enabled = true, CloseButtonFunction close_btn = CloseButtonFunction.Close, GJCommons.VoidDelegate on_closed_by_cross = null, string bold_text = "")
+	{
+		on_close = null;
+		if (VHSConst.GAMEPAD_IS_CURRENT_CONTROLLER && MainGame.me.gui_elements.hud_left.WheelIsShown())
+		{
+			MainGame.me.gui_elements.hud_left.WheelHide();
+		}
+		base.Open();
+		_on_closed_by_cross = on_closed_by_cross;
+		_close_button_function = close_btn;
+		txt_bold.text = bold_text;
+		_buttons = 1;
+		if (picture == "pic_bar")
+		{
+			txt_label.text = txt;
+			txt_label_dup.text = string.Empty;
+		}
+		else
+		{
+			GUICommon.SetText(txt_label, txt_label_dup, (!(bold_text == string.Empty)) ? ("\n" + txt) : txt);
+		}
+		txt_header.text = hdr;
+		btn_close.gameObject.SetActive(close_btn != CloseButtonFunction.Hidden);
+		if (spr_picture != null)
+		{
+			spr_picture.sprite2D = EasySpritesCollection.GetSprite(picture);
+		}
+		if (VHSConst.GAMEPAD_IS_CURRENT_CONTROLLER)
+		{
+			btn1.color = SimpleButton.ButtonColor.None;
+		}
+		btn_1.Init(btn1.color, btn1.text, delegate
+		{
+			Sound.Play(Sound.SoundID.Click);
+			Hide();
+			if (btn1.on_click != null)
+			{
+				btn1.on_click();
+			}
+			btn1.on_click = null;
+		});
+		btn_1.SetEnabled(btn1_enabled);
+		_on_btn_1 = btn1.on_click;
+		btn_2.gameObject.SetActive(value: true);
+		if (!btn2.HasValue)
+		{
+			btn_2.gameObject.SetActive(value: false);
+		}
+		else
+		{
+			_buttons++;
+			btn_2.gameObject.SetActive(value: true);
+			SimpleDialog.ButtonDescription b2 = btn2.Value;
+			if (VHSConst.GAMEPAD_IS_CURRENT_CONTROLLER)
+			{
+				b2.color = SimpleButton.ButtonColor.None;
+			}
+			btn_2.Init(b2.color, b2.text, delegate
+			{
+				Sound.Play(Sound.SoundID.Click);
+				Hide();
+				if (b2.on_click != null)
+				{
+					b2.on_click();
+				}
+				b2.on_click = null;
+			});
+			btn_2.SetEnabled(btn2_enabled);
+			_on_btn_2 = btn2.Value.on_click;
+		}
+		Debug.Log("_buttons = " + _buttons);
+		GetComponentInChildren<UITable>().Reposition();
+		DialogGuiGamepadController component = GetComponent<DialogGuiGamepadController>();
+		if ((bool)component)
+		{
+			component.on_first_option = new List<EventDelegate>();
+			component.on_second_option = new List<EventDelegate>();
+			if (btn1.text.Contains("Action1"))
+			{
+				component.on_second_option.Add(new EventDelegate(btn_1, "OnClickPressed"));
+			}
+			if (btn1.text.Contains("Action3"))
+			{
+				component.on_first_option.Add(new EventDelegate(btn_1, "OnClickPressed"));
+			}
+			if (btn2.HasValue && btn2.Value.text.Contains("Action3"))
+			{
+				component.on_first_option.Add(new EventDelegate(btn_2, "OnClickPressed"));
+			}
+			if (btn2.HasValue && btn2.Value.text.Contains("Action1"))
+			{
+				component.on_second_option.Add(new EventDelegate(btn_2, "OnClickPressed"));
+			}
+		}
+	}
+
+	public void OpenPrizeDialog(string header, string txt, string pic, GameRes reward, CommonStatic.VoidDelegate on_click_ok)
+	{
+		if (txt != null)
+		{
+			string text = ManagerGUI.PrepareFamePrice(reward.ToDescStrOutlined(", "));
+			if (text != string.Empty)
+			{
+				string text2 = txt;
+				txt = text2 + " " + GJL.L("FIGHT_REWARD") + "\n" + text;
+			}
+		}
+		UILabel uILabel = txt_label_dup;
+		uILabel.text = string.Empty;
+		txt_label_dup = null;
+		MainGame.me.gui_elements.pic_dialog.Open(header, txt, pic, new SimpleDialog.ButtonDescription
+		{
+			color = SimpleButton.ButtonColor.Green,
+			text = GJL.L("(Action1) OK"),
+			on_click = delegate
+			{
+				if (on_click_ok != null)
+				{
+					on_click_ok();
+				}
+			}
+		}, null, btn1_enabled: true, btn2_enabled: false, CloseButtonFunction.Hidden, null, string.Empty);
+		txt_label_dup = uILabel;
+	}
+
+	protected override void OnBackColliderClicked()
+	{
+		if (!animating)
+		{
+			OnClosePressed();
+		}
+	}
+
+	public bool IsTwoButtonsDialog()
+	{
+		return _buttons > 1;
+	}
+
+	public override void Hide()
+	{
+		base.Hide();
+		if (this == MainGame.me.gui_elements.cloud_dialog)
+		{
+			MainGame.me.gui_elements.main_menu.ShowDefaultMenuState();
+		}
+		if (on_close != null)
+		{
+			on_close();
+		}
+	}
+
+	public override void Update()
+	{
+		base.Update();
+	}
+}

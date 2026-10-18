@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Enable/Disable Fighter Render Texture", 0)]
+[Category("Game/Player")]
+public class Flow_EnableFighterRenderTexture : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isEnable;
+
+	public override string name => (isEnable.value ? "<color=#8aff92>Enable</color>" : "<color=#ff8a8a>Disable</color>") + " Fighter Render Texture";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isEnable.value)
+			{
+				Fight.Instance.FightView.fightBehaviour.OnFighterRenderTexture(enableFirstFighterPreview: true, enableSecondFighterPreview: true);
+			}
+			else
+			{
+				Fight.Instance.FightView.fightBehaviour.DisableFighterRenderTexture(disableFirstFighterPreview: false, disableSecondFighterPreview: false);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isEnable = AddValueInput<bool>("isEnable");
+	}
+}

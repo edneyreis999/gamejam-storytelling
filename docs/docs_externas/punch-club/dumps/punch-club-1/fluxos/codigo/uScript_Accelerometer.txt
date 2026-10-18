@@ -1,0 +1,46 @@
+using System;
+using UnityEngine;
+
+[NodeAutoAssignMasterInstance(true)]
+[NodePath("Events/Input Events")]
+[NodeCopyright("Copyright 2011 by Detox Studios LLC")]
+[NodeToolTip("Fires an event signal when an accelerometer event happens.")]
+[NodeAuthor("Detox Studios LLC", "http://www.detoxstudios.com")]
+[NodeHelp("http://docs.uscript.net/#3-Working_With_uScript/3.4-Nodes.htm")]
+[FriendlyName("Accelerometer Events", "Fires an event signal when an accelerometer event happens.")]
+public class uScript_Accelerometer : uScriptEvent
+{
+	public delegate void uScriptEventHandler(object sender, AccelerometerEventArgs args);
+
+	public class AccelerometerEventArgs : EventArgs
+	{
+		private AccelerationEvent m_AccelEvent;
+
+		[FriendlyName("Acceleration", "The accelerometer value of this event.")]
+		public Vector3 Acceleration => m_AccelEvent.acceleration;
+
+		[FriendlyName("Delta Time", "Amount of time (in seconds) that has passed since the last acceleraton measurement.")]
+		[SocketState(false, false)]
+		public float DeltaTime => m_AccelEvent.deltaTime;
+
+		public AccelerometerEventArgs(AccelerationEvent accelEvent)
+		{
+			m_AccelEvent = accelEvent;
+		}
+	}
+
+	[FriendlyName("On Acceleration")]
+	public event uScriptEventHandler OnAccelerationEvent;
+
+	private void Update()
+	{
+		AccelerationEvent[] accelerationEvents = Input.accelerationEvents;
+		foreach (AccelerationEvent accelEvent in accelerationEvents)
+		{
+			if (this.OnAccelerationEvent != null)
+			{
+				this.OnAccelerationEvent(this, new AccelerometerEventArgs(accelEvent));
+			}
+		}
+	}
+}

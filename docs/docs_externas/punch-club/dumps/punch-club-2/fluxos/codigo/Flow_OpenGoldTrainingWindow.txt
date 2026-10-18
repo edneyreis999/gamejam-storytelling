@@ -1,0 +1,60 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Open Gold Training Window", 0)]
+[Category("Game/MickGym")]
+public class Flow_OpenGoldTrainingWindow : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onSelect;
+
+	private FlowOutput onNotSelect;
+
+	private FlowOutput onFinish;
+
+	private FlowOutput onFadeInAfterAction;
+
+	private FlowOutput onNotEnoughTime;
+
+	private FlowOutput onTired;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GUIElements.Get<UIGoldTrainingWindow>().Open(delegate
+			{
+				onSelect.Call(flow);
+			}, delegate
+			{
+				onNotSelect.Call(flow);
+			}, delegate
+			{
+				onFinish.Call(flow);
+			}, delegate
+			{
+				onFadeInAfterAction.Call(flow);
+			}, delegate
+			{
+				onNotEnoughTime.Call(flow);
+			}, delegate
+			{
+				onTired.Call(flow);
+			});
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onSelect = AddFlowOutput("onSelect".CapitalizeFirst());
+		onNotSelect = AddFlowOutput("onNotSelect".CapitalizeFirst());
+		onFinish = AddFlowOutput("onFinish".CapitalizeFirst());
+		onFadeInAfterAction = AddFlowOutput("onFadeInAfterAction".CapitalizeFirst());
+		onNotEnoughTime = AddFlowOutput("onNotEnoughTime".CapitalizeFirst());
+		onTired = AddFlowOutput("onTired".CapitalizeFirst());
+	}
+}

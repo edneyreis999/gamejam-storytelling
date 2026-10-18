@@ -1,0 +1,48 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Stats Required To Robot Training", 0)]
+[Category("Game")]
+public class Flow_AddStatsRequiredToRobotTraining : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> trainingId;
+
+	protected override void RegisterPorts()
+	{
+		trainingId = AddValueInput<string>("trainingId".CapitalizeFirst());
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			NeurotrainingDefinition data = GameBalance.Me.GetData<NeurotrainingDefinition>(trainingId.value);
+			GameRes gameRes = GameBalance.Me.GetData<ActionDefinition>(data.actionName).GameRes;
+			for (int i = 0; i < gameRes.List.Count; i++)
+			{
+				string type = gameRes.List[i].type;
+				float num = gameRes.List[i].value * (float)data.actionCount;
+				switch (type)
+				{
+				default:
+					if (num < 0f && MainGame.me.PlayerRes.Get(type) + num < 0f)
+					{
+						MainGame.me.PlayerRes.Add(type, Mathf.Abs(MainGame.me.PlayerRes.Get(type) + num));
+					}
+					break;
+				case "_robot_str_exp":
+				case "_robot_agl_exp":
+				case "_robot_stm_exp":
+					break;
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,38 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DialogGuiGamepadController : MonoBehaviour
+{
+	public List<EventDelegate> on_first_option = new List<EventDelegate>();
+
+	public List<EventDelegate> on_second_option = new List<EventDelegate>();
+
+	public List<EventDelegate> on_cancel = new List<EventDelegate>();
+
+	public static DialogGuiGamepadController instance;
+
+	private void Start()
+	{
+		instance = this;
+	}
+
+	private void OnEnable()
+	{
+		instance = this;
+	}
+
+	public void SecondOption()
+	{
+		EventDelegate.Execute(on_second_option);
+	}
+
+	public void FirstOption()
+	{
+		EventDelegate.Execute(on_first_option);
+	}
+
+	public void Cancel()
+	{
+		EventDelegate.Execute(on_cancel);
+	}
+}

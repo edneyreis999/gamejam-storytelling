@@ -1,0 +1,52 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("UI Fighter School Icon\nSort Over Tutorial Window", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIFighterWindowSchoolIconSortOverTutorialWindow : PC2CustomFlowNode
+{
+	public bool isDefault;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name
+	{
+		get
+		{
+			if (!isDefault)
+			{
+				return "Sort UI Fighter School Icon\nOver Tutorial Window";
+			}
+			return "Return Default\nUI Fighter School Icon Sorting";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			Image schoolIcon = GUIElements.Get<UIFighterWindow>().LastSchool.SchoolIcon;
+			Canvas component2;
+			if (!isDefault)
+			{
+				schoolIcon.gameObject.AddComponent<Canvas>();
+				Canvas component = schoolIcon.GetComponent<Canvas>();
+				component.overrideSorting = true;
+				component.sortingOrder = 1001;
+			}
+			else if (schoolIcon.TryGetComponent<Canvas>(out component2))
+			{
+				Object.Destroy(component2, 0f);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}
