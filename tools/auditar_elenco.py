@@ -11,6 +11,7 @@ from retocar_elenco import finish
 from retocar_pilotos import cell
 from spritesheets import inspect, active_sheet
 from corrigir_movimento import finish as correct_movement
+from retocar_camadas import finish as compose_layers
 
 ROOT = Path(__file__).resolve().parents[1]
 ART = ROOT / 'docs/terminus/arte/personagens'
@@ -81,9 +82,12 @@ def audit():
                 errors.append('Arquivo aprovado alterado')
         elif entry['lote']>=3 or entry.get('revisao_movimento'):
             reproduced = run/f"{entry['id']}.png"
-            revised = bool(entry.get('revisao_movimento'))
-            method = correct_movement if revised else finish
-            script = 'tools/corrigir_movimento.py' if revised else 'tools/retocar_elenco.py'
+            if entry.get('revisao_camadas'):
+                method, script = compose_layers, 'tools/retocar_camadas.py'
+            elif entry.get('revisao_movimento'):
+                method, script = correct_movement, 'tools/corrigir_movimento.py'
+            else:
+                method, script = finish, 'tools/retocar_elenco.py'
             method(entry['id'],reproduced)
             identical = sha(reproduced)==sha(path)
             entry['reproducao'] = {'data':'2026-10-18','script':script,

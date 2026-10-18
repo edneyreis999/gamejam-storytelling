@@ -54,6 +54,8 @@
     <h1>Revisão dos personagens</h1>
     <p id="summary">Carregando o registro de produção…</p>
     <p class="notice">Aprovações são registradas na conversa. Esta galeria permite comparar desenho, escala e caminhada; não aprova as imagens automaticamente.</p>
+    <p><strong>Bloco 2 — revisão completa:</strong> <a href="#guedra">Guedra v4</a> aprovada. Novas candidatas: <a href="#darvek">Darvek v5</a>, <a href="#edrin">Edrin v5</a>, <a href="#tessa">Tessa v4</a> e <a href="#rask">Rask v3</a>.</p>
+    <p><a href="revisoes/correcao-blocos/bloco-2-completo.gif">Bloco 2 — animação das quatro direções</a> · <a href="revisoes/correcao-blocos/bloco-2-nativo.png">Folhas em tamanho nativo</a> · <a href="revisoes/correcao-blocos/README.md">Comparações e registro</a>. Aguardando aprovação das quatro candidatas antes do bloco 3. Bloco 1 mantido com ressalvas.</p>
     <p><strong>Correções de movimento:</strong> <a href="#odrik">Odrik</a> · <a href="#lethra">Lethra</a> · <a href="#durn">Durn</a> · <a href="#elune">Elune</a> · <a href="#lurga">Lurga</a> · <a href="#sivren">Sivren</a> · <a href="#ivara">Ivara</a> · <a href="#ossena">Ossena</a> · <a href="#rheed">Rheed</a> · <a href="#nima">Nima</a> · <a href="#nyra">Nyra</a> · <a href="#neral-disfarce">Neral Disfarce</a> · <a href="#neral-revelado">Neral Revelado</a> · <a href="#neral-transformado">Neral Transformado</a> · <a href="#virmura">Virmura</a> · <a href="#dorga">Dorga</a> · <a href="#torvak">Torvak</a> · <a href="#meruna">Meruna</a></p>
     <p><a href="revisoes/correcao-movimento/README.md">Registro das 18 correções</a> · <a href="revisoes/correcao-movimento/grupo-1.gif">Prévia do grupo 1</a> · <a href="revisoes/correcao-movimento/grupo-2.gif">Grupo 2</a> · <a href="revisoes/correcao-movimento/grupo-3.gif">Grupo 3</a></p>
     <nav aria-label="Lotes de produção"><a href="#darvek">Lote 3</a> · <a href="#edrin">Lote 4</a> · <a href="#mavren">Lote 5</a> · <a href="#durn">Lote 6</a> · <a href="#seldan">Lote 7</a> · <a href="#urdan">Lote 8</a> · <a href="#moldren">Lote 9</a> · <a href="#rheed">Pilotos</a> · <a href="#sevrak">Lote 1</a> · <a href="#virmura">Lote 2</a></nav>
@@ -142,6 +144,12 @@
         const title=document.createElement('h2'); title.textContent=item.nome;
         const status=document.createElement('p'); status.textContent=item.estado;
         article.append(title,status);
+        if (item.comparacao) {
+          const comparison=document.createElement('p');
+          const animated=document.createElement('a'); animated.href=item.comparacao.animada; animated.textContent='Antes/depois animado';
+          const still=document.createElement('a'); still.href=item.comparacao.estatica; still.textContent='Comparação ampliada';
+          comparison.append(animated,' · ',still); article.append(comparison);
+        }
         const issues=document.createElement('ul'); issues.className='issues';
         for (const text of item.observacoes) { const li=document.createElement('li'); li.textContent=text; issues.append(li); }
         article.append(issues);

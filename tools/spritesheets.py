@@ -130,10 +130,17 @@ def gallery(manifest):
             continue
         candidate = root / active_sheet(entry)
         name = entry['nome'] + (f" — {entry['forma']}" if entry.get('forma') else '')
-        records.append({'id': entry['id'], 'nome': name, 'estado': status.get(entry['estado'], entry['estado']),
-                        'resumo': entry['resumo'],
-                        'observacoes': entry['revisao_visual']['observacoes'],
-                        'imagem': Path(os.path.relpath(candidate, manifest.parent)).as_posix()})
+        record = {'id': entry['id'], 'nome': name, 'estado': status.get(entry['estado'], entry['estado']),
+                  'resumo': entry['resumo'],
+                  'observacoes': entry['revisao_visual']['observacoes'],
+                  'imagem': Path(os.path.relpath(candidate, manifest.parent)).as_posix()}
+        if (entry.get('aprovacao_usuario') or {}).get('carater') == 'aceito_com_ressalvas':
+            record['estado'] = 'Aceito com ressalvas — versão mantida por enquanto'
+        comparison = entry.get('revisao_camadas', {}).get('comparacao')
+        if comparison:
+            record['comparacao'] = {kind: Path(os.path.relpath(root / path, manifest.parent)).as_posix()
+                                    for kind, path in comparison.items()}
+        records.append(record)
     approved = sum(entry['aprovacao_usuario'] is not None for entry in data['folhas'])
     payload = {'resumo': f'{len(records)} folhas disponíveis para inspeção; {approved} de 42 folhas aprovadas.',
                'folhas': records, 'proxima_condicao': data['proxima_condicao']}

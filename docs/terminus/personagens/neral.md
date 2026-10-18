@@ -11,12 +11,12 @@ A base indicada como confirmada vem da visão e das decisões do autor. Aparênc
 ## 1. Identificação
 
 - **Papel:** Vendedor recorrente e chefão Ignoto pós-campeonato; uma única identidade.
-- **Raça, idade e aparência:** Ignoto dos Círculos Superiores; idade desconhecida. Sob o disfarce de Savel, luvas, gola alta e camadas de tecido escondem o corpo. Proposta visual: pele muito pálida, dedos longos e sinais rituais sob as mangas; inicialmente sem as deformações dos consumidores.
+- **Raça, idade e aparência:** Ignoto dos Círculos Superiores; idade desconhecida. Pela retificação do autor em 18/10/2026, apenas o disfarce de Savel usa capuz e cobertura integral, mostrando somente os olhos, com Vivi como referência. Nas formas revelada e transformada, cabeça, rosto e partes do corpo podem ficar expostos. O concept dessas formas usa as referências dos Ignotos: humanoide branco e sem cabelo ou pelos; aparência preservada antes das doses concentradas e hipertrofia e deformidades após o consumo. O casaco, os fechos, o debrum e os olhos mantêm a continuidade entre as três formas. Os detalhes das novas imagens são propostas visuais para avaliação.
 - **Personalidade em uma frase:** Reconhece uma carência com precisão e vende a dependência como se fosse cuidado.
 
 ### Direção para as spritesheets
 
-O plano autorizado pelo autor em 18/10/2026 prevê três folhas da mesma identidade: disfarce, revelado e transformado. O disfarce mantém luvas, gola alta e corpo coberto; a forma revelada mostra palidez, dedos longos e marcas rituais; a transformação amplia e deforma o mesmo corpo, preservando elementos reconhecíveis. Não acrescentar membros, poderes ou símbolos narrativos por inferência. O estudo das três formas deve ser aprovado antes das folhas completas; o estudo v1 das três formas foi aprovado pelo autor em 18/10/2026, antes da geração das folhas completas. Todas seguem o padrão sépia e a grade de 40 × 55 px por quadro.
+O plano prevê três formas da mesma identidade: disfarce, revelado e transformado. A regra de capuz e apenas olhos visíveis vale somente para o disfarce. Na revelação, o capuz pode ser baixado e a anatomia ignota exposta, sem deformidades induzidas por poções. Na transformação, as doses concentradas ampliam e deformam esse mesmo corpo; pele exposta e roupas rompidas são compatíveis com essa forma. Preservar dois braços, duas pernas e elementos reconhecíveis do traje. Não acrescentar poderes ou símbolos narrativos por inferência. As spritesheets anteriores precisam ser revistas conforme o concept vigente. O padrão técnico permanece sépia e grade de 40 × 55 px por quadro.
 
 ## 2. Personalidade em ação
 
@@ -118,10 +118,10 @@ Magia sanguínea e proteção ritual. Proposta de encenação: rompe a própria 
 | [Ignotos em Daratrine: A Origem](../../docs_externas/daratrine-a-origem/ignotos.md) | Círculos Superiores, dependência alquímica e magia sanguínea. | Referência externa; a adaptação aprovada está na visão de Terminus. |
 | [Químico / Chemist](../../docs_externas/punch-club/punch-club-quests.html#s%3Achemist_bad) | Efeitos colaterais levam à venda de novas preparações. | Referência externa; função adaptada, não biografia transferida. |
 
-**Pendência específica:** Nome verdadeiro, disfarce, aparência e movimentos específicos são propostas; os preços e efeitos jogáveis permanecem fora desta ficha.
+**Pendência específica:** Capuz e cobertura integral estão confirmados somente para o disfarce, cujo busto v2 foi mantido pelo autor. Os concepts revelado e transformado são propostas baseadas nos Ignotos e aguardam avaliação. Nome verdadeiro, detalhes do disfarce e movimentos específicos continuam propostas; preços e efeitos jogáveis permanecem fora desta ficha.
 
 **Estado editorial:** caracterização e cenas propostas aguardam validação do autor.
 
-### Registro da aprovação visual do estudo
+### Histórico visual
 
-O autor aprovou as três formas da [prancha v1](../arte/personagens/revisoes/neral-estudo-v1.png): cabelo curto escuro com risca lateral, rosto angular sem barba e casaco longo de gola alta com debrum claro. Na revelação, mãos alongadas e marcas simples nos antebraços ficam expostas. Na transformação, ombros e tronco aumentam, a postura se curva e as mangas se rompem, mantendo dois braços e duas pernas. Essa aprovação é visual; não acrescenta poderes, símbolos ou acontecimentos. As spritesheets completas continuam sujeitas à aprovação própria do lote 1.
+O estudo inicial e os primeiros bustos apresentavam cabelo e aparência humana. Uma correção intermediária estendeu capuz e cobertura integral às três formas. O autor retificou essa instrução em 18/10/2026: a restrição vale apenas para o disfarce. O busto disfarçado v2 permanece como referência; as outras formas passam a seguir a descrição dos Ignotos, mantendo continuidade com ele. As versões anteriores permanecem como histórico.

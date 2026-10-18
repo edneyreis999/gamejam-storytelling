@@ -1,5 +1,5 @@
 window.SPRITESHEETS = {
-  "resumo": "42 folhas disponíveis para inspeção; 4 de 42 folhas aprovadas.",
+  "resumo": "42 folhas disponíveis para inspeção; 13 de 42 folhas aprovadas.",
   "folhas": [
     {
       "id": "rheed",
@@ -114,90 +114,136 @@ window.SPRITESHEETS = {
     {
       "id": "odrik",
       "nome": "Odrik Riso-de-Bronze",
-      "estado": "Aguardando aprovação",
+      "estado": "Aprovado",
       "resumo": "resumos/odrik.md",
       "observacoes": [
-        "Capa inteira nas quatro vistas; braços e pernas alternam sem congelar as costas.",
-        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
+        "Odrik v4 aprovado pelo autor: “o odrik ficou bom”.",
+        "Referência aprovada para a correção dos membros inferiores dos perfis do bloco 1."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/odrik-v3-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/odrik.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/odrik-v3-v4-caminhada.gif",
+        "estatica": "revisoes/correcao-blocos/odrik-v3-v4-folhas.png"
+      }
     },
     {
       "id": "lethra",
       "nome": "Lethra Passo-Justo",
-      "estado": "Aguardando aprovação",
+      "estado": "Aceito com ressalvas — versão mantida por enquanto",
       "resumo": "resumos/lethra.md",
       "observacoes": [
-        "Tronco, faixa e lâmina de treino mantidos; botas completas nos perfis.",
-        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
+        "Bloco 1 — v5: membros inferiores refeitos nos perfis e no repouso lateral.",
+        "Pernas esguias; bainha esquerda preservada junto à área de edição.",
+        "Frente, costas e regiões fora das máscaras de edição preservadas pixel a pixel.",
+        "Aceito com ressalvas pelo autor: versão mantida por enquanto, sem declaração de perfeição."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/lethra-v4-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/lethra.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/lethra-v5-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/lethra-v5-comparacao.png"
+      }
     },
     {
       "id": "durn",
       "nome": "Durn Sete-Rebites",
-      "estado": "Aguardando aprovação",
+      "estado": "Aceito com ressalvas — versão mantida por enquanto",
       "resumo": "resumos/durn.md",
       "observacoes": [
-        "Avental e proteção auditiva mantidos; amplitude menor no braço esquerdo anatômico.",
-        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
+        "Bloco 1 — v4: membros inferiores refeitos nos perfis e no repouso lateral.",
+        "Passada curta sob o avental, com botas largas; braço esquerdo rígido preservado.",
+        "Frente, costas e regiões fora das máscaras de edição preservadas pixel a pixel.",
+        "Aceito com ressalvas pelo autor: versão mantida por enquanto, sem declaração de perfeição."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/durn-v3-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/durn.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/durn-v4-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/durn-v4-comparacao.png"
+      }
     },
     {
       "id": "elune",
       "nome": "Elune Margem-Rasa",
-      "estado": "Aguardando aprovação",
+      "estado": "Aceito com ressalvas — versão mantida por enquanto",
       "resumo": "resumos/elune.md",
       "observacoes": [
-        "Roupa, cabelo preso e porta-mapas permanecem durante a alternância dos membros.",
-        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
+        "Bloco 1 — v4: membros inferiores refeitos nos perfis e no repouso lateral.",
+        "Botas estreitas e pés completos; porta-mapas, mãos e cabelo preservados.",
+        "Frente, costas e regiões fora das máscaras de edição preservadas pixel a pixel.",
+        "Aceito com ressalvas pelo autor: versão mantida por enquanto, sem declaração de perfeição."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/elune-v3-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/elune.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/elune-v4-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/elune-v4-comparacao.png"
+      }
     },
     {
       "id": "lurga",
       "nome": "Lurga Duas-Risadas",
-      "estado": "Aguardando aprovação",
+      "estado": "Aceito com ressalvas — versão mantida por enquanto",
       "resumo": "resumos/lurga.md",
       "observacoes": [
-        "Mecha esquerda, pulseira e roupa preservadas; pernas deslocam-se em vez de apenas mudar de iluminação.",
-        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
+        "Bloco 1 — v4: membros inferiores refeitos nos perfis e no repouso lateral.",
+        "Calças e botas com volume próprio; pulseira e mecha esquerdas preservadas.",
+        "Frente, costas e regiões fora das máscaras de edição preservadas pixel a pixel.",
+        "Aceito com ressalvas pelo autor: versão mantida por enquanto, sem declaração de perfeição."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/lurga-v3-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/lurga.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/lurga-v4-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/lurga-v4-comparacao.png"
+      }
     },
     {
       "id": "sivren",
       "nome": "Sivren Guarda-Folhas",
-      "estado": "Aguardando aprovação",
+      "estado": "Aceito com ressalvas — versão mantida por enquanto",
       "resumo": "resumos/sivren.md",
       "observacoes": [
-        "Casaco e rolos permanecem; braços e pés participam do ciclo.",
-        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
+        "Bloco 1 — v4: membros inferiores refeitos nos perfis e no repouso lateral.",
+        "Pés orientados sob o casaco; abas, rolos e mãos intactos.",
+        "Frente, costas e regiões fora das máscaras de edição preservadas pixel a pixel.",
+        "Aceito com ressalvas pelo autor: versão mantida por enquanto, sem declaração de perfeição."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/sivren-v3-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/sivren.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/sivren-v4-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/sivren-v4-comparacao.png"
+      }
     },
     {
       "id": "ivara",
       "nome": "Ivara Casa-Aberta",
-      "estado": "Aguardando aprovação",
+      "estado": "Aceito com ressalvas — versão mantida por enquanto",
       "resumo": "resumos/ivara.md",
       "observacoes": [
-        "Manta e trança preservadas, com passada curta e braços sob a manta sem cortes retangulares.",
-        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
+        "Bloco 1 — v5: membros inferiores refeitos nos perfis e no repouso lateral.",
+        "Passada menor sob a manta; postura encurvada, chaves e trança preservadas.",
+        "Frente, costas e regiões fora das máscaras de edição preservadas pixel a pixel.",
+        "Aceito com ressalvas pelo autor: versão mantida por enquanto, sem declaração de perfeição."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/ivara-v4-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/ivara.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/ivara-v5-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/ivara-v5-comparacao.png"
+      }
     },
     {
       "id": "ossena",
       "nome": "Ossena dos Quadros",
-      "estado": "Aguardando aprovação",
+      "estado": "Aceito com ressalvas — versão mantida por enquanto",
       "resumo": "resumos/ossena.md",
       "observacoes": [
-        "Pranchetas e coque preservados; alternância completa dos pés e mãos.",
-        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
+        "Bloco 1 — v4: membros inferiores refeitos nos perfis e no repouso lateral.",
+        "Pernas estreitas; quadros de madeira e coque preservados.",
+        "Frente, costas e regiões fora das máscaras de edição preservadas pixel a pixel.",
+        "Aceito com ressalvas pelo autor: versão mantida por enquanto, sem declaração de perfeição."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/ossena-v3-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/ossena.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/ossena-v4-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/ossena-v4-comparacao.png"
+      }
     },
     {
       "id": "darvek",
@@ -205,10 +251,15 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/darvek.md",
       "observacoes": [
-        "Identidade da ficha preservada; cabeca estavel nos perfis.",
-        "Passos retocados com textura original, alternancia de profundidade das pernas e bracos."
+        "Bloco 2 — v5: costas e roupa recompostas sob o braço nos passos laterais.",
+        "Cordas e livro preservados; braço completo e costas sob a camisa.",
+        "Frente, costas, repousos, cabeças e pernas fora das máscaras preservados; aguardando aprovação do bloco completo."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/darvek-v4-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/darvek-v5-120x220.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/darvek-v5-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/darvek-v5-comparacao.png"
+      }
     },
     {
       "id": "zagra",
@@ -249,10 +300,15 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/edrin.md",
       "observacoes": [
-        "Anão adulto, cerca de 82 anos propostos. Cabelo ruivo rente, barba curta dividida ao meio, braço com antigas marcas de contenção; bolsa de documentos protegida por placas finas.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
+        "Bloco 2 — v5: costas e roupa recompostas sob o braço nos passos laterais.",
+        "Bolsa de documentos protegida; marcas dos braços conservadas nos pixels de origem.",
+        "Frente, costas, repousos, cabeças e pernas fora das máscaras preservados; aguardando aprovação do bloco completo."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/edrin-v4-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/edrin-v5-120x220.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/edrin-v5-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/edrin-v5-comparacao.png"
+      }
     },
     {
       "id": "korr",
@@ -282,10 +338,15 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/tessa.md",
       "observacoes": [
-        "Troll adulta, cerca de 52 anos propostos. Pele cinza com manchas claras, cabelo preso sob lenço, uma orelha rasgada; leva um livro de pagamentos com marcas de muitas mãos.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
+        "Bloco 2 — v4: costas e roupa recompostas sob o braço nos passos laterais.",
+        "Lenço, orelha e livro preservados; cada braço usa a própria vista, incluindo suas manchas.",
+        "Frente, costas, repousos, cabeças e pernas fora das máscaras preservados; aguardando aprovação do bloco completo."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/tessa-v3-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/tessa-v4-120x220.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/tessa-v4-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/tessa-v4-comparacao.png"
+      }
     },
     {
       "id": "mavren",
@@ -315,21 +376,15 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/rask.md",
       "observacoes": [
-        "Troll adulto, cerca de 74 anos propostos. Alto, pele cinza escura, cabelo branco curto; veste faixa com os emblemas participantes e carrega uma tabuleta de inscrições.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
+        "Bloco 2 — v3: costas e roupa recompostas sob o braço nos passos laterais.",
+        "Faixa e tabuleta mantidas; reconstrução da lateral da roupa atrás do braço.",
+        "Frente, costas, repousos, cabeças e pernas fora das máscaras preservados; aguardando aprovação do bloco completo."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/rask-v2-120x220.png"
-    },
-    {
-      "id": "guedra",
-      "nome": "Guedra Base-Firme",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/guedra.md",
-      "observacoes": [
-        "Ogra adulta, cerca de 49 anos propostos. Ombros largos, pele cinza, cabeça raspada; uma joelheira articulada simples e faixas de treino com marcas de uso.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/guedra-v3-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/rask-v3-120x220.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/rask-v3-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/rask-v3-comparacao.png"
+      }
     },
     {
       "id": "seldan",
@@ -462,9 +517,25 @@ window.SPRITESHEETS = {
         "Cabelo curto, presas discretas e roupa simples; sem arma, insígnia ou parentesco inventado."
       ],
       "imagem": "../../../../assets/terminus/personagens/crianca.png"
+    },
+    {
+      "id": "guedra",
+      "nome": "Guedra Base-Firme",
+      "estado": "Aprovado",
+      "resumo": "resumos/guedra.md",
+      "observacoes": [
+        "Amostra do bloco 2 — v4: costas e roupa recompostas sob o braço nos passos laterais.",
+        "Braços inteiros delimitados por direção; cabeça, joelheira, pernas, repousos, frente e costas preservados.",
+        "Guedra v4 aprovada pelo autor; referência da correção das costas do bloco 2."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/guedra.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/guedra-v4-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/guedra-v4-comparacao.png"
+      }
     }
   ],
-  "proxima_condicao": "Revisar as 18 novas candidatas de movimento. Dez substituem versões antes aprovadas, preservadas no histórico. As demais candidatas continuam aguardando aprovação.",
+  "proxima_condicao": "Aprovação de Darvek v5, Edrin v5, Tessa v4 e Rask v3 para concluir o bloco 2. Guedra v4 já está aprovada. Após o bloco completo, começar a amostra Pirka.",
   "estudo_neral": {
     "estado": "Estudo aprovado",
     "imagem": "revisoes/neral-estudo-v1.png",

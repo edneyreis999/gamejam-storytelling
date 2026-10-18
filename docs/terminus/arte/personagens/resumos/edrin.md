@@ -44,3 +44,8 @@ A direção visual está autorizada como base. A imagem ainda não foi aprovada.
 ## Candidata produzida
 
 A folha [edrin](../../../../../assets/terminus/personagens/em-revisao/edrin-v4-120x220.png) foi revisada internamente e aguarda aprovação visual. O [registro do lote 4](../revisoes/lote-4.md) descreve as escolhas visuais e correções. Consulte o [controle](../controle.json) para a versão da ficha, os prompts, entradas, tentativas e hashes. Nenhuma proposta narrativa foi aprovada por esta produção.
+
+
+## Correção das costas — bloco 2
+
+Após aprovação de Guedra v4, a [v5](../../../../../assets/terminus/personagens/em-revisao/edrin-v5-120x220.png) recompõe costas e roupa sob os braços dos perfis. A edição preserva cabeças, pernas, repousos, frente e costas. A candidata aguarda aprovação do bloco completo. [Comparações e verificações](../revisoes/correcao-blocos/README.md).

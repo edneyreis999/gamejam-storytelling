@@ -52,3 +52,7 @@ Em 18/10/2026, o autor apontou partes ausentes e movimento incompleto. Novas can
 - [odrik — v3](../../../../../assets/terminus/personagens/em-revisao/odrik-v3-120x220.png)
 
 [Inspeção e método da correção](../revisoes/correcao-movimento/README.md).
+
+## Amostra da correção por blocos
+
+Após o relato de pernas cortadas e pés invertidos, a [v4](../../../../../assets/terminus/personagens/em-revisao/odrik-v4-120x220.png) reconstrói os membros inferiores dos perfis, incluindo o repouso lateral. Frente, costas e parte superior dos perfis permanecem idênticas à v3. O autor aprovou a amostra com “o odrik ficou bom”, liberando sua cópia para o [destino final](../../../../../assets/terminus/personagens/odrik.png) e a expansão ao restante do bloco 1. [Comparação, método e verificações](../revisoes/correcao-blocos/README.md).

@@ -48,3 +48,7 @@ Em 18/10/2026, o autor apontou partes ausentes e movimento incompleto. Novas can
 - [ivara — v4](../../../../../assets/terminus/personagens/em-revisao/ivara-v4-120x220.png)
 
 [Inspeção e método da correção](../revisoes/correcao-movimento/README.md).
+
+## Correção por blocos
+
+Após aprovação da amostra Odrik v4, a [v5](../../../../../assets/terminus/personagens/em-revisao/ivara-v5-120x220.png) reconstrói os membros inferiores dos perfis, incluindo os pés do repouso. Frente, costas, roupa e acessórios fora das máscaras individuais permanecem intactos. Versão aceita com ressalvas em 18/10/2026: o autor decidiu mantê-la por enquanto. [Comparação, continuidade e verificações](../revisoes/correcao-blocos/README.md).

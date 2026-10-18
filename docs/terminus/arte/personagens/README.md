@@ -2,6 +2,8 @@
 
 Status: em desenvolvimento.
 
+**Retificação do concept de Neral — 18/10/2026:** capuz e cobertura integral, com apenas olhos visíveis, valem somente para o disfarce. As formas revelada e transformada seguem a descrição dos Ignotos e podem expor cabeça, rosto e corpo. O [disfarce v2 e os novos concepts](../bustos/README.md) orientam a revisão; consulte a [ficha](../../personagens/neral.md) e o [resumo](resumos/neral.md). As spritesheets anteriores continuam pendentes de adaptação.
+
 ## Entrega e decisões
 
 O plano autorizado em 18/10/2026 prevê 42 spritesheets para as [40 fichas](../../personagens/README.md): uma por personagem, com duas formas adicionais de Neral. A [visão do jogo](../../visao-do-jogo.md) continua sendo a autoridade narrativa. Usar as propostas visuais das fichas não valida suas propostas narrativas nem amplia a campanha com a reserva.
@@ -10,7 +12,9 @@ Este guia serve ao autor e à produção de arte. O [controle](controle.md), os 
 
 [Abrir a galeria de revisão](galeria.html) · [Revisão dos pilotos](revisoes/pilotos.md) · [Lote 1](revisoes/lote-1.md) · [Lote 2](revisoes/lote-2.md)
 
-Situação em 18/10/2026: 42 folhas disponíveis. O autor solicitou [correções de movimento em 18 folhas](revisoes/correcao-movimento/README.md), agora apresentadas como novas candidatas. Dez reabrem versões antes aprovadas, preservadas no histórico; quatro aprovações seguem vigentes e 38 candidatas aguardam avaliação. O estudo das três formas de Neral permanece aprovado.
+Situação em 18/10/2026: 42 folhas disponíveis. As [correções anteriores de movimento](revisoes/correcao-movimento/README.md) reabriram dez versões aprovadas. Há 13 folhas aceitas, sendo sete com ressalvas, e 29 candidatas aguardando avaliação. A aprovação anterior do estudo de Neral está preservada como histórico; a correção de concept descrita acima substitui sua direção visual.
+
+Revisão atual: o autor decidiu manter por enquanto as sete versões do bloco 1, com ressalvas; Odrik já estava aprovado. Guedra v4 foi aprovada e liberou Darvek v5, Edrin v5, Tessa v4 e Rask v3, agora aguardando aprovação do bloco 2 completo. O bloco 3 ainda não começou. O [registro dos três blocos](revisoes/correcao-blocos/README.md) separa testes técnicos, inspeção e aceite visual.
 
 ## Contrato visual
 
@@ -115,4 +119,6 @@ Não foi encontrado DESIGN.md nem sistema de tokens para esta superfície; usar 
 
 ## Revisão dos movimentos
 
-Após o relato do autor, o [método de correção](../../../../tools/corrigir_movimento.py) substitui os retoques históricos nas 18 folhas listadas no [registro da revisão](revisoes/correcao-movimento/README.md). Não reutilizar os métodos antigos para reproduzir essas candidatas: eles continham recortes que apagavam partes e perfis que só alternavam a iluminação das pernas. O novo método mantém os repousos, anima os braços em contrafase e articula as pernas com botas inteiras. Arquivo válido e reprodução idêntica não substituem a avaliação da caminhada.
+O [método anterior de correção](../../../../tools/corrigir_movimento.py) foi usado nas 18 folhas listadas no [registro da revisão](revisoes/correcao-movimento/README.md). A revisão posterior do autor revelou que ele também cortava as botas dos perfis; a descrição anterior de “botas inteiras” estava incorreta. Preservá-lo para reproduzir as versões históricas, sem usá-lo como garantia de qualidade.
+
+Os oito personagens do bloco 1 e os cinco do bloco 2 usam [camadas delimitadas individualmente](../../../../tools/retocar_camadas.py), com registro em `revisao_camadas` no controle. O bloco 2 combina roupa reconstruída, braço da própria direção delimitado por linha de pixels e proteção dos acessórios. Esse campo tem precedência sobre `revisao_movimento` na reprodução. O registro dos três blocos distingue testes técnicos, inspeção visual e aprovação do autor.

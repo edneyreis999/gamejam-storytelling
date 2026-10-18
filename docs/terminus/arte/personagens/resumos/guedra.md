@@ -40,3 +40,8 @@ A direção visual está autorizada como base. A imagem ainda não foi aprovada.
 ## Candidata produzida
 
 A folha [guedra](../../../../../assets/terminus/personagens/em-revisao/guedra-v3-120x220.png) foi revisada internamente e aguarda aprovação visual. O [registro do lote 6](../revisoes/lote-6.md) descreve as escolhas visuais e correções. Consulte o [controle](../controle.json) para a versão da ficha, os prompts, entradas, tentativas e hashes. Nenhuma proposta narrativa foi aprovada por esta produção.
+
+
+## Amostra da correção do bloco 2
+
+A [v4](../../../../../assets/terminus/personagens/em-revisao/guedra-v4-120x220.png) recompõe costas e roupa sob os braços dos perfis. Cabeças, pernas, joelheira esquerda, repousos, frente e costas permanecem idênticos à v3. Amostra aprovada pelo autor em 18/10/2026: “A Guedra ficou boa.” A v4 foi copiada para o destino final, preservando a candidata. [Comparação e verificações](../revisoes/correcao-blocos/README.md).

@@ -2,7 +2,7 @@
 
 Status: em desenvolvimento.
 
-Fonte: [ficha completa](../../../personagens/neral.md). SHA-256: `7ccf21782e3113ccdad9e32ba5a5a9ec026e18dc42123bb07a3986c1ac70b033`.
+Fonte: [ficha completa](../../../personagens/neral.md). SHA-256: `ed158c08f3cc175e731c489c1c5ed7bfb9faa7c4a96a70772dfa399434907139`.
 
 Etapa: lote 1. Resumo extraído do texto integral da ficha; reler a ficha antes de gerar e conferir alterações.
 
@@ -10,7 +10,7 @@ Etapa: lote 1. Resumo extraído do texto integral da ficha; reler a ficha antes 
 
 - **Papel:** Vendedor recorrente e chefão Ignoto pós-campeonato; uma única identidade.
 
-- **Raça, idade e aparência:** Ignoto dos Círculos Superiores; idade desconhecida. Sob o disfarce de Savel, luvas, gola alta e camadas de tecido escondem o corpo. Proposta visual: pele muito pálida, dedos longos e sinais rituais sob as mangas; inicialmente sem as deformações dos consumidores.
+- **Raça, idade e aparência:** Ignoto dos Círculos Superiores; idade desconhecida. Pela retificação do autor em 18/10/2026, apenas o disfarce de Savel usa capuz e cobertura integral, mostrando somente os olhos, com Vivi como referência. Nas formas revelada e transformada, cabeça, rosto e partes do corpo podem ficar expostos. O concept dessas formas usa as referências dos Ignotos: humanoide branco e sem cabelo ou pelos; aparência preservada antes das doses concentradas e hipertrofia e deformidades após o consumo. O casaco, os fechos, o debrum e os olhos mantêm a continuidade entre as três formas. Os detalhes das novas imagens são propostas visuais para avaliação.
 
 - **Personalidade em uma frase:** Reconhece uma carência com precisão e vende a dependência como se fosse cuidado.
 
@@ -20,7 +20,7 @@ Etapa: lote 1. Resumo extraído do texto integral da ficha; reler a ficha antes 
 
 
 
-O plano autorizado pelo autor em 18/10/2026 prevê três folhas da mesma identidade: disfarce, revelado e transformado. O disfarce mantém luvas, gola alta e corpo coberto; a forma revelada mostra palidez, dedos longos e marcas rituais; a transformação amplia e deforma o mesmo corpo, preservando elementos reconhecíveis. Não acrescentar membros, poderes ou símbolos narrativos por inferência. O estudo das três formas deve ser aprovado antes das folhas completas; o estudo v1 foi aprovado em 18/10/2026 antes das folhas completas. Todas seguem o padrão sépia e a grade de 40 × 55 px por quadro.
+O plano prevê três formas da mesma identidade: disfarce, revelado e transformado. A regra de capuz e apenas olhos visíveis vale somente para o disfarce. Na revelação, o capuz pode ser baixado e a anatomia ignota exposta, sem deformidades induzidas por poções. Na transformação, as doses concentradas ampliam e deformam esse mesmo corpo; pele exposta e roupas rompidas são compatíveis com essa forma. Preservar dois braços, duas pernas e elementos reconhecíveis do traje. Não acrescentar poderes ou símbolos narrativos por inferência. As spritesheets anteriores precisam ser revistas conforme o concept vigente. O padrão técnico permanece sépia e grade de 40 × 55 px por quadro.
 
 ## Continuidade a preservar
 
@@ -36,16 +36,16 @@ Magia sanguínea e proteção ritual. Proposta de encenação: rompe a própria 
 
 ## Pendências da ficha
 
-**Pendência específica:** Nome verdadeiro, disfarce, aparência e movimentos específicos são propostas; os preços e efeitos jogáveis permanecem fora desta ficha.
+**Pendência específica:** Capuz e cobertura integral estão confirmados somente para o disfarce, cujo busto v2 foi mantido pelo autor. Os concepts revelado e transformado são propostas baseadas nos Ignotos e aguardam avaliação. Nome verdadeiro, detalhes do disfarce e movimentos específicos continuam propostas; preços e efeitos jogáveis permanecem fora desta ficha.
 
 
 ## Aplicação à sprite
 
-Três formas de uma identidade. Aprovar estudo antes das folhas completas. Disfarce: luvas, gola alta, camadas de tecido. Revelado: palidez, dedos longos e marcas rituais. Transformado: mesmo corpo ampliado e deformado, elementos reconhecíveis. Não acrescentar membros, poderes nem símbolos narrativos.
+Disfarce: capuz, luvas e corpo coberto; só os olhos aparecem. Revelado: capuz baixado, humanoide branco e sem cabelo ou pelos, corpo intacto. Transformado: o mesmo indivíduo após hipertrofia e deformidades pelas doses concentradas, com pele exposta permitida. Preservar os elementos do traje e a identidade dos olhos. Os detalhes anatômicos das novas imagens aguardam avaliação; as folhas antigas precisam ser adaptadas.
 
 A direção visual está autorizada como base. A imagem ainda não foi aprovada. Usar o [padrão fixo](../prompts/base.md) e as três referências originais.
 
-## Revisão de movimento solicitada pelo autor
+## Histórico de movimento — imagens anteriores à correção do concept
 
 Em 18/10/2026, o autor apontou partes ausentes e movimento incompleto. Novas candidatas foram produzidas, preservando os repousos e as versões anteriores. A aprovação anterior, quando existente, permanece no histórico e não se aplica automaticamente às correções.
 
