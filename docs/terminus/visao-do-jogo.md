@@ -20,6 +20,8 @@ O jogador se desloca por Terminus como em Punch Club, entra nos estabelecimentos
 
 Vencer o campeonato de guildas de Terminus com o time de Ghork é o objetivo que conduz a campanha, mas não seu encerramento definitivo. A vitória revela a ameaça dos Ignotos e leva a um confronto obrigatório contra um chefão, incluído na entrega da game jam.
 
+Ghork acredita que vencer o campeonato provará seu valor a quem o rejeitou. A definição de quem ele quer convencer e de qual rejeição pesa mais foi adiada pelo autor para uma etapa posterior da entrevista. Essa motivação expressa a expectativa de Ghork; não estabelece que ele só mereça respeito depois da vitória.
+
 ## Referências narrativas
 
 Por preferência autoral, **Punch Club 1 é a referência narrativa principal; Punch Club 2 é complementar**. A inspiração inclui acontecimentos, encontros, conflitos, relações, reviravoltas e progressão da história, além do formato dos diagramas. Esses elementos servem como pontos de partida para adaptações ao passado de Ghork e ao mundo de Terminus, sem se tornarem automaticamente fatos do jogo.
@@ -32,11 +34,21 @@ A Jornada do Herói serve como referência flexível para a transformação de G
 
 O primeiro arco trata da escolha entre três guildas. Cada guilda tem cinco missões sequenciais, das quais a primeira é obrigatória. O jogador pode intercalar o avanço entre elas. As três apresentações precisam estar concluídas antes do compromisso no confronto final desse arco.
 
+O conflito entre as três guildas nasce da disputa por um contrato exclusivo, com pagamento excepcional, para investigar galerias pouco conhecidas de minas, mapear recursos e avaliar perigos. O contratante é um financiador mercantil que precisa de informações confiáveis para decidir sobre um investimento. A seleção antecede a investigação e se baseia na capacidade demonstrada pelas guildas.
+
+O conhecimento sobre as galerias é fragmentado: mapas e relatos parciais produzem informações pouco confiáveis ou aparentemente contraditórias. Para avaliar as candidatas, o financiador apresenta às três guildas o mesmo problema: dois mapas aparentemente incompatíveis, cuja análise pode ser feita com informações disponíveis fora das minas. A causa concreta da divergência foi adiada pelo autor; não estão estabelecidas fraude nos registros nem mudanças físicas nas galerias. As estratégias das guildas e as consequências da intervenção de Ghork ainda precisam ser definidas, incluindo o motivo da hostilidade das duas guildas preteridas.
+
 A quinta missão de cada guilda apresenta sua estratégia para um mesmo confronto entre as três. Ghork pode ouvir as propostas para as quais cumpriu os requisitos. A escolha se torna irreversível ao confirmar a execução de uma estratégia, com essa consequência sinalizada antes da decisão. Resolver o confronto apoiando uma guilda encerra o arco; as outras duas passam a agir como inimigas. As relações construídas anteriormente podem ser reconhecidas nos diálogos, sem anular essa hostilidade.
 
-A estrutura escolhida é **Decisões que se acumulam**, com três arcos. O detalhamento está na [apresentação da campanha](campanha-decisoes-acumuladas.html). Matrizes de acesso, exemplos de cenas e associações à Jornada apresentados como sugestões não são decisões narrativas definitivas.
+A estrutura escolhida é **Decisões que se acumulam**, com três arcos. A [apresentação da campanha](campanha-decisoes-acumuladas.html) detalha essa estrutura, mas ainda não incorpora as decisões narrativas mais recentes registradas aqui. Matrizes de acesso, exemplos de cenas e associações à Jornada apresentados como sugestões não são decisões narrativas definitivas.
 
 No segundo arco, X/Y representam pessoas e alianças diferentes dentro da trajetória da guilda. O jogador faz duas missões curtas de apresentação, em qualquer ordem, e então assume um compromisso com X ou Y. Seguem duas missões exclusivas da rota escolhida e uma missão compartilhada que leva à classificação. São cinco missões jogadas e sete a escrever, com variações que reconheçam a guilda, sem criar seis campanhas independentes.
+
+X e Y representam equipes externas, capazes de trabalhar com qualquer uma das três guildas. Seus representantes são antigos parceiros que divergem sobre quanto risco à integridade física dos companheiros é aceitável para fazer o grupo avançar. Essa divergência aparece na execução do contrato das minas, durante o segundo arco. Uma abordagem mais cautelosa consome uma parcela maior do pagamento, reduzindo o dinheiro disponível para a preparação para o campeonato. A outra aceita maior risco para preservar mais desse recurso. Ainda não foi atribuído cada posicionamento a X ou Y, nem definido o gasto concreto com segurança ou preparação.
+
+A guilda escolhida no primeiro arco continua titular do contrato. A equipe preterida em X/Y recebe apoio de uma das guildas rejeitadas e volta como adversária nas quartas de final. Guildas podem inscrever mais de uma equipe no campeonato, permitindo esse reencontro além das partidas anteriores contra as guildas rivais. O reencontro com a equipe preterida terá mágoa e cobrança, mas a causa dessa mágoa foi adiada pelo autor. Não está decidido que a escolha de Ghork tenha causado perda de trabalho, pagamento ou reputação.
+
+As alianças X/Y não definem automaticamente integrantes do time de Ghork. A relação dessas equipes com seu elenco ainda precisa ser detalhada, preservando os cinco recrutamentos opcionais e a possibilidade de concluir a campanha sem recrutar ninguém.
 
 O terceiro arco faz as escolhas anteriores voltarem em cinco partidas: uma contra cada guilda rejeitada, quartas contra o grupo preterido em X/Y, semifinal contra heróis não recrutados e final contra um chefão fixo do torneio. A ordem entre as duas guildas rivais ainda é uma decisão de roteiro. Depois da final permanecem a revelação dos Ignotos e o confronto obrigatório pós-campeonato, distinto do chefão do torneio.
 
@@ -44,15 +56,34 @@ A semifinal tem cinco adversários, um de cada par de recrutamento. Se Ghork rec
 
 Uma bifurcação curta U/V, antes da final, reconhece as alianças e decisões anteriores e converge na disputa contra o mesmo chefão. Sua função concreta ainda será discutida. As escolhas principais determinam reencontros; as menores podem reaparecer em diálogos e condições de cenas, sem exigir uma partida própria para cada decisão.
 
+## Chefão do torneio
+
+O chefão fixo do torneio é um personagem novo de Terminus, representante de uma quarta guilda veterana. Essa guilda participa como adversária e não oferece uma rota de adesão a Ghork; as opções do primeiro arco continuam sendo três.
+
+O campeão é um ídolo popular por seu talento e pelo espetáculo de seus combates. Quer continuar no topo, usa sua influência para obter vantagens na preparação e defende abertamente essa prioridade como um direito conquistado por sua trajetória. Sua popularidade dá ao público motivos para apoiá-lo mesmo contra Ghork.
+
+Nome, aparência e preparação de sua presença ao longo dos arcos permanecem em aberto. A cena em que prolonga uma sessão de treino e ocupa o horário reservado a outro grupo é uma proposta não aprovada. Não foi estabelecida uma ligação do campeão ou das minas com os Ignotos.
+
 ## Ignotos e revelação após o campeonato
 
-A vitória revela que Ekios está sendo atacada por Ignotos infiltrados, que influenciavam os acontecimentos da história em segredo desde o início. São sobreviventes ocultos da Grande Guerra, cujo objetivo é romper o selo e libertar os Ignotos que continuam no subsolo.
+A vitória revela a sobrevivência de Ignotos da Grande Guerra que permaneceram na superfície, organizados em grupos dispersos, sem comando central. A expressão “infiltrados” designa remanescentes fisicamente escondidos. Não estabelece disfarces sociais, uma conspiração coordenada ou manipulação secreta dos acontecimentos da campanha.
 
-O passado compartilhado com *Daratrine: A Origem* distingue o aprisionamento ancestral da restauração do selo após a Grande Guerra. Essa restauração bloqueou a chegada de novos Ignotos, enquanto os que permaneceram na superfície foram combatidos. A sobrevivência dos infiltrados é uma revelação de Terminus diante do relato anterior de eliminação dos Ignotos da superfície; o selo continua intacto no início dessa infiltração.
+Durante os preparativos da festividade, trabalhadores abrem uma passagem e expõem acidentalmente um refúgio desses remanescentes. O ataque acontece durante a celebração após a vitória de Ghork na final. O local da passagem e o trabalho que leva à sua abertura permanecem indefinidos. A abertura não significa que o selo tenha sido rompido.
 
-A referência consultada para essa cronologia é `docs/GDD/03_Narrative/História_Inteira_de_Daratrine.md`, no projeto *Daratrine: A Origem*, disponível no checkout local `/Users/edney/projects/coreto/projectX`. Ela serve como referência do passado compartilhado, sem alterar a documentação daquele projeto nem incorporar automaticamente suas demais decisões ao jogo de Terminus.
+Os remanescentes sentem um impulso de alcançar e libertar os Ignotos que continuam selados, sem compreender completamente o selo ou como realizar isso. Esse impulso substitui a hipótese de um plano coordenado. Ainda não está definido como o jogador percebe essa motivação nem o que acontece com o selo no desfecho.
 
-A ligação concreta entre o campeonato e o plano de romper o selo permanece em aberto por decisão do autor.
+O passado compartilhado com *Daratrine: A Origem* distingue o aprisionamento ancestral da restauração do selo após a Grande Guerra. Essa restauração bloqueou a chegada de novos Ignotos, enquanto os que permaneceram na superfície foram combatidos. A sobrevivência dos remanescentes ocultos é uma revelação de Terminus diante do relato anterior de eliminação dos Ignotos da superfície; o selo continua intacto no início da campanha.
+
+As referências consultadas estão no projeto *Daratrine: A Origem*, no checkout local `C:/projetos/projectX`, sob `docs/GDD/`:
+
+- `3-historia/historia-de-daratrine.md`: ruptura e restauração do selo na história da guerra.
+- `2-world-building/o-continente-de-ekios.md`: dispersão dos Ignotos após a perda do comando central, comportamento dos remanescentes e distinção entre Brutos, Sombrios e o Profeta das Sombras.
+- `2-world-building/racas/raca-ignotos.md`: origem, isolamento e transformação dos Ignotos.
+- `2-world-building/magia.md`: relação com a Profundina e limites da influência onírica.
+
+Esses documentos servem como referência do passado compartilhado; não incorporam automaticamente suas demais decisões a Terminus. Poderes específicos do Profeta das Sombras não devem ser atribuídos aos remanescentes em geral. Não foi aprovada uma ligação do campeão ou do contrato das minas com os Ignotos.
+
+O confronto obrigatório pós-campeonato permanece distinto da final do torneio. A última pergunta da entrevista, ainda sem resposta, tratou da natureza desse chefão: Bruto e Sombrio foram apresentados como alternativas, mas o autor ainda não escolheu nenhuma delas.
 
 ## Batalhas
 
@@ -106,9 +137,12 @@ No Coreto, Rheed vende cargas de nova rolagem para batalhas. Após falhar em uma
 
 ## Pontos em aberto
 
-- **Detalhamento da campanha:** definir os grupos X/Y, o conteúdo das sete missões do arco 2, a função de U/V e as associações à Jornada do Herói.
+- **Motivação de Ghork — adiada:** retomar posteriormente quem ele quer convencer e qual rejeição pesa mais, além da necessidade ou contradição pessoal que será colocada à prova.
+- **Contrato das minas:** detalhar o financiador mercantil, as estratégias das três guildas para demonstrar capacidade e como a intervenção de Ghork provoca a hostilidade das duas preteridas. A causa da divergência entre os dois mapas foi adiada; o critério de seleção e a investigação no arco 2 já estão definidos.
+- **Alianças X/Y:** definir nomes e composição das equipes, qual abordagem corresponde a cada uma, os riscos e gastos concretos na investigação e qual guilda rejeitada apoia a equipe preterida. A causa da mágoa no reencontro foi adiada.
+- **Detalhamento da campanha:** distribuir os acontecimentos nas sete missões escritas do arco 2, esclarecer a relação das equipes externas com o time de Ghork, definir a função de U/V e as associações à Jornada do Herói.
 - **Recrutamentos:** definir os cinco pares e conflitos, confirmar quais missões são longas e escolher a matriz de restrições por trajetória. Avaliar conteúdo e tempo disponíveis, além da contagem de cores.
-- **Campeonato e selo:** o autor ainda vai definir como o torneio se conecta ao plano dos infiltrados para romper o selo.
-- **Chefões:** definir a identidade e a preparação do chefão fixo do torneio e, separadamente, do chefão obrigatório após o campeonato.
+- **Revelação dos Ignotos:** detalhar a passagem e o trabalho que expõe o refúgio nos preparativos da festividade, como o jogador percebe o impulso dos remanescentes e o desfecho do selo. O ataque durante a celebração já está definido.
+- **Chefões — retomada:** escolher a natureza do chefão obrigatório após o campeonato, cuja última pergunta ficou sem resposta. Detalhar separadamente a identidade e a preparação do campeão conforme o perfil confirmado acima; a ocupação do horário de treino segue como proposta não aprovada.
 - **Economia de Ludos:** definir preços das opções de diálogo e das cargas de nova rolagem, além das recompensas das missões.
 - **Reveses:** definir as consequências narrativas das derrotas e como o jogador se prepara para as revanches.

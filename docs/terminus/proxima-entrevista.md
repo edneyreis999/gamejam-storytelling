@@ -28,6 +28,9 @@ Leia nesta ordem:
 
 A visão contém decisões confirmadas, ainda em desenvolvimento.
 A apresentação mistura decisões confirmadas e propostas marcadas para debate.
+As decisões das duas rodadas da entrevista já foram registradas na visão.
+O HTML não foi atualizado com esses blocos; use a visão para as decisões
+narrativas mais recentes.
 Tudo em docs/docs_externas/ é referência, não documentação aprovada do jogo.
 Nas fichas, preserve a distinção entre Livro, Notion, Inferência e Criação.
 
@@ -36,6 +39,18 @@ docs/docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf
 
 Não leia todas as fichas de personagens de uma vez. Explore referências
 adicionais conforme a pergunta exigir.
+
+Antes de propor novos detalhes sobre os Ignotos, consulte as fontes já
+usadas no checkout C:/projetos/projectX, sob docs/GDD/:
+- 2-world-building/racas/raca-ignotos.md
+- 2-world-building/o-continente-de-ekios.md (história e ecologia dos Ignotos)
+- 3-historia/historia-de-daratrine.md
+- 2-world-building/magia.md (Profundina e influência onírica, se necessário)
+
+São referências do passado compartilhado, não aprovação automática de
+conteúdo para Terminus. Não altere esse projeto. Não atribua a todos os
+Ignotos os poderes do Profeta das Sombras nem importe uma conspiração
+organizada de Punch Club para preencher lacunas de nossa história.
 
 COMO USAR PUNCH CLUB
 
@@ -83,6 +98,24 @@ me ajude a encontrar motivos e consequências que funcionem em Terminus.
 
 O QUE JÁ ESTÁ DECIDIDO
 
+- Ghork quer vencer para provar seu valor a quem o rejeitou. Quem ele quer
+  convencer e qual rejeição pesa mais foram adiados pelo autor. Retome essas
+  questões posteriormente, depois de explorar outros tópicos.
+- O chefão fixo do torneio é um personagem novo de Terminus, de uma quarta
+  guilda veterana sem rota de adesão. É um ídolo por talento e espetáculo,
+  quer continuar no topo, usa vantagens na preparação e defende abertamente
+  seus privilégios como merecidos. Nome e aparência ainda não foram definidos.
+- As três guildas do arco 1 disputam um contrato exclusivo, com pagamento
+  excepcional, para investigar galerias pouco conhecidas de minas, mapear
+  recursos e avaliar perigos. A seleção da guilda antecede a investigação;
+  não é uma corrida para entregar primeiro um levantamento.
+- O contratante é um financiador mercantil, interessado em informações
+  confiáveis para decidir sobre um investimento. Ele seleciona por capacidade
+  demonstrada e apresenta o mesmo problema às três guildas: dois mapas
+  aparentemente incompatíveis, analisáveis com informações fora das minas.
+  A dificuldade decorre de conhecimento fragmentado. A causa concreta da
+  divergência dos mapas foi adiada; não estão aprovadas fraude ou galerias
+  que mudam fisicamente.
 - Escolhemos “Decisões que se acumulam”, com três arcos e convergências.
   Não estamos escolhendo novamente a arquitetura da campanha.
 - O jogo é sobre fazer amigos e inimigos. Recrutar é esperado e vantajoso,
@@ -92,6 +125,19 @@ O QUE JÁ ESTÁ DECIDIDO
 - Arco 2: duas apresentações, escolha X/Y, duas missões exclusivas
   e uma missão compartilhada de classificação. X/Y trata de pessoas
   e alianças. São cinco missões jogadas e sete escritas.
+- X/Y são equipes externas, cujos representantes são antigos parceiros.
+  Podem trabalhar com qualquer guilda escolhida, que mantém a titularidade
+  do contrato das minas. A execução desse contrato ocorre no arco 2.
+- Os representantes divergem sobre o risco aceitável à integridade física
+  dos companheiros. A abordagem cautelosa custa mais dinheiro do pagamento,
+  deixando menos para a preparação para o campeonato. Ainda não atribuímos
+  cada abordagem a X ou Y, nem definimos os gastos concretos.
+- A equipe preterida recebe apoio de uma das guildas rejeitadas e reaparece
+  nas quartas com mágoa e cobrança. A causa dessa mágoa foi adiada.
+  Guildas podem inscrever mais de uma equipe no campeonato.
+- As equipes X/Y não concedem automaticamente aliados a Ghork. Sua relação
+  com o elenco ainda precisa ser detalhada, preservando os recrutamentos
+  opcionais e a campanha completa com zero recrutados.
 - Arco 3: uma partida contra cada guilda rejeitada, quartas contra
   o grupo preterido em X/Y, semifinal contra heróis não recrutados
   e final contra um chefão fixo. Uma bifurcação curta U/V converge
@@ -100,6 +146,16 @@ O QUE JÁ ESTÁ DECIDIDO
   o integrante não recrutado ou um sorteado, caso nenhum tenha sido.
 - A vitória no torneio revela a ameaça dos Ignotos e leva a outro confronto
   obrigatório. O chefão do torneio e o chefão posterior são distintos.
+- Os Ignotos são grupos dispersos, sem comando central. São sobreviventes
+  fisicamente escondidos na superfície, não uma organização infiltrada
+  socialmente ou manipulando os acontecimentos desde o início.
+- Nos preparativos da festividade, trabalhadores abrem uma passagem e
+  expõem acidentalmente um refúgio. Os remanescentes atacam durante a
+  celebração após a vitória de Ghork. Local e trabalho ainda estão abertos.
+- O selo estava intacto no início; abrir esse refúgio não equivale a rompê-lo.
+  Alcançar e libertar os Ignotos selados é um impulso dos remanescentes,
+  sem compreensão completa. Não há um plano coordenado aprovado.
+  Como revelar esse impulso ao jogador e o desfecho do selo estão abertos.
 - Existem cinco recrutamentos opcionais, distribuídos em 2 + 2 + 1.
   Resolver o conflito, receber a recompensa única e recrutar podem
   acontecer em momentos diferentes. Consulte os detalhes na visão.
@@ -113,22 +169,37 @@ O QUE JÁ ESTÁ DECIDIDO
 
 OBJETIVO DA ENTREVISTA
 
-Começar pelo núcleo dramático, usando Punch Club para tornar as propostas
-concretas, sem escrever a campanha inteira:
+Retomar pela última pergunta sem resposta: a natureza do chefão obrigatório
+pós-campeonato. Foram oferecidas as alternativas Ignoto Bruto e Ignoto
+Sombrio, com recomendação do Bruto, mas nenhuma foi escolhida. A recomendação
+não é uma decisão. Fundamente as alternativas nas fontes sobre os Ignotos.
 
-1. O que Ghork acredita que vencer o torneio resolverá em sua vida?
-2. Qual necessidade ou contradição pessoal será colocada à prova?
-3. Quem é o chefão fixo do torneio, o que deseja e por que outras pessoas
-   poderiam apoiá-lo?
-4. Como preparar esse confronto desde os primeiros arcos?
-5. Que conflito oferece uma base para as três guildas e para X/Y?
+Depois, avance conforme o interesse do autor, sem escrever a campanha
+inteira nem reabrir decisões confirmadas. Permanecem questões como:
 
-Depois desse núcleo, seguiremos para guildas, alianças X/Y, pares de
-recrutamento e um percurso completo da campanha. Não apresente todas
-essas perguntas de uma vez.
+1. Como apresentar o impulso dos remanescentes e encerrar esse confronto?
+2. Quais estratégias as três guildas apresentam para conquistar o contrato
+   e como a intervenção de Ghork provoca a hostilidade das duas preteridas?
+3. Como distribuir a execução do contrato e as alianças X/Y nas sete missões
+   escritas do arco 2, sem ampliar a estrutura aprovada?
+4. Qual é a função de U/V e como preparar o campeão ao longo da campanha?
+5. Quais são os pares e conflitos de recrutamento e como funciona um
+   percurso completo da campanha?
 
-Não presuma que o chefão do torneio seja aliado dos Ignotos.
-A ligação entre campeonato e selo depende de uma decisão minha.
+Respeite os pontos explicitamente adiados: quem Ghork quer convencer e
+qual rejeição pesa mais; a causa da divergência entre os mapas; a causa
+da mágoa da equipe preterida em X/Y. Retome-os posteriormente, sem tratá-los
+como impedimentos para explorar outros tópicos. Não presuma perda de
+trabalho, pagamento ou reputação como causa da mágoa. Não apresente todas
+as perguntas de uma vez.
+
+A cena em que o campeão prolonga o treino e ocupa o horário reservado
+a outro grupo continua sendo proposta não aprovada. O uso de privilégios
+na preparação e sua defesa dessa prioridade estão confirmados; a cena não.
+Não presuma uma ligação do chefão do torneio ou das minas com os Ignotos.
+O ataque na celebração está confirmado; uma ruptura do selo ou um plano
+coordenado para isso não estão. O tipo, a identidade e os poderes do chefão
+pós-campeonato ainda precisam de decisão.
 Não invente cura, viagens ou reconciliações de Ghork como fatos estabelecidos.
 
 CONDUÇÃO E REGISTRO
@@ -148,7 +219,8 @@ CONDUÇÃO E REGISTRO
   A documentação do jogo fica em docs/terminus/, em desenvolvimento.
 - Não crie HTML, fichas completas, cenas extensas ou commits sem solicitação.
 
-Comece investigando o significado da vitória para Ghork. Apresente uma
-referência pertinente de Punch Club 1 e use o passado de Ghork para
-propor adaptações antes da primeira pergunta.
+Comece com uma síntese curta do ataque na celebração e retome a pergunta
+sobre a natureza do chefão pós-campeonato. Explique as alternativas usando
+a documentação dos Ignotos antes de fazer uma única pergunta. Não force
+uma ligação com Punch Club quando ela contrariar essa documentação.
 ```
