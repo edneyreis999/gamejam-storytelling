@@ -1,0 +1,253 @@
+diff --git a/rpg-maker/Terminus/js/plugins/Coreto_1_OptionsCore.js b/rpg-maker/Terminus/js/plugins/Coreto_1_OptionsCore.js
+index 66df9b5..684c918 100644
+--- a/rpg-maker/Terminus/js/plugins/Coreto_1_OptionsCore.js
++++ b/rpg-maker/Terminus/js/plugins/Coreto_1_OptionsCore.js
+@@ -1287,6 +1287,10 @@ function installOptionsCategories(settings){
+         for(const option of options)invoke(option,data[option.Symbol]===undefined?'DefaultJS':'LoadJS',this,data,option.Symbol);
+     };
+     class Window_OptionsCategory extends Window_HorzCommand {
++        resetFontSettings(){
++            super.resetFontSettings();
++            this.contents.fontFace='CoretoOutfitMedium';this.contents.fontSize=22;
++        }
+         initialize(rect){
+             super.initialize(rect);
+             this._commandNameWindow=new Window_Base(new Rectangle(0,0,rect.width,rect.height));
+@@ -1310,6 +1314,15 @@ function installOptionsCategories(settings){
+             this.updateCommandNameWindow();
+         }
+         itemTextAlign(){return settings.OptionsSettings.CategoryTextAlign;}
++        drawIcon(iconIndex,x,y){
++            const source=ImageManager.loadSystem('IconSet'),size=ImageManager.iconWidth;
++            if(!source.isReady())return source.addLoadListener(()=>{if(!this._destroyed)this.refresh();});
++            const icon=new Bitmap(size,size);
++            icon.blt(source,(iconIndex%16)*size,Math.floor(iconIndex/16)*size,size,size,0,0);
++            const ctx=icon.context;
++            ctx.globalCompositeOperation='source-in';ctx.fillStyle=this.contents.textColor;ctx.fillRect(0,0,size,size);
++            icon.baseTexture.update();this.contents.blt(icon,0,0,size,size,Math.floor(x),Math.floor(y));icon.destroy();
++        }
+         commandStyle(){return settings.OptionsSettings.CategoryStyle;}
+         usesIconOnly(index){
+             const style=this.commandStyle();
+@@ -1348,12 +1361,69 @@ function installOptionsCategories(settings){
+     window.initialize=function(rect){this._name=null;this._data=null;initialize.call(this,rect);};
+     window.makeCommandList=function(){
+         this._coretoOptionRows=[];
+-        for(const option of this._data??[]){
+-            if(!invoke(option,'ShowJS',this))continue;
++        let heading=null;
++        const append=(option)=>{
+             const text=option.TextStr&&option.TextStr!=='Untitled'?option.TextStr:invoke(option,'TextJS',this);
+             const name=option.Icon?`\\I[${option.Icon}]`+text:text;
+-            this.addCommand(name,option.Symbol,invoke(option,'EnableJS',this),invoke(option,'ExtJS',this));
++            this.addCommand(name,option.Symbol,!!option.Symbol&&invoke(option,'EnableJS',this),invoke(option,'ExtJS',this));
+             this._coretoOptionRows.push(option);
++        };
++        for(const option of this._data??[]){
++            if(!invoke(option,'ShowJS',this))continue;
++            if(!option.Symbol){heading=option;continue;}
++            if(option.Symbol.startsWith('---'))continue;
++            if(heading){append(heading);heading=null;}
++            append(option);
++        }
++    };
++    window.isOptionHeading=function(index){return this._coretoOptionRows[index]?.Symbol==='';};
++    const selectOption=window.select;
++    window.select=function(index){
++        if(index>=0&&this.maxItems()>0){
++            index=Math.min(index,this.maxItems()-1);
++            const direction=index<this.index()?-1:1;
++            let candidate=index;
++            while(candidate>=0&&candidate<this.maxItems()&&this.isOptionHeading(candidate))candidate+=direction;
++            if(candidate<0||candidate>=this.maxItems()){
++                candidate=index;
++                while(candidate>=0&&candidate<this.maxItems()&&this.isOptionHeading(candidate))candidate-=direction;
++            }
++            index=candidate>=0&&candidate<this.maxItems()?candidate:-1;
++        }
++        selectOption.call(this,index);
++    };
++    const hitOption=window.hitTest;
++    window.hitTest=function(x,y){const index=hitOption.call(this,x,y);return this.isOptionHeading(index)?-1:index;};
++    const drawOptionBackground=window.drawItemBackground;
++    window.drawItemBackground=function(index){if(!this.isOptionHeading(index))drawOptionBackground.call(this,index);};
++    window.setOptionControl=function(index,control){(this._optionControls??={})[index]=control;};
++    const touchOption=window.onTouchOk;
++    window.onTouchOk=function(){
++        const index=this.hitIndex(),control=this._optionControls?.[index];
++        if(!control||!this.isCommandEnabled(index))return touchOption.call(this);
++        const point=this.worldTransform.applyInverse(new Point(TouchInput.x,TouchInput.y));
++        const x=point.x-this.padding+this.origin.x;
++        if(x<control.x)return touchOption.call(this);
++        if(control.kind==='cycle'){
++            if(x<control.x+44)this.cursorLeft();
++            else this.cursorRight();
++            return;
++        }
++        let target;
++        if(control.kind==='toggle'||control.kind==='segments'){
++            const choice=Math.min(control.count-1,Math.floor((x-control.x)/control.width*control.count));
++            target=control.kind==='toggle'?choice:choice+control.first;
++        }else if(control.kind==='slider'){
++            const ratio=Math.max(0,Math.min(1,(x-control.x)/control.trackWidth));
++            target=Math.round(control.min+ratio*(control.max-control.min));
++        }else return touchOption.call(this);
++        const direction=target>Number(control.value)?1:-1;
++        const limit=control.kind==='slider'?control.max-control.min+1:control.count;
++        for(let step=0;step<limit;step++){
++            const before=Number(this._optionControls[index].value);
++            if(direction>0?before>=target:before<=target)break;
++            if(direction>0)this.cursorRight();else this.cursorLeft();
++            if(Number(this._optionControls[index].value)===before)break;
+         }
+     };
+     window.setCategory=function(command){
+@@ -1704,6 +1774,10 @@ function installOptionsRebind(settings){
+         }
+     }
+     class Window_KeyRebinds extends Window_Command {
++        resetFontSettings(){
++            super.resetFontSettings();
++            this.contents.fontFace='CoretoOutfitMedium';this.contents.fontSize=22;
++        }
+         initialize(rect){this.setupType();super.initialize(rect);this.select(this.isForKeyboard()?2:1);}
+         setupType(){this._type=SceneManager._scene.isForKeyboard()?'keyboard':SceneManager._scene.isForGamepad()?'gamepad':'none';}
+         isForKeyboard(){return this._type==='keyboard';}
+diff --git a/rpg-maker/Terminus/js/plugins/Coreto_5_DesignSystem.js b/rpg-maker/Terminus/js/plugins/Coreto_5_DesignSystem.js
+index 0752139..766032c 100644
+--- a/rpg-maker/Terminus/js/plugins/Coreto_5_DesignSystem.js
++++ b/rpg-maker/Terminus/js/plugins/Coreto_5_DesignSystem.js
+@@ -276,7 +276,13 @@ const wrap=(prototype,method,decorate)=>{
+ const isTitle=w=>w instanceof Window_TitleCommand||(w instanceof Window_ChoiceList&&SceneManager.isSceneTitleMap?.());
+ const isConsole=w=>typeof Window_ButtonConsole!=='undefined'&&w instanceof Window_ButtonConsole;
+ const menuScene=()=>SceneManager._scene instanceof Scene_MenuBase;
+-function themed(w){return config.Windows&&w instanceof Window_Base&&!(w instanceof Window_ScrollText)&&!(w instanceof Window_MapName)&&(w.constructor.name!=='Window_ButtonAssist'||menuScene())&&!w._coretoPictureText;}
++// These providers own text, disabled opacity, layout and drawing callbacks.
++const sceneProviders={Scene_Menu:'MainMenu',Scene_Item:'ItemsEquips',Scene_Equip:'ItemsEquips',Scene_Shop:'ItemsEquips',Scene_Skill:'SkillsStates',Scene_Status:'ElementStatus',Scene_Battle:'Battle'};
++function providerPresentation(){const owner=sceneProviders[SceneManager._scene?.constructor.name];return !!owner&&active('VisuMZ_1_'+owner+'Core');}
++const optionsSurface=w=>w instanceof Window_Options||(typeof Window_OptionsCategory!=='undefined'&&w instanceof Window_OptionsCategory)||(typeof Window_KeyRebinds!=='undefined'&&w instanceof Window_KeyRebinds);
++// BattleCore owns the status skin, its selection background and visibility.
++const battleStatus=w=>active('VisuMZ_1_BattleCore')&&w instanceof Window_BattleStatus;
++function themed(w){return config.Windows&&w instanceof Window_Base&&!battleStatus(w)&&!(w instanceof Window_ScrollText)&&!(w instanceof Window_MapName)&&(w.constructor.name!=='Window_ButtonAssist'||menuScene())&&!w._coretoPictureText;}
+ const list=w=>themed(w)&&w instanceof Window_Selectable&&!(w instanceof Window_NameEdit)&&!(w instanceof Window_NumberInput)&&!isConsole(w);
+ wrap(Scene_Boot.prototype,'loadGameFonts',function(previous,args){
+   const result=previous.apply(this,args);
+@@ -475,7 +481,12 @@ function drawItemBackground(index){
+ 
+   const state=!enabled?'disabled':pressed?'pressed':hover?'hover':selected?'selected':'default';
+ 
+-  buttonSurface(this.contentsBack,rect,state,selected,false,isTitle(this)?'menu':'secondary');
++  if(optionsSurface(this)){
++    box(this.contentsBack,rect.x,rect.y,rect.width,rect.height,!enabled?colors.disabled:hover||selected?colors.hover:colors.panel,pressed?colors.primary:selected?colors.gold:hover?colors.focus:colors.border,config.Shapes.ControlRadius,selected||hover?config.Shapes.FocusWidth:config.Shapes.BorderWidth);
++  }else if(providerPresentation()){
++    // Light selection preserves provider-owned semantic colors and icon pixels.
++    box(this.contentsBack,rect.x,rect.y,rect.width,rect.height,hover||selected?colors.hover:colors.panel,selected?colors.gold:hover?colors.focus:colors.border,config.Shapes.ControlRadius,selected||hover?config.Shapes.FocusWidth:config.Shapes.BorderWidth);
++  }else buttonSurface(this.contentsBack,rect,state,selected,false,isTitle(this)?'menu':'secondary');
+ 
+   if(selected&&enabled&&(this instanceof Window_ChoiceList||this instanceof Window_TitleCommand)){
+ 
+@@ -610,7 +621,7 @@ function drawItemBackground(index){
+ 
+       if(w.isCommandEnabled&&!w.isCommandEnabled(index))return colors.muted;
+ 
+-      if(index===w.index())return colors.onAccent;
++      if(index===w.index()&&!optionsSurface(w))return colors.onAccent;
+ 
+     }
+ 
+@@ -622,7 +633,7 @@ function drawItemBackground(index){
+ 
+     const result=previous.apply(this,args);
+ 
+-    if(!isConsole(this)&&(themed(this)||this instanceof Window_ScrollText)&&this.contents){this.contents.textColor=ink(this);textContrast(this);}
++    if(!providerPresentation()&&!isConsole(this)&&(themed(this)||this instanceof Window_ScrollText)&&this.contents){this.contents.textColor=ink(this);textContrast(this);}
+ 
+     return result;
+ 
+@@ -630,7 +641,7 @@ function drawItemBackground(index){
+ 
+   wrap(Window_Base.prototype,'changeTextColor',function(previous,args){
+ 
+-    if(themed(this)&&this._coretoDrawingIndex!==undefined)args[0]=ink(this);
++    if(!providerPresentation()&&themed(this)&&this._coretoDrawingIndex!==undefined)args[0]=ink(this);
+ 
+     if(this instanceof Window_ScrollText)args[0]=ink(this);
+ 
+@@ -640,7 +651,7 @@ function drawItemBackground(index){
+ 
+   wrap(Window_Base.prototype,'changePaintOpacity',function(previous,args){
+ 
+-    if(themed(this)&&this._coretoDrawingIndex!==undefined)args[0]=true;
++    if(!providerPresentation()&&themed(this)&&this._coretoDrawingIndex!==undefined)args[0]=true;
+ 
+     return previous.apply(this,args);
+ 
+@@ -648,7 +659,7 @@ function drawItemBackground(index){
+ 
+   wrap(Window_Help.prototype,'drawTextEx',function(previous,args){
+ 
+-    args[1]=(args[1]||0)+16;if(args[3])args[3]-=16;
++    if(!providerPresentation()){args[1]=(args[1]||0)+16;if(args[3])args[3]-=16;}
+ 
+     return previous.apply(this,args);
+ 
+@@ -657,6 +668,7 @@ function drawItemBackground(index){
+   wrap(Window_Base.prototype,'resetFontSettings',function(previous,args){
+ 
+     const result=previous.apply(this,args);
++    if(providerPresentation())return result;
+ 
+     // Registered fonts and authored escapes belong to MessageCore. Never reset
+     // its choices, picture text, console or speaker typography from this layer.
+@@ -727,6 +739,7 @@ function drawItemBackground(index){
+   prototypes.forEach(decorateItem);
+ 
+   if(typeof Window_OptionsCategory!=='undefined')decorateItem(Window_OptionsCategory.prototype);
++  if(typeof Window_KeyRebinds!=='undefined')decorateItem(Window_KeyRebinds.prototype);
+ 
+   // Options categories keep Coreto's labels, layout logic and input handlers.
+ 
+@@ -814,20 +827,6 @@ function drawItemBackground(index){
+ 
+   });
+ 
+-  wrap(Window_Selectable.prototype,'select',function(previous,args){
+-
+-    const old=this.index();const result=previous.apply(this,args);
+-
+-    if(list(this)&&this.contents&&this.contentsBack&&old!==this.index()){
+-
+-      for(const index of [old,this.index()])if(index>=0&&index<this.maxItems())this.redrawItem(index);
+-
+-    }
+-
+-    return result;
+-
+-  });
+-
+   wrap(Window_Selectable.prototype,'update',function(previous,args){
+ 
+     const result=previous.apply(this,args);
+@@ -835,18 +834,20 @@ function drawItemBackground(index){
+     if(list(this)&&this.contents){
+ 
+       const oldHover=this._coretoHoverIndex;
++      const oldSelected=this._coretoSelectedIndex;
++      this._coretoSelectedIndex=this.index();
+ 
+       this._coretoHoverIndex=pointerUsed&&this.active&&this.visible&&this.isOpen()&&this.isTouchedInsideFrame()?this.hitIndex():-1;
+ 
+       this._coretoPointerPressed=this.active&&TouchInput.isPressed()&&this._coretoHoverIndex>=0;
+ 
+-      const signature=[this.active,Input.isPressed('ok'),this._coretoPointerPressed,this._coretoHoverIndex].join('|');
++      const signature=[this.active,Input.isPressed('ok'),this._coretoPointerPressed,this._coretoHoverIndex,this._coretoSelectedIndex].join('|');
+ 
+       if(this._coretoState!==signature){
+ 
+         this._coretoState=signature;
+ 
+-        for(const i of new Set([oldHover,this._coretoHoverIndex,this.index()]))if(i>=0&&i<this.maxItems())this.redrawItem(i);
++        for(const i of new Set([oldHover,this._coretoHoverIndex,oldSelected,this._coretoSelectedIndex]))if(i>=0&&i<this.maxItems())this.redrawItem(i);
+ 
+       }
+ 

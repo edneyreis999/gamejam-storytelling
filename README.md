@@ -25,3 +25,9 @@ Status: em desenvolvimento.
 | Consultar os diagramas e a proposta de matriz de acessos | [Apresentação da campanha — Decisões que se acumulam](docs/terminus/campanha-decisoes-acumuladas.html) |
 
 A apresentação ainda não incorpora as decisões narrativas mais recentes. A visão registra as decisões confirmadas; as fichas e a análise identificam propostas que aguardam validação. Os materiais em `docs/docs_externas/` são referências.
+
+## Projeto RPG Maker MZ
+
+Projeto RPG Maker MZ: [Terminus](rpg-maker/Terminus/game.rmmzproject), com tela e área de UI configuradas em 1280 × 720 e o preset `coreto-default` (Design System 1.2.1). A base usa CoreEngine, MessageCore, OptionsCore, SaveCore e ExtMessageFunc. A [configuração da interface](docs/terminus/interface-coreto.md) registra o título e os ícones; mapas e personagens ainda são os recursos provisórios do MZ.
+
+- [Histórico de ajustes de design](docs/terminus/historico-ajustes-design.md)

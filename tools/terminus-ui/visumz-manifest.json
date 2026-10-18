@@ -1,0 +1,2404 @@
+{
+  "source": "C:/projetos/projectX/frontend/js/plugins",
+  "expandStructs": ["BattleLayout"],
+  "globalColors": {
+    "ColorCrisis": "#704737",
+    "ColorDeath": "#af2933",
+    "ColorGaugeBack": "#d3c7b4",
+    "ColorHPGauge1": "#af2933",
+    "ColorHPGauge2": "#af2933",
+    "ColorMPGauge1": "#552070",
+    "ColorMPGauge2": "#552070",
+    "ColorMPCost": "#552070",
+    "ColorPowerUp": "#2a847d",
+    "ColorPowerDown": "#af2933",
+    "ColorCTGauge1": "#704737",
+    "ColorCTGauge2": "#edaa2f",
+    "ColorTPGauge1": "#2a847d",
+    "ColorTPGauge2": "#2a847d",
+    "ColorTPCost": "#2a847d",
+    "ColorExpGauge1": "#704737",
+    "ColorExpGauge2": "#edaa2f",
+    "ColorMaxLvGauge1": "#552070",
+    "ColorMaxLvGauge2": "#edaa2f",
+    "OutlineColorGauge": "rgba(0,0,0,0)"
+  },
+  "globalParameters": {
+    "Gold/GoldIcon": 382,
+    "Gold/GoldOverlap": "Muito",
+    "Window/TranslucentOpacity": 160,
+    "Color/DamageColor": "return ['#af2933', '#2a847d', '#552070', '#704737'][arguments[0]] || '#360a0b';"
+  },
+  "plugins": [
+    {
+      "name": "VisuMZ_1_ElementStatusCore",
+      "version": "1.26",
+      "sha256": "c4af16eeaca3a80960b3a09fbd75d52edf16b4bbab0804f292e53a5bbfcd32d6",
+      "changes": [
+        {
+          "path": "StatusMenu:struct/VocabBiography:str",
+          "value": "Biografia"
+        },
+        {
+          "path": "StatusMenu:struct/VocabDmgAbsorb:str",
+          "value": "Absorve %1%"
+        },
+        {
+          "path": "StatusMenu:struct/VocabDmgReceive:str",
+          "value": "Resistência elemental"
+        },
+        {
+          "path": "StatusMenu:struct/VocabDmgDealt:str",
+          "value": "Dano adicional"
+        },
+        {
+          "path": "StatusMenu:struct/VocabStype:str",
+          "value": "Tipos de habilidade"
+        },
+        {
+          "path": "StatusMenu:struct/VocabWtype:str",
+          "value": "Tipos de arma"
+        },
+        {
+          "path": "StatusMenu:struct/VocabAtype:str",
+          "value": "Tipos de armadura"
+        },
+        {
+          "path": "StatusMenuList:arraystruct/0/Text:str",
+          "value": "Geral"
+        },
+        {
+          "path": "StatusMenuList:arraystruct/1/Text:str",
+          "value": "Atributos"
+        },
+        {
+          "path": "StatusMenuList:arraystruct/2/Text:str",
+          "value": "Características"
+        },
+        {
+          "path": "StatusMenuList:arraystruct/3/Text:str",
+          "value": "Elementos"
+        },
+        {
+          "path": "StatusMenuList:arraystruct/4/Text:str",
+          "value": "Proficiências"
+        },
+        {
+          "path": "StatusMenuList:arraystruct/5/Text:str",
+          "value": "Voltar"
+        },
+        {
+          "path": "Element:struct/Label:str",
+          "value": "Elemento"
+        },
+        {
+          "path": "Element:struct/Default:struct/Display:str",
+          "value": "\\i[160]Neutro"
+        },
+        {
+          "path": "Element:struct/Default:struct/Description:json",
+          "value": "Sem vantagens ou fraquezas."
+        },
+        {
+          "path": "Element:struct/List:arraystruct/0/Display:str",
+          "value": "\\I[64]Fogo"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/0/Description:json",
+          "value": "Resistente a \\I[64]Fogo e \\I[65]Gelo.\nVulnerável a \\I[67]Água."
+        },
+        {
+          "path": "Element:struct/List:arraystruct/0/FmtText:str",
+          "value": "Chama"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/1/Display:str",
+          "value": "\\I[65]Gelo"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/1/Description:json",
+          "value": "Resistente a \\I[65]Gelo e \\I[69]Vento.\nVulnerável a \\I[64]Fogo."
+        },
+        {
+          "path": "Element:struct/List:arraystruct/1/FmtText:str",
+          "value": "Geada"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/2/Display:str",
+          "value": "\\I[66]Raio"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/2/Description:json",
+          "value": "Resistente a \\I[66]Raio e \\I[67]Água.\nVulnerável a \\I[68]Terra."
+        },
+        {
+          "path": "Element:struct/List:arraystruct/2/FmtText:str",
+          "value": "Elétrico"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/3/Display:str",
+          "value": "\\I[67]Água"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/3/Description:json",
+          "value": "Resistente a \\I[67]Água e \\I[64]Fogo.\nVulnerável a \\I[66]Raio."
+        },
+        {
+          "path": "Element:struct/List:arraystruct/3/FmtText:str",
+          "value": "Água"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/4/Display:str",
+          "value": "\\I[68]Terra"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/4/Description:json",
+          "value": "Resistente a \\I[68]Terra e \\I[66]Raio.\nVulnerável a \\I[69]Vento."
+        },
+        {
+          "path": "Element:struct/List:arraystruct/4/FmtText:str",
+          "value": "Pedra"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/5/Display:str",
+          "value": "\\I[69]Vento"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/5/Description:json",
+          "value": "Resistente a \\I[69]Vento e \\I[68]Terra.\nVulnerável a \\I[65]Gelo."
+        },
+        {
+          "path": "Element:struct/List:arraystruct/5/FmtText:str",
+          "value": "Ar"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/6/Display:str",
+          "value": "\\I[70]Luz"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/6/Description:json",
+          "value": "Resistente a \\I[70]Luz.\nVulnerável a \\I[71]Trevas."
+        },
+        {
+          "path": "Element:struct/List:arraystruct/6/FmtText:str",
+          "value": "Luz"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/7/Display:str",
+          "value": "\\I[71]Trevas"
+        },
+        {
+          "path": "Element:struct/List:arraystruct/7/Description:json",
+          "value": "Resistente a \\I[71]Trevas.\nVulnerável a \\I[70]Luz."
+        },
+        {
+          "path": "Element:struct/List:arraystruct/7/FmtText:str",
+          "value": "Sombra"
+        },
+        {
+          "path": "SubElement:struct/Label:str",
+          "value": "Elemento secundário"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/0/Display:str",
+          "value": "\\I[64]Fogo"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/0/Description:json",
+          "value": "Resistente a \\I[64]Fogo e \\I[65]Gelo.\nVulnerável a \\I[67]Água."
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/0/FmtText:str",
+          "value": "Chama"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/1/Display:str",
+          "value": "\\I[65]Gelo"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/1/Description:json",
+          "value": "Resistente a \\I[65]Gelo e \\I[69]Vento.\nVulnerável a \\I[64]Fogo."
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/1/FmtText:str",
+          "value": "Geada"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/2/Display:str",
+          "value": "\\I[66]Raio"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/2/Description:json",
+          "value": "Resistente a \\I[66]Raio e \\I[67]Água.\nVulnerável a \\I[68]Terra."
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/2/FmtText:str",
+          "value": "Elétrico"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/3/Display:str",
+          "value": "\\I[67]Água"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/3/Description:json",
+          "value": "Resistente a \\I[67]Água e \\I[64]Fogo.\nVulnerável a \\I[66]Raio."
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/3/FmtText:str",
+          "value": "Água"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/4/Display:str",
+          "value": "\\I[68]Terra"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/4/Description:json",
+          "value": "Resistente a \\I[68]Terra e \\I[66]Raio.\nVulnerável a \\I[69]Vento."
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/4/FmtText:str",
+          "value": "Pedra"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/5/Display:str",
+          "value": "\\I[69]Vento"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/5/Description:json",
+          "value": "Resistente a \\I[69]Vento e \\I[68]Terra.\nVulnerável a \\I[65]Gelo."
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/5/FmtText:str",
+          "value": "Ar"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/6/Display:str",
+          "value": "\\I[70]Luz"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/6/Description:json",
+          "value": "Resistente a \\I[70]Luz.\nVulnerável a \\I[71]Trevas."
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/6/FmtText:str",
+          "value": "Luz"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/7/Display:str",
+          "value": "\\I[71]Trevas"
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/7/Description:json",
+          "value": "Resistente a \\I[71]Trevas.\nVulnerável a \\I[70]Luz."
+        },
+        {
+          "path": "SubElement:struct/List:arraystruct/7/FmtText:str",
+          "value": "Sombra"
+        },
+        {
+          "path": "Gender:struct/Label:str",
+          "value": "Gênero"
+        },
+        {
+          "path": "Gender:struct/Default:struct/Display:str",
+          "value": "\\I[160]Desconhecido"
+        },
+        {
+          "path": "Gender:struct/Default:struct/Description:json",
+          "value": "Gênero não informado."
+        },
+        {
+          "path": "Gender:struct/List:arraystruct/0/Display:str",
+          "value": "\\I[165]Masculino"
+        },
+        {
+          "path": "Gender:struct/List:arraystruct/0/Description:json",
+          "value": "Este personagem tem atributos físicos maiores.\nEste personagem tem atributos mágicos menores."
+        },
+        {
+          "path": "Gender:struct/List:arraystruct/1/Display:str",
+          "value": "\\I[162]Feminino"
+        },
+        {
+          "path": "Gender:struct/List:arraystruct/1/Description:json",
+          "value": "Este personagem tem atributos mágicos maiores.\nEste personagem tem atributos físicos menores."
+        },
+        {
+          "path": "Gender:struct/List:arraystruct/2/Display:str",
+          "value": "\\I[84]Ambos"
+        },
+        {
+          "path": "Gender:struct/List:arraystruct/2/Description:json",
+          "value": "Este personagem tem atributos maiores."
+        },
+        {
+          "path": "Race:struct/Label:str",
+          "value": "Espécie"
+        },
+        {
+          "path": "Race:struct/Default:struct/Display:str",
+          "value": "\\I[16]Sem categoria"
+        },
+        {
+          "path": "Race:struct/Default:struct/Description:json",
+          "value": "Os atributos desta espécie não foram definidos."
+        },
+        {
+          "path": "Race:struct/List:arraystruct/0/Display:str",
+          "value": "\\I[82]Humano"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/0/Description:json",
+          "value": "Esta espécie tem atributos neutros."
+        },
+        {
+          "path": "Race:struct/List:arraystruct/0/FmtText:str",
+          "value": "Humano"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/1/Display:str",
+          "value": "\\I[101]Alto elfo"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/1/Description:json",
+          "value": "Altos elfos têm mais PM máximo e menos PV máximo.\nAltos elfos podem equipar cajados e armaduras mágicas."
+        },
+        {
+          "path": "Race:struct/List:arraystruct/1/FmtText:str",
+          "value": "Alto elfo"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/2/Display:str",
+          "value": "\\I[102]Elfo silvestre"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/2/Description:json",
+          "value": "Elfos silvestres têm mais agilidade e menos defesa.\nElfos silvestres podem equipar arcos e bestas."
+        },
+        {
+          "path": "Race:struct/List:arraystruct/2/FmtText:str",
+          "value": "Elfo silvestre"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/3/Display:str",
+          "value": "\\I[71]Elfo sombrio"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/3/Description:json",
+          "value": "Elfos sombrios têm mais ataque e menos ataque mágico.\nElfos sombrios podem equipar adagas e espadas."
+        },
+        {
+          "path": "Race:struct/List:arraystruct/3/FmtText:str",
+          "value": "Elfo sombrio"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/4/Display:str",
+          "value": "\\I[223]Anão"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/4/Description:json",
+          "value": "Anões têm mais PV máximo e menos agilidade.\nAnões podem equipar mangual e armaduras pesadas."
+        },
+        {
+          "path": "Race:struct/List:arraystruct/4/FmtText:str",
+          "value": "Anão"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/5/Display:str",
+          "value": "\\I[140]Gnomo"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/5/Description:json",
+          "value": "Gnomos têm mais agilidade e menos defesa.\nGnomos podem equipar adagas e armaduras leves."
+        },
+        {
+          "path": "Race:struct/List:arraystruct/5/FmtText:str",
+          "value": "Gnomo"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/6/Display:str",
+          "value": "\\I[142]Pequenino"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/6/Description:json",
+          "value": "Pequeninos têm mais sorte e menos PM máximo.\nPequeninos podem equipar espadas e escudos pequenos."
+        },
+        {
+          "path": "Race:struct/List:arraystruct/6/FmtText:str",
+          "value": "Pequenino"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/7/Display:str",
+          "value": "\\I[105]Lupino"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/7/Description:json",
+          "value": "Lupinos têm mais ataque e menos ataque mágico.\nLupinos podem equipar garras e luvas."
+        },
+        {
+          "path": "Race:struct/List:arraystruct/7/FmtText:str",
+          "value": "Lupino"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/8/Display:str",
+          "value": "\\I[100]Felino"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/8/Description:json",
+          "value": "Felinos têm mais ataque mágico e menos ataque.\nFelinos podem equipar chicotes e cajados."
+        },
+        {
+          "path": "Race:struct/List:arraystruct/8/FmtText:str",
+          "value": "Felino"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/9/Display:str",
+          "value": "\\I[99]Reptiliano"
+        },
+        {
+          "path": "Race:struct/List:arraystruct/9/Description:json",
+          "value": "Reptilianos têm mais defesa e menos sorte.\nReptilianos podem equipar machados e lanças."
+        },
+        {
+          "path": "Race:struct/List:arraystruct/9/FmtText:str",
+          "value": "Reptiliano"
+        },
+        {
+          "path": "Nature:struct/Label:str",
+          "value": "Temperamento"
+        },
+        {
+          "path": "Nature:struct/Default:struct/Display:str",
+          "value": "\\I[84]Tranquilo"
+        },
+        {
+          "path": "Nature:struct/Default:struct/Description:json",
+          "value": "Este personagem tem atributos neutros."
+        },
+        {
+          "path": "Nature:struct/Default:struct/FmtText:str",
+          "value": "Tranquilo"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/0/Display:str",
+          "value": "\\I[34]\\I[50]Resistente"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/0/Description:json",
+          "value": "Este personagem tem atributos neutros."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/0/FmtText:str",
+          "value": "Resistente"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/1/Display:str",
+          "value": "\\I[34]\\I[51]Solitário"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/1/Description:json",
+          "value": "Este personagem tem mais ataque e menos defesa."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/1/FmtText:str",
+          "value": "Solitário"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/2/Display:str",
+          "value": "\\I[34]\\I[52]Determinado"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/2/Description:json",
+          "value": "Este personagem tem mais ataque e menos ataque mágico."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/2/FmtText:str",
+          "value": "Determinado"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/3/Display:str",
+          "value": "\\I[34]\\I[53]Travesso"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/3/Description:json",
+          "value": "Este personagem tem mais ataque e menos defesa mágica."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/3/FmtText:str",
+          "value": "Travesso"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/4/Display:str",
+          "value": "\\I[34]\\I[54]Corajoso"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/4/Description:json",
+          "value": "Este personagem tem mais ataque e menos agilidade."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/4/FmtText:str",
+          "value": "Corajoso"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/5/Display:str",
+          "value": "\\I[35]\\I[50]Ousado"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/5/Description:json",
+          "value": "Este personagem tem mais defesa e menos ataque."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/5/FmtText:str",
+          "value": "Ousado"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/6/Display:str",
+          "value": "\\I[35]\\I[51]Dócil"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/6/Description:json",
+          "value": "Este personagem tem atributos neutros."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/6/FmtText:str",
+          "value": "Dócil"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/7/Display:str",
+          "value": "\\I[35]\\I[52]Irrequieto"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/7/Description:json",
+          "value": "Este personagem tem mais defesa e menos ataque mágico."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/7/FmtText:str",
+          "value": "Irrequieto"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/8/Display:str",
+          "value": "\\I[35]\\I[53]Displicente"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/8/Description:json",
+          "value": "Este personagem tem mais defesa e menos defesa mágica."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/8/FmtText:str",
+          "value": "Displicente"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/9/Display:str",
+          "value": "\\I[35]\\I[54]Relaxado"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/9/Description:json",
+          "value": "Este personagem tem mais defesa e menos agilidade."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/9/FmtText:str",
+          "value": "Relaxado"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/10/Display:str",
+          "value": "\\I[36]\\I[50]Modesto"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/10/Description:json",
+          "value": "Este personagem tem mais ataque mágico e menos ataque."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/10/FmtText:str",
+          "value": "Modesto"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/11/Display:str",
+          "value": "\\I[36]\\I[51]Afável"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/11/Description:json",
+          "value": "Este personagem tem mais ataque mágico e menos defesa."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/11/FmtText:str",
+          "value": "Afável"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/12/Display:str",
+          "value": "\\I[36]\\I[52]Tímido"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/12/Description:json",
+          "value": "Este personagem tem atributos neutros."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/12/FmtText:str",
+          "value": "Tímido"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/13/Display:str",
+          "value": "\\I[36]\\I[53]Impulsivo"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/13/Description:json",
+          "value": "Este personagem tem mais ataque mágico e menos defesa mágica."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/13/FmtText:str",
+          "value": "Impulsivo"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/14/Display:str",
+          "value": "\\I[36]\\I[54]Reservado"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/14/Description:json",
+          "value": "Este personagem tem mais ataque mágico e menos agilidade."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/14/FmtText:str",
+          "value": "Reservado"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/15/Display:str",
+          "value": "\\I[37]\\I[50]Calmo"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/15/Description:json",
+          "value": "Este personagem tem mais defesa mágica e menos ataque."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/15/FmtText:str",
+          "value": "Calmo"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/16/Display:str",
+          "value": "\\I[37]\\I[51]Gentil"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/16/Description:json",
+          "value": "Este personagem tem mais defesa mágica e menos defesa."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/16/FmtText:str",
+          "value": "Gentil"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/17/Display:str",
+          "value": "\\I[37]\\I[52]Cuidadoso"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/17/Description:json",
+          "value": "Este personagem tem mais defesa mágica e menos ataque mágico."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/17/FmtText:str",
+          "value": "Cuidadoso"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/18/Display:str",
+          "value": "\\I[37]\\I[53]Excêntrico"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/18/Description:json",
+          "value": "Este personagem tem atributos neutros."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/18/FmtText:str",
+          "value": "Excêntrico"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/19/Display:str",
+          "value": "\\I[37]\\I[54]Atrevido"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/19/Description:json",
+          "value": "Este personagem tem mais defesa mágica e menos agilidade."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/19/FmtText:str",
+          "value": "Atrevido"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/20/Display:str",
+          "value": "\\I[38]\\I[50]Tímido"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/20/Description:json",
+          "value": "Este personagem tem mais agilidade e menos ataque."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/20/FmtText:str",
+          "value": "Tímido"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/21/Display:str",
+          "value": "\\I[38]\\I[51]Apressado"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/21/Description:json",
+          "value": "Este personagem tem mais agilidade e menos defesa."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/21/FmtText:str",
+          "value": "Apressado"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/22/Display:str",
+          "value": "\\I[38]\\I[52]Alegre"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/22/Description:json",
+          "value": "Este personagem tem mais agilidade e menos ataque mágico."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/22/FmtText:str",
+          "value": "Alegre"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/23/Display:str",
+          "value": "\\I[38]\\I[53]Ingênuo"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/23/Description:json",
+          "value": "Este personagem tem mais agilidade e menos defesa mágica."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/23/FmtText:str",
+          "value": "Ingênuo"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/24/Display:str",
+          "value": "\\I[38]\\I[54]Sério"
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/24/Description:json",
+          "value": "Este personagem tem atributos neutros."
+        },
+        {
+          "path": "Nature:struct/List:arraystruct/24/FmtText:str",
+          "value": "Sério"
+        },
+        {
+          "path": "Alignment:struct/Label:str",
+          "value": "Alinhamento"
+        },
+        {
+          "path": "Alignment:struct/Default:struct/Display:str",
+          "value": "\\I[160]Neutro"
+        },
+        {
+          "path": "Alignment:struct/Default:struct/Description:json",
+          "value": "O alinhamento deste personagem é inteiramente neutro."
+        },
+        {
+          "path": "Alignment:struct/Default:struct/FmtText:str",
+          "value": "Neutro"
+        },
+        {
+          "path": "Alignment:struct/Default:struct/FmtText:str",
+          "value": "Neutro"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/0/Display:str",
+          "value": "\\I[70]Leal e bom"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/0/Description:json",
+          "value": "Resistente a \\I[70]Luz.\nVulnerável a \\I[71]Trevas."
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/0/FmtText:str",
+          "value": "Bom"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/1/Display:str",
+          "value": "\\I[70]Neutro e bom"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/1/Description:json",
+          "value": "Resistente a \\I[70]Luz.\nVulnerável a \\I[71]Trevas."
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/1/FmtText:str",
+          "value": "Bom"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/2/Display:str",
+          "value": "\\I[70]Caótico e bom"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/2/Description:json",
+          "value": "Resistente a \\I[70]Luz.\nVulnerável a \\I[71]Trevas."
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/2/FmtText:str",
+          "value": "Bom"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/3/Display:str",
+          "value": "\\I[160]Leal e neutro"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/3/Description:json",
+          "value": "Resistente a \\I[67]Água, \\I[68]Terra, \\I[69]Vento.\nVulnerável a \\I[64]Fogo, \\I[65]Gelo, \\I[66]Raio."
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/3/FmtText:str",
+          "value": "Neutro"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/3/FmtText:str",
+          "value": "Neutro"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/4/Display:str",
+          "value": "\\I[160]Caótico e neutro"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/4/Description:json",
+          "value": "Resistente a \\I[64]Fogo, \\I[65]Gelo, \\I[66]Raio.\nVulnerável a \\I[67]Água, \\I[68]Terra, \\I[69]Vento."
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/4/FmtText:str",
+          "value": "Neutro"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/4/FmtText:str",
+          "value": "Neutro"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/5/Display:str",
+          "value": "\\I[71]Leal e mau"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/5/Description:json",
+          "value": "Resistente a \\I[71]Trevas.\nVulnerável a \\I[70]Luz."
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/5/FmtText:str",
+          "value": "Mau"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/6/Display:str",
+          "value": "\\I[71]Neutro e mau"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/6/Description:json",
+          "value": "Resistente a \\I[71]Trevas.\nVulnerável a \\I[70]Luz."
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/6/FmtText:str",
+          "value": "Mau"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/7/Display:str",
+          "value": "\\I[71]Caótico e mau"
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/7/Description:json",
+          "value": "Resistente a \\I[71]Trevas.\nVulnerável a \\I[70]Luz."
+        },
+        {
+          "path": "Alignment:struct/List:arraystruct/7/FmtText:str",
+          "value": "Mau"
+        },
+        {
+          "path": "Blessing:struct/Label:str",
+          "value": "Bênção"
+        },
+        {
+          "path": "Blessing:struct/Default:struct/Display:str",
+          "value": "\\I[160]Sem bênção"
+        },
+        {
+          "path": "Blessing:struct/Default:struct/Description:json",
+          "value": "Este personagem não recebeu uma bênção."
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/0/Display:str",
+          "value": "\\I[164]Destro"
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/0/Description:json",
+          "value": "Este personagem tem aumento de precisão."
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/0/FmtText:str",
+          "value": "Destro"
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/1/Display:str",
+          "value": "\\I[164]Evasivo"
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/1/Description:json",
+          "value": "Este personagem tem aumento de evasão."
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/1/FmtText:str",
+          "value": "Evasivo"
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/2/Display:str",
+          "value": "\\I[164]Impacto"
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/2/Description:json",
+          "value": "Este personagem tem aumento de chance crítica."
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/2/FmtText:str",
+          "value": "Impactante"
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/3/Display:str",
+          "value": "\\I[164]Saudável"
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/3/Description:json",
+          "value": "Este personagem tem regeneração natural de PV."
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/3/FmtText:str",
+          "value": "Saudável"
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/4/Display:str",
+          "value": "\\I[164]Concentrado"
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/4/Description:json",
+          "value": "Este personagem tem regeneração natural de PM."
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/4/FmtText:str",
+          "value": "Concentrado"
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/5/Display:str",
+          "value": "\\I[164]Enérgico"
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/5/Description:json",
+          "value": "Este personagem tem regeneração natural de PT."
+        },
+        {
+          "path": "Blessing:struct/List:arraystruct/5/FmtText:str",
+          "value": "Enérgico"
+        },
+        {
+          "path": "Curse:struct/Label:str",
+          "value": "Maldição"
+        },
+        {
+          "path": "Curse:struct/Default:struct/Display:str",
+          "value": "\\I[160]Sem maldição"
+        },
+        {
+          "path": "Curse:struct/Default:struct/Description:json",
+          "value": "Este personagem não está amaldiçoado."
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/0/Display:str",
+          "value": "\\I[170]Desajeitado"
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/0/Description:json",
+          "value": "Este personagem tem menos precisão."
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/0/FmtText:str",
+          "value": "Desajeitado"
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/1/Display:str",
+          "value": "\\I[170]Atordoado"
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/1/Description:json",
+          "value": "Este personagem tem menos evasão."
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/1/FmtText:str",
+          "value": "Atordoado"
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/2/Display:str",
+          "value": "\\I[170]Instável"
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/2/Description:json",
+          "value": "Este personagem tem menos chance crítica."
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/2/FmtText:str",
+          "value": "Instável"
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/3/Display:str",
+          "value": "\\I[170]Exaurido"
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/3/Description:json",
+          "value": "Este personagem recebe menos cura."
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/3/FmtText:str",
+          "value": "Exaurido"
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/4/Display:str",
+          "value": "\\I[170]Ineficiente"
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/4/Description:json",
+          "value": "Este personagem consome mais PM."
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/4/FmtText:str",
+          "value": "Ineficiente"
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/5/Display:str",
+          "value": "\\I[170]Desmotivado"
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/5/Description:json",
+          "value": "Este personagem ganha menos PT."
+        },
+        {
+          "path": "Curse:struct/List:arraystruct/5/FmtText:str",
+          "value": "Desmotivado"
+        },
+        {
+          "path": "Zodiac:struct/Label:str",
+          "value": "Zodíaco"
+        },
+        {
+          "path": "Zodiac:struct/Default:struct/Display:str",
+          "value": "\\I[160]Desconhecido"
+        },
+        {
+          "path": "Zodiac:struct/Default:struct/Description:json",
+          "value": "O signo deste personagem é desconhecido."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/0/Display:str",
+          "value": "\\I[88]Áries"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/0/Description:json",
+          "value": "Este personagem tem um pequeno aumento de ataque."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/1/Display:str",
+          "value": "\\I[88]Touro"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/1/Description:json",
+          "value": "Este personagem tem uma pequena resistência a \\I[68]Terra."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/2/Display:str",
+          "value": "\\I[88]Gêmeos"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/2/Description:json",
+          "value": "Este personagem tem um pequeno aumento de agilidade."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/3/Display:str",
+          "value": "\\I[88]Câncer"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/3/Description:json",
+          "value": "Este personagem tem um pequeno aumento de defesa."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/4/Display:str",
+          "value": "\\I[88]Leão"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/4/Description:json",
+          "value": "Este personagem tem uma pequena resistência a \\I[64]Fogo."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/5/Display:str",
+          "value": "\\I[88]Virgem"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/5/Description:json",
+          "value": "Este personagem tem um pequeno aumento de ataque mágico."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/6/Display:str",
+          "value": "\\I[88]Libra"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/6/Description:json",
+          "value": "Este personagem tem um pequeno aumento de defesa mágica."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/7/Display:str",
+          "value": "\\I[88]Escorpião"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/7/Description:json",
+          "value": "Este personagem tem uma pequena resistência a \\I[66]Raio."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/8/Display:str",
+          "value": "\\I[88]Sagitário"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/8/Description:json",
+          "value": "Este personagem tem um pequeno aumento de sorte."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/9/Display:str",
+          "value": "\\I[88]Capricórnio"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/9/Description:json",
+          "value": "Este personagem tem uma pequena resistência a \\I[69]Vento."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/10/Display:str",
+          "value": "\\I[88]Aquário"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/10/Description:json",
+          "value": "Este personagem tem uma pequena resistência a \\I[67]Água."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/11/Display:str",
+          "value": "\\I[88]Peixes"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/11/Description:json",
+          "value": "Este personagem tem uma pequena resistência a \\I[65]Gelo."
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/12/Display:str",
+          "value": "\\I[88]Ofiúco"
+        },
+        {
+          "path": "Zodiac:struct/List:arraystruct/12/Description:json",
+          "value": "Este personagem tem o raro signo de Ofiúco."
+        },
+        {
+          "path": "Variant:struct/Label:str",
+          "value": "Variação"
+        },
+        {
+          "path": "Variant:struct/Default:struct/Description:json",
+          "value": "Este personagem tem atributos comuns."
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/0/Display:str",
+          "value": "\\I[73]Poderoso"
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/0/Description:json",
+          "value": "Este personagem tem atributos maiores."
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/0/FmtText:str",
+          "value": "Poderoso"
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/1/Display:str",
+          "value": "\\I[73]Maior"
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/1/Description:json",
+          "value": "Este personagem tem atributos maiores."
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/1/FmtText:str",
+          "value": "Maior"
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/2/Display:str",
+          "value": "\\I[73]Elevado"
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/2/Description:json",
+          "value": "Este personagem tem atributos maiores."
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/2/FmtText:str",
+          "value": "Elevado"
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/3/Display:str",
+          "value": "\\I[73]Reduzido"
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/3/Description:json",
+          "value": "Este personagem tem atributos menores."
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/3/FmtText:str",
+          "value": "Reduzido"
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/4/Display:str",
+          "value": "\\I[73]Menor"
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/4/Description:json",
+          "value": "Este personagem tem atributos menores."
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/4/FmtText:str",
+          "value": "Menor"
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/5/Display:str",
+          "value": "\\I[73]Frágil"
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/5/Description:json",
+          "value": "Este personagem tem atributos menores."
+        },
+        {
+          "path": "Variant:struct/List:arraystruct/5/FmtText:str",
+          "value": "Frágil"
+        },
+        {
+          "path": "StatusMenu:struct/CmdStyle:str",
+          "value": "iconText"
+        },
+        {
+          "path": "StatusMenu:struct/BackRectColor:str",
+          "value": "#f0dfc0"
+        },
+        {
+          "path": "StatusMenuList:arraystruct/0/Icon:num",
+          "value": 388
+        },
+        {
+          "path": "StatusMenuList:arraystruct/1/Icon:num",
+          "value": 347
+        },
+        {
+          "path": "StatusMenuList:arraystruct/2/Icon:num",
+          "value": 320
+        },
+        {
+          "path": "StatusMenuList:arraystruct/3/Icon:num",
+          "value": 389
+        },
+        {
+          "path": "StatusMenuList:arraystruct/4/Icon:num",
+          "value": 390
+        },
+        {
+          "path": "StatusMenuList:arraystruct/5/Icon:num",
+          "value": 386
+        }
+      ]
+    },
+    {
+      "name": "VisuMZ_1_BattleCore",
+      "version": "1.85",
+      "sha256": "99787d7faea94049be088bb61ac95201baf9751452569a3fd271f3b82227aa4f",
+      "changes": [
+        {
+          "path": "AutoBattle:struct/AutoBattleMsg:str",
+          "value": "Pressione %1 ou %2 para encerrar o combate automático"
+        },
+        {
+          "path": "AutoBattle:struct/AutoBattleOK:str",
+          "value": "Confirmar"
+        },
+        {
+          "path": "AutoBattle:struct/AutoBattleCancel:str",
+          "value": "Cancelar"
+        },
+        {
+          "path": "AutoBattle:struct/StartName:str",
+          "value": "Iniciar combate automático"
+        },
+        {
+          "path": "AutoBattle:struct/StyleName:str",
+          "value": "Estilo do combate automático"
+        },
+        {
+          "path": "AutoBattle:struct/StyleOFF:str",
+          "value": "Ataques"
+        },
+        {
+          "path": "AutoBattle:struct/StyleON:str",
+          "value": "Habilidades"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/0/DamageType1:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/0/DamageType2:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/0/DamageType3:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/0/DamageType4:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/0/DamageType5:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/0/DamageType6:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/1/DamageType1:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/1/DamageType2:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/1/DamageType3:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/1/DamageType4:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/1/DamageType5:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/1/DamageType6:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/2/DamageType1:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/2/DamageType2:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/2/DamageType3:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/2/DamageType4:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/2/DamageType5:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/2/DamageType6:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/3/DamageType1:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/3/DamageType2:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/3/DamageType3:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/3/DamageType4:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/3/DamageType5:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/3/DamageType6:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/4/DamageType1:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/4/DamageType2:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/4/DamageType3:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/4/DamageType4:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/4/DamageType5:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/4/DamageType6:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/5/DamageType1:str",
+          "value": "Potência de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/5/DamageType2:str",
+          "value": "Potência de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/5/DamageType3:str",
+          "value": "Potência de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/5/DamageType4:str",
+          "value": "Potência de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/5/DamageType5:str",
+          "value": "Potência de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/5/DamageType6:str",
+          "value": "Potência de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/6/DamageType1:str",
+          "value": "Potência de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/6/DamageType2:str",
+          "value": "Potência de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/6/DamageType3:str",
+          "value": "Potência de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/6/DamageType4:str",
+          "value": "Potência de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/6/DamageType5:str",
+          "value": "Potência de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/6/DamageType6:str",
+          "value": "Potência de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/7/DamageType1:str",
+          "value": "Potência de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/7/DamageType2:str",
+          "value": "Potência de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/7/DamageType3:str",
+          "value": "Potência de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/7/DamageType4:str",
+          "value": "Potência de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/7/DamageType5:str",
+          "value": "Potência de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/7/DamageType6:str",
+          "value": "Potência de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/8/DamageType1:str",
+          "value": "Potência de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/8/DamageType2:str",
+          "value": "Potência de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/8/DamageType3:str",
+          "value": "Potência de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/8/DamageType4:str",
+          "value": "Potência de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/8/DamageType5:str",
+          "value": "Potência de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/8/DamageType6:str",
+          "value": "Potência de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/9/DamageType1:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/9/DamageType2:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/9/DamageType3:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/9/DamageType4:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/9/DamageType5:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/9/DamageType6:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/10/DamageType1:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/10/DamageType2:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/10/DamageType3:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/10/DamageType4:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/10/DamageType5:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/10/DamageType6:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/11/DamageType1:str",
+          "value": "Potência de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/11/DamageType2:str",
+          "value": "Potência de dano de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/11/DamageType3:str",
+          "value": "Potência de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/11/DamageType4:str",
+          "value": "Potência de cura de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/11/DamageType5:str",
+          "value": "Potência de absorção de %1"
+        },
+        {
+          "path": "Damage:struct/DamageStyleList:arraystruct/11/DamageType6:str",
+          "value": "Potência de absorção de %1"
+        },
+        {
+          "path": "BattleLog:struct/StartTurnMsg:str",
+          "value": "Turno %1"
+        },
+        {
+          "path": "PartyCmd:struct/CmdTextAutoBattle:str",
+          "value": "Automático"
+        },
+        {
+          "path": "PartyCmd:struct/ActiveTpbOptionsMessage:str",
+          "value": "As opções abrirão ao terminar a ação."
+        },
+        {
+          "path": "PartyCmd:struct/HelpFight:str",
+          "value": "Escolha as ações de combate."
+        },
+        {
+          "path": "PartyCmd:struct/HelpAutoBattle:str",
+          "value": "Ativa o combate automático para o grupo."
+        },
+        {
+          "path": "PartyCmd:struct/HelpOptions:str",
+          "value": "Abre o menu de opções."
+        },
+        {
+          "path": "PartyCmd:struct/HelpEscape:str",
+          "value": "Tenta fugir do combate."
+        },
+        {
+          "path": "ActorCmd:struct/HelpSkillType:str",
+          "value": "Mostra as habilidades de \\C[16]%1\\C[0]."
+        },
+        {
+          "path": "ActorCmd:struct/HelpItem:str",
+          "value": "Mostra os itens disponíveis para uso."
+        },
+        {
+          "path": "ActorCmd:struct/HelpEscape:str",
+          "value": "Tenta fugir do combate."
+        },
+        {
+          "path": "ActorCmd:struct/HelpAutoBattle:str",
+          "value": "Escolhe automaticamente uma ação de combate."
+        },
+        {
+          "path": "ActorCmd:struct/HelpParty:str",
+          "value": "Escolhe automaticamente uma ação de combate."
+        },
+        {
+          "path": "InBattleStatus:struct/HelpStatus:str",
+          "value": "Mostra os atributos dos participantes."
+        },
+        {
+          "path": "InBattleStatus:struct/buffHelpFmt:json",
+          "value": "Aumenta %1 para %3%2\\C[0]. %4"
+        },
+        {
+          "path": "InBattleStatus:struct/debuffHelpFmt:json",
+          "value": "Reduz %1 para %3%2\\C[0]. %4"
+        },
+        {
+          "path": "InBattleStatus:struct/normalHelp:json",
+          "value": "Nenhuma condição ativa."
+        },
+        {
+          "path": "InBattleStatus:struct/actionsFmt:str",
+          "value": "\\C[6](Ações %2%1\\C[6])\\C[0]"
+        },
+        {
+          "path": "InBattleStatus:struct/TurnsFmt:str",
+          "value": "\\C[5](Turnos %2%1\\C[5])\\C[0]"
+        },
+        {
+          "path": "InBattleStatus:struct/passiveText:str",
+          "value": "\\C[4](Passivo)\\C[0]"
+        },
+        {
+          "path": "MultiTarget:struct/AllActorsText:str",
+          "value": "Todos os aliados"
+        },
+        {
+          "path": "MultiTarget:struct/AllEnemiesText:str",
+          "value": "Todos os inimigos"
+        },
+        {
+          "path": "ComboWindow:struct/hitsDmgFmt:str",
+          "value": "\\C[6]%1\\} \\C[4]acertos\\C[0]\\{"
+        },
+        {
+          "path": "ComboWindow:struct/hitsHealFmt:str",
+          "value": "\\C[6]%1\\} \\C[4]curas\\C[0]\\{"
+        },
+        {
+          "path": "ComboWindow:struct/totalDmgFmt:str",
+          "value": "\\}\\C[21]Dano total: \\{\\C[0]%1"
+        },
+        {
+          "path": "ComboWindow:struct/totalHealFmt:str",
+          "value": "\\}\\C[21]Cura total: \\{\\C[24]+%1\\C[0]"
+        },
+        {
+          "path": "BattleLayout:struct/CommandWidth:num",
+          "value": 280
+        },
+        {
+          "path": "BattleLog:struct/BackColor:str",
+          "value": "#f9eacf"
+        },
+        {
+          "path": "ComboWindow:struct/CustomFontFace:str",
+          "value": "CoretoOutfitMedium"
+        },
+        {
+          "path": "HpGauge:struct/Name:str",
+          "value": "Mostrar barra de vida"
+        },
+        {
+          "path": "PartyCmd:struct/CmdIconFight:num",
+          "value": 340
+        },
+        {
+          "path": "PartyCmd:struct/CmdIconAutoBattle:num",
+          "value": 345
+        },
+        {
+          "path": "PartyCmd:struct/CmdIconOptions:num",
+          "value": 320
+        },
+        {
+          "path": "PartyCmd:struct/CmdIconEscape:num",
+          "value": 336
+        },
+        {
+          "path": "ActorCmd:struct/CmdIconItem:num",
+          "value": 387
+        },
+        {
+          "path": "ActorCmd:struct/IconStypeNorm:num",
+          "value": 346
+        },
+        {
+          "path": "ActorCmd:struct/IconStypeMagic:num",
+          "value": 350
+        },
+        {
+          "path": "InBattleStatus:struct/CmdIconStatus:num",
+          "value": 388
+        },
+        {
+          "path": "InBattleStatus:struct/normalIcon:num",
+          "value": 374
+        },
+        {
+          "path": "BattleLayout:struct/StatusWindowSkinFilename:str",
+          "value": "CoretoWindow"
+        }
+      ]
+    },
+    {
+      "name": "VisuMZ_1_EventsMoveCore",
+      "version": "1.60",
+      "sha256": "d1784de47ca817182ddf7141cb24860451729d191254c9b5e475d0908cc5c32c",
+      "changes": [
+        {
+          "path": "Label:struct/FontSize:num",
+          "value": 22
+        },
+        {
+          "path": "Label:struct/LineHeight:num",
+          "value": 28
+        },
+        {
+          "path": "Label:struct/IconSize:num",
+          "value": 24
+        }
+      ]
+    },
+    {
+      "name": "VisuMZ_1_ItemsEquipsCore",
+      "version": "1.56",
+      "sha256": "171b94c0878a31caa87e28450047ed84fb5378c230866fc2d41c4e00f60fa32a",
+      "changes": [
+        {
+          "path": "ItemScene:struct/buttonAssistCategory:str",
+          "value": "Trocar categoria"
+        },
+        {
+          "path": "Categories:struct/HiddenItemA:str",
+          "value": "Itens especiais"
+        },
+        {
+          "path": "Categories:struct/HiddenItemB:str",
+          "value": "Itens únicos"
+        },
+        {
+          "path": "Categories:struct/Consumable:str",
+          "value": "Consumível"
+        },
+        {
+          "path": "Categories:struct/Nonconsumable:str",
+          "value": "Reutilizável"
+        },
+        {
+          "path": "Categories:struct/AlwaysUsable:str",
+          "value": "Utilizável"
+        },
+        {
+          "path": "Categories:struct/BattleUsable:str",
+          "value": "Combate"
+        },
+        {
+          "path": "Categories:struct/FieldUsable:str",
+          "value": "Exploração"
+        },
+        {
+          "path": "Categories:struct/NeverUsable:str",
+          "value": "Materiais"
+        },
+        {
+          "path": "New:struct/Text:str",
+          "value": "NOVO"
+        },
+        {
+          "path": "EquipScene:struct/CursedTextPopup:json",
+          "value": "%1 está sob a maldição de %3%2!"
+        },
+        {
+          "path": "EquipScene:struct/equipCmdDesc:json",
+          "value": "Escolha o equipamento que deseja trocar."
+        },
+        {
+          "path": "EquipScene:struct/optimizeCmdDesc:json",
+          "value": "Equipa os melhores itens disponíveis."
+        },
+        {
+          "path": "EquipScene:struct/clearCmdDesc:json",
+          "value": "Remove os equipamentos que podem ser retirados."
+        },
+        {
+          "path": "EquipScene:struct/RemoveEquipText:str",
+          "value": "Remover"
+        },
+        {
+          "path": "EquipScene:struct/buttonAssistRemove:str",
+          "value": "Desequipar"
+        },
+        {
+          "path": "ShopScene:struct/CmdCancelRename:str",
+          "value": "Sair"
+        },
+        {
+          "path": "StatusWindow:struct/LabelConsume:str",
+          "value": "Consumível"
+        },
+        {
+          "path": "StatusWindow:struct/Occasion0:str",
+          "value": "Uso livre"
+        },
+        {
+          "path": "StatusWindow:struct/Occasion1:str",
+          "value": "Em combate"
+        },
+        {
+          "path": "StatusWindow:struct/Occasion2:str",
+          "value": "Na exploração"
+        },
+        {
+          "path": "StatusWindow:struct/Scope0:str",
+          "value": "Sem alvo"
+        },
+        {
+          "path": "StatusWindow:struct/Scope1:str",
+          "value": "1 inimigo"
+        },
+        {
+          "path": "StatusWindow:struct/Scope2:str",
+          "value": "Todos os inimigos"
+        },
+        {
+          "path": "StatusWindow:struct/Scope3:str",
+          "value": "Inimigo aleatório"
+        },
+        {
+          "path": "StatusWindow:struct/Scope4:str",
+          "value": "2 inimigos aleatórios"
+        },
+        {
+          "path": "StatusWindow:struct/Scope5:str",
+          "value": "3 inimigos aleatórios"
+        },
+        {
+          "path": "StatusWindow:struct/Scope6:str",
+          "value": "4 inimigos aleatórios"
+        },
+        {
+          "path": "StatusWindow:struct/Scope7:str",
+          "value": "1 aliado"
+        },
+        {
+          "path": "StatusWindow:struct/Scope8:str",
+          "value": "Aliados vivos"
+        },
+        {
+          "path": "StatusWindow:struct/Scope9:str",
+          "value": "Aliado caído"
+        },
+        {
+          "path": "StatusWindow:struct/Scope10:str",
+          "value": "Aliados caídos"
+        },
+        {
+          "path": "StatusWindow:struct/Scope11:str",
+          "value": "Usuário"
+        },
+        {
+          "path": "StatusWindow:struct/Scope12:str",
+          "value": "Qualquer aliado"
+        },
+        {
+          "path": "StatusWindow:struct/Scope13:str",
+          "value": "Todos os aliados"
+        },
+        {
+          "path": "StatusWindow:struct/Scope14:str",
+          "value": "Todos"
+        },
+        {
+          "path": "StatusWindow:struct/ScopeRandomAny:str",
+          "value": "%1 alvos aleatórios"
+        },
+        {
+          "path": "StatusWindow:struct/ScopeRandomEnemies:str",
+          "value": "%1 inimigos aleatórios"
+        },
+        {
+          "path": "StatusWindow:struct/ScopeRandomAllies:str",
+          "value": "%1 aliados aleatórios"
+        },
+        {
+          "path": "StatusWindow:struct/ScopeAlliesButUser:str",
+          "value": "Outros aliados"
+        },
+        {
+          "path": "StatusWindow:struct/ScopeAllyOrEnemy:str",
+          "value": "Aliado/inimigo"
+        },
+        {
+          "path": "StatusWindow:struct/ScopeEnemyOrAlly:str",
+          "value": "Inimigo/aliado"
+        },
+        {
+          "path": "StatusWindow:struct/LabelSpeed:str",
+          "value": "Velocidade"
+        },
+        {
+          "path": "StatusWindow:struct/Speed2000:str",
+          "value": "Máxima"
+        },
+        {
+          "path": "StatusWindow:struct/Speed1000:str",
+          "value": "Muito rápida"
+        },
+        {
+          "path": "StatusWindow:struct/Speed1:str",
+          "value": "Rápida"
+        },
+        {
+          "path": "StatusWindow:struct/SpeedNeg999:str",
+          "value": "Lenta"
+        },
+        {
+          "path": "StatusWindow:struct/SpeedNeg1999:str",
+          "value": "Muito lenta"
+        },
+        {
+          "path": "StatusWindow:struct/SpeedNeg2000:str",
+          "value": "Mínima"
+        },
+        {
+          "path": "StatusWindow:struct/LabelSuccessRate:str",
+          "value": "Precisão"
+        },
+        {
+          "path": "StatusWindow:struct/LabelRepeats:str",
+          "value": "Acertos"
+        },
+        {
+          "path": "StatusWindow:struct/LabelHitType:str",
+          "value": "Tipo"
+        },
+        {
+          "path": "StatusWindow:struct/HitType0:str",
+          "value": "Neutro"
+        },
+        {
+          "path": "StatusWindow:struct/HitType1:str",
+          "value": "Físico"
+        },
+        {
+          "path": "StatusWindow:struct/HitType2:str",
+          "value": "Mágico"
+        },
+        {
+          "path": "StatusWindow:struct/LabelElement:str",
+          "value": "Elemento"
+        },
+        {
+          "path": "StatusWindow:struct/ElementWeapon:str",
+          "value": "\\I[384]Arma"
+        },
+        {
+          "path": "StatusWindow:struct/ElementNone:str",
+          "value": "\\I[389]Sem elemento"
+        },
+        {
+          "path": "StatusWindow:struct/DamageType1:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "StatusWindow:struct/DamageType2:str",
+          "value": "Multiplicador de dano de %1"
+        },
+        {
+          "path": "StatusWindow:struct/DamageType3:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "StatusWindow:struct/DamageType4:str",
+          "value": "Multiplicador de cura de %1"
+        },
+        {
+          "path": "StatusWindow:struct/DamageType5:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "StatusWindow:struct/DamageType6:str",
+          "value": "Multiplicador de absorção de %1"
+        },
+        {
+          "path": "StatusWindow:struct/LabelRecoverHP:str",
+          "value": "Recuperação de %1"
+        },
+        {
+          "path": "StatusWindow:struct/LabelRecoverMP:str",
+          "value": "Recuperação de %1"
+        },
+        {
+          "path": "StatusWindow:struct/LabelRecoverTP:str",
+          "value": "Recuperação de %1"
+        },
+        {
+          "path": "StatusWindow:struct/LabelSelfGainTP:str",
+          "value": "%1 do usuário"
+        },
+        {
+          "path": "StatusWindow:struct/LabelDamageHP:str",
+          "value": "Dano de %1"
+        },
+        {
+          "path": "StatusWindow:struct/LabelDamageMP:str",
+          "value": "Dano de %1"
+        },
+        {
+          "path": "StatusWindow:struct/LabelDamageTP:str",
+          "value": "Dano de %1"
+        },
+        {
+          "path": "StatusWindow:struct/LabelApply:str",
+          "value": "Aplica"
+        },
+        {
+          "path": "StatusWindow:struct/LabelRemove:str",
+          "value": "Remove"
+        },
+        {
+          "path": "StatusWindow:struct/WeaponType:str",
+          "value": "Tipo de arma"
+        },
+        {
+          "path": "StatusWindow:struct/ArmorType:str",
+          "value": "Tipo de armadura"
+        },
+        {
+          "path": "New:struct/FontFace:str",
+          "value": "CoretoOutfitMedium"
+        },
+        {
+          "path": "New:struct/FontColor:str",
+          "value": "#552070"
+        },
+        {
+          "path": "New:struct/OffsetX:num",
+          "value": 36
+        },
+        {
+          "path": "New:struct/OffsetY:num",
+          "value": 8
+        },
+        {
+          "path": "Categories:struct/Style:str",
+          "value": "icon"
+        },
+        {
+          "path": "Categories:struct/List:arraystruct/0/Icon:num",
+          "value": 337
+        },
+        {
+          "path": "Categories:struct/List:arraystruct/1/Icon:num",
+          "value": 340
+        },
+        {
+          "path": "Categories:struct/List:arraystruct/2/Icon:num",
+          "value": 383
+        },
+        {
+          "path": "Categories:struct/List:arraystruct/3/Icon:num",
+          "value": 384
+        },
+        {
+          "path": "Categories:struct/List:arraystruct/4/Icon:num",
+          "value": 377
+        },
+        {
+          "path": "Categories:struct/List:arraystruct/5/Icon:num",
+          "value": 391
+        },
+        {
+          "path": "Categories:struct/List:arraystruct/6/Icon:num",
+          "value": 385
+        },
+        {
+          "path": "Categories:struct/List:arraystruct/7/Icon:num",
+          "value": 392
+        },
+        {
+          "path": "Categories:struct/List:arraystruct/8/Icon:num",
+          "value": 390
+        },
+        {
+          "path": "EquipScene:struct/BackRectColor:str",
+          "value": "#f0dfc0"
+        },
+        {
+          "path": "StatusWindow:struct/BackRectColor:str",
+          "value": "#f0dfc0"
+        },
+        {
+          "path": "EquipScene:struct/CmdIconEquip:num",
+          "value": 385
+        },
+        {
+          "path": "EquipScene:struct/CmdIconOptimize:num",
+          "value": 381
+        },
+        {
+          "path": "EquipScene:struct/CmdIconClear:num",
+          "value": 386
+        },
+        {
+          "path": "EquipScene:struct/RemoveEquipIcon:num",
+          "value": 386
+        },
+        {
+          "path": "ShopScene:struct/CmdIconBuy:num",
+          "value": 387
+        },
+        {
+          "path": "ShopScene:struct/CmdIconSell:num",
+          "value": 382
+        },
+        {
+          "path": "ShopScene:struct/CmdIconCancel:num",
+          "value": 386
+        }
+      ]
+    },
+    {
+      "name": "VisuMZ_1_MainMenuCore",
+      "version": "1.26",
+      "sha256": "1b21a8508848e5c5da36adb701cc8de3d1a40ed7a9f8cd808c2e906a23e1b535",
+      "changes": [
+        {
+          "path": "CommandList:arraystruct/6/TextStr:str",
+          "value": "Registros"
+        },
+        {
+          "path": "CommandList:arraystruct/20/TextStr:str",
+          "value": "Evento comum 1"
+        },
+        {
+          "path": "CommandList:arraystruct/21/TextStr:str",
+          "value": "Evento comum 2"
+        },
+        {
+          "path": "Playtime:struct/Time:str",
+          "value": "Tempo"
+        },
+        {
+          "path": "CustomCmdWin:struct/Style:str",
+          "value": "iconText"
+        },
+        {
+          "path": "Playtime:struct/Time:str",
+          "value": "Tempo"
+        },
+        {
+          "path": "Playtime:struct/Icon:num",
+          "value": 325
+        },
+        {
+          "path": "Playtime:struct/FontSize:num",
+          "value": 18
+        },
+        {
+          "path": "CommandList:arraystruct/0/TextStr:str",
+          "value": "Itens"
+        },
+        {
+          "path": "CommandList:arraystruct/0/Icon:num",
+          "value": 387
+        },
+        {
+          "path": "CommandList:arraystruct/2/TextStr:str",
+          "value": "Habilidades"
+        },
+        {
+          "path": "CommandList:arraystruct/2/Icon:num",
+          "value": 346
+        },
+        {
+          "path": "CommandList:arraystruct/3/TextStr:str",
+          "value": "Equipamento"
+        },
+        {
+          "path": "CommandList:arraystruct/3/Icon:num",
+          "value": 385
+        },
+        {
+          "path": "CommandList:arraystruct/4/TextStr:str",
+          "value": "Status"
+        },
+        {
+          "path": "CommandList:arraystruct/4/Icon:num",
+          "value": 388
+        },
+        {
+          "path": "CommandList:arraystruct/15/TextStr:str",
+          "value": "Formação"
+        },
+        {
+          "path": "CommandList:arraystruct/15/Icon:num",
+          "value": 393
+        },
+        {
+          "path": "CommandList:arraystruct/17/TextStr:str",
+          "value": "Opções"
+        },
+        {
+          "path": "CommandList:arraystruct/17/Icon:num",
+          "value": 320
+        },
+        {
+          "path": "CommandList:arraystruct/18/TextStr:str",
+          "value": "Salvar"
+        },
+        {
+          "path": "CommandList:arraystruct/18/Icon:num",
+          "value": 324
+        },
+        {
+          "path": "CommandList:arraystruct/19/TextStr:str",
+          "value": "Carregar"
+        },
+        {
+          "path": "CommandList:arraystruct/19/Icon:num",
+          "value": 344
+        },
+        {
+          "path": "CommandList:arraystruct/22/TextStr:str",
+          "value": "Sair"
+        },
+        {
+          "path": "CommandList:arraystruct/22/Icon:num",
+          "value": 386
+        }
+      ]
+    },
+    {
+      "name": "VisuMZ_1_SkillsStatesCore",
+      "version": "1.48",
+      "sha256": "ef2f3f84610938ac4153ff2a520e585ecf696d5e6cd899bb3b5a4e6fd5f55bab",
+      "changes": [
+        {
+          "path": "Skills:struct/IconStypeNorm:num",
+          "value": 346
+        },
+        {
+          "path": "Skills:struct/IconStypeMagic:num",
+          "value": 350
+        },
+        {
+          "path": "Costs:arraystruct/0/FontColor:str",
+          "value": "#af2933"
+        },
+        {
+          "path": "Costs:arraystruct/1/FontColor:str",
+          "value": "#552070"
+        },
+        {
+          "path": "Costs:arraystruct/2/FontColor:str",
+          "value": "#704737"
+        },
+        {
+          "path": "Costs:arraystruct/3/FontColor:str",
+          "value": "#704737"
+        },
+        {
+          "path": "Costs:arraystruct/4/FontColor:str",
+          "value": "#360a0b"
+        },
+        {
+          "path": "Costs:arraystruct/5/FontColor:str",
+          "value": "#360a0b"
+        },
+        {
+          "path": "Costs:arraystruct/4/Icon:num",
+          "value": 380
+        },
+        {
+          "path": "Gauge:struct/LabelOutlineWidth:num",
+          "value": 0
+        },
+        {
+          "path": "Gauge:struct/ValueOutlineWidth:num",
+          "value": 0
+        },
+        {
+          "path": "Gauge:struct/MatchLabelColor:eval",
+          "value": false
+        },
+        {
+          "path": "Gauge:struct/PresetLabelGaugeColor:num",
+          "value": 0
+        },
+        {
+          "path": "Costs:arraystruct/0/GaugeDrawJS:func",
+          "value": "const bitmap = this.bitmap;\nconst width = this.bitmapWidth();\nconst height = this.textHeight ? this.textHeight() : this.bitmapHeight();\nthis.drawFullGauge('#af2933', '#af2933', 0, height - 6, width, 6);\nbitmap.fontFace = 'CoretoOutfitMedium';\nbitmap.fontSize = 16;\nbitmap.outlineWidth = 0;\nbitmap.textColor = '#360a0b';\nbitmap.paintOpacity = 255;\nbitmap.drawText(TextManager.hpA, 0, 0, width, height - 6, 'left');\nbitmap.drawText(this.currentDisplayedValue(), 0, 0, width, height - 6, 'right');"
+        },
+        {
+          "path": "Costs:arraystruct/1/GaugeDrawJS:func",
+          "value": "const bitmap = this.bitmap;\nconst width = this.bitmapWidth();\nconst height = this.textHeight ? this.textHeight() : this.bitmapHeight();\nthis.drawFullGauge('#552070', '#552070', 0, height - 6, width, 6);\nbitmap.fontFace = 'CoretoOutfitMedium';\nbitmap.fontSize = 16;\nbitmap.outlineWidth = 0;\nbitmap.textColor = '#360a0b';\nbitmap.paintOpacity = 255;\nbitmap.drawText(TextManager.mpA, 0, 0, width, height - 6, 'left');\nbitmap.drawText(this.currentDisplayedValue(), 0, 0, width, height - 6, 'right');"
+        },
+        {
+          "path": "Costs:arraystruct/2/GaugeDrawJS:func",
+          "value": "const bitmap = this.bitmap;\nconst width = this.bitmapWidth();\nconst height = this.textHeight ? this.textHeight() : this.bitmapHeight();\nthis.drawFullGauge('#2a847d', '#2a847d', 0, height - 6, width, 6);\nbitmap.fontFace = 'CoretoOutfitMedium';\nbitmap.fontSize = 16;\nbitmap.outlineWidth = 0;\nbitmap.textColor = '#360a0b';\nbitmap.paintOpacity = 255;\nbitmap.drawText(TextManager.tpA, 0, 0, width, height - 6, 'left');\nbitmap.drawText(this.currentDisplayedValue(), 0, 0, width, height - 6, 'right');"
+        },
+        {
+          "path": "States:struct/ColorNeutral:str",
+          "value": "#360a0b"
+        },
+        {
+          "path": "States:struct/ColorPositive:str",
+          "value": "#552070"
+        },
+        {
+          "path": "States:struct/ColorNegative:str",
+          "value": "#af2933"
+        },
+        {
+          "path": "Buffs:struct/ColorBuff:str",
+          "value": "#552070"
+        },
+        {
+          "path": "Buffs:struct/ColorDebuff:str",
+          "value": "#af2933"
+        }
+      ]
+    }
+  ]
+}
