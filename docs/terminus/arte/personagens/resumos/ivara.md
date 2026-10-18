@@ -40,3 +40,11 @@ A direção visual está autorizada como base. A imagem ainda não foi aprovada.
 ## Candidata produzida
 
 A folha [ivara](../../../../../assets/terminus/personagens/em-revisao/ivara-v3-120x220.png) foi revisada internamente e aguarda aprovação visual. O [registro do lote 9](../revisoes/lote-9.md) descreve as escolhas visuais e correções. Consulte o [controle](../controle.json) para a versão da ficha, os prompts, entradas, tentativas e hashes. Nenhuma proposta narrativa foi aprovada por esta produção.
+
+## Revisão de movimento solicitada pelo autor
+
+Em 18/10/2026, o autor apontou partes ausentes e movimento incompleto. Novas candidatas foram produzidas, preservando os repousos e as versões anteriores. A aprovação anterior, quando existente, permanece no histórico e não se aplica automaticamente às correções.
+
+- [ivara — v4](../../../../../assets/terminus/personagens/em-revisao/ivara-v4-120x220.png)
+
+[Inspeção e método da correção](../revisoes/correcao-movimento/README.md).

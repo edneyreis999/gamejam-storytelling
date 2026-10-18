@@ -7,8 +7,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/rheed.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Barba longa, tapa-olho direito anatômico e dois frascos no lado esquerdo preservados.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/rheed-v7-120x220.png"
     },
@@ -18,8 +18,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/nima.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Corpo pequeno preservado; pernas ligadas ao quadril e braços em contrafase.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/nima-v6-120x220.png"
     },
@@ -29,8 +29,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/nyra.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Avental, braços e corpo largo completos nos passos; apoio dos pés mantido.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/nyra-v3-120x220.png"
     },
@@ -40,8 +40,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/neral.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Luvas, gola alta e casaco inteiros durante a caminhada.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/neral-disfarce-v3-120x220.png"
     },
@@ -51,8 +51,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/neral.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Mãos claras, marcas e mangas mantidas; pernas sem recortes do casaco.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/neral-revelado-v3-120x220.png"
     },
@@ -62,8 +62,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/neral.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Constituição ampliada preservada; mãos, casaco e botas permanecem nos três quadros.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/neral-transformado-v3-120x220.png"
     },
@@ -73,8 +73,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/virmura.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Tranças e braços completos; pernas articuladas sem apagar o tronco.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/virmura-v3-120x220.png"
     },
@@ -84,8 +84,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/dorga.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Faixa e luva mantidas nos lados anatômicos das poses de repouso; não há espelhamento de vistas.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/dorga-v3-120x220.png"
     },
@@ -95,8 +95,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/torvak.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Trança e antebraços preservados; braços e pernas participam da caminhada.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/torvak-v3-120x220.png"
     },
@@ -106,8 +106,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/meruna.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Óculos, cabelo, casaco e mãos preservados; botas sem deformação por cisalhamento.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/meruna-v3-120x220.png"
     },
@@ -117,8 +117,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/odrik.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Capa inteira nas quatro vistas; braços e pernas alternam sem congelar as costas.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/odrik-v3-120x220.png"
     },
@@ -128,10 +128,10 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/lethra.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Tronco, faixa e lâmina de treino mantidos; botas completas nos perfis.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/lethra-v3-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/lethra-v4-120x220.png"
     },
     {
       "id": "durn",
@@ -139,8 +139,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/durn.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Avental e proteção auditiva mantidos; amplitude menor no braço esquerdo anatômico.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/durn-v3-120x220.png"
     },
@@ -150,8 +150,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/elune.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Roupa, cabelo preso e porta-mapas permanecem durante a alternância dos membros.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/elune-v3-120x220.png"
     },
@@ -161,8 +161,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/lurga.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Mecha esquerda, pulseira e roupa preservadas; pernas deslocam-se em vez de apenas mudar de iluminação.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/lurga-v3-120x220.png"
     },
@@ -172,8 +172,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/sivren.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Casaco e rolos permanecem; braços e pés participam do ciclo.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/sivren-v3-120x220.png"
     },
@@ -183,8 +183,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/ivara.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Manta e trança preservadas, com passada curta e braços sob a manta sem cortes retangulares.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/ivara-v4-120x220.png"
     },
@@ -194,8 +194,8 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/ossena.md",
       "observacoes": [
-        "Nova candidata após o relato de falhas de movimento.",
-        "Repouso preservado; braços em contrafase e pernas articuladas nos perfis. Revisar a caminhada nas quatro direções."
+        "Pranchetas e coque preservados; alternância completa dos pés e mãos.",
+        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/ossena-v3-120x220.png"
     },

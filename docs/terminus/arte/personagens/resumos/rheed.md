@@ -36,3 +36,11 @@ Não luta na campanha narrada, não é recrutável e não derrota Neral. Sua cap
 Tapa-olho no olho direito anatômico (à esquerda do observador na frente). Barba longa branca. Roupa simples de narrador viajante, sem armadura ou arma. Frascos pequenos presos ao cinto podem apoiar a identidade; sem névoa permanente na folha de caminhada.
 
 A direção visual está autorizada como base. A imagem ainda não foi aprovada. Usar o [padrão fixo](../prompts/base.md) e as três referências originais.
+
+## Revisão de movimento solicitada pelo autor
+
+Em 18/10/2026, o autor apontou partes ausentes e movimento incompleto. Novas candidatas foram produzidas, preservando os repousos e as versões anteriores. A aprovação anterior, quando existente, permanece no histórico e não se aplica automaticamente às correções.
+
+- [rheed — v7](../../../../../assets/terminus/personagens/em-revisao/rheed-v7-120x220.png)
+
+[Inspeção e método da correção](../revisoes/correcao-movimento/README.md).

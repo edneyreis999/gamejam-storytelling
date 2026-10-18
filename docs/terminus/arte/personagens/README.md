@@ -10,7 +10,7 @@ Este guia serve ao autor e à produção de arte. O [controle](controle.md), os 
 
 [Abrir a galeria de revisão](galeria.html) · [Revisão dos pilotos](revisoes/pilotos.md) · [Lote 1](revisoes/lote-1.md) · [Lote 2](revisoes/lote-2.md)
 
-Situação em 18/10/2026: 42 folhas disponíveis, sendo 14 aprovadas e entregues (pilotos e lotes 1–2) e 28 candidatas dos lotes 3–9 aguardando aprovação visual. O estudo das três formas de Neral foi aprovado antes da geração de suas folhas completas. A [revisão do conjunto](revisoes/elenco.md) compara também os últimos personagens com os pilotos.
+Situação em 18/10/2026: 42 folhas disponíveis. O autor solicitou [correções de movimento em 18 folhas](revisoes/correcao-movimento/README.md), agora apresentadas como novas candidatas. Dez reabrem versões antes aprovadas, preservadas no histórico; quatro aprovações seguem vigentes e 38 candidatas aguardam avaliação. O estudo das três formas de Neral permanece aprovado.
 
 ## Contrato visual
 
@@ -112,3 +112,7 @@ Inspeção automática não aprova anatomia, estilo ou movimento. A revisão vis
 O autor abre a galeria no computador para comparar o traço minúsculo das referências com os candidatos e identificar falhas ao caminhar. Interface de produto, fundo claro neutro, nomes e estado explícitos, sem efeitos decorativos. Dials: VISUAL_VARIANCE 2, MOTION_INTENSITY 1, INFORMATION_DENSITY 6. A animação é conteúdo de inspeção e terá controle de pausa; respeitar redução de movimento.
 
 Não foi encontrado DESIGN.md nem sistema de tokens para esta superfície; usar tokens locais simples e recomendar uma base compartilhada antes de ampliar a interface. A galeria não grava aprovações: elas continuam sendo decisões explícitas do autor registradas na documentação.
+
+## Revisão dos movimentos
+
+Após o relato do autor, o [método de correção](../../../../tools/corrigir_movimento.py) substitui os retoques históricos nas 18 folhas listadas no [registro da revisão](revisoes/correcao-movimento/README.md). Não reutilizar os métodos antigos para reproduzir essas candidatas: eles continham recortes que apagavam partes e perfis que só alternavam a iluminação das pernas. O novo método mantém os repousos, anima os braços em contrafase e articula as pernas com botas inteiras. Arquivo válido e reprodução idêntica não substituem a avaliação da caminhada.

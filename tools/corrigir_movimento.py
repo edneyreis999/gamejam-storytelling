@@ -95,6 +95,8 @@ def frame(source, rig, row, phase, walking):
     start, split = rig['legs'][row], rig.get('split', [20]*4)[row]
     x0, x1 = rig.get('leg_bounds', [[0, 40]]*4)[row]
     legs = (yy >= start) & (xx >= x0) & (xx < x1)
+    for bx0, by0, bx1, by1 in rig.get('keep', [[], [], [], []])[row]:
+        legs[by0:by1, bx0:bx1] = False
     # Abaixo da bainha, somente as pernas saem do tronco; as abas ficam na camada de roupa.
     upper = pixels.copy()
     upper[legs] = 0

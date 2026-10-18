@@ -40,3 +40,11 @@ Agilidade, bastão curto e mudança de distância. Compete para obter visibilida
 Goblin pequena; cabelo preso em nós curtos, colete com bolsos numerados e botas gastas. Números podem virar marcas mínimas de costura nesta resolução, sem texto flutuante.
 
 A direção visual está autorizada como base. A imagem ainda não foi aprovada. Usar o [padrão fixo](../prompts/base.md) e as três referências originais.
+
+## Revisão de movimento solicitada pelo autor
+
+Em 18/10/2026, o autor apontou partes ausentes e movimento incompleto. Novas candidatas foram produzidas, preservando os repousos e as versões anteriores. A aprovação anterior, quando existente, permanece no histórico e não se aplica automaticamente às correções.
+
+- [nima — v6](../../../../../assets/terminus/personagens/em-revisao/nima-v6-120x220.png)
+
+[Inspeção e método da correção](../revisoes/correcao-movimento/README.md).

@@ -36,3 +36,11 @@ Sabe conter uma briga com barra de madeira, mas não participa do torneio. Discu
 Preservar raça, idade aparente, constituição, cabelo, roupa, acessórios e assimetrias descritos acima. Traduzir cores em valores sépia; não transformar atributos narrativos em efeitos permanentes. Detalhes não descritos recebem soluções simples, sem nova biografia.
 
 A direção visual está autorizada como base. A imagem ainda não foi aprovada. Usar o [padrão fixo](../prompts/base.md) e as três referências originais.
+
+## Revisão de movimento solicitada pelo autor
+
+Em 18/10/2026, o autor apontou partes ausentes e movimento incompleto. Novas candidatas foram produzidas, preservando os repousos e as versões anteriores. A aprovação anterior, quando existente, permanece no histórico e não se aplica automaticamente às correções.
+
+- [nyra — v3](../../../../../assets/terminus/personagens/em-revisao/nyra-v3-120x220.png)
+
+[Inspeção e método da correção](../revisoes/correcao-movimento/README.md).

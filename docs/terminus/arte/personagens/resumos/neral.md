@@ -44,3 +44,13 @@ Magia sanguínea e proteção ritual. Proposta de encenação: rompe a própria 
 Três formas de uma identidade. Aprovar estudo antes das folhas completas. Disfarce: luvas, gola alta, camadas de tecido. Revelado: palidez, dedos longos e marcas rituais. Transformado: mesmo corpo ampliado e deformado, elementos reconhecíveis. Não acrescentar membros, poderes nem símbolos narrativos.
 
 A direção visual está autorizada como base. A imagem ainda não foi aprovada. Usar o [padrão fixo](../prompts/base.md) e as três referências originais.
+
+## Revisão de movimento solicitada pelo autor
+
+Em 18/10/2026, o autor apontou partes ausentes e movimento incompleto. Novas candidatas foram produzidas, preservando os repousos e as versões anteriores. A aprovação anterior, quando existente, permanece no histórico e não se aplica automaticamente às correções.
+
+- [neral-disfarce — v3](../../../../../assets/terminus/personagens/em-revisao/neral-disfarce-v3-120x220.png)
+- [neral-revelado — v3](../../../../../assets/terminus/personagens/em-revisao/neral-revelado-v3-120x220.png)
+- [neral-transformado — v3](../../../../../assets/terminus/personagens/em-revisao/neral-transformado-v3-120x220.png)
+
+[Inspeção e método da correção](../revisoes/correcao-movimento/README.md).

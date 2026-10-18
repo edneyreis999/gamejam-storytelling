@@ -40,3 +40,11 @@ A direção visual está autorizada como base. A imagem ainda não foi aprovada.
 ## Decisões visuais da produção — 18/10/2026
 
 Orc musculosa, duas tranças negras, presas pequenas, cicatrizes e marcas faciais em sépia. Túnica de cura simples, mãos livres e passos alternados. As soluções de roupa e continuidade desta rodada estão no [registro do lote 2](../revisoes/lote-2.md). A candidata v2 aguarda aprovação.
+
+## Revisão de movimento solicitada pelo autor
+
+Em 18/10/2026, o autor apontou partes ausentes e movimento incompleto. Novas candidatas foram produzidas, preservando os repousos e as versões anteriores. A aprovação anterior, quando existente, permanece no histórico e não se aplica automaticamente às correções.
+
+- [virmura — v3](../../../../../assets/terminus/personagens/em-revisao/virmura-v3-120x220.png)
+
+[Inspeção e método da correção](../revisoes/correcao-movimento/README.md).

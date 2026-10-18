@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 from PIL import Image, ImageDraw
 
-from corrigir_movimento import displace_upper, profile_leg
+from corrigir_movimento import displace_upper, profile_leg, frame
 from spritesheets import active_sheet
 
 
@@ -47,6 +47,18 @@ class MovementTests(unittest.TestCase):
         self.assertEqual(active_sheet(entry), 'revision.png')
         entry['estado'] = 'aprovado'
         self.assertEqual(active_sheet(entry), 'approved.png')
+
+    def test_weapon_tip_below_waist_is_not_cut_with_the_legs(self):
+        source = Image.new('RGBA', (40, 55))
+        draw = ImageDraw.Draw(source)
+        draw.rectangle((14, 30, 25, 52), fill=(100, 70, 40, 255))
+        color = (150, 200, 250, 255)
+        draw.rectangle((28, 44, 29, 45), fill=color)
+        rig = dict(shoulder=30, hand=40, arms=[[11, 25]]*4, legs=[44]*4,
+                   keep=[[[28, 44, 30, 46]], [], [], []])
+        for phase in (1, -1):
+            result = frame(source, rig, 0, phase, source)
+            self.assertEqual(result.getpixel((29, 46)), color)
 
 
 if __name__ == '__main__':

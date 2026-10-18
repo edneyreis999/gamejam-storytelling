@@ -2,6 +2,8 @@
 
 Status: em desenvolvimento.
 
+Atualização após este registro: o autor solicitou [correções de movimento em 18 folhas](correcao-movimento/README.md). Os números e aceites abaixo descrevem a rodada anterior; consulte o controle para as candidatas vigentes.
+
 Em 18/10/2026, as 42 folhas ficaram disponíveis: 14 aprovadas e 28 candidatas dos lotes 3–9. A revisão interna não encerra a entrega; falta o aceite visual do autor para as candidatas.
 
 ## Comparação visual
