@@ -1,0 +1,43 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("UI Tech Buy Window\nAdd Event To Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UITechBuyWindowAddEventToButton : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput onClickedBuy;
+
+	private FlowOutput onClickedCancel;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIBuyTechWindow uIBuyTechWindow = GUIElements.Get<UIBuyTechWindow>();
+			Button buy = uIBuyTechWindow.BuyButton;
+			Button cancel = uIBuyTechWindow.CancelButton;
+			UIElementsCustomEventHandlerManager.AddEvent(buy, UITutorialArrow.SignOrientationType.Left, delegate
+			{
+				UIElementsCustomEventHandlerManager.RemoveEvent(cancel);
+				onClickedBuy.Call(flow);
+			}, null, isSortingOverrode: false);
+			UIElementsCustomEventHandlerManager.AddEvent(cancel, UITutorialArrow.SignOrientationType.Left, delegate
+			{
+				UIElementsCustomEventHandlerManager.RemoveEvent(buy);
+				onClickedCancel.Call(flow);
+			}, null, isSortingOverrode: false, showTutorialArrow: false);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClickedBuy = AddFlowOutput("onClickedBuy".CapitalizeFirst());
+		onClickedCancel = AddFlowOutput("onClickedCancel".CapitalizeFirst());
+	}
+}

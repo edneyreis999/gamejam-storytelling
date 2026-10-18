@@ -1,0 +1,158 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Custom Event", 0)]
+[Category("Game")]
+[Description("Moves player only ByFoot!!!")]
+public class Flow_AddCustomEvent : PC2CustomFlowNode
+{
+	public enum InteractionObjectType
+	{
+		WGO,
+		GMO
+	}
+
+	[SerializeField]
+	[GatherPortsCallback]
+	public bool isToRemove;
+
+	[GatherPortsCallback]
+	[ShowIf("objectType", 0)]
+	public bool isSetByString;
+
+	[GatherPortsCallback]
+	public InteractionObjectType objectType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<WGO> inputWGO;
+
+	private ValueInput<string> inputWGOId;
+
+	private ValueInput<GameMapObject> inputGMO;
+
+	private ValueInput<string> eventName;
+
+	private ValueInput<bool> isEventBlocksMove;
+
+	private ValueInput<WGOCustomEventsHandler.GUILabelType> labelType;
+
+	private ValueInput<List<string>> gmoWhiteList;
+
+	public override string name
+	{
+		get
+		{
+			switch (objectType)
+			{
+			case InteractionObjectType.WGO:
+				if (!isToRemove)
+				{
+					return "Add Custom Event To WGO";
+				}
+				return "Remove Custom Event From WGO";
+			case InteractionObjectType.GMO:
+				if (!inputGMO.isConnected)
+				{
+					return base.name + " to GMO\n<color=#d62d2d>GMO is NULL</color>";
+				}
+				if (isToRemove)
+				{
+					return base.name + " to GMO\n<color=#d62d2d>Remove not supported</color>";
+				}
+				return base.name + " to GMO";
+			default:
+				return base.name;
+			}
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), AddCustomEvent);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		switch (objectType)
+		{
+		case InteractionObjectType.WGO:
+			if (!isSetByString)
+			{
+				inputWGO = AddValueInput<WGO>("WGO");
+			}
+			else
+			{
+				inputWGOId = AddValueInput<string>("inputWGOId");
+			}
+			labelType = AddValueInput<WGOCustomEventsHandler.GUILabelType>("labelType".CapitalizeFirst());
+			break;
+		case InteractionObjectType.GMO:
+			inputGMO = AddValueInput<GameMapObject>("GameMapObject");
+			isEventBlocksMove = AddValueInput<bool>("isEventBlocksMove".CapitalizeFirst());
+			gmoWhiteList = AddValueInput<List<string>>("gmoWhiteList".CapitalizeFirst());
+			break;
+		}
+		eventName = AddValueInput<string>("eventName".CapitalizeFirst());
+	}
+
+	private void AddCustomEvent(Flow flow)
+	{
+		switch (objectType)
+		{
+		case InteractionObjectType.WGO:
+			if (!isToRemove)
+			{
+				if (!isSetByString)
+				{
+					WGO wGO = WGOParamOrSelf(inputWGO);
+					if (wGO != null)
+					{
+						wGO.AddCustomEvent(eventName.value, labelType.value);
+					}
+					else
+					{
+						Debug.LogError("Tried to add interaction event on null wgo");
+					}
+				}
+				else
+				{
+					WGO wGO2 = DynamicScene.FindWGO(inputWGOId.value);
+					if (wGO2 != null)
+					{
+						wGO2.AddCustomEvent(eventName.value, labelType.value);
+					}
+					else
+					{
+						WGOCustomEventsHandler.AddCustomEvent(inputWGOId.value, eventName.value, labelType.value);
+					}
+				}
+			}
+			else if (!isSetByString)
+			{
+				WGOParamOrSelf(inputWGO).RemoveCustomEvent(eventName.value, labelType.value);
+			}
+			else
+			{
+				WGO wGO3 = DynamicScene.FindWGO(inputWGOId.value);
+				if (wGO3 != null)
+				{
+					wGO3.RemoveCustomEvent(eventName.value, labelType.value);
+				}
+				else
+				{
+					WGOCustomEventsHandler.RemoveCustomEvent(inputWGOId.value, eventName.value, labelType.value);
+				}
+			}
+			break;
+		case InteractionObjectType.GMO:
+			GMOCustomEventsHandler.AddCustomEvent(inputGMO.value, eventName.value, !isEventBlocksMove.value, GMOCustomEventsHandler.GUILabelType.Mark, gmoWhiteList.value);
+			break;
+		}
+		@out.Call(flow);
+	}
+}

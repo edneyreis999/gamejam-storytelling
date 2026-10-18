@@ -1,0 +1,78 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Change Player Sorting", 0)]
+[Category("Game")]
+public class Flow_ChangePlayerSorting : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToDefault;
+
+	[GatherPortsCallback]
+	public bool isPlayer;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<float> floorLine;
+
+	private new ValueInput<WGO> wgo;
+
+	public override string name
+	{
+		get
+		{
+			if (isToDefault)
+			{
+				if (!isPlayer)
+				{
+					return "Change WGO Sorting";
+				}
+				return "Change Player Sorting To Default";
+			}
+			if (!isPlayer)
+			{
+				return "Change WGO Sorting";
+			}
+			return "Change Player Sorting To Custom";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ChangeSorting);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (!isToDefault || !isPlayer)
+		{
+			floorLine = AddValueInput<float>("floorLine".CapitalizeFirst());
+		}
+		if (!isPlayer)
+		{
+			wgo = AddValueInput<WGO>("wgo".CapitalizeFirst());
+		}
+	}
+
+	private void ChangeSorting(Flow flow)
+	{
+		if (isPlayer)
+		{
+			PlayerController.Instance.SortComponent.FloorLine = (isToDefault ? 0f : floorLine.value);
+		}
+		else
+		{
+			if (WGOParamOrSelf(wgo) == null)
+			{
+				Debug.Log("Null WGO!!!");
+				@out.Call(flow);
+				return;
+			}
+			wgo.value.SortComponent.FloorLine = floorLine.value;
+		}
+		@out.Call(flow);
+	}
+}

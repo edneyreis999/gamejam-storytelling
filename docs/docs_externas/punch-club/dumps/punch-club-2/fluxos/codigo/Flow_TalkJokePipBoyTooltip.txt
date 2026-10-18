@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+[Name("Talk Joke PipBoy Tooltip", 0)]
+[Category("Game/Dialogue")]
+public sealed class Flow_TalkJokePipBoyTooltip : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private Flow flow;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.jokePhrasesSystem.ShowJokes(OnFinished);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+	}
+
+	private void OnFinished()
+	{
+		onFinished.Call(flow);
+	}
+}

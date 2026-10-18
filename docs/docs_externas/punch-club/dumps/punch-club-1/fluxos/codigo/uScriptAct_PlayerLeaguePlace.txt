@@ -1,0 +1,37 @@
+using System;
+
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Player League Place", "")]
+public class uScriptAct_PlayerLeaguePlace : uScriptLogic
+{
+	public enum CompareType
+	{
+		Equal,
+		More,
+		Less,
+		MoreEqual,
+		LessEqual
+	}
+
+	public event uScript_GameObject.uScriptEventHandler True;
+
+	public event uScript_GameObject.uScriptEventHandler False;
+
+	public void In([FriendlyName("League id", "")] int league_id, [FriendlyName("min", "(inclusive)")] int min, [FriendlyName("max", "(inclusive)")] int max)
+	{
+		int leaguePlace = MainGame.save.ch.GetLeaguePlace(league_id);
+		if (leaguePlace >= min && leaguePlace <= max)
+		{
+			if (this.True != null)
+			{
+				this.True(this, new EventArgs());
+			}
+		}
+		else if (this.False != null)
+		{
+			this.False(this, new EventArgs());
+		}
+	}
+}

@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("League Rewind On Phase", 0)]
+[Category("Game/League")]
+public class Flow_LeagueRewindOnPhase : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> leagueId;
+
+	private ValueInput<LeaguePhase> phaseRewindOn;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			League league = MainGame.me.gameSave.leaguesSystem.GetLeague(leagueId.value);
+			if (league != null)
+			{
+				league.RewindOnPhase(phaseRewindOn.value);
+			}
+			else
+			{
+				Debug.LogError("Flow_LeagueRewindOnPhase : league by id [" + leagueId.value + "] not found");
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		leagueId = AddValueInput<string>("leagueId");
+		phaseRewindOn = AddValueInput<LeaguePhase>("phaseRewindOn");
+	}
+}

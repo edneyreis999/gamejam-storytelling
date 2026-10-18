@@ -1,0 +1,25 @@
+using System;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Tutorial Window", "")]
+public class uScriptAct_TutorialWindow : uScriptLogic
+{
+	public event uScript_GameObject.uScriptEventHandler ClosedWindow;
+
+	public void In([FriendlyName("key", "")] string key)
+	{
+		CommonStatic.VoidDelegate voidDelegate = delegate
+		{
+			if (this.ClosedWindow != null)
+			{
+				this.ClosedWindow(this, new EventArgs());
+			}
+		};
+		if (!TutorWindowGUI.TryShowTutorial(key, voidDelegate))
+		{
+			voidDelegate();
+		}
+	}
+}

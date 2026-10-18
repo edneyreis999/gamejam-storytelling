@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+[Name("Switch Robot State", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_SwitchRobotState : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private List<FlowOutput> outputs = new List<FlowOutput>();
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			outputs.Find((FlowOutput f) => f.name == Enum.GetName(typeof(RobotState), MainGame.me.gameSave.robotSystem.CurrentState)).Call(flow);
+		});
+		string[] names = Enum.GetNames(typeof(RobotState));
+		for (int num = 0; num < names.Length; num++)
+		{
+			outputs.Add(AddFlowOutput(names[num]));
+		}
+	}
+}

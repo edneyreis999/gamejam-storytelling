@@ -1,0 +1,27 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Money", 0)]
+[Category("Game")]
+public class Flow_AddMoney : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<float> moneyCount;
+
+	protected override void RegisterPorts()
+	{
+		moneyCount = AddValueInput<float>("Amount of Money");
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.PlayerRes.Add("_money", moneyCount.value);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

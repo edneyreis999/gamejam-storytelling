@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Story Tree Content Show Masks", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIStoryTreeContentShowMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI Story Tree Content " + (isToShow.value ? "Show" : "Hide") + " Masks";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform tutorialRect = GUIElements.Get<UIStoryTreeWindow>().TutorialRect;
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(tutorialRect);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(tutorialRect);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

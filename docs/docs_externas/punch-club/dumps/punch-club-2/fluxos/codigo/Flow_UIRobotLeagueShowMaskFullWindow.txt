@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Robot League Show\nMask Full Window", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIRobotLeagueShowMaskFullWindow : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI Robot League" + (isToShow.value ? "Show" : "Hide") + "\nMask Full Window";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform tutorialWindowFullMask = GUIElements.Get<UIRobotLeagueWindow>().TutorialWindowFullMask;
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(tutorialWindowFullMask);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(tutorialWindowFullMask);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

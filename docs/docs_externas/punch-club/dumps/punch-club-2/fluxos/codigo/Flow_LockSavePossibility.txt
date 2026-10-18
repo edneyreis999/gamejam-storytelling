@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Lock Save Possibility", 0)]
+[Category("Game")]
+public class Flow_LockSavePossibility : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isSavePossible = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name
+	{
+		get
+		{
+			if (!isSavePossible)
+			{
+				return "Lock Save";
+			}
+			return "Unlock Save";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.isSavePossible = isSavePossible;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

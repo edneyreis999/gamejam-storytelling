@@ -1,0 +1,112 @@
+using System;
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using Sirenix.Utilities;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set Trigger To Animator", 0)]
+[Category("Game")]
+public class Flow_SetTriggerToAnimator : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool hasEnterClipCallback;
+
+	public List<string> triggersForReset;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private FlowOutput onEnterClip;
+
+	private ValueInput<GameObject> gameObject;
+
+	private ValueInput<string> triggerName;
+
+	private ValueInput<string> enterClipName;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), SetTrigger);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		gameObject = AddValueInput<GameObject>("gameObject".CapitalizeFirst());
+		triggerName = AddValueInput<string>("triggerName".CapitalizeFirst());
+		if (hasEnterClipCallback)
+		{
+			enterClipName = AddValueInput<string>("enterClipName".CapitalizeFirst());
+			onEnterClip = AddFlowOutput("onEnterClip".CapitalizeFirst());
+		}
+	}
+
+	private void SetTrigger(Flow flow)
+	{
+		GameObject gameObject = ParamValueOrSelf(this.gameObject);
+		if (gameObject != null)
+		{
+			LazyAnimationController component = gameObject.GetComponent<LazyAnimationController>();
+			if (component != null && component != PlayerController.Instance.LazyAnimationController)
+			{
+				Action<string> enterClipCallback = null;
+				if (hasEnterClipCallback)
+				{
+					enterClipCallback = delegate(string clipName)
+					{
+						if (clipName == enterClipName.value)
+						{
+							onEnterClip.Call(flow);
+							enterClipCallback = null;
+						}
+					};
+				}
+				if (!triggersForReset.IsNullOrEmpty())
+				{
+					Animator component2 = component.GetComponent<Animator>();
+					for (int num = 0; num < triggersForReset.Count; num++)
+					{
+						component2.ResetTrigger(triggersForReset[num]);
+					}
+				}
+				component.SetTrigger(triggerName.value, delegate
+				{
+					onFinished.Call(flow);
+				}, enterClipCallback);
+			}
+			else
+			{
+				Debug.LogWarning("Lazy animation controller not found");
+				Animator component3 = gameObject.GetComponent<Animator>();
+				if (!triggersForReset.IsNullOrEmpty())
+				{
+					for (int num2 = 0; num2 < triggersForReset.Count; num2++)
+					{
+						component3.ResetTrigger(triggersForReset[num2]);
+					}
+				}
+				if (component3 != null)
+				{
+					component3.SetTrigger(triggerName.value);
+					onFinished.Call(flow);
+				}
+				else
+				{
+					Debug.LogError("Animator not found");
+					onFinished.Call(flow);
+				}
+			}
+		}
+		else
+		{
+			Debug.LogError("GameObject is null");
+			onFinished.Call(flow);
+		}
+		@out.Call(flow);
+	}
+}

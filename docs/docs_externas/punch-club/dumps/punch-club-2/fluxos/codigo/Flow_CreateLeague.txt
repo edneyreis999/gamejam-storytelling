@@ -1,0 +1,75 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Create/Destroy League", 0)]
+[Category("Game/Fight")]
+public class Flow_CreateLeague : PC2CustomFlowNode
+{
+	public enum ManipulationType
+	{
+		Create,
+		Destroy
+	}
+
+	[GatherPortsCallback]
+	public ManipulationType type;
+
+	[GatherPortsCallback]
+	public LeagueType leagueType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> leagueId;
+
+	private ValueInput<bool> addPlayerToLeague;
+
+	public override string name
+	{
+		get
+		{
+			if (type != ManipulationType.Create)
+			{
+				return "Destroy League";
+			}
+			return "Create League";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (type == ManipulationType.Create)
+			{
+				switch (leagueType)
+				{
+				case LeagueType.Elo:
+					MainGame.me.gameSave.leaguesSystem.CreateLeague(leagueId.value);
+					break;
+				case LeagueType.Division:
+					MainGame.me.gameSave.leaguesSystem.CreateLeague(leagueId.value, addPlayerToLeague.value);
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+				}
+			}
+			else
+			{
+				MainGame.me.gameSave.leaguesSystem.DestroyLeague(leagueId.value);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		leagueId = AddValueInput<string>("leagueId");
+		if (leagueType == LeagueType.Division)
+		{
+			addPlayerToLeague = AddValueInput<bool>("addPlayerToLeague");
+		}
+	}
+}

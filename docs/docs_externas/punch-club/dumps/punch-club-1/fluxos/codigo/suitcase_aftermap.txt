@@ -1,0 +1,806 @@
+using System;
+using UnityEngine;
+
+[Serializable]
+[NodePath("Graphs")]
+[FriendlyName("Untitled", "")]
+public class suitcase_aftermap : uScriptLogic
+{
+	private delegate void ContinueExecution();
+
+	private GameObject parentGameObject;
+
+	private uScript_GUI thisScriptsOnGuiListener;
+
+	private bool m_RegisteredForEvents;
+
+	private ContinueExecution m_ContinueExecution;
+
+	private bool m_Breakpoint;
+
+	private const int MaxRelayCallCount = 1000;
+
+	private int relayCallCount;
+
+	private CharacterGfx local_5_CharacterGfx;
+
+	private GameObject owner_Connection_0;
+
+	private uScriptAct_EndScript logic_uScriptAct_EndScript_uScriptAct_EndScript_2 = new uScriptAct_EndScript();
+
+	private CharacterGfx[] logic_uScriptAct_EndScript_chars_2 = new CharacterGfx[0];
+
+	private bool logic_uScriptAct_EndScript_enable_interaction_2 = true;
+
+	private uScriptAct_CharacterSay logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_3 = new uScriptAct_CharacterSay();
+
+	private CharacterGfx logic_uScriptAct_CharacterSay_ch_3;
+
+	private bool logic_uScriptAct_CharacterSay_think_3 = true;
+
+	private string logic_uScriptAct_CharacterSay_txt_3 = "suit_1";
+
+	private bool logic_uScriptAct_CharacterSay_force_mirror_x_3;
+
+	private bool logic_uScriptAct_CharacterSay_force_mirror_y_3;
+
+	private uScriptAct_CharacterSay.Side logic_uScriptAct_CharacterSay_side_3;
+
+	private bool logic_uScriptAct_CharacterSay_Finished_3 = true;
+
+	private bool logic_uScriptAct_CharacterSay_Out_3 = true;
+
+	private bool logic_uScriptAct_CharacterSay_DrivenFunc_3;
+
+	private uScriptAct_GetPlayer logic_uScriptAct_GetPlayer_uScriptAct_GetPlayer_4 = new uScriptAct_GetPlayer();
+
+	private CharacterGfx logic_uScriptAct_GetPlayer_ch_4;
+
+	private GameObject logic_uScriptAct_GetPlayer_go_4;
+
+	private bool logic_uScriptAct_GetPlayer_Out_4 = true;
+
+	private uScriptAct_Say logic_uScriptAct_Say_uScriptAct_Say_6 = new uScriptAct_Say();
+
+	private string logic_uScriptAct_Say_name_6 = "cat";
+
+	private bool logic_uScriptAct_Say_think_6;
+
+	private string logic_uScriptAct_Say_txt_6 = "suit_2";
+
+	private bool logic_uScriptAct_Say_force_mirror_x_6;
+
+	private bool logic_uScriptAct_Say_force_mirror_y_6;
+
+	private float logic_uScriptAct_Say_add_delay_6;
+
+	private bool logic_uScriptAct_Say_Finished_6 = true;
+
+	private bool logic_uScriptAct_Say_Immediate_6 = true;
+
+	private bool logic_uScriptAct_Say_DrivenFunc_6;
+
+	private uScriptAct_CharacterSay logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_7 = new uScriptAct_CharacterSay();
+
+	private CharacterGfx logic_uScriptAct_CharacterSay_ch_7;
+
+	private bool logic_uScriptAct_CharacterSay_think_7;
+
+	private string logic_uScriptAct_CharacterSay_txt_7 = "suit_3";
+
+	private bool logic_uScriptAct_CharacterSay_force_mirror_x_7;
+
+	private bool logic_uScriptAct_CharacterSay_force_mirror_y_7;
+
+	private uScriptAct_CharacterSay.Side logic_uScriptAct_CharacterSay_side_7;
+
+	private bool logic_uScriptAct_CharacterSay_Finished_7 = true;
+
+	private bool logic_uScriptAct_CharacterSay_Out_7 = true;
+
+	private bool logic_uScriptAct_CharacterSay_DrivenFunc_7;
+
+	private uScriptAct_SetGlobalInteration logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_8 = new uScriptAct_SetGlobalInteration();
+
+	private bool logic_uScriptAct_SetGlobalInteration_enabled_8;
+
+	private bool logic_uScriptAct_SetGlobalInteration_Out_8 = true;
+
+	private uScriptAct_CreateQuestMarker logic_uScriptAct_CreateQuestMarker_uScriptAct_CreateQuestMarker_9 = new uScriptAct_CreateQuestMarker();
+
+	private string logic_uScriptAct_CreateQuestMarker_zone_name_9 = "z_case";
+
+	private GameObject logic_uScriptAct_CreateQuestMarker_game_object_9;
+
+	private QuestMarker logic_uScriptAct_CreateQuestMarker_q_9;
+
+	private bool logic_uScriptAct_CreateQuestMarker_block_others_9 = true;
+
+	private bool logic_uScriptAct_CreateQuestMarker_Out_9 = true;
+
+	private uScriptAct_CharacterSay logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_10 = new uScriptAct_CharacterSay();
+
+	private CharacterGfx logic_uScriptAct_CharacterSay_ch_10;
+
+	private bool logic_uScriptAct_CharacterSay_think_10 = true;
+
+	private string logic_uScriptAct_CharacterSay_txt_10 = "suit_5";
+
+	private bool logic_uScriptAct_CharacterSay_force_mirror_x_10;
+
+	private bool logic_uScriptAct_CharacterSay_force_mirror_y_10;
+
+	private uScriptAct_CharacterSay.Side logic_uScriptAct_CharacterSay_side_10;
+
+	private bool logic_uScriptAct_CharacterSay_Finished_10 = true;
+
+	private bool logic_uScriptAct_CharacterSay_Out_10 = true;
+
+	private bool logic_uScriptAct_CharacterSay_DrivenFunc_10;
+
+	private uScriptAct_CharacterSay logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_11 = new uScriptAct_CharacterSay();
+
+	private CharacterGfx logic_uScriptAct_CharacterSay_ch_11;
+
+	private bool logic_uScriptAct_CharacterSay_think_11;
+
+	private string logic_uScriptAct_CharacterSay_txt_11 = "suit_4";
+
+	private bool logic_uScriptAct_CharacterSay_force_mirror_x_11;
+
+	private bool logic_uScriptAct_CharacterSay_force_mirror_y_11;
+
+	private uScriptAct_CharacterSay.Side logic_uScriptAct_CharacterSay_side_11;
+
+	private bool logic_uScriptAct_CharacterSay_Finished_11 = true;
+
+	private bool logic_uScriptAct_CharacterSay_Out_11 = true;
+
+	private bool logic_uScriptAct_CharacterSay_DrivenFunc_11;
+
+	private uScriptAct_CharacterMoveTo logic_uScriptAct_CharacterMoveTo_uScriptAct_CharacterMoveTo_12 = new uScriptAct_CharacterMoveTo();
+
+	private CharacterGfx logic_uScriptAct_CharacterMoveTo_ch_12;
+
+	private bool logic_uScriptAct_CharacterMoveTo_immediate_12;
+
+	private string logic_uScriptAct_CharacterMoveTo_node_name_12 = "n_case";
+
+	private Vector2 logic_uScriptAct_CharacterMoveTo_coords_12 = new Vector2(0f, 0f);
+
+	private bool logic_uScriptAct_CharacterMoveTo_Out_12 = true;
+
+	private uScriptAct_Cutscene logic_uScriptAct_Cutscene_uScriptAct_Cutscene_13 = new uScriptAct_Cutscene();
+
+	private string logic_uScriptAct_Cutscene_scene_name_13 = "cutscene_storage";
+
+	private string logic_uScriptAct_Cutscene_scene_after_13 = "house_1_kitchen";
+
+	private uScriptAct_SetCharRes logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_14 = new uScriptAct_SetCharRes();
+
+	private string logic_uScriptAct_SetCharRes_name_14 = "#hero";
+
+	private int logic_uScriptAct_SetCharRes_val_14 = 1;
+
+	private bool logic_uScriptAct_SetCharRes_Out_14 = true;
+
+	private uScriptAct_ShowHUD logic_uScriptAct_ShowHUD_uScriptAct_ShowHUD_15 = new uScriptAct_ShowHUD();
+
+	private uScriptAct_CharacterPlayAnimation.BooleanSet logic_uScriptAct_ShowHUD_hud_left_15 = uScriptAct_CharacterPlayAnimation.BooleanSet.False;
+
+	private uScriptAct_CharacterPlayAnimation.BooleanSet logic_uScriptAct_ShowHUD_hud_top_15 = uScriptAct_CharacterPlayAnimation.BooleanSet.False;
+
+	private bool logic_uScriptAct_ShowHUD_Out_15 = true;
+
+	private uScriptAct_SetGlobalInteration logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_16 = new uScriptAct_SetGlobalInteration();
+
+	private bool logic_uScriptAct_SetGlobalInteration_enabled_16 = true;
+
+	private bool logic_uScriptAct_SetGlobalInteration_Out_16 = true;
+
+	private uScriptAct_PlayerModifyInventory logic_uScriptAct_PlayerModifyInventory_uScriptAct_PlayerModifyInventory_17 = new uScriptAct_PlayerModifyInventory();
+
+	private string logic_uScriptAct_PlayerModifyInventory_item_name_17 = "Case";
+
+	private bool logic_uScriptAct_PlayerModifyInventory_add_17 = true;
+
+	private bool logic_uScriptAct_PlayerModifyInventory_Out_17 = true;
+
+	private void SyncUnityHooks()
+	{
+		SyncEventListeners();
+		if (!(null == owner_Connection_0) && m_RegisteredForEvents)
+		{
+			return;
+		}
+		owner_Connection_0 = parentGameObject;
+		if (null != owner_Connection_0)
+		{
+			uScript_CustomUScriptEvent uScript_CustomUScriptEvent2 = owner_Connection_0.GetComponent<uScript_CustomUScriptEvent>();
+			if (null == uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2 = owner_Connection_0.AddComponent<uScript_CustomUScriptEvent>();
+			}
+			if (null != uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2.uScriptStart += Instance_uScriptStart_1;
+			}
+		}
+	}
+
+	private void RegisterForUnityHooks()
+	{
+		SyncEventListeners();
+		if (!m_RegisteredForEvents && null != owner_Connection_0)
+		{
+			uScript_CustomUScriptEvent uScript_CustomUScriptEvent2 = owner_Connection_0.GetComponent<uScript_CustomUScriptEvent>();
+			if (null == uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2 = owner_Connection_0.AddComponent<uScript_CustomUScriptEvent>();
+			}
+			if (null != uScript_CustomUScriptEvent2)
+			{
+				uScript_CustomUScriptEvent2.uScriptStart += Instance_uScriptStart_1;
+			}
+		}
+	}
+
+	private void SyncEventListeners()
+	{
+	}
+
+	private void UnregisterEventListeners()
+	{
+		if (null != owner_Connection_0)
+		{
+			uScript_CustomUScriptEvent component = owner_Connection_0.GetComponent<uScript_CustomUScriptEvent>();
+			if (null != component)
+			{
+				component.uScriptStart -= Instance_uScriptStart_1;
+			}
+		}
+	}
+
+	public override void SetParent(GameObject g)
+	{
+		parentGameObject = g;
+		logic_uScriptAct_EndScript_uScriptAct_EndScript_2.SetParent(g);
+		logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_3.SetParent(g);
+		logic_uScriptAct_GetPlayer_uScriptAct_GetPlayer_4.SetParent(g);
+		logic_uScriptAct_Say_uScriptAct_Say_6.SetParent(g);
+		logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_7.SetParent(g);
+		logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_8.SetParent(g);
+		logic_uScriptAct_CreateQuestMarker_uScriptAct_CreateQuestMarker_9.SetParent(g);
+		logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_10.SetParent(g);
+		logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_11.SetParent(g);
+		logic_uScriptAct_CharacterMoveTo_uScriptAct_CharacterMoveTo_12.SetParent(g);
+		logic_uScriptAct_Cutscene_uScriptAct_Cutscene_13.SetParent(g);
+		logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_14.SetParent(g);
+		logic_uScriptAct_ShowHUD_uScriptAct_ShowHUD_15.SetParent(g);
+		logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_16.SetParent(g);
+		logic_uScriptAct_PlayerModifyInventory_uScriptAct_PlayerModifyInventory_17.SetParent(g);
+		owner_Connection_0 = parentGameObject;
+	}
+
+	public void Awake()
+	{
+		logic_uScriptAct_CharacterMoveTo_uScriptAct_CharacterMoveTo_12.Finished += uScriptAct_CharacterMoveTo_Finished_12;
+		logic_uScriptAct_Cutscene_uScriptAct_Cutscene_13.Out += uScriptAct_Cutscene_Out_13;
+	}
+
+	public void Start()
+	{
+		SyncUnityHooks();
+		m_RegisteredForEvents = true;
+	}
+
+	public void OnEnable()
+	{
+		RegisterForUnityHooks();
+		m_RegisteredForEvents = true;
+	}
+
+	public void OnDisable()
+	{
+		UnregisterEventListeners();
+		m_RegisteredForEvents = false;
+	}
+
+	public void Update()
+	{
+		if (relayCallCount < 1000)
+		{
+			relayCallCount = 0;
+		}
+		if (m_ContinueExecution != null)
+		{
+			ContinueExecution continueExecution = m_ContinueExecution;
+			m_ContinueExecution = null;
+			m_Breakpoint = false;
+			continueExecution();
+			return;
+		}
+		UpdateEditorValues();
+		SyncEventListeners();
+		if (logic_uScriptAct_CharacterSay_DrivenFunc_3)
+		{
+			Relay_DrivenFunc_3();
+		}
+		if (logic_uScriptAct_Say_DrivenFunc_6)
+		{
+			Relay_DrivenFunc_6();
+		}
+		if (logic_uScriptAct_CharacterSay_DrivenFunc_7)
+		{
+			Relay_DrivenFunc_7();
+		}
+		if (logic_uScriptAct_CharacterSay_DrivenFunc_10)
+		{
+			Relay_DrivenFunc_10();
+		}
+		if (logic_uScriptAct_CharacterSay_DrivenFunc_11)
+		{
+			Relay_DrivenFunc_11();
+		}
+	}
+
+	public void OnDestroy()
+	{
+		logic_uScriptAct_CharacterMoveTo_uScriptAct_CharacterMoveTo_12.Finished -= uScriptAct_CharacterMoveTo_Finished_12;
+		logic_uScriptAct_Cutscene_uScriptAct_Cutscene_13.Out -= uScriptAct_Cutscene_Out_13;
+	}
+
+	private void Instance_uScriptStart_1(object o, EventArgs e)
+	{
+		if (relayCallCount < 1000)
+		{
+			relayCallCount = 0;
+		}
+		Relay_uScriptStart_1();
+	}
+
+	private void uScriptAct_CharacterMoveTo_Finished_12(object o, EventArgs e)
+	{
+		Relay_Finished_12();
+	}
+
+	private void uScriptAct_Cutscene_Out_13(object o, EventArgs e)
+	{
+		Relay_Out_13();
+	}
+
+	private void Relay_uScriptStart_1()
+	{
+		if (!CheckDebugBreak("626247ac-b389-456b-8040-857f4cf07cda", "Custom_uScript_Events", Relay_uScriptStart_1))
+		{
+			Relay_In_17();
+		}
+	}
+
+	private void Relay_In_2()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("bf8fd868-6b0b-413e-953f-90f27f4319ce", "End_Script", Relay_In_2))
+			{
+				logic_uScriptAct_EndScript_uScriptAct_EndScript_2.In(logic_uScriptAct_EndScript_chars_2, logic_uScriptAct_EndScript_enable_interaction_2);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at End Script.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_3()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("685513f1-85de-43a0-8306-1dce8e4735a0", "Char__Say", Relay_In_3))
+			{
+				logic_uScriptAct_CharacterSay_ch_3 = local_5_CharacterGfx;
+				logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_3.In(logic_uScriptAct_CharacterSay_ch_3, logic_uScriptAct_CharacterSay_think_3, logic_uScriptAct_CharacterSay_txt_3, logic_uScriptAct_CharacterSay_force_mirror_x_3, logic_uScriptAct_CharacterSay_force_mirror_y_3, logic_uScriptAct_CharacterSay_side_3);
+				logic_uScriptAct_CharacterSay_DrivenFunc_3 = true;
+				if (logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_3.Finished)
+				{
+					Relay_In_6();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Char: Say.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_DrivenFunc_3()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			logic_uScriptAct_CharacterSay_ch_3 = local_5_CharacterGfx;
+			logic_uScriptAct_CharacterSay_DrivenFunc_3 = logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_3.DrivenFunc();
+			if (logic_uScriptAct_CharacterSay_DrivenFunc_3 && logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_3.Finished)
+			{
+				Relay_In_6();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Char: Say.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_4()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("7e742799-8147-4f74-a624-d62d45bdf09d", "Get_Player", Relay_In_4))
+			{
+				logic_uScriptAct_GetPlayer_uScriptAct_GetPlayer_4.In(out logic_uScriptAct_GetPlayer_ch_4, out logic_uScriptAct_GetPlayer_go_4);
+				local_5_CharacterGfx = logic_uScriptAct_GetPlayer_ch_4;
+				if (logic_uScriptAct_GetPlayer_uScriptAct_GetPlayer_4.Out)
+				{
+					Relay_In_3();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Get Player.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_6()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("38862e6f-6e71-47ac-bbe4-ba8adca3e1d4", "Say", Relay_In_6))
+			{
+				logic_uScriptAct_Say_uScriptAct_Say_6.In(logic_uScriptAct_Say_name_6, logic_uScriptAct_Say_think_6, logic_uScriptAct_Say_txt_6, logic_uScriptAct_Say_force_mirror_x_6, logic_uScriptAct_Say_force_mirror_y_6, logic_uScriptAct_Say_add_delay_6);
+				logic_uScriptAct_Say_DrivenFunc_6 = true;
+				if (logic_uScriptAct_Say_uScriptAct_Say_6.Finished)
+				{
+					Relay_In_7();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Say.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_DrivenFunc_6()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			logic_uScriptAct_Say_DrivenFunc_6 = logic_uScriptAct_Say_uScriptAct_Say_6.DrivenFunc();
+			if (logic_uScriptAct_Say_DrivenFunc_6 && logic_uScriptAct_Say_uScriptAct_Say_6.Finished)
+			{
+				Relay_In_7();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Say.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_7()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("c90bb0da-f271-4b86-99ec-628858f40435", "Char__Say", Relay_In_7))
+			{
+				logic_uScriptAct_CharacterSay_ch_7 = local_5_CharacterGfx;
+				logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_7.In(logic_uScriptAct_CharacterSay_ch_7, logic_uScriptAct_CharacterSay_think_7, logic_uScriptAct_CharacterSay_txt_7, logic_uScriptAct_CharacterSay_force_mirror_x_7, logic_uScriptAct_CharacterSay_force_mirror_y_7, logic_uScriptAct_CharacterSay_side_7);
+				logic_uScriptAct_CharacterSay_DrivenFunc_7 = true;
+				if (logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_7.Finished)
+				{
+					Relay_In_11();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Char: Say.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_DrivenFunc_7()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			logic_uScriptAct_CharacterSay_ch_7 = local_5_CharacterGfx;
+			logic_uScriptAct_CharacterSay_DrivenFunc_7 = logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_7.DrivenFunc();
+			if (logic_uScriptAct_CharacterSay_DrivenFunc_7 && logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_7.Finished)
+			{
+				Relay_In_11();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Char: Say.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_8()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("ebda49f0-41a2-47d0-a3d9-17ea54356c9e", "Set_Interaction", Relay_In_8))
+			{
+				logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_8.In(logic_uScriptAct_SetGlobalInteration_enabled_8);
+				if (logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_8.Out)
+				{
+					Relay_In_4();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Set Interaction.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_9()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("3f87bacd-d493-475b-bacd-5ec98de60386", "Create_Quest_Marker", Relay_In_9))
+			{
+				logic_uScriptAct_CreateQuestMarker_uScriptAct_CreateQuestMarker_9.In(logic_uScriptAct_CreateQuestMarker_zone_name_9, logic_uScriptAct_CreateQuestMarker_game_object_9, out logic_uScriptAct_CreateQuestMarker_q_9, logic_uScriptAct_CreateQuestMarker_block_others_9);
+				if (logic_uScriptAct_CreateQuestMarker_uScriptAct_CreateQuestMarker_9.Out)
+				{
+					Relay_In_2();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Create Quest Marker.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_10()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("c2f5f910-1925-420a-9b98-3410475253bb", "Char__Say", Relay_In_10))
+			{
+				logic_uScriptAct_CharacterSay_ch_10 = local_5_CharacterGfx;
+				logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_10.In(logic_uScriptAct_CharacterSay_ch_10, logic_uScriptAct_CharacterSay_think_10, logic_uScriptAct_CharacterSay_txt_10, logic_uScriptAct_CharacterSay_force_mirror_x_10, logic_uScriptAct_CharacterSay_force_mirror_y_10, logic_uScriptAct_CharacterSay_side_10);
+				logic_uScriptAct_CharacterSay_DrivenFunc_10 = true;
+				if (logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_10.Finished)
+				{
+					Relay_In_12();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Char: Say.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_DrivenFunc_10()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			logic_uScriptAct_CharacterSay_ch_10 = local_5_CharacterGfx;
+			logic_uScriptAct_CharacterSay_DrivenFunc_10 = logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_10.DrivenFunc();
+			if (logic_uScriptAct_CharacterSay_DrivenFunc_10 && logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_10.Finished)
+			{
+				Relay_In_12();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Char: Say.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_11()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("0acaf8b0-132a-446c-8487-140289973b72", "Char__Say", Relay_In_11))
+			{
+				logic_uScriptAct_CharacterSay_ch_11 = local_5_CharacterGfx;
+				logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_11.In(logic_uScriptAct_CharacterSay_ch_11, logic_uScriptAct_CharacterSay_think_11, logic_uScriptAct_CharacterSay_txt_11, logic_uScriptAct_CharacterSay_force_mirror_x_11, logic_uScriptAct_CharacterSay_force_mirror_y_11, logic_uScriptAct_CharacterSay_side_11);
+				logic_uScriptAct_CharacterSay_DrivenFunc_11 = true;
+				if (logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_11.Finished)
+				{
+					Relay_In_10();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Char: Say.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_DrivenFunc_11()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			logic_uScriptAct_CharacterSay_ch_11 = local_5_CharacterGfx;
+			logic_uScriptAct_CharacterSay_DrivenFunc_11 = logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_11.DrivenFunc();
+			if (logic_uScriptAct_CharacterSay_DrivenFunc_11 && logic_uScriptAct_CharacterSay_uScriptAct_CharacterSay_11.Finished)
+			{
+				Relay_In_10();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Char: Say.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_Finished_12()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("6784cefd-13de-4ead-b0db-c99583be546d", "Char__Move_to", Relay_Finished_12))
+			{
+				Relay_In_13();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Char: Move to.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_12()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("6784cefd-13de-4ead-b0db-c99583be546d", "Char__Move_to", Relay_In_12))
+			{
+				logic_uScriptAct_CharacterMoveTo_ch_12 = local_5_CharacterGfx;
+				logic_uScriptAct_CharacterMoveTo_uScriptAct_CharacterMoveTo_12.In(logic_uScriptAct_CharacterMoveTo_ch_12, logic_uScriptAct_CharacterMoveTo_immediate_12, logic_uScriptAct_CharacterMoveTo_node_name_12, logic_uScriptAct_CharacterMoveTo_coords_12);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Char: Move to.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_Out_13()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("273f49de-3c75-44b5-b43a-a38089b859fe", "Cut_scene", Relay_Out_13))
+			{
+				Relay_In_14();
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Cut scene.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_13()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("273f49de-3c75-44b5-b43a-a38089b859fe", "Cut_scene", Relay_In_13))
+			{
+				logic_uScriptAct_Cutscene_uScriptAct_Cutscene_13.In(logic_uScriptAct_Cutscene_scene_name_13, logic_uScriptAct_Cutscene_scene_after_13);
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Cut scene.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_14()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("9bbd099a-452c-4347-8bf8-c76e49698fee", "Set_Char_Res", Relay_In_14))
+			{
+				logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_14.In(logic_uScriptAct_SetCharRes_name_14, logic_uScriptAct_SetCharRes_val_14);
+				if (logic_uScriptAct_SetCharRes_uScriptAct_SetCharRes_14.Out)
+				{
+					Relay_In_15();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Set Char Res.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_15()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("edc34691-e8ac-443b-be3a-07957be79d46", "Show_HUD", Relay_In_15))
+			{
+				logic_uScriptAct_ShowHUD_uScriptAct_ShowHUD_15.In(logic_uScriptAct_ShowHUD_hud_left_15, logic_uScriptAct_ShowHUD_hud_top_15);
+				if (logic_uScriptAct_ShowHUD_uScriptAct_ShowHUD_15.Out)
+				{
+					Relay_In_16();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Show HUD.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_16()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("e6603f6b-8c15-4101-a363-0663b2c29ed9", "Set_Interaction", Relay_In_16))
+			{
+				logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_16.In(logic_uScriptAct_SetGlobalInteration_enabled_16);
+				if (logic_uScriptAct_SetGlobalInteration_uScriptAct_SetGlobalInteration_16.Out)
+				{
+					Relay_In_9();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Set Interaction.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void Relay_In_17()
+	{
+		if (relayCallCount++ < 1000)
+		{
+			if (!CheckDebugBreak("c06c4727-a1f1-4ed7-bec8-446ed1de260e", "Modify_Inventory", Relay_In_17))
+			{
+				logic_uScriptAct_PlayerModifyInventory_uScriptAct_PlayerModifyInventory_17.In(logic_uScriptAct_PlayerModifyInventory_item_name_17, logic_uScriptAct_PlayerModifyInventory_add_17);
+				if (logic_uScriptAct_PlayerModifyInventory_uScriptAct_PlayerModifyInventory_17.Out)
+				{
+					Relay_In_8();
+				}
+			}
+		}
+		else
+		{
+			uScriptDebug.Log("Possible infinite loop detected in uScript suitcase_aftermap.uscript at Modify Inventory.  If this is in error you can change the Maximum Node Recursion in the Preferences Panel and regenerate the script.", uScriptDebug.Type.Error);
+		}
+	}
+
+	private void UpdateEditorValues()
+	{
+		uScript_MasterComponent.LatestMasterComponent.UpdateNodeValue("suitcase_aftermap.uscript:5", local_5_CharacterGfx);
+		uScript_MasterComponent.LatestMasterComponent.UpdateNodeValue("b1bb18ef-7e19-4019-ac4b-efdf57629781", local_5_CharacterGfx);
+	}
+
+	private bool CheckDebugBreak(string guid, string name, ContinueExecution method)
+	{
+		if (m_Breakpoint)
+		{
+			return true;
+		}
+		if (uScript_MasterComponent.FindBreakpoint(guid))
+		{
+			if (!(uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint == guid))
+			{
+				uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint = guid;
+				UpdateEditorValues();
+				Debug.Log("uScript BREAK Node:" + name + " ((Time: " + Time.time + string.Empty);
+				Debug.Break();
+				m_ContinueExecution = method.Invoke;
+				m_Breakpoint = true;
+				return true;
+			}
+			uScript_MasterComponent.LatestMasterComponent.CurrentBreakpoint = string.Empty;
+		}
+		return false;
+	}
+}

@@ -1,0 +1,27 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Kinescope Change state", 0)]
+[Category("Game")]
+public class Flow_KinescopeChangeState : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> enable;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIKinescope.me.ChangeState(enable.value);
+			@out.Call(flow);
+		});
+		enable = AddValueInput<bool>("enable".CapitalizeFirst());
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,57 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Robot Customization PopUp Show Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_HighlightRobotCustomizationPopUp : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	private List<string> availableRobotParts = new List<string>
+	{
+		"robot_detail_hands_250", "robot_detail_hands_252", "robot_detail_hands_253", "robot_detail_hands_254", "robot_detail_hands_255", "robot_detail_legs_250", "robot_detail_legs_252", "robot_detail_legs_253", "robot_detail_legs_254", "robot_detail_legs_255",
+		"robot_detail_top_250", "robot_detail_top_252", "robot_detail_top_253", "robot_detail_top_254", "robot_detail_top_255"
+	};
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIRobotCustomizationWindow uIRobotCustomizationWindow = GUIElements.Get<UIRobotCustomizationWindow>();
+			UIRobotCustomizationDetail detailByType = uIRobotCustomizationWindow.GetDetailByType(GetUnlockedDetailType());
+			RectTransform element = ((!uIRobotCustomizationWindow.IsDetailLeft(detailByType)) ? GUIElements.Get<UIRobotCustomizationWindow>().PopUpRectRight : GUIElements.Get<UIRobotCustomizationWindow>().PopUpRectLeft);
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(element);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(element);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+
+	private string GetUnlockedDetailType()
+	{
+		foreach (string availableRobotPart in availableRobotParts)
+		{
+			if (InventoryUtils.HasItemInInventory(availableRobotPart))
+			{
+				return availableRobotPart;
+			}
+		}
+		return string.Empty;
+	}
+}

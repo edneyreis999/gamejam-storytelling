@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is Enough Reses For Buy Item", 0)]
+[Color("cf35c1")]
+public class Flow_IsEnoughResesForBuyItem : PC2CustomFlowNode
+{
+	private ValueInput<string> itemId;
+
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (GameBalance.Me.GetData<ItemDefinition>(itemId.value).IsEnoughReses)
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+		itemId = AddValueInput<string>("itemId".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Set Intro Status", "")]
+public class uScriptAct_SetIntroStatus : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("status", "")] bool status)
+	{
+		MainGame.is_in_intro = status;
+	}
+}

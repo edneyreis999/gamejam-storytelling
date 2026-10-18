@@ -1,0 +1,162 @@
+using System;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Talk", 0)]
+[Category("Game/Dialogue")]
+[ParadoxNotion.Design.Icon("DialogueSmall", false, "")]
+public sealed class Flow_Talk : PC2CustomFlowNode
+{
+	private WGO outWGO;
+
+	[GatherPortsCallback]
+	public bool isPlayer;
+
+	[ShowIf("isPlayer", 0)]
+	public bool unknownVoice;
+
+	[GatherPortsCallback]
+	[ShowIf("isPlayer", 0)]
+	public bool isSayAsPlayer;
+
+	[GatherPortsCallback]
+	public bool overrideCanvasSorting;
+
+	[ShowIf("overrideCanvasSorting", 1)]
+	public int overrideSorting;
+
+	[GatherPortsCallback]
+	public bool fixedShowTime;
+
+	[ShowIf("fixedShowTime", 1)]
+	public float fixedShowTimeValue = -1f;
+
+	public bool canSkipBubble = true;
+
+	public bool isFinalPreset;
+
+	public bool isForCutscene;
+
+	private FlowInput flowInput;
+
+	private FlowOutput flowOutput;
+
+	private FlowOutput flowOnFinished;
+
+	private ValueInput<WGO> wgoInput;
+
+	private ValueOutput<WGO> wgoOutput;
+
+	private ValueInput<string> text;
+
+	private ValueInput<SpeechBubbleType> speechType;
+
+	private ValueInput<UIBasicBubble.ForceCornerPosition> forceCornerPosition;
+
+	private Action OnTextAnimationEnd;
+
+	public override string name
+	{
+		get
+		{
+			SpeechBubbleType value = speechType.value;
+			if (isPlayer)
+			{
+				return $"<color=#FFFF50>Player {value}</color>";
+			}
+			if (!wgoInput.isConnected)
+			{
+				return $"<color=#30FF30>Self {value}</color>";
+			}
+			return $"<color=#30FF30>WGO {value}</color>";
+		}
+	}
+
+	public override Alignment2x2 iconAlignment => Alignment2x2.Left;
+
+	protected override void RegisterPorts()
+	{
+		flowInput = AddFlowInput("In", DoTalk);
+		flowOnFinished = AddFlowOutput("On Finished");
+		flowOutput = AddFlowOutput("Out");
+		if (!isPlayer)
+		{
+			wgoInput = AddValueInput<WGO>("WGO");
+			wgoOutput = AddValueOutput("WGO", () => outWGO);
+		}
+		text = AddValueInput<string>("text");
+		speechType = AddValueInput<SpeechBubbleType>("Speech type");
+		speechType.SetDefaultAndSerializedValue(SpeechBubbleType.Speech);
+		forceCornerPosition = AddValueInput<UIBasicBubble.ForceCornerPosition>("ForceCornerPosition");
+	}
+
+	private void DoTalk(Flow flow)
+	{
+		int num = 0;
+		string value = text.value;
+		SpeechBubbleType value2 = speechType.value;
+		bool forceRight = false;
+		bool forceLeft = false;
+		VoiceID voiceId;
+		Transform transform;
+		if (isPlayer)
+		{
+			unknownVoice = false;
+			voiceId = VoiceID.Player;
+			Debug.Log(value + " : " + value2.ToString().ToLower() + " character");
+			transform = PlayerController.Instance.BubbleNode.transform;
+		}
+		else
+		{
+			WGO talker = WGOParamOrSelf(wgoInput);
+			outWGO = talker;
+			if (talker == null)
+			{
+				Debug.LogError("WGO talker is null");
+				flowOutput.Call(flow);
+				flowOnFinished.Call(flow);
+				return;
+			}
+			voiceId = new VoiceID(GameBalance.Me.GetVoiceIdByWGOId(talker.Id));
+			if (talker.Id == "robots_hub_ai" && DynamicScene.current.SceneName == "RobotsHub")
+			{
+				forceRight = true;
+			}
+			Debug.Log("[" + talker.Id + "] : " + value2.ToString().ToLower() + " " + value);
+			transform = talker.TalkNode;
+			talker.SetTalkingAnimation(enable: true);
+			OnTextAnimationEnd = delegate
+			{
+				if (talker != null)
+				{
+					talker.SetTalkingAnimation(enable: false);
+				}
+			};
+		}
+		num = transform.GetHashCode();
+		if (!fixedShowTime)
+		{
+			fixedShowTimeValue = 0f;
+		}
+		if (overrideCanvasSorting)
+		{
+			Bubble.ShowSpeechBubbleWithOverrodeSorting(num, value, overrideSorting, voiceId, transform, value2, isPlayer || isSayAsPlayer, delegate
+			{
+				flowOnFinished.Call(flow);
+			}, OnTextAnimationEnd, worldToScreen: true, forceCornerPosition.value, unknownVoice, fixedShowTimeValue, canSkipBubble, isFinalPreset, isForCutscene, forceRight, forceLeft);
+		}
+		else
+		{
+			Bubble.ShowSpeechBubble(num, value, voiceId, transform, value2, isPlayer || isSayAsPlayer, delegate
+			{
+				flowOnFinished.Call(flow);
+			}, OnTextAnimationEnd, worldToScreen: true, forceCornerPosition.value, unknownVoice, fixedShowTimeValue, canSkipBubble, isFinalPreset, isForCutscene, forceRight, forceLeft);
+		}
+		flowOutput.Call(flow);
+	}
+}

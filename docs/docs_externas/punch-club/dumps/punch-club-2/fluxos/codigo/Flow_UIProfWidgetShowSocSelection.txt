@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Show Socialization Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIProfWidgetShowSocSelection : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI " + (isToShow.value ? "Show" : "Hide") + " Socialization Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform socializationTutorialRect = GUIElements.Get<HUD>().ProfessionProgressWidget.SocializationTutorialRect;
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(socializationTutorialRect);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(socializationTutorialRect);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

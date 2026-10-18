@@ -1,0 +1,19 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Get PreBattle Player Position", 0)]
+[Category("Game")]
+public class Flow_GetPreBattlePlayerPosition : PC2CustomFlowNode
+{
+	private ValueOutput<string> sceneName;
+
+	private ValueOutput<string> markerPosition;
+
+	protected override void RegisterPorts()
+	{
+		sceneName = AddValueOutput("sceneName", () => MainGame.me.gameSave.playerData.preBattleScene);
+		markerPosition = AddValueOutput("markerPosition", () => MainGame.me.gameSave.playerData.preBattleMapPosition);
+	}
+}

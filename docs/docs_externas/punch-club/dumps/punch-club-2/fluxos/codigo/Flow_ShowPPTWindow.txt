@@ -1,0 +1,68 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Show PPT", 0)]
+[Category("Game")]
+public class Flow_ShowPPTWindow : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToShow;
+
+	[ShowIf("isToShow", 1)]
+	private ValueInput<string> speaker;
+
+	private ValueInput<int> frequencyIndex;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToShow)
+			{
+				return "Hide PPt";
+			}
+			return "Show PPT";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToShow)
+			{
+				MainGame.me.FadeIn(0.6f, delegate
+				{
+					UIPPTWindow.Show(speaker.value, frequencyIndex.value, delegate
+					{
+						onFinished?.Call(flow);
+					});
+				});
+			}
+			else
+			{
+				UIPPTWindow.HideWindow(delegate
+				{
+					MainGame.me.FadeOut(0.6f, delegate
+					{
+						onFinished?.Call(flow);
+					});
+				});
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		frequencyIndex = AddValueInput<int>("frequencyIndex".CapitalizeFirst());
+		speaker = AddValueInput<string>("speaker".CapitalizeFirst());
+	}
+}

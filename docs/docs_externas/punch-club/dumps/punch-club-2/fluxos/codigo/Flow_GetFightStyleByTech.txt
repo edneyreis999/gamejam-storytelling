@@ -1,0 +1,29 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Get Fight Style By Tech", 0)]
+[Category("Game")]
+public class Flow_GetFightStyleByTech : PC2CustomFlowNode
+{
+	private ValueInput<string> techId;
+
+	private ValueOutput<FightStyle> fightStyle;
+
+	protected override void RegisterPorts()
+	{
+		techId = AddValueInput<string>("techId");
+		fightStyle = AddValueOutput("fightStyle", delegate
+		{
+			FightActionDataDefinition fightActionById = GameBalance.Me.GetFightActionById(techId.value);
+			if (fightActionById == null)
+			{
+				Debug.LogError("Not found school for techId [" + techId.value + "]");
+				return FightStyle.Basic;
+			}
+			return fightActionById.FightStyle(forPlayer: true);
+		});
+	}
+}

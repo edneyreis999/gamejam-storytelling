@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is DLC Available", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_IsDLCAvailable : PC2CustomFlowNode
+{
+	private ValueInput<DLCVersion> dlcVersion;
+
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	public override string name => $"Is {dlcVersion.value} DLC Avaiable";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (AdditionalContent.IsDLCAvailable(dlcVersion.value))
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+			}
+		});
+		dlcVersion = AddValueInput<DLCVersion>("dlcVersion");
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,17 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Story Tree\nGet ScrollRect", 0)]
+[Category("Game/Tutorial")]
+public class Flow_GetStoryWindowScrollRect : PC2CustomFlowNode
+{
+	private ValueOutput<ScrollRect> scrollRect;
+
+	protected override void RegisterPorts()
+	{
+		scrollRect = AddValueOutput("scrollRect", () => GUIElements.Get<UIStoryTreeWindow>().ScrollRectComponent);
+	}
+}

@@ -1,0 +1,29 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Change Debt State", 0)]
+[Category("Game")]
+public class Flow_ChangeDebtState : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isVisible;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ChangeState);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isVisible = AddValueInput<bool>("isVisible".CapitalizeFirst());
+	}
+
+	private void ChangeState(Flow flow)
+	{
+		MainGame.me.gameSave.uiSystem.ChangeDebtState(isVisible.value);
+		@out.Call(flow);
+	}
+}

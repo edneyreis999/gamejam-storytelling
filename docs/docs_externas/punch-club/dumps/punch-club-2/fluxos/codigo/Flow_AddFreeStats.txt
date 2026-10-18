@@ -1,0 +1,47 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Free Stats", 0)]
+[Category("Game")]
+public class Flow_AddFreeStats : PC2CustomFlowNode
+{
+	private const int MAX_STAT_SUMM = 297;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<int> freeStatsValue;
+
+	protected override void RegisterPorts()
+	{
+		freeStatsValue = AddValueInput<int>("Free Stats Amount");
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			int value = freeStatsValue.value;
+			int freeStats = MainGame.me.gameSave.playerData.freeStats;
+			int num = MainGame.me.PlayerRes.GetInt("_str_lvl");
+			int num2 = MainGame.me.PlayerRes.GetInt("_agl_lvl");
+			int num3 = MainGame.me.PlayerRes.GetInt("_stm_lvl");
+			int num4 = num + num2 + num3 + freeStats;
+			if (num4 >= 297)
+			{
+				value = 0;
+			}
+			else
+			{
+				int max = 297 - num4;
+				value = Math.Clamp(value, 0, max);
+			}
+			Debug.Log($"Add free stats:[{value}]");
+			MainGame.me.gameSave.playerData.freeStats += value;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

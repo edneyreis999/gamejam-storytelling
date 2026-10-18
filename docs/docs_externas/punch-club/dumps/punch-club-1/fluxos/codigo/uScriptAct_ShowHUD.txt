@@ -1,0 +1,35 @@
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Show HUD", "Set global interaction mode")]
+public class uScriptAct_ShowHUD : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("HUD left", "")] uScriptAct_CharacterPlayAnimation.BooleanSet hud_left, [FriendlyName("HUD top", "")] uScriptAct_CharacterPlayAnimation.BooleanSet hud_top)
+	{
+		switch (hud_left)
+		{
+		case uScriptAct_CharacterPlayAnimation.BooleanSet.True:
+			MainGame.me.gui_elements.hud_left.Show();
+			break;
+		default:
+			MainGame.me.gui_elements.hud_left.Hide();
+			break;
+		case uScriptAct_CharacterPlayAnimation.BooleanSet.NoChange:
+			break;
+		}
+		switch (hud_top)
+		{
+		case uScriptAct_CharacterPlayAnimation.BooleanSet.True:
+			MainGame.me.gui_elements.hud.Show();
+			MainGame.me.gui_elements.hud.Redraw();
+			break;
+		default:
+			MainGame.me.gui_elements.hud.Hide();
+			break;
+		case uScriptAct_CharacterPlayAnimation.BooleanSet.NoChange:
+			break;
+		}
+	}
+}

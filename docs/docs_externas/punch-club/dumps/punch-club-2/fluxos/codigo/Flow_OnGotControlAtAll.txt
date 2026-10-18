@@ -1,0 +1,52 @@
+using FlowCanvas;
+using FlowCanvas.Nodes;
+using NodeCanvas.Framework;
+using ParadoxNotion.Design;
+
+[Name("On Got Control At All", 8)]
+[Description("Automatically calls [once!!!] when player got control at all. Calls at start too.")]
+[ExecutionPriority(8)]
+public class Flow_OnGotControlAtAll : EventNode
+{
+	private FlowOutput onGotControl;
+
+	private bool called;
+
+	protected override void RegisterPorts()
+	{
+		onGotControl = AddFlowOutput("Once");
+	}
+
+	public override void OnGraphStarted()
+	{
+		PlayerController.OnPlayerGotControlAndActive += CallPort;
+	}
+
+	public override void OnGraphStoped()
+	{
+		PlayerController.OnPlayerGotControlAndActive -= CallPort;
+	}
+
+	public override void OnPostGraphStarted()
+	{
+		if (base.graphAgent is GraphOwner)
+		{
+			GraphOwner graphOwner = base.graphAgent as GraphOwner;
+			if (!graphOwner.startCalled)
+			{
+				graphOwner.onMonoBehaviourStart += CallPort;
+				return;
+			}
+		}
+		CallPort();
+	}
+
+	private void CallPort()
+	{
+		if (!called && PlayerController.Instance.HasControlAtAll())
+		{
+			called = true;
+			onGotControl.Call(default(Flow));
+		}
+	}
+}

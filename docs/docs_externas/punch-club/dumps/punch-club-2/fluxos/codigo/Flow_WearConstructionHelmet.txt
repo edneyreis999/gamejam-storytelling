@@ -1,0 +1,80 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Construction Helmet", 0)]
+[Category("Game")]
+public class Flow_WearConstructionHelmet : PC2CustomFlowNode
+{
+	private static readonly int wearHelmet = Animator.StringToHash("wear_helmet");
+
+	private static readonly int unwearHelmet = Animator.StringToHash("unwear_helmet");
+
+	private static readonly int wearHelmetFast = Animator.StringToHash("wear_helmet_fast");
+
+	private static readonly int unwearHelmetFast = Animator.StringToHash("unwear_helmet_fast");
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private ValueInput<bool> isWear;
+
+	[GatherPortsCallback]
+	public bool isFastForwardEnable;
+
+	[GatherPortsCallback]
+	public bool immediately;
+
+	public override string name => (isWear.value ? "Wear" : "Unwear") + " Construction Helmet" + (immediately ? " Immediately" : string.Empty);
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			PlayerMode playerMode = (isWear.value ? PlayerMode.CommonWithHelmet : PlayerMode.Common);
+			if (immediately)
+			{
+				PlayerController.Instance.ChangePlayerMode(playerMode);
+				onFinished.Call(flow);
+			}
+			else
+			{
+				float seconds = (isFastForwardEnable ? 0.406f : 2.03f);
+				float seconds2 = (isFastForwardEnable ? 0.24f : 1.2f);
+				int trigger = (isFastForwardEnable ? wearHelmetFast : wearHelmet);
+				int trigger2 = (isFastForwardEnable ? unwearHelmetFast : unwearHelmet);
+				if (isWear.value)
+				{
+					PlayerController.Instance.SetPlayerDirection(HumanLikeDirections.GetDirectionVectorByEnum(HumanLikeDirections.Direction.Left));
+					PlayerController.Instance.Animator.SetTrigger(trigger);
+					PlayerController.Instance.ChangePlayerMode(playerMode);
+					LazyTimer.AddTimer(seconds, delegate
+					{
+						onFinished.Call(flow);
+					});
+				}
+				else
+				{
+					PlayerController.Instance.SetPlayerDirection(HumanLikeDirections.GetDirectionVectorByEnum(HumanLikeDirections.Direction.Left));
+					PlayerController.Instance.Animator.SetTrigger(trigger2);
+					PlayerController.Instance.ChangePlayerMode(playerMode);
+					LazyTimer.AddTimer(seconds2, delegate
+					{
+						onFinished.Call(flow);
+					});
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		isWear = AddValueInput<bool>("isWear".CapitalizeFirst());
+	}
+}

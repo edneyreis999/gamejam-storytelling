@@ -1,0 +1,30 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Header Window Tech Tab\nAdd Event", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIHeaderWindowTechTabAddButtonEvent : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIElementsCustomEventHandlerManager.AddEvent(GUIElements.Get<UIHeaderWindow>().GetTechTreeWindowTabButton(), UITutorialArrow.SignOrientationType.Left, delegate
+			{
+				onClicked.Call(flow);
+			});
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+}

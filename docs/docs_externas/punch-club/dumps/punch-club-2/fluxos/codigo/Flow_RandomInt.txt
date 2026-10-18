@@ -1,0 +1,46 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Random Integer", 0)]
+[Category("Game/Utils")]
+public class Flow_RandomInt : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<int> minValue;
+
+	private ValueInput<int> maxValue;
+
+	private ValueOutput<int> randomValue;
+
+	private int randomizedValue;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), RandomInt);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		minValue = AddValueInput<int>("min (inclusive)");
+		maxValue = AddValueInput<int>("max (exclusive)");
+		randomValue = AddValueOutput("random", () => randomizedValue);
+	}
+
+	private void RandomInt(Flow flow)
+	{
+		if (minValue.value >= maxValue.value)
+		{
+			Debug.LogError($"Wrong random bounds: min = {minValue.value}, max = {maxValue.value}");
+			@out.Call(flow);
+		}
+		else
+		{
+			randomizedValue = Random.Range(minValue.value, maxValue.value);
+			@out.Call(flow);
+		}
+	}
+}

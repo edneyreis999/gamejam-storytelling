@@ -1,0 +1,29 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Modify League", "")]
+public class uScriptAct_ModifyLeague : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("League id", "")] int id, [FriendlyName("Δscore", "")] int dscore)
+	{
+		LeagueState league = MainGame.save.ch.all_leagues.GetLeague(id);
+		if (league == null)
+		{
+			Debug.LogError("League id = " + id + " not found!");
+			return;
+		}
+		LeagueFighter leagueFighter = league.FindPlayer();
+		if (leagueFighter == null)
+		{
+			Debug.LogError("Player not found in league #" + id);
+		}
+		else
+		{
+			leagueFighter.score += dscore;
+		}
+	}
+}

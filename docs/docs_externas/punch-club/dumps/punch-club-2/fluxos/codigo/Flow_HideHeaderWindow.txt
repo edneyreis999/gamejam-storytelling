@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Hide Header Window", 0)]
+[Category("Game/Tutorial")]
+public class Flow_HideHeaderWindow : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onHide;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIHeaderWindow uIHeaderWindow = GUIElements.Get<UIHeaderWindow>();
+			if (uIHeaderWindow.IsShown)
+			{
+				uIHeaderWindow.Hide(playOpenSound: false, delegate
+				{
+					onHide.Call(flow);
+				});
+				uIHeaderWindow.CurrentOpenedTabWindow.Hide(playHideSound: false);
+			}
+			else
+			{
+				onHide.Call(flow);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onHide = AddFlowOutput("onHide".CapitalizeFirst());
+	}
+}

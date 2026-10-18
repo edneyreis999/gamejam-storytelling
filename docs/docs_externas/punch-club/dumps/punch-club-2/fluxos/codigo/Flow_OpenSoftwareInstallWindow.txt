@@ -1,0 +1,59 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open Software Install Window", 0)]
+[Category("Game")]
+public class Flow_OpenSoftwareInstallWindow : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToOpen;
+
+	private ValueInput<string> softwareId;
+
+	private FlowOutput onWindowClosed;
+
+	private ValueOutput<bool> isInstalled;
+
+	public override string name => (isToOpen.value ? "Open " : "Close ") + "Software Install Window";
+
+	protected override void RegisterPorts()
+	{
+		isToOpen = AddValueInput<bool>("isToOpen".CapitalizeFirst());
+		isInstalled = AddValueOutput("isInstalled".CapitalizeFirst(), () => GUIElements.Get<UISoftwareInstallWindow>().IsInstalled);
+		softwareId = AddValueInput<string>("softwareId".CapitalizeFirst());
+		onWindowClosed = AddFlowOutput("onWindowClosed".CapitalizeFirst());
+		@in = AddFlowInput("in", delegate(Flow flow)
+		{
+			SoftwareDefinition data = GameBalance.Me.GetData<SoftwareDefinition>(softwareId.value);
+			if (data == null)
+			{
+				Debug.LogError("Cant find software with id:[" + softwareId.value + "]");
+				@out.Call(flow);
+			}
+			else
+			{
+				if (isToOpen.value)
+				{
+					GUIElements.Get<UISoftwareInstallWindow>().Open(data, OnWindowClosed);
+				}
+				else
+				{
+					GUIElements.Get<UISoftwareInstallWindow>().Hide();
+				}
+				@out.Call(flow);
+			}
+			void OnWindowClosed()
+			{
+				onWindowClosed.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

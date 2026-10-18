@@ -1,0 +1,47 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Show Hint For ActionPoint", 0)]
+[Category("Game/Tutorial")]
+[Description("Shows hint for action points label in PrefightWindow for tutorial")]
+public class Flow_ShowActionPointHint : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToShow;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> hint;
+
+	public override string name => (isToShow ? "Show" : "Hide") + " Hint For ActionPoint";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UICharacterAbilities playerAbilities = GUIElements.Get<UIPrepareFightWindow>().PlayerAbilities;
+			if (isToShow)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(playerAbilities.Label.GetComponent<RectTransform>());
+				UITutorialHint.Show(playerAbilities.ActionPointsPosition.transform.position, hint.value);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(playerAbilities.Label.GetComponent<RectTransform>());
+				UITutorialHint.Hide(playerAbilities.ActionPointsPosition.transform.position);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isToShow)
+		{
+			hint = AddValueInput<string>("hint");
+		}
+	}
+}

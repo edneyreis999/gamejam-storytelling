@@ -1,0 +1,105 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+public class Flow_SwitchPetBasePhrase : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public string petId;
+
+	private FlowInput @in;
+
+	private List<FlowOutput> outputs = new List<FlowOutput>();
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			List<PetPhraseData> currentList2 = GetCurrentList();
+			List<string> currentRemainingList = GetCurrentRemainingList();
+			List<string> currentSaidList = GetCurrentSaidList();
+			for (int num2 = currentRemainingList.Count - 1; num2 >= 0; num2--)
+			{
+				if (!PetPhraseData.IsPhraseAvailable(PetPhraseData.GetDataById(currentList2, currentRemainingList[num2])))
+				{
+					currentRemainingList.RemoveAt(num2);
+				}
+			}
+			for (int i = 0; i < currentList2.Count; i++)
+			{
+				PetPhraseData petPhraseData = currentList2[i];
+				if (PetPhraseData.IsPhraseAvailable(petPhraseData) && currentRemainingList.Find((string p) => p == petPhraseData.id) == null && currentSaidList.Find((string p) => p == petPhraseData.id) == null)
+				{
+					currentRemainingList.Add(petPhraseData.id);
+				}
+			}
+			if (currentRemainingList.Count <= 0)
+			{
+				for (int num3 = 0; num3 < outputs.Count; num3++)
+				{
+					if (PetPhraseData.IsPhraseAvailable(currentList2[num3]))
+					{
+						currentRemainingList.Add(currentList2[num3].id);
+					}
+				}
+			}
+			List<FlowOutput> list = new List<FlowOutput>();
+			List<PetPhraseData> list2 = new List<PetPhraseData>();
+			for (int num4 = 0; num4 < currentRemainingList.Count; num4++)
+			{
+				PetPhraseData petPhraseData2 = PetPhraseData.GetDataById(currentList2, currentRemainingList[num4]);
+				if (PetPhraseData.IsPhraseAvailable(petPhraseData2))
+				{
+					list.Add(outputs.Find((FlowOutput o) => o.name == petPhraseData2.id));
+					list2.Add(petPhraseData2);
+				}
+			}
+			for (int num5 = 0; num5 < list.Count; num5++)
+			{
+				if (list2[num5].forced)
+				{
+					list[num5].Call(flow);
+					if (list2[num5].oneTime)
+					{
+						MainGame.me.gameSave.knowledgeSystem.AddPhraseToBlackList(list2[num5].id);
+					}
+					currentRemainingList.Remove(list2[num5].id);
+					currentSaidList.Add(list2[num5].id);
+					return;
+				}
+			}
+			int index = Random.Range(0, list.Count);
+			FlowOutput flowOutput = list[index];
+			if (list2[index].oneTime)
+			{
+				MainGame.me.gameSave.knowledgeSystem.AddPhraseToBlackList(list2[index].id);
+			}
+			currentRemainingList.Remove(flowOutput.name);
+			currentSaidList.Add(flowOutput.name);
+			flowOutput.Call(flow);
+		});
+		List<PetPhraseData> currentList = GetCurrentList();
+		for (int num = 0; num < currentList.Count; num++)
+		{
+			outputs.Add(AddFlowOutput(currentList[num].id));
+		}
+	}
+
+	public virtual List<PetPhraseData> GetCurrentList()
+	{
+		return new List<PetPhraseData>();
+	}
+
+	public virtual List<string> GetCurrentRemainingList()
+	{
+		return new List<string>();
+	}
+
+	public virtual List<string> GetCurrentSaidList()
+	{
+		return new List<string>();
+	}
+}

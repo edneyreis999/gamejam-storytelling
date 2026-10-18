@@ -1,0 +1,55 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Task Manager\nFuel Tutorial", 0)]
+[Category("Game/TaskManager")]
+[Color("402b2b")]
+public class Flow_AddTaskFuelTutorial : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	public override string name => "Task Manager\n<color=#00FF7F>Fuel Tutorial</color>";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), AddTaskFuelTutorial);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+	}
+
+	private void AddTaskFuelTutorial(Flow flow)
+	{
+		AddTaskFunction(flow);
+		@out.Call(flow);
+	}
+
+	private void AddTaskFunction(Flow flow)
+	{
+		Action onGlobalScriptComplete = null;
+		bool result = false;
+		onGlobalScriptComplete = (Action)Delegate.Combine(onGlobalScriptComplete, (Action)delegate
+		{
+			result = true;
+		});
+		onGlobalScriptComplete = (Action)Delegate.Combine(onGlobalScriptComplete, (Action)delegate
+		{
+			onFinished.Call(flow);
+		});
+		TaskManager.AddTask(Task.TaskPriority.High, delegate
+		{
+			GlobalScriptsManager.RunScript("FuelTutorial", onGlobalScriptComplete);
+		}, () => PlayerController.Instance.IsControlEnabled || !GUIElements.Get<UIGenericWindow>().IsShown, IsEndTask);
+		bool IsEndTask()
+		{
+			return result;
+		}
+	}
+}

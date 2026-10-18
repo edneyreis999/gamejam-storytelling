@@ -1,0 +1,23 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeToolTip("")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Game Object Activate", "")]
+public class uScriptAct_GameObjectActivate : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("GameObj", "GameObject name")] string go_name, [FriendlyName("activate?", "")] bool act, [FriendlyName("Parent", "GameObject name")] string parent = "")
+	{
+		GameObject gameObject = GJCommons.GameObjectHardFind(go_name, parent);
+		if (gameObject == null)
+		{
+			Debug.LogError("Game object '" + go_name + "' not found.");
+			return;
+		}
+		Debug.Log("Setting GO active " + gameObject.name + ", " + act);
+		gameObject.SetActive(act);
+	}
+}

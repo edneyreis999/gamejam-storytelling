@@ -1,0 +1,30 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Time for End Duty", 0)]
+[Description("Work Only For This day")]
+[Category("Player")]
+public class Flow_GetTimeToEndDuty : PC2CustomFlowNode
+{
+	private ValueInput<string> professionId;
+
+	private ValueOutput<int> time;
+
+	protected override void RegisterPorts()
+	{
+		professionId = AddValueInput<string>("professionId".CapitalizeFirst());
+		time = AddValueOutput("time".CapitalizeFirst(), delegate
+		{
+			if (string.IsNullOrEmpty(professionId.value))
+			{
+				Debug.Log("Empty professionId.value!!!");
+				return 0;
+			}
+			return MainGame.me.gameSave.professionSystem.GetIntTimeToEndOfDuty(professionId.value);
+		});
+	}
+}

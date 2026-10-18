@@ -1,0 +1,70 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Robot Training Window Show\nMask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIRobotTrainingWindowShowMask : PC2CustomFlowNode
+{
+	public enum MaskType
+	{
+		FullWindow,
+		TrainingWithPlayer,
+		TrainingWithoutPlayer
+	}
+
+	[GatherPortsCallback]
+	public MaskType maskType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI Robot Training Window " + (isToShow.value ? "Show" : "Hide") + "\nMask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform element = null;
+			RectTransform rightRaycastBlocker = GUIElements.Get<UIRobotTrainingWindow>().RightRaycastBlocker;
+			RectTransform leftRaycastBlocker = GUIElements.Get<UIRobotTrainingWindow>().LeftRaycastBlocker;
+			switch (maskType)
+			{
+			case MaskType.FullWindow:
+				element = GUIElements.Get<UIRobotTrainingWindow>().TutorialWindowFullMask;
+				rightRaycastBlocker.gameObject.SetActive(value: false);
+				leftRaycastBlocker.gameObject.SetActive(value: false);
+				break;
+			case MaskType.TrainingWithPlayer:
+				element = GUIElements.Get<UIRobotTrainingWindow>().TutorialWindowMaskWithPlayer;
+				rightRaycastBlocker.gameObject.SetActive(value: true);
+				leftRaycastBlocker.gameObject.SetActive(value: false);
+				break;
+			case MaskType.TrainingWithoutPlayer:
+				element = GUIElements.Get<UIRobotTrainingWindow>().TutorialWindowMaskWithoutPlayer;
+				rightRaycastBlocker.gameObject.SetActive(value: false);
+				leftRaycastBlocker.gameObject.SetActive(value: true);
+				break;
+			}
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(element);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(element);
+				rightRaycastBlocker.gameObject.SetActive(value: false);
+				leftRaycastBlocker.gameObject.SetActive(value: false);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

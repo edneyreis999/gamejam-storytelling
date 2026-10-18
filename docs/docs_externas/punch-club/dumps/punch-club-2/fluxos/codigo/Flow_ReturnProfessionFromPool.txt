@@ -1,0 +1,28 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Return Profession From Pool", 0)]
+[Category("Game")]
+public class Flow_ReturnProfessionFromPool : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> professionId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.professionSystem.ReturnProfessionFromPool(professionId.value);
+			DynamicScene.current.UpdateProfessionWidgetState();
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		professionId = AddValueInput<string>("professionId".CapitalizeFirst());
+	}
+}

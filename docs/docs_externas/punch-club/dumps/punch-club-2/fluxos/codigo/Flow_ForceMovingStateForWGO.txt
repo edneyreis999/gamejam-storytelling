@@ -1,0 +1,34 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Force Moving State For WGO", 0)]
+[Category("Game")]
+public class Flow_ForceMovingStateForWGO : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<WGO> wgoPort;
+
+	private ValueInput<MovementComponent.State> moveState;
+
+	protected override void RegisterPorts()
+	{
+		wgoPort = AddValueInput<WGO>("wgoPort".CapitalizeFirst());
+		moveState = AddValueInput<MovementComponent.State>("moveState".CapitalizeFirst());
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			WGO wGO = WGOParamOrSelf(wgoPort);
+			if (wGO != null)
+			{
+				wGO.GetComponent<MovementAnimationComponent>().ForceCurrentMovementState(moveState.value);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

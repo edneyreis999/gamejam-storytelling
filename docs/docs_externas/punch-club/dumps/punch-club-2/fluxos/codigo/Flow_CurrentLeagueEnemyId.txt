@@ -1,0 +1,22 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get League Enemy Id", 0)]
+[Category("Game")]
+public class Flow_CurrentLeagueEnemyId : PC2CustomFlowNode
+{
+	private ValueInput<string> leagueId;
+
+	private ValueOutput<string> opponent;
+
+	private string opponentId;
+
+	protected override void RegisterPorts()
+	{
+		leagueId = AddValueInput<string>("leagueId");
+		leagueId.SetDefaultAndSerializedValue("Silvers league");
+		opponent = AddValueOutput("opponent", () => MainGame.me.gameSave.leaguesSystem.GetLeague(leagueId.value).GetPlayersOpponent());
+	}
+}

@@ -1,0 +1,29 @@
+using UnityEngine;
+
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Action Inventory", "")]
+public class uScriptAct_PlayerActionInventory : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Act name", "")] string act_name, [FriendlyName("Add?", "If false - remove")] bool add)
+	{
+		ActionData data = GameBalance.me.GetData<ActionData>(act_name);
+		if (data == null)
+		{
+			Debug.LogError("Action not found: " + act_name);
+			return;
+		}
+		if (add)
+		{
+			MainGame.save.ch.ActionInventoryAdd(data.id);
+		}
+		else
+		{
+			MainGame.save.ch.ActionInventoryRemove(data.id);
+		}
+		SceneRoot.me.UpdateInventoryVisibility();
+	}
+}

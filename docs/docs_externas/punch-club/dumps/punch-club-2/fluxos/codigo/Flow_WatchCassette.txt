@@ -1,0 +1,45 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Watch Cassette", 0)]
+[Category("Game")]
+public class Flow_WatchCassette : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onTextShown;
+
+	private FlowOutput onWatchEnd;
+
+	private FlowOutput onRewardClose;
+
+	private ValueInput<string> itemId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.playerData.tapes.GetTapeForWatch(itemId.value)?.Watch(delegate
+			{
+				onWatchEnd.Call(flow);
+			}, delegate
+			{
+				onRewardClose.Call(flow);
+			}, delegate
+			{
+				onTextShown.Call(flow);
+			});
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onTextShown = AddFlowOutput("onTextShown".CapitalizeFirst());
+		onWatchEnd = AddFlowOutput("onWatchEnd".CapitalizeFirst());
+		onRewardClose = AddFlowOutput("onRewardClose".CapitalizeFirst());
+		itemId = AddValueInput<string>("itemId");
+	}
+}

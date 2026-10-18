@@ -1,0 +1,70 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Start Scholars Ability", 0)]
+[Category("Game/MickGym")]
+public class Flow_StartScholarsAbilities : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToStart;
+
+	[GatherPortsCallback]
+	public bool tutorialTraining;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onSelect;
+
+	private FlowOutput onNotSelect;
+
+	private FlowOutput onFinishCycle;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToStart)
+			{
+				return "Stop Scholars Ability";
+			}
+			return "Start Scholars Ability";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToStart)
+			{
+				GUIElements.Get<UIProfSelectionWindow>().Open("mick_gym_abil_action", delegate
+				{
+					onSelect.Call(flow);
+				}, delegate
+				{
+					onNotSelect.Call(flow);
+				}, delegate
+				{
+					onFinishCycle.Call(flow);
+				}, tutorialTraining);
+			}
+			else
+			{
+				GUIElements.Get<UIProfSelectionWindow>().Stop();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isToStart)
+		{
+			onSelect = AddFlowOutput("onSelect".CapitalizeFirst());
+			onNotSelect = AddFlowOutput("onNotSelect".CapitalizeFirst());
+			onFinishCycle = AddFlowOutput("onFinishCycle".CapitalizeFirst());
+		}
+	}
+}

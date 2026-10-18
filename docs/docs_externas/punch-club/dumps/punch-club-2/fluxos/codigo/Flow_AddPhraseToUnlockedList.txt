@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Phrase To Unlocked List", 0)]
+[Category("Game/Dialogue")]
+[Color("FBFBFB")]
+public class Flow_AddPhraseToUnlockedList : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> phrase;
+
+	public override string name => "<color=#010101>Add Phrase To Unlocked List</color>";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ProcessPhrase);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		phrase = AddValueInput<string>("phrase".CapitalizeFirst());
+	}
+
+	private void ProcessPhrase(Flow flow)
+	{
+		MainGame.me.gameSave.knowledgeSystem.AddPhraseToUnlockedList(phrase.value);
+		@out.Call(flow);
+	}
+}

@@ -1,0 +1,61 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Enable Mick Gym Scholars", 0)]
+[Category("Game/MickGym")]
+public class Flow_EnableMickGymScholars : PC2CustomFlowNode
+{
+	private static readonly int state = Animator.StringToHash("State");
+
+	[GatherPortsCallback]
+	public bool isEnable;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name
+	{
+		get
+		{
+			if (!isEnable)
+			{
+				return "Disable Mick Gym Scholars";
+			}
+			return "Enable Mick Gym Scholars";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			for (int i = 0; i < LazyConsts.mickScholarsIds.Count; i++)
+			{
+				WGO wGO = DynamicScene.FindWGO(LazyConsts.mickScholarsIds[i]);
+				if ((!(wGO != null) || wGO.WgoState.GetStateOnScene("MikesOldHouse", out var _)) && !(wGO == null))
+				{
+					if (isEnable && wGO.WgoState.GetStateOnScene("MikesOldHouse", out var isActive2))
+					{
+						if (isActive2)
+						{
+							wGO.gameObject.SetActive(value: true);
+							wGO.SetPosition(DynamicScene.FindWalkNode(LazyConsts.mickScholarsBenchPointsIds[i]).transform.position);
+							wGO.Animator.SetInteger(state, 3);
+						}
+					}
+					else
+					{
+						wGO.gameObject.SetActive(value: false);
+					}
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

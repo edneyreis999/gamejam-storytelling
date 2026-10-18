@@ -1,0 +1,93 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Add Event To Fight League Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_AddEventToFightLeagueButton : PC2CustomFlowNode
+{
+	public enum ButtonType
+	{
+		AutoAssignButton,
+		FightButton,
+		FindChallenge
+	}
+
+	public ButtonType buttonType;
+
+	public bool unlockTutorialElementsAfterClick = true;
+
+	private FlowInput @in;
+
+	private FlowOutput onClicked;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			Button button = null;
+			RectTransform rectTransform = null;
+			UILeagueWindow leagueWindow = GUIElements.Get<UILeagueWindow>();
+			switch (buttonType)
+			{
+			case ButtonType.AutoAssignButton:
+				button = leagueWindow.EloLeague.AutoAssignButton;
+				rectTransform = leagueWindow.EloLeague.AutoAssignButtonRectTransform;
+				break;
+			case ButtonType.FightButton:
+				button = leagueWindow.EloLeague.FightButton;
+				rectTransform = leagueWindow.EloLeague.FightButtonRectTransform;
+				break;
+			case ButtonType.FindChallenge:
+				button = leagueWindow.EloLeague.FindOpponentChallengedPlayerButton;
+				rectTransform = leagueWindow.EloLeague.FindOpponentChallengedPlayerRectTransform;
+				break;
+			}
+			LayoutRebuilder.ForceRebuildLayoutImmediate(button.GetComponent<RectTransform>());
+			if (button != null)
+			{
+				leagueWindow.CustomItems = new List<GamepadNavigationItem> { button.GetComponent<GamepadNavigationItem>() };
+				leagueWindow.TutorialGamepadNavigation = true;
+				leagueWindow.LockPressBack = true;
+				leagueWindow.LockCompare = true;
+				leagueWindow.CustomLockPressBack = true;
+				leagueWindow.LockSwitchTab = true;
+				leagueWindow.SortButtonTipsOverTutorialWindow();
+				leagueWindow.OnInputSourceChanged();
+				GUIElements.Get<UITutorialWindow>().ShowMask(rectTransform);
+				UIElementsCustomEventHandlerManager.AddEvent(button, UITutorialArrow.SignOrientationType.Right, delegate
+				{
+					GUIElements.Get<UITutorialWindow>().HideMask(rectTransform);
+					if (unlockTutorialElementsAfterClick)
+					{
+						leagueWindow.CustomItems = null;
+						leagueWindow.TutorialGamepadNavigation = false;
+						leagueWindow.LockPressBack = false;
+						leagueWindow.LockCompare = false;
+						leagueWindow.CustomLockPressBack = false;
+						leagueWindow.LockSwitchTab = false;
+						leagueWindow.ReturnDefaultButtonTipsSorting();
+						leagueWindow.OnInputSourceChanged();
+					}
+					onClicked.Call(flow);
+				});
+			}
+			else
+			{
+				Debug.LogError("Selected button is null for signing button");
+				onClicked.Call(flow);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,107 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Text Screen With Fade", 0)]
+[Category("Game")]
+public class Flow_TextScreenFade : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool severalPhrases;
+
+	public bool doNotResetFadeAlpha;
+
+	[GatherPortsCallback]
+	public bool isStory;
+
+	[GatherPortsCallback]
+	public bool skipFadeIn;
+
+	[GatherPortsCallback]
+	public bool skipFadeOut;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onMiddle;
+
+	private FlowOutput onFinished;
+
+	private ValueInput<string> text;
+
+	private ValueInput<List<string>> ids;
+
+	private ValueInput<float> screenFadeTime;
+
+	private ValueInput<float> textFadeTime;
+
+	private ValueInput<float> textHoldTime;
+
+	private ValueInput<TextStyle> textStyle;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), DoFade);
+		onMiddle = AddFlowOutput("onMiddle".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (severalPhrases)
+		{
+			ids = AddValueInput<List<string>>("ids");
+		}
+		else
+		{
+			text = AddValueInput<string>("text");
+		}
+		screenFadeTime = AddValueInput<float>("screenFadeTime".CapitalizeFirst());
+		screenFadeTime.SetDefaultAndSerializedValue(0.6f);
+		textFadeTime = AddValueInput<float>("textFadeTime".CapitalizeFirst());
+		textFadeTime.SetDefaultAndSerializedValue(0.6f);
+		textHoldTime = AddValueInput<float>("textHoldTime".CapitalizeFirst());
+		textHoldTime.SetDefaultAndSerializedValue(2f);
+		if (!isStory)
+		{
+			textStyle = AddValueInput<TextStyle>("textStyle".CapitalizeFirst());
+		}
+	}
+
+	private void DoFade(Flow flow)
+	{
+		if (isStory)
+		{
+			MainGame.me.ScreenTextFadeStory(ids.value, screenFadeTime.value, textFadeTime.value, textHoldTime.value, delegate
+			{
+				onMiddle.Call(flow);
+			}, delegate
+			{
+				onFinished.Call(flow);
+			}, doNotResetFadeAlpha, skipFadeIn);
+		}
+		else if (severalPhrases)
+		{
+			MainGame.me.ScreenTextFade(ids.value, screenFadeTime.value, textFadeTime.value, textHoldTime.value, delegate
+			{
+				onMiddle.Call(flow);
+			}, delegate
+			{
+				onFinished.Call(flow);
+			}, textStyle.value, doNotResetFadeAlpha, skipFadeOut);
+		}
+		else
+		{
+			MainGame.me.ScreenTextFade(text.value, screenFadeTime.value, textFadeTime.value, textHoldTime.value, delegate
+			{
+				onMiddle.Call(flow);
+			}, delegate
+			{
+				onFinished.Call(flow);
+			}, textStyle.value, doNotResetFadeAlpha, skipFadeOut);
+		}
+		@out.Call(flow);
+	}
+}

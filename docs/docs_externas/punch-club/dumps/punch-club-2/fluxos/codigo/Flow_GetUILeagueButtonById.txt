@@ -1,0 +1,20 @@
+using System.Linq;
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("UI Get League Button By Id", 0)]
+[Category("Game/UI")]
+public class Flow_GetUILeagueButtonById : PC2CustomFlowNode
+{
+	private ValueOutput<UILeagueButton> leagueButton;
+
+	private ValueInput<string> leagueId;
+
+	protected override void RegisterPorts()
+	{
+		leagueButton = AddValueOutput("League Button", () => GUIElements.Get<UILeagueWindow>().LeagueButtons.First((UILeagueButton b) => b.League.id == leagueId.value));
+		leagueId = AddValueInput<string>("leagueId");
+	}
+}

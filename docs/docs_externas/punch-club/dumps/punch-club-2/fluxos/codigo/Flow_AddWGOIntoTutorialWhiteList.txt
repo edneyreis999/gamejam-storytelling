@@ -1,0 +1,54 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add wgo into tutorial white list", 0)]
+[Category("Game")]
+public class Flow_AddWGOIntoTutorialWhiteList : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToRemove;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> wgoId;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToRemove)
+			{
+				return "Add wgo into tutorial white list";
+			}
+			return "Remove wgo from tutorial white list";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		wgoId = AddValueInput<string>("WGO");
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			List<string> tutorialMarkWGOWhiteList = MainGame.me.gameSave.worldData.tutorialMarkWGOWhiteList;
+			if (isToRemove)
+			{
+				if (tutorialMarkWGOWhiteList.Contains(wgoId.value))
+				{
+					tutorialMarkWGOWhiteList.Remove(wgoId.value);
+				}
+			}
+			else if (!tutorialMarkWGOWhiteList.Contains(wgoId.value))
+			{
+				tutorialMarkWGOWhiteList.Add(wgoId.value);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

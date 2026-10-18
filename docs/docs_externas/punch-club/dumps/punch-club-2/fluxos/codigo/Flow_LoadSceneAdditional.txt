@@ -1,0 +1,98 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("LoadSceneAdditional", 0)]
+[Category("Game/Scene")]
+public class Flow_LoadSceneAdditional : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public LoadSceneType loadSceneType = LoadSceneType.Fade;
+
+	[GatherPortsCallback]
+	public bool toUnload;
+
+	[ShowIf("toUnload", 1)]
+	public bool unloadUnusedAssets;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onSceneIsReady;
+
+	private FlowOutput onFadeIsFinished;
+
+	private FlowOutput onFadeInIsFinished;
+
+	private ValueInput<string> sceneName;
+
+	public override string name
+	{
+		get
+		{
+			if (!toUnload)
+			{
+				return "Load Scene Additional";
+			}
+			return "Unload Scene Additional";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Logic);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (loadSceneType == LoadSceneType.Fade)
+		{
+			onFadeIsFinished = AddFlowOutput("onFadeIsFinished".CapitalizeFirst());
+			onFadeInIsFinished = AddFlowOutput("onFadeInIsFinished".CapitalizeFirst());
+		}
+		if (!toUnload)
+		{
+			onSceneIsReady = AddFlowOutput("onSceneIsReady".CapitalizeFirst());
+			sceneName = AddValueInput<string>("sceneName");
+		}
+	}
+
+	private void Logic(Flow flow)
+	{
+		if (toUnload)
+		{
+			MainGame.me.UnloadAdditionalScene(loadSceneType, delegate
+			{
+				onFadeIsFinished.Call(flow);
+			}, delegate
+			{
+				onFadeInIsFinished.Call(flow);
+			}, unloadUnusedAssets);
+		}
+		else
+		{
+			switch (loadSceneType)
+			{
+			case LoadSceneType.None:
+				MainGame.me.LoadAdditionalScene(sceneName.value, loadSceneType, delegate
+				{
+					onSceneIsReady.Call(flow);
+				});
+				break;
+			case LoadSceneType.Fade:
+				MainGame.me.LoadAdditionalScene(sceneName.value, loadSceneType, delegate
+				{
+					onSceneIsReady.Call(flow);
+				}, delegate
+				{
+					onFadeInIsFinished.Call(flow);
+				}, delegate
+				{
+					onFadeIsFinished.Call(flow);
+				});
+				break;
+			}
+		}
+		@out.Call(flow);
+	}
+}

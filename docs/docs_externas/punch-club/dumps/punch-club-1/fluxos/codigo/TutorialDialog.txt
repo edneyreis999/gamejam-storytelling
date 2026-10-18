@@ -1,0 +1,97 @@
+using System;
+
+public class TutorialDialog : BaseGUI
+{
+	public enum TypeTutortialDialog
+	{
+		Movement,
+		Action,
+		Map,
+		None
+	}
+
+	public UILabel label1;
+
+	public UILabel label2;
+
+	internal TypeTutortialDialog current_type;
+
+	public void Open(TypeTutortialDialog _type = TypeTutortialDialog.Movement)
+	{
+	}
+
+	private void OnWheelСlosed()
+	{
+		if (current_type != TypeTutortialDialog.None)
+		{
+			Open(TypeTutortialDialog.Map);
+		}
+	}
+
+	protected override void OnShowDone()
+	{
+		base.OnShowDone();
+		MainGame.paused = false;
+	}
+
+	protected void OnWheelOpened()
+	{
+		Hide();
+	}
+
+	protected override void OnHideDone()
+	{
+		base.OnHideDone();
+		MainGame.paused = false;
+	}
+
+	public void Move(float horizontal, float vertical)
+	{
+		if (current_type == TypeTutortialDialog.Movement && (Math.Abs(horizontal) > 0.1f || Math.Abs(vertical) > 0.1f))
+		{
+			current_type = TypeTutortialDialog.Action;
+			Hide();
+		}
+		else
+		{
+			if (current_type != TypeTutortialDialog.Action)
+			{
+				return;
+			}
+			if (ZoneTrigger.CurrentZone != null && ZoneTrigger.CurrentZone.name == "z_telephone")
+			{
+				if (!MainGame.me.gui_elements.tutorial_dialog.IsShown())
+				{
+					Open(TypeTutortialDialog.Action);
+				}
+			}
+			else if (MainGame.me.gui_elements.tutorial_dialog.IsShown())
+			{
+				Close();
+			}
+		}
+	}
+
+	public void Click()
+	{
+		if (current_type == TypeTutortialDialog.Action && ZoneTrigger.CurrentZone != null)
+		{
+			Hide();
+			current_type = TypeTutortialDialog.Map;
+		}
+	}
+
+	public void Close()
+	{
+		Hide();
+	}
+
+	public override void Update()
+	{
+		base.Update();
+	}
+
+	private void OnDisable()
+	{
+	}
+}

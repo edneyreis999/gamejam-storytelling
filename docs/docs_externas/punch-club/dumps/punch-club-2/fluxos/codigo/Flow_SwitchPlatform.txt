@@ -1,0 +1,48 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Switch Platform", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_SwitchPlatform : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput steam;
+
+	private FlowOutput gog;
+
+	private FlowOutput epic;
+
+	private FlowOutput nintendo;
+
+	private FlowOutput playstation;
+
+	private FlowOutput xbox;
+
+	private FlowOutput ios;
+
+	private FlowOutput android;
+
+	private FlowOutput other;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			steam.Call(flow);
+		});
+		steam = AddFlowOutput("steam".CapitalizeFirst());
+		gog = AddFlowOutput("gog".CapitalizeFirst());
+		epic = AddFlowOutput("epic".CapitalizeFirst());
+		nintendo = AddFlowOutput("nintendo".CapitalizeFirst());
+		playstation = AddFlowOutput("playstation".CapitalizeFirst());
+		xbox = AddFlowOutput("xbox".CapitalizeFirst());
+		ios = AddFlowOutput("ios".CapitalizeFirst());
+		android = AddFlowOutput("android".CapitalizeFirst());
+		other = AddFlowOutput("other".CapitalizeFirst());
+	}
+}

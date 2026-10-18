@@ -1,0 +1,14 @@
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeToolTip("")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Modify Main Stat", "")]
+public class uScriptAct_ModifyMainStat : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Stat", "")] GameRes.ResType res_type, [FriendlyName("Add Lvl", "")] int lvl)
+	{
+		MainGame.save.ch.ModifyResLevel(res_type, lvl);
+	}
+}

@@ -1,0 +1,17 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Is Day Time", 0)]
+[Category("Game")]
+public class Flow_IsDayTime : PC2CustomFlowNode
+{
+	private ValueOutput<bool> isDayTime;
+
+	protected override void RegisterPorts()
+	{
+		isDayTime = AddValueOutput("isDayTime".CapitalizeFirst(), () => TimeManager.IsDayTime());
+	}
+}

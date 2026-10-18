@@ -1,0 +1,50 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI HUD Change Score Sorting", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIHUDChangeScoreSorting : PC2CustomFlowNode
+{
+	public bool interactable;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToDefault;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			Button gPPButton = GUIElements.Get<HUD>().GPPButton;
+			if (isToDefault.value)
+			{
+				if (gPPButton.TryGetComponent<GraphicRaycaster>(out var component))
+				{
+					Object.Destroy(component);
+				}
+				if (gPPButton.TryGetComponent<Canvas>(out var component2))
+				{
+					Object.Destroy(component2);
+				}
+			}
+			else
+			{
+				Canvas canvas = gPPButton.gameObject.AddComponent<Canvas>();
+				canvas.overrideSorting = true;
+				canvas.sortingOrder = 999;
+				gPPButton.gameObject.AddComponent<GraphicRaycaster>();
+			}
+			gPPButton.interactable = interactable;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToDefault = AddValueInput<bool>("isToDefault".CapitalizeFirst());
+	}
+}

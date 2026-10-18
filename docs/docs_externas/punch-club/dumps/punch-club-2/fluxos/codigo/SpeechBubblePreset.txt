@@ -1,0 +1,26 @@
+using System;
+using UnityEngine;
+using UnityEngine.Serialization;
+
+namespace LazyBearTechnology;
+
+[Serializable]
+public class SpeechBubblePreset
+{
+	public Color backgroundColor = Color.white;
+
+	public TextStyle textStyle;
+
+	public TextColorType highlightedTextColorType;
+
+	public Sprite backgroundSprite;
+
+	public Sprite cornerSprite;
+
+	[FormerlySerializedAs("center")]
+	public bool centered;
+
+	public Vector2[] cornerOffset;
+
+	public Vector2[] spriteOffset;
+}

@@ -1,0 +1,142 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set Add Param To Obj", 0)]
+[Category("Game")]
+public class Flow_SetGameResToObject : PC2CustomFlowNode
+{
+	public enum GameResGiveType
+	{
+		Set,
+		Add
+	}
+
+	public enum ObjectType
+	{
+		Player,
+		WGO
+	}
+
+	public enum GetWGOType
+	{
+		ByString,
+		ByObject
+	}
+
+	[GatherPortsCallback]
+	public GameResGiveType giveType;
+
+	[GatherPortsCallback]
+	public ObjectType objectType;
+
+	[ShowIf("objectType", 1)]
+	[GatherPortsCallback]
+	public GetWGOType getWgoType = GetWGOType.ByObject;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueInput<string> wgoId;
+
+	private ValueInput<string> paramName;
+
+	private ValueInput<float> paramValue;
+
+	private ValueOutput<string> paramNameOut;
+
+	public override string name => $"{giveType} Param To {objectType}";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ChangeGameRes);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (objectType == ObjectType.WGO)
+		{
+			switch (getWgoType)
+			{
+			case GetWGOType.ByObject:
+				wgo = AddValueInput<WGO>("WGO");
+				break;
+			case GetWGOType.ByString:
+				wgoId = AddValueInput<string>("wgoId");
+				break;
+			}
+		}
+		paramName = AddValueInput<string>("paramName".CapitalizeFirst());
+		paramValue = AddValueInput<float>("paramValue".CapitalizeFirst());
+		paramNameOut = AddValueOutput("paramName", () => paramName.value);
+	}
+
+	private void ChangeGameRes(Flow flow)
+	{
+		switch (objectType)
+		{
+		case ObjectType.Player:
+			switch (giveType)
+			{
+			case GameResGiveType.Add:
+				MainGame.me.gameSave.playerData.AddExpTo(paramName.value, paramValue.value);
+				break;
+			case GameResGiveType.Set:
+				MainGame.me.gameSave.playerData.SetExp(paramName.value, paramValue.value);
+				break;
+			}
+			break;
+		case ObjectType.WGO:
+			switch (getWgoType)
+			{
+			case GetWGOType.ByObject:
+			{
+				WGO wGO = WGOParamOrSelf(wgo);
+				if (wGO != null)
+				{
+					switch (giveType)
+					{
+					case GameResGiveType.Add:
+						wGO.WgoState.gameRes.Add(paramName.value, paramValue.value);
+						break;
+					case GameResGiveType.Set:
+						wGO.WgoState.gameRes.Set(paramName.value, paramValue.value);
+						break;
+					}
+				}
+				else
+				{
+					Debug.LogError($"Tried to {giveType} GameRes to null WGO");
+				}
+				break;
+			}
+			case GetWGOType.ByString:
+			{
+				WGOState wGOState = MainGame.me.gameSave.worldData.GetWGOState(wgoId.value);
+				if (wGOState != null)
+				{
+					switch (giveType)
+					{
+					case GameResGiveType.Add:
+						wGOState.gameRes.Add(paramName.value, paramValue.value);
+						break;
+					case GameResGiveType.Set:
+						wGOState.gameRes.Set(paramName.value, paramValue.value);
+						break;
+					}
+				}
+				else
+				{
+					Debug.LogError("WGOState not found");
+				}
+				break;
+			}
+			}
+			break;
+		}
+		@out.Call(flow);
+	}
+}

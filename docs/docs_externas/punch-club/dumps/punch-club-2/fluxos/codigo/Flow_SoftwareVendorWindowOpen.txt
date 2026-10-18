@@ -1,0 +1,73 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open Software Vendor Window", 0)]
+[Category("Game/UI")]
+public class Flow_SoftwareVendorWindowOpen : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToOpen;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onWindowOpened;
+
+	private FlowOutput onWindowClosed;
+
+	private ValueInput<string> vendorId;
+
+	public override string name => (isToOpen ? "Open " : "Close ") + "Software Vendor Window";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ToggleWindow);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isToOpen)
+		{
+			onWindowOpened = AddFlowOutput("onWindowOpened".CapitalizeFirst());
+			onWindowClosed = AddFlowOutput("onWindowClosed".CapitalizeFirst());
+			vendorId = AddValueInput<string>("vendorId".CapitalizeFirst());
+		}
+	}
+
+	private void ToggleWindow(Flow flow)
+	{
+		if (isToOpen)
+		{
+			UISoftwareVendorWindow uISoftwareVendorWindow = GUIElements.Get<UISoftwareVendorWindow>();
+			BaseGUI.OnWindowOpened += OnWindowOpened;
+			BaseGUI.OnWindowClosed += OnWindowClosed;
+			uISoftwareVendorWindow.Open(vendorId.value, base.wgo);
+		}
+		else
+		{
+			GUIElements.Get<UISoftwareVendorWindow>().Hide();
+		}
+		@out.Call(flow);
+		void OnWindowClosed(BaseGUI window)
+		{
+			if (window is UISoftwareVendorWindow)
+			{
+				onWindowClosed.Call(flow);
+				BaseGUI.OnWindowClosed -= OnWindowClosed;
+			}
+		}
+		void OnWindowOpened(BaseGUI window)
+		{
+			if (window is UISoftwareVendorWindow)
+			{
+				LazyTimer.AddTimer(0f, delegate
+				{
+					onWindowOpened.Call(flow);
+					BaseGUI.OnWindowOpened -= OnWindowOpened;
+				});
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Task Manager\nSchool Tutorial", 0)]
+[Category("Game/TaskManager")]
+[Color("402b2b")]
+public class Flow_AddTaskSchoolTutorial : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	public override string name => "Task Manager\n<color=#00FF7F>School Tutorial</color>";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), SetQuestStatus);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+
+	private void SetQuestStatus(Flow flow)
+	{
+		TaskManager.AddTask(Task.TaskPriority.High, delegate
+		{
+			GlobalScriptsManager.RunScript("FightingSchoolTutorial");
+		}, () => PlayerController.Instance.IsControlEnabled);
+		@out.Call(flow);
+	}
+}

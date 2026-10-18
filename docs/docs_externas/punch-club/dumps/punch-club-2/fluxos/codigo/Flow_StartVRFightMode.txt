@@ -1,0 +1,56 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Enable VR Fight Mode", 0)]
+[Category("Game")]
+public class Flow_StartVRFightMode : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.playerData.isVrFightModeEnabled = true;
+			MainGame.me.gameSave.playerData.IsFuelEnable = false;
+			int num = MainGame.me.PlayerRes.GetInt("_agl_lvl") + MainGame.me.PlayerRes.GetInt("_str_lvl") + MainGame.me.PlayerRes.GetInt("_stm_lvl");
+			if (num < 60)
+			{
+				MainGame.me.gameSave.playerData.freeStats = 60 - num;
+			}
+			MainGame.me.gameSave.playerData.SetExp("_satiety", 100f);
+			MainGame.me.gameSave.playerData.SetExp("_health", 100f);
+			MainGame.me.gameSave.playerData.SetExp("_satisfaction", 100f);
+			MainGame.me.gameSave.playerData.SetExp("_energy", 100f);
+			MainGame.me.gameSave.knowledgeSystem.UnlockBranch(TechBranchType.Agility);
+			MainGame.me.gameSave.knowledgeSystem.UnlockBranch(TechBranchType.Stamina);
+			MainGame.me.gameSave.knowledgeSystem.UnlockBranch(TechBranchType.Strength);
+			foreach (TechDefinition techDatum in GameBalance.Me.techData)
+			{
+				if (techDatum.techBranchType != TechBranchType.OSR)
+				{
+					MainGame.me.gameSave.knowledgeSystem.ObtainTech(techDatum.id);
+				}
+			}
+			MainGame.me.gameSave.UnlockSchool("str_school");
+			MainGame.me.gameSave.UnlockSchool("agl_school");
+			MainGame.me.gameSave.UnlockSchool("stm_school");
+			MainGame.me.gameSave.UnlockSchool("flycatcher_school");
+			MainGame.me.gameSave.UnlockSchool("smasher_school");
+			MainGame.me.gameSave.UnlockSchool("berserker_school");
+			MainGame.me.gameSave.UnlockSchool("tiger_school");
+			MainGame.me.gameSave.UnlockSchool("scorpio_school");
+			MainGame.me.gameSave.UnlockSchool("cobra_school");
+			MainGame.me.gameSave.UnlockSchool("strategist_school");
+			MainGame.me.gameSave.UnlockSchool("trapper_school");
+			MainGame.me.gameSave.UnlockSchool("torturer_school");
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,108 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Change League Loop For Profession", 0)]
+[Category("Game/League")]
+public class Flow_ChangeLeagueLoopForProfession : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> profId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			League activeLeague = MainGame.me.gameSave.leaguesSystem.GetActiveLeague(0);
+			if (activeLeague == null)
+			{
+				@out.Call(flow);
+			}
+			else
+			{
+				LeaguePhase currentPhase = activeLeague.currentPhase;
+				MainGame.me.gameSave.leaguesSystem.allLeaguesShouldSkipWaitingFightPhase = true;
+				ProfessionData profession = MainGame.me.gameSave.professionSystem.GetProfession(profId.value);
+				int time = TimeManager.GetTime();
+				Debug.Log($"#league# Change League Loop For Profession:[{profId.value}] time:[{time}] league:[{activeLeague.id}] phase:[{currentPhase}]");
+				switch (currentPhase)
+				{
+				case LeaguePhase.Fighting:
+					activeLeague.waitingFightPhaseLength = 0;
+					if (profId.value != "mick_gym")
+					{
+						profession.daysToNextDuty--;
+					}
+					break;
+				case LeaguePhase.ForSignWaiting:
+					Debug.Log("#DEV# we don't have ForSignWaiting League Phase, something wrong happend");
+					break;
+				case LeaguePhase.Signing:
+					if (time >= 1380)
+					{
+						if (profId.value == "mick_gym")
+						{
+							activeLeague.waitingFightPhaseLength = 0;
+							profession.daysToNextDuty--;
+						}
+						else
+						{
+							activeLeague.changeLeagueAndProfessionLoopForThisProfession = profId.value;
+						}
+					}
+					else if (profId.value == "mick_gym")
+					{
+						activeLeague.waitingFightPhaseLength = 0;
+					}
+					else
+					{
+						activeLeague.changeLeagueAndProfessionLoopForThisProfession = profId.value;
+					}
+					break;
+				case LeaguePhase.ForFightWaiting:
+					if (time >= 1380)
+					{
+						if (profId.value == "mick_gym")
+						{
+							activeLeague.changeLeagueAndProfessionLoopForThisProfession = profId.value;
+						}
+						else
+						{
+							activeLeague.changeLeagueAndProfessionLoopForThisProfession = profId.value;
+							profession.daysToNextDuty--;
+						}
+					}
+					else if (profId.value == "mick_gym")
+					{
+						activeLeague.changeLeagueAndProfessionLoopForThisProfession = profId.value;
+					}
+					else
+					{
+						activeLeague.changeLeagueAndProfessionLoopForThisProfession = profId.value;
+					}
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+				}
+				ForceUpdateGUI();
+				@out.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		profId = AddValueInput<string>("profId");
+	}
+
+	private void ForceUpdateGUI()
+	{
+		HUD hUD = GUIElements.Get<HUD>();
+		hUD.Character.SyncNotices();
+		hUD.Character.CheckProfessionNotices();
+	}
+}

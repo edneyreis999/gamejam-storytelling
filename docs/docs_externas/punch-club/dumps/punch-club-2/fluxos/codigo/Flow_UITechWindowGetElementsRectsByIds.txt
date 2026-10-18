@@ -1,0 +1,59 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("UI Get Tech Rects By Ids", 0)]
+[Category("Game/UI")]
+public class Flow_UITechWindowGetElementsRectsByIds : PC2CustomFlowNode
+{
+	private ValueInput<List<string>> ids;
+
+	private ValueInput<string> oneElementId;
+
+	private ValueOutput<List<RectTransform>> rects;
+
+	private ValueOutput<List<string>> idsOut;
+
+	protected override void RegisterPorts()
+	{
+		ids = AddValueInput<List<string>>("ids");
+		oneElementId = AddValueInput<string>("oneElementId");
+		rects = AddValueOutput("rects", delegate
+		{
+			List<string> list = new List<string>();
+			if (ids.value != null)
+			{
+				list.AddRange(ids.value);
+			}
+			if (oneElementId.value != null)
+			{
+				list.Add(oneElementId.value);
+			}
+			if (list.Count == 0)
+			{
+				Debug.LogError("Empty tech elements list :(");
+			}
+			return GUIElements.Get<UITechWindow>().GetTechRectsByIds(list);
+		});
+		idsOut = AddValueOutput("idsOut", delegate
+		{
+			List<string> list = new List<string>();
+			if (ids.value != null)
+			{
+				list.AddRange(ids.value);
+			}
+			if (oneElementId.value != null)
+			{
+				list.Add(oneElementId.value);
+			}
+			if (list.Count == 0)
+			{
+				Debug.LogError("Empty tech elements list :(");
+			}
+			return list;
+		});
+	}
+}

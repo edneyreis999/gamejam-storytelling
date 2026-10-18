@@ -1,0 +1,69 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI League\nGet AssistantBubblePositions", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UILeagueGetAssistantBubblePositions : PC2CustomFlowNode
+{
+	public bool isRobotLeagueWindow;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueOutput<RectTransform> point1;
+
+	private ValueOutput<RectTransform> point2;
+
+	private ValueOutput<RectTransform> point3;
+
+	private ValueOutput<RectTransform> point4;
+
+	private ValueOutput<RectTransform> point5;
+
+	private ValueOutput<RectTransform> point6;
+
+	private ValueOutput<RectTransform> point7;
+
+	private RectTransform rectPoint1;
+
+	private RectTransform rectPoint2;
+
+	private RectTransform rectPoint3;
+
+	private RectTransform rectPoint4;
+
+	private RectTransform rectPoint5;
+
+	private RectTransform rectPoint6;
+
+	private RectTransform rectPoint7;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			BaseLeagueWindow baseLeagueWindow = ((!isRobotLeagueWindow) ? ((BaseLeagueWindow)GUIElements.Get<UILeagueWindow>()) : ((BaseLeagueWindow)GUIElements.Get<UIRobotLeagueWindow>()));
+			rectPoint1 = baseLeagueWindow.TutorialAssistantPoint1;
+			rectPoint2 = baseLeagueWindow.TutorialAssistantPoint2;
+			rectPoint3 = baseLeagueWindow.TutorialAssistantPoint3;
+			rectPoint4 = baseLeagueWindow.TutorialAssistantPoint4;
+			rectPoint5 = baseLeagueWindow.TutorialAssistantPoint5;
+			rectPoint6 = baseLeagueWindow.TutorialAssistantPoint6;
+			rectPoint7 = baseLeagueWindow.TutorialAssistantPoint7;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		point1 = AddValueOutput("point1", () => rectPoint1);
+		point2 = AddValueOutput("point2", () => rectPoint2);
+		point3 = AddValueOutput("point3", () => rectPoint3);
+		point4 = AddValueOutput("point4", () => rectPoint4);
+		point5 = AddValueOutput("point5", () => rectPoint5);
+		point6 = AddValueOutput("point6", () => rectPoint6);
+		point7 = AddValueOutput("point7", () => rectPoint7);
+	}
+}

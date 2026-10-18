@@ -1,0 +1,35 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is Player Gpp Less Than Challenged Opponent", 0)]
+[Category("Game/Tutorial")]
+[Color("cf35c1")]
+public class Flow_IsPlayerGppLessThanOpponents : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			int elo = GUIElements.Get<UIFightChallengeWindow>().Opponent.Elo;
+			if (MainGame.me.PlayerRes.GetInt("_gpp") >= elo)
+			{
+				no.Call(flow);
+			}
+			else
+			{
+				yes.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+	}
+}

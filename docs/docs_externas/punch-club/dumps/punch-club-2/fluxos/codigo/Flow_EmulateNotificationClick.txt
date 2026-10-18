@@ -1,0 +1,26 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Emulate Notice Click", 0)]
+[Category("Game/UI")]
+public class Flow_EmulateNotificationClick : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<NoticeData> noticeData;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate
+		{
+			UINoticeWindow.EmulateNoticeClick(noticeData.value);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		noticeData = AddValueInput<NoticeData>("noticeData".CapitalizeFirst());
+	}
+}

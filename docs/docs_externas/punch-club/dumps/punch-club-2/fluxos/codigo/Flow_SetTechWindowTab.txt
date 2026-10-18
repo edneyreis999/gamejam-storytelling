@@ -1,0 +1,26 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Tech Window Set Tab", 0)]
+[Category("Game/Tutorial")]
+public class Flow_SetTechWindowTab : PC2CustomFlowNode
+{
+	public TechBranchType techBranchType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GUIElements.Get<UITechWindow>().LastOpenedBranch = techBranchType;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

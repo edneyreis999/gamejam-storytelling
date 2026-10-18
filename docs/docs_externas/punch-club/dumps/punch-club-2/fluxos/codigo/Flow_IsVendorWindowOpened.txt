@@ -1,0 +1,33 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is Vendor Window Opened", 0)]
+[Category("Game")]
+public class Flow_IsVendorWindowOpened : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (GUIElements.Get<UIVendorWindow>().IsShown)
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+	}
+}

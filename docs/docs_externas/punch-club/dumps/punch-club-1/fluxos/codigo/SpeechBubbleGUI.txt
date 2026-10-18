@@ -1,0 +1,329 @@
+using System.Collections.Generic;
+using DG.Tweening;
+using UnityEngine;
+
+public class SpeechBubbleGUI : MonoBehaviour
+{
+	public enum Type
+	{
+		Speak,
+		Think,
+		None,
+		CutsceneTitle
+	}
+
+	public SpeechBubbleInsideGfx cur_bubble;
+
+	public UILabel content_label_calculator;
+
+	private static int _total_speech_bubbles = 0;
+
+	private GJCommons.VoidDelegate _on_destroy;
+
+	private List<GJCommons.VoidDelegate> _on_destroy_custom = new List<GJCommons.VoidDelegate>();
+
+	private float _appeared_time;
+
+	public Type speech_type = Type.None;
+
+	public const float TOTAL_TIME_IN_MOVIE = 2.7f;
+
+	private const float TOTAL_TIME = 1.2f;
+
+	private const float ONE_SYMBOL_TIME = 0.065f;
+
+	public const float LETTER_ANIM_APPEAR_TIME = 0.02f;
+
+	private bool _shown;
+
+	private bool _auto_dissappear = true;
+
+	public bool stay_forever;
+
+	private static List<SpeechBubbleGUI> _all_bubbles = new List<SpeechBubbleGUI>();
+
+	private bool _exists = true;
+
+	private float _bubble_time;
+
+	public bool skippable = true;
+
+	private string _message = string.Empty;
+
+	public GameObject dots;
+
+	private static float _last_bubble_appear_time = 0f;
+
+	public UIWidget bg;
+
+	public bool is_prefab;
+
+	public bool is_shown => _shown;
+
+	public int height => cur_bubble.background.height;
+
+	public Color color
+	{
+		set
+		{
+			cur_bubble.background.color = value;
+			UIWidget corner_speak = cur_bubble.corner_speak;
+			cur_bubble.corner_think.color = value;
+			corner_speak.color = value;
+		}
+	}
+
+	private void OnLinkedCharMoved(CharacterGfx ch)
+	{
+		base.transform.localPosition = ch.bubble_pos.gameObject.transform.position / 2f;
+	}
+
+	public void AddOnDestroyListener(GJCommons.VoidDelegate f)
+	{
+		_on_destroy_custom.Add(f);
+	}
+
+	public void LinkTo(CharacterGfx ch)
+	{
+		ch.AddPositionUpdateListener(OnLinkedCharMoved);
+		_on_destroy = delegate
+		{
+			ch.RemovePositionUpdateListener(OnLinkedCharMoved);
+		};
+	}
+
+	public static SpeechBubbleGUI CreateSpeechBubble(string message, Type type, Vector2 pos, bool auto_dissappear, bool force_mirror_x = false, bool force_mirror_y = false, bool animated = true)
+	{
+		if (MainGame.me == null || MainGame.me.gui_elements == null)
+		{
+			Debug.LogError("No speech bubble prefab: " + message);
+			return null;
+		}
+		if (type == Type.CutsceneTitle)
+		{
+			pos = new Vector2(0f, -49f);
+		}
+		_total_speech_bubbles++;
+		SpeechBubbleGUI obj = Object.Instantiate(MainGame.me.gui_elements.speech_bubble);
+		obj.is_prefab = false;
+		obj.speech_type = type;
+		obj.content_label_calculator.text = message;
+		obj._message = message;
+		obj.transform.parent = MainGame.me.ui_root.transform;
+		obj.transform.localScale = Vector3.one;
+		obj.transform.localPosition = new Vector2(Mathf.Round(pos.x), Mathf.Round(pos.y)) - CameraHelper.GetCameraShiftVector() / 2f;
+		obj.GetComponent<UIPanel>().depth = 800 + _total_speech_bubbles;
+		obj._appeared_time = GJCommons.GetTicksInSeconds();
+		obj._shown = true;
+		if (obj.dots != null)
+		{
+			obj.dots.SetActive(value: false);
+		}
+		_last_bubble_appear_time = GJCommons.GetTicksInSeconds();
+		if (animated)
+		{
+			Sound.PlayVoice((type != Type.CutsceneTitle) ? "male1" : "title", VoiceDescription.VoiceSaying.Statement);
+		}
+		int width = obj.content_label_calculator.width;
+		int num = obj.content_label_calculator.height;
+		Vector2 vector = (Vector2)obj.transform.localPosition + new Vector2((!force_mirror_x) ? width : (-width), (!force_mirror_y) ? num : (-num));
+		int num2 = MyGUIRoot.GetScreenW() / 4 - 20;
+		int num3 = MyGUIRoot.GetScreenH() / 4 - 12;
+		Debug.Log(string.Concat("pos = ", obj.transform.localPosition, ", added = ", vector, " , screen = ", num2, " x ", num3));
+		if (vector.x > (float)num2 || vector.x < (float)(-num2))
+		{
+			force_mirror_x = !force_mirror_x;
+		}
+		if (vector.y > (float)num3 || vector.y < (float)(-num3))
+		{
+			force_mirror_y = !force_mirror_y;
+		}
+		obj._auto_dissappear = auto_dissappear;
+		obj.stay_forever = false;
+		SpeechBubbleInsideGfx componentInChildren = obj.GetComponentInChildren<SpeechBubbleInsideGfx>();
+		componentInChildren.SetType(type);
+		componentInChildren.SetText(message, animated);
+		componentInChildren.ForceMirror(force_mirror_x, force_mirror_y);
+		componentInChildren.background.GetComponent<UI2DSprite>().enabled = type != Type.CutsceneTitle;
+		UITable componentInChildren2 = obj.GetComponentInChildren<UITable>();
+		if (force_mirror_y)
+		{
+			componentInChildren2.pivot = ((!force_mirror_x) ? UIWidget.Pivot.BottomLeft : UIWidget.Pivot.BottomRight);
+			Vector3 localPosition = componentInChildren2.transform.localPosition;
+			componentInChildren2.transform.localPosition = new Vector3(localPosition.x, -6f, localPosition.z);
+		}
+		else
+		{
+			componentInChildren2.pivot = (force_mirror_x ? UIWidget.Pivot.TopRight : UIWidget.Pivot.TopLeft);
+		}
+		UILabel componentInChildren3 = componentInChildren2.GetComponentInChildren<UILabel>();
+		if (type == Type.CutsceneTitle)
+		{
+			componentInChildren.contents.container.pivot = UIWidget.Pivot.Bottom;
+			componentInChildren.GetComponentInChildren<UILabel>().color = Color.white;
+			componentInChildren2.pivot = UIWidget.Pivot.Top;
+			componentInChildren3.pivot = UIWidget.Pivot.Top;
+			componentInChildren3.width = 220;
+			componentInChildren3.height = 100;
+			componentInChildren3.overflowMethod = UILabel.Overflow.ClampContent;
+			componentInChildren.transform.localPosition = componentInChildren.transform.localPosition - new Vector3(9f, 0f, 0f);
+		}
+		componentInChildren2.Reposition();
+		componentInChildren3.UpdateNGUIText();
+		Vector2 vector2 = NGUIText.CalculatePrintedSize(componentInChildren3.text);
+		obj.cur_bubble.contents.container.width = (int)vector2.x;
+		GJTimer.AddTimer(0.01f, delegate
+		{
+			obj.cur_bubble.contents.container.bottomAnchor.absolute = 0;
+			obj.cur_bubble.contents.container.UpdateAnchors();
+		});
+		componentInChildren2.Reposition();
+		obj._bubble_time = ((!MainGame.movie_playing) ? CalculateWaitTime(message.Length) : 2.7f);
+		UIPanel p = obj.GetComponent<UIPanel>();
+		p.alpha = 0f;
+		Sequence s = DOTween.Sequence();
+		s.AppendInterval(0.05f);
+		MyTooltipContents componentInChildren4 = obj.GetComponentInChildren<MyTooltipContents>();
+		componentInChildren4.do_y_fix = type != Type.CutsceneTitle;
+		componentInChildren4.Update();
+		s.Append(DOTween.To(() => p.alpha, delegate(float a)
+		{
+			p.alpha = a;
+		}, 1f, 0.05f)).onComplete = delegate
+		{
+			obj._appeared_time = GJCommons.GetTicksInSeconds();
+		};
+		_all_bubbles.Add(obj);
+		if (VHSConst.GAMEPAD_IS_CURRENT_CONTROLLER && (bool)obj.GetComponentInChildren<UIButton>())
+		{
+			obj.GetComponentInChildren<UIButton>().hover = Color.red;
+			obj.GetComponentInChildren<UIButton>().duration = 0f;
+		}
+		return obj;
+	}
+
+	public static float CalculateWaitTime(int message_len)
+	{
+		return 1.2f + (float)message_len * 0.065f;
+	}
+
+	public static SpeechBubbleGUI CreateSpeechBubble(string message, Type type, Vector2 pos)
+	{
+		return CreateSpeechBubble(message, type, pos, auto_dissappear: true);
+	}
+
+	public void DestroyMe()
+	{
+		if (!stay_forever && _shown && _exists && !is_prefab)
+		{
+			UIPanel p = base.gameObject.GetComponent<UIPanel>();
+			DOTween.To(() => p.alpha, delegate(float a)
+			{
+				p.alpha = a;
+			}, 0f, 0.2f).onComplete = DestroyMeImmidiate;
+			_shown = false;
+			skippable = false;
+		}
+	}
+
+	public void DestroyMeImmidiate()
+	{
+		if (!_exists || is_prefab)
+		{
+			return;
+		}
+		skippable = (_exists = false);
+		_all_bubbles.Remove(this);
+		try
+		{
+			if (base.gameObject == null)
+			{
+				return;
+			}
+		}
+		catch (MissingReferenceException ex)
+		{
+			Debug.LogError("Trying to remove dead message bubble, text = " + _message);
+			throw ex;
+		}
+		SpeechBubbleInsideGfx[] componentsInChildren = GetComponentsInChildren<SpeechBubbleInsideGfx>(includeInactive: true);
+		foreach (SpeechBubbleInsideGfx speechBubbleInsideGfx in componentsInChildren)
+		{
+			speechBubbleInsideGfx.deleted = true;
+		}
+		if (base.gameObject != null && base.gameObject.transform != null && base.gameObject.transform.parent != null)
+		{
+			NGUITools.Destroy(base.gameObject);
+		}
+		if (_on_destroy != null)
+		{
+			_on_destroy();
+		}
+		foreach (GJCommons.VoidDelegate item in _on_destroy_custom)
+		{
+			item();
+		}
+	}
+
+	public void Update()
+	{
+		if (!_exists || is_prefab)
+		{
+			return;
+		}
+		if (_auto_dissappear)
+		{
+			if (GJCommons.GetTicksInSeconds() > _appeared_time + _bubble_time)
+			{
+				DestroyMe();
+				return;
+			}
+		}
+		else
+		{
+			UIWidget corner_speak = cur_bubble.corner_speak;
+			Color color = cur_bubble.background.color;
+			cur_bubble.corner_think.color = color;
+			corner_speak.color = color;
+		}
+		if (Input.GetMouseButton(0))
+		{
+			TryToDestroy();
+		}
+	}
+
+	public void TryToDestroy()
+	{
+		bool flag = !MainGame.movie_playing && skippable && GJCommons.GetTicksInSeconds() - _last_bubble_appear_time >= 1.8f;
+		if (dots != null)
+		{
+			dots.SetActive(flag);
+		}
+		if (flag)
+		{
+			DestroyMe();
+		}
+	}
+
+	public static void DestroyAllImmidiate()
+	{
+		while (_all_bubbles.Count > 0)
+		{
+			_all_bubbles[0].DestroyMeImmidiate();
+		}
+		SpeechBubbleGUI[] array = Object.FindObjectsOfType<SpeechBubbleGUI>();
+		SpeechBubbleGUI[] array2 = array;
+		foreach (SpeechBubbleGUI speechBubbleGUI in array2)
+		{
+			if (!(speechBubbleGUI == MainGame.me.gui_elements.speech_bubble))
+			{
+				speechBubbleGUI.DestroyMeImmidiate();
+			}
+		}
+	}
+
+	public void AddMoreTime(float time)
+	{
+		_bubble_time += time;
+	}
+}

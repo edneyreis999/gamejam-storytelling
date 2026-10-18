@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI School Selection Window\nShow Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UISchoolSelectionWindowShowMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI School Selection Window\n" + (isToShow.value ? "Show" : "Hide") + " Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform windowTutorialRect = GUIElements.Get<SchoolSelectionWindow>().WindowTutorialRect;
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(windowTutorialRect);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(windowTutorialRect);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

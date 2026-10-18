@@ -1,0 +1,54 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Character Change Sorting", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UICharacterChangeSorting : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToDefault;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			HUD hUD = GUIElements.Get<HUD>();
+			if (isToDefault.value)
+			{
+				if (hUD.Character.TryGetComponent<GraphicRaycaster>(out var component))
+				{
+					Object.Destroy(component);
+				}
+				if (hUD.Character.TryGetComponent<Canvas>(out var component2))
+				{
+					Object.Destroy(component2);
+				}
+				if (hUD.Character.TimeTransform.TryGetComponent<Canvas>(out var component3))
+				{
+					Object.Destroy(component3);
+				}
+			}
+			else
+			{
+				Canvas canvas = hUD.Character.gameObject.AddComponent<Canvas>();
+				canvas.overrideSorting = true;
+				canvas.sortingOrder = 999;
+				hUD.Character.gameObject.AddComponent<GraphicRaycaster>();
+				Canvas canvas2 = hUD.Character.TimeTransform.gameObject.AddComponent<Canvas>();
+				canvas2.overrideSorting = true;
+				canvas2.sortingOrder = 0;
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToDefault = AddValueInput<bool>("isToDefault".CapitalizeFirst());
+	}
+}

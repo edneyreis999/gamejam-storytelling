@@ -1,0 +1,45 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Story Tree Set Status", 0)]
+[Category("Game/Story Tree")]
+[Icon("FS", false, "")]
+public class Flow_StoryTreeSetStatus : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClosed;
+
+	private ValueInput<string> questId;
+
+	private ValueInput<bool> showStoryWindow;
+
+	private ValueInput<QuestState> questState;
+
+	public override string name => "<color=#00FF7F>Story Tree Set Status</color>";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), SetQuestStatus);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		questId = AddValueInput<string>("Quest Id");
+		showStoryWindow = AddValueInput<bool>("Show story window?");
+		questState = AddValueInput<QuestState>("Quest State");
+		questState.SetDefaultAndSerializedValue(QuestState.Invisible);
+		onClosed = AddFlowOutput("onClosed".CapitalizeFirst());
+	}
+
+	private void SetQuestStatus(Flow flow)
+	{
+		KnowledgeSystemManager.SetQuestStatus(questId.value, questState.value, !showStoryWindow.value, delegate
+		{
+			onClosed.Call(flow);
+		});
+		@out.Call(flow);
+	}
+}

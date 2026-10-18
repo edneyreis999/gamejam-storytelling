@@ -1,0 +1,27 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set AIMarker Position", 0)]
+[Category("Game/GameMap")]
+public class Flow_SetAIMarkerPosition : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> gmoId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.playerData.CurrentMapPosition = gmoId.value;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		gmoId = AddValueInput<string>("gmoId".CapitalizeFirst());
+	}
+}

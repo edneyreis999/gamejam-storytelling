@@ -1,0 +1,51 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Get Sewerage Direction Type", 0)]
+[Category("Game/Sewerage")]
+public class Flow_GetSewerageDirectionType : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueOutput<SewerageTransitionDirectionType> directionType;
+
+	private SewerageTransitionDirectionType directionTypeValue;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), GetDirection);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		wgo = AddValueInput<WGO>("wgo");
+		directionType = AddValueOutput("directionType", () => directionTypeValue);
+	}
+
+	private void GetDirection(Flow flow)
+	{
+		WGO wGO = WGOParamOrSelf(wgo);
+		if (wGO != null)
+		{
+			SewerageTransition component = wGO.GetComponent<SewerageTransition>();
+			if (component != null)
+			{
+				directionTypeValue = component.DirectionType;
+			}
+			else
+			{
+				Debug.LogError("SewerageTransition component not found");
+			}
+		}
+		else
+		{
+			Debug.LogWarning("WGO is null");
+		}
+		@out.Call(flow);
+	}
+}

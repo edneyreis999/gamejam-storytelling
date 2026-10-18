@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Find WGO", 0)]
+[Category("Game/WGO")]
+[ParadoxNotion.Design.Icon("Cube", false, "")]
+public class Flow_FindWGO : PC2CustomFlowNode
+{
+	public bool isLogErrorIfNotFound = true;
+
+	private ValueInput<string> wgoId;
+
+	private ValueOutput<WGO> outWGO;
+
+	protected override void RegisterPorts()
+	{
+		wgoId = AddValueInput<string>("wgoId");
+		outWGO = AddValueOutput("WGO", delegate
+		{
+			string value = wgoId.value;
+			WGO wGO = DynamicScene.FindWGO(value);
+			if (wGO == null && isLogErrorIfNotFound)
+			{
+				Debug.LogError("$Found wgo is null by id: " + value);
+			}
+			return wGO;
+		});
+	}
+}

@@ -1,0 +1,42 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Phrase To BlackList", 0)]
+[Category("Game/Dialogue")]
+[Color("010101")]
+public class Flow_AddPhraseToBlackList : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isNeedToRemovePhraseFromList;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> phrase;
+
+	public override string name => "<color=#FBFBFB>" + ((!isNeedToRemovePhraseFromList) ? "Add Phrase To BlackList" : "Remove Phrase From BlackList") + "</color>";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ProcessPhrase);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		phrase = AddValueInput<string>("phrase".CapitalizeFirst());
+	}
+
+	private void ProcessPhrase(Flow flow)
+	{
+		if (!isNeedToRemovePhraseFromList)
+		{
+			MainGame.me.gameSave.knowledgeSystem.AddPhraseToBlackList(phrase.value);
+		}
+		else
+		{
+			MainGame.me.gameSave.knowledgeSystem.RemovePhraseFromBlackList(phrase.value);
+		}
+		@out.Call(flow);
+	}
+}

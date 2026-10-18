@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/GUI")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Open Brochure", "")]
+public class uScriptAct_GUI_Brochure : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In()
+	{
+		MainGame.me.gui_elements.brochure.Open();
+	}
+}

@@ -1,0 +1,29 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Disable Gamepad Selector", 0)]
+[Category("Game/Tutorial")]
+public class Flow_DisableGamepadSelector : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isEnable;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name => (isEnable ? "Enable" : "Disable") + " Gamepad Selector";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GUIElements.Instance.isSelectorActive = isEnable;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

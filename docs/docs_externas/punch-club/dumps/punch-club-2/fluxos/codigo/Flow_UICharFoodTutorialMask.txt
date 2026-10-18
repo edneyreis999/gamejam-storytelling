@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Char Food\nShow Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UICharFoodTutorialMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI Char Food\n" + (isToShow.value ? "Show" : "Hide") + " Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform foodTutorialRect = GUIElements.Get<UICharacterWindow>().FoodTutorialRect;
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(foodTutorialRect);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(foodTutorialRect);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

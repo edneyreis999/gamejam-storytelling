@@ -1,0 +1,51 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("WGO State", 0)]
+[Category("Game/WGO")]
+public class Flow_WGOState : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isOnActiveScene = true;
+
+	private ValueInput<string> sceneName;
+
+	private ValueInput<bool> isActive;
+
+	private ValueInput<List<GameResAtom>> gameResAtoms;
+
+	private ValueOutput<WGOState> wgoStateOut;
+
+	protected override void RegisterPorts()
+	{
+		if (!isOnActiveScene)
+		{
+			sceneName = AddValueInput<string>("sceneName");
+		}
+		isActive = AddValueInput<bool>("isActive".CapitalizeFirst());
+		gameResAtoms = AddValueInput<List<GameResAtom>>("gameResAtoms".CapitalizeFirst());
+		wgoStateOut = AddValueOutput("wgoStateOut".CapitalizeFirst(), delegate
+		{
+			GameRes gameRes = new GameRes();
+			if (gameResAtoms.value != null)
+			{
+				foreach (GameResAtom item in gameResAtoms.value)
+				{
+					gameRes.Add(item);
+				}
+			}
+			return (!isOnActiveScene) ? new WGOState("", new List<ActiveOnScene>
+			{
+				new ActiveOnScene(sceneName.value, isActive.value)
+			}, gameRes) : new WGOState("", new List<ActiveOnScene>
+			{
+				new ActiveOnScene(DynamicScene.current.SceneName, isActive.value)
+			}, gameRes);
+		});
+	}
+}

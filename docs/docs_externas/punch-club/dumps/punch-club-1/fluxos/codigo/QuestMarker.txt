@@ -1,0 +1,170 @@
+using UnityEngine;
+
+public class QuestMarker : MonoBehaviour
+{
+	public GameObject moving_go;
+
+	public float amplitude = 8f;
+
+	public float speed = 4f;
+
+	public GameObject qm_vertical;
+
+	public GameObject qm_horiz;
+
+	public GameObject a_button;
+
+	private GameObject _linked_go;
+
+	private static int _xx = 70;
+
+	private static QuestMarker _cur_quest_marker;
+
+	private static QuestMarker _gui_quest_marker;
+
+	private bool _is_hud_marker;
+
+	public bool is_prefab;
+
+	private const bool CHANGE_MARKER_TO_A_SYMBOL = false;
+
+	public static QuestMarker Create(SceneZoneGfx z)
+	{
+		if (z == null)
+		{
+			Debug.LogError("Create quest marker error - zone is null!");
+			return null;
+		}
+		Vector3 vector = z.transform.position;
+		if (z.mark_pos != null)
+		{
+			vector = z.mark_pos.transform.position.RoundXY();
+		}
+		return Create(vector - new Vector3(0f, 0f, 5f));
+	}
+
+	public static QuestMarker Create(Vector3 p)
+	{
+		GameObject gameObject = Object.Instantiate(MainGame.me.gui_elements.quest_marker.gameObject);
+		QuestMarker component = gameObject.GetComponent<QuestMarker>();
+		component.is_prefab = false;
+		gameObject.SetActive(value: true);
+		gameObject.transform.localScale = Vector3.one;
+		gameObject.transform.localPosition = p;
+		gameObject.transform.localEulerAngles = Vector3.zero;
+		component.qm_vertical.SetActive(value: true);
+		component.qm_horiz.SetActive(value: false);
+		component.a_button.SetActive(value: false);
+		component.Update();
+		_cur_quest_marker = component;
+		return component;
+	}
+
+	public void MakeHorizontal(bool is_left = true)
+	{
+		base.gameObject.transform.localEulerAngles = new Vector3(0f, 0f, (!is_left) ? 90 : (-90));
+		qm_horiz.SetActive(value: true);
+		qm_vertical.SetActive(value: false);
+		a_button.SetActive(value: false);
+	}
+
+	private void Update()
+	{
+		if (is_prefab)
+		{
+			return;
+		}
+		if (_linked_go != null)
+		{
+			Vector3 worldCoordinates = GJNGUI.GetWorldCoordinates(_linked_go, -110f);
+			worldCoordinates += (Vector3)CameraHelper.GetCameraShiftVector() + new Vector3(_xx, 0f, 0f) * base.transform.localScale.y;
+			if (VHSConst.IS_PHONE && _is_hud_marker)
+			{
+				worldCoordinates += new Vector3(22f, 0f);
+			}
+			base.transform.localPosition = worldCoordinates;
+			GetComponentInChildren<SpriteRenderer>().enabled = _linked_go.activeInHierarchy;
+		}
+		moving_go.transform.localPosition = new Vector2(0f, Mathf.Round(Mathf.Sin(Time.fixedTime * speed) * amplitude));
+	}
+
+	public void DestroyMe()
+	{
+		if (!is_prefab)
+		{
+			Object.Destroy(base.gameObject);
+			_cur_quest_marker = null;
+		}
+	}
+
+	public static void DestroyCurrentQuestMarker()
+	{
+		if (_cur_quest_marker != null)
+		{
+			_cur_quest_marker.DestroyMe();
+		}
+	}
+
+	private static void CreateHudLeftButtonMarker(GameObject go)
+	{
+		GJTimer.AddTimer(0.01f, delegate
+		{
+			Vector3 worldCoordinates = GJNGUI.GetWorldCoordinates(go, -110f);
+			worldCoordinates += (Vector3)CameraHelper.GetCameraShiftVector() + new Vector3(_xx, 0f, 0f);
+			QuestMarker questMarker = Create(worldCoordinates);
+			questMarker._is_hud_marker = true;
+			questMarker._linked_go = go;
+			questMarker.MakeHorizontal();
+			_gui_quest_marker = questMarker;
+		});
+	}
+
+	private static void CreateHudWheelButtonMarker(GameObject go)
+	{
+		GJTimer.AddTimer(0.01f, delegate
+		{
+			Vector3 worldCoordinates = GJNGUI.GetWorldCoordinates(go, -110f);
+			worldCoordinates += (Vector3)CameraHelper.GetCameraShiftVector() - new Vector3(_xx, 0f, 0f);
+			QuestMarker questMarker = Create(worldCoordinates);
+			questMarker._is_hud_marker = true;
+			questMarker._linked_go = go;
+			questMarker.MakeHorizontal();
+			_gui_quest_marker = questMarker;
+			questMarker.transform.localScale = new Vector3(1f, -1f, 1f);
+		});
+	}
+
+	public static void CreateMarkerOnCityMapButton()
+	{
+		CreateHudLeftButtonMarker(MainGame.me.gui_elements.hud_left.go_map_button);
+	}
+
+	public static void CreateMarkerOnTechButton()
+	{
+		CreateHudLeftButtonMarker(MainGame.me.gui_elements.hud_left.go_tech_available);
+	}
+
+	public static void CreateMarkerOnCityLeagueButton()
+	{
+		CreateHudLeftButtonMarker(MainGame.me.gui_elements.hud_left.go_fights_button);
+	}
+
+	public static void RemoveGUIQuestMarker()
+	{
+		if (_gui_quest_marker != null)
+		{
+			_gui_quest_marker.gameObject.SetActive(value: false);
+			_gui_quest_marker.DestroyMe();
+			_gui_quest_marker = null;
+		}
+	}
+
+	public static void HideAllMarkers()
+	{
+		QuestMarker[] array = Object.FindObjectsOfType<QuestMarker>();
+		for (int i = 0; i < array.Length; i++)
+		{
+			array[i].DestroyMe();
+		}
+	}
+}

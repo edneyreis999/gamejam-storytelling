@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Is WGO not NULL", 0)]
+[Category("Game/WGO")]
+public class Flow_IsWGONotNull : PC2CustomFlowNode
+{
+	private WGO internalWGO;
+
+	protected override void RegisterPorts()
+	{
+		ValueInput<WGO> inWGO = AddValueInput<WGO>("WGO");
+		AddValueOutput("WGO", () => internalWGO);
+		FlowOutput outYes = AddFlowOutput("Yes");
+		FlowOutput outNo = AddFlowOutput("No");
+		AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			internalWGO = WGOParamOrSelf(inWGO, isLogErrorIfNotFound: false);
+			if (internalWGO != null)
+			{
+				outYes.Call(flow);
+			}
+			else
+			{
+				outNo.Call(flow);
+			}
+		});
+	}
+}

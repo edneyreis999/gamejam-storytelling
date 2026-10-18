@@ -1,0 +1,18 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Player", 0)]
+[Category("Player")]
+public class Flow_GetPlayer : PC2CustomFlowNode
+{
+	private ValueOutput<GameObject> playerObject;
+
+	protected override void RegisterPorts()
+	{
+		playerObject = AddValueOutput("playerObject".CapitalizeFirst(), () => PlayerController.Instance.gameObject);
+	}
+}

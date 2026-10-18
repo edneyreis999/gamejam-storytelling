@@ -1,0 +1,56 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Prepare Fight Window\nChange Perks Sorting", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIPrepareFightWindowChangePerksSorting : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToDefault;
+
+	public override string name => "UI Prepare Fight Window Change\n Perks Sorting" + (isToDefault.value ? " To Default" : "To Over Tutorial Mask");
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			List<UISchoolBuff> buffs = GUIElements.Get<UIPrepareFightWindow>().PlayerSchool.Buffs;
+			if (isToDefault.value)
+			{
+				for (int i = 0; i < buffs.Count; i++)
+				{
+					if (buffs[i].TryGetComponent<GraphicRaycaster>(out var component))
+					{
+						Object.Destroy(component);
+					}
+					if (buffs[i].TryGetComponent<Canvas>(out var component2))
+					{
+						Object.Destroy(component2);
+					}
+				}
+			}
+			else
+			{
+				for (int j = 0; j < buffs.Count; j++)
+				{
+					Canvas canvas = buffs[j].gameObject.AddComponent<Canvas>();
+					canvas.overrideSorting = true;
+					canvas.sortingOrder = 999;
+					buffs[j].gameObject.AddComponent<GraphicRaycaster>();
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToDefault = AddValueInput<bool>("isToDefault");
+	}
+}

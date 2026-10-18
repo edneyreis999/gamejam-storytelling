@@ -1,0 +1,138 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Multi Answer", 0)]
+[Category("Game/Dialogue")]
+[ParadoxNotion.Design.Icon("DialogueSmall", false, "")]
+[Color("00FF00")]
+[Description("Prefix [Ô] means that dialogue locked by default")]
+public class Flow_MultiAnswer : PC2CustomFlowNode
+{
+	[Serializable]
+	private class AnswerOption
+	{
+		public string id;
+
+		public bool isLockedByDefault;
+	}
+
+	[SerializeField]
+	private List<AnswerOption> answerOptions = new List<AnswerOption>();
+
+	public UIBasicBubble.ForceCornerPosition forceCornerPosition;
+
+	[GatherPortsCallback]
+	public bool callInteractionPhrasePortIfEmptyOrOnlyLeave;
+
+	public bool isFinal;
+
+	public bool isForCutscene;
+
+	public bool shuffleAnswers;
+
+	public bool isForPPT;
+
+	private FlowOutput emptyInteraction;
+
+	public override string name
+	{
+		get
+		{
+			foreach (FlowOutput outputFlowPort in GetOutputFlowPorts())
+			{
+				if (!(outputFlowPort.name == "Out") && !outputFlowPort.isConnected)
+				{
+					return base.name + "\n<color=#FF2020>!!!EMPTY OUT!!!</color>";
+				}
+			}
+			return base.name;
+		}
+		set
+		{
+			base.name = value;
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		FlowOutput flowOutput = AddFlowOutput("Out");
+		if (callInteractionPhrasePortIfEmptyOrOnlyLeave)
+		{
+			emptyInteraction = AddFlowOutput("Empty Interaction Port");
+		}
+		Action onEmptyOrOnlyLeave = null;
+		List<FlowOutput> outs = new List<FlowOutput>();
+		List<ValueInput<AnswerData>> ins = new List<ValueInput<AnswerData>>();
+		int num = -1;
+		SyncLists();
+		foreach (AnswerOption answerOption in answerOptions)
+		{
+			num++;
+			string text = answerOption.id;
+			StringBuilder stringBuilder = new StringBuilder("□□□");
+			if (false)
+			{
+				text = "<color=#4040FF>" + stringBuilder?.ToString() + "</color> " + text;
+			}
+			string iD = "out_" + num;
+			text = (answerOption.isLockedByDefault ? ("[Ô]" + text) : text);
+			outs.Add(AddFlowOutput(text, iD));
+			List<ValueInput<AnswerData>> list = ins;
+			int num2 = num;
+			list.Add(AddValueInput<AnswerData>("<color=#A08030>#" + num2 + "</color>"));
+		}
+		AddValueInput<WGO>("Talker");
+		AddFlowInput("In", delegate(Flow f)
+		{
+			if (callInteractionPhrasePortIfEmptyOrOnlyLeave)
+			{
+				onEmptyOrOnlyLeave = RandomPhrasePortCall;
+			}
+			List<AnswerVisualData> list2 = new List<AnswerVisualData>();
+			SyncLists();
+			for (int i = 0; i < answerOptions.Count; i++)
+			{
+				AnswerData answerData = null;
+				if (ins[i].isConnected)
+				{
+					answerData = ins[i].value;
+				}
+				list2.Add(new AnswerVisualData
+				{
+					answerData = answerData,
+					hiddenByDefault = answerOptions[i].isLockedByDefault,
+					id = answerOptions[i].id
+				});
+			}
+			if (shuffleAnswers)
+			{
+				list2.Shuffle();
+			}
+			Transform transform = PlayerController.Instance.BubbleNode.transform;
+			Bubble.ShowMultiAnswer(list2, transform, delegate(string chosen)
+			{
+				outs[answerOptions.FindIndex((AnswerOption x) => x.id == chosen)].Call(f);
+			}, delegate
+			{
+			}, forceCornerPosition, onEmptyOrOnlyLeave, !isFinal, isForCutscene, isForPPT);
+			flowOutput.Call(f);
+			void RandomPhrasePortCall()
+			{
+				emptyInteraction.Call(f);
+			}
+		});
+	}
+
+	private bool SyncLists()
+	{
+		return false;
+	}
+}

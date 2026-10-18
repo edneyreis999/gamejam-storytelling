@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Fighter", 0)]
+[Category("Game/Fight")]
+public class Flow_GetFigther : PC2CustomFlowNode
+{
+	private ValueInput<bool> isRight;
+
+	private ValueOutput<FightCharacterBehaviour> fighter;
+
+	public override string name
+	{
+		get
+		{
+			if (!isRight.value)
+			{
+				return "<color=#FFFF50>Get Left Fighter</color>";
+			}
+			return "<color=#FFFF50>Get Right Fighter</color>";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		isRight = AddValueInput<bool>("Is Right Fighter?");
+		isRight.SetDefaultAndSerializedValue(v: true);
+		fighter = AddValueOutput("Fighter", () => (!isRight.value) ? FightView.instance.FightBehaviour.firstFighter : FightView.instance.FightBehaviour.secondFighter);
+	}
+}

@@ -1,0 +1,351 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": 3192187742250041961,
+  "serialized_graph_sha256": "9264414f8ef7d1ba216993ff3cf354d5bceba36e8848dff6d290302f9f83faa5",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "Event_I-Aesop_Before_Fight",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"_position\":{\"x\":-947.246,\"y\":384.5016},\"$type\":\"FlowCanvas.Nodes.StartEvent\",\"$id\":\"0\"},{\"_position\":{\"x\":-571.9568,\"y\":552.2375},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_EnableFighterRenderTexture\",\"$id\":\"1\"},{\"identifier\":\"Aesop\",\"_UID\":\"1cfaf365-5715-4124-aebe-3ee4c0a8f190\",\"_position\":{\"x\":-248.0,\"y\":551.0},\"$type\":\"FlowCanvas.Nodes.RelayValueInput`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\",\"$id\":\"2\"},{\"_simplexNode\":{},\"_inputPortValues\":{\"time\":{\"$content\":0.3,\"$type\":\"System.Single\"}},\"_position\":{\"x\":-14.0,\"y\":552.0},\"$type\":\"FlowCanvas.Nodes.SimplexNodeWrapper`1[[FlowCanvas.Nodes.Wait, FlowCanvas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\",\"$id\":\"3\"},{\"_inputPortValues\":{\"text\":{\"$content\":\"i_aesop2_before_fight_1\",\"$type\":\"System.String\"}},\"_position\":{\"x\":276.6667,\"y\":548.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_Talk\",\"$id\":\"4\"},{\"_inputPortValues\":{\"text\":{\"$content\":\"i_aesop2_before_fight_2\",\"$type\":\"System.String\"}},\"_position\":{\"x\":535.6667,\"y\":548.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_Talk\",\"$id\":\"5\"},{\"_inputPortValues\":{\"text\":{\"$content\":\"i_aesop2_before_fight_3\",\"$type\":\"System.String\"}},\"_position\":{\"x\":834.6667,\"y\":546.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_Talk\",\"$id\":\"6\"},{\"_simplexNode\":{},\"_inputPortValues\":{\"time\":{\"$content\":0.3,\"$type\":\"System.Single\"}},\"_position\":{\"x\":1130.0,\"y\":547.0},\"$type\":\"FlowCanvas.Nodes.SimplexNodeWrapper`1[[FlowCanvas.Nodes.Wait, FlowCanvas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\",\"$id\":\"7\"},{\"_position\":{\"x\":1387.44,\"y\":548.5601},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"8\"},{\"_inputPortValues\":{\"ParamName\":{\"$content\":\"should_win_aesop\",\"$type\":\"System.String\"}},\"_position\":{\"x\":-829.3041,\"y\":551.4223},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj\",\"$id\":\"9\"},{\"_position\":{\"x\":-575.1838,\"y\":661.1287},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"10\"},{\"_inputPortValues\":{\"wgoId\":{\"$content\":\"aesop_bubble_node\",\"$type\":\"System.String\"}},\"_position\":{\"x\":-595.8391,\"y\":743.0745},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_FindWGO\",\"$id\":\"11\"},{\"_sourceInputUID\":\"1cfaf365-5715-4124-aebe-3ee4c0a8f190\",\"_position\":{\"x\":120.0,\"y\":720.0},\"$type\":\"FlowCanvas.Nodes.RelayValueOutput`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\",\"$id\":\"12\"}],\"connections\":[{\"_sourcePortName\":\"Once\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"Set\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\" \",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Done\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"On Finished\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"4\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"WGO\",\"_targetPortName\":\"WGO\",\"_sourceNode\":{\"$ref\":\"4\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"},{\"_sourcePortName\":\"On Finished\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"WGO\",\"_targetPortName\":\"WGO\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"},{\"_sourcePortName\":\"On Finished\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"6\"},\"_targetNode\":{\"$ref\":\"7\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Done\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"7\"},\"_targetNode\":{\"$ref\":\"8\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\">= 1\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"9\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"== 0\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"9\"},\"_targetNode\":{\"$ref\":\"10\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"WGO\",\"_targetPortName\":\"Value\",\"_sourceNode\":{\"$ref\":\"11\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"},{\"_sourcePortName\":\"Value\",\"_targetPortName\":\"WGO\",\"_sourceNode\":{\"$ref\":\"12\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": 1220.0,
+        "y": -240.0
+      },
+      "_zoomFactor": 1.0
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "_position": {
+          "x": -947.246,
+          "y": 384.5016
+        },
+        "$type": "FlowCanvas.Nodes.StartEvent",
+        "$id": "0"
+      },
+      {
+        "_position": {
+          "x": -571.9568,
+          "y": 552.2375
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_EnableFighterRenderTexture",
+        "$id": "1"
+      },
+      {
+        "identifier": "Aesop",
+        "_UID": "1cfaf365-5715-4124-aebe-3ee4c0a8f190",
+        "_position": {
+          "x": -248.0,
+          "y": 551.0
+        },
+        "$type": "FlowCanvas.Nodes.RelayValueInput`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "$id": "2"
+      },
+      {
+        "_simplexNode": {},
+        "_inputPortValues": {
+          "time": {
+            "$content": 0.3,
+            "$type": "System.Single"
+          }
+        },
+        "_position": {
+          "x": -14.0,
+          "y": 552.0
+        },
+        "$type": "FlowCanvas.Nodes.SimplexNodeWrapper`1[[FlowCanvas.Nodes.Wait, FlowCanvas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "$id": "3"
+      },
+      {
+        "_inputPortValues": {
+          "text": {
+            "$content": "i_aesop2_before_fight_1",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 276.6667,
+          "y": 548.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_Talk",
+        "$id": "4"
+      },
+      {
+        "_inputPortValues": {
+          "text": {
+            "$content": "i_aesop2_before_fight_2",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 535.6667,
+          "y": 548.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_Talk",
+        "$id": "5"
+      },
+      {
+        "_inputPortValues": {
+          "text": {
+            "$content": "i_aesop2_before_fight_3",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 834.6667,
+          "y": 546.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_Talk",
+        "$id": "6"
+      },
+      {
+        "_simplexNode": {},
+        "_inputPortValues": {
+          "time": {
+            "$content": 0.3,
+            "$type": "System.Single"
+          }
+        },
+        "_position": {
+          "x": 1130.0,
+          "y": 547.0
+        },
+        "$type": "FlowCanvas.Nodes.SimplexNodeWrapper`1[[FlowCanvas.Nodes.Wait, FlowCanvas, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "$id": "7"
+      },
+      {
+        "_position": {
+          "x": 1387.44,
+          "y": 548.5601
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "8"
+      },
+      {
+        "_inputPortValues": {
+          "ParamName": {
+            "$content": "should_win_aesop",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": -829.3041,
+          "y": 551.4223
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_CheckGameResOnObj",
+        "$id": "9"
+      },
+      {
+        "_position": {
+          "x": -575.1838,
+          "y": 661.1287
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "10"
+      },
+      {
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "aesop_bubble_node",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": -595.8391,
+          "y": 743.0745
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_FindWGO",
+        "$id": "11"
+      },
+      {
+        "_sourceInputUID": "1cfaf365-5715-4124-aebe-3ee4c0a8f190",
+        "_position": {
+          "x": 120.0,
+          "y": 720.0
+        },
+        "$type": "FlowCanvas.Nodes.RelayValueOutput`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "$id": "12"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Once",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "Set",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": " ",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Done",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "On Finished",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "4"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "WGO",
+        "_targetPortName": "WGO",
+        "_sourceNode": {
+          "$ref": "4"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      {
+        "_sourcePortName": "On Finished",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "WGO",
+        "_targetPortName": "WGO",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      {
+        "_sourcePortName": "On Finished",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "6"
+        },
+        "_targetNode": {
+          "$ref": "7"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Done",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "7"
+        },
+        "_targetNode": {
+          "$ref": "8"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": ">= 1",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "9"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "== 0",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "9"
+        },
+        "_targetNode": {
+          "$ref": "10"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "WGO",
+        "_targetPortName": "Value",
+        "_sourceNode": {
+          "$ref": "11"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      },
+      {
+        "_sourcePortName": "Value",
+        "_targetPortName": "WGO",
+        "_sourceNode": {
+          "$ref": "12"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection`1[[WGO, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {}
+    }
+  }
+}

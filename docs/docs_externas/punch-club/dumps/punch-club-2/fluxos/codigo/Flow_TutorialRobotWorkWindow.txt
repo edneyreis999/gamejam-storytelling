@@ -1,0 +1,100 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Tutorial Work Window", 0)]
+[Category("Game/Tutorial")]
+public class Flow_TutorialRobotWorkWindow : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool tutorialMask;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIRobotWorkWindow workWindow = GUIElements.Get<UIRobotWorkWindow>();
+			if (tutorialMask)
+			{
+				RectTransform tutorialRect = workWindow.TutorialRect;
+				if (isToShow.value)
+				{
+					GUIElements.Get<UITutorialWindow>().ShowMask(tutorialRect);
+				}
+				else
+				{
+					GUIElements.Get<UITutorialWindow>().HideMask(tutorialRect);
+				}
+			}
+			else
+			{
+				Button tutorialButton1 = workWindow.TutorialButton1;
+				Button tutorialButton2 = workWindow.TutorialButton2;
+				Button tutorialButton3 = workWindow.TutorialButton3;
+				workWindow.SortButtonTipsOverTutorialWindow();
+				workWindow.OnInputSourceChanged();
+				workWindow.LockPressBack = true;
+				workWindow.TutorialGamepadNavigation = true;
+				UIElementsCustomEventHandlerManager.AddEvent(tutorialButton1, UITutorialArrow.SignOrientationType.Right, delegate
+				{
+					UIElementsCustomEventHandlerManager.RemoveEvent(tutorialButton2);
+					UIElementsCustomEventHandlerManager.RemoveEvent(tutorialButton3);
+					GUIElements.Instance.isSelectorActive = false;
+					workWindow.ReturnDefaultButtonTipsSorting();
+					workWindow.LockPressBack = false;
+					workWindow.TutorialGamepadNavigation = false;
+					onClicked.Call(flow);
+					workWindow.OnInputSourceChanged();
+				});
+				workWindow.SortButtonTipsOverTutorialWindow();
+				workWindow.OnInputSourceChanged();
+				UIElementsCustomEventHandlerManager.AddEvent(tutorialButton2, UITutorialArrow.SignOrientationType.Right, delegate
+				{
+					UIElementsCustomEventHandlerManager.RemoveEvent(tutorialButton1);
+					UIElementsCustomEventHandlerManager.RemoveEvent(tutorialButton3);
+					GUIElements.Instance.isSelectorActive = false;
+					workWindow.TutorialGamepadNavigation = false;
+					workWindow.LockPressBack = false;
+					workWindow.ReturnDefaultButtonTipsSorting();
+					onClicked.Call(flow);
+					workWindow.OnInputSourceChanged();
+				});
+				workWindow.SortButtonTipsOverTutorialWindow();
+				workWindow.OnInputSourceChanged();
+				UIElementsCustomEventHandlerManager.AddEvent(tutorialButton3, UITutorialArrow.SignOrientationType.Right, delegate
+				{
+					UIElementsCustomEventHandlerManager.RemoveEvent(tutorialButton1);
+					UIElementsCustomEventHandlerManager.RemoveEvent(tutorialButton2);
+					GUIElements.Instance.isSelectorActive = false;
+					workWindow.TutorialGamepadNavigation = false;
+					workWindow.LockPressBack = false;
+					workWindow.ReturnDefaultButtonTipsSorting();
+					onClicked.Call(flow);
+					workWindow.OnInputSourceChanged();
+				});
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (tutorialMask)
+		{
+			isToShow = AddValueInput<bool>("isToShow");
+		}
+		else
+		{
+			onClicked = AddFlowOutput("onClicked");
+		}
+	}
+}

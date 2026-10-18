@@ -1,0 +1,30 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Unlock Perfocard Crafts", 0)]
+[Category("Game")]
+public class Flow_UnlockPerfocardCrafts : PC2CustomFlowNode
+{
+	public List<string> itemIds;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			foreach (string itemId in itemIds)
+			{
+				MainGame.me.gameSave.knowledgeSystem.UnlockItem(itemId, lockedForeverToo: false);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

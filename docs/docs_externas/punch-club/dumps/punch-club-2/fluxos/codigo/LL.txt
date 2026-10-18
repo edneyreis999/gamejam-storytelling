@@ -1,0 +1,89 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace LazyBearTechnology;
+
+public class LL : LLBase
+{
+	protected override Dictionary<string, LanguageInfo> GetAvailableLanguages()
+	{
+		return new Dictionary<string, LanguageInfo>
+		{
+			{
+				"en",
+				new LanguageInfo("en", "en-US", "English")
+			},
+			{
+				"de",
+				new LanguageInfo("de", "de-DE", "Deutsch")
+			},
+			{
+				"fr",
+				new LanguageInfo("fr", "fr-FR", "Français")
+			},
+			{
+				"pt-br",
+				new LanguageInfo("pt-br", "pt-BR", "Português do Brasil")
+			},
+			{
+				"es",
+				new LanguageInfo("es", "es-ES", "Español")
+			},
+			{
+				"uk-ua",
+				new LanguageInfo("uk-ua", "uk-UA", "Україньска")
+			},
+			{
+				"ru",
+				new LanguageInfo("ru", "ru-RU", "Русский")
+			},
+			{
+				"pl",
+				new LanguageInfo("pl", "pl-PL", "Polski")
+			},
+			{
+				"ja",
+				new LanguageInfo("ja", "ja-JP", "Japanese")
+			},
+			{
+				"zh_cn",
+				new LanguageInfo("zh_cn", "zh-CN", "Chinese")
+			},
+			{
+				"ko",
+				new LanguageInfo("ko", "ko-KR", "Korean")
+			}
+		};
+	}
+
+	protected override string GetLocaleCode()
+	{
+		switch (Application.systemLanguage)
+		{
+		case SystemLanguage.Belarusian:
+		case SystemLanguage.Russian:
+			return "ru";
+		case SystemLanguage.German:
+			return "de";
+		case SystemLanguage.Portuguese:
+			return "pt-br";
+		case SystemLanguage.French:
+			return "fr";
+		case SystemLanguage.Spanish:
+			return "es";
+		case SystemLanguage.Japanese:
+			return "ja";
+		case SystemLanguage.Chinese:
+		case SystemLanguage.ChineseSimplified:
+			return "zh_cn";
+		case SystemLanguage.Korean:
+			return "ko";
+		case SystemLanguage.Polish:
+			return "pl";
+		case SystemLanguage.Ukrainian:
+			return "uk-ua";
+		default:
+			return "en";
+		}
+	}
+}

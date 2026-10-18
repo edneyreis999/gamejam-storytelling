@@ -1,0 +1,60 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Add Event To Char Food", 0)]
+[Category("Game/Tutorial")]
+public class Flow_AddEventToCharFood : PC2CustomFlowNode
+{
+	public string id;
+
+	private FlowInput @in;
+
+	private FlowOutput onClicked;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UICharacterWindow characterWindow = GUIElements.Get<UICharacterWindow>();
+			UIItem foodItemById = characterWindow.GetFoodItemById(id);
+			GamepadNavigationItem item = foodItemById.GamepadNavigationItem;
+			characterWindow.LockPressBack = true;
+			characterWindow.TutorialGamepadNavigation = true;
+			characterWindow.CustomItems = new List<GamepadNavigationItem> { item };
+			characterWindow.SortButtonTipsOverTutorialWindow();
+			characterWindow.OnInputSourceChanged();
+			UIItem.CustomOnSelectEvent += OnSelect;
+			item.gameObject.AddComponent<Canvas>();
+			Canvas component = item.GetComponent<Canvas>();
+			item.gameObject.AddComponent<GraphicRaycaster>();
+			component.overrideSorting = true;
+			component.sortingOrder = 1000;
+			foodItemById.Over();
+			foodItemById.CursorChanger.RemoveState();
+			@out.Call(flow);
+			void OnSelect()
+			{
+				UIItem.CustomOnSelectEvent -= OnSelect;
+				Object.Destroy(item.gameObject.GetComponent<GraphicRaycaster>());
+				Object.Destroy(item.gameObject.GetComponent<Canvas>());
+				characterWindow.TutorialGamepadNavigation = false;
+				characterWindow.LockPressBack = false;
+				characterWindow.CustomItems = null;
+				characterWindow.ReturnDefaultButtonTipsSorting();
+				characterWindow.OnInputSourceChanged();
+				onClicked.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+}

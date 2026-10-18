@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using DG.Tweening;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("UI League Window Select Nearest GPP Fighter", 0)]
+[Category("Game/UI")]
+public class Flow_UILeagueWindowSelectNearestGPPFighter : PC2CustomFlowNode
+{
+	public bool isToShow;
+
+	public bool addEventToButton = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UILeagueWindow leagueWindow = GUIElements.Get<UILeagueWindow>();
+			UILadderLeagueFighter nearestGpp = leagueWindow.EloLeague.GetNearestGPPFighter();
+			UITutorialWindow tutorialWindow = GUIElements.Get<UITutorialWindow>();
+			if (isToShow)
+			{
+				leagueWindow.EloLeague.AutoscrollToUILadderLeagueFighter(nearestGpp, 0.5f, out var tween);
+				if (tween != null)
+				{
+					Tween tween2 = tween;
+					tween2.onComplete = (TweenCallback)Delegate.Combine(tween2.onComplete, (TweenCallback)delegate
+					{
+						tutorialWindow.ShowMask(nearestGpp.TutorialSelection);
+					});
+				}
+				else
+				{
+					tutorialWindow.ShowMask(nearestGpp.TutorialSelection);
+				}
+				if (addEventToButton)
+				{
+					if (tween != null)
+					{
+						Tween tween3 = tween;
+						tween3.onComplete = (TweenCallback)Delegate.Combine(tween3.onComplete, new TweenCallback(AddEvent));
+					}
+					else
+					{
+						AddEvent();
+					}
+				}
+				else
+				{
+					LazyTimer.AddTimer(2f, delegate
+					{
+						tutorialWindow.HideMask(nearestGpp.TutorialSelection);
+						nearestGpp.Button.onClick?.Invoke();
+					});
+				}
+			}
+			@out.Call(flow);
+			void AddEvent()
+			{
+				leagueWindow.EloLeague.FightersScrollRectTutorial.vertical = false;
+				GamepadNavigationItem component = nearestGpp.GetComponent<GamepadNavigationItem>();
+				leagueWindow.SortButtonTipsOverTutorialWindow();
+				leagueWindow.CustomItems = new List<GamepadNavigationItem> { component };
+				leagueWindow.OnInputSourceChanged();
+				UIElementsCustomEventHandlerManager.AddEvent(nearestGpp.Button, UITutorialArrow.SignOrientationType.Left, delegate
+				{
+					leagueWindow.CustomItems = new List<GamepadNavigationItem> { leagueWindow.emptyTutorialItem };
+					leagueWindow.ReturnDefaultButtonTipsSorting();
+					leagueWindow.OnInputSourceChanged();
+					onClicked.Call(flow);
+					leagueWindow.EloLeague.FightersScrollRectTutorial.vertical = true;
+					tutorialWindow.HideMask(nearestGpp.TutorialSelection);
+				});
+			}
+		});
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

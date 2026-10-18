@@ -1,0 +1,37 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Can Start Profession Action?", 0)]
+[Category("Game")]
+public class Flow_CanStartProfAction : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	private ValueInput<string> actionId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (ProfessionSystem.CanStartProfessionAction(actionId.value))
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+				UIInteractionTooltip.Hide(force: true);
+			}
+		});
+		actionId = AddValueInput<string>("actionId");
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+	}
+}

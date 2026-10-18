@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using LazyBearTechnology;
+using UnityEngine;
+
+[Serializable]
+public class QuestDefinition : BalanceBaseObject
+{
+	public string iconRevealed;
+
+	public string iconClosed;
+
+	public List<string> parents = new List<string>();
+
+	public List<string> overrodeConnectors = new List<string>();
+
+	public float coordX;
+
+	public float coordY;
+
+	public List<LazyExpression> closedLazyExpressions = new List<LazyExpression>();
+
+	public string zone;
+
+	[NonSerialized]
+	public List<QuestDefinition> childDefinitionList = new List<QuestDefinition>();
+
+	[NonSerialized]
+	public List<QuestDefinition> parentDefinitionList = new List<QuestDefinition>();
+
+	public QuestState State => MainGame.me.gameSave.knowledgeSystem.GetOrCreateQuest(id).state;
+
+	public static void LinkQuest()
+	{
+		foreach (QuestDefinition questDatum in GameBalance.Me.questData)
+		{
+			questDatum.InitParentsAndChildren();
+		}
+	}
+
+	private void InitParentsAndChildren()
+	{
+		foreach (string parent in parents)
+		{
+			if (string.IsNullOrEmpty(parent))
+			{
+				continue;
+			}
+			QuestDefinition data = GameBalance.Me.GetData<QuestDefinition>(parent);
+			if (data == null)
+			{
+				Debug.LogError("no quest definition with id: " + parent);
+				continue;
+			}
+			if (!data.childDefinitionList.Contains(this))
+			{
+				data.childDefinitionList.Add(this);
+			}
+			if (!parentDefinitionList.Contains(data))
+			{
+				parentDefinitionList.Add(data);
+			}
+		}
+	}
+}

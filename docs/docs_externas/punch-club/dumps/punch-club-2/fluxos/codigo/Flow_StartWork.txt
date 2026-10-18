@@ -1,0 +1,75 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Start Work", 0)]
+[Category("Game")]
+public class Flow_StartWork : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isWorkEnabled;
+
+	private Flow flow;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onWindowClosed;
+
+	private FlowOutput workUnavailable;
+
+	private ValueInput<string> workId;
+
+	public override string name
+	{
+		get
+		{
+			if (!isWorkEnabled)
+			{
+				return "Stop Work";
+			}
+			return "Start Work ";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			this.flow = flow;
+			if (isWorkEnabled)
+			{
+				if (!GUIElements.Get<UIWorkWindow>().TryOpen(workId.value))
+				{
+					workUnavailable.Call(flow);
+				}
+				else
+				{
+					UIWorkWindow.OnHide += OnWindowClosed;
+				}
+			}
+			else
+			{
+				GUIElements.Get<UIWorkWindow>().ForceStopWork();
+				GUIElements.Get<UIProfessionWindow>().ForceStopProfessionWork();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isWorkEnabled)
+		{
+			workId = AddValueInput<string>("workId".CapitalizeFirst());
+			onWindowClosed = AddFlowOutput("onWindowClosed".CapitalizeFirst());
+			workUnavailable = AddFlowOutput("workUnavailable".CapitalizeFirst());
+		}
+	}
+
+	private void OnWindowClosed()
+	{
+		onWindowClosed.Call(flow);
+		UIWorkWindow.OnHide -= OnWindowClosed;
+	}
+}

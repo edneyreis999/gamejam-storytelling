@@ -1,0 +1,104 @@
+using System.Collections.Generic;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Switch Hungry Pet Dialogue", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_SwitchHungryPetDialogue : Flow_SwitchPetBasePhrase
+{
+	private static List<PetPhraseData> phrasesHamborg = new List<PetPhraseData>
+	{
+		new PetPhraseData("hamborg_not_fed_1_1", activeByDefault: true),
+		new PetPhraseData("hamborg_not_fed_2_1", activeByDefault: true),
+		new PetPhraseData("hamborg_not_fed_3_1", activeByDefault: true),
+		new PetPhraseData("hamborg_not_fed_4_1", activeByDefault: true),
+		new PetPhraseData("hamborg_not_fed_5_1", activeByDefault: true),
+		new PetPhraseData("hamborg_not_fed_officer_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 0)),
+		new PetPhraseData("hamborg_not_fed_detective_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 1)),
+		new PetPhraseData("hamborg_not_fed_detective_2_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 1)),
+		new PetPhraseData("hamborg_not_fed_sergeant_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 2)),
+		new PetPhraseData("hamborg_not_fed_sergeant_2_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 2)),
+		new PetPhraseData("hamborg_not_fed_trainer_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 0)),
+		new PetPhraseData("hamborg_not_fed_sensei_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 1)),
+		new PetPhraseData("hamborg_not_fed_sensei_2_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 1)),
+		new PetPhraseData("hamborg_not_fed_master_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 2))
+	};
+
+	private static List<PetPhraseData> phrasesCat = new List<PetPhraseData>
+	{
+		new PetPhraseData("sly_not_fed_1_1", activeByDefault: true),
+		new PetPhraseData("sly_not_fed_2_1", activeByDefault: true),
+		new PetPhraseData("sly_not_fed_3_1", activeByDefault: true),
+		new PetPhraseData("sly_not_fed_4_1", activeByDefault: true),
+		new PetPhraseData("sly_not_fed_officer_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 0)),
+		new PetPhraseData("sly_not_fed_detective_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 1)),
+		new PetPhraseData("sly_not_fed_sergeant_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 2)),
+		new PetPhraseData("sly_not_fed_trainer_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 0)),
+		new PetPhraseData("sly_not_fed_sensei_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 1)),
+		new PetPhraseData("sly_not_fed_master_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 2))
+	};
+
+	private static List<PetPhraseData> phrasesDog = new List<PetPhraseData>
+	{
+		new PetPhraseData("riley_not_fed_1_1", activeByDefault: true),
+		new PetPhraseData("riley_not_fed_2_1", activeByDefault: true),
+		new PetPhraseData("riley_not_fed_3_1", activeByDefault: true),
+		new PetPhraseData("riley_not_fed_4_1", activeByDefault: true),
+		new PetPhraseData("riley_not_fed_officer_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 0)),
+		new PetPhraseData("riley_not_fed_detective_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 1)),
+		new PetPhraseData("riley_not_fed_sergeant_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 2)),
+		new PetPhraseData("riley_not_fed_trainer_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 0)),
+		new PetPhraseData("riley_not_fed_sensei_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 1)),
+		new PetPhraseData("riley_not_fed_master_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 2)),
+		new PetPhraseData("riley_not_fed_master_2_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 2))
+	};
+
+	private static List<PetPhraseData> phrasesCapy = new List<PetPhraseData>
+	{
+		new PetPhraseData("chuck_not_fed_1_1", activeByDefault: true),
+		new PetPhraseData("chuck_not_fed_2_1", activeByDefault: true),
+		new PetPhraseData("chuck_not_fed_3_1", activeByDefault: true),
+		new PetPhraseData("chuck_not_fed_4_1", activeByDefault: true),
+		new PetPhraseData("chuck_not_fed_officer_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 0)),
+		new PetPhraseData("chuck_not_fed_detective_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 1)),
+		new PetPhraseData("chuck_not_fed_sergeant_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("police_work", 2)),
+		new PetPhraseData("chuck_not_fed_any_cop_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfession("police_work")),
+		new PetPhraseData("chuck_not_fed_trainer_1_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 0)),
+		new PetPhraseData("chuck_not_fed_trainer_2_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 0)),
+		new PetPhraseData("chuck_not_fed_sensei_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 1)),
+		new PetPhraseData("chuck_not_fed_master_1", activeByDefault: true, () => MainGame.me.gameSave.professionSystem.HasProfessionAndRank("mick_gym", 2))
+	};
+
+	public override List<PetPhraseData> GetCurrentList()
+	{
+		List<PetPhraseData> result = new List<PetPhraseData>();
+		switch (petId)
+		{
+		case "npc_chuck":
+			result = phrasesCapy;
+			break;
+		case "npc_sly":
+			result = phrasesCat;
+			break;
+		case "npc_riley":
+			result = phrasesDog;
+			break;
+		case "npc_hamborg":
+			result = phrasesHamborg;
+			break;
+		}
+		return result;
+	}
+
+	public override List<string> GetCurrentRemainingList()
+	{
+		return MainGame.me.gameSave.knowledgeSystem.hungryPetPhrasesRemaining;
+	}
+
+	public override List<string> GetCurrentSaidList()
+	{
+		return MainGame.me.gameSave.knowledgeSystem.hungryPetPhrasesSaid;
+	}
+}

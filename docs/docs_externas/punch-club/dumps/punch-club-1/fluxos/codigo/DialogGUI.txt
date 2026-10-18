@@ -1,0 +1,268 @@
+using System.Collections.Generic;
+using LinqTools;
+using UnityEngine;
+
+public class DialogGUI : BaseGUI
+{
+	protected string dlg_name;
+
+	public GameObject item_prefab;
+
+	public UIScrollView scroll_view;
+
+	public UI2DSprite back_picture;
+
+	public UILabel button_label;
+
+	public UILabel description;
+
+	public UILabel header;
+
+	public UI2DSprite header_spr;
+
+	public UIGrid items_grid;
+
+	public CloseButton close_button;
+
+	public UIWidget one_item_size;
+
+	public FlexibleWidgetSize main_size_widget;
+
+	public SimpleButton action_label;
+
+	private const int ITEMS_X = -179;
+
+	private const int ITEMS_Y = -69;
+
+	private const int ITEMS_X_PADDING = 179;
+
+	private const int ITEMS_Y_PADDING = 72;
+
+	protected List<DialogItemGUI> items = new List<DialogItemGUI>();
+
+	protected List<ObjectData> objects;
+
+	protected int selected_item_n;
+
+	public ObjectDialogData dlg;
+
+	public void Start()
+	{
+		item_prefab.SetActive(value: false);
+	}
+
+	public void ShowDialog(string dialog_name)
+	{
+		if (!MainGame.me.gui_elements.end_of_a_day.IsShown())
+		{
+			close_button.gameObject.SetActive(MainGame.save.ch.char_res.GetInt("q_tutorial_4") > 0);
+			Debug.Log("ShowDialog " + dialog_name);
+			if (MainGame.me.IsTutorialCompleted())
+			{
+				MainGame.me.gui_elements.hud_left.Slide(show: false);
+			}
+			switch (dialog_name)
+			{
+			case "fridge":
+			case "pechka":
+			case "comf_fridge":
+				Sound.Play(Sound.SoundID.Fridge);
+				break;
+			}
+			dlg_name = dialog_name;
+			dlg = GameBalance.me.GetData<ObjectDialogData>(dialog_name);
+			objects = GameBalance.me.GetDialogObjects(dialog_name);
+			header_spr.sprite2D = EasySpritesCollection.GetSprite("hdr_" + dialog_name);
+			if (dlg.dialog_type == ObjectDialogData.Types.Buy)
+			{
+				RemoveAlreadyHaveFromShopObjects();
+			}
+			selected_item_n = 0;
+			Redraw();
+			Open();
+			button_label.text = ((dlg.dialog_type != ObjectDialogData.Types.Use) ? GJL.L("Buy") : GJL.L("Use"));
+			action_label.SetText(button_label.text + " (Action1)");
+			header.text = GJL.L("dlg_hdr_" + dialog_name);
+			description.text = GJL.L("dlg_dsc_" + dialog_name);
+		}
+	}
+
+	private void RemoveAbsentItems()
+	{
+		objects.RemoveList(objects.Where((ObjectData o) => MainGame.save.ch.inventory.GetAmount(o.id) == 0).ToList());
+	}
+
+	protected void RemoveAlreadyHaveFromShopObjects()
+	{
+		if (dlg.dialog_type == ObjectDialogData.Types.Buy)
+		{
+			Debug.Log("RemoveAlreadyHaveFromShopObjects");
+			objects.RemoveList(objects.Where((ObjectData o) => MainGame.save.ch.inventory.GetAmount(o.id) > 0).ToList());
+		}
+	}
+
+	protected void RemoveAllItems()
+	{
+		foreach (DialogItemGUI item in items)
+		{
+			Object.Destroy(item.gameObject);
+			Object.Destroy(item);
+		}
+		items.Clear();
+	}
+
+	public override void OnStartGameInit()
+	{
+		base.OnStartGameInit();
+		OnResolutionChanged();
+	}
+
+	public override void OnResolutionChanged()
+	{
+		base.OnResolutionChanged();
+		item_prefab.GetComponent<FlexibleWidgetSize>().need_recalculate = true;
+		items_grid.GetComponent<FlexibleWidgetSize>().need_recalculate = true;
+	}
+
+	protected void Redraw()
+	{
+		if (dlg.dialog_type == ObjectDialogData.Types.Use)
+		{
+			RemoveAbsentItems();
+		}
+		RemoveAllItems();
+		if (selected_item_n > objects.Count)
+		{
+			selected_item_n = objects.Count - 1;
+		}
+		while (items_grid.GetChildList().Count > 0)
+		{
+			NGUITools.Destroy(items_grid.GetChild(0));
+		}
+		int num = 0;
+		GJTimer.AddTimer(0.001f, delegate
+		{
+			items_grid.GetComponent<FlexibleWidgetSize>().need_recalculate = true;
+		});
+		foreach (ObjectData @object in objects)
+		{
+			num++;
+			GameObject gameObject = Object.Instantiate(item_prefab);
+			gameObject.SetActive(value: true);
+			gameObject.transform.parent = items_grid.transform;
+			gameObject.transform.localScale = Vector3.one;
+			gameObject.GetComponent<FlexibleWidgetSize>().DoInit();
+			gameObject.GetComponent<FlexibleWidgetSize>().need_recalculate = true;
+			DialogItemGUI component = gameObject.GetComponent<DialogItemGUI>();
+			items.Add(component);
+			int price_n = 0;
+			string price;
+			if (dlg.dialog_type == ObjectDialogData.Types.Use)
+			{
+				price = MainGame.save.ch.inventory.GetAmount(@object.id) + string.Empty;
+			}
+			else
+			{
+				price_n = (int)@object.buy_res.GetDependRes(MainGame.save.ch).Get(GameRes.ResType._money);
+				price = "$" + price_n;
+			}
+			component.FillItem(@object, price, dlg.dialog_type, button_active: true, () => MainGame.save.ch.char_res.Get(GameRes.ResType._money) >= (float)price_n);
+		}
+		items_grid.Reposition();
+		if ((bool)MainMenuGamepadController.current_dialog)
+		{
+			MainMenuGamepadController.current_dialog.Refresh();
+		}
+	}
+
+	public void OnItemPressed(ObjectData obj, DialogItemGUI item)
+	{
+		int id = obj.id;
+		if (dlg.dialog_type == ObjectDialogData.Types.Use)
+		{
+			if (MainGame.save.ch.inventory.GetAmount(id) != 0)
+			{
+				MainGame.save.ch.inventory.RemoveFromInventory(id);
+				Redraw();
+				MainGame.save.ch.char_gfx.DoImmidiateSimpleAction(GameBalance.me.GetData<ObjectData>(id).object_actions[0]);
+				MainGame.me.quest_system.CheckKeyQuests(dlg_name + "_use");
+				MainGame.me.gui_elements.RedrawHUD();
+			}
+			return;
+		}
+		GameRes dependRes = obj.buy_res.GetDependRes(MainGame.save.ch);
+		Debug.Log(string.Concat(MainGame.save.ch.char_res, " : ", dependRes, " name = ", obj.name));
+		if (dlg.dialog_type == ObjectDialogData.Types.BuyMulti && MainGame.save.ch.inventory.GetAmount(id) >= 7)
+		{
+			MainGame.me.gui_elements.simple_dialog.Open(GJL.L("fridge_max_capacity_hdr"), GJL.L("fridge_max_capacity"), "(Action1)" + GJL.L("OK"));
+			return;
+		}
+		if (MainGame.save.ch.char_res >= dependRes)
+		{
+			MainGame.save.ch.SubCharRes(dependRes);
+			if (dlg.dialog_type == ObjectDialogData.Types.BuyAndUse)
+			{
+				MainGame.save.ch.char_gfx.DoImmidiateSimpleAction(GameBalance.me.GetData<ObjectData>(id).object_actions[0]);
+				MainGame.me.quest_system.CheckKeyQuests(dlg_name + "_use");
+			}
+			else
+			{
+				MainGame.save.ch.AddToInventory(id);
+				Sound.Play(Sound.SoundID.Eat);
+			}
+			MainGame.me.gui_elements.RedrawHUD();
+			SceneRoot.me.UpdateInventoryVisibility();
+			if (dlg.dialog_type == ObjectDialogData.Types.BuyMulti)
+			{
+				GameObject gameObject = Object.Instantiate(item.buy_animator.gameObject);
+				gameObject.transform.parent = item.buy_animator.transform.parent;
+				gameObject.transform.localPosition = item.buy_animator.transform.localPosition;
+				gameObject.transform.localScale = item.buy_animator.transform.localScale;
+				gameObject.GetComponent<Animator>().SetTrigger("buy");
+				GJTimer.AddTimer(0.35f, item.Redraw);
+			}
+			else
+			{
+				RemoveAlreadyHaveFromShopObjects();
+				Redraw();
+			}
+		}
+		if (dlg.dialog_type != ObjectDialogData.Types.BuyMulti)
+		{
+			Redraw();
+		}
+	}
+
+	public void OnClosePressed()
+	{
+		Hide();
+		RemoveAllItems();
+		ObjectDialogData.Types dialog_type = dlg.dialog_type;
+		if (dialog_type == ObjectDialogData.Types.Buy || dialog_type == ObjectDialogData.Types.BuyMulti)
+		{
+			MainGame.me.quest_system.CheckKeyQuests("shop_dlg_close");
+		}
+	}
+
+	public override void Hide()
+	{
+		base.Hide();
+		if (MainGame.me.IsTutorialCompleted())
+		{
+			MainGame.me.gui_elements.hud_left.Slide(show: true);
+		}
+	}
+
+	protected override bool IsAppearAnimationUsed()
+	{
+		return !VHSConst.IS_PHONE;
+	}
+
+	protected override void OnBackColliderClicked()
+	{
+		if (!VHSConst.IS_PHONE)
+		{
+			base.OnBackColliderClicked();
+		}
+	}
+}

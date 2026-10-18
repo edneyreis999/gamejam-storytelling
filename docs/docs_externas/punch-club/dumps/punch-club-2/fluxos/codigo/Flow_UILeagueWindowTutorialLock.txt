@@ -1,0 +1,48 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("League Window Tutorial Lock", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UILeagueWindowTutorialLock : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public bool isToDisable;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UILeagueWindow uILeagueWindow = GUIElements.Get<UILeagueWindow>();
+			if (!isToDisable)
+			{
+				uILeagueWindow.TutorialGamepadNavigation = true;
+				uILeagueWindow.CustomItems = new List<GamepadNavigationItem> { uILeagueWindow.emptyTutorialItem };
+				uILeagueWindow.LockPressBack = true;
+				uILeagueWindow.LockCompare = true;
+				uILeagueWindow.CustomLockPressBack = true;
+				uILeagueWindow.LockSwitchTab = true;
+				uILeagueWindow.OnInputSourceChanged();
+			}
+			else
+			{
+				uILeagueWindow.TutorialGamepadNavigation = false;
+				uILeagueWindow.CustomItems = null;
+				uILeagueWindow.LockPressBack = false;
+				uILeagueWindow.LockCompare = false;
+				uILeagueWindow.CustomLockPressBack = false;
+				uILeagueWindow.LockSwitchTab = false;
+				uILeagueWindow.OnInputSourceChanged();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

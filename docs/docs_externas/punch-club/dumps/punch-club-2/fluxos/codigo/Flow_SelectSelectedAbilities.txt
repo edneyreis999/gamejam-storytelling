@@ -1,0 +1,43 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Select Selected Abilities", 0)]
+[Category("Game/Tutorial")]
+public class Flow_SelectSelectedAbilities : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isPerfocardSelect;
+
+	[GatherPortsCallback]
+	public bool isToShow;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name => (isToShow ? "Select" : "Deselect") + " Selected " + (isPerfocardSelect ? "Perfocards" : "Abilities");
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform rectTransform = (isPerfocardSelect ? GUIElements.Get<UISelectPerfocardWindow>().ScrollTutorialRectTransform : GUIElements.Get<UISelectAbilityWindow>().ScrollTutorialRectTransform);
+			if (isToShow)
+			{
+				rectTransform.gameObject.SetActive(value: true);
+				GUIElements.Get<UITutorialWindow>().ShowMask(rectTransform);
+			}
+			else
+			{
+				rectTransform.gameObject.SetActive(value: false);
+				GUIElements.Get<UITutorialWindow>().HideMask(rectTransform);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Set Move Enabled", "Set global interaction mode")]
+public class uScriptAct_SetMoveEnabled : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Enabled", "")] bool enabled)
+	{
+		MainGame.moving_enabled = enabled;
+	}
+}

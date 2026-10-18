@@ -1,0 +1,79 @@
+using System;
+using DG.Tweening;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("GoTo With Acceleration WGO Direct", 0)]
+[Category("Game")]
+public class Flow_GoToWithAcceleration : PC2CustomFlowNode
+{
+	private int ANIM_STATE_ID = Animator.StringToHash("MovementState");
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueInput<float> speed;
+
+	private ValueOutput<WGO> outWGO;
+
+	private ValueInput<Transform> destination;
+
+	public MovementComponent.State movementState = MovementComponent.State.Moving;
+
+	private WGO innerWGO;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), GoTo);
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		wgo = AddValueInput<WGO>("WGO");
+		outWGO = AddValueOutput("WGO", () => innerWGO);
+		destination = AddValueInput<Transform>("destination");
+		speed = AddValueInput<float>("speed".CapitalizeFirst());
+		speed.SetDefaultAndSerializedValue(77f);
+	}
+
+	private void GoTo(Flow flow)
+	{
+		innerWGO = WGOParamOrSelf(wgo);
+		Vector3 vector = innerWGO.transform.position;
+		Transform value = destination.value;
+		if (value != null)
+		{
+			Vector3 endValue = value.position;
+			endValue.z = vector.z;
+			float num = (float)Math.Sqrt(Math.Pow(endValue.x - vector.x, 2.0) + Math.Pow(endValue.y - vector.y, 2.0));
+			float num2 = num / speed.value;
+			float num3 = num / 1000f * num2;
+			if (innerWGO != null)
+			{
+				innerWGO.transform.DOKill();
+				innerWGO.Animator.SetInteger(ANIM_STATE_ID, Convert.ToInt32(MovementComponent.State.Moving));
+				innerWGO.transform.DOMove(endValue, num2 - num3).SetEase(Ease.InOutSine).OnComplete(delegate
+				{
+					onFinished.Call(flow);
+					innerWGO.Animator.SetInteger(ANIM_STATE_ID, Convert.ToInt32(MovementComponent.State.Idle));
+				});
+			}
+			else
+			{
+				Debug.LogError("WGO is null");
+			}
+		}
+		else
+		{
+			Debug.LogError("Destination transform is null");
+		}
+		@out.Call(flow);
+	}
+}

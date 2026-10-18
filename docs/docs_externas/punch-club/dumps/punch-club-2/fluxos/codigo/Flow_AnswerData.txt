@@ -1,0 +1,55 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Answer Data", 0)]
+[Category("Game/Dialogue")]
+public class Flow_AnswerData : PC2CustomFlowNode
+{
+	private ValueInput<SmartRes> @lock;
+
+	private ValueInput<SmartRes> price;
+
+	private ValueInput<SmartRes> reward;
+
+	private ValueInput<LeagueHackData> hack;
+
+	private ValueInput<bool> isDeadLockPhrase;
+
+	private ValueInput<bool> notShowItemNotice;
+
+	private ValueInput<bool> useRewardItem;
+
+	private ValueInput<bool> notShowAnswer;
+
+	private ValueInput<bool> customAnswerLock;
+
+	private ValueOutput<AnswerData> answerData;
+
+	protected override void RegisterPorts()
+	{
+		@lock = AddValueInput<SmartRes>("lock".CapitalizeFirst());
+		price = AddValueInput<SmartRes>("price".CapitalizeFirst());
+		reward = AddValueInput<SmartRes>("reward".CapitalizeFirst());
+		hack = AddValueInput<LeagueHackData>("hack".CapitalizeFirst());
+		isDeadLockPhrase = AddValueInput<bool>("isDeadLockPhrase".CapitalizeFirst());
+		notShowItemNotice = AddValueInput<bool>("notShowItemNotice".CapitalizeFirst());
+		useRewardItem = AddValueInput<bool>("useRewardItem".CapitalizeFirst());
+		notShowAnswer = AddValueInput<bool>("notShowAnswer".CapitalizeFirst());
+		customAnswerLock = AddValueInput<bool>("customAnswerLock".CapitalizeFirst());
+		answerData = AddValueOutput("answerData".CapitalizeFirst(), () => new AnswerData
+		{
+			lockRes = @lock.value,
+			priceRes = price.value,
+			rewardRes = reward.value,
+			hackData = hack.value,
+			isDeadlockPhrase = isDeadLockPhrase.value,
+			notShowItemNotice = notShowItemNotice.value,
+			useRewardItem = useRewardItem.value,
+			notShowAnswer = notShowAnswer.value,
+			customAnswerLock = customAnswerLock.value
+		});
+	}
+}

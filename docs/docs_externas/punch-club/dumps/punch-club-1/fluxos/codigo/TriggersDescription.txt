@@ -1,0 +1,63 @@
+using System;
+using System.Globalization;
+using UnityEngine;
+
+[Serializable]
+public class TriggersDescription
+{
+	public string lua_script;
+
+	[NonSerialized]
+	public bool is_loaded;
+
+	private GameScript script = new GameScript();
+
+	private bool _only_numbers;
+
+	private float _parsed_v;
+
+	public bool inited => script != null;
+
+	public TriggersDescription(string lua_str)
+	{
+		lua_script = lua_str;
+	}
+
+	public static string CheckLua(string lua_str)
+	{
+		return lua_str;
+	}
+
+	public bool GetTriggerState()
+	{
+		return UnityEngine.Random.Range(0f, 1f) <= GetValue();
+	}
+
+	public float GetValue()
+	{
+		if (script == null)
+		{
+			OnLoaded();
+		}
+		if (_only_numbers)
+		{
+			return _parsed_v;
+		}
+		return script.ExecuteExpression();
+	}
+
+	public void OnLoaded()
+	{
+		_only_numbers = GJCommons.IsStringOnlyNumbers(ref lua_script);
+		script = new GameScript();
+		if (!_only_numbers)
+		{
+			script.FromLuaExpression(lua_script);
+		}
+		else
+		{
+			_parsed_v = float.Parse(lua_script, CultureInfo.InvariantCulture);
+		}
+		is_loaded = true;
+	}
+}

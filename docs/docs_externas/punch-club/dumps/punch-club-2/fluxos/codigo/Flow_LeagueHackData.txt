@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("League Hack Data", 0)]
+[Category("Game")]
+public class Flow_LeagueHackData : PC2CustomFlowNode
+{
+	private ValueInput<SmartRes> resForHack;
+
+	private ValueInput<SmartRes> resAfterWin;
+
+	private ValueInput<SmartRes> resAfterLose;
+
+	private ValueInput<string> hackReadyLocale;
+
+	private ValueInput<string> hackNotReadyLocale;
+
+	private ValueOutput<LeagueHackData> hack;
+
+	protected override void RegisterPorts()
+	{
+		resForHack = AddValueInput<SmartRes>("resForHack".CapitalizeFirst());
+		resAfterWin = AddValueInput<SmartRes>("resAfterWin".CapitalizeFirst());
+		resAfterLose = AddValueInput<SmartRes>("resAfterLose".CapitalizeFirst());
+		hackReadyLocale = AddValueInput<string>("hackReadyLocale");
+		hackNotReadyLocale = AddValueInput<string>("hackNotReadyLocale");
+		hack = AddValueOutput("hack", () => new LeagueHackData
+		{
+			resForHack = resForHack.value,
+			resAfterWin = resAfterWin.value,
+			resAfterLose = resAfterLose.value,
+			hackReadyLocale = hackReadyLocale.value,
+			hackNotReadyLocale = hackNotReadyLocale.value
+		});
+	}
+}

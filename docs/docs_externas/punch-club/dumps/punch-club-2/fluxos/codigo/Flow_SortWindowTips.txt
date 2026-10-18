@@ -1,0 +1,49 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Sort Window Tips", 0)]
+[Category("Game/Tutorial")]
+public class Flow_SortWindowTips : PC2CustomFlowNode
+{
+	public bool isToDefault;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> windowName;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToDefault)
+			{
+				return "Sort Window Tips Over Tutorial";
+			}
+			return "Sort Window Tips To Default";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			BaseGUI byName = GUIElements.GetByName<BaseGUI>(windowName.value);
+			if (isToDefault)
+			{
+				byName.ReturnDefaultButtonTipsSorting();
+			}
+			else
+			{
+				byName.SortButtonTipsOverTutorialWindow();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		windowName = AddValueInput<string>("windowName");
+	}
+}

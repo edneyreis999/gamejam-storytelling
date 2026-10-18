@@ -1,0 +1,33 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Robot Training\nGet Assistant Bubble Positions", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIRobotTrainingGetAssistantBubblePosition : PC2CustomFlowNode
+{
+	public bool isRobotLeagueWindow;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueOutput<RectTransform> point;
+
+	private RectTransform rectPoint;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIRobotTrainingWindow uIRobotTrainingWindow = GUIElements.Get<UIRobotTrainingWindow>();
+			rectPoint = uIRobotTrainingWindow.TutorialAssistantPos;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		point = AddValueOutput("point", () => rectPoint);
+	}
+}

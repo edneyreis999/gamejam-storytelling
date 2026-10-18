@@ -1,0 +1,15 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+[Name("Get Prepare Fight New School Assistant Point", 0)]
+[Category("Game/UI")]
+public class Flow_GetPrepareFightNewSchoolAssistantPosition : PC2CustomFlowNode
+{
+	private ValueOutput<RectTransform> point;
+
+	protected override void RegisterPorts()
+	{
+		point = AddValueOutput("point", () => GUIElements.Get<UIPrepareFightWindow>().AssistantPositionNewSchool);
+	}
+}

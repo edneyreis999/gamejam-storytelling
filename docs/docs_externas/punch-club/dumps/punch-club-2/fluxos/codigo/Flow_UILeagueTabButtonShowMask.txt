@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI League Tab Button\nShow Mask", 0)]
+public class Flow_UILeagueTabButtonShowMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI League Tab Button\n" + (isToShow.value ? "Show" : "Hide") + " Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform fightsTabTutorialRect = GUIElements.Get<UILeagueWindow>().EloLeague.Header.FightsTabTutorialRect;
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(fightsTabTutorialRect);
+				LayoutRebuilder.ForceRebuildLayoutImmediate(fightsTabTutorialRect);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(fightsTabTutorialRect);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

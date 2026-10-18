@@ -1,0 +1,40 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Challenge Window Tutorial Lock", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIChallengeTutorialMode : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public bool isToDisable;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIFightChallengeWindow uIFightChallengeWindow = GUIElements.Get<UIFightChallengeWindow>();
+			if (!isToDisable)
+			{
+				uIFightChallengeWindow.CustomItems = new List<GamepadNavigationItem> { uIFightChallengeWindow.emptyTutorialItem };
+				uIFightChallengeWindow.LockPressBack = true;
+				uIFightChallengeWindow.OnInputSourceChanged();
+			}
+			else
+			{
+				uIFightChallengeWindow.CustomItems = null;
+				uIFightChallengeWindow.LockPressBack = false;
+				uIFightChallengeWindow.OnInputSourceChanged();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

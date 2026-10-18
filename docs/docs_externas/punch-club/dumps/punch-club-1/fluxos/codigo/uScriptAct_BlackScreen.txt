@@ -1,0 +1,29 @@
+using System;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Black Screen", "")]
+public class uScriptAct_BlackScreen : uScriptLogic
+{
+	public event uScript_GameObject.uScriptEventHandler Out;
+
+	public event uScript_GameObject.uScriptEventHandler MaxDark;
+
+	public void In([FriendlyName("Text", "")] string txt)
+	{
+		MainGame.me.gui_elements.black_screen.ShowText(GJL.L(txt), delegate
+		{
+			if (this.Out != null)
+			{
+				this.Out(this, new EventArgs());
+			}
+		}, delegate
+		{
+			if (this.MaxDark != null)
+			{
+				this.MaxDark(this, new EventArgs());
+			}
+		});
+	}
+}

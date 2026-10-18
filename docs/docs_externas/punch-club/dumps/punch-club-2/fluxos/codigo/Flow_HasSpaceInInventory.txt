@@ -1,0 +1,24 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Has Space In Inventory", 0)]
+[Category("Game")]
+public class Flow_HasSpaceInInventory : PC2CustomFlowNode
+{
+	private ValueInput<string> inventory;
+
+	private ValueOutput<bool> valueOutput;
+
+	protected override void RegisterPorts()
+	{
+		inventory = AddValueInput<string>("inventory");
+		valueOutput = AddValueOutput("valueOutput", () => Check());
+	}
+
+	private bool Check()
+	{
+		return !InventoryUtils.IsInventoryFull(inventory.value);
+	}
+}

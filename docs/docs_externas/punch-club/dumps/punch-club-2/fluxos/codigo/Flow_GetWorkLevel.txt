@@ -1,0 +1,20 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Work Level", 0)]
+[Category("Game/Work")]
+public class Flow_GetWorkLevel : PC2CustomFlowNode
+{
+	private ValueInput<string> workId;
+
+	private ValueOutput<int> workLvl;
+
+	protected override void RegisterPorts()
+	{
+		workId = AddValueInput<string>("workId");
+		workLvl = AddValueOutput("workLvl".CapitalizeFirst(), () => MainGame.me.PlayerRes.GetInt(workId.value + "_lvl"));
+	}
+}

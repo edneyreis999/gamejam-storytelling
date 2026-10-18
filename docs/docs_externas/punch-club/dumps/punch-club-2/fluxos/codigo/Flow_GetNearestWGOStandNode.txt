@@ -1,0 +1,29 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Nearest Stand Node", 0)]
+[Category("Game/StandNode")]
+public class Flow_GetNearestWGOStandNode : PC2CustomFlowNode
+{
+	private new ValueInput<WGO> wgo;
+
+	private ValueOutput<StandNode> standNode;
+
+	protected override void RegisterPorts()
+	{
+		wgo = AddValueInput<WGO>("wgo".CapitalizeFirst());
+		standNode = AddValueOutput("standNode".CapitalizeFirst(), delegate
+		{
+			if (wgo.value == null)
+			{
+				Debug.LogError("WGO is null!!!");
+				return (StandNode)null;
+			}
+			return wgo.value.StandNode;
+		});
+	}
+}

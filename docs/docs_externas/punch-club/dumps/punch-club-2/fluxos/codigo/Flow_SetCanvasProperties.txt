@@ -1,0 +1,33 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("Set Canvas Properties", 0)]
+[Category("Game/UI")]
+public class Flow_SetCanvasProperties : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<Canvas> canvas;
+
+	private ValueInput<int> sortingOrder;
+
+	public override string name => base.name + ((!canvas.isConnected) ? "\n<color=red>Canvas isn't set</color>" : "");
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			canvas.value.sortingOrder = sortingOrder.value;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		canvas = AddValueInput<Canvas>("canvas");
+		sortingOrder = AddValueInput<int>("sortingOrder");
+	}
+}

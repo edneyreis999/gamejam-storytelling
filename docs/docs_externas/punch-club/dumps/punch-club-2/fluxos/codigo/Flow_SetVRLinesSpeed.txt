@@ -1,0 +1,60 @@
+using System;
+using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("VR Lines", 0)]
+[Category("Game")]
+public class Flow_SetVRLinesSpeed : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isTween;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<float> multiplier;
+
+	private ValueInput<float> duration;
+
+	private FlowOutput onFinished;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			WGO wGO = DynamicScene.FindWGO("vr_animator");
+			VRAnimator animator = wGO.GetComponent<VRAnimator>();
+			if (isTween)
+			{
+				TweenerCore<float, float, FloatOptions> tweenerCore = DOTween.To(() => animator.multiplier, delegate(float x)
+				{
+					animator.multiplier = x;
+				}, multiplier.value, duration.value);
+				tweenerCore.onComplete = (TweenCallback)Delegate.Combine(tweenerCore.onComplete, (TweenCallback)delegate
+				{
+					onFinished.Call(flow);
+				});
+				((Tween)tweenerCore).SetEase(Ease.Linear);
+			}
+			else
+			{
+				animator.multiplier = multiplier.value;
+			}
+			@out.Call(flow);
+		});
+		multiplier = AddValueInput<float>("multiplier".CapitalizeFirst());
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (isTween)
+		{
+			onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+			duration = AddValueInput<float>("duration".CapitalizeFirst());
+		}
+	}
+}

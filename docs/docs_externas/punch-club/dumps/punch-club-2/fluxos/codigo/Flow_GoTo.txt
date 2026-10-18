@@ -1,0 +1,205 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("GoTo", 0)]
+[Category("Game")]
+public class Flow_GoTo : PC2CustomFlowNode
+{
+	public enum WalkerType
+	{
+		Player,
+		WGO,
+		GMO
+	}
+
+	public bool ignoreUninterruptedAction;
+
+	[GatherPortsCallback]
+	public WalkerType walkerType;
+
+	[GatherPortsCallback]
+	public MovementComponent.MovementType walkType = MovementComponent.MovementType.AStar;
+
+	public MovementComponent.State movementState = MovementComponent.State.Moving;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueInput<GameMapObject> gmo;
+
+	private ValueInput<float> speed;
+
+	private ValueOutput<WGO> outWGO;
+
+	private ValueOutput<GameMapObject> outGMO;
+
+	private ValueInput<Transform> destination;
+
+	private ValueInput<WalkNode> walkNode;
+
+	private WGO innerWGO;
+
+	private GameMapObject innerGMO;
+
+	public override string name => $"{base.name} {walkerType} {walkType}";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), GoTo);
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		switch (walkerType)
+		{
+		case WalkerType.Player:
+			switch (walkType)
+			{
+			case MovementComponent.MovementType.AStar:
+			case MovementComponent.MovementType.Direct:
+				destination = AddValueInput<Transform>("destination");
+				break;
+			case MovementComponent.MovementType.SceneGraph:
+				walkNode = AddValueInput<WalkNode>("walkNode");
+				break;
+			}
+			speed = AddValueInput<float>("speed".CapitalizeFirst());
+			speed.SetDefaultAndSerializedValue(69f);
+			break;
+		case WalkerType.WGO:
+			wgo = AddValueInput<WGO>("WGO");
+			outWGO = AddValueOutput("WGO", () => innerWGO);
+			switch (walkType)
+			{
+			case MovementComponent.MovementType.AStar:
+			case MovementComponent.MovementType.Direct:
+				destination = AddValueInput<Transform>("destination");
+				break;
+			case MovementComponent.MovementType.SceneGraph:
+				walkNode = AddValueInput<WalkNode>("walkNode");
+				break;
+			}
+			speed = AddValueInput<float>("speed".CapitalizeFirst());
+			speed.SetDefaultAndSerializedValue(77f);
+			break;
+		case WalkerType.GMO:
+			gmo = AddValueInput<GameMapObject>("GMO");
+			outGMO = AddValueOutput("GMO", () => innerGMO);
+			break;
+		}
+	}
+
+	private void GoTo(Flow flow)
+	{
+		Transform transform = null;
+		WalkNode walkNode = null;
+		switch (walkerType)
+		{
+		case WalkerType.Player:
+			switch (walkType)
+			{
+			case MovementComponent.MovementType.AStar:
+			case MovementComponent.MovementType.Direct:
+				transform = destination.value;
+				if (transform != null)
+				{
+					PlayerController.Instance.MovePlayerTo(transform.position, walkType, delegate
+					{
+						onFinished.Call(flow);
+					}, speed.value, null, movementState, ignoreUninterruptedAction, stopAction: false);
+				}
+				else
+				{
+					Debug.LogError("Destination transform is null");
+				}
+				break;
+			case MovementComponent.MovementType.SceneGraph:
+				walkNode = this.walkNode.value;
+				if (walkNode != null)
+				{
+					PlayerController.Instance.MovePlayerTo(walkNode.transform.position, walkType, delegate
+					{
+						onFinished.Call(flow);
+					}, speed.value, null, movementState, ignoreUninterruptedAction);
+				}
+				else
+				{
+					Debug.LogError($"Tried to send {walkerType}, WalkNode is null");
+				}
+				break;
+			}
+			break;
+		case WalkerType.WGO:
+			innerWGO = WGOParamOrSelf(wgo);
+			switch (walkType)
+			{
+			case MovementComponent.MovementType.AStar:
+			case MovementComponent.MovementType.Direct:
+				transform = destination.value;
+				if (transform != null)
+				{
+					if (innerWGO != null)
+					{
+						innerWGO.Move(transform.position, walkType, delegate
+						{
+							onFinished.Call(flow);
+						}, speed.value, movementState);
+					}
+					else
+					{
+						Debug.LogError("WGO is null");
+					}
+				}
+				else
+				{
+					Debug.LogError("Destination transform is null");
+				}
+				break;
+			case MovementComponent.MovementType.SceneGraph:
+				walkNode = this.walkNode.value;
+				if (walkNode != null)
+				{
+					if (innerWGO != null)
+					{
+						innerWGO.Move(walkNode.transform.position, walkType, delegate
+						{
+							onFinished.Call(flow);
+						}, speed.value, movementState);
+					}
+					else
+					{
+						Debug.LogError("WGO is null");
+					}
+				}
+				else
+				{
+					Debug.LogError($"Tried to send {walkerType}, WalkNode is null");
+				}
+				break;
+			}
+			break;
+		case WalkerType.GMO:
+			innerGMO = gmo.value;
+			if (innerGMO != null)
+			{
+				MainGame.me.gameMap.TryToMove(innerGMO, delegate
+				{
+					onFinished.Call(flow);
+				}, force: true);
+			}
+			else
+			{
+				Debug.LogError("GMO is null");
+			}
+			break;
+		}
+		@out.Call(flow);
+	}
+}

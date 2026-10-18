@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open Sewerage Window", 0)]
+[Category("Game")]
+public class Flow_OpenSewerageWindow : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToOpen;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name => (isToOpen ? "Open" : "Close") + " Sewerage Window";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToOpen)
+			{
+				GUIElements.Get<UISewerageWindow>().Open();
+			}
+			else
+			{
+				GUIElements.Get<UISewerageWindow>().Hide();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

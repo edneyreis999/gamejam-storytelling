@@ -1,0 +1,219 @@
+using System;
+using System.Collections.Generic;
+using LazyBearTechnology.Mumblish;
+using UnityEngine;
+using UnityEngine.Audio;
+
+namespace LazyBearTechnology;
+
+public abstract class LazySpeechEngineCommon : MonoBehaviour
+{
+	[Serializable]
+	private class Timer
+	{
+		public float timeLeft;
+
+		public Action onFinished;
+	}
+
+	[Serializable]
+	private class Fader
+	{
+		public AudioSource audioSource;
+
+		public float volume = 1f;
+
+		public float fadeInTime;
+
+		public float fadeOutTime;
+	}
+
+	protected const int AUDIO_SOURCES = 20;
+
+	[SerializeField]
+	private AudioMixerGroup audioMixerGroup;
+
+	[SerializeField]
+	protected AudioSource[] audioSources;
+
+	[NonSerialized]
+	protected List<LazyMumblishPhraseHandler> handlers = new List<LazyMumblishPhraseHandler>();
+
+	[NonSerialized]
+	private readonly List<Timer> timers = new List<Timer>();
+
+	[NonSerialized]
+	protected readonly Dictionary<string, LazySpeechVoicePresetCommon> voicePresets = new Dictionary<string, LazySpeechVoicePresetCommon>();
+
+	[NonSerialized]
+	protected readonly List<LazySpeechVoicePlayerCommon> voicePlayers = new List<LazySpeechVoicePlayerCommon>();
+
+	private List<Fader> faders = new List<Fader>();
+
+	protected static LazySpeechEngineCommon instance;
+
+	private static int debugUniquePlayerId;
+
+	protected static LazySpeechEngineCommon TryFindInstance()
+	{
+		if (instance == null)
+		{
+			instance = UnityEngine.Object.FindObjectOfType<LazySpeechEngineCommon>();
+		}
+		return instance;
+	}
+
+	private void Start()
+	{
+		if (audioSources == null || audioSources.Length == 0)
+		{
+			audioSources = new AudioSource[20];
+			for (int i = 0; i < 20; i++)
+			{
+				AudioSource audioSource = new GameObject("AudioSource " + i).AddComponent<AudioSource>();
+				audioSource.outputAudioMixerGroup = audioMixerGroup;
+				audioSource.playOnAwake = false;
+				audioSource.transform.SetParent(base.transform);
+				audioSources[i] = audioSource;
+			}
+		}
+	}
+
+	private void Update()
+	{
+		ProcessTimers();
+		ProcessFadeInOut();
+	}
+
+	protected void AddTimer(float time, Action onFinished)
+	{
+		timers.Add(new Timer
+		{
+			onFinished = onFinished,
+			timeLeft = time
+		});
+	}
+
+	private void ProcessTimers()
+	{
+		float deltaTime = Time.deltaTime;
+		for (int i = 0; i < timers.Count; i++)
+		{
+			Timer timer = timers[i];
+			timer.timeLeft -= deltaTime;
+			if (timer.timeLeft <= 0f)
+			{
+				timers.RemoveAt(i);
+				i--;
+				timer.onFinished?.Invoke();
+			}
+		}
+	}
+
+	private void ProcessFadeInOut()
+	{
+		for (int i = 0; i < faders.Count; i++)
+		{
+			Fader fader = faders[i];
+			AudioSource audioSource = fader.audioSource;
+			if (!audioSource.isPlaying)
+			{
+				faders.RemoveAt(i);
+				i--;
+				continue;
+			}
+			float num = audioSource.time / audioSource.clip.length;
+			float num2 = 1f - num;
+			if (fader.fadeInTime > 0f && num < fader.fadeInTime)
+			{
+				audioSource.volume = Mathf.Lerp(0f, fader.volume, num / fader.fadeInTime);
+			}
+			else if (fader.fadeOutTime > 0f && num2 < fader.fadeOutTime)
+			{
+				audioSource.volume = Mathf.Lerp(0f, fader.volume, num2 / fader.fadeOutTime);
+			}
+			else
+			{
+				audioSource.volume = fader.volume;
+			}
+		}
+	}
+
+	protected void StopAudioSource(AudioSource audioSource)
+	{
+		audioSource.Stop();
+		for (int i = 0; i < faders.Count; i++)
+		{
+			if (faders[i].audioSource == audioSource)
+			{
+				faders.RemoveAt(i);
+				break;
+			}
+		}
+	}
+
+	public void AddFader(AudioSource audioSource, float volume, float fadeInTime, float fadeOutTime)
+	{
+		faders.Add(new Fader
+		{
+			audioSource = audioSource,
+			volume = volume,
+			fadeInTime = fadeInTime,
+			fadeOutTime = fadeOutTime
+		});
+	}
+
+	public void SetPause(bool isPause)
+	{
+		foreach (LazySpeechVoicePlayerCommon voicePlayer in voicePlayers)
+		{
+			voicePlayer.SetPause(isPause);
+		}
+	}
+
+	public AudioSource GetFreeAudioSource()
+	{
+		if (audioSources == null)
+		{
+			return null;
+		}
+		AudioSource audioSource = null;
+		for (int i = 0; i < 20; i++)
+		{
+			AudioSource audioSource2 = audioSources[i];
+			if (!audioSource2.isPlaying)
+			{
+				return audioSource2;
+			}
+		}
+		audioSource = audioSources[0];
+		StopAudioSource(audioSource);
+		return audioSource;
+	}
+
+	protected abstract Type GetVoicePlayerType();
+
+	public LazySpeechVoicePlayerCommon PlayVoice(LazySpeechVoicePresetCommon voicePreset, float duration = -1f)
+	{
+		LazySpeechVoicePlayerCommon lazySpeechVoicePlayerCommon = PrepareVoicePlayer(voicePreset);
+		lazySpeechVoicePlayerCommon.PlayVoice(voicePreset, duration);
+		return lazySpeechVoicePlayerCommon;
+	}
+
+	public LazySpeechVoicePlayerCommon PlayVoice(LazySpeechVoicePresetCommon voicePreset, string text)
+	{
+		LazySpeechVoicePlayerCommon lazySpeechVoicePlayerCommon = PrepareVoicePlayer(voicePreset);
+		lazySpeechVoicePlayerCommon.PlayVoice(voicePreset, text);
+		return lazySpeechVoicePlayerCommon;
+	}
+
+	private LazySpeechVoicePlayerCommon PrepareVoicePlayer(LazySpeechVoicePresetCommon voicePreset)
+	{
+		GameObject gameObject = new GameObject("LazySpeechVoicePlayer");
+		Debug.Log("New voice player: " + gameObject.name);
+		LazySpeechVoicePlayerCommon obj = (LazySpeechVoicePlayerCommon)gameObject.AddComponent(GetVoicePlayerType());
+		obj.transform.SetParent(base.transform, worldPositionStays: false);
+		obj.Init(voicePlayers);
+		return obj;
+	}
+}

@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Smart Res", 0)]
+[Category("Game")]
+public class Flow_SmartRes : PC2CustomFlowNode
+{
+	private ValueInput<string> id;
+
+	private ValueInput<float> value;
+
+	private ValueInput<SmartRes.ResType> resType;
+
+	private ValueOutput<SmartRes> smartRes;
+
+	protected override void RegisterPorts()
+	{
+		resType = AddValueInput<SmartRes.ResType>("resType");
+		id = AddValueInput<string>("id");
+		value = AddValueInput<float>("value");
+		smartRes = AddValueOutput("smartRes", delegate
+		{
+			SmartRes smartRes = new SmartRes();
+			switch (resType.value)
+			{
+			case SmartRes.ResType.Item:
+				smartRes.itemId = id.value;
+				smartRes.itemCount = (int)value.value;
+				break;
+			case SmartRes.ResType.GameRes:
+				smartRes.gameRes.Add(id.value, value.value);
+				break;
+			}
+			return smartRes;
+		});
+	}
+}

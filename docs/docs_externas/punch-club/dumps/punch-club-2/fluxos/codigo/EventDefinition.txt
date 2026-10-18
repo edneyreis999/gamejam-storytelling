@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using LazyBearTechnology;
+using PunchClub2;
+
+[Serializable]
+public class EventDefinition : BalanceBaseObject
+{
+	public bool isOnlyOnceActivated;
+
+	public EventType eventType;
+
+	public EventDayCondition eventDayCondition;
+
+	public string eventDayConditionParam;
+
+	public string startEventKey;
+
+	public LazyExpression startEventCondition;
+
+	public string startScript;
+
+	public List<string> phrasesToUnlockAndRemoveFromBlackList = new List<string>();
+
+	public List<string> phraseAddToBlackList = new List<string>();
+}

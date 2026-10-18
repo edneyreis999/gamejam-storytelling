@@ -1,0 +1,44 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI League Wait Fight Button\nShow Timer Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UILeagueWaitFightButtonShowTimerMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI League Wait Fight Button\n" + (isToShow.value ? "Show" : "Hide") + " Timer Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform timeContainerTutorial = GUIElements.Get<UILeagueWindow>().EloLeague.TimeContainerTutorial;
+			RectTransform zoomIconTimeContainerTutorial = GUIElements.Get<UILeagueWindow>().EloLeague.ZoomIconTimeContainerTutorial;
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(timeContainerTutorial);
+				GUIElements.Get<ZoomEffect>().ZoomEnable(timeContainerTutorial, 3, zoomIconTimeContainerTutorial, new Vector2(140f, 40f), ZoomDirection.LeftUp);
+				@out.Call(flow);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(timeContainerTutorial);
+				GUIElements.Get<ZoomEffect>().ZoomDisable(delegate
+				{
+					@out.Call(flow);
+				});
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

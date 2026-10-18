@@ -1,0 +1,24 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Has Item", 0)]
+[Category("Game")]
+public class Flow_HasItem : PC2CustomFlowNode
+{
+	private ValueInput<string> itemId;
+
+	private ValueOutput<bool> valueOutput;
+
+	protected override void RegisterPorts()
+	{
+		itemId = AddValueInput<string>("itemId");
+		valueOutput = AddValueOutput("valueOutput", () => Check());
+	}
+
+	private bool Check()
+	{
+		return InventoryUtils.HasItemInInventory(itemId.value);
+	}
+}

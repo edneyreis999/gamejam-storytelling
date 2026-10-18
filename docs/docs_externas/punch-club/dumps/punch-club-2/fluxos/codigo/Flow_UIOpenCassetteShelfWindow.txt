@@ -1,0 +1,46 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("UI Open Cassette Shelf Window", 0)]
+[Category("Game/UI")]
+public class Flow_UIOpenCassetteShelfWindow : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToOpen = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToOpen)
+			{
+				return "UI Close Cassette Shelf Window";
+			}
+			return "UI Open Cassette Shelf Window";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToOpen)
+			{
+				GUIElements.Get<UITapeShelfWindow>().Open();
+			}
+			else
+			{
+				GUIElements.Get<UITapeShelfWindow>().Hide();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

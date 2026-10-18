@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Vendor Window Item\nShow Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIVendorWindowItemShowMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI Vendor Window Item\n" + (isToShow.value ? "Show" : "Hide") + " Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(GUIElements.Get<UIVendorWindow>().TutorialFridgeElement.TutorialRect);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideAllMasks();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

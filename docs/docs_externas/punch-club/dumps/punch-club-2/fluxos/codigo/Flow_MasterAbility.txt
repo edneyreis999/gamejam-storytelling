@@ -1,0 +1,30 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Master Abilites", 0)]
+[Category("Game/Player")]
+public class Flow_MasterAbility : PC2CustomFlowNode
+{
+	public List<string> abilities;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			for (int i = 0; i < abilities.Count; i++)
+			{
+				MainGame.me.PlayerRes.Set(abilities[i] + "_mastered", 1f);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

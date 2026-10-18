@@ -1,0 +1,19 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI League Fighters\nGet ScrollRect", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UILeagueFightersGetScrollRect : PC2CustomFlowNode
+{
+	private ValueOutput<ScrollRect> scrollRect;
+
+	private ScrollRect scrollRectInternal;
+
+	protected override void RegisterPorts()
+	{
+		scrollRect = AddValueOutput("scrollRect", () => GUIElements.Get<UILeagueWindow>().EloLeague.FightersScrollRectTutorial);
+	}
+}

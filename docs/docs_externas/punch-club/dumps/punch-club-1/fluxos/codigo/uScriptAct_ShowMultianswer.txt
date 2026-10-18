@@ -1,0 +1,45 @@
+using System;
+using LinqTools;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Multi-answer", "")]
+public class uScriptAct_ShowMultianswer : uScriptLogic
+{
+	public bool Out => true;
+
+	[FriendlyName("A 1")]
+	public event uScript_GameObject.uScriptEventHandler A1;
+
+	[FriendlyName("A 2")]
+	public event uScript_GameObject.uScriptEventHandler A2;
+
+	[FriendlyName("A 3")]
+	public event uScript_GameObject.uScriptEventHandler A3;
+
+	[FriendlyName("A 4")]
+	public event uScript_GameObject.uScriptEventHandler A4;
+
+	public void In([FriendlyName("Answers", "")] string[] answers)
+	{
+		SpeechBubbleMultiAnswer.CreateSpeechBubbleMultiAnswer(answers.ToList(), delegate(int answer_n)
+		{
+			switch (answer_n)
+			{
+			case 0:
+				this.A1(this, new EventArgs());
+				break;
+			case 1:
+				this.A2(this, new EventArgs());
+				break;
+			case 2:
+				this.A3(this, new EventArgs());
+				break;
+			case 3:
+				this.A4(this, new EventArgs());
+				break;
+			}
+		}, is_speak: true);
+	}
+}

@@ -1,0 +1,19 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Set General", "")]
+public class uScriptAct_SetGeneralOptions : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Tutorial", "")][SocketState(false, false)] uScriptAct_CharacterPlayAnimation.BooleanSet tut)
+	{
+		if (tut != uScriptAct_CharacterPlayAnimation.BooleanSet.NoChange)
+		{
+			Debug.Log("Setting tutorial enabled to " + tut);
+			MainGame.me.tutorial_enabled = tut == uScriptAct_CharacterPlayAnimation.BooleanSet.True;
+		}
+	}
+}

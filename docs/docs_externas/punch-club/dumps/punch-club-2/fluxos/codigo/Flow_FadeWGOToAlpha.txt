@@ -1,0 +1,52 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Fade WGO", 0)]
+[Category("Game")]
+public class Flow_FadeWGOToAlpha : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<float> alpha;
+
+	private ValueInput<float> time;
+
+	private ValueInput<WGO> wgoInput;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			WGO wGO = WGOParamOrSelf(wgoInput);
+			if (wGO == null)
+			{
+				Debug.Log("Null wgo!!!");
+				@out.Call(flow);
+			}
+			else
+			{
+				WGOAlphaChange component = wGO.GetComponent<WGOAlphaChange>();
+				if (component == null)
+				{
+					Debug.Log("Null wgo alpha change component!!!");
+					@out.Call(flow);
+				}
+				else
+				{
+					component.DoFade(alpha.value, time.value);
+					@out.Call(flow);
+				}
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		alpha = AddValueInput<float>("alpha");
+		time = AddValueInput<float>("time");
+		wgoInput = AddValueInput<WGO>("wgoInput");
+	}
+}

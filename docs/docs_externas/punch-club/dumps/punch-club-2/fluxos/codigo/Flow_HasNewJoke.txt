@@ -1,0 +1,34 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Has New Joke", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_HasNewJoke : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (MainGame.me.gameSave.jokePhrasesSystem.IsPoolEmpty())
+			{
+				no.Call(flow);
+			}
+			else
+			{
+				yes.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+	}
+}

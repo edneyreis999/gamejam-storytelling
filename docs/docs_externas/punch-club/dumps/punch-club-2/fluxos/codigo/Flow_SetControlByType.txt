@@ -1,0 +1,78 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Control Disable By Type", 0)]
+[Category("Game/Player")]
+public class Flow_SetControlByType : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isAffectCinematic;
+
+	[GatherPortsCallback]
+	[ShowIf("isAffectCinematic", 1)]
+	public bool isImmediateCinematic;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private ValueInput<bool> isEnable;
+
+	private ValueInput<ControlState> controlState;
+
+	public override string name => (isAffectCinematic ? "Cinematic " : string.Empty) + (isEnable.value ? "<color=#8aff92>Control Enable</color>" : "<color=#ff8a8a>Control Disable</color>");
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), SetControl);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isEnable = AddValueInput<bool>("isEnable".CapitalizeFirst());
+		controlState = AddValueInput<ControlState>("controlState".CapitalizeFirst());
+		if (isAffectCinematic)
+		{
+			onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		}
+	}
+
+	private void SetControl(Flow flow)
+	{
+		if (isAffectCinematic)
+		{
+			GUICinematic gUICinematic = GUIElements.Get<GUICinematic>();
+			if (gUICinematic.IsActive)
+			{
+				gUICinematic.DisableCinematic(delegate
+				{
+					PlayerController.Instance.ChangeControls(controlState.value, isEnable.value);
+					onFinished.Call(flow);
+				}, isImmediateCinematic);
+			}
+			else
+			{
+				PlayerController.Instance.ChangeControls(controlState.value, isEnable.value);
+				if (isEnable.value)
+				{
+					Debug.LogWarning("Try enable cinematic on control enable, skipped it");
+				}
+				else
+				{
+					gUICinematic.EnableCinematic(delegate
+					{
+						onFinished.Call(flow);
+					}, isImmediateCinematic);
+				}
+			}
+		}
+		else
+		{
+			PlayerController.Instance.ChangeControls(controlState.value, isEnable.value);
+		}
+		@out.Call(flow);
+	}
+}

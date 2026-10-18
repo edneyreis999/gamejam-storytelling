@@ -1,0 +1,51 @@
+using System;
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Char: Move to", "")]
+public class uScriptAct_CharacterMoveTo : uScriptLogic
+{
+	public delegate void uScriptEventHandler(object sender, EventArgs args);
+
+	public bool Out => true;
+
+	[FriendlyName("Finished")]
+	public event uScriptEventHandler Finished;
+
+	public void In([FriendlyName("CharGfx", "The CharacterGfx.")] CharacterGfx ch, [FriendlyName("Immid.", "")][SocketState(false, false)] bool immediate, [FriendlyName("Node", "")][SocketState(false, false)] string node_name, [FriendlyName("XY", "")][SocketState(false, false)] Vector2 coords)
+	{
+		Debug.Log("Move to " + node_name);
+		if (ch == null)
+		{
+			Debug.LogError("CharGfx is null!");
+			return;
+		}
+		if (immediate)
+		{
+			if (node_name != string.Empty)
+			{
+				ch.SetCurrentTreeNode(node_name);
+			}
+			else
+			{
+				ch.MoveTo(coords);
+			}
+			this.Finished(this, new EventArgs());
+			return;
+		}
+		if (node_name != string.Empty)
+		{
+			ch.WalkTo(node_name);
+		}
+		else
+		{
+			ch.WalkTo(coords);
+		}
+		ch.OnWalkingEndedCallback = (GJCommons.VoidDelegate)Delegate.Combine(ch.OnWalkingEndedCallback, (GJCommons.VoidDelegate)delegate
+		{
+			this.Finished(this, new EventArgs());
+		});
+	}
+}

@@ -1,0 +1,45 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("UI Header Window Check\nCurrent Opened Window", 0)]
+[Category("Game/UI")]
+public class Flow_UIHeaderWindowCheckCurrentOpenedWindow : PC2CustomFlowNode
+{
+	public enum WindowType
+	{
+		Character,
+		Fighter,
+		Tech,
+		Story
+	}
+
+	private FlowInput @in;
+
+	private FlowOutput opened;
+
+	private FlowOutput notOpened;
+
+	private ValueInput<WindowType> windowType;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			BaseGUI currentOpenedTabWindow = GUIElements.Get<UIHeaderWindow>().CurrentOpenedTabWindow;
+			if ((currentOpenedTabWindow is UICharacterWindow) ? (windowType.value == WindowType.Character) : ((currentOpenedTabWindow is UIFighterWindow) ? (windowType.value == WindowType.Fighter) : ((currentOpenedTabWindow is UITechWindow) ? (windowType.value == WindowType.Tech) : (currentOpenedTabWindow is UIStoryTreeWindow && windowType.value == WindowType.Story))))
+			{
+				opened.Call(flow);
+			}
+			else
+			{
+				notOpened.Call(flow);
+			}
+		});
+		windowType = AddValueInput<WindowType>("windowType");
+		opened = AddFlowOutput("opened".CapitalizeFirst());
+		notOpened = AddFlowOutput("notOpened".CapitalizeFirst());
+	}
+}

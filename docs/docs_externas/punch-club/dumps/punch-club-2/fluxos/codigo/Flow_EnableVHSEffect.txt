@@ -1,0 +1,117 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Enable/Disable VHS Effect", 0)]
+[Category("Game/Player")]
+public class Flow_EnableVHSEffect : PC2CustomFlowNode
+{
+	public enum EffectType
+	{
+		VHS,
+		Glitch,
+		VHSRewind,
+		Glitch4
+	}
+
+	[GatherPortsCallback]
+	public EffectType effectType;
+
+	[GatherPortsCallback]
+	[ShowIf("effectType", 2)]
+	public bool delayed;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private ValueInput<bool> isEnable;
+
+	private ValueInput<float> appearTime;
+
+	private ValueInput<float> showTime;
+
+	private ValueInput<float> disappearTime;
+
+	public override string name => (isEnable.value ? "<color=#8aff92>Enable</color>" : "<color=#ff8a8a>Disable</color>") + $" {effectType} Effect";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isEnable.value)
+			{
+				switch (effectType)
+				{
+				case EffectType.VHS:
+					ScreenCamera.me.EnableVHSEffect(delegate
+					{
+						onFinished.Call(flow);
+					});
+					break;
+				case EffectType.Glitch:
+					ScreenCamera.me.EnableGlitchEffect(delegate
+					{
+						onFinished.Call(flow);
+					});
+					break;
+				case EffectType.VHSRewind:
+					ScreenCamera.me.EnableVHSRewindEffect(delegate
+					{
+						onFinished.Call(flow);
+					}, delayed);
+					break;
+				case EffectType.Glitch4:
+					ScreenCamera.me.EnableGlitch4Effect(delegate
+					{
+						onFinished.Call(flow);
+					}, appearTime.value, showTime.value, disappearTime.value);
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+				}
+			}
+			else
+			{
+				switch (effectType)
+				{
+				case EffectType.VHS:
+					ScreenCamera.me.DisableVHSEffect(delegate
+					{
+						onFinished.Call(flow);
+					});
+					break;
+				case EffectType.Glitch:
+					ScreenCamera.me.DisableGlitchEffect(delegate
+					{
+						onFinished.Call(flow);
+					});
+					break;
+				case EffectType.VHSRewind:
+					ScreenCamera.me.DisableVHSRewindEffect(delegate
+					{
+						onFinished.Call(flow);
+					}, delayed);
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		isEnable = AddValueInput<bool>("isEnable");
+		if (effectType == EffectType.Glitch4)
+		{
+			appearTime = AddValueInput<float>("appearTime");
+			showTime = AddValueInput<float>("showTime");
+			disappearTime = AddValueInput<float>("disappearTime");
+		}
+	}
+}

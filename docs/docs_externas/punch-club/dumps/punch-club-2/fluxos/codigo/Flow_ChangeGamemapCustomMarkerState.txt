@@ -1,0 +1,30 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Change Gamemap Custom Marker State", 0)]
+[Category("Game")]
+public class Flow_ChangeGamemapCustomMarkerState : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> markerId;
+
+	private ValueInput<bool> enabledState;
+
+	protected override void RegisterPorts()
+	{
+		markerId = AddValueInput<string>("markerId".CapitalizeFirst());
+		enabledState = AddValueInput<bool>("enabledState".CapitalizeFirst());
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameMap.ChangeCustomMarkerState(markerId.value, enabledState.value);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

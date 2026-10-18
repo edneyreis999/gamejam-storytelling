@@ -1,0 +1,22 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Char rotate", "")]
+public class uScriptAct_CharRotate : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("CharGfx", "The CharacterGfx.")] CharacterGfx ch, [FriendlyName("Side", "")][SocketState(false, false)][DefaultValue(uScriptAct_CharacterSay.Side.Front)] uScriptAct_CharacterSay.Side side = uScriptAct_CharacterSay.Side.Front)
+	{
+		if (ch == null)
+		{
+			Debug.LogError("Character is null");
+		}
+		else
+		{
+			ch.SetCharRotation(side);
+		}
+	}
+}

@@ -1,0 +1,51 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Set GMO Introduced", 0)]
+[Category("Game")]
+public class Flow_SetGMOIntroduced : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<GameMapObject> gmo;
+
+	private ValueInput<bool> isIntroduced;
+
+	public override string name
+	{
+		get
+		{
+			if (!isIntroduced.value)
+			{
+				return "Set GMO Not Introduced";
+			}
+			return "Set GMO Introduced";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (gmo.value == null)
+			{
+				@out.Call(flow);
+				Debug.Log("GMO is null!!!");
+			}
+			else
+			{
+				gmo.value.GMOState.introduced = isIntroduced.value;
+				@out.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isIntroduced = AddValueInput<bool>("isIntroduced".CapitalizeFirst());
+		gmo = AddValueInput<GameMapObject>("GameMapObject".CapitalizeFirst());
+	}
+}

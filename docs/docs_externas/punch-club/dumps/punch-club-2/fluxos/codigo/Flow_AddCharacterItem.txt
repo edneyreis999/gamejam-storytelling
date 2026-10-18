@@ -1,0 +1,59 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Add Character Item", 0)]
+[Category("Game")]
+public class Flow_AddCharacterItem : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> itemId;
+
+	private ValueInput<string> spareItemId;
+
+	private ValueInput<bool> showNotice;
+
+	private ValueInput<int> count;
+
+	[GatherPortsCallback]
+	public bool isToRemove;
+
+	[GatherPortsCallback]
+	public bool needSpareItem;
+
+	public override string name => (isToRemove ? "Remove" : "Add") + " Character Item";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToRemove)
+			{
+				InventoryUtils.RemoveItemFromInventory(itemId.value, count.value, showNotice.value);
+			}
+			else if (InventoryUtils.IsInventoryFull(GameBalance.Me.GetData<ItemDefinition>(itemId.value).Inventory.id) && needSpareItem)
+			{
+				InventoryUtils.AddItemToInventory(spareItemId.value, count.value, showNotice.value);
+			}
+			else
+			{
+				InventoryUtils.AddItemToInventory(itemId.value, count.value, showNotice.value);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		itemId = AddValueInput<string>("itemId");
+		if (needSpareItem)
+		{
+			spareItemId = AddValueInput<string>("spareItemId");
+		}
+		showNotice = AddValueInput<bool>("showNotice");
+		count = AddValueInput<int>("count");
+		count.SetDefaultAndSerializedValue(1);
+	}
+}

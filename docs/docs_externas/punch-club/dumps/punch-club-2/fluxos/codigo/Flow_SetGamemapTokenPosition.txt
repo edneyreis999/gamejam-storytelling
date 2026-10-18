@@ -1,0 +1,30 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set Gamemap Token Position", 0)]
+[Category("Game")]
+public class Flow_SetGamemapTokenPosition : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> markerId;
+
+	private ValueInput<string> nodeId;
+
+	protected override void RegisterPorts()
+	{
+		markerId = AddValueInput<string>("markerId".CapitalizeFirst());
+		nodeId = AddValueInput<string>("nodeId".CapitalizeFirst());
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameMap.SetMarkerCustomPosition(nodeId.value, markerId.value);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

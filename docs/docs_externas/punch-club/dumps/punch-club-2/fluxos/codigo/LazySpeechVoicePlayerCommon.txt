@@ -1,0 +1,113 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace LazyBearTechnology;
+
+public abstract class LazySpeechVoicePlayerCommon : MonoBehaviour
+{
+	protected bool isAlive = true;
+
+	protected string text;
+
+	protected int curpos;
+
+	protected float startTime;
+
+	protected float duration = -1f;
+
+	protected LazySpeechVoicePresetCommon voicePreset;
+
+	protected List<LazySpeechVoicePlayerCommon> voicePlayers;
+
+	protected bool isPaused;
+
+	protected float TextAnimationProgress => (float)curpos / (float)text.Length;
+
+	protected int TextAnimationCharactersLeft => text.Length - curpos;
+
+	public virtual void Init(List<LazySpeechVoicePlayerCommon> voicePlayers)
+	{
+		this.voicePlayers = voicePlayers;
+		voicePlayers.Add(this);
+	}
+
+	public void UpdateTextPosition(string text, int pos)
+	{
+		if (this.text != text || pos < curpos)
+		{
+			this.text = text;
+			curpos = 0;
+		}
+		if (curpos != pos)
+		{
+			string displayedText = text.Substring(curpos, pos - curpos);
+			curpos = pos;
+			OnNewTextPartDisplayed(displayedText);
+		}
+	}
+
+	protected virtual void OnNewTextPartDisplayed(string displayedText)
+	{
+	}
+
+	public virtual void OnTextAnimationStarted(LazySpeechVoicePresetCommon voice, string text)
+	{
+	}
+
+	public virtual void OnTextAnimationStopped()
+	{
+		Stop();
+	}
+
+	public void Stop()
+	{
+		if (isAlive)
+		{
+			voicePlayers.Remove(this);
+			Object.Destroy(base.gameObject);
+			isAlive = false;
+			isPaused = false;
+			OnVoiceStopped();
+		}
+	}
+
+	public void PlayVoice(LazySpeechVoicePresetCommon voicePreset, string text)
+	{
+		this.text = text;
+		this.voicePreset = voicePreset;
+		curpos = 0;
+		duration = -1f;
+		startTime = Time.realtimeSinceStartup;
+		OnVoiceStarted();
+	}
+
+	public void PlayVoice(LazySpeechVoicePresetCommon voicePreset, float duration = -1f)
+	{
+		this.voicePreset = voicePreset;
+		this.duration = duration;
+		startTime = Time.realtimeSinceStartup;
+		text = "";
+		OnVoiceStarted();
+	}
+
+	protected virtual void OnVoiceStarted()
+	{
+	}
+
+	protected virtual void OnVoiceStopped()
+	{
+	}
+
+	protected virtual void Update()
+	{
+		if (isAlive && !isPaused && duration > 0f && Time.realtimeSinceStartup - startTime > duration)
+		{
+			Stop();
+		}
+	}
+
+	public void SetPause(bool isPause)
+	{
+		isPaused = isPause;
+	}
+}

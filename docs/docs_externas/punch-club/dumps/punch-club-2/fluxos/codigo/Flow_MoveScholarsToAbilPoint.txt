@@ -1,0 +1,89 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Move Scholars to ability point", 0)]
+[Category("Game/MickGym")]
+public class Flow_MoveScholarsToAbilPoint : PC2CustomFlowNode
+{
+	private static readonly int state = Animator.StringToHash("State");
+
+	public bool instant;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private List<WGO> comingScholars;
+
+	private bool allAdded;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			comingScholars = new List<WGO>();
+			for (int i = 0; i < LazyConsts.mickScholarsIds.Count; i++)
+			{
+				WGO scholar = DynamicScene.FindWGO(LazyConsts.mickScholarsIds[i]);
+				if (scholar.WgoState.GetStateOnScene("MikesOldHouse", out var isActive) && isActive)
+				{
+					comingScholars.Add(scholar);
+					int i2 = i;
+					Vector3 vector = DynamicScene.FindWalkNode(LazyConsts.mickScholarsAbilityPointsIds[i2]).transform.position;
+					scholar.Movement.Stop();
+					if (instant)
+					{
+						scholar.Movement.Stop();
+						scholar.SetPosition(vector);
+						scholar.SetDirection(HumanLikeDirections.GetDirectionVectorByEnum(HumanLikeDirections.Direction.Right));
+						scholar.Animator.SetInteger(state, 0);
+					}
+					else if ((Vector2)scholar.transform.position == (Vector2)vector)
+					{
+						LazyTimer.AddTimer(0f, delegate
+						{
+							CheckAllComes(scholar, flow);
+						});
+					}
+					else
+					{
+						LazyTimer.AddTimer(Random.Range(0f, 0.5f), delegate
+						{
+							scholar.Move(DynamicScene.FindWalkNode(LazyConsts.mickScholarsAbilityPointsIds[i2]).transform.position, MovementComponent.MovementType.AStar, delegate
+							{
+								CheckAllComes(scholar, flow);
+							}, Random.Range(150f, 165f));
+						});
+					}
+				}
+			}
+			if (instant)
+			{
+				onFinished.Call(flow);
+			}
+			allAdded = true;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+	}
+
+	private void CheckAllComes(WGO currentFinished, Flow flow)
+	{
+		currentFinished.SetDirection(HumanLikeDirections.GetDirectionVectorByEnum(HumanLikeDirections.Direction.Right));
+		comingScholars.Remove(currentFinished);
+		if (comingScholars.Count <= 0 && allAdded)
+		{
+			onFinished.Call(flow);
+			allAdded = false;
+		}
+	}
+}

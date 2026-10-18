@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get AIMarker Position", 0)]
+[Category("Game/GameMap")]
+public class Flow_GetAIMarkerPosition : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isCurrent;
+
+	private ValueOutput<string> gmoId;
+
+	public override string name
+	{
+		get
+		{
+			if (!isCurrent)
+			{
+				return "Get Previous AIMarker Position";
+			}
+			return "Get Current AIMarker Position";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		gmoId = AddValueOutput("gmoId".CapitalizeFirst(), () => (!isCurrent) ? MainGame.me.gameSave.playerData.previousMapPosition : MainGame.me.gameSave.playerData.CurrentMapPosition);
+	}
+}

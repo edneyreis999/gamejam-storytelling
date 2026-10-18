@@ -1,0 +1,41 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Fighter Window School List\nShow Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIFighterWindowSchoolListShowMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI Fighter Window School List\n" + (isToShow.value ? "Show" : "Hide") + " Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIFighterWindow uIFighterWindow = GUIElements.Get<UIFighterWindow>();
+			RectTransform schoolsListTutorialRect = uIFighterWindow.SchoolsListTutorialRect;
+			uIFighterWindow.LockPressBack = true;
+			uIFighterWindow.ButtonTips.Clear();
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(schoolsListTutorialRect);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(schoolsListTutorialRect);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

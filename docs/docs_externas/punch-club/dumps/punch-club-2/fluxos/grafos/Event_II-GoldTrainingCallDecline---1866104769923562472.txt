@@ -1,0 +1,172 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": -1866104769923562472,
+  "serialized_graph_sha256": "8dabcf30fbb6b4f576d5e3c941f14d25ff6d8120623e7ea4ad5316dab4cd02c0",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "Event_II-GoldTrainingCallDecline",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"_position\":{\"x\":466.0,\"y\":635.0},\"$type\":\"FlowCanvas.Nodes.StartEvent\",\"$id\":\"0\"},{\"_inputPortValues\":{\"wgoId\":{\"$content\":\"npc_silver\",\"$type\":\"System.String\"}},\"_position\":{\"x\":668.0,\"y\":634.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_IsWGOStateNotNull\",\"$id\":\"1\"},{\"isSetByString\":true,\"_inputPortValues\":{\"inputWGOId\":{\"$content\":\"npc_silver\",\"$type\":\"System.String\"},\"LabelType\":{\"$content\":2,\"$type\":\"WGOCustomEventsHandler+GUILabelType\"},\"EventName\":{\"$content\":\"ev_gold_training_missed_call_1\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1327.0,\"y\":637.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_AddCustomEvent\",\"$id\":\"2\"},{\"_position\":{\"x\":1844.0,\"y\":636.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_EndScript\",\"$id\":\"3\"},{\"_inputPortValues\":{\"wgoId\":{\"$content\":\"npc_silver\",\"$type\":\"System.String\"},\"isActive\":{\"$content\":true,\"$type\":\"System.Boolean\"}},\"_position\":{\"x\":953.0,\"y\":697.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_CreateWGOState\",\"$id\":\"4\"}],\"connections\":[{\"_sourcePortName\":\"Once\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Yes\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"No\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"4\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": 501.0,
+        "y": -67.0
+      },
+      "_zoomFactor": 1.0
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "_position": {
+          "x": 466.0,
+          "y": 635.0
+        },
+        "$type": "FlowCanvas.Nodes.StartEvent",
+        "$id": "0"
+      },
+      {
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "npc_silver",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 668.0,
+          "y": 634.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_IsWGOStateNotNull",
+        "$id": "1"
+      },
+      {
+        "isSetByString": true,
+        "_inputPortValues": {
+          "inputWGOId": {
+            "$content": "npc_silver",
+            "$type": "System.String"
+          },
+          "LabelType": {
+            "$content": 2,
+            "$type": "WGOCustomEventsHandler+GUILabelType"
+          },
+          "EventName": {
+            "$content": "ev_gold_training_missed_call_1",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1327.0,
+          "y": 637.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_AddCustomEvent",
+        "$id": "2"
+      },
+      {
+        "_position": {
+          "x": 1844.0,
+          "y": 636.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_EndScript",
+        "$id": "3"
+      },
+      {
+        "_inputPortValues": {
+          "wgoId": {
+            "$content": "npc_silver",
+            "$type": "System.String"
+          },
+          "isActive": {
+            "$content": true,
+            "$type": "System.Boolean"
+          }
+        },
+        "_position": {
+          "x": 953.0,
+          "y": 697.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_CreateWGOState",
+        "$id": "4"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Once",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Yes",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "No",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "4"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {}
+    }
+  }
+}

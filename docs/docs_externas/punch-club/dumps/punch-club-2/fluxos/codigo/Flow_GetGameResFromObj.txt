@@ -1,0 +1,99 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Get Param From Object", 0)]
+[Category("Game")]
+public class Flow_GetGameResFromObj : PC2CustomFlowNode
+{
+	public enum ObjectType
+	{
+		Player,
+		WGO
+	}
+
+	public enum GetWGOType
+	{
+		ByString,
+		ByObject
+	}
+
+	[GatherPortsCallback]
+	public ObjectType objectType;
+
+	[ShowIf("objectType", 1)]
+	[GatherPortsCallback]
+	public GetWGOType getWgoType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> wgoId;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueInput<string> paramName;
+
+	private ValueOutput<float> paramValue;
+
+	private ValueOutput<WGO> outWGO;
+
+	private float paramValueStored;
+
+	private WGO outWGOStored;
+
+	public override string name => $"Get Param From {objectType}";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			switch (objectType)
+			{
+			case ObjectType.Player:
+				paramValueStored = MainGame.me.PlayerRes.Get(paramName.value);
+				break;
+			case ObjectType.WGO:
+				switch (getWgoType)
+				{
+				case GetWGOType.ByString:
+					paramValueStored = MainGame.me.gameSave.worldData.GetWGOParamValue(wgoId.value, paramName.value);
+					break;
+				case GetWGOType.ByObject:
+					outWGOStored = wgo.value;
+					if (outWGOStored != null)
+					{
+						paramValueStored = MainGame.me.gameSave.worldData.GetWGOParamValue(outWGOStored.Id, paramName.value);
+					}
+					else
+					{
+						Debug.LogError("WGO is null");
+					}
+					break;
+				}
+				break;
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (objectType == ObjectType.WGO)
+		{
+			switch (getWgoType)
+			{
+			case GetWGOType.ByString:
+				wgoId = AddValueInput<string>("wgoId");
+				break;
+			case GetWGOType.ByObject:
+				wgo = AddValueInput<WGO>("wgo");
+				outWGO = AddValueOutput("outWGO", () => outWGOStored);
+				break;
+			}
+		}
+		paramName = AddValueInput<string>("paramName");
+		paramValue = AddValueOutput("paramValue", () => paramValueStored);
+	}
+}

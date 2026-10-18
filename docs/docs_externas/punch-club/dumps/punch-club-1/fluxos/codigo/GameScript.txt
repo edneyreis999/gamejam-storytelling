@@ -1,0 +1,296 @@
+using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using UniLua;
+using UnityEngine;
+
+[Serializable]
+public class GameScript
+{
+	private string _lua_code = string.Empty;
+
+	private ILuaState _thread;
+
+	private ILuaState _lua;
+
+	private ThreadStatus _status;
+
+	private ILuaState _temp_state;
+
+	private string _uscript_name;
+
+	private GameScriptGlobal _script_global;
+
+	private GameScriptCharacterGfx _script_char_gfx;
+
+	private static List<GameScript> _all_scripts = new List<GameScript>();
+
+	private const string LIB_NAME = "vhslualib";
+
+	private const string TRIG_LIB_NAME = "trigvhslualib";
+
+	private bool _is_expression;
+
+	private static int _total_executed_scripts = 0;
+
+	public int temp_value;
+
+	protected CustomUScript uscript;
+
+	protected int id;
+
+	public static bool IsAnyScriptRunning()
+	{
+		return _total_executed_scripts > 0;
+	}
+
+	public static void CancelAllScripts()
+	{
+		if (!IsAnyScriptRunning())
+		{
+			return;
+		}
+		Debug.Log("Cancelling scripts, running = " + _total_executed_scripts);
+		int num = 0;
+		do
+		{
+			CustomUScript customUScript = UnityEngine.Object.FindObjectOfType<CustomUScript>();
+			if (customUScript == null)
+			{
+				break;
+			}
+			customUScript.TerminateMe();
+		}
+		while (num++ <= 30);
+		_total_executed_scripts = 0;
+		_all_scripts.Clear();
+	}
+
+	public void FromUScriptName(string uscript_name)
+	{
+		_uscript_name = uscript_name;
+		_lua = null;
+	}
+
+	public void FromLua(string lua_code)
+	{
+		_uscript_name = string.Empty;
+		_lua = LuaAPI.NewState();
+		_script_global = new GameScriptGlobal(this);
+		_script_char_gfx = new GameScriptCharacterGfx(this);
+		_lua_code = lua_code;
+		if (_lua_code.IndexOf("switch_answer") != -1)
+		{
+			_lua_code = _lua_code.Replace('\n', '\r');
+			_lua_code = Regex.Replace(_lua_code, "(switch_answer[ \r]*{.*?})", "$1\n switch_class:case(vhs._GetMultiAnswerResult()) \n", RegexOptions.Multiline);
+			_lua_code = _lua_code.Replace("switch_answer", "switch_class = switch");
+			string pattern = "case *([0-9]+) *:";
+			_lua_code = Regex.Replace(_lua_code, pattern, "[$1] = function(xxxxx)");
+			_lua_code = _lua_code.Replace('\r', '\n');
+			_lua_code = _lua_code.Replace("\n\n", "\n");
+		}
+		_lua_code = "local vhs = require \"vhslualib\"\nlocal tr = require \"trigvhslualib\"\ncreateClass = function()\r\n\t\t\tlocal creator = {}\r\n\t\t\tcreator.__private = {\r\n\t\t\t\tobject_class = {},\r\n\t\t\t}creator.__oncall = function(class_creator)\t\t\r\n\t\t\t\t-- Get the class definition so we can make needed variables private, static, etc.\r\n\t\t\t\tlocal this = class_creator()\r\n\t\t\t\t-- Initialize class from class definition\r\n\t\t\t\t__init = function()\r\n\t\t\t\t\t-- Init Public Static\r\n\t\t\t\t\tlocal class = {}\r\n\t\t\t\t\tif (type(this.__public_static) == \"table\") then\r\n\t\t\t\t\t\tclass = this.__public_static\r\n\t\t\t\t\tend\r\n            \r\n\t\t\t\t\t-- Init Object\r\n\t\t\t\t\tlocal thisClass = this\r\n\t\t\t\t\tlocal __constructor = function(...)\r\n\t\t\t\t\t\tlocal object = {}\r\n\t\t\t\t\t\tlocal this = class_creator()\r\n\r\n\t\t\t\t\t\t-- Init Public\r\n\t\t\t\t\t\tif (type(this.__public) == \"table\") then\r\n\t\t\t\t\t\t\tobject = this.__public\r\n\t\t\t\t\t\tend\r\n\r\n\t\t\t\t\t\t-- Init static values of the class\r\n\t\t\t\t\t\tthis.__public_static = thisClass.__public_static\r\n\t\t\t\t\t\tthis.__private_static = thisClass.__private_static\r\n\r\n\t\t\t\t\t\t-- Call Constructor\r\n\t\t\t\t\t\tif (type(this.__construct) == \"function\") then\r\n\t\t\t\t\t\t\tthis.__construct(...)\r\n\t\t\t\t\t\tend\r\n                \r\n\t\t\t\t\t\t-- Returning constructed object\r\n\t\t\t\t\t\treturn object\r\n\t\t\t\t\tend\r\n\t\t\t\t\treturn {class = class, constructor = __constructor}\r\n\t\t\t\tend\r\n\r\n\t\t\t\t-- Creating class (returning constructor)\r\n\t\t\t\tlocal class_data = __init()\r\n\t\t\t\tlocal class = class_data.class\r\n\t\t\t\tlocal constructor = class_data.constructor\r\n\r\n\t\t\t\t-- Set class metatable (with setting constructor)\r\n\t\t\t\tlocal class_metatable = {\r\n\t\t\t\t\t__newindex = function(t, key, value)\r\n\t\t\t\t\t\tif type(t[key])==\"nil\" or type(t[key])==\"function\" then\r\n\t\t\t\t\t\t\terror(\"Attempt to redefine class\")\r\n\t\t\t\t\t\tend\r\n\t\t\t\t\t\trawset(t, key, value)\r\n\t\t\t\t\tend,\r\n\t\t\t\t\t__metatable = false,\r\n\t\t\t\t\t__call = function(t, ...)\r\n\t\t\t\t\t\tif type(t) == nil then\r\n\t\t\t\t\t\t\terror(\"Class object create failed!\")\r\n\t\t\t\t\t\tend\r\n\t\t\t\t\t\tlocal obj = constructor(...)\r\n\t\t\t\t\t\tcreator.__private.object_class[obj] = t\r\n\t\t\t\t\t\tlocal object_metatable = {\r\n\t\t\t\t\t\t\t__newindex = function(t, key, value)\r\n\t\t\t\t\t\t\t\tclass = creator.__private.object_class[t]\r\n\t\t\t\t\t\t\t\tif type(class[key])~=\"nil\" and type(class[key])~=\"function\" then\r\n\t\t\t\t\t\t\t\t\trawset(class, key, value)\r\n\t\t\t\t\t\t\t\t\treturn\r\n\t\t\t\t\t\t\t\tend\r\n\t\t\t\t\t\t\t\tif type(t[key])~=\"nil\" and type(t[key])~=\"function\" then\r\n\t\t\t\t\t\t\t\t\trawset(t, key, value)\r\n\t\t\t\t\t\t\t\t\treturn\r\n\t\t\t\t\t\t\t\tend\r\n\t\t\t\t\t\t\t\terror(\"Attempt to redefine object\")\r\n\t\t\t\t\t\t\tend,\r\n\t\t\t\t\t\t\t__index = t,\r\n\t\t\t\t\t\t\t__metatable = false,\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tsetmetatable(obj, object_metatable)\r\n\t\t\t\t\t\treturn obj\r\n\t\t\t\t\tend,\r\n\t\t\t\t}\r\n\r\n\t\t\t\t-- Setting class metatable to the class itself\r\n\t\t\t\tsetmetatable(class, class_metatable)\r\n\r\n\t\t\t\t-- Returning resulting class\r\n\t\t\t\treturn class\r\n\t\t\tend\r\n    \r\n\t\t\treturn creator.__oncall\r\n\t\tend\r\n\t\tcreateClass = createClass()\r\n\t\t\t\tfunction switch(t)\r\n\t\t\t\t  t.case = function (self, x)\r\n\t\t\t\t\tlocal f = self[x] or self.default\r\n\t\t\t\t\tif f then\r\n\t\t\t\t\t  if type(f) == \"function\" then\r\n\t\t\t\t\t\tf(x, self)\r\n\t\t\t\t\t  else\r\n\t\t\t\t\t\terror(\"case \"..tostring(x)..\" not a function\")\r\n\t\t\t\t\t  end\r\n\t\t\t\t\tend\r\n\t\t\t\t  end\r\n\t\t\t\t  return t\r\n\t\t\t\tend\r\n\t\t\t\r\n\t\tCharacterGfxPrototype = function()\r\n\t\t\tlocal this = {}\r\n\t\t\tthis.__public_static = {}\r\n\t\t\tthis.__private_static = {}\r\n\r\n\t\t\tthis.__public = {\r\n\t\t\t\tget_main_char = function()\r\n\t\t\t\t\tthis.__private.id = vhs._chargfx_get_main_char()\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tcreate = function(char_id, sprite_name)\r\n\t\t\t\t\tthis.__private.id = vhs._chargfx_create(char_id, sprite_name)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tget = function(char_id)\r\n\t\t\t\t\tthis.__private.id = vhs._chargfx_get(char_id)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tsetpos = function(pos)\t\r\n\t\t\t\t\t-- this.__private.curpos = pos\t\r\n\t\t\t\t\tvhs._chargfx_setcurpos(this.__private.id, pos)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tmoveto = function(pos)\t\r\n\t\t\t\t\tvhs._chargfx_walkto(this.__private.id, pos)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\twait_move_finish = function()\r\n\t\t\t\t\tvhs._chargfx_wait_move_finish(this.__private.id)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\twait_bubble = function()\r\n\t\t\t\t\tvhs._chargfx_wait_bubble(this.__private.id)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tsay = function(msg)\t\r\n\t\t\t\t\tvhs._chargfx_say(this.__private.id, msg)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tsayR = function(msg)\t\r\n\t\t\t\t\tvhs._chargfx_sayR(this.__private.id, msg)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tsayL = function(msg)\t\r\n\t\t\t\t\tvhs._chargfx_sayL(this.__private.id, msg)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tthink = function(msg)\t\r\n\t\t\t\t\tvhs._chargfx_think(this.__private.id, msg)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tdestroy = function(msg)\t\r\n\t\t\t\t\tvhs._chargfx_destroy(this.__private.id)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tmirror = function(m)\t\r\n\t\t\t\t\tvhs._chargfx_mirror(this.__private.id, m)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tanimate = function(anim_name)\r\n\t\t\t\t\tvhs._chargfx_animate(this.__private.id, anim_name)\r\n\t\t\t\tend,\r\n\r\n\t\t\t\tpreset = function(preset_name)\r\n\t\t\t\t\tvhs._chargfx_preset(this.__private.id, preset_name)\r\n\t\t\t\tend,\r\n\r\n\r\n\t\t\t}\r\n\r\n\t\t\tthis.__private = {\r\n\t\t\t\tid = -1,\r\n\t\t\t\t-- curpos = \"\"\r\n\t\t\t}\r\n\r\n\t\t\tthis.__construct = function()\r\n\t\t\t\t\r\n\t\t\tend\r\n\r\n\t\t\treturn this\r\n\t\tend\r\n\r\n\t\tCharacterGfx = createClass(CharacterGfxPrototype)\r\n\r\n\t\t-- кладем в переменную 'char' нашего главного персонажа\r\n\t\tlocal char = CharacterGfx()\r\n\t\tchar.get_main_char()\r\n\t\t\r\n\t\t" + _lua_code + "\nvhs._OnScriptFinished()";
+		_lua.L_OpenLibs();
+		_lua.L_RequireF("vhslualib", OpenLib, global: true);
+		_lua.L_RequireF("trigvhslualib", OpenTrigLib, global: true);
+		_is_expression = false;
+	}
+
+	public void FromLuaExpression(string expression)
+	{
+		FromLua("return " + expression + "\n ");
+		_is_expression = true;
+	}
+
+	public float ExecuteExpression()
+	{
+		if (!_is_expression)
+		{
+			Debug.LogError("Trying execute non-expression Lua script as an expression");
+			return 0f;
+		}
+		if (_lua.L_DoString(_lua_code) != ThreadStatus.LUA_OK)
+		{
+			Debug.LogError("Error executing Lua expression : " + _lua.ToString());
+			Debug.LogWarning("LUA code: " + _lua_code);
+			throw new Exception("Error executing Lua expression");
+		}
+		float result = (float)_lua.ToNumber(-1);
+		_lua.Pop(1);
+		return result;
+	}
+
+	private int OpenLib(ILuaState lua)
+	{
+		NameFuncPair[] define = new NameFuncPair[44]
+		{
+			new NameFuncPair("trace", GameScriptGlobal.L_Trace),
+			new NameFuncPair("_OnScriptFinished", OnScriptFinished),
+			new NameFuncPair("HUD", _script_global.L_HUD),
+			new NameFuncPair("SwitchZone", _script_global.L_SwitchScene),
+			new NameFuncPair("SoundDoor", GameScriptGlobal.SoundDoor),
+			new NameFuncPair("StartWork", GameScriptGlobal.L_ShowWorkDialog),
+			new NameFuncPair("OpenPreFight", GameScriptGlobal.L_ShowPreFightDialog),
+			new NameFuncPair("ShowDialog", GameScriptGlobal.L_ShowDialog),
+			new NameFuncPair("BlackScreen", _script_global.L_BlackScreen),
+			new NameFuncPair("OpenCharGUI", _script_global.L_OpenCharGUI),
+			new NameFuncPair("StopCurrentActivity", GameScriptGlobal.L_StopCurrentActivity),
+			new NameFuncPair("EnableGUI", GameScriptGlobal.L_EnableGUI),
+			new NameFuncPair("DisableGUI", GameScriptGlobal.L_DisableGUI),
+			new NameFuncPair("StartFight", GameScriptGlobal.L_StartFight),
+			new NameFuncPair("StartRndFight", GameScriptGlobal.L_StartRndFight),
+			new NameFuncPair("GameOver", GameScriptGlobal.GameOver),
+			new NameFuncPair("OpenMap", GameScriptGlobal.L_OpenMap),
+			new NameFuncPair("ShowPayDialog", _script_global.L_ShowPayDialog),
+			new NameFuncPair("ShowMultiAnswer", _script_global.L_ShowMultiAnswer),
+			new NameFuncPair("_GetMultiAnswerResult", _script_global.L_GetMultiAnswerResult),
+			new NameFuncPair("OpenLeagueDialog", GameScriptGlobal.L_ShowLeagueDialog),
+			new NameFuncPair("AddToInventory", GameScriptGlobal.L_AddToInventory),
+			new NameFuncPair("SetGoal", _script_global.L_SetGoal),
+			new NameFuncPair("AddMapZone", _script_global.L_AddMapZone),
+			new NameFuncPair("AddAction", GameScriptGlobal.L_AddAction),
+			new NameFuncPair("Say", _script_global.L_Say),
+			new NameFuncPair("Delay", _script_global.L_Delay),
+			new NameFuncPair("_chargfx_create", GameScriptCharacterGfx.L_CharGfxCreate),
+			new NameFuncPair("_chargfx_get", GameScriptCharacterGfx.L_CharGfxGet),
+			new NameFuncPair("_chargfx_setcurpos", GameScriptCharacterGfx.L_CharGfxSetCurPos),
+			new NameFuncPair("_chargfx_walkto", GameScriptCharacterGfx.L_CharGfxWalkTo),
+			new NameFuncPair("_chargfx_say", GameScriptCharacterGfx.L_CharGfxSay),
+			new NameFuncPair("_chargfx_sayR", GameScriptCharacterGfx.L_CharGfxSayR),
+			new NameFuncPair("_chargfx_sayL", GameScriptCharacterGfx.L_CharGfxSayL),
+			new NameFuncPair("_chargfx_think", GameScriptCharacterGfx.L_CharGfxThink),
+			new NameFuncPair("_chargfx_wait_move_finish", _script_char_gfx.L_CharGfxWaitMoveFinish),
+			new NameFuncPair("_chargfx_wait_bubble", _script_char_gfx.L_CharGfxWaitBubbleDisappear),
+			new NameFuncPair("_chargfx_destroy", GameScriptCharacterGfx.L_CharGfxDestroy),
+			new NameFuncPair("_chargfx_get_main_char", GameScriptCharacterGfx.L_CharGfxGetMainChar),
+			new NameFuncPair("_chargfx_mirror", GameScriptCharacterGfx.L_CharGfxMirror),
+			new NameFuncPair("_chargfx_animate", GameScriptCharacterGfx.L_CharGfxAnimate),
+			new NameFuncPair("_chargfx_preset", GameScriptCharacterGfx.L_CharGfxPreset),
+			new NameFuncPair("start_script_finished", QuestSystem.L_OnStartScriptFinished),
+			new NameFuncPair("end_script_finished", QuestSystem.L_OnEndScriptFinished)
+		};
+		lua.L_NewLib(define);
+		return 1;
+	}
+
+	private int OpenTrigLib(ILuaState lua)
+	{
+		NameFuncPair[] define = new NameFuncPair[15]
+		{
+			new NameFuncPair("test", GameScriptGlobal.L_Test),
+			new NameFuncPair("varless", TriggersEngine.L_LesVar),
+			new NameFuncPair("varmore", TriggersEngine.L_MoreVar),
+			new NameFuncPair("varlesseq", TriggersEngine.L_LesEqVar),
+			new NameFuncPair("varmoreeq", TriggersEngine.L_MoreEqVar),
+			new NameFuncPair("vareq", TriggersEngine.L_EqualVar),
+			new NameFuncPair("varprob", TriggersEngine.L_ProblVar),
+			new NameFuncPair("qcur", TriggersEngine.L_IsQuestInUse),
+			new NameFuncPair("qfaild", TriggersEngine.L_IsQuestFaild),
+			new NameFuncPair("qsucced", TriggersEngine.L_IsQuestSucced),
+			new NameFuncPair("varadd", TriggersEngine.L_AddVar),
+			new NameFuncPair("hasperk", TriggersEngine.L_HasPerk),
+			new NameFuncPair("item", TriggersEngine.L_InventoryItemInRange),
+			new NameFuncPair("lplace", TriggersEngine.L_LeaguePlace),
+			new NameFuncPair("lscore", TriggersEngine.L_LeagueScore)
+		};
+		lua.L_NewLib(define);
+		return 1;
+	}
+
+	public void Execute()
+	{
+		if (_is_expression)
+		{
+			Debug.LogError("Trying execute expression Lua script as non-expression");
+			return;
+		}
+		id = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
+		if (_uscript_name != string.Empty)
+		{
+			GameScriptStatic.OnuScriptStarted(_uscript_name);
+			uscript = CustomUScript.Create(_uscript_name);
+			TwitchGameEngine.OnGlobalEvent(TwitchGameEngine.GlobalEvent.ScriptStarted);
+			return;
+		}
+		if (_lua == null)
+		{
+			Debug.Log("<color=yellow>lua script is null, exiting...</color>");
+			return;
+		}
+		Debug.Log("<color=yellow>executing script... </color>" + id + ", executed scripts: " + _total_executed_scripts + ", expression: " + _is_expression);
+		if (!_is_expression)
+		{
+			_total_executed_scripts++;
+			_all_scripts.Add(this);
+		}
+		_thread = _lua.NewThread();
+		_status = _thread.L_LoadString(_lua_code);
+		if (_status != ThreadStatus.LUA_OK)
+		{
+			Debug.LogError("Error parsing lua code: " + _status);
+			Debug.LogWarning("LUA code:\n" + _lua_code);
+			return;
+		}
+		try
+		{
+			_thread.Resume(null, 0);
+		}
+		catch (LuaRuntimeException ex)
+		{
+			Debug.LogError(string.Concat("Error executing lua code #", ex.ErrCode, "\n", ex.ToString()));
+		}
+	}
+
+	private int DoContinue(ILuaState lua)
+	{
+		int num = lua.GetTop();
+		if (num > 0)
+		{
+			_thread.Resume(null, 0);
+			num--;
+		}
+		return num;
+	}
+
+	public int ReturnLuaYield(ILuaState s)
+	{
+		_temp_state = s;
+		return s.YieldK(s.GetTop(), 0, null);
+	}
+
+	public void DoContinueDelegate()
+	{
+		DoContinue(_temp_state);
+	}
+
+	private int OnScriptFinished(ILuaState state)
+	{
+		if (!_is_expression)
+		{
+			_total_executed_scripts--;
+			Debug.Log("<color=yellow>finished script </color>" + id + ", executed scripts: " + _total_executed_scripts + ", expression: " + _is_expression);
+			if (_all_scripts.Contains(this))
+			{
+				_all_scripts.Remove(this);
+			}
+		}
+		return 1;
+	}
+
+	public void FromString(string script, string on_end_function = null)
+	{
+		if (IsUScript(script))
+		{
+			FromUScriptName(script.Substring(1));
+		}
+		else
+		{
+			FromLua(script + ((on_end_function != null) ? ("\n vhs." + on_end_function + "()") : string.Empty));
+		}
+	}
+
+	private static bool IsUScript(string str)
+	{
+		return str.Length > 1 && str[0] == ':';
+	}
+}

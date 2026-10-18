@@ -1,0 +1,22 @@
+using System;
+
+[NodePath("Events/VHS Story")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[FriendlyName("Custom uScript Events", "")]
+public class uScript_CustomUScriptEvent : uScriptEvent
+{
+	public delegate void uScriptEventHandler(object sender, EventArgs args);
+
+	[FriendlyName("On Script Start")]
+	public event uScriptEventHandler uScriptStart;
+
+	private void Update()
+	{
+		CustomUScript component = GetComponent<CustomUScript>();
+		if (component != null && component.started)
+		{
+			component.started = false;
+			this.uScriptStart(this, new EventArgs());
+		}
+	}
+}

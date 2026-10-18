@@ -1,0 +1,20 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Cycles Count for One Prof Action", 0)]
+[Category("Game")]
+public class Flow_GetCyclesCountForOneProfAction : PC2CustomFlowNode
+{
+	private ValueInput<string> actionId;
+
+	private ValueOutput<int> cyclesCount;
+
+	protected override void RegisterPorts()
+	{
+		actionId = AddValueInput<string>("actionId".CapitalizeFirst());
+		cyclesCount = AddValueOutput("cyclesCount".CapitalizeFirst(), () => GameBalance.Me.GetData<ProfessionActionDefinition>(actionId.value).ActionDuration);
+	}
+}

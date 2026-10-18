@@ -1,0 +1,79 @@
+using System;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+[Name("Show PipBoy Tooltip", 0)]
+[Category("Game/Dialogue")]
+public sealed class Flow_ShowPipBoyTooltip : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToOpen;
+
+	[GatherPortsCallback]
+	public bool updatePosition;
+
+	public bool flipIcon = true;
+
+	public UIBasicBubble.ForceCornerPosition forceCornerPosition;
+
+	private ValueInput<string> wgoId;
+
+	private ValueInput<WGO> usingWgo;
+
+	private FlowInput flowInput;
+
+	private FlowOutput @out;
+
+	private FlowOutput flowOnFinished;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToOpen)
+			{
+				return "<color=#FF0000>Hide PipBoy Tooltip</color>";
+			}
+			return "Show PipBoy Tooltip";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		flowInput = AddFlowInput("flowInput".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToOpen)
+			{
+				Transform talkPosition;
+				if (usingWgo.value == null)
+				{
+					talkPosition = PlayerController.Instance.PipBoyNode.transform;
+				}
+				else
+				{
+					talkPosition = usingWgo.value.PipBoyNode.transform;
+				}
+				Func<Vector2> func = () => ScreenCamera.WorldToScreen(talkPosition.position);
+				UITooltipPipBoy.Show(wgoId.value, ScreenCamera.WorldToScreen(talkPosition.position), updatePosition ? func : null, delegate
+				{
+					flowOnFinished.Call(flow);
+				}, forceCornerPosition, flipIcon, usingWgo.value);
+			}
+			else
+			{
+				UITooltipPipBoy.Hide(delegate
+				{
+					flowOnFinished.Call(flow);
+				});
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		flowOnFinished = AddFlowOutput("On Anim Finished");
+		wgoId = AddValueInput<string>("WGO ID");
+		usingWgo = AddValueInput<WGO>("WGO using pip boy");
+	}
+}

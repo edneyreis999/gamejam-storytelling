@@ -1,0 +1,96 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Teleport WGO", 0)]
+[Category("Game/WGO")]
+public class Flow_SetWGOPosition : PC2CustomFlowNode
+{
+	public enum SpawnObjectType
+	{
+		Transform,
+		WalkNode
+	}
+
+	[GatherPortsCallback]
+	public SpawnObjectType spawnObjectType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueInput<Transform> transform;
+
+	private ValueInput<WalkNode> walkNode;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Teleport);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		wgo = AddValueInput<WGO>("WGO");
+		switch (spawnObjectType)
+		{
+		case SpawnObjectType.Transform:
+			transform = AddValueInput<Transform>("transform");
+			break;
+		case SpawnObjectType.WalkNode:
+			walkNode = AddValueInput<WalkNode>("walkNode");
+			break;
+		}
+	}
+
+	private void Teleport(Flow flow)
+	{
+		WGO wGO = WGOParamOrSelf(wgo);
+		switch (spawnObjectType)
+		{
+		case SpawnObjectType.Transform:
+		{
+			Transform value2 = transform.value;
+			if (wGO != null)
+			{
+				if (value2 != null)
+				{
+					wGO.SetPosition(value2.position);
+				}
+				else
+				{
+					Debug.LogError("Transform is null");
+				}
+			}
+			else
+			{
+				Debug.LogError("WGO is null");
+			}
+			break;
+		}
+		case SpawnObjectType.WalkNode:
+		{
+			WalkNode value = walkNode.value;
+			if (wGO != null)
+			{
+				if (value != null)
+				{
+					wGO.SetPosition(value.transform.position);
+					wGO.SetDirection(value.DestDirection);
+				}
+				else
+				{
+					Debug.LogError("WalkNode is null");
+				}
+			}
+			else
+			{
+				Debug.LogError("WGO is null");
+			}
+			break;
+		}
+		}
+		@out.Call(flow);
+	}
+}

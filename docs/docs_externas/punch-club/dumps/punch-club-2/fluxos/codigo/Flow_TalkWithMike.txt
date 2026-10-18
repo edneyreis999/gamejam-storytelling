@@ -1,0 +1,45 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Talk With Mike", 0)]
+[Category("Game/Dialogue")]
+[Color("800080")]
+[ParadoxNotion.Design.Icon("DialogueSmall", false, "")]
+public sealed class Flow_TalkWithMike : PC2CustomFlowNode
+{
+	private FlowInput flowInput;
+
+	private FlowOutput flowOutput;
+
+	private FlowOutput flowOnFinished;
+
+	private ValueInput<string> text;
+
+	private ValueInput<SpeechBubbleType> speechType;
+
+	protected override void RegisterPorts()
+	{
+		flowInput = AddFlowInput("In", DoTalk);
+		flowOnFinished = AddFlowOutput("On Finished");
+		flowOutput = AddFlowOutput("Out");
+		text = AddValueInput<string>("text");
+		speechType = AddValueInput<SpeechBubbleType>("Speech type");
+		speechType.SetDefaultAndSerializedValue(SpeechBubbleType.Speech);
+	}
+
+	private void DoTalk(Flow flow)
+	{
+		string value = text.value;
+		SpeechBubbleType value2 = speechType.value;
+		Transform transform = PlayerController.Instance.MickBubbleNode.transform;
+		Bubble.ShowSpeechBubble(transform.GetHashCode(), value, VoiceID.Mick, transform, value2, isPlayer: false, delegate
+		{
+			flowOnFinished.Call(flow);
+		});
+		flowOutput.Call(flow);
+	}
+}

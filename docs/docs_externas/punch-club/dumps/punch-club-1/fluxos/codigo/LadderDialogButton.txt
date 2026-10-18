@@ -1,0 +1,39 @@
+using UnityEngine;
+
+public class LadderDialogButton : MonoBehaviour
+{
+	[SerializeField]
+	private UI2DSprite sprite;
+
+	[SerializeField]
+	private UILabel label;
+
+	private int _index;
+
+	private LadderDialog _parent_dialog;
+
+	private GJCommons.VoidDelegate _on_pressed;
+
+	private LadderDialog _dialog;
+
+	public void Init(LadderDialog dialog, LadderDialogButtonData data)
+	{
+		this.Activate();
+		sprite.sprite2D = dialog.GetButtonSprite(data.color);
+		GetComponent<UIButton>().normalSprite2D = sprite.sprite2D;
+		label.text = data.text;
+		label.effectColor = dialog.GetOutlineColor(data.color);
+		_on_pressed = data.on_pressed;
+		_dialog = dialog;
+	}
+
+	public void OnPressed()
+	{
+		Ladder.Click();
+		if (_on_pressed != null)
+		{
+			_on_pressed();
+		}
+		_dialog.OnPressed();
+	}
+}

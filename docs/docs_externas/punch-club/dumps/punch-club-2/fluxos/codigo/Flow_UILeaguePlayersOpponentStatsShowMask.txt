@@ -1,0 +1,41 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI League Player's Opponent Stats\nShow Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UILeaguePlayersOpponentStatsShowMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI League Player's Opponent Stats\n" + (isToShow.value ? "Show" : "Hide") + " Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform tutorialOpponentRectTransform = GUIElements.Get<UILeagueWindow>().TutorialOpponentRectTransform1;
+			RectTransform tutorialOpponentRectTransform2 = GUIElements.Get<UILeagueWindow>().TutorialOpponentRectTransform2;
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(tutorialOpponentRectTransform);
+				GUIElements.Get<UITutorialWindow>().ShowMask(tutorialOpponentRectTransform2);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(tutorialOpponentRectTransform);
+				GUIElements.Get<UITutorialWindow>().HideMask(tutorialOpponentRectTransform2);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

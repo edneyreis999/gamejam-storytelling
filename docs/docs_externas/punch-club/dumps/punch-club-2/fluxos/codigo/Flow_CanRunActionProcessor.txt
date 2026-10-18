@@ -1,0 +1,57 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Can Run ActionProcessor", 0)]
+[Category("Game")]
+public class Flow_CanRunActionProcessor : PC2CustomFlowNode
+{
+	public bool notShowHints;
+
+	private bool canRunProcessor;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueOutput<bool> canRun;
+
+	private ValueInput<string> actionName;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), RunProcessor);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		wgo = AddValueInput<WGO>("WGO");
+		actionName = AddValueInput<string>("actionName".CapitalizeFirst());
+		canRun = AddValueOutput("canRun".CapitalizeFirst(), () => canRunProcessor);
+	}
+
+	private void RunProcessor(Flow flow)
+	{
+		WGO wGO = WGOParamOrSelf(wgo);
+		if (wGO != null)
+		{
+			ActionDefinition data = GameBalance.Me.GetData<ActionDefinition>(actionName.value);
+			if (data != null)
+			{
+				canRunProcessor = MainGame.me.ActionProcessor.CanRun(data, wGO, new List<Transform> { wGO.ShowBubbleParamNode }, wGO.DistanceToShowParamBubbles, isOnWorkScene: false, -1, isActionCouldInterrupted: true, notShowHints);
+			}
+			else
+			{
+				Debug.LogError("Failed to run action processor for row " + actionName.value);
+			}
+		}
+		else
+		{
+			Debug.LogError("Tried to Run Action Processor on the null wgo");
+		}
+		@out.Call(flow);
+	}
+}

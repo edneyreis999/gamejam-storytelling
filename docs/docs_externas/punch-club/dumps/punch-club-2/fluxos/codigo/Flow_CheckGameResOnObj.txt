@@ -1,0 +1,124 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Check Param Flag On GO", 0)]
+[Category("Game")]
+public class Flow_CheckGameResOnObj : PC2CustomFlowNode
+{
+	public enum GetWGOType
+	{
+		ByString,
+		ByObject
+	}
+
+	[GatherPortsCallback]
+	public bool isPlayer = true;
+
+	[ShowIf("isPlayer", 0)]
+	[GatherPortsCallback]
+	public GetWGOType getWgoType = GetWGOType.ByObject;
+
+	private FlowInput @in;
+
+	private FlowOutput @true;
+
+	private FlowOutput @false;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueInput<string> wgoId;
+
+	private ValueInput<string> paramName;
+
+	private ValueOutput<string> paramNameOut;
+
+	private string paramValueOutput;
+
+	public override string name
+	{
+		get
+		{
+			if (isPlayer)
+			{
+				return "Check Param Flag On Player";
+			}
+			return "Check Param Flag On WGO";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Check);
+		@false = AddFlowOutput("<color=green>✔</color>", ">= 1");
+		@true = AddFlowOutput("<color=red>✘</color>", "== 0");
+		if (!isPlayer)
+		{
+			switch (getWgoType)
+			{
+			case GetWGOType.ByObject:
+				wgo = AddValueInput<WGO>("WGO");
+				break;
+			case GetWGOType.ByString:
+				wgoId = AddValueInput<string>("wgoId");
+				break;
+			}
+		}
+		paramName = AddValueInput<string>("paramName".CapitalizeFirst());
+		paramNameOut = AddValueOutput("paramNameOut".CapitalizeFirst(), () => paramValueOutput);
+	}
+
+	private void Check(Flow flow)
+	{
+		paramValueOutput = paramName.value;
+		if (isPlayer)
+		{
+			if (MainGame.me.PlayerRes.GetInt(paramName.value) == 0)
+			{
+				@true.Call(flow);
+			}
+			else
+			{
+				@false.Call(flow);
+			}
+			return;
+		}
+		switch (getWgoType)
+		{
+		case GetWGOType.ByObject:
+		{
+			WGO wGO = WGOParamOrSelf(wgo);
+			if (wGO != null)
+			{
+				if (wGO.WgoState.gameRes.GetInt(paramName.value) == 0)
+				{
+					@true.Call(flow);
+				}
+				else
+				{
+					@false.Call(flow);
+				}
+			}
+			else
+			{
+				Debug.LogError("Tried to check GameRes on null WGO");
+				@false.Call(flow);
+			}
+			break;
+		}
+		case GetWGOType.ByString:
+			if (MainGame.me.gameSave.worldData.GetWGOParamValue(wgoId.value, paramName.value) == 0f)
+			{
+				@true.Call(flow);
+			}
+			else
+			{
+				@false.Call(flow);
+			}
+			break;
+		}
+	}
+}

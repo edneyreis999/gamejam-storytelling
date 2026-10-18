@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Show Character State Bubble", 0)]
+[Category("Game/Player")]
+public class Flow_ShowCharacterStateBubble : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onShown;
+
+	private ValueInput<CharacterStateBubble.StateType> triggerName;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GUIElements.Get<CharacterStateBubble>().ShowBubble(triggerName.value, delegate
+			{
+				onShown.Call(flow);
+			});
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onShown = AddFlowOutput("onShown".CapitalizeFirst());
+		triggerName = AddValueInput<CharacterStateBubble.StateType>("triggerName".CapitalizeFirst());
+	}
+}

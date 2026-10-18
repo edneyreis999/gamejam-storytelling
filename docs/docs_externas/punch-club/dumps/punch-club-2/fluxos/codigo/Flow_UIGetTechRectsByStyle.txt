@@ -1,0 +1,26 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("UI Get Tech Rects By Style", 0)]
+[Category("Game/UI")]
+public class Flow_UIGetTechRectsByStyle : PC2CustomFlowNode
+{
+	private ValueInput<FightStyle> fightStyle;
+
+	private ValueOutput<List<RectTransform>> rects;
+
+	private ValueOutput<List<string>> idsOut;
+
+	private List<RectTransform> rectsInternal;
+
+	protected override void RegisterPorts()
+	{
+		fightStyle = AddValueInput<FightStyle>("fightStyle");
+		rects = AddValueOutput("rects", () => GUIElements.Get<UITechWindow>().GetTechRectsByStyle(fightStyle.value));
+		idsOut = AddValueOutput("idsOut", () => GUIElements.Get<UITechWindow>().GetTechIdsByStyle(fightStyle.value));
+	}
+}

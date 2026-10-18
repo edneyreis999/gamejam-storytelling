@@ -1,0 +1,46 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Prepare Fight Window Add Event\nTo School Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIPrepareFightAddEventToSchoolButton : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIPrepareFightWindow prepareFightWindow = GUIElements.Get<UIPrepareFightWindow>();
+			Button schoolButton = prepareFightWindow.PlayerSchool.SchoolButton;
+			GamepadNavigationItem navigationItem = schoolButton.GetComponent<GamepadNavigationItem>();
+			prepareFightWindow.CustomItems = new List<GamepadNavigationItem> { navigationItem };
+			prepareFightWindow.TutorialGamepadNavigation = true;
+			prepareFightWindow.SortButtonTipsOverTutorialWindow();
+			prepareFightWindow.OnInputSourceChanged();
+			UIElementsCustomEventHandlerManager.AddEvent(schoolButton, UITutorialArrow.SignOrientationType.Right, delegate
+			{
+				GUIElements.Instance.isSelectorActive = false;
+				prepareFightWindow.CustomItems = null;
+				prepareFightWindow.ReturnDefaultButtonTipsSorting();
+				prepareFightWindow.TutorialGamepadNavigation = false;
+				onClicked.Call(flow);
+				navigationItem.SyncOnSelectWithButton();
+			});
+			navigationItem.SyncOnSelectWithButton();
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+}

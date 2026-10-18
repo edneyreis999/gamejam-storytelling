@@ -1,0 +1,69 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Add Event Sewerage Room", 0)]
+[Category("Game/Sewerage")]
+public class Flow_AddEventSewerageRoom : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public SewerageActionEventType sewerageActionEventType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> roomId;
+
+	private ValueInput<string> scriptName;
+
+	public override string name
+	{
+		get
+		{
+			string text = string.Empty;
+			switch (sewerageActionEventType)
+			{
+			case SewerageActionEventType.Add:
+				text = "Add";
+				break;
+			case SewerageActionEventType.Rem:
+				text = "Rem";
+				break;
+			}
+			return text + " Event Sewerage Room";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ProceedEvent);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		roomId = AddValueInput<string>("roomId");
+		scriptName = AddValueInput<string>("scriptName");
+	}
+
+	private void ProceedEvent(Flow flow)
+	{
+		if (GUIElements.Get<UISewerageWindow>().GetRoom(roomId.value) != null)
+		{
+			switch (sewerageActionEventType)
+			{
+			case SewerageActionEventType.Add:
+				MainGame.me.gameSave.worldData.AddSewerageGameMapObjectEvent(roomId.value, scriptName.value);
+				break;
+			case SewerageActionEventType.Rem:
+				MainGame.me.gameSave.worldData.RemoveSewerageGameMapObjectEvent(roomId.value, scriptName.value);
+				break;
+			}
+		}
+		else
+		{
+			Debug.LogError("uiSewerageRoom by id " + roomId.value + " not found");
+		}
+		@out.Call(flow);
+	}
+}

@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Unlock Tech Branch", 0)]
+[Category("Game")]
+public class Flow_UnlockTechBranch : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToUnlock = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<TechBranchType> branchType;
+
+	public override string name => (isToUnlock ? "Unlock" : "Lock") + " Branch";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToUnlock)
+			{
+				MainGame.me.gameSave.knowledgeSystem.UnlockBranch(branchType.value);
+			}
+			else
+			{
+				MainGame.me.gameSave.knowledgeSystem.LockBranch(branchType.value);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		branchType = AddValueInput<TechBranchType>("branchType");
+	}
+}

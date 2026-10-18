@@ -1,0 +1,272 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GJL : ScriptableObject
+{
+	[NonSerialized]
+	public Dictionary<string, string> dict = new Dictionary<string, string>();
+
+	public string id = "en";
+
+	[SerializeField]
+	protected List<string> txt_ids = new List<string>();
+
+	[SerializeField]
+	protected List<string> txts = new List<string>();
+
+	protected static GJL cur_lng = null;
+
+	public static readonly string[] AVAILABLE_LOCALES = new string[13]
+	{
+		"en", "de", "fr", "ru", "es", "ptbr", "it", "pl", "cz", "tr",
+		"ja", "zh_cn", "ko"
+	};
+
+	public static readonly string[] AVAILABLE_LOCALE_NAMES = new string[13]
+	{
+		"English", "Deutsch", "Français", "Русский", "Español", "Português do Brasil", "Italiano", "Polski", "Čeština", "Türkçe",
+		"Japanese", "Chinese", "Korean"
+	};
+
+	public List<string> aliases_1 = new List<string>();
+
+	public List<string> aliases_2 = new List<string>();
+
+	private static Dictionary<string, UIFont> _eastern_prefabs = new Dictionary<string, UIFont>();
+
+	public static void LoadLanguageResource(string lng_id)
+	{
+		cur_lng = Resources.Load<GJL>("Locales/lng_" + lng_id);
+		if (cur_lng == null && lng_id != "en")
+		{
+			LoadLanguageResource("en");
+		}
+		Debug.Log("LoadLanguageResource(\"" + lng_id + "\"), " + cur_lng.txts.Count + " lines loaded");
+		cur_lng.InitHashDictionary();
+	}
+
+	public void InitHashDictionary()
+	{
+		dict.Clear();
+		for (int i = 0; i < txt_ids.Count; i++)
+		{
+			dict.Add(txt_ids[i], txts[i]);
+		}
+	}
+
+	public static string GetLocaleCode()
+	{
+		switch (Application.systemLanguage)
+		{
+		case SystemLanguage.Russian:
+		case SystemLanguage.Ukrainian:
+			return "ru";
+		case SystemLanguage.German:
+			return "de";
+		case SystemLanguage.Portuguese:
+			return "ptbr";
+		case SystemLanguage.French:
+			return "fr";
+		case SystemLanguage.Spanish:
+			return "es";
+		case SystemLanguage.Japanese:
+			return "ja";
+		case SystemLanguage.Chinese:
+			return "zh_cn";
+		case SystemLanguage.Czech:
+			return "cz";
+		case SystemLanguage.Korean:
+			return "ko";
+		default:
+			return "en";
+		}
+	}
+
+	public static void LoadLangugage()
+	{
+		LoadLanguageResource(GetLocaleCode());
+	}
+
+	public void AddLngString(string id, string txt)
+	{
+		int num = txt_ids.IndexOf(id);
+		if (num == -1)
+		{
+			txt_ids.Add(id);
+			txts.Add(txt);
+		}
+		else
+		{
+			txt_ids[num] = id;
+			txts[num] = txt;
+		}
+	}
+
+	public static string L(string lng_id)
+	{
+		if (lng_id == null)
+		{
+			Debug.LogError("lng_id is null");
+			return string.Empty;
+		}
+		if (cur_lng != null)
+		{
+			int num = cur_lng.aliases_1.IndexOf(lng_id);
+			if (num != -1)
+			{
+				return L(cur_lng.aliases_2[num]);
+			}
+		}
+		string text = ((!(cur_lng == null) && cur_lng.dict.ContainsKey(lng_id)) ? cur_lng.dict[lng_id] : lng_id);
+		text = text.Replace("&#xA;", "\n");
+		text = text.Replace("’", "'");
+		return text.Replace("&amp;", "&");
+	}
+
+	public static string L_colored(string lng_id, string v1, string color_1)
+	{
+		return L(lng_id).Replace("%1", "[" + color_1 + "]" + v1 + "[-]");
+	}
+
+	public static string L(string lng_id, string v1)
+	{
+		return L(lng_id).Replace("%1", v1);
+	}
+
+	public static string L(string lng_id, string v1, string v2)
+	{
+		return L(lng_id).Replace("%1", v1).Replace("%2", v2);
+	}
+
+	public static string L(string lng_id, string v1, string v2, string v3)
+	{
+		return L(lng_id).Replace("%1", v1).Replace("%2", v2).Replace("%3", v3);
+	}
+
+	public static string L(string lng_id, int v1)
+	{
+		return L(lng_id, v1.ToString());
+	}
+
+	public static string L(string lng_id, float v1)
+	{
+		return L(lng_id, v1.ToString());
+	}
+
+	public static string L(string lng_id, int v1, int v2)
+	{
+		return L(lng_id, v1.ToString(), v2.ToString());
+	}
+
+	public static string L(string lng_id, string v1, int v2)
+	{
+		return L(lng_id, v1.ToString(), v2.ToString());
+	}
+
+	public static string L(string lng_id, int v1, string v2)
+	{
+		return L(lng_id, v1.ToString(), v2.ToString());
+	}
+
+	public static string L(string lng_id, float v1, float v2)
+	{
+		return L(lng_id, v1.ToString(), v2.ToString());
+	}
+
+	public static string L(string lng_id, string v1, float v2)
+	{
+		return L(lng_id, v1.ToString(), v2.ToString());
+	}
+
+	public static string L(string lng_id, float v1, string v2)
+	{
+		return L(lng_id, v1.ToString(), v2.ToString());
+	}
+
+	public static string L(string lng_id, string v1, int v2, int v3)
+	{
+		return L(lng_id, v1.ToString(), v2.ToString(), v3.ToString());
+	}
+
+	public static string GetLocaleNameByCode(string locale_code)
+	{
+		for (int i = 0; i < AVAILABLE_LOCALES.Length; i++)
+		{
+			if (AVAILABLE_LOCALES[i] == locale_code)
+			{
+				return AVAILABLE_LOCALE_NAMES[i];
+			}
+		}
+		return "?";
+	}
+
+	public static string GetCurLng()
+	{
+		return cur_lng.id;
+	}
+
+	public static bool IsEastern()
+	{
+		return cur_lng.id == "ja" || cur_lng.id == "zh_cn" || cur_lng.id == "ko";
+	}
+
+	public static void OnLabelLanguageChanged(UILabel l, UILabelLocHelper h)
+	{
+		string text = cur_lng.id;
+		bool flag = IsEastern();
+		if (!flag && !h.eastern)
+		{
+			return;
+		}
+		if (!flag)
+		{
+			h.RestoreToOriginal();
+		}
+		else
+		{
+			int fontSize = 10;
+			int fontSize2 = 20;
+			string text2 = string.Empty;
+			switch (text)
+			{
+			case "ja":
+				text2 = "jp_12";
+				fontSize = 10;
+				break;
+			case "ko":
+				text2 = "ko_12";
+				fontSize = 14;
+				break;
+			case "zh_cn":
+				text2 = "cn_12";
+				fontSize = 16;
+				break;
+			}
+			if (!_eastern_prefabs.ContainsKey(text))
+			{
+				UIFont value = Resources.Load<UIFont>("ngui_fonts/eastern/" + text2);
+				_eastern_prefabs.Add(text, value);
+			}
+			UIFont uIFont = _eastern_prefabs[text];
+			if (uIFont == null)
+			{
+				Debug.LogError("Eastern font load error: " + text);
+				return;
+			}
+			l.bitmapFont = uIFont;
+			l.fontSize = fontSize;
+			l.spacingY = 0;
+			if (h.IsHeader())
+			{
+				l.fontSize = fontSize2;
+			}
+			else
+			{
+				l.overflowMethod = UILabel.Overflow.ResizeHeight;
+			}
+		}
+		h.cur_lng = text;
+		h.eastern = flag;
+	}
+}

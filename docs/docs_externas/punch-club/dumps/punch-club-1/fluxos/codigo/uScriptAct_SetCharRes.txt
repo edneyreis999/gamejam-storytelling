@@ -1,0 +1,17 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Set Char Res", "")]
+public class uScriptAct_SetCharRes : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Res name", "")] string name, [FriendlyName("Value", "")] int val)
+	{
+		Debug.Log("Set char res " + name + " = " + val);
+		MainGame.save.ch.char_res.Set(name, val);
+		MainGame.me.gui_elements.hud.Redraw();
+	}
+}

@@ -1,0 +1,185 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Start Profession Action", 0)]
+[Category("Game")]
+public class Flow_StartProfessionAction : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToStart;
+
+	[GatherPortsCallback]
+	public bool overwriteCyclesCount;
+
+	private ValueInput<int> cyclesCount;
+
+	public bool ignoreTime;
+
+	public bool ignoreChecks;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private ValueInput<string> actionId;
+
+	private ValueInput<List<Transform>> showParamBubbleNodes;
+
+	private ValueInput<List<Transform>> showParamBubbleNodesPlayer;
+
+	private Flow flow;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToStart)
+			{
+				return "Stop Profession Action";
+			}
+			return "Start Profession Action ";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToStart)
+			{
+				if (string.IsNullOrEmpty(actionId.value))
+				{
+					Debug.Log("Empty action id!!!");
+					@out.Call(flow);
+					return;
+				}
+				ProfessionActionDefinition data = GameBalance.Me.GetData<ProfessionActionDefinition>(actionId.value);
+				ActionDefinition data2 = GameBalance.Me.GetData<ActionDefinition>(data.action);
+				if (data.isActionCouldInterrupted)
+				{
+					ignoreTime = true;
+				}
+				ProfessionDefinition data3 = GameBalance.Me.GetData<ProfessionDefinition>(data.profession);
+				GameRes gameResShouldAdd = new GameRes();
+				gameResShouldAdd += data2.GameRes;
+				if (!data.isActionCouldInterrupted)
+				{
+					for (int i = 1; i < data.ActionDuration; i++)
+					{
+						gameResShouldAdd += data2.GameRes;
+					}
+				}
+				if (!ignoreChecks)
+				{
+					GameResCheckResult gameResCheckResult = ((!data2.notCheckMaxRes) ? ((data2.checkRes.Count != 0) ? GameResCharacterOperationsUtils.CheckGameResCouldGave(gameResShouldAdd, data2.checkRes) : GameResCharacterOperationsUtils.CheckGameResCouldGave(gameResShouldAdd)) : GameResCharacterOperationsUtils.CheckGameResCouldGave(gameResShouldAdd, checkMaxRes: false));
+					if (gameResCheckResult.checkStatus != GameResCheckResult.CheckStatus.Success)
+					{
+						if (GUIElements.Get<UIWorkWindow>().IsShown)
+						{
+							GameResCharacterOperationsUtils.TryToShowCharacterStateBubble(gameResCheckResult, WorkSceneManager.CurrentSceneData?.workScene.node.transform);
+						}
+						else
+						{
+							GameResCharacterOperationsUtils.TryToShowCharacterStateBubble(gameResCheckResult);
+						}
+						Debug.Log("#prof# Can't start prof action because of res");
+						onFinished.Call(flow);
+						@out.Call(flow);
+						UIInteractionTooltip.Hide(force: true);
+						return;
+					}
+					if (!ignoreTime)
+					{
+						int num = data2.durationInGame;
+						if (!data.isActionCouldInterrupted)
+						{
+							for (int j = 1; j < data.ActionDuration; j++)
+							{
+								num += data2.durationInGame;
+							}
+						}
+						string text = TimeManager.ConvertQuantumsToHoursMinutes(num);
+						if (!TimeManager.IsTimeInsideBorders(text, data3.startTime, data3.endTime))
+						{
+							GUIElements.Get<CharacterStateBubble>().ShowBubble(CharacterStateBubble.StateType.Time);
+							Debug.Log("#prof# Can't start prof action because of time professionDefinition.startTime:[" + data3.startTime + "] professionDefinition.endTime:[" + data3.endTime + "] timeAfterFinishAction:[" + text + "]");
+							onFinished.Call(flow);
+							@out.Call(flow);
+							UIInteractionTooltip.Hide(force: true);
+							return;
+						}
+					}
+				}
+				if (!string.IsNullOrEmpty(data.workSceneName))
+				{
+					UIProfessionWindow uIProfessionWindow = GUIElements.Get<UIProfessionWindow>();
+					this.flow = flow;
+					uIProfessionWindow.Open(data, delegate
+					{
+						OnActionComplete(null);
+					});
+				}
+				else
+				{
+					int num2 = ((!data.isActionCouldInterrupted) ? data.ActionDuration : (-1));
+					if (overwriteCyclesCount)
+					{
+						num2 = cyclesCount.value;
+					}
+					MainGame.me.ActionProcessor.Run(data2, DynamicScene.FindWGO(data2.linkedWgo), showParamBubbleNodesPlayer.value, 1f, isOnWorkScene: false, num2, data.isActionCouldInterrupted || overwriteCyclesCount);
+					this.flow = flow;
+					MainGame.me.ActionProcessor.OnStopped += OnActionComplete;
+					switch (actionId.value)
+					{
+					case "mick_gym_talk_action":
+						UIInteractionTooltip.ShowSocialization(GameBalance.Me.GetData<ProfessionDefinition>("mick_gym"), DynamicScene.FindWGO(data2.linkedWgo), openedAsInteractionAction: true, showParamBubbleNodes.value);
+						break;
+					case "police_work_cards_action":
+						UIInteractionTooltip.ShowSocialization(GameBalance.Me.GetData<ProfessionDefinition>("police_work"), DynamicScene.FindWGO(data2.linkedWgo), openedAsInteractionAction: true, showParamBubbleNodes.value);
+						break;
+					case "police_work_docs":
+						UIInteractionTooltip.ShowProfessionActionTooltip(GameBalance.Me.GetData<ProfessionDefinition>("police_work"), DynamicScene.FindWGO(data2.linkedWgo), openedAsInteractionAction: true, showParamBubbleNodes.value);
+						break;
+					case "mick_gym_training_action":
+						UIInteractionTooltip.ShowProfessionActionTooltip(GameBalance.Me.GetData<ProfessionDefinition>("mick_gym"), DynamicScene.FindWGO(data2.linkedWgo), openedAsInteractionAction: true, showParamBubbleNodes.value);
+						break;
+					case "mick_gym_abil_action":
+						UIInteractionTooltip.ShowProfessionActionTooltip(GameBalance.Me.GetData<ProfessionDefinition>("mick_gym"), DynamicScene.FindWGO(data2.linkedWgo), openedAsInteractionAction: true, showParamBubbleNodes.value);
+						break;
+					}
+				}
+			}
+			else
+			{
+				MainGame.me.ActionProcessor.Stop();
+			}
+			@out.Call(flow);
+		});
+		if (isToStart)
+		{
+			actionId = AddValueInput<string>("actionId");
+			if (overwriteCyclesCount)
+			{
+				cyclesCount = AddValueInput<int>("cyclesCount");
+			}
+			showParamBubbleNodes = AddValueInput<List<Transform>>("showParamBubbleNodes");
+			showParamBubbleNodesPlayer = AddValueInput<List<Transform>>("showParamBubbleNodesPlayer");
+			onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		}
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+
+	private void OnActionComplete(WGO wgo)
+	{
+		onFinished.Call(flow);
+		MainGame.me.ActionProcessor.OnStopped -= OnActionComplete;
+	}
+}

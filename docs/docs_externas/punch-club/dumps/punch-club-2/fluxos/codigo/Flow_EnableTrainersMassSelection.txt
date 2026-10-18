@@ -1,0 +1,53 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Enable Trainers Duty Mode", 0)]
+[Category("Game/MickGym")]
+public class Flow_EnableTrainersMassSelection : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isEnable;
+
+	[ShowIf("isEnable", 1)]
+	public string professionActionWGOId;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name
+	{
+		get
+		{
+			if (!isEnable)
+			{
+				return "Disable Trainers Mass Selection";
+			}
+			return "Enable Trainers Mass Selection";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			for (int i = 0; i < LazyConsts.mickScholarsTrainersIds.Count; i++)
+			{
+				WGOState wGOState = MainGame.me.gameSave.worldData.GetWGOState(LazyConsts.mickScholarsTrainersIds[i]);
+				if (isEnable)
+				{
+					wGOState.professionActionObject = professionActionWGOId;
+				}
+				else
+				{
+					wGOState.professionActionObject = string.Empty;
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

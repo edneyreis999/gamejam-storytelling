@@ -1,0 +1,276 @@
+{
+  "source": "StreamingAssets\\aa\\StandaloneWindows64\\visualscripts_assets_flowscripts.bundle",
+  "asset_file": "CAB-d20d3b06f11c976cf843a8b3493256d4",
+  "path_id": -5075359851831435073,
+  "serialized_graph_sha256": "3decf1265c587b50e72f48af9c7b55f45367ec4927911b101c249186dc1c6c86",
+  "object": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 0,
+      "m_PathID": -7349436598487046363
+    },
+    "m_Name": "CosmoPizza",
+    "_serializedGraph": "{\"type\":\"FlowCanvas.FlowScript\",\"nodes\":[{\"eventName\":{\"_value\":\"interaction\"},\"target\":{},\"targets\":{},\"_position\":{\"x\":500.0,\"y\":481.0},\"$type\":\"PunchClub2.FlowCanvas.CustomLazyEvent\",\"$id\":\"0\"},{\"_position\":{\"x\":962.0,\"y\":482.0},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetControlActive\",\"$id\":\"1\"},{\"objectCompareType\":1,\"_inputPortValues\":{\"ParamName\":{\"$content\":\"pizza_count\",\"$type\":\"System.String\"}},\"_position\":{\"x\":1227.929,\"y\":481.3147},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_GameResCompare\",\"$id\":\"2\"},{\"isPlayer\":true,\"_inputPortValues\":{\"text\":{\"$content\":\"cosmo_pizza_not_enough_interaction\",\"$type\":\"System.String\"},\"Speech type\":{\"$content\":0,\"$type\":\"SpeechBubbleType\"}},\"_position\":{\"x\":1578.651,\"y\":365.3298},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_Talk\",\"$id\":\"3\"},{\"_inputPortValues\":{\"IsEnable\":{\"$content\":true,\"$type\":\"System.Boolean\"}},\"_position\":{\"x\":2511.975,\"y\":485.3285},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetControlActive\",\"$id\":\"4\"},{\"isPlayer\":true,\"_inputPortValues\":{\"text\":{\"$content\":\"cosmo_pizza_enough_interaction\",\"$type\":\"System.String\"},\"Speech type\":{\"$content\":0,\"$type\":\"SpeechBubbleType\"}},\"_position\":{\"x\":1585.985,\"y\":604.6613},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_Talk\",\"$id\":\"5\"},{\"needSpareItem\":true,\"_inputPortValues\":{\"itemId\":{\"$content\":\"cosmo_pizza_to_eat\",\"$type\":\"System.String\"},\"spareItemId\":{\"$content\":\"cosmo_pizza\",\"$type\":\"System.String\"},\"showNotice\":{\"$content\":true,\"$type\":\"System.Boolean\"}},\"_position\":{\"x\":2013.313,\"y\":605.3275},\"$type\":\"PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_AddCharacterItem\",\"$id\":\"6\"},{\"giveType\":1,\"objectType\":1,\"_inputPortValues\":{\"ParamName\":{\"$content\":\"pizza_count\",\"$type\":\"System.String\"},\"ParamValue\":{\"$content\":-1.0,\"$type\":\"System.Single\"}},\"_position\":{\"x\":2281.723,\"y\":604.8525},\"$type\":\"PunchClub2.FlowCanvasNodes.Flow_SetGameResToObject\",\"$id\":\"7\"}],\"connections\":[{\"_sourcePortName\":\"Received\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"0\"},\"_targetNode\":{\"$ref\":\"1\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"1\"},\"_targetNode\":{\"$ref\":\"2\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"==\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"<\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"3\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\">\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"2\"},\"_targetNode\":{\"$ref\":\"5\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"On Finished\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"3\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"On Finished\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"5\"},\"_targetNode\":{\"$ref\":\"6\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"6\"},\"_targetNode\":{\"$ref\":\"7\"},\"$type\":\"FlowCanvas.BinderConnection\"},{\"_sourcePortName\":\"Out\",\"_targetPortName\":\"In\",\"_sourceNode\":{\"$ref\":\"7\"},\"_targetNode\":{\"$ref\":\"4\"},\"$type\":\"FlowCanvas.BinderConnection\"}],\"canvasGroups\":[],\"localBlackboard\":{\"_variables\":{}}}",
+    "_objectReferences": [],
+    "_graphSource": {
+      "_version": 3.2899999618530273,
+      "_category": "",
+      "_comments": "",
+      "_translation": {
+        "x": -496.0,
+        "y": -155.0
+      },
+      "_zoomFactor": 0.7500075697898865
+    },
+    "_haltSerialization": 0,
+    "_externalSerializationFile": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  },
+  "graph": {
+    "type": "FlowCanvas.FlowScript",
+    "nodes": [
+      {
+        "eventName": {
+          "_value": "interaction"
+        },
+        "target": {},
+        "targets": {},
+        "_position": {
+          "x": 500.0,
+          "y": 481.0
+        },
+        "$type": "PunchClub2.FlowCanvas.CustomLazyEvent",
+        "$id": "0"
+      },
+      {
+        "_position": {
+          "x": 962.0,
+          "y": 482.0
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetControlActive",
+        "$id": "1"
+      },
+      {
+        "objectCompareType": 1,
+        "_inputPortValues": {
+          "ParamName": {
+            "$content": "pizza_count",
+            "$type": "System.String"
+          }
+        },
+        "_position": {
+          "x": 1227.929,
+          "y": 481.3147
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_GameResCompare",
+        "$id": "2"
+      },
+      {
+        "isPlayer": true,
+        "_inputPortValues": {
+          "text": {
+            "$content": "cosmo_pizza_not_enough_interaction",
+            "$type": "System.String"
+          },
+          "Speech type": {
+            "$content": 0,
+            "$type": "SpeechBubbleType"
+          }
+        },
+        "_position": {
+          "x": 1578.651,
+          "y": 365.3298
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_Talk",
+        "$id": "3"
+      },
+      {
+        "_inputPortValues": {
+          "IsEnable": {
+            "$content": true,
+            "$type": "System.Boolean"
+          }
+        },
+        "_position": {
+          "x": 2511.975,
+          "y": 485.3285
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetControlActive",
+        "$id": "4"
+      },
+      {
+        "isPlayer": true,
+        "_inputPortValues": {
+          "text": {
+            "$content": "cosmo_pizza_enough_interaction",
+            "$type": "System.String"
+          },
+          "Speech type": {
+            "$content": 0,
+            "$type": "SpeechBubbleType"
+          }
+        },
+        "_position": {
+          "x": 1585.985,
+          "y": 604.6613
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_Talk",
+        "$id": "5"
+      },
+      {
+        "needSpareItem": true,
+        "_inputPortValues": {
+          "itemId": {
+            "$content": "cosmo_pizza_to_eat",
+            "$type": "System.String"
+          },
+          "spareItemId": {
+            "$content": "cosmo_pizza",
+            "$type": "System.String"
+          },
+          "showNotice": {
+            "$content": true,
+            "$type": "System.Boolean"
+          }
+        },
+        "_position": {
+          "x": 2013.313,
+          "y": 605.3275
+        },
+        "$type": "PunchClub2.FlowCanvas.FlowCanvasNodes.Flow_AddCharacterItem",
+        "$id": "6"
+      },
+      {
+        "giveType": 1,
+        "objectType": 1,
+        "_inputPortValues": {
+          "ParamName": {
+            "$content": "pizza_count",
+            "$type": "System.String"
+          },
+          "ParamValue": {
+            "$content": -1.0,
+            "$type": "System.Single"
+          }
+        },
+        "_position": {
+          "x": 2281.723,
+          "y": 604.8525
+        },
+        "$type": "PunchClub2.FlowCanvasNodes.Flow_SetGameResToObject",
+        "$id": "7"
+      }
+    ],
+    "connections": [
+      {
+        "_sourcePortName": "Received",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "0"
+        },
+        "_targetNode": {
+          "$ref": "1"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "1"
+        },
+        "_targetNode": {
+          "$ref": "2"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "==",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "<",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "3"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": ">",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "2"
+        },
+        "_targetNode": {
+          "$ref": "5"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "On Finished",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "3"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "On Finished",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "5"
+        },
+        "_targetNode": {
+          "$ref": "6"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "6"
+        },
+        "_targetNode": {
+          "$ref": "7"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      },
+      {
+        "_sourcePortName": "Out",
+        "_targetPortName": "In",
+        "_sourceNode": {
+          "$ref": "7"
+        },
+        "_targetNode": {
+          "$ref": "4"
+        },
+        "$type": "FlowCanvas.BinderConnection"
+      }
+    ],
+    "canvasGroups": [],
+    "localBlackboard": {
+      "_variables": {}
+    }
+  }
+}

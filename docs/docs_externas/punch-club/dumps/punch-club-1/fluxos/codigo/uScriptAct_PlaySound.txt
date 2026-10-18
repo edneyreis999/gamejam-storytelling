@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Play Sound", "")]
+public class uScriptAct_PlaySound : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Sound", "")] string sound)
+	{
+		Sound.PlayActionSound(sound, looped: false);
+	}
+}

@@ -1,0 +1,310 @@
+using System;
+using System.Collections.Generic;
+using UniLua;
+using UnityEngine;
+
+public class GameScriptGlobal
+{
+	private GameScript _script;
+
+	public GameScriptGlobal(GameScript script)
+	{
+		_script = script;
+	}
+
+	public static int L_Trace(ILuaState s)
+	{
+		int num = 0;
+		string text = string.Empty;
+		while (num < 6)
+		{
+			num++;
+			try
+			{
+				s.L_CheckAny(num);
+			}
+			catch (LuaRuntimeException)
+			{
+				break;
+			}
+			try
+			{
+				text += s.L_CheckString(num);
+			}
+			catch (LuaRuntimeException)
+			{
+				Debug.LogError("vhs.trace parameter #" + num + " error");
+				break;
+			}
+		}
+		Debug.Log("Lua trace: " + text);
+		return 1;
+	}
+
+	public int L_BlackScreen(ILuaState s)
+	{
+		string lng_id = s.L_CheckString(1);
+		MainGame.me.gui_elements.black_screen.ShowText(GJL.L(lng_id), _script.DoContinueDelegate);
+		return _script.ReturnLuaYield(s);
+	}
+
+	public int L_HUD(ILuaState s)
+	{
+		if (s.L_CheckInteger(1) == 1)
+		{
+			MainGame.me.gui_elements.hud.Show();
+			MainGame.me.gui_elements.hud_left.Show();
+		}
+		else
+		{
+			MainGame.me.gui_elements.hud.Hide();
+			MainGame.me.gui_elements.hud_left.Hide();
+		}
+		return 1;
+	}
+
+	public int L_SwitchScene(ILuaState s)
+	{
+		string scene = s.L_CheckString(1);
+		MainGame.save.ch.char_gfx.gameObject.SetActive(value: false);
+		ScreenFreeze.Freeze(delegate
+		{
+			LoadingScreen.LoadScene(scene, LoadingScreen.FadeType.NoFade);
+			DynamicScene.on_awaken = (GJCommons.VoidDelegate)Delegate.Combine(DynamicScene.on_awaken, (GJCommons.VoidDelegate)delegate
+			{
+				MainGame.save.ch.char_gfx.gameObject.SetActive(value: true);
+				ScreenFreeze.StartFade(s.L_CheckInteger(2) == 1, delegate
+				{
+					_script.DoContinueDelegate();
+				}, do_screenshot: false);
+			});
+		});
+		return _script.ReturnLuaYield(s);
+	}
+
+	public static int L_ShowDialog(ILuaState s)
+	{
+		string dialog_name = s.L_CheckString(1);
+		MainGame.me.gui_elements.dialog_gui.ShowDialog(dialog_name);
+		return 1;
+	}
+
+	public static int L_ShowWorkDialog(ILuaState s)
+	{
+		string work_name = s.L_CheckString(1);
+		MainGame.me.gui_elements.working_animation.OpenWork(work_name);
+		return 1;
+	}
+
+	public static int L_ShowPreFightDialog(ILuaState s)
+	{
+		string obj_name = s.L_CheckString(1);
+		MainGame.me.gui_elements.prefight.OpenPrefight(GameBalance.me.GetData<FightData>(obj_name));
+		return 1;
+	}
+
+	public static int L_StopCurrentActivity(ILuaState s)
+	{
+		MainGame.me.StopActivity();
+		return 1;
+	}
+
+	public int L_ShowMultiAnswer(ILuaState s)
+	{
+		List<string> list = new List<string>();
+		int num = 0;
+		while (true)
+		{
+			num++;
+			string text = s.L_CheckString(num);
+			if (text == string.Empty)
+			{
+				break;
+			}
+			if (!(text == "-"))
+			{
+				list.Add(GJL.L(text));
+			}
+		}
+		SpeechBubbleMultiAnswer.CreateSpeechBubbleMultiAnswer(list, OnMultiAnswerChosen, is_speak: true);
+		return _script.ReturnLuaYield(s);
+	}
+
+	private void OnMultiAnswerChosen(int answer_n)
+	{
+		_script.temp_value = answer_n;
+		_script.DoContinueDelegate();
+	}
+
+	public int L_GetMultiAnswerResult(ILuaState state)
+	{
+		state.PushNumber(_script.temp_value + 1);
+		return 1;
+	}
+
+	public static int L_Test(ILuaState s)
+	{
+		float num = (float)s.L_CheckNumber(1);
+		s.PushNumber(2.876f + num);
+		return 1;
+	}
+
+	private static void EnableGUI(string gui_element, bool state)
+	{
+		switch (gui_element)
+		{
+		case "btn_map":
+			BottomBar.map_enabled = state;
+			break;
+		case "btn_char":
+			BottomBar.char_enabled = state;
+			break;
+		default:
+			Debug.LogError("EnableGUI: unknown element '" + gui_element + "'");
+			break;
+		}
+	}
+
+	public static int L_EnableGUI(ILuaState state)
+	{
+		EnableGUI(state.L_CheckString(1), state: true);
+		return 1;
+	}
+
+	public static int L_DisableGUI(ILuaState state)
+	{
+		EnableGUI(state.L_CheckString(1), state: false);
+		return 1;
+	}
+
+	public int L_OpenCharGUI(ILuaState state)
+	{
+		Debug.Log("open char gui");
+		return _script.ReturnLuaYield(state);
+	}
+
+	public static int L_OpenMap(ILuaState state)
+	{
+		MainGame.me.gui_elements.game_map.Open(hide_close_btn: false, string.Empty);
+		return 1;
+	}
+
+	public static int L_StartFight(ILuaState state)
+	{
+		int opponent_id = state.L_CheckInteger(1);
+		int fight_data_id = state.L_CheckInteger(2);
+		MainGame.me.StartSimpleFight(opponent_id, fight_data_id);
+		return 1;
+	}
+
+	public static int L_StartRndFight(ILuaState state)
+	{
+		string[] array = state.L_CheckString(1).Split(',');
+		int num = NGUITools.RandomRange(0, array.Length - 1);
+		Debug.Log("<color=yellow>Random fighter</color>, rnd = " + num + ", opp_id = " + array[num]);
+		int fight_data_id = state.L_CheckInteger(2);
+		MainGame.me.StartSimpleFight(int.Parse(array[num]), fight_data_id);
+		return 1;
+	}
+
+	public static int GameOver(ILuaState state)
+	{
+		MainGame.me.GameOver();
+		return 1;
+	}
+
+	public static int SoundDoor(ILuaState state)
+	{
+		Sound.Play(Sound.SoundID.Door);
+		return 1;
+	}
+
+	public static int L_ShowLeagueDialog(ILuaState state)
+	{
+		string league_name = state.L_CheckString(1);
+		Old_LeagueState f_state = MainGame.save.ch.all_leagues.Old_GetLeague(league_name);
+		MainGame.me.gui_elements.fight_selector.Open(f_state);
+		return 1;
+	}
+
+	public static int L_AddToInventory(ILuaState state)
+	{
+		int o_id = state.L_CheckInteger(1);
+		MainGame.save.ch.AddToInventory(o_id);
+		return 1;
+	}
+
+	public static void DebugLog(string s)
+	{
+		Debug.Log("<color=green>Script: </color>" + s);
+	}
+
+	public int L_ShowPayDialog(ILuaState state)
+	{
+		Debug.Log("<color=green>L_ShowPayDialog</color>");
+		string s_name = state.L_CheckString(1);
+		string type = state.L_CheckString(2);
+		int price = state.L_CheckInteger(3);
+		int num = state.L_CheckInteger(4);
+		int num2 = state.L_CheckInteger(5);
+		MainGame.me.ShowScenePayDialog(s_name, type, price, num == 1, num2 == 1);
+		DynamicScene.on_awaken = (GJCommons.VoidDelegate)Delegate.Combine(DynamicScene.on_awaken, new GJCommons.VoidDelegate(_script.DoContinueDelegate));
+		return _script.ReturnLuaYield(state);
+	}
+
+	public int L_SetGoal(ILuaState state)
+	{
+		string goal_name = state.L_CheckString(1);
+		int num = state.L_CheckInteger(2);
+		GoalState.State state2 = (GoalState.State)num;
+		if (MainGame.save.ch.SetGoalState(goal_name, state2, show_windows: true, delegate
+		{
+			_script.DoContinueDelegate();
+		}))
+		{
+			return _script.ReturnLuaYield(state);
+		}
+		return 1;
+	}
+
+	public int L_AddMapZone(ILuaState state)
+	{
+		MainGame.save.ch.inventory.AddMapZoneToInventory(state.L_CheckString(1));
+		return 1;
+	}
+
+	public static int L_AddAction(ILuaState state)
+	{
+		int num = state.L_CheckInteger(1);
+		if (num > 0)
+		{
+			MainGame.save.ch.ActionInventoryAdd(num);
+		}
+		else
+		{
+			MainGame.save.ch.ActionInventoryRemove(-num);
+		}
+		return 1;
+	}
+
+	public int L_Say(ILuaState state)
+	{
+		string text = state.L_CheckString(1);
+		GameObject gameObject = GameObject.Find(text);
+		if (gameObject == null)
+		{
+			Debug.LogError("Say: GameObject '" + text + "' not found!");
+			return 1;
+		}
+		bool flag = state.L_CheckInteger(3) == 0;
+		SpeechBubbleGUI speechBubbleGUI = SpeechBubbleGUI.CreateSpeechBubble(GJL.L(state.L_CheckString(2)), flag ? SpeechBubbleGUI.Type.Think : SpeechBubbleGUI.Type.Speak, gameObject.transform.position / 2f, auto_dissappear: true, state.L_CheckInteger(4) == 1, state.L_CheckInteger(5) == 1);
+		speechBubbleGUI.AddOnDestroyListener(_script.DoContinueDelegate);
+		return _script.ReturnLuaYield(state);
+	}
+
+	public int L_Delay(ILuaState state)
+	{
+		GJTimer.AddTimer((float)state.L_CheckNumber(1), _script.DoContinueDelegate);
+		return _script.ReturnLuaYield(state);
+	}
+}

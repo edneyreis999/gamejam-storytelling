@@ -1,0 +1,35 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get ExitNode's Transform", 0)]
+[Category("Game/ExitNode")]
+public class Flow_GetExitNode : PC2CustomFlowNode
+{
+	private ValueOutput<Transform> exitNode;
+
+	private ValueInput<WGO> wgoInput;
+
+	protected override void RegisterPorts()
+	{
+		wgoInput = AddValueInput<WGO>("WGO");
+		exitNode = AddValueOutput("exitNode".CapitalizeFirst(), delegate
+		{
+			WGO wGO = WGOParamOrSelf(wgoInput);
+			if (wGO == null)
+			{
+				Debug.Log("#ss#Null wgo!!!");
+				return (Transform)null;
+			}
+			if (wGO.ExitNode == null)
+			{
+				Debug.Log("#ss#Null Exit Node for wgo:[" + wGO.Id + "]!!!");
+				return (Transform)null;
+			}
+			return wGO.ExitNode;
+		});
+	}
+}

@@ -1,0 +1,46 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("UI Switch School", 0)]
+[Category("Game/UI")]
+public class Flow_UISwitchSchool : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> schoolId;
+
+	private ValueInput<string> techId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (!string.IsNullOrEmpty(schoolId.value))
+			{
+				CharacterBaseUtility.SwitchSchoolPreset(schoolId.value);
+			}
+			else
+			{
+				FightActionDataDefinition fightActionById = GameBalance.Me.GetFightActionById(techId.value);
+				for (int i = 0; i < MainGame.me.gameSave.playerData.schoolUnlocked.Count; i++)
+				{
+					FightSchoolDefinition schoolById = GameBalance.Me.GetSchoolById(MainGame.me.gameSave.playerData.schoolUnlocked[i]);
+					if (schoolById.fightStyle == fightActionById.FightStyle(forPlayer: true))
+					{
+						CharacterBaseUtility.SwitchSchoolPreset(schoolById.id);
+						break;
+					}
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		schoolId = AddValueInput<string>("schoolId");
+		techId = AddValueInput<string>("techId");
+	}
+}

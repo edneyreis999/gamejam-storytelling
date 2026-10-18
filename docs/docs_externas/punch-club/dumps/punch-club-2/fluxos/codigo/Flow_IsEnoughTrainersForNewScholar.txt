@@ -1,0 +1,52 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is Enough Trainers For New Scholar", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_IsEnoughTrainersForNewScholar : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			int num = 0;
+			int num2 = 0;
+			for (int i = 0; i < LazyConsts.mickScholarsIds.Count; i++)
+			{
+				WGOState wGOState = MainGame.me.gameSave.worldData.GetWGOState(LazyConsts.mickScholarsTrainersIds[i]);
+				if (wGOState != null && wGOState.GetStateOnScene("MikesOldHouse", out var isActive))
+				{
+					WGOState wGOState2 = MainGame.me.gameSave.worldData.GetWGOState(LazyConsts.mickScholarsIds[i]);
+					if (isActive)
+					{
+						num2++;
+					}
+					if (wGOState2 != null && isActive && wGOState2.gameRes.GetInt("is_unlocked") == 1)
+					{
+						num++;
+					}
+				}
+			}
+			if (num2 > num)
+			{
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+	}
+}

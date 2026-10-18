@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Select Challenge Fight Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_SelectChallengeFightButton : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Select);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow".CapitalizeFirst());
+	}
+
+	private void Select(Flow flow)
+	{
+		if (isToShow.value)
+		{
+			GUIElements.Get<UITutorialWindow>().ShowMask(GUIElements.Get<UIFightChallengeWindow>().tutorialRect);
+		}
+		else
+		{
+			GUIElements.Get<UITutorialWindow>().HideMask(GUIElements.Get<UIFightChallengeWindow>().tutorialRect);
+		}
+		@out.Call(flow);
+	}
+}

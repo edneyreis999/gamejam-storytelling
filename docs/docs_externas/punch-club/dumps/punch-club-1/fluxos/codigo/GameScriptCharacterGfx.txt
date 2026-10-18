@@ -1,0 +1,242 @@
+using System.Collections.Generic;
+using UniLua;
+using UnityEngine;
+
+public class GameScriptCharacterGfx
+{
+	private static readonly Dictionary<int, CharacterGfx> _character_gfx = new Dictionary<int, CharacterGfx>();
+
+	private static readonly Dictionary<string, int> _character_string_ids = new Dictionary<string, int>();
+
+	private static readonly List<CharacterGfx> _script_added_chars = new List<CharacterGfx>();
+
+	private GameScript _script;
+
+	public GameScriptCharacterGfx(GameScript script)
+	{
+		_script = script;
+	}
+
+	public static void SetScriptAddedCharsVisibility(bool vis)
+	{
+		foreach (CharacterGfx script_added_char in _script_added_chars)
+		{
+			NGUITools.SetActive(script_added_char.gameObject, vis);
+		}
+	}
+
+	public static int L_CharGfxCreate(ILuaState s)
+	{
+		string text = s.L_CheckString(1);
+		Debug.Log("L_CharGfxCreate: " + text + ", " + s.L_CheckString(2));
+		CharacterGfx characterGfx = GfxCore.CreateCharacterGfx(s.L_CheckString(2), is_player_char: false);
+		GfxCore.AddCharacterOnScreen(characterGfx);
+		characterGfx.SetCurrentTreeNode("def");
+		int i;
+		for (i = _character_gfx.Keys.Count; _character_gfx.ContainsKey(i); i++)
+		{
+		}
+		_character_gfx.Add(i, characterGfx);
+		_character_string_ids.Add(text, i);
+		_script_added_chars.Add(characterGfx);
+		s.PushInteger(i);
+		return 1;
+	}
+
+	public static int L_CharGfxGet(ILuaState s)
+	{
+		string text = s.L_CheckString(1);
+		if (!_character_string_ids.ContainsKey(text))
+		{
+			Debug.LogError("CharacterGfx get: coudn't find character: " + text);
+			return 1;
+		}
+		int n = _character_string_ids[text];
+		s.PushInteger(n);
+		return 1;
+	}
+
+	public static int L_CharGfxGetMainChar(ILuaState s)
+	{
+		s.PushInteger(-1);
+		return 1;
+	}
+
+	public static int L_CharGfxDestroy(ILuaState s)
+	{
+		int num = s.L_CheckInteger(1);
+		CharacterGfx characterGfx = GetCharacterGfx(num);
+		if (characterGfx == null)
+		{
+			return 1;
+		}
+		characterGfx.DestroyMe();
+		string text = string.Empty;
+		foreach (string key in _character_string_ids.Keys)
+		{
+			if (_character_string_ids[key] == num)
+			{
+				text = key;
+				break;
+			}
+		}
+		if (text == string.Empty)
+		{
+			Debug.LogError("Something strange!");
+		}
+		else
+		{
+			_character_string_ids.Remove(text);
+		}
+		_script_added_chars.Remove(characterGfx);
+		_character_gfx.Remove(num);
+		return 1;
+	}
+
+	public static int L_CharGfxMirror(ILuaState s)
+	{
+		int id = s.L_CheckInteger(1);
+		CharacterGfx characterGfx = GetCharacterGfx(id);
+		if (characterGfx == null)
+		{
+			return 1;
+		}
+		characterGfx.SetMirror(s.L_CheckInteger(2) == 1);
+		return 1;
+	}
+
+	public static CharacterGfx GetCharacterGfx(int id)
+	{
+		if (id == -1)
+		{
+			return MainGame.save.ch.char_gfx;
+		}
+		if (!_character_gfx.ContainsKey(id))
+		{
+			Debug.LogError("Character " + id + " doesn't exist");
+			return null;
+		}
+		return _character_gfx[id];
+	}
+
+	public static int L_CharGfxSetCurPos(ILuaState s)
+	{
+		int id = s.L_CheckInteger(1);
+		CharacterGfx characterGfx = GetCharacterGfx(id);
+		if (characterGfx == null)
+		{
+			return 1;
+		}
+		characterGfx.SetCurrentTreeNode(s.L_CheckString(2));
+		return 1;
+	}
+
+	public static int L_CharGfxWalkTo(ILuaState s)
+	{
+		int id = s.L_CheckInteger(1);
+		CharacterGfx characterGfx = GetCharacterGfx(id);
+		if (characterGfx == null)
+		{
+			return 1;
+		}
+		characterGfx.WalkTo(s.L_CheckString(2));
+		return 1;
+	}
+
+	public static int L_CharGfxSay(ILuaState s)
+	{
+		return L_CharGfxSaySide(s, uScriptAct_CharacterSay.Side.Front);
+	}
+
+	public static int L_CharGfxSayR(ILuaState s)
+	{
+		return L_CharGfxSaySide(s, uScriptAct_CharacterSay.Side.Right);
+	}
+
+	public static int L_CharGfxSayL(ILuaState s)
+	{
+		return L_CharGfxSaySide(s, uScriptAct_CharacterSay.Side.Left);
+	}
+
+	private static int L_CharGfxSaySide(ILuaState s, uScriptAct_CharacterSay.Side side)
+	{
+		int id = s.L_CheckInteger(1);
+		CharacterGfx characterGfx = GetCharacterGfx(id);
+		if (characterGfx == null)
+		{
+			return 1;
+		}
+		characterGfx.ShowSpeechBubble(GJL.L(s.L_CheckString(2)), SpeechBubbleGUI.Type.Speak, force_mirror_x: false, force_mirror_y: false, side);
+		return 1;
+	}
+
+	public static int L_CharGfxThink(ILuaState s)
+	{
+		int id = s.L_CheckInteger(1);
+		CharacterGfx characterGfx = GetCharacterGfx(id);
+		if (characterGfx == null)
+		{
+			return 1;
+		}
+		characterGfx.ShowSpeechBubble(GJL.L(s.L_CheckString(2)), SpeechBubbleGUI.Type.Think);
+		return 1;
+	}
+
+	public static int L_CharGfxAnimate(ILuaState s)
+	{
+		int id = s.L_CheckInteger(1);
+		CharacterGfx characterGfx = GetCharacterGfx(id);
+		if (characterGfx == null)
+		{
+			return 1;
+		}
+		characterGfx.PlayAnimation(s.L_CheckString(2), string.Empty);
+		return 1;
+	}
+
+	public static int L_CharGfxPreset(ILuaState s)
+	{
+		int id = s.L_CheckInteger(1);
+		CharacterGfx characterGfx = GetCharacterGfx(id);
+		if (characterGfx == null)
+		{
+			return 1;
+		}
+		characterGfx.UpdateWithPreset(s.L_CheckString(2));
+		return 1;
+	}
+
+	public int L_CharGfxWaitMoveFinish(ILuaState s)
+	{
+		int id = s.L_CheckInteger(1);
+		CharacterGfx characterGfx = GetCharacterGfx(id);
+		if (characterGfx == null)
+		{
+			return 1;
+		}
+		if (!characterGfx.IsWalking())
+		{
+			return 1;
+		}
+		characterGfx.AddCallback_OnCameToLastPoint(_script.DoContinueDelegate, call_only_once: true);
+		return _script.ReturnLuaYield(s);
+	}
+
+	public int L_CharGfxWaitBubbleDisappear(ILuaState s)
+	{
+		int id = s.L_CheckInteger(1);
+		CharacterGfx characterGfx = GetCharacterGfx(id);
+		if (characterGfx == null)
+		{
+			return 1;
+		}
+		characterGfx.AddCallback_OnBubbleDisappear(_script.DoContinueDelegate);
+		return _script.ReturnLuaYield(s);
+	}
+
+	public static void ClearLists()
+	{
+		_character_string_ids.Clear();
+		_character_gfx.Clear();
+	}
+}

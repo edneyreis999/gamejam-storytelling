@@ -1,0 +1,73 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("Show Cutscene", 0)]
+[Category("Game")]
+public class Flow_ShowCutscene : PC2CustomFlowNode
+{
+	public bool enabledPortraits;
+
+	public bool doNotScaleForMobile;
+
+	public bool vrCabinetFrame;
+
+	public int sortingOrder = -1;
+
+	[GatherPortsCallback]
+	public bool tryShowSkipButton;
+
+	public List<string> portraits = new List<string> { "player", "carla" };
+
+	[GatherPortsCallback]
+	public bool isToShow;
+
+	[ShowIf("isToShow", 1)]
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onSkip;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToShow)
+			{
+				return "Hide Cutscene";
+			}
+			return "Show Cutscene";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UICutsceneWindow uICutsceneWindow = GUIElements.Get<UICutsceneWindow>();
+			if (isToShow)
+			{
+				uICutsceneWindow.ShowCutscene(enabledPortraits, portraits, tryShowSkipButton, delegate
+				{
+					onSkip.Call(flow);
+				}, !vrCabinetFrame, doNotScaleForMobile);
+			}
+			else
+			{
+				uICutsceneWindow.HideCutscene();
+			}
+			uICutsceneWindow.GetComponent<Canvas>().sortingOrder = sortingOrder;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (tryShowSkipButton)
+		{
+			onSkip = AddFlowOutput("onSkip".CapitalizeFirst());
+		}
+	}
+}

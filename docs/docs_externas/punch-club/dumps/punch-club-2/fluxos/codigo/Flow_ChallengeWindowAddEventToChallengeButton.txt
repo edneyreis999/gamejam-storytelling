@@ -1,0 +1,48 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Challenge Window Add Event to Challenge Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_ChallengeWindowAddEventToChallengeButton : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput onClicked;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), AddEvent);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+
+	private void AddEvent(Flow flow)
+	{
+		UIFightChallengeWindow challengeWindow = GUIElements.Get<UIFightChallengeWindow>();
+		ExtendedButton fightButton = challengeWindow.FightButton;
+		GUIElements.Get<UITutorialWindow>().ShowMask(challengeWindow.tutorialRect);
+		challengeWindow.CustomItems = new List<GamepadNavigationItem> { fightButton.GetComponent<GamepadNavigationItem>() };
+		challengeWindow.TutorialGamepadNavigation = true;
+		challengeWindow.SortButtonTipsOverTutorialWindow();
+		challengeWindow.OnInputSourceChanged();
+		UIElementsCustomEventHandlerManager.AddEvent(fightButton, UITutorialArrow.SignOrientationType.Left, delegate
+		{
+			challengeWindow.TutorialGamepadNavigation = false;
+			challengeWindow.CustomItems = null;
+			challengeWindow.LockPressBack = false;
+			challengeWindow.ReturnDefaultButtonTipsSorting();
+			challengeWindow.OnInputSourceChanged();
+			GUIElements.Get<UILeagueWindow>().EloLeague.Header.RightButton.onClick?.Invoke();
+			onClicked.Call(flow);
+			GUIElements.Get<UITutorialWindow>().HideMask(challengeWindow.tutorialRect);
+		});
+		@out.Call(flow);
+	}
+}

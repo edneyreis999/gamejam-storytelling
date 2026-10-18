@@ -1,0 +1,56 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Deffered Event", 0)]
+[Category("Game")]
+public class Flow_AddDefferedEvent : PC2CustomFlowNode
+{
+	public bool chechEventExists;
+
+	public bool isToRemove;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<int> lifeTime;
+
+	private ValueInput<string> runningScript;
+
+	public override string name
+	{
+		get
+		{
+			if (!isToRemove)
+			{
+				return "Add Deffered Event";
+			}
+			return "Remove Deffered Event";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToRemove)
+			{
+				DefferedEventsManager.RemoveDefferedEvent(runningScript.value);
+			}
+			else
+			{
+				DefferedEventsManager.AddDefferedEvent(lifeTime.value, runningScript.value, chechEventExists);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (!isToRemove)
+		{
+			lifeTime = AddValueInput<int>("lifeTime".CapitalizeFirst());
+		}
+		runningScript = AddValueInput<string>("runningScript".CapitalizeFirst());
+	}
+}

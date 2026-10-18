@@ -1,0 +1,47 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Blink Tech Elements", 0)]
+[Category("Game")]
+public class Flow_BlinkTechElements : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<List<string>> elements;
+
+	private ValueInput<string> oneElement;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Blink);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		elements = AddValueInput<List<string>>("elements".CapitalizeFirst());
+		oneElement = AddValueInput<string>("oneElement".CapitalizeFirst());
+	}
+
+	private void Blink(Flow flow)
+	{
+		List<string> list = new List<string>();
+		if (elements.value != null)
+		{
+			list.AddRange(elements.value);
+		}
+		if (oneElement.value != null)
+		{
+			list.Add(oneElement.value);
+		}
+		if (list.Count == 0)
+		{
+			Debug.LogError("Blink empty tech elements list :(");
+		}
+		GUIElements.Get<UITechWindow>().StartElementsOutlineBlink(list);
+		@out.Call(flow);
+	}
+}

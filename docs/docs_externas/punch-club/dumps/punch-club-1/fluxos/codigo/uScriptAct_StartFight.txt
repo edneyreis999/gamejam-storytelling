@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/Fight")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Start Fight", "")]
+public class uScriptAct_StartFight : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Opp. id", "")] int opponent_id, [FriendlyName("FightData id", "")] int fightdata_id)
+	{
+		MainGame.me.StartSimpleFight(opponent_id, fightdata_id);
+	}
+}

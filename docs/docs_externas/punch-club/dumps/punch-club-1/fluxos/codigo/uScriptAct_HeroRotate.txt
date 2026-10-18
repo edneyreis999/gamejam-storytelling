@@ -1,0 +1,13 @@
+[NodePath("Actions/VHS Story/Character")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Hero rotate", "")]
+public class uScriptAct_HeroRotate : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Side", "")][SocketState(false, false)][DefaultValue(uScriptAct_CharacterSay.Side.Front)] uScriptAct_CharacterSay.Side side = uScriptAct_CharacterSay.Side.Front)
+	{
+		MainGame.save.ch.char_gfx.SetCharRotation(side);
+	}
+}

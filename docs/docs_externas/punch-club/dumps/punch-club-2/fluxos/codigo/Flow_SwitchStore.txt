@@ -1,0 +1,27 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("SwitchStore", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_SwitchStore : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput steam;
+
+	private FlowOutput other;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			other.Call(flow);
+		});
+		steam = AddFlowOutput("steam".CapitalizeFirst());
+		other = AddFlowOutput("other".CapitalizeFirst());
+	}
+}

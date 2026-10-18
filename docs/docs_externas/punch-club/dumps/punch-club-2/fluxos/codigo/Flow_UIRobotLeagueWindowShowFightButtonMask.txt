@@ -1,0 +1,38 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Robot League Show\nMask Fight Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIRobotLeagueWindowShowFightButtonMask : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI Robot League" + (isToShow.value ? "Show" : "Hide") + "\nMask Fight Button";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform fightButtonRectTransform = GUIElements.Get<UIRobotLeagueWindow>().EloLeague.FightButtonRectTransform;
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(fightButtonRectTransform);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(fightButtonRectTransform);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

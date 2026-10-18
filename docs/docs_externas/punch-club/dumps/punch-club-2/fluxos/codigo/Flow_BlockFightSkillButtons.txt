@@ -1,0 +1,48 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Block Fight Skill Buttons", 0)]
+[Category("Game/Tutorial")]
+public class Flow_BlockFightSkillButtons : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToBlock;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name => (isToBlock ? "Block" : "Unblock") + " Fight Skill Buttons";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIPrepareFightWindow uIPrepareFightWindow = GUIElements.Get<UIPrepareFightWindow>();
+			UICharacterAbilities playerAbilities = uIPrepareFightWindow.PlayerAbilities;
+			uIPrepareFightWindow.TutorialGamepadNavigation = true;
+			GUIElements.Instance.isSelectorActive = false;
+			uIPrepareFightWindow.CustomItems = new List<GamepadNavigationItem> { uIPrepareFightWindow.emptyTutorialItem };
+			uIPrepareFightWindow.OnInputSourceChanged();
+			if (isToBlock)
+			{
+				playerAbilities.Attacks[0].Button.interactable = false;
+				playerAbilities.Defences[0].Button.interactable = false;
+				playerAbilities.Perks[0].Button.interactable = false;
+			}
+			else
+			{
+				playerAbilities.Attacks[0].Button.interactable = true;
+				playerAbilities.Defences[0].Button.interactable = true;
+				playerAbilities.Perks[0].Button.interactable = true;
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

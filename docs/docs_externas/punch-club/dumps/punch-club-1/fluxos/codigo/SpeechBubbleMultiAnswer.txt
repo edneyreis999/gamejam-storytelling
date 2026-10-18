@@ -1,0 +1,201 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpeechBubbleMultiAnswer : MonoBehaviour
+{
+	public delegate void AnswerPressedDelegate(int answer_n);
+
+	protected AnswerPressedDelegate on_click_delegate;
+
+	protected List<SpeechBubbleGUI> bubbles;
+
+	private AnswerPressedDelegate _on_press_delegate;
+
+	private static readonly Color COLOR_INACTIVE = new Color(0.9f, 0.9f, 0.9f, 1f);
+
+	private static readonly Color COLOR_ACTIVE = new Color(1f, 1f, 0.7647059f, 1f);
+
+	private static readonly Color GMPD_COLOR_ACTIVE = new Color(1f, 43f / 51f, 10f / 51f, 1f);
+
+	public static bool visible = false;
+
+	public static bool mouse_overed = false;
+
+	public UITable table;
+
+	protected bool need_reposition = true;
+
+	private GJCommons.VoidDelegate _on_chosen_delegate;
+
+	public static void CreateSpeechBubbleMultiAnswer(Vector2 pos, List<string> answers, AnswerPressedDelegate out_delegate, bool is_speak, GJCommons.VoidDelegate on_chosen_delegate = null)
+	{
+		TwitchGameEngine.OnGlobalEvent(TwitchGameEngine.GlobalEvent.MultiAnswer);
+		SpeechBubbleMultiAnswer ma = Object.Instantiate(MainGame.me.gui_elements.multi_answer_prefab);
+		ma.transform.parent = MainGame.me.gui_elements.speech_panel.transform;
+		ma.transform.localScale = MainGame.me.gui_elements.multi_answer_prefab.transform.localScale;
+		ma._on_chosen_delegate = on_chosen_delegate;
+		ma.on_click_delegate = out_delegate;
+		ma.bubbles = new List<SpeechBubbleGUI>();
+		ma.gameObject.transform.localPosition = (pos + new Vector2(0f, ma.table.padding.y + 10f)).RoundXY();
+		Vector2 zero = Vector2.zero;
+		ma._on_press_delegate = out_delegate;
+		visible = true;
+		MainGame.me.gui_elements.hud.SetColliders(colliders_enabled: false);
+		bool flag = answers.Count > 2 && GJL.L(answers[0]).Length > 35;
+		int num = 0;
+		for (int num2 = answers.Count - 1; num2 >= 0; num2--)
+		{
+			int num3 = num2 + 1;
+			bool flag2 = num2 == answers.Count - 1;
+			SpeechBubbleGUI speechBubbleGUI = SpeechBubbleGUI.CreateSpeechBubble(GJL.L(answers[num2]), (!flag2 || !is_speak) ? SpeechBubbleGUI.Type.None : SpeechBubbleGUI.Type.Speak, zero, auto_dissappear: false, force_mirror_x: false, force_mirror_y: false, animated: false);
+			speechBubbleGUI.skippable = false;
+			if (VHSConst.IS_PHONE)
+			{
+				speechBubbleGUI.bg.topAnchor.absolute += 8;
+				speechBubbleGUI.bg.bottomAnchor.absolute -= 8;
+			}
+			if (flag)
+			{
+				speechBubbleGUI.GetComponentsInChildren<UILabel>(includeInactive: true)[0].width = ((!VHSConst.IS_PHONE) ? 210 : 290);
+				speechBubbleGUI.GetComponentsInChildren<UITable>(includeInactive: true)[0].Reposition();
+			}
+			speechBubbleGUI.gameObject.transform.parent = ma.gameObject.transform;
+			speechBubbleGUI.gameObject.transform.localScale = Vector3.one;
+			speechBubbleGUI.gameObject.transform.localPosition = zero;
+			int answer_n = num2;
+			GJCommons.VoidDelegate dlgt = delegate
+			{
+				ma.OnPressed(answer_n);
+			};
+			ma.bubbles.Add(speechBubbleGUI);
+			zero.y += speechBubbleGUI.height - 10 + ((!flag2 || !is_speak) ? (-10) : 0);
+			UIButton component = speechBubbleGUI.cur_bubble.background.gameObject.GetComponent<UIButton>();
+			component.enabled = true;
+			component.onClick.Add(new EventDelegate(delegate
+			{
+				dlgt();
+			}));
+			UIEventTrigger uIEventTrigger = component.gameObject.AddComponent<UIEventTrigger>();
+			uIEventTrigger.onHoverOver.Add(new EventDelegate(OnMouseOverReply));
+			uIEventTrigger.onHoverOut.Add(new EventDelegate(OnMouseOutReply));
+			BoxCollider2D componentInChildren = speechBubbleGUI.cur_bubble.background.gameObject.GetComponentInChildren<BoxCollider2D>();
+			componentInChildren.enabled = true;
+			Color color = (component.defaultColor = COLOR_INACTIVE);
+			color = (speechBubbleGUI.color = color);
+			component.disabledColor = color;
+			component.hover = COLOR_ACTIVE;
+			component.pressed = component.hover;
+			num = speechBubbleGUI.GetComponentsInChildren<UILabel>(includeInactive: true)[0].width;
+			UIPanel component2 = speechBubbleGUI.gameObject.GetComponent<UIPanel>();
+			Object.Destroy(component2);
+			FakeWidget fakeWidget = speechBubbleGUI.gameObject.AddComponent<FakeWidget>();
+			fakeWidget.pivot = UIWidget.Pivot.BottomLeft;
+			speechBubbleGUI.gameObject.GetComponent<FakeWidget>().height = speechBubbleGUI.gameObject.GetComponentInChildren<UILabel>().height;
+		}
+		Debug.Log("x = " + (pos.x + (float)num) + ", scr = " + Screen.width / 4);
+		int num4 = (int)pos.x + num + 12 - Screen.width / 4;
+		if (num4 > 0)
+		{
+			ma.gameObject.transform.localPosition -= new Vector3(num4, 0f, 0f);
+		}
+		for (int num5 = 0; num5 < 2; num5++)
+		{
+			UITable[] componentsInChildren = ma.GetComponentsInChildren<UITable>(includeInactive: true);
+			foreach (UITable uITable in componentsInChildren)
+			{
+				uITable.Reposition();
+			}
+			UIWidget[] componentsInChildren2 = ma.GetComponentsInChildren<UIWidget>(includeInactive: true);
+			foreach (UIWidget uIWidget in componentsInChildren2)
+			{
+				uIWidget.UpdateAnchors();
+			}
+		}
+		ma.table.Reposition();
+		ma.table.repositionNow = true;
+		UIWidget component3 = ma.GetComponent<UIWidget>();
+		SpeechBubbleGUI speechBubbleGUI2 = ma.bubbles[ma.bubbles.Count - 1];
+		component3.height = (int)speechBubbleGUI2.transform.localPosition.y + speechBubbleGUI2.bg.height;
+		int num8 = MyGUIRoot.GetScreenH() / 4;
+		float num9 = component3.transform.localPosition.y + (float)component3.height;
+		num9 -= (float)num8;
+		if (num9 > 0f)
+		{
+			ma.transform.localPosition -= new Vector3(0f, Mathf.Round(num9));
+			SpeechBubbleInsideGfx[] componentsInChildren3 = ma.GetComponentsInChildren<SpeechBubbleInsideGfx>();
+			foreach (SpeechBubbleInsideGfx speechBubbleInsideGfx in componentsInChildren3)
+			{
+				if (speechBubbleInsideGfx.corner_think != null)
+				{
+					speechBubbleInsideGfx.corner_think.gameObject.SetActive(value: false);
+				}
+				if (speechBubbleInsideGfx.corner_speak != null)
+				{
+					speechBubbleInsideGfx.corner_speak.gameObject.SetActive(value: false);
+				}
+			}
+		}
+		GJTimer.VoidDelegate dlgt2 = delegate
+		{
+			if (ma != null && ma.table != null)
+			{
+				ma.table.Reposition();
+				ma.table.repositionNow = true;
+			}
+		};
+		GJTimer.AddTimer(0.05f, dlgt2);
+		GJTimer.AddTimer(0.1f, dlgt2);
+		MainMenuGamepadController component4 = ma.gameObject.GetComponent<MainMenuGamepadController>();
+		if ((bool)component4)
+		{
+			component4.Refresh();
+		}
+	}
+
+	public static void CreateSpeechBubbleMultiAnswer(List<string> answers, AnswerPressedDelegate out_delegate, bool is_speak, GJCommons.VoidDelegate on_chosen_delegate = null)
+	{
+		CreateSpeechBubbleMultiAnswer((Vector2)MainGame.save.ch.char_gfx.bubble_pos.gameObject.transform.position / 2f - CameraHelper.GetCameraShiftVector() / 2f, answers, out_delegate, is_speak, on_chosen_delegate);
+	}
+
+	private void OnPressed(int n)
+	{
+		TwitchGameEngine.OnGlobalEvent(TwitchGameEngine.GlobalEvent.MultiAnswerClosed);
+		foreach (SpeechBubbleGUI bubble in bubbles)
+		{
+			bubble.DestroyMeImmidiate();
+		}
+		visible = false;
+		MainGame.me.gui_elements.hud.SetColliders(colliders_enabled: true);
+		Object.Destroy(base.gameObject);
+		OnMouseOutReply();
+		Sound.Play(Sound.SoundID.SoftClick);
+		if (_on_chosen_delegate != null)
+		{
+			_on_chosen_delegate();
+		}
+		if (_on_press_delegate != null)
+		{
+			_on_press_delegate(n);
+		}
+	}
+
+	private static void OnMouseOverReply()
+	{
+		mouse_overed = true;
+		Sound.Play(Sound.SoundID.MouseOver);
+	}
+
+	private static void OnMouseOutReply()
+	{
+		mouse_overed = false;
+	}
+
+	public void Update()
+	{
+		if (need_reposition && table != null)
+		{
+			need_reposition = false;
+			table.Reposition();
+		}
+	}
+}

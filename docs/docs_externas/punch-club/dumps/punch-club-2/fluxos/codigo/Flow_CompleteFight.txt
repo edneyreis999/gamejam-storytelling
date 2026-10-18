@@ -1,0 +1,44 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Complete Fight", 0)]
+[Category("Game")]
+[Color("ff4800")]
+public class Flow_CompleteFight : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool anotherFightCompleteForWin;
+
+	[GatherPortsCallback]
+	public bool hideFightResultWindowImmediately;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFightResultCloseButtonClick;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (anotherFightCompleteForWin || onFightResultCloseButtonClick.isConnected)
+			{
+				Fight.Instance.CompleteFightOutside(anotherFightCompleteForWin, delegate
+				{
+					onFightResultCloseButtonClick.Call(flow);
+				}, !hideFightResultWindowImmediately);
+			}
+			else
+			{
+				Fight.Instance.CompleteFightOutside(anotherFightCompleteForWin);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFightResultCloseButtonClick = AddFlowOutput("onFightResultCloseButtonClick".CapitalizeFirst());
+	}
+}

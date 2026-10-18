@@ -1,0 +1,27 @@
+using System;
+
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Is Map Unlocked", "")]
+public class uScriptAct_PlayerIsMapUnlocked : uScriptLogic
+{
+	public event uScript_GameObject.uScriptEventHandler Available;
+
+	public event uScript_GameObject.uScriptEventHandler NotAvailable;
+
+	public void In([FriendlyName("Map zone", "")] string zone)
+	{
+		if (MainGame.save.ch.inventory.IsMapZoneUnlocked(zone))
+		{
+			if (this.Available != null)
+			{
+				this.Available(this, new EventArgs());
+			}
+		}
+		else if (this.NotAvailable != null)
+		{
+			this.NotAvailable(this, new EventArgs());
+		}
+	}
+}

@@ -1,0 +1,37 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Focus On Story Tree Element", 0)]
+[Category("Game")]
+public class Flow_FocusOnStoryTreeElement : PC2CustomFlowNode
+{
+	public bool skipNextAutoscroll;
+
+	public bool reinitItems;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> id;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIStoryTreeWindow uIStoryTreeWindow = GUIElements.Get<UIStoryTreeWindow>();
+			uIStoryTreeWindow.ScrollTech.SkipNextAutoscroll = skipNextAutoscroll;
+			if (reinitItems)
+			{
+				uIStoryTreeWindow.GamepadNavigationController.ReinitItems(focusOnFirstActive: false);
+			}
+			uIStoryTreeWindow.GamepadFocusOnById(id.value);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		id = AddValueInput<string>("id");
+	}
+}

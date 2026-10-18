@@ -1,0 +1,33 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Set Special Tech Tooltip", 0)]
+[Category("Game")]
+public class Flow_SetSpecialTechTooltip : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> techId;
+
+	private ValueInput<string> tooltipId;
+
+	private ValueInput<TechState> techState;
+
+	protected override void RegisterPorts()
+	{
+		techId = AddValueInput<string>("techId");
+		tooltipId = AddValueInput<string>("tooltipId");
+		techState = AddValueInput<TechState>("techState");
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			MainGame.me.gameSave.knowledgeSystem.SetSpecialTechTooltip(techId.value, tooltipId.value, techState.value);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

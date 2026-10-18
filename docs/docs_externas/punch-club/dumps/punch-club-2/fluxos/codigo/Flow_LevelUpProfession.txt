@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Level Up Profession", 0)]
+[Category("Game")]
+public class Flow_LevelUpProfession : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> professionId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			ProfessionData profession = MainGame.me.gameSave.professionSystem.GetProfession(professionId.value);
+			profession.level++;
+			if (profession.level >= 2)
+			{
+				profession.globalProgress = profession.Definition.globalPoints;
+			}
+			else
+			{
+				profession.globalProgress = 0f;
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		professionId = AddValueInput<string>("professionId".CapitalizeFirst());
+	}
+}

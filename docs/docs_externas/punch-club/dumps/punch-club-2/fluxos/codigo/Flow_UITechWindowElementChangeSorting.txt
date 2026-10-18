@@ -1,0 +1,118 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Tech Window Element Change Sorting", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UITechWindowElementChangeSorting : PC2CustomFlowNode
+{
+	public string id;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToDefault;
+
+	private ValueInput<List<string>> ids;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UITechWindow uITechWindow = GUIElements.Get<UITechWindow>();
+			UITechElement elementById = GUIElements.Get<UITechWindow>().GetElementById(id);
+			List<UITechElement> list = new List<UITechElement>();
+			if (elementById != null)
+			{
+				list.Add(elementById);
+			}
+			if (ids.value != null)
+			{
+				for (int i = 0; i < ids.value.Count; i++)
+				{
+					UITechElement elementById2 = GUIElements.Get<UITechWindow>().GetElementById(ids.value[i]);
+					if (elementById2 != null)
+					{
+						list.Add(elementById2);
+					}
+				}
+			}
+			if (isToDefault.value)
+			{
+				foreach (UITechElement item in list)
+				{
+					RectMask2D[] componentsInChildren = item.GetComponentsInChildren<RectMask2D>(includeInactive: true);
+					for (int j = 0; j < componentsInChildren.Length; j++)
+					{
+						if (componentsInChildren[j].TryGetComponent<RectResizer>(out var component))
+						{
+							component.SetDefault();
+							Object.Destroy(component);
+						}
+					}
+					CanvasRenderer[] componentsInChildren2 = item.GetComponentsInChildren<CanvasRenderer>(includeInactive: true);
+					for (int k = 0; k < componentsInChildren2.Length; k++)
+					{
+						componentsInChildren2[k].DisableRectClipping();
+					}
+					if (item.TryGetComponent<GraphicRaycaster>(out var component2))
+					{
+						Object.Destroy(component2);
+					}
+					if (item.TryGetComponent<Canvas>(out var component3))
+					{
+						Object.Destroy(component3);
+						item.TechPriceLabel.FixSubMesh();
+					}
+					TextMeshProUGUI[] componentsInChildren3 = item.GetComponentsInChildren<TextMeshProUGUI>();
+					for (int l = 0; l < componentsInChildren3.Length; l++)
+					{
+						componentsInChildren3[l].FixSubMesh();
+					}
+				}
+			}
+			else
+			{
+				foreach (UITechElement item2 in list)
+				{
+					if (item2.gameObject.GetComponent<Canvas>() == null)
+					{
+						RectMask2D[] componentsInChildren4 = item2.GetComponentsInChildren<RectMask2D>(includeInactive: true);
+						for (int m = 0; m < componentsInChildren4.Length; m++)
+						{
+							RectTransform rectTransform = Object.Instantiate(componentsInChildren4[m].rectTransform, componentsInChildren4[m].rectTransform.parent);
+							RectResizer rectResizer = componentsInChildren4[m].gameObject.AddComponent<RectResizer>();
+							Object.Destroy(rectTransform.GetComponent<RectMask2D>());
+							Object.Destroy(rectTransform.GetComponent<Image>());
+							Object.Destroy(rectTransform.GetChild(0).gameObject);
+							rectResizer.copy = rectTransform;
+							rectResizer.horizontalResize = true;
+							rectResizer.target = uITechWindow.ScrollRectComponent.transform.GetChild(0).GetComponent<RectTransform>();
+							rectResizer.Update();
+						}
+						CanvasRenderer[] componentsInChildren5 = item2.GetComponentsInChildren<CanvasRenderer>(includeInactive: true);
+						for (int n = 0; n < componentsInChildren5.Length; n++)
+						{
+							componentsInChildren5[n].EnableRectClipping(uITechWindow.GetMaskRect());
+						}
+						Canvas canvas = item2.gameObject.AddComponent<Canvas>();
+						canvas.overrideSorting = true;
+						canvas.sortingOrder = 999;
+						item2.gameObject.AddComponent<GraphicRaycaster>();
+					}
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToDefault = AddValueInput<bool>("isToDefault".CapitalizeFirst());
+		ids = AddValueInput<List<string>>("ids".CapitalizeFirst());
+	}
+}

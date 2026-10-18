@@ -1,0 +1,48 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open GameMap", 0)]
+[Category("Game/GameMap")]
+public class Flow_ToggleMap : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isToOpen;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name => (isToOpen ? "Open" : "Close") + " GameMap";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isToOpen)
+			{
+				if (!MainGame.me.gameMap.IsOpen)
+				{
+					MainGame.me.gameMap.OpenMap(force: true);
+				}
+				else
+				{
+					Debug.LogWarning("GameMap is already opened");
+				}
+			}
+			else if (MainGame.me.gameMap.IsOpen)
+			{
+				MainGame.me.gameMap.CloseMap();
+			}
+			else
+			{
+				Debug.LogWarning("GameMap is already closed");
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

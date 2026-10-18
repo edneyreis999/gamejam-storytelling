@@ -1,0 +1,26 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Money For First Contract Fight", 0)]
+[Category("Game")]
+public class Flow_AddMoneyForFirstContractFight : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			int intValue = ConstsDefinition.Get("event_s2_lose_fight_money").IntValue;
+			MainGame.me.PlayerRes.Add("_money", intValue);
+			UINoticeWindow.ShowNotice(new NoticeData(NoticeType.ReceivedMoney, intValue.ToString()));
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

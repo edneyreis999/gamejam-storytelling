@@ -1,0 +1,53 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Event to Mobile SelectAbility Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_AddEventToMobileSelectAbilityButton : PC2CustomFlowNode
+{
+	public bool isForPerfocardSelect;
+
+	private FlowInput @in;
+
+	private FlowOutput onClicked;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), AddEvent);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+
+	private void AddEvent(Flow flow)
+	{
+		Button button = null;
+		button = (isForPerfocardSelect ? GUIElements.Get<UISelectPerfocardWindow>().MobileApplyButton : GUIElements.Get<UISelectAbilityWindow>().MobileApplyButton);
+		if (button != null)
+		{
+			UIElementsCustomEventHandlerManager.AddEvent(button, UITutorialArrow.SignOrientationType.Right, delegate
+			{
+				onClicked.Call(flow);
+			});
+		}
+		else
+		{
+			if (isForPerfocardSelect)
+			{
+				Debug.LogError("Selected button is null UISelectPerfocardWindow.MobileApplyButton");
+			}
+			else
+			{
+				Debug.LogError("Selected button is null UISelectAbilityWindow.MobileApplyButton");
+			}
+			onClicked.Call(flow);
+		}
+		@out.Call(flow);
+	}
+}

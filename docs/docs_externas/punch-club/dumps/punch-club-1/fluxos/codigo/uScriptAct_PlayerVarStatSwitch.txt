@@ -1,0 +1,46 @@
+using System;
+using UnityEngine;
+
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Player Var Stat Switch", "")]
+public class uScriptAct_PlayerVarStatSwitch : uScriptLogic
+{
+	public event uScript_GameObject.uScriptEventHandler A1;
+
+	public event uScript_GameObject.uScriptEventHandler A2;
+
+	public event uScript_GameObject.uScriptEventHandler A3;
+
+	public event uScript_GameObject.uScriptEventHandler A4;
+
+	public event uScript_GameObject.uScriptEventHandler A5;
+
+	public event uScript_GameObject.uScriptEventHandler Other;
+
+	public void In([FriendlyName("Resource", "")] string res_type, [FriendlyName("Values", "")] int[] val)
+	{
+		int num = MainGame.save.ch.char_res.GetInt(res_type);
+		uScript_GameObject.uScriptEventHandler[] array = new uScript_GameObject.uScriptEventHandler[5] { this.A1, this.A2, this.A3, this.A4, this.A5 };
+		for (int i = 0; i < val.Length; i++)
+		{
+			if (num == val[i])
+			{
+				if (array[i] != null)
+				{
+					array[i](this, new EventArgs());
+				}
+				else
+				{
+					Debug.LogError("out #" + i + " not set!");
+				}
+				return;
+			}
+		}
+		if (this.Other != null)
+		{
+			this.Other(this, new EventArgs());
+		}
+	}
+}

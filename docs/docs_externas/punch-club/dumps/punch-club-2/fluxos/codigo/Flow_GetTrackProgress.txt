@@ -1,0 +1,42 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Get Playlist Track Progress In Seconds", 0)]
+[Category("Game")]
+public class Flow_GetTrackProgress : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> playlist;
+
+	private ValueOutput<float> progress;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			@out.Call(flow);
+		});
+		playlist = AddValueInput<string>("playlist");
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		progress = AddValueOutput("progress", delegate
+		{
+			List<PlaylistController> playlistControllers = LazyAudio.GetPlaylistControllers();
+			for (int i = 0; i < playlistControllers.Count; i++)
+			{
+				if (playlistControllers[i].Id == playlist.value)
+				{
+					return playlistControllers[i].GetActiveSourcePlaybackPosition();
+				}
+			}
+			return 0f;
+		});
+	}
+}

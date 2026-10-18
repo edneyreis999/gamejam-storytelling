@@ -1,0 +1,14 @@
+[NodePath("Actions/VHS Story/GUI")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Open Map", "")]
+public class uScriptAct_GUI_OpenMap : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In()
+	{
+		MainGame.me.gui_elements.game_map.Open(hide_close_btn: true, string.Empty);
+		MainGame.me.gui_elements.hud.SetColliders(colliders_enabled: true);
+	}
+}

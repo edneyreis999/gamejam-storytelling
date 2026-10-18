@@ -1,0 +1,39 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Tech Tab Button\nAdd Event", 0)]
+[Category("Game/Tutorial")]
+public class Flow_AddEventToTechBranchButton : PC2CustomFlowNode
+{
+	public TechBranchType techBranchType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UITechTreeBranch branch = GUIElements.Get<UITechWindow>().GetBranch(techBranchType);
+			Button branchButton = branch.BranchButton;
+			RectTransform tutorialRect = branch.TutorialRect;
+			GUIElements.Get<UITutorialWindow>().ShowMask(tutorialRect);
+			UIElementsCustomEventHandlerManager.AddEvent(branchButton, UITutorialArrow.SignOrientationType.Left, delegate
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(tutorialRect);
+				onClicked.Call(flow);
+			});
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+}

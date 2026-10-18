@@ -1,0 +1,54 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("League Hack Branches", 0)]
+[Category("Game/Dialogue")]
+public class Flow_LeagueHackBranches : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput hackedNow;
+
+	private FlowOutput hackAlreadyDone;
+
+	private FlowOutput noMatchToHack;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			League gPPLeague = MainGame.me.gameSave.leaguesSystem.GetGPPLeague();
+			if (gPPLeague == null)
+			{
+				noMatchToHack.Call(flow);
+			}
+			else
+			{
+				LeagueMatch playerUpcomingMatch = gPPLeague.GetPlayerUpcomingMatch();
+				if (playerUpcomingMatch != null && playerUpcomingMatch.Status == LeagueMatchStatus.Upcoming && gPPLeague.playerParticipate)
+				{
+					if (playerUpcomingMatch.isHacked)
+					{
+						hackAlreadyDone.Call(flow);
+					}
+					else
+					{
+						playerUpcomingMatch.isHacked = true;
+						AchievementsSystem.Process("hack_gpp");
+						hackedNow.Call(flow);
+					}
+				}
+				else
+				{
+					noMatchToHack.Call(flow);
+				}
+			}
+		});
+		hackedNow = AddFlowOutput("hackedNow".CapitalizeFirst());
+		hackAlreadyDone = AddFlowOutput("hackAlreadyDone".CapitalizeFirst());
+		noMatchToHack = AddFlowOutput("noMatchToHack".CapitalizeFirst());
+	}
+}

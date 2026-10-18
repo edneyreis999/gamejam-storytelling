@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Get Last Unlocked School", 0)]
+[Category("Game/Player")]
+public class Flow_GetLastUnlockedSchool : PC2CustomFlowNode
+{
+	private ValueOutput<string> schoolId;
+
+	private ValueOutput<string> styleChangedItem;
+
+	private ValueOutput<FightStyle> schoolStyle;
+
+	protected override void RegisterPorts()
+	{
+		schoolId = AddValueOutput("schoolId", delegate
+		{
+			List<string> schoolUnlocked = MainGame.me.gameSave.playerData.schoolUnlocked;
+			return schoolUnlocked[schoolUnlocked.Count - 1];
+		});
+		schoolStyle = AddValueOutput("schoolStyle", delegate
+		{
+			List<string> schoolUnlocked = MainGame.me.gameSave.playerData.schoolUnlocked;
+			return GameBalance.Me.GetSchoolById(schoolUnlocked[schoolUnlocked.Count - 1]).fightStyle;
+		});
+		styleChangedItem = AddValueOutput("styleChangedItem", delegate
+		{
+			List<string> schoolUnlocked = MainGame.me.gameSave.playerData.schoolUnlocked;
+			string text = schoolUnlocked[schoolUnlocked.Count - 1];
+			return text switch
+			{
+				"str_school" => "act_side_punch", 
+				"agl_school" => "act_side_kick_body", 
+				"stm_school" => "act_low_kick", 
+				_ => throw new NotImplementedException("Not implemented case [" + text + "]"), 
+			};
+		});
+	}
+}

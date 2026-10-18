@@ -1,0 +1,63 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("Header Window Switch Opened Tab", 0)]
+[Category("Game/UI")]
+public class Flow_HeaderWindowSwitchOpenedTab : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput characterWindow;
+
+	private FlowOutput fighterWindow;
+
+	private FlowOutput techTreeWindow;
+
+	private FlowOutput storyTreeWindow;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			@out.Call(flow);
+			BaseGUI currentOpenedTabWindow = GUIElements.Get<UIHeaderWindow>().CurrentOpenedTabWindow;
+			if (!(currentOpenedTabWindow is UICharacterWindow))
+			{
+				if (!(currentOpenedTabWindow is UIFighterWindow))
+				{
+					if (!(currentOpenedTabWindow is UITechWindow))
+					{
+						if (!(currentOpenedTabWindow is UIStoryTreeWindow))
+						{
+							throw new NotImplementedException("Type " + GUIElements.Get<UIHeaderWindow>().CurrentOpenedTabWindow.GetType().Name + " isn't implemented");
+						}
+						storyTreeWindow.Call(flow);
+					}
+					else
+					{
+						techTreeWindow.Call(flow);
+					}
+				}
+				else
+				{
+					fighterWindow.Call(flow);
+				}
+			}
+			else
+			{
+				characterWindow.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		characterWindow = AddFlowOutput("characterWindow".CapitalizeFirst());
+		fighterWindow = AddFlowOutput("fighterWindow".CapitalizeFirst());
+		techTreeWindow = AddFlowOutput("techTreeWindow".CapitalizeFirst());
+		storyTreeWindow = AddFlowOutput("storyTreeWindow".CapitalizeFirst());
+	}
+}

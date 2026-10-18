@@ -1,0 +1,34 @@
+public class QuestState : IGJSerializable
+{
+	public QuestDescription description = new QuestDescription();
+
+	public long start_time;
+
+	public int state;
+
+	public int CheckQuestProgress()
+	{
+		if (description.IsFailed())
+		{
+			return -1;
+		}
+		if (description.IsSucceed())
+		{
+			return 1;
+		}
+		return 0;
+	}
+
+	public void FromGJCode(string gjcode)
+	{
+	}
+
+	public string ToGJCode()
+	{
+		return null;
+	}
+
+	public void OnDeserialize()
+	{
+	}
+}

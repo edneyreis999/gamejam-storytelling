@@ -1,0 +1,44 @@
+using System;
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Give Perk", "")]
+public class uScriptAct_GivePerk : uScriptLogic
+{
+	public bool Out => true;
+
+	public event uScript_GameObject.uScriptEventHandler ClosedWindow;
+
+	public void In([FriendlyName("Perk name", "")] string perk)
+	{
+		PerkData data = GameBalance.me.GetData<PerkData>(perk);
+		if (data == null)
+		{
+			Debug.LogError("Perk not found: " + perk);
+			return;
+		}
+		if (MainGame.save.ch.perks.HasPerk(perk))
+		{
+			if (data.buff_len_days > 0f)
+			{
+				MainGame.save.ch.GainPerkBuff(data);
+			}
+			MainGame.me.gui_elements.perk_buffs.RedrawTimeLeft();
+			if (this.ClosedWindow != null)
+			{
+				this.ClosedWindow(this, new EventArgs());
+			}
+			return;
+		}
+		MainGame.save.ch.perks.GainPerk(data);
+		MainGame.me.gui_elements.new_perk.Open(data, delegate
+		{
+			if (this.ClosedWindow != null)
+			{
+				this.ClosedWindow(this, new EventArgs());
+			}
+		});
+	}
+}

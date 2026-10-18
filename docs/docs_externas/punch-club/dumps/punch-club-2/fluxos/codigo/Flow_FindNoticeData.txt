@@ -1,0 +1,57 @@
+using System;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Find Notice Data", 0)]
+[Category("Game/UI")]
+public class Flow_FindNoticeData : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public NoticeType noticeType;
+
+	private ValueInput<string> contextId;
+
+	private ValueOutput<NoticeData> noticeData;
+
+	public override string name => $"Find {noticeType} Notice Data";
+
+	protected override void RegisterPorts()
+	{
+		noticeData = AddValueOutput("noticeData".CapitalizeFirst(), delegate
+		{
+			NoticeData obj = MainGame.me.gameSave.playerData.notices.Find((NoticeData n) => n.type == noticeType && n.contextId == contextId.value);
+			if (obj == null)
+			{
+				Debug.Log("Null notice data !!!");
+			}
+			return obj;
+		});
+		switch (noticeType)
+		{
+		case NoticeType.AddItem:
+			contextId = AddValueInput<string>("Item Id");
+			break;
+		default:
+			throw new ArgumentOutOfRangeException();
+		case NoticeType.RemoveItem:
+		case NoticeType.AddBuff:
+		case NoticeType.RemoveBuff:
+		case NoticeType.BuffChange:
+		case NoticeType.LeagueSigningAvailable:
+		case NoticeType.LeagueFightAvailable:
+		case NoticeType.LeagueSigningEnds:
+		case NoticeType.LeagueFightEnds:
+		case NoticeType.SoftwareDailyNotice:
+		case NoticeType.StoryReveal:
+		case NoticeType.StoryResolve:
+		case NoticeType.LilBoboSoft:
+		case NoticeType.NewTech:
+		case NoticeType.IncomingCall:
+			break;
+		}
+	}
+}

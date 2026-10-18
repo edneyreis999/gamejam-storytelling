@@ -1,0 +1,60 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set GMO as not visited", 0)]
+[Category("Game/GameMap")]
+public class Flow_SetGMOAsNotVisited : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool severalIds;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<List<string>> ids;
+
+	private ValueInput<string> id;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ChangeState);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (severalIds)
+		{
+			ids = AddValueInput<List<string>>("ids".CapitalizeFirst());
+		}
+		else
+		{
+			id = AddValueInput<string>("id".CapitalizeFirst());
+		}
+	}
+
+	private void ChangeState(Flow flow)
+	{
+		if (severalIds)
+		{
+			foreach (string item in ids.value)
+			{
+				GMOState gMOState = MainGame.me.gameSave.worldData.GetGMOState(item);
+				if (gMOState != null)
+				{
+					gMOState.introduced = false;
+				}
+			}
+		}
+		else
+		{
+			GMOState gMOState2 = MainGame.me.gameSave.worldData.GetGMOState(id.value);
+			if (gMOState2 != null)
+			{
+				gMOState2.introduced = false;
+			}
+		}
+		@out.Call(flow);
+	}
+}

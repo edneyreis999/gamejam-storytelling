@@ -1,0 +1,57 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+[Name("Switch Robot Training Action", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_SwitchRobotTrainingAction : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput str;
+
+	private FlowOutput stm;
+
+	private FlowOutput agl;
+
+	private FlowOutput trainingWithPlayer;
+
+	private FlowOutput trainingWithoutPlayer;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIRobotTrainingWindow uIRobotTrainingWindow = GUIElements.Get<UIRobotTrainingWindow>();
+			string actionName = uIRobotTrainingWindow.NeurotrainingDefinition.actionName;
+			string text = (actionName.EndsWith("str") ? "str" : (actionName.EndsWith("stm") ? "stm" : (actionName.EndsWith("agl") ? "agl" : string.Empty)));
+			bool flag = uIRobotTrainingWindow.IsTrainingWithoutPlayer();
+			switch (text)
+			{
+			case "str":
+				str.Call(flow);
+				break;
+			case "stm":
+				stm.Call(flow);
+				break;
+			case "agl":
+				agl.Call(flow);
+				break;
+			}
+			if (!flag)
+			{
+				trainingWithPlayer.Call(flow);
+			}
+			else
+			{
+				trainingWithoutPlayer.Call(flow);
+			}
+		});
+		str = AddFlowOutput("str".CapitalizeFirst());
+		stm = AddFlowOutput("stm".CapitalizeFirst());
+		agl = AddFlowOutput("agl".CapitalizeFirst());
+		trainingWithPlayer = AddFlowOutput("trainingWithPlayer".CapitalizeFirst());
+		trainingWithoutPlayer = AddFlowOutput("trainingWithoutPlayer".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,40 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Robot Window Show Mask", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIRobotWindowShowMask : PC2CustomFlowNode
+{
+	public string rectName;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToShow;
+
+	public override string name => "UI Robot Window" + (isToShow.value ? "Show" : "Hide") + " Mask";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RectTransform tutorialRectByName = GUIElements.Get<RobotWindow>().GetTutorialRectByName(rectName);
+			if (isToShow.value)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(tutorialRectByName);
+			}
+			else
+			{
+				GUIElements.Get<UITutorialWindow>().HideMask(tutorialRectByName);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToShow = AddValueInput<bool>("isToShow");
+	}
+}

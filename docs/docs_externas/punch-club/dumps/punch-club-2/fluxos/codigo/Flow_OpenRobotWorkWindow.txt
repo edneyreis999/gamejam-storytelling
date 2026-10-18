@@ -1,0 +1,69 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open Robot Work Window", 0)]
+[Category("Game")]
+public class Flow_OpenRobotWorkWindow : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClosedSelectedWire;
+
+	private FlowOutput onClosedSelectedChip;
+
+	private FlowOutput onClosedSelectedMetal;
+
+	private FlowOutput onNotSelectedClosed;
+
+	private Flow cachedFlow;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in", delegate(Flow flow)
+		{
+			UIRobotWorkWindow uIRobotWorkWindow = GUIElements.Get<UIRobotWorkWindow>();
+			uIRobotWorkWindow.onClosedSelected = delegate
+			{
+				if (MainGame.me.gameSave.robotSystem.CurrentRobotWorkParam == "_robot_metal")
+				{
+					onClosedSelectedMetal.Call(cachedFlow);
+				}
+				if (MainGame.me.gameSave.robotSystem.CurrentRobotWorkParam == "_robot_chip")
+				{
+					onClosedSelectedChip.Call(cachedFlow);
+				}
+				if (MainGame.me.gameSave.robotSystem.CurrentRobotWorkParam == "_robot_wire")
+				{
+					onClosedSelectedWire.Call(cachedFlow);
+				}
+				if (MainGame.me.PlayerRes.GetInt("Event_DLC-FactoryAllAsked2_runned") <= 0)
+				{
+					GameScriptUtility.RunGlobalScript("Event_DLC-FactoryAllAsked2");
+					MainGame.me.PlayerRes.Set("Event_DLC-FactoryAllAsked2_runned", 1f);
+				}
+			};
+			uIRobotWorkWindow.onClosedNotSelected = delegate
+			{
+				onNotSelectedClosed.Call(cachedFlow);
+				if (MainGame.me.PlayerRes.GetInt("Event_DLC-FactoryAllAsked2_runned") <= 0)
+				{
+					GameScriptUtility.RunGlobalScript("Event_DLC-FactoryAllAsked2");
+					MainGame.me.PlayerRes.Set("Event_DLC-FactoryAllAsked2_runned", 1f);
+				}
+			};
+			uIRobotWorkWindow.Open();
+			cachedFlow = flow;
+			@out.Call(cachedFlow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClosedSelectedWire = AddFlowOutput("onClosedSelectedWire".CapitalizeFirst());
+		onClosedSelectedChip = AddFlowOutput("onClosedSelectedChip".CapitalizeFirst());
+		onClosedSelectedMetal = AddFlowOutput("onClosedSelectedMetal".CapitalizeFirst());
+		onNotSelectedClosed = AddFlowOutput("onNotSelectedClosed".CapitalizeFirst());
+	}
+}

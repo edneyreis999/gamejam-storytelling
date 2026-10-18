@@ -1,0 +1,234 @@
+using UnityEngine;
+
+public class SimpleDialog : BaseGUI
+{
+	public struct ButtonDescription
+	{
+		public GJCommons.VoidDelegate on_click;
+
+		public string text;
+
+		public SimpleButton.ButtonColor color;
+	}
+
+	public UILabel text_label;
+
+	public UILabel txt_label_2;
+
+	public UILabel header_label;
+
+	public UITable buttons;
+
+	public UIInput input_label;
+
+	private bool _input_field;
+
+	private bool _make_caps;
+
+	private GJCommons.VoidDelegate _update;
+
+	private GJCommons.VoidDelegate _on_cancel;
+
+	public SimpleButton btn_1;
+
+	public SimpleButton btn_2;
+
+	public SimpleButton sub_btn_1;
+
+	public SimpleButton sub_btn_2;
+
+	public UILabel sub_text_1;
+
+	public UILabel sub_text_2;
+
+	public GameObject sub_go_1;
+
+	public GameObject sub_go_2;
+
+	private int _buttons = 1;
+
+	public GameObject go_checkbox;
+
+	public GameObject go_checkbox_block;
+
+	public bool checkboxed;
+
+	public static string last_input_value;
+
+	public void Open(string header, string txt, string button_1_text)
+	{
+		Open(header, txt, new ButtonDescription
+		{
+			color = SimpleButton.ButtonColor.Green,
+			text = button_1_text,
+			on_click = delegate
+			{
+			}
+		});
+	}
+
+	public void Open(string header, string txt, ButtonDescription? btn1 = null, ButtonDescription? btn2 = null, bool input_field = false, bool code_input = false)
+	{
+		twitch_autoclose_button = null;
+		_update = null;
+		if (go_checkbox != null)
+		{
+			go_checkbox.SetActive(value: false);
+			checkboxed = false;
+		}
+		if (go_checkbox_block != null)
+		{
+			go_checkbox_block.SetActive(value: false);
+		}
+		if (VHSConst.GAMEPAD_IS_CURRENT_CONTROLLER && MainGame.me.gui_elements.working_animation.IsShown())
+		{
+			MainGame.me.gui_elements.working_animation.Hide(force: true);
+		}
+		_input_field = input_field;
+		btn_1.SetEnabled(is_enabled: true);
+		btn_2.SetEnabled(is_enabled: true);
+		if (input_field)
+		{
+			input_label.validation = ((!code_input) ? UIInput.Validation.Name : UIInput.Validation.Alphanumeric);
+			_make_caps = code_input;
+		}
+		btn_2.gameObject.SetActive(btn2.HasValue);
+		_buttons = 1;
+		btn_1.Init(btn1.Value.color, btn1.Value.text, delegate
+		{
+			Sound.Play(Sound.SoundID.Click);
+			if (btn1.Value.on_click != null)
+			{
+				btn1.Value.on_click();
+			}
+			btn_1.button.isEnabled = true;
+			Hide();
+		});
+		if (btn2.HasValue)
+		{
+			_buttons++;
+			btn_2.Init(btn2.Value.color, btn2.Value.text, delegate
+			{
+				Sound.Play(Sound.SoundID.Click);
+				if (btn2.Value.on_click != null)
+				{
+					btn2.Value.on_click();
+				}
+				btn_2.button.isEnabled = true;
+				Hide();
+			});
+		}
+		header_label.text = header;
+		text_label.text = txt;
+		if (input_label != null)
+		{
+			input_label.gameObject.SetActive(input_field);
+		}
+		base.Open();
+		if (buttons != null)
+		{
+			buttons.Reposition();
+		}
+		if (input_field)
+		{
+			GetComponentInChildren<UIInput>().isSelected = true;
+		}
+	}
+
+	public void OnFieldChanged()
+	{
+		if (!(input_label == null))
+		{
+			last_input_value = input_label.value;
+			if (_make_caps)
+			{
+				string value = last_input_value.ToUpper();
+				input_label.value = value;
+				last_input_value = value;
+			}
+		}
+	}
+
+	public void OnSubmitPressed()
+	{
+		if (last_input_value.Length == 0 && MainGame.me.gui_elements.char_input_name.isActiveAndEnabled)
+		{
+			input_label.value = "hero";
+			OnFieldChanged();
+		}
+		input_label.isSelected = false;
+	}
+
+	public void OnDeselectInputLabel()
+	{
+		if (MainGame.me.gui_elements.char_input_name.isActiveAndEnabled)
+		{
+			OnSubmitPressed();
+		}
+	}
+
+	protected override void OnBackColliderClicked()
+	{
+		base.OnBackColliderClicked();
+		if (_buttons == 1)
+		{
+			Hide();
+		}
+	}
+
+	public bool IsTwoButtonsDialog()
+	{
+		return _buttons > 1;
+	}
+
+	public override void Update()
+	{
+		base.Update();
+		if (Input.GetKeyDown(KeyCode.Escape) && _input_field)
+		{
+			OnCloseClicked();
+		}
+		if (_update != null)
+		{
+			_update();
+		}
+	}
+
+	public void SetUpdateCallback(GJCommons.VoidDelegate callback)
+	{
+		_update = callback;
+		callback?.Invoke();
+	}
+
+	public override void Hide()
+	{
+		base.Hide();
+		_update = null;
+	}
+
+	public void OnCheckboxClicked()
+	{
+		if (!(go_checkbox == null))
+		{
+			checkboxed = !checkboxed;
+			go_checkbox.SetActive(checkboxed);
+			Sound.Play(Sound.SoundID.Click);
+		}
+	}
+
+	public void OnCloseClicked()
+	{
+		Hide();
+		if (_on_cancel != null)
+		{
+			GJCommons.VoidDelegate on_cancel = _on_cancel;
+			_on_cancel = null;
+			on_cancel();
+		}
+	}
+
+	public void SetOnCancel(GJCommons.VoidDelegate dlg)
+	{
+		_on_cancel = dlg;
+	}
+}

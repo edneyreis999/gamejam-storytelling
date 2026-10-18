@@ -1,0 +1,45 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Enable/Disable Scholars Bench", 0)]
+[Category("Game/MickGym")]
+public class Flow_EnableScholarsBench : PC2CustomFlowNode
+{
+	private static readonly int interactionON = Animator.StringToHash("interaction_on");
+
+	private static readonly int interactionOff = Animator.StringToHash("interaction_off");
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isEnable;
+
+	public override string name => (isEnable.value ? "<color=#8aff92>Enable</color>" : "<color=#ff8a8a>Disable</color>") + " Scholars Bench";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			WGO wGO = DynamicScene.FindWGO("mick_gym_scholars_bench");
+			if (isEnable.value)
+			{
+				if (wGO != null)
+				{
+					wGO.Animator.SetTrigger(interactionON);
+				}
+			}
+			else if (wGO != null)
+			{
+				wGO.Animator.SetTrigger(interactionOff);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isEnable = AddValueInput<bool>("isEnable");
+	}
+}

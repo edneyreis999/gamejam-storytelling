@@ -1,0 +1,50 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is Deadlock", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_IsDeadlock : PC2CustomFlowNode
+{
+	public bool isHardDeadlock;
+
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (!isHardDeadlock)
+			{
+				if (MainGame.me.IsDeadlock)
+				{
+					Debug.Log("Player has deadlock");
+					yes.Call(flow);
+				}
+				else
+				{
+					no.Call(flow);
+				}
+			}
+			else if (MainGame.me.IsHardDeadlock)
+			{
+				Debug.Log("Player has deadlock");
+				yes.Call(flow);
+			}
+			else
+			{
+				no.Call(flow);
+			}
+		});
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+	}
+}

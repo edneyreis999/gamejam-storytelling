@@ -1,0 +1,44 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.UI;
+
+[Name("Switch Current Robot Training", 0)]
+[Category("Game/UI")]
+public class Flow_SwitchCurrentRobotTraining : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput str;
+
+	private FlowOutput agl;
+
+	private FlowOutput stm;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			@out.Call(flow);
+			switch (MainGame.me.gameSave.robotSystem.ActiveAction)
+			{
+			case "robot_training_action_no_player_str":
+				str.Call(flow);
+				break;
+			case "robot_training_action_no_player_agl":
+				agl.Call(flow);
+				break;
+			case "robot_training_action_no_player_stm":
+				stm.Call(flow);
+				break;
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		str = AddFlowOutput("str".CapitalizeFirst());
+		agl = AddFlowOutput("agl".CapitalizeFirst());
+		stm = AddFlowOutput("stm".CapitalizeFirst());
+	}
+}

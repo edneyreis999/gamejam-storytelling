@@ -1,0 +1,32 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Change Event Object State", 0)]
+[Category("Game/GameMap")]
+public class FlowChangeGamemapEventObjectState : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> id;
+
+	private ValueInput<bool> isVisible;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), ChangeState);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		id = AddValueInput<string>("id".CapitalizeFirst());
+		isVisible = AddValueInput<bool>("isVisible".CapitalizeFirst());
+	}
+
+	private void ChangeState(Flow flow)
+	{
+		MainGame.me.gameMap.ChangeEventObjectState(id.value, isVisible.value);
+		@out.Call(flow);
+	}
+}

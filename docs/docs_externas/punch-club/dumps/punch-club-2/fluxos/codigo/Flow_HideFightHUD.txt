@@ -1,0 +1,30 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Hide Fight HUD", 0)]
+[Category("Game/Fight")]
+public class Flow_HideFightHUD : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFadeComplete;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			FightView.instance.FightUI.Hide(instant: false, delegate
+			{
+				onFadeComplete.Call(flow);
+			});
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFadeComplete = AddFlowOutput("onFadeComplete".CapitalizeFirst());
+	}
+}

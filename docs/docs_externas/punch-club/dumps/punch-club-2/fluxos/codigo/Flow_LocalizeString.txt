@@ -1,0 +1,21 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Localize String", 0)]
+[Category("Game/UI")]
+public class Flow_LocalizeString : PC2CustomFlowNode
+{
+	private ValueInput<string> stringToLocalize;
+
+	private ValueOutput<string> localizedString;
+
+	protected override void RegisterPorts()
+	{
+		localizedString = AddValueOutput("localizedString", () => LLBase.L(stringToLocalize.value));
+		stringToLocalize = AddValueInput<string>("stringToLocalize".CapitalizeFirst());
+	}
+}

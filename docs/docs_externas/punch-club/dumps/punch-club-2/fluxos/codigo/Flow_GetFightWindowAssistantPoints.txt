@@ -1,0 +1,23 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Get Fight Window Assistant Points", 0)]
+[Category("Game/Tutorial")]
+public class Flow_GetFightWindowAssistantPoints : PC2CustomFlowNode
+{
+	private ValueOutput<RectTransform> point1;
+
+	private ValueOutput<RectTransform> point2;
+
+	private ValueOutput<RectTransform> point3;
+
+	protected override void RegisterPorts()
+	{
+		point1 = AddValueOutput("point1", () => GUIElements.Get<UIPrepareFightWindow>().AssistantPosition1);
+		point2 = AddValueOutput("point2", () => GUIElements.Get<UIPrepareFightWindow>().AssistantPosition2);
+		point3 = AddValueOutput("point3", () => GUIElements.Get<UIPrepareFightWindow>().AssistantPosition3);
+	}
+}

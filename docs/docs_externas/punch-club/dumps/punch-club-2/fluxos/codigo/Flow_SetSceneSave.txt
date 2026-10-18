@@ -1,0 +1,26 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set Scene Save", 0)]
+[Category("Game")]
+public class Flow_SetSceneSave : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> sceneName;
+
+	protected override void RegisterPorts()
+	{
+		sceneName = AddValueInput<string>("sceneName".CapitalizeFirst());
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

@@ -1,0 +1,47 @@
+using System;
+using LinqTools;
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Randomizer", "")]
+public class uScriptAct_Randomizer : uScriptLogic
+{
+	public bool Out => true;
+
+	[FriendlyName("A 1")]
+	public event uScript_GameObject.uScriptEventHandler A1;
+
+	[FriendlyName("A 2")]
+	public event uScript_GameObject.uScriptEventHandler A2;
+
+	[FriendlyName("A 3")]
+	public event uScript_GameObject.uScriptEventHandler A3;
+
+	[FriendlyName("A 4")]
+	public event uScript_GameObject.uScriptEventHandler A4;
+
+	[FriendlyName("A 5")]
+	public event uScript_GameObject.uScriptEventHandler A5;
+
+	public void In([FriendlyName("Weights", "")] float[] weights)
+	{
+		uScript_GameObject.uScriptEventHandler[] array = new uScript_GameObject.uScriptEventHandler[5] { this.A1, this.A2, this.A3, this.A4, this.A5 };
+		float num = weights.Sum();
+		float num2 = UnityEngine.Random.Range(0f, num);
+		float num3 = 0f;
+		int num4 = 0;
+		Debug.Log("Randomizer r = " + num2 + ", total w = " + num + ", items = " + weights.Length);
+		foreach (float num5 in weights)
+		{
+			num3 += num5;
+			if (num2 < num3)
+			{
+				array[num4](this, new EventArgs());
+				break;
+			}
+			num4++;
+		}
+	}
+}

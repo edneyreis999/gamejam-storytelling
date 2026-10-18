@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Do Technical League Win", 0)]
+[Category("Game/Fight")]
+public class Flow_DoTechnicalWin : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onSceneLoaded;
+
+	private ValueInput<string> sceneAfter;
+
+	private ValueInput<string> markerPosition;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			Fight.Instance.DoTechnicalPlayerWin(sceneAfter.value, markerPosition.value, delegate
+			{
+				onSceneLoaded.Call(flow);
+			});
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onSceneLoaded = AddFlowOutput("onSceneLoaded".CapitalizeFirst());
+		sceneAfter = AddValueInput<string>("sceneAfter");
+		markerPosition = AddValueInput<string>("markerPosition");
+	}
+}

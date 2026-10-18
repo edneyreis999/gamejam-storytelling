@@ -1,0 +1,33 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Add Item To Fridge Inventory", 0)]
+[Category("Game")]
+public class Flow_AddItemToVendorInventory : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> itemId;
+
+	private ValueInput<bool> showNotice;
+
+	private ValueInput<int> itemCount;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			InventoryUtils.AddItemToInventory(itemId.value, itemCount.value, showNotice.value);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		itemId = AddValueInput<string>("itemId");
+		itemCount = AddValueInput<int>("itemCount");
+		showNotice = AddValueInput<bool>("showNotice");
+	}
+}

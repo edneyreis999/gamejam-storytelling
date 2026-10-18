@@ -1,0 +1,15 @@
+using System;
+
+[Serializable]
+public class ObjectDialogData : BalanceBase
+{
+	public enum Types
+	{
+		Buy,
+		Use,
+		BuyMulti,
+		BuyAndUse
+	}
+
+	public Types dialog_type;
+}

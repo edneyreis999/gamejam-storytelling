@@ -1,0 +1,42 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Reveal Tech", 0)]
+[Category("Game")]
+public class Flow_RevealTech : PC2CustomFlowNode
+{
+	public List<string> severalIds = new List<string>();
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> techId;
+
+	public override string name => "Reveal Tech";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (!string.IsNullOrEmpty(techId.value))
+			{
+				MainGame.me.gameSave.knowledgeSystem.ObtainTech(techId.value);
+			}
+			for (int i = 0; i < severalIds.Count; i++)
+			{
+				if (!string.IsNullOrEmpty(severalIds[i]))
+				{
+					MainGame.me.gameSave.knowledgeSystem.ObtainTech(severalIds[i]);
+				}
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		techId = AddValueInput<string>("techId");
+	}
+}

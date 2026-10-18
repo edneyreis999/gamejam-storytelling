@@ -1,0 +1,67 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Police Uniform", 0)]
+[Category("Game")]
+public class Flow_WearPoliceUniform : PC2CustomFlowNode
+{
+	private static readonly int wearUniform = Animator.StringToHash("wear_uniform");
+
+	private static readonly int unwearUniform = Animator.StringToHash("unwear_uniform");
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onFinished;
+
+	private ValueInput<bool> isWear;
+
+	public override string name
+	{
+		get
+		{
+			if (!isWear.value)
+			{
+				return "Unwear Police Uniform";
+			}
+			return "Wear Police Uniform";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isWear.value)
+			{
+				PlayerController.Instance.SetPlayerDirection(HumanLikeDirections.GetDirectionVectorByEnum(HumanLikeDirections.Direction.Left));
+				PlayerController.Instance.Animator.SetTrigger(wearUniform);
+				PlayerController.Instance.ChangePlayerMode(PlayerMode.Police);
+				LazyTimer.AddTimer(3.2f, delegate
+				{
+					onFinished.Call(flow);
+				});
+			}
+			else
+			{
+				PlayerController.Instance.SetPlayerDirection(HumanLikeDirections.GetDirectionVectorByEnum(HumanLikeDirections.Direction.Left));
+				PlayerController.Instance.Animator.SetTrigger(unwearUniform);
+				PlayerController.Instance.ChangePlayerMode(PlayerMode.Common);
+				LazyTimer.AddTimer(2.6f, delegate
+				{
+					onFinished.Call(flow);
+				});
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onFinished = AddFlowOutput("onFinished".CapitalizeFirst());
+		isWear = AddValueInput<bool>("isWear".CapitalizeFirst());
+	}
+}

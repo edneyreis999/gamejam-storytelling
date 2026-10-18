@@ -1,0 +1,51 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is WGO Active", 0)]
+[Category("Game/WGO")]
+public class Flow_GetWGOVisibility : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isOnActiveScene = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> sceneName;
+
+	private ValueInput<string> wgoId;
+
+	private ValueOutput<bool> isVisible;
+
+	private bool isVisibleValue;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			WGOState wGOState = MainGame.me.gameSave.worldData.GetWGOState(wgoId.value);
+			if (wGOState != null)
+			{
+				wGOState.GetStateOnScene(isOnActiveScene ? DynamicScene.current.SceneName : sceneName.value, out isVisibleValue);
+			}
+			else
+			{
+				Debug.LogError("Couldn't find WGOState for WGO with id " + wgoId.value);
+				isVisibleValue = false;
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (!isOnActiveScene)
+		{
+			sceneName = AddValueInput<string>("sceneName");
+		}
+		wgoId = AddValueInput<string>("wgoId");
+		isVisible = AddValueOutput("isVisible", () => isVisibleValue);
+	}
+}

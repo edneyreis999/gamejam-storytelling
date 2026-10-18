@@ -1,0 +1,42 @@
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Cassette Reward", 0)]
+[Category("Game")]
+public class Flow_AddCassetteReward : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> tapeId;
+
+	protected override void RegisterPorts()
+	{
+		tapeId = AddValueInput<string>("Tape");
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			TapeDefinition data = GameBalance.Me.GetData<TapeDefinition>(tapeId.value);
+			if (MainGame.me.gameSave.playerData.tapes.tapesForWatch.Find((TapeForWatch t) => t.itemId == tapeId.value) == null)
+			{
+				TapeForWatch tapeForWatch = MainGame.me.gameSave.playerData.tapes.AddTapeForWatch(tapeId.value);
+				tapeForWatch.Status = TapeForWatch.TapeStatus.Watched;
+				tapeForWatch.watchedCount = 1;
+			}
+			GameRes gameRes = new GameRes();
+			gameRes.Add("_satisfaction", data.onWatchSatisfaction);
+			gameRes.Add("_osr", data.onWatchOsr);
+			MainGame.me.gameSave.playerData.AddGameReses(gameRes);
+			for (int num = 0; num < data.onWatchPerks.Count; num++)
+			{
+				MainGame.me.gameSave.knowledgeSystem.RevealTech(data.onWatchPerks[num]);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

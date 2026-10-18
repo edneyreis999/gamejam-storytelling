@@ -1,0 +1,126 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Set Direction", 0)]
+[Category("Game")]
+public class Flow_SetDirection : PC2CustomFlowNode
+{
+	public enum ObjectType
+	{
+		Player,
+		WGO
+	}
+
+	public enum LookAtType
+	{
+		Direction,
+		Object
+	}
+
+	[GatherPortsCallback]
+	public ObjectType objectType;
+
+	[GatherPortsCallback]
+	public LookAtType lookAtType;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<HumanLikeDirections.Direction> direction;
+
+	private ValueInput<GameObject> lookAtObject;
+
+	private new ValueInput<WGO> wgo;
+
+	private ValueOutput<WGO> outWGO;
+
+	private WGO innerWGO;
+
+	public override string name => $"Set {objectType} direction";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), SetDirection);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		if (objectType == ObjectType.WGO)
+		{
+			wgo = AddValueInput<WGO>("WGO");
+			outWGO = AddValueOutput("WGO", () => innerWGO);
+		}
+		switch (lookAtType)
+		{
+		case LookAtType.Direction:
+			direction = AddValueInput<HumanLikeDirections.Direction>("direction");
+			break;
+		case LookAtType.Object:
+			lookAtObject = AddValueInput<GameObject>("lookAtObject");
+			break;
+		}
+	}
+
+	private void SetDirection(Flow flow)
+	{
+		switch (objectType)
+		{
+		case ObjectType.Player:
+			switch (lookAtType)
+			{
+			case LookAtType.Direction:
+				PlayerController.Instance.SetPlayerDirection(HumanLikeDirections.GetDirectionVectorByEnum(direction.value));
+				break;
+			case LookAtType.Object:
+			{
+				GameObject value2 = lookAtObject.value;
+				if (value2 != null)
+				{
+					Vector2 playerDirection = (value2.transform.position - PlayerController.Instance.MovementComponent.transform.position).normalized;
+					PlayerController.Instance.SetPlayerDirection(playerDirection);
+				}
+				else
+				{
+					PlayerController.Instance.SetPlayerDirection(HumanLikeDirections.GetDirectionVectorByEnum(HumanLikeDirections.Direction.Down));
+					Debug.LogError("Look At GameObject is null");
+				}
+				break;
+			}
+			}
+			break;
+		case ObjectType.WGO:
+			innerWGO = WGOParamOrSelf(wgo);
+			if (innerWGO != null)
+			{
+				switch (lookAtType)
+				{
+				case LookAtType.Direction:
+					innerWGO.SetDirection(HumanLikeDirections.GetDirectionVectorByEnum(direction.value));
+					break;
+				case LookAtType.Object:
+				{
+					GameObject value = lookAtObject.value;
+					if (value != null)
+					{
+						Vector2 vector = (value.transform.position - innerWGO.transform.position).normalized;
+						innerWGO.SetDirection(vector);
+					}
+					else
+					{
+						Debug.LogError("Look At GameObject is null");
+					}
+					break;
+				}
+				}
+			}
+			else
+			{
+				Debug.LogError("Tried to set direction to null WGO");
+			}
+			break;
+		}
+		@out.Call(flow);
+	}
+}

@@ -1,0 +1,31 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Time To Start Logic", 0)]
+[Description("Work Only For This day")]
+[Category("Game")]
+public class Flow_GetTimeToStartLogic : PC2CustomFlowNode
+{
+	private ValueInput<string> logicId;
+
+	private ValueOutput<int> time;
+
+	protected override void RegisterPorts()
+	{
+		logicId = AddValueInput<string>("logicId".CapitalizeFirst());
+		time = AddValueOutput("time".CapitalizeFirst(), delegate
+		{
+			GameLogicData logicByID = GameLogics.me.GetLogicByID(logicId.value);
+			int num = Mathf.Max(0, logicByID.nextExecutionTime - 1440 * (TimeManager.GetDay() - 1) - TimeManager.GetTime());
+			if (num == 0)
+			{
+				Debug.Log("Logic already worked that day, time to start == 0");
+			}
+			return num;
+		});
+	}
+}

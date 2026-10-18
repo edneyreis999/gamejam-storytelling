@@ -1,0 +1,36 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Add Player To League", 0)]
+[Category("Game")]
+public class Flow_AddPlayerToLeague : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> leagueId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in", delegate(Flow flow)
+		{
+			League league = MainGame.me.gameSave.leaguesSystem.GetLeague(leagueId.value);
+			if (league == null)
+			{
+				Debug.Log("#league# Can't find league:[" + leagueId.value + "]");
+			}
+			else
+			{
+				league.AddPlayerToLeague();
+			}
+			@out.Call(flow);
+		});
+		leagueId = AddValueInput<string>("leagueId".CapitalizeFirst());
+		@out = AddFlowOutput("out");
+	}
+}

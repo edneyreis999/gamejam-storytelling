@@ -1,0 +1,29 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI League Match\nBlock Buttons", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UILeagueBlockMatchButtons : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isToBlock;
+
+	public override string name => "UI League Match\n" + (isToBlock.value ? "Block" : "Unblock") + " Buttons";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GUIElements.Get<UILeagueWindow>().EloLeague.FirstMatch.IsOpponentButtonsInteractionDisabled = isToBlock.value;
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isToBlock = AddValueInput<bool>("isToBlock");
+	}
+}

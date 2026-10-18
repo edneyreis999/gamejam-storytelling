@@ -1,0 +1,40 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Change Fight Result Window Sorting", 0)]
+[Category("Game/UI")]
+public class Flow_ChangeFightResultWindowSorting : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isDefault;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	public override string name
+	{
+		get
+		{
+			if (!isDefault)
+			{
+				return "Change Fight Result Window Sorting To Over Fade";
+			}
+			return "Change Fight Result Window Sorting To Default";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			GUIElements.Get<UIFightResultWindow>().SetSorting(isDefault);
+			GUIElements.Get<FightStatsWindow>().SetSorting(isDefault);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

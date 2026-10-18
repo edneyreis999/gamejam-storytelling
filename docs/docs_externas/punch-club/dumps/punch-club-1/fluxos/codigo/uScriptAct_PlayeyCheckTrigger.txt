@@ -1,0 +1,28 @@
+using System;
+
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Player Check Trigger", "")]
+public class uScriptAct_PlayeyCheckTrigger : uScriptLogic
+{
+	public event uScript_GameObject.uScriptEventHandler FirstTime;
+
+	public event uScript_GameObject.uScriptEventHandler WasSet;
+
+	public void In([FriendlyName("Trigger name", "")] string tr_name)
+	{
+		if (MainGame.save.ch.char_res.GetInt(tr_name) < 1)
+		{
+			MainGame.save.ch.char_res.Set(tr_name, 1f);
+			if (this.FirstTime != null)
+			{
+				this.FirstTime(this, new EventArgs());
+			}
+		}
+		else if (this.WasSet != null)
+		{
+			this.WasSet(this, new EventArgs());
+		}
+	}
+}

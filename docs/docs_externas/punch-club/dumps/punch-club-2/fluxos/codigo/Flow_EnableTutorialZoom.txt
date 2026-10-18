@@ -1,0 +1,66 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Enable/Disable Tutorial Zoom", 0)]
+[Category("Game/Player")]
+public class Flow_EnableTutorialZoom : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<bool> isEnable;
+
+	private ValueInput<RectTransform> zoomingRect;
+
+	private ValueInput<RectTransform> zoomIconPosition;
+
+	private ValueInput<int> scaleFactor;
+
+	private ValueInput<Vector2> arrowSize;
+
+	private ValueInput<ZoomDirection> zoomDirection;
+
+	public override string name => (isEnable.value ? "<color=#8aff92>Enable</color>" : "<color=#ff8a8a>Disable</color>") + " Tutorial Zoom";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isEnable.value)
+			{
+				if (zoomingRect.value == null)
+				{
+					@out.Call(flow);
+					Debug.Log("Null zoomingRect.value!!!");
+					return;
+				}
+				if (zoomIconPosition.value == null)
+				{
+					@out.Call(flow);
+					Debug.Log("Null zoomIconPosition.value!!!");
+					return;
+				}
+				GUIElements.Get<ZoomEffect>().ZoomEnable(zoomingRect.value, scaleFactor.value, zoomIconPosition.value, arrowSize.value, zoomDirection.value);
+			}
+			else
+			{
+				GUIElements.Get<ZoomEffect>().ZoomDisable();
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		isEnable = AddValueInput<bool>("isEnable");
+		zoomingRect = AddValueInput<RectTransform>("zoomingRect");
+		zoomIconPosition = AddValueInput<RectTransform>("zoomIconPosition");
+		scaleFactor = AddValueInput<int>("scaleFactor");
+		scaleFactor.SetDefaultAndSerializedValue(3);
+		arrowSize = AddValueInput<Vector2>("arrowSize");
+		arrowSize.SetDefaultAndSerializedValue(new Vector2(50f, 50f));
+		zoomDirection = AddValueInput<ZoomDirection>("zoomDirection");
+	}
+}

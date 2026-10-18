@@ -1,0 +1,25 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Finish PreFight Flow", 0)]
+[Category("Game/Fight")]
+[Color("ff0000")]
+public class Flow_FinishBeforeFightStartedAction : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			Fight.FinishBeforeFightStartedAction();
+			@out.Call(flow);
+		});
+	}
+}

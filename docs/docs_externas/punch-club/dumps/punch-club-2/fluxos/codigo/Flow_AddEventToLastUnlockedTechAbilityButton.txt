@@ -1,0 +1,77 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Add Event To Last Unlocked\nAbility Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_AddEventToLastUnlockedTechAbilityButton : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput onClicked;
+
+	private FlowOutput @out;
+
+	private FlowOutput onSelectWindowClosed;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UISelectAbilityWindow selectAbilityWindow = GUIElements.Get<UISelectAbilityWindow>();
+			UIAbilityElement uIAbilityElement = selectAbilityWindow.Ability.Find((UIAbilityElement x) => x.Data.id == MainGame.me.gameSave.knowledgeSystem.obtainedTechs[MainGame.me.gameSave.knowledgeSystem.obtainedTechs.Count - 1]);
+			GamepadNavigationItem navigationItem;
+			if (uIAbilityElement != null)
+			{
+				Button button = uIAbilityElement.Button;
+				if (button != null)
+				{
+					BaseGUI.OnWindowClosed += selectWindowCloseHandler;
+					navigationItem = button.GetComponent<GamepadNavigationItem>();
+					selectAbilityWindow.CustomItems = new List<GamepadNavigationItem> { navigationItem };
+					selectAbilityWindow.TutorialGamepadNavigation = true;
+					selectAbilityWindow.LockPressBack = true;
+					selectAbilityWindow.SortButtonTipsOverTutorialWindow();
+					selectAbilityWindow.OnInputSourceChanged();
+					UIElementsCustomEventHandlerManager.AddEvent(button, UITutorialArrow.SignOrientationType.Right, delegate
+					{
+						TutorialAction();
+					});
+				}
+				else
+				{
+					Debug.LogError("Selected button is null for attack button");
+					onClicked.Call(flow);
+				}
+			}
+			else
+			{
+				Debug.LogError("AbilityElement is null for attack button");
+			}
+			@out.Call(flow);
+			void TutorialAction()
+			{
+				selectAbilityWindow.CustomItems = null;
+				selectAbilityWindow.LockPressBack = false;
+				selectAbilityWindow.ReturnDefaultButtonTipsSorting();
+				selectAbilityWindow.TutorialGamepadNavigation = false;
+				onClicked.Call(flow);
+				navigationItem.SyncOnSelectWithButton();
+			}
+			void selectWindowCloseHandler(BaseGUI window)
+			{
+				onSelectWindowClosed.Call(flow);
+				BaseGUI.OnWindowClosed -= selectWindowCloseHandler;
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+		onSelectWindowClosed = AddFlowOutput("onSelectWindowClosed".CapitalizeFirst());
+	}
+}

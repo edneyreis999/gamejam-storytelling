@@ -1,0 +1,61 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("UI Fighter Window\nAdd Event To Attack Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIFighterWindowAddEventToAttackButton : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput onClicked;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> text;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIFighterWindow fighterWindow = GUIElements.Get<UIFighterWindow>();
+			Button button = fighterWindow.Abilities.Attacks[0].Button;
+			RectTransform rectTransform = fighterWindow.Abilities.Attacks[0].RectTransform;
+			if (button != null)
+			{
+				GUIElements.Get<UITutorialWindow>().ShowMask(rectTransform);
+				GamepadNavigationItem navigationItem = button.GetComponent<GamepadNavigationItem>();
+				fighterWindow.CustomItems = new List<GamepadNavigationItem> { navigationItem };
+				fighterWindow.TutorialGamepadNavigation = true;
+				fighterWindow.LockPressBack = true;
+				fighterWindow.SortButtonTipsOverTutorialWindow();
+				fighterWindow.OnInputSourceChanged();
+				UIElementsCustomEventHandlerManager.AddEvent(button, UITutorialArrow.SignOrientationType.Right, delegate
+				{
+					GUIElements.Get<UITutorialWindow>().HideMask(rectTransform);
+					fighterWindow.CustomItems = null;
+					fighterWindow.LockPressBack = false;
+					fighterWindow.ReturnDefaultButtonTipsSorting();
+					fighterWindow.TutorialGamepadNavigation = false;
+					onClicked.Call(flow);
+					navigationItem.SyncOnSelectWithButton();
+				}, text.value);
+			}
+			else
+			{
+				Debug.LogError("Selected button is null for attack button");
+				onClicked.Call(flow);
+			}
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+		text = AddValueInput<string>("text");
+	}
+}

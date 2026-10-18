@@ -1,0 +1,30 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+[Name("Show Robot League Win Window", 0)]
+[Category("Game/UI")]
+public class Flow_ShowRobotLeagueWinWindow : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClosed;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			RobotLeagueWinWindow robotLeagueWinWindow = GUIElements.Get<RobotLeagueWinWindow>();
+			robotLeagueWinWindow.Open();
+			robotLeagueWinWindow.onClosed = delegate
+			{
+				onClosed.Call(flow);
+			};
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClosed = AddFlowOutput("onClosed".CapitalizeFirst());
+	}
+}

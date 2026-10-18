@@ -1,0 +1,30 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Find GMO", 0)]
+[Category("Game/GameMap")]
+public class Flow_FindGameMapObject : PC2CustomFlowNode
+{
+	private ValueInput<string> id;
+
+	private ValueOutput<GameMapObject> gmo;
+
+	protected override void RegisterPorts()
+	{
+		id = AddValueInput<string>("id".CapitalizeFirst());
+		gmo = AddValueOutput("GameMapObject", delegate
+		{
+			foreach (GameMapObject gameMapObject in MainGame.me.gameMap.GameMapObjects)
+			{
+				if (gameMapObject.GMOState.id == id.value)
+				{
+					return gameMapObject;
+				}
+			}
+			return (GameMapObject)null;
+		});
+	}
+}

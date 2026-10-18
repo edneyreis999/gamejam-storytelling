@@ -1,0 +1,34 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Scholars Bubble Nodes", 0)]
+[Category("Game/MickGym")]
+public class Flow_GetScholarsBubbleNodes : PC2CustomFlowNode
+{
+	private ValueOutput<List<Transform>> bubbleNodes;
+
+	private ValueOutput<List<Transform>> playerNodes;
+
+	protected override void RegisterPorts()
+	{
+		bubbleNodes = AddValueOutput("bubbleNodes".CapitalizeFirst(), delegate
+		{
+			List<Transform> list = new List<Transform>();
+			for (int i = 0; i < LazyConsts.mickScholarsIds.Count; i++)
+			{
+				WGO wGO = DynamicScene.FindWGO(LazyConsts.mickScholarsIds[i]);
+				if (wGO.gameObject.activeSelf)
+				{
+					list.Add(wGO.TalkNode);
+				}
+			}
+			return list;
+		});
+		playerNodes = AddValueOutput("playerNodes".CapitalizeFirst(), () => new List<Transform> { PlayerController.Instance.BubbleNode.transform });
+	}
+}

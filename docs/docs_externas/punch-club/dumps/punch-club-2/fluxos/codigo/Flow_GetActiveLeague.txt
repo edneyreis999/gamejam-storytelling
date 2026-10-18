@@ -1,0 +1,25 @@
+using FlowCanvas;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get Active League", 0)]
+[Category("Game/Fight")]
+public class Flow_GetActiveLeague : PC2CustomFlowNode
+{
+	private ValueOutput<string> id;
+
+	protected override void RegisterPorts()
+	{
+		id = AddValueOutput("id", delegate
+		{
+			string empty = string.Empty;
+			League activeLeague = MainGame.me.gameSave.leaguesSystem.GetActiveLeague(0);
+			if (activeLeague != null)
+			{
+				empty = activeLeague.id;
+			}
+			return empty;
+		});
+	}
+}

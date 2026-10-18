@@ -1,0 +1,26 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Open Fighter Window", 0)]
+[Category("Game")]
+public class Flow_OpenFighterWindow : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in", delegate(Flow flow)
+		{
+			UIHeaderWindow uIHeaderWindow = GUIElements.Get<UIHeaderWindow>();
+			uIHeaderWindow.CurrentTab = HeaderTabType.Fighter;
+			uIHeaderWindow.OpenFighterWindow();
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

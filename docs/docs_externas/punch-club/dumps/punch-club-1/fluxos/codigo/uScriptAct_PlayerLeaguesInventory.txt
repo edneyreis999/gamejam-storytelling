@@ -1,0 +1,23 @@
+using UnityEngine;
+
+[NodePath("Conditions/VHS Story/Character")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("League Inventory", "")]
+public class uScriptAct_PlayerLeaguesInventory : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("League id", "")] int id, [FriendlyName("Add?", "If false - remove")] bool add)
+	{
+		FightLeagueData data = GameBalance.me.GetData<FightLeagueData>(id);
+		if (data == null)
+		{
+			Debug.LogError("League not found: #" + id);
+			return;
+		}
+		MainGame.save.ch.all_leagues.UnlockLeague(id, add);
+		SceneRoot.me.UpdateInventoryVisibility();
+		MainGame.me.gui_elements.hud.Redraw();
+	}
+}

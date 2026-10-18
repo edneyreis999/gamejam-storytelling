@@ -1,0 +1,45 @@
+using System.Collections.Generic;
+using FlowCanvas;
+using LazyBearTechnology;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine.UI;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes.Tutorial;
+
+[Name("UI Vendor Window Add Event\nTo Eat Button", 0)]
+[Category("Game/Tutorial")]
+public class Flow_UIVendorWindowAddEventToEatButton : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClicked;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			UIVendorWindow vendorWindow = GUIElements.Get<UIVendorWindow>();
+			Button buyButton = vendorWindow.TutorialFridgeElement.BuyButton;
+			vendorWindow.TutorialGamepadNavigation = true;
+			vendorWindow.LockPressBack = true;
+			vendorWindow.CustomItems = new List<GamepadNavigationItem> { vendorWindow.TutorialFridgeElement.GamepadNavigationItem };
+			vendorWindow.SortButtonTipsOverTutorialWindow();
+			vendorWindow.OnInputSourceChanged();
+			UIElementsCustomEventHandlerManager.AddEvent(buyButton, UITutorialArrow.SignOrientationType.Right, delegate
+			{
+				vendorWindow.TutorialGamepadNavigation = false;
+				vendorWindow.LockPressBack = false;
+				vendorWindow.CustomItems = null;
+				vendorWindow.ReturnDefaultButtonTipsSorting();
+				vendorWindow.OnInputSourceChanged();
+				onClicked.Call(flow);
+			});
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		onClicked = AddFlowOutput("onClicked".CapitalizeFirst());
+	}
+}

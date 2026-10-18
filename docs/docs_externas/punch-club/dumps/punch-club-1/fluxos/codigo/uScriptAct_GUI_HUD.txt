@@ -1,0 +1,22 @@
+[NodePath("Actions/VHS Story/GUI")]
+[NodeCopyright("Copyright 2014 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("HUD", "")]
+public class uScriptAct_GUI_HUD : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Show", "")] bool show)
+	{
+		if (show)
+		{
+			MainGame.me.gui_elements.hud.Show();
+			MainGame.me.gui_elements.hud_left.Show();
+		}
+		else
+		{
+			MainGame.me.gui_elements.hud.Hide();
+			MainGame.me.gui_elements.hud_left.Hide();
+		}
+	}
+}

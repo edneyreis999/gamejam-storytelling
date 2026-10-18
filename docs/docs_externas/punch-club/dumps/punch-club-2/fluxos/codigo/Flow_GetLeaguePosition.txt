@@ -1,0 +1,44 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Get League Position", 0)]
+[Category("Game")]
+public class Flow_GetLeaguePosition : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueOutput<int> playerPosition;
+
+	private ValueInput<string> leagueId;
+
+	private int playerPositionValue;
+
+	protected override void RegisterPorts()
+	{
+		leagueId = AddValueInput<string>("leagueId");
+		leagueId.SetDefaultAndSerializedValue("Silvers league");
+		playerPosition = AddValueOutput("playerPosition", () => playerPositionValue);
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			League league = MainGame.me.gameSave.leaguesSystem.GetLeague(leagueId.value);
+			if (league == null)
+			{
+				Debug.Log("Did not did not find League " + leagueId.value);
+				playerPositionValue = int.MaxValue;
+				@out.Call(flow);
+			}
+			else
+			{
+				playerPositionValue = league.GetPlayerPositionInLeague();
+				@out.Call(flow);
+			}
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

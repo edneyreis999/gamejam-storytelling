@@ -1,0 +1,46 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Is Duty Active For Scene", 0)]
+[Category("Game")]
+[Color("cf35c1")]
+public class Flow_IsDutyActive : PC2CustomFlowNode
+{
+	public string scene;
+
+	private FlowInput @in;
+
+	private FlowOutput yes;
+
+	private FlowOutput no;
+
+	private ValueInput<string> professionId;
+
+	private ValueOutput<bool> isDutyActive;
+
+	private bool isDutyActiveValue;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (MainGame.me.gameSave.professionSystem.IsDutyActiveForScene(professionId.value, scene))
+			{
+				isDutyActiveValue = true;
+				yes.Call(flow);
+			}
+			else
+			{
+				isDutyActiveValue = false;
+				no.Call(flow);
+			}
+		});
+		isDutyActive = AddValueOutput("isDutyActive", () => isDutyActiveValue);
+		yes = AddFlowOutput("yes".CapitalizeFirst());
+		no = AddFlowOutput("no".CapitalizeFirst());
+		professionId = AddValueInput<string>("professionId".CapitalizeFirst());
+	}
+}

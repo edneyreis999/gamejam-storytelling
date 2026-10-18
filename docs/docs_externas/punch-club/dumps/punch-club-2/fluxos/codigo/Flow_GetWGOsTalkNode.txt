@@ -1,0 +1,30 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Get WGO's TalkNode", 0)]
+[Category("Game/TalkNode")]
+public class Flow_GetWGOsTalkNode : PC2CustomFlowNode
+{
+	private new ValueInput<WGO> wgo;
+
+	private ValueOutput<Transform> talkNode;
+
+	protected override void RegisterPorts()
+	{
+		wgo = AddValueInput<WGO>("wgo".CapitalizeFirst());
+		talkNode = AddValueOutput("talkNode".CapitalizeFirst(), delegate
+		{
+			WGO wGO = WGOParamOrSelf(wgo, isLogErrorIfNotFound: false);
+			if (wGO == null)
+			{
+				Debug.LogError("WGO is null!!");
+				return (Transform)null;
+			}
+			return wGO.TalkNode;
+		});
+	}
+}

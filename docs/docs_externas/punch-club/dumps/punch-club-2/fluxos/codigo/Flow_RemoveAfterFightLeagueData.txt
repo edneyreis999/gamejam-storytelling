@@ -1,0 +1,28 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Remove After Fight Leagues Data", 0)]
+[Category("Game")]
+public class Flow_RemoveAfterFightLeagueData : PC2CustomFlowNode
+{
+	public string id;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Remove);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+
+	private void Remove(Flow flow)
+	{
+		MainGame.me.gameSave.leaguesSystem.RemoveAfterFightLeagueData(id);
+		@out.Call(flow);
+	}
+}

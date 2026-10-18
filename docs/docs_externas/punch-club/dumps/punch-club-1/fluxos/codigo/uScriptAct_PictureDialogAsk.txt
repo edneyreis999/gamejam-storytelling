@@ -1,0 +1,50 @@
+using System;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Picture Dialog Ask", "")]
+public class uScriptAct_PictureDialogAsk : uScriptLogic
+{
+	private int _price;
+
+	public event uScript_GameObject.uScriptEventHandler Payed;
+
+	public event uScript_GameObject.uScriptEventHandler NotPayed;
+
+	public void In([FriendlyName("Header", "")] string header, [FriendlyName("Text", "")] string txt, [FriendlyName("Picture", "")] string picture, [FriendlyName("Price", "")] int price)
+	{
+		_price = price;
+		GameRes gameRes = new GameRes();
+		gameRes.Set(GameRes.ResType._money, price);
+		string text = gameRes.ToDescStr(",");
+		MainGame.me.gui_elements.pic_dialog.Open(GJL.L(header), GJL.L(txt), picture, new SimpleDialog.ButtonDescription
+		{
+			color = SimpleButton.ButtonColor.Green,
+			text = "(Action1)" + text,
+			on_click = DoPay
+		}, new SimpleDialog.ButtonDescription
+		{
+			color = SimpleButton.ButtonColor.Red,
+			text = "(Action2)" + GJL.L("CANCEL"),
+			on_click = OnCancel
+		}, MainGame.save.ch.char_res >= new GameRes(GameRes.ResType._money, price), btn2_enabled: true, PictureDialogGUI.CloseButtonFunction.Close, OnCancel, string.Empty);
+	}
+
+	private void DoPay()
+	{
+		MainGame.save.ch.SubCharRes(new GameRes(GameRes.ResType._money, _price));
+		if (this.Payed != null)
+		{
+			this.Payed(this, new EventArgs());
+		}
+	}
+
+	private void OnCancel()
+	{
+		if (this.NotPayed != null)
+		{
+			this.NotPayed(this, new EventArgs());
+		}
+	}
+}

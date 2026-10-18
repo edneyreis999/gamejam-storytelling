@@ -1,0 +1,58 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Task Manager\nStory Tree Set Status", 0)]
+[Category("Game/TaskManager")]
+[Color("402b2b")]
+public class Flow_AddTaskStoryTree : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private FlowOutput onClosed;
+
+	private ValueInput<string> questId;
+
+	private ValueInput<bool> showStoryWindow;
+
+	private ValueInput<QuestState> questState;
+
+	public override string name => "Task Manager\n<color=#00FF7F>Story Tree Set Status</color>";
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), SetQuestStatus);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		questId = AddValueInput<string>("Quest Id");
+		showStoryWindow = AddValueInput<bool>("Show story window?");
+		questState = AddValueInput<QuestState>("Quest State");
+		questState.SetDefaultAndSerializedValue(QuestState.Invisible);
+		onClosed = AddFlowOutput("onClosed".CapitalizeFirst());
+	}
+
+	private void SetQuestStatus(Flow flow)
+	{
+		if (ConstsDefinition.Get("use_notices_in_story_reveal").BoolValue)
+		{
+			KnowledgeSystemManager.SetQuestStatus(questId.value, questState.value, !showStoryWindow.value, delegate
+			{
+				onClosed.Call(flow);
+			});
+		}
+		else
+		{
+			TaskManager.AddTask(Task.TaskPriority.High, delegate
+			{
+				KnowledgeSystemManager.SetQuestStatus(questId.value, questState.value, !showStoryWindow.value, delegate
+				{
+					onClosed.Call(flow);
+				});
+			}, () => PlayerController.Instance.IsControlEnabled, () => !GUIElements.Get<UIStoryRevealWindow>().IsShown);
+		}
+		@out.Call(flow);
+	}
+}

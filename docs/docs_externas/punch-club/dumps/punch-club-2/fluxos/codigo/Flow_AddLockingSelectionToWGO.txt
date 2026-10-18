@@ -1,0 +1,47 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Add Locking Selection To WGO", 0)]
+[Category("Game")]
+public class Flow_AddLockingSelectionToWGO : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<WGO> wgoInput;
+
+	private ValueInput<string> lockingSelectionWGOId;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), Add);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		wgoInput = AddValueInput<WGO>("wgoInput".CapitalizeFirst());
+		lockingSelectionWGOId = AddValueInput<string>("lockingSelectionWGOId".CapitalizeFirst());
+	}
+
+	private void Add(Flow flow)
+	{
+		WGO wGO = WGOParamOrSelf(wgoInput);
+		if (wGO == null)
+		{
+			Debug.Log("Null wgo!!!");
+			@out.Call(flow);
+		}
+		else if (string.IsNullOrEmpty(lockingSelectionWGOId.value))
+		{
+			Debug.Log("Empty locking selection wgo id!!!");
+			@out.Call(flow);
+		}
+		else
+		{
+			wGO.ActiveWGOsLockingSelection.Add(lockingSelectionWGOId.value);
+			@out.Call(flow);
+		}
+	}
+}

@@ -1,0 +1,43 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Stop Character Movement", 0)]
+[Category("Game")]
+public class Flow_StopCharacterMovement : PC2CustomFlowNode
+{
+	[GatherPortsCallback]
+	public bool isPlayer = true;
+
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private new ValueInput<WGO> wgo;
+
+	private WGO innerWGO;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			if (isPlayer)
+			{
+				PlayerController.Instance.MovementComponent.Stop();
+			}
+			else
+			{
+				innerWGO = WGOParamOrSelf(wgo);
+				innerWGO.Movement.Stop();
+			}
+			@out.Call(flow);
+		});
+		if (!isPlayer)
+		{
+			wgo = AddValueInput<WGO>("WGO");
+		}
+		@out = AddFlowOutput("out".CapitalizeFirst());
+	}
+}

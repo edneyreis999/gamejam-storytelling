@@ -1,0 +1,28 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+using UnityEngine;
+
+namespace PunchClub2.FlowCanvasNodes;
+
+[Name("Log", 0)]
+[Category("Game")]
+public class Flow_LogText : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> text;
+
+	protected override void RegisterPorts()
+	{
+		text = AddValueInput<string>("Text");
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		@in = AddFlowInput("in".CapitalizeFirst(), delegate(Flow flow)
+		{
+			Debug.Log("#LOG#" + text.value);
+			@out.Call(flow);
+		});
+	}
+}

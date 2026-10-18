@@ -1,0 +1,30 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas.FlowCanvasNodes;
+
+[Name("Fire Event On Global Script", 0)]
+[Category("Game/Script")]
+public class Flow_FireEventOnGlobalScript : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> scriptName;
+
+	private ValueInput<string> eventName;
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in", delegate(Flow flow)
+		{
+			GlobalScriptsManager.FireEvent(scriptName.value, eventName.value);
+			@out.Call(flow);
+		});
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		scriptName = AddValueInput<string>("scriptName");
+		eventName = AddValueInput<string>("eventName");
+	}
+}

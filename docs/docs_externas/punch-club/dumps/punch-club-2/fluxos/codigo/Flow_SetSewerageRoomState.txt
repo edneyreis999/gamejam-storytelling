@@ -1,0 +1,60 @@
+using FlowCanvas;
+using ParadoxNotion;
+using ParadoxNotion.Design;
+
+namespace PunchClub2.FlowCanvas;
+
+[Name("Set Sewerage Room State", 0)]
+[Category("Game/Sewerage")]
+public class Flow_SetSewerageRoomState : PC2CustomFlowNode
+{
+	private FlowInput @in;
+
+	private FlowOutput @out;
+
+	private ValueInput<string> roomId;
+
+	private ValueInput<bool> isVisible;
+
+	[GatherPortsCallback]
+	public bool forceUnlock;
+
+	[ShowIf("forceUnlock", 0)]
+	public bool hardUpdateRoomState;
+
+	public override string name
+	{
+		get
+		{
+			if (!forceUnlock)
+			{
+				return "Set Sewerage Room State";
+			}
+			return "Force Unlock Sewerage Room";
+		}
+	}
+
+	protected override void RegisterPorts()
+	{
+		@in = AddFlowInput("in".CapitalizeFirst(), SetState);
+		@out = AddFlowOutput("out".CapitalizeFirst());
+		roomId = AddValueInput<string>("roomId");
+		if (!forceUnlock)
+		{
+			isVisible = AddValueInput<bool>("isVisible");
+		}
+	}
+
+	private void SetState(Flow flow)
+	{
+		if (forceUnlock)
+		{
+			MainGame.me.gameSave.worldData.SetSewerageMapObjectState(roomId.value, visibilityState: true, isVisited: true, isBlinked: true, null, changeLockerState: true);
+		}
+		else
+		{
+			MainGame.me.gameSave.worldData.SetSewerageMapObjectState(roomId.value, isVisible.value, !isVisible.value, !isVisible.value, null, changeLockerState: true, hardUpdateRoomState);
+		}
+		@out.Call(flow);
+	}
+}

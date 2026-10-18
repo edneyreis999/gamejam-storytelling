@@ -1,0 +1,20 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Set Trigger", "")]
+public class uScriptAct_SetTrigger : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Trigger Name", "")] string name)
+	{
+		Animator[] array = Object.FindObjectsOfType<Animator>();
+		Animator[] array2 = array;
+		foreach (Animator animator in array2)
+		{
+			animator.SetTrigger(name);
+		}
+	}
+}

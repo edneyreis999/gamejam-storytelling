@@ -1,0 +1,56 @@
+using UnityEngine;
+
+[NodePath("Actions/VHS Story/General")]
+[NodeCopyright("Copyright 2015 by GameJam")]
+[NodeAuthor("GameJam", "http://www.gamejam.ru")]
+[FriendlyName("Char Res Modify", "")]
+public class uScriptAct_CharResModify : uScriptLogic
+{
+	public bool Out => true;
+
+	public void In([FriendlyName("Modifiers", "Format is like 'a=1' or 'b+=2'")] string[] modifs)
+	{
+		foreach (string text in modifs)
+		{
+			if (!text.Contains("="))
+			{
+				Debug.LogError("Wrong param modifier: " + text);
+				continue;
+			}
+			string[] array = text.Split('=');
+			if (array.Length != 2 || array[0].Length == 0)
+			{
+				Debug.LogError("Wrong param modifier: " + text);
+				continue;
+			}
+			char c = array[0][array[0].Length - 1];
+			if (c == '+' || c == '-')
+			{
+				array[0] = array[0].Substring(0, array[0].Length - 1);
+			}
+			else
+			{
+				c = '=';
+			}
+			string text2 = array[0].Trim(' ');
+			int num = int.Parse(array[1].Trim(' '));
+			Debug.Log(text2 + " " + c + " " + num);
+			switch (c)
+			{
+			case '=':
+				MainGame.save.ch.char_res.Set(text2, num);
+				break;
+			case '+':
+				MainGame.save.ch.AddCharRes(text2, num);
+				break;
+			case '-':
+				MainGame.save.ch.AddCharRes(text2, -num);
+				break;
+			default:
+				Debug.LogError("Wrong param modifier: " + text);
+				break;
+			}
+		}
+		MainGame.me.gui_elements.hud.Redraw();
+	}
+}

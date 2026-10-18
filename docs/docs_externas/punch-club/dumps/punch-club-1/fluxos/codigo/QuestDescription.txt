@@ -1,0 +1,109 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+[Serializable]
+public class QuestDescription : BalanceBase
+{
+	public TriggersDescription start_trigger;
+
+	public TriggersDescription success_trigger;
+
+	public TriggersDescription fail_trigger;
+
+	public List<string> start_key;
+
+	public DependRes rew_on_success;
+
+	public DependRes rew_on_fail;
+
+	public bool one_time_quest;
+
+	public string start_lua;
+
+	public string success_lua;
+
+	public string fail_lua;
+
+	public const string LUA_ADD_TO_START_SCRIPT = "start_script_finished";
+
+	public const string LUA_ADD_TO_END_SCRIPT = "end_script_finished";
+
+	private GameScript _on_start_script = new GameScript();
+
+	private GameScript _on_success_script = new GameScript();
+
+	private GameScript _on_fail_script = new GameScript();
+
+	public bool IsReadyToStart()
+	{
+		if (one_time_quest && MainGame.save.ch.CheckIfQuestWasExecuted(base.id))
+		{
+			return false;
+		}
+		if (start_trigger.lua_script == string.Empty)
+		{
+			Debug.LogError("start trigger is empty for quest #" + base.id);
+			return false;
+		}
+		try
+		{
+			return start_trigger.GetTriggerState();
+		}
+		catch (Exception)
+		{
+			Debug.LogError("Error in start trigger for quest #" + base.id + "\n" + start_trigger.lua_script);
+			return false;
+		}
+	}
+
+	public bool IsSucceed()
+	{
+		return success_trigger.GetTriggerState();
+	}
+
+	public bool IsFailed()
+	{
+		return fail_trigger.GetTriggerState();
+	}
+
+	public static bool IsUScript(string str)
+	{
+		return str.Length > 1 && str[0] == ':';
+	}
+
+	public void InitQuestStartTriggers()
+	{
+		start_trigger.OnLoaded();
+		_on_start_script.FromString(start_lua, "start_script_finished");
+	}
+
+	public void InitQuestEndTriggers()
+	{
+		fail_trigger.OnLoaded();
+		success_trigger.OnLoaded();
+		_on_success_script.FromString(success_lua, "end_script_finished");
+		_on_fail_script.FromString(fail_lua, "end_script_finished");
+	}
+
+	public void StartStartingScripts()
+	{
+		_on_start_script.Execute();
+	}
+
+	public void StartSucceedScript()
+	{
+		_on_success_script.Execute();
+	}
+
+	public void StartFailedScript()
+	{
+		_on_fail_script.Execute();
+	}
+
+	public void OnEndScriptFinished()
+	{
+		MainGame.save.ch.quests.ending_quests_in_progress = false;
+		MainGame.save.ch.quests.ProcessNextEndingQuest();
+	}
+}
