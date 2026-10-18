@@ -48,8 +48,8 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Salão | Chegada e conversas recorrentes | Cena com Nyra no salão | Fundo principal | A produzir; nome de arquivo pendente |
-| Pátio | Discussão do uso e reconhecimento do desfecho de R1 | Cena situada no pátio, com iluminação noturna para a disputa | Exterior coberto, banco e área de carga; montagem final dos projetos ainda depende do roteiro | A produzir; nome de arquivo pendente |
+| Salão | Chegada e conversas recorrentes | Cena com Nyra no salão | Fundo principal | [PNG produzido](../../../assets/terminus/locais/estalagem-nyra-salao-v1.png) — em desenvolvimento |
+| Pátio | Discussão do uso e reconhecimento do desfecho de R1 | Cena situada no pátio, com iluminação noturna para a disputa | Exterior coberto, banco e área de carga; montagem final dos projetos ainda depende do roteiro | [PNG produzido](../../../assets/terminus/locais/estalagem-nyra-patio-v2.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

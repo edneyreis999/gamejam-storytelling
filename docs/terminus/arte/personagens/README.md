@@ -2,7 +2,7 @@
 
 Status: em desenvolvimento.
 
-**Retificação do concept de Neral — 18/10/2026:** capuz e cobertura integral, com apenas olhos visíveis, valem somente para o disfarce. As formas revelada e transformada seguem a descrição dos Ignotos e podem expor cabeça, rosto e corpo. O [disfarce v2 e os novos concepts](../bustos/README.md) orientam a revisão; consulte a [ficha](../../personagens/neral.md) e o [resumo](resumos/neral.md). As spritesheets anteriores continuam pendentes de adaptação.
+**Retificação do concept de Neral — 18/10/2026:** capuz e cobertura integral, com apenas olhos visíveis, valem somente para o disfarce. As formas revelada e transformada seguem a descrição dos Ignotos e podem expor cabeça, rosto e corpo. O [disfarce v2 e os novos concepts](../bustos/README.md) orientam a revisão; consulte a [ficha](../../personagens/neral.md) e o [resumo](resumos/neral.md). O concept transformado v4 foi aprovado e já orienta a [nova spritesheet v6](revisoes/neral-transformado-v6/README.md), em avaliação. As outras duas formas continuam pendentes de adaptação.
 
 ## Entrega e decisões
 
@@ -12,9 +12,9 @@ Este guia serve ao autor e à produção de arte. O [controle](controle.md), os 
 
 [Abrir a galeria de revisão](galeria.html) · [Revisão dos pilotos](revisoes/pilotos.md) · [Lote 1](revisoes/lote-1.md) · [Lote 2](revisoes/lote-2.md)
 
-Situação em 18/10/2026: 42 folhas disponíveis. As [correções anteriores de movimento](revisoes/correcao-movimento/README.md) reabriram dez versões aprovadas. Há 13 folhas aceitas, sendo sete com ressalvas, e 29 candidatas aguardando avaliação. A aprovação anterior do estudo de Neral está preservada como histórico; a correção de concept descrita acima substitui sua direção visual.
+Situação em 18/10/2026: 42 folhas disponíveis. As [correções anteriores de movimento](revisoes/correcao-movimento/README.md) reabriram dez versões aprovadas. Há 18 folhas aceitas, sendo sete com ressalvas, e 24 candidatas aguardando avaliação. A aprovação anterior do estudo de Neral está preservada como histórico; a correção de concept descrita acima substitui sua direção visual.
 
-Revisão atual: o autor decidiu manter por enquanto as sete versões do bloco 1, com ressalvas; Odrik já estava aprovado. Guedra v4 foi aprovada e liberou Darvek v5, Edrin v5, Tessa v4 e Rask v3, agora aguardando aprovação do bloco 2 completo. O bloco 3 ainda não começou. O [registro dos três blocos](revisoes/correcao-blocos/README.md) separa testes técnicos, inspeção e aceite visual.
+Revisão atual: o bloco 2 completo foi aprovado. Pirka v3 foi aprovada. Urdan v4 e o bloco 3 completo aguardam avaliação. O bloco 1 permanece aceito com ressalvas. O [registro dos três blocos](revisoes/correcao-blocos/README.md) separa testes técnicos, inspeção e aceite visual.
 
 ## Contrato visual
 
@@ -121,4 +121,4 @@ Não foi encontrado DESIGN.md nem sistema de tokens para esta superfície; usar 
 
 O [método anterior de correção](../../../../tools/corrigir_movimento.py) foi usado nas 18 folhas listadas no [registro da revisão](revisoes/correcao-movimento/README.md). A revisão posterior do autor revelou que ele também cortava as botas dos perfis; a descrição anterior de “botas inteiras” estava incorreta. Preservá-lo para reproduzir as versões históricas, sem usá-lo como garantia de qualidade.
 
-Os oito personagens do bloco 1 e os cinco do bloco 2 usam [camadas delimitadas individualmente](../../../../tools/retocar_camadas.py), com registro em `revisao_camadas` no controle. O bloco 2 combina roupa reconstruída, braço da própria direção delimitado por linha de pixels e proteção dos acessórios. Esse campo tem precedência sobre `revisao_movimento` na reprodução. O registro dos três blocos distingue testes técnicos, inspeção visual e aprovação do autor.
+Os oito personagens do bloco 1, os cinco do bloco 2 e a amostra Pirka usam [camadas delimitadas individualmente](../../../../tools/retocar_camadas.py), com registro em `revisao_camadas` no controle. O bloco 2 combina roupa reconstruída, braço da própria direção e proteção dos acessórios. Pirka também recupera poses corporais da v1, identificadas por arquivo e hash no relatório. Esse campo tem precedência sobre `revisao_movimento` na reprodução. Testes técnicos, inspeção visual e aprovação do autor são registros separados.

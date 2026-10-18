@@ -48,7 +48,7 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Coreto visto pelo ouvinte | Abertura, retornos e encerramento | Moldura narrativa ou retorno entre cenas | Fundo único, com Rheed sobreposto | A produzir; nome de arquivo pendente |
+| Coreto visto pelo ouvinte | Abertura, retornos e encerramento | Moldura narrativa ou retorno entre cenas | Fundo único, com Rheed sobreposto | [PNG produzido](../../../assets/terminus/locais/coreto-noite-historia-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

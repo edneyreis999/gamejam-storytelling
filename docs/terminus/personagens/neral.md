@@ -11,10 +11,12 @@ A base indicada como confirmada vem da visão e das decisões do autor. Aparênc
 ## 1. Identificação
 
 - **Papel:** Vendedor recorrente e chefão Ignoto pós-campeonato; uma única identidade.
-- **Raça, idade e aparência:** Ignoto dos Círculos Superiores; idade desconhecida. Pela retificação do autor em 18/10/2026, apenas o disfarce de Savel usa capuz e cobertura integral, mostrando somente os olhos, com Vivi como referência. Nas formas revelada e transformada, cabeça, rosto e partes do corpo podem ficar expostos. O concept dessas formas usa as referências dos Ignotos: humanoide branco e sem cabelo ou pelos; aparência preservada antes das doses concentradas e hipertrofia e deformidades após o consumo. O casaco, os fechos, o debrum e os olhos mantêm a continuidade entre as três formas. Os detalhes das novas imagens são propostas visuais para avaliação.
+- **Raça, idade e aparência:** Ignoto dos Círculos Superiores; idade desconhecida. Pela retificação do autor em 18/10/2026, apenas o disfarce de Savel usa capuz e cobertura integral, mostrando somente os olhos, com Vivi como referência. Nas formas revelada e transformada, cabeça, rosto e partes do corpo podem ficar expostos. O concept dessas formas usa as referências dos Ignotos: humanoide branco e sem cabelo ou pelos; aparência preservada antes das doses concentradas e hipertrofia e deformidades após o consumo. O casaco, os fechos, o debrum e os olhos mantêm a continuidade entre as três formas. O concept transformado v4 foi aprovado pelo autor; os detalhes do revelado v4 continuam em avaliação.
 - **Personalidade em uma frase:** Reconhece uma carência com precisão e vende a dependência como se fosse cuidado.
 
 ### Direção para as spritesheets
+
+Para a forma transformada, o autor indicou os dois Ignotos grandes das laterais de [ignotos.png](../referencias/ignotos.png) como referência de anatomia: torso e braços enormes, cabeça pequena entre ombros e trapézio elevados, postura curvada, orelhas pontudas, boca larga com dentes afiados e mãos com garras. O rosto também se deforma; olhos claros e fragmentos do traje preservam a continuidade com Neral. O autor aprovou o concept transformado v4 em 18/10/2026 e solicitou a adaptação da spritesheet a essa imagem.
 
 O plano prevê três formas da mesma identidade: disfarce, revelado e transformado. A regra de capuz e apenas olhos visíveis vale somente para o disfarce. Na revelação, o capuz pode ser baixado e a anatomia ignota exposta, sem deformidades induzidas por poções. Na transformação, as doses concentradas ampliam e deformam esse mesmo corpo; pele exposta e roupas rompidas são compatíveis com essa forma. Preservar dois braços, duas pernas e elementos reconhecíveis do traje. Não acrescentar poderes ou símbolos narrativos por inferência. As spritesheets anteriores precisam ser revistas conforme o concept vigente. O padrão técnico permanece sépia e grade de 40 × 55 px por quadro.
 
@@ -118,7 +120,7 @@ Magia sanguínea e proteção ritual. Proposta de encenação: rompe a própria 
 | [Ignotos em Daratrine: A Origem](../../docs_externas/daratrine-a-origem/ignotos.md) | Círculos Superiores, dependência alquímica e magia sanguínea. | Referência externa; a adaptação aprovada está na visão de Terminus. |
 | [Químico / Chemist](../../docs_externas/punch-club/punch-club-quests.html#s%3Achemist_bad) | Efeitos colaterais levam à venda de novas preparações. | Referência externa; função adaptada, não biografia transferida. |
 
-**Pendência específica:** Capuz e cobertura integral estão confirmados somente para o disfarce, cujo busto v2 foi mantido pelo autor. Os concepts revelado e transformado são propostas baseadas nos Ignotos e aguardam avaliação. Nome verdadeiro, detalhes do disfarce e movimentos específicos continuam propostas; preços e efeitos jogáveis permanecem fora desta ficha.
+**Pendência específica:** Capuz e cobertura integral estão confirmados somente para o disfarce, cujo busto v2 foi mantido pelo autor. O concept transformado v4 foi aprovado; o revelado v4 aguarda avaliação. A nova spritesheet transformada terá avaliação própria. Nome verdadeiro, detalhes do disfarce e movimentos específicos continuam propostas; preços e efeitos jogáveis permanecem fora desta ficha.
 
 **Estado editorial:** caracterização e cenas propostas aguardam validação do autor.
 

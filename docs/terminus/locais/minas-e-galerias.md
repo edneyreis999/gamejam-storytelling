@@ -48,8 +48,8 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Entrada de trabalho | Preparação e retorno da investigação | Missão de campo do arco 2 | Transição entre área aberta e subsolo | A produzir; nome de arquivo pendente |
-| Galeria | Observação e decisões durante o contrato | Cena de investigação | Rocha e iluminação localizada; não é novo mapa de dungeon | A produzir; nome de arquivo pendente |
+| Entrada de trabalho | Preparação e retorno da investigação | Missão de campo do arco 2 | Transição entre área aberta e subsolo | [PNG produzido](../../../assets/terminus/locais/minas-entrada-v1.png) — em desenvolvimento |
+| Galeria | Observação e decisões durante o contrato | Cena de investigação | Rocha e iluminação localizada; não é novo mapa de dungeon | [PNG produzido](../../../assets/terminus/locais/minas-galeria-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

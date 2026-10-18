@@ -6,6 +6,8 @@ Status: em desenvolvimento.
 
 Este catálogo reúne **14 fichas e 19 fundos estáticos propostos** para roteiro e produção de arte. A contagem de fundos não é um orçamento aprovado: salas e enquadramentos pertencem à ficha do estabelecimento, e a necessidade de imagens adicionais depende das cenas. Não há obrigação de criar 14 ícones no mapa. O Coreto pertence à moldura narrativa, cuja cidade permanece indefinida.
 
+Os **19 fundos foram produzidos em 18/10/2026**, em tinta preta e bege conforme a escolha do autor. O [índice visual e registro de produção](../arte/locais/README.md) reúne as imagens e os prompts. As tabelas das fichas apontam para as versões selecionadas; aprovação artística e conferência com a interface real permanecem pendentes.
+
 ## Organização e estado editorial
 
 Esta seção registra a organização autorizada do catálogo: reúne atendimento na guilda de Virmura, separa oficina e treino, concentra negociação e cartografia numa casa de contratos e mantém fichas distintas para as quatro guildas. Salão e pátio ficam juntos na estalagem; entrada, arena e serviço ficam juntos no coliseu.
@@ -48,7 +50,7 @@ Estas diretrizes se aplicam a todas as fichas. As seções de cada local registr
 - **Estilo confirmado:** ilustração a tinta, contornos pretos, hachuras e tons de bege, conforme a [taverna de referência](../../docs_externas/afogados-em-terra-seca/Dryland_Taverna.png). A [origem e revisão da cópia](../../docs_externas/afogados-em-terra-seca/README.md) estão preservadas no repositório. A direção corresponde à imagem, não à descrição de pintura semirrealista escura do GDD externo; não incorpora arquitetura, atmosfera de terror ou narrativa daquele projeto.
 - **Fundos:** cada enquadramento é uma imagem estática. “Parallax” designa esse fundo, sem camadas em movimento. Variações dependem das cenas; dia/noite, destruição e novos ângulos não são entregas obrigatórias.
 - **Personagens e interface:** participantes dos diálogos são imagens separadas. Reservar a faixa inferior para o diálogo, com altura dependente do layout futuro. Elementos indispensáveis devem permanecer visíveis. Reduzir hachuras atrás de rostos e silhuetas; as áreas descritas nas fichas não fixam coordenadas de implementação.
-- **Definições técnicas pendentes:** proporção, resolução, formato de entrega, pasta e convenção de nomes dos arquivos. Não herdar configurações do projeto de referência. Quando definidas, registrar aqui os valores comuns e, nas tabelas de fundos, os arquivos correspondentes.
+- **Entrega de arte de 18/10/2026:** PNGs opacos em `assets/terminus/locais/`, nomeados por local/enquadramento e versão (`-v1`, `-v2`). Composição horizontal próxima de 16:9; originais do gerador em 1672 × 941 px, exceto a recepção de Virmura em 1672 × 940 px. A produção preserva os originais. Escala, eventual corte e configuração de exibição no jogo permanecem para a integração; essas dimensões não alteram a resolução do projeto.
 - **Validação visual:** conferir fundos produzidos junto aos retratos e à interface reais, incluindo legibilidade, cobertura de elementos e continuidade entre enquadramentos. Marcar a conferência em cada ficha somente após verificar suas imagens.
 
 ## Acesso e continuidade da campanha

@@ -48,8 +48,8 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Recepção | Apresentação e assuntos da guilda | Conversa institucional | Fundo principal | A produzir; nome de arquivo pendente |
-| Enfermaria | Cuidado e conversas com feridos | Cena de atendimento ou crise | Leitos e divisórias; pacientes participantes são sobrepostos | A produzir; nome de arquivo pendente |
+| Recepção | Apresentação e assuntos da guilda | Conversa institucional | Fundo principal | [PNG produzido](../../../assets/terminus/locais/guilda-virmura-recepcao-v1.png) — em desenvolvimento |
+| Enfermaria | Cuidado e conversas com feridos | Cena de atendimento ou crise | Leitos e divisórias; pacientes participantes são sobrepostos | [PNG produzido](../../../assets/terminus/locais/guilda-virmura-enfermaria-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

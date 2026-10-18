@@ -48,7 +48,7 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Banca de Jorvi | Comércio narrativo, entregas e registros | Visita ou missão no mercado | Fundo único | A produzir; nome de arquivo pendente |
+| Banca de Jorvi | Comércio narrativo, entregas e registros | Visita ou missão no mercado | Fundo único | [PNG produzido](../../../assets/terminus/locais/mercado-provisoes-v2.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

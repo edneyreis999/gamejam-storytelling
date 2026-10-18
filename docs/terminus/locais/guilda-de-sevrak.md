@@ -48,7 +48,7 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Sala de estudo e demonstração | Apresentação e discussão de métodos | Cena institucional | Fundo único | A produzir; nome de arquivo pendente |
+| Sala de estudo e demonstração | Apresentação e discussão de métodos | Cena institucional | Fundo único | [PNG produzido](../../../assets/terminus/locais/guilda-sevrak-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

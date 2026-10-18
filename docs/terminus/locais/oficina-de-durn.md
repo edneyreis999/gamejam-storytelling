@@ -48,7 +48,7 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Oficina | Avaliação de equipamento e R3 | Visita ou conflito liberado | Fundo único; o estado da armação é elemento de cena proposto | A produzir; nome de arquivo pendente |
+| Oficina | Avaliação de equipamento e R3 | Visita ou conflito liberado | Fundo único; o estado da armação é elemento de cena proposto | [PNG produzido](../../../assets/terminus/locais/oficina-durn-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

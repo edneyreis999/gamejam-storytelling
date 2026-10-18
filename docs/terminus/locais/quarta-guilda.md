@@ -48,7 +48,7 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Salão de recepção | Prestígio, patrocínio e encontros com o campeão | Visita narrativa anterior à final | Fundo único | A produzir; nome de arquivo pendente |
+| Salão de recepção | Prestígio, patrocínio e encontros com o campeão | Visita narrativa anterior à final | Fundo único | [PNG produzido](../../../assets/terminus/locais/quarta-guilda-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

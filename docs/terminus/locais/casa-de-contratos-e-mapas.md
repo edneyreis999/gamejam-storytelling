@@ -48,7 +48,7 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Sala de negociação e consulta | Contrato, mapas e relatos | Cena de negociação ou devolutiva | Fundo único; mapas da missão não são impressos no cenário | A produzir; nome de arquivo pendente |
+| Sala de negociação e consulta | Contrato, mapas e relatos | Cena de negociação ou devolutiva | Fundo único; mapas da missão não são impressos no cenário | [PNG produzido](../../../assets/terminus/locais/casa-contratos-mapas-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

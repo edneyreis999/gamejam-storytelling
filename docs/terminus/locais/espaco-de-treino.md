@@ -48,7 +48,7 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Pátio de treino | Conversas de preparação e método | Visita opcional ou cena de preparação | Fundo único | A produzir; nome de arquivo pendente |
+| Pátio de treino | Conversas de preparação e método | Visita opcional ou cena de preparação | Fundo único | [PNG produzido](../../../assets/terminus/locais/espaco-treino-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

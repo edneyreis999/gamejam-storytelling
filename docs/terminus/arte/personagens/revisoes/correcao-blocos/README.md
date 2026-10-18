@@ -7,8 +7,8 @@ O autor solicitou nova revisão de 15 folhas e aprovou a sequência abaixo. Cada
 | Bloco | Problema | Amostra | Demais personagens | Estado |
 | --- | --- | --- | --- | --- |
 | 1 | Pernas cortadas e pés invertidos nos perfis | Odrik | Lethra, Durn, Elune, Lurga, Sivren, Ivara, Ossena | Odrik aprovado; outras sete versões aceitas com ressalvas |
-| 2 | Falhas nas costas dos perfis | Guedra | Darvek, Edrin, Tessa, Rask | Guedra v4 aprovada; quatro candidatas aguardam aprovação do bloco |
-| 3 | Tronco congelado na caminhada | Pirka | Urdan | Aguarda conclusão do bloco 2 |
+| 2 | Falhas nas costas dos perfis | Guedra | Darvek, Edrin, Tessa, Rask | Bloco completo aprovado |
+| 3 | Tronco congelado na caminhada | Pirka | Urdan | Pirka v3 aprovada; Urdan v4 aguarda aprovação do bloco |
 
 ## Amostra do bloco 1: Odrik v4
 
@@ -122,4 +122,61 @@ Os primeiros estudos de Darvek e Edrin revelaram falta de ligação dos acessór
 - Os 26 testes passam: nove do bloco 1, quatro da amostra Guedra e regressão das folhas aceitas, quatro da expansão, cinco de exportação e quatro do método histórico. Incluem as costas ausentes nas duas vistas, composição sem perder pixels dos braços/acessórios e preservação das regiões intactas.
 - Configuração, entradas, versões anteriores, hashes e reprodução de cada PNG foram registrados. A aprovação de Guedra não se transfere às novas candidatas. Testes técnicos não comprovam naturalidade da animação.
 
-**Próxima condição: aprovação de Darvek v5, Edrin v5, Tessa v4 e Rask v3**, conforme o ciclo de revisão solicitado no plano. Depois do bloco 2 completo, começar a amostra Pirka do bloco 3.
+### Aprovação do bloco 2
+
+Em 18/10/2026, o autor disse: “Os quatro ficaram bons. Aprovo o bloco 2. Pode seguir para a amostra de Pirka no bloco 3, mantendo o mesmo cuidado na revisão.” Darvek v5, Edrin v5, Tessa v4 e Rask v3 foram copiados para seus destinos finais, sem alterar pixels e preservando candidatas e históricos. Guedra mantém sua aprovação anterior.
+
+## Amostra do bloco 3: Pirka v3
+
+[Galeria](../../galeria.html#pirka) · [Antes/depois animado](pirka-v3-comparacao.gif) · [Folhas ampliadas](pirka-v3-comparacao.png) · [Tamanho nativo](pirka-v3-nativo.png) · [Troca das direções](pirka-v3-direcoes.gif).
+
+Ficha completa relida e hash conferido. Mantidos corpo pequeno de goblin, cabelo trançado, rosto com cicatriz e capa. Não houve alteração narrativa nem produção de Urdan nesta etapa.
+
+A v2 copiava o repouso inteiro até y45 nos passos de frente e costas: braços, ombros e quadril ficavam idênticos. Nos perfis, a reconstrução a partir do repouso também eliminava a resposta da capa. A v1 preservada continha poses corporais de caminhada que foram apagadas por esse processamento.
+
+| Vista | Alteração em A/B | Regiões preservadas |
+| --- | --- | --- |
+| Frente | Recuperação dos braços, tronco e quadril das poses originais, a partir de y34 | Cabeça e tranças até y33, repouso e pernas abaixo de y46 |
+| Esquerda | Recuperação da capa e tronco a partir de y36; braço próximo avança em B; duas pernas completas desenhadas por pose | Cabeça e trança até y35, repouso |
+| Direita | Composição própria da vista, com braço próximo em B e pernas orientadas para a direita | Cabeça e trança até y35, repouso |
+| Costas | Recuperação de ombros, quadril e caimento alternado da capa a partir de y34 | Cabeça e trança até y33, repouso e pernas abaixo de y46 |
+
+As poses corporais vêm dos respectivos quadros A/B da v1, e não de uma cópia do repouso. Nos perfis B, o braço próximo usa pixels delimitados do repouso da própria direção, articulados do ombro à mão sobre a pose corporal. As pernas próximas e distantes são camadas independentes em resolução nativa; uma apoia em y52 e a outra fica em y51. Não há deslocamento da figura inteira nem espelhamento de cabeça ou capa. O estudo 1 e a candidata v3 têm pixels idênticos.
+
+### Verificação e avaliação da amostra
+
+- PNG RGBA de 120 × 220 px, 12 células, transparência real, margens livres e chão em y52; reprodução idêntica por SHA-256.
+- Quatro testes novos verificam repousos/cabeças/tranças intactos, substituição do congelamento por diferenças no tronco e quadril em todas as vistas, solas completas que sobrevivem à composição e reprodução idêntica das 13 folhas dos blocos 1 e 2.
+- Os 30 testes passam, incluindo as regressões dos dois blocos anteriores e os testes de exportação e processamento histórico.
+- Inspeção dos 12 quadros em tamanho nativo e ampliado. Comparações A → repouso → B → repouso a 180 ms, além da troca das quatro direções. Testes técnicos não comprovam a naturalidade da caminhada.
+- As duas entradas, configuração completa, versão do compositor e hashes estão preservados. As aprovações anteriores não se aplicam à candidata Pirka.
+
+### Aprovação de Pirka
+
+Em 18/10/2026, o autor disse: “A Pirka ficou boa. Aprovo a amostra. Pode seguir com Urdan, mantendo o mesmo cuidado na revisão.” A v3 foi copiada para `assets/terminus/personagens/pirka.png`, com hash idêntico ao da candidata. Seus pixels permanecem intactos na expansão.
+
+## Bloco 3 completo: Urdan v4 para avaliação
+
+[Galeria](../../galeria.html#urdan) · [Antes/depois animado](urdan-v4-comparacao.gif) · [Folhas ampliadas](urdan-v4-comparacao.png) · [Tamanho nativo](urdan-v4-nativo.png) · [Troca das direções](urdan-v4-direcoes.gif) · [Pirka e Urdan](bloco-3-completo.gif).
+
+Ficha de Urdan relida integralmente e hash conferido. Preservados troll mais velho, cabelo preso, bolsa de ervas e instrumento carregado junto ao corpo. Não houve alteração narrativa. A v3 e todas as versões anteriores permanecem disponíveis.
+
+A cópia do repouso até y45 congelava as costas. Nos perfis, a reconstrução do braço sobreposta por uma região de pernas a partir de y37 apagava parte do movimento. A v4 substitui essas operações por camadas delimitadas para Urdan.
+
+| Vista | Alteração nos passos A/B | Preservação |
+| --- | --- | --- |
+| Frente | Poses corporais originais com deslocamento de um pixel dos ombros, separado do quadril | Cabeça até y27, repouso e região abaixo de y45 |
+| Esquerda | Braço e tronco originais em A; roupa reconstruída sob o braço recuado em B | Cabeça e parte superior do instrumento até y24, repouso e região abaixo de y45 |
+| Direita | Composição própria para braço, roupa e cintura; sem espelhar a figura | Cabeça até y24, repouso e região abaixo de y45 |
+| Costas | Ombros, quadril e braços articulados separadamente; bolsa acompanha o tronco sem trocar de lado | Cabeça e cabelo até y26, repouso e região abaixo de y45 |
+
+O instrumento continua carregado junto ao corpo. As mãos mantêm a pose de transporte, sem introduzir uma ação de tocar. O primeiro estudo revelou aberturas na junção de braço e roupa nas costas; o segundo corrigiu a sobreposição. O terceiro limitou as máscaras dos braços ao fim das mãos, excluindo pixels do casaco, e preservou a ligação do quadril com as pernas. A candidata tem pixels idênticos ao estudo 3. Os três estudos estão preservados.
+
+### Verificação e avaliação
+
+- Inspeção dos 12 quadros nativos e ampliados sem suavização, incluindo junções de ombro, cintura e mãos, bolsa e instrumento. Prévia das quatro vistas a 180 ms no ciclo A → repouso → B → repouso.
+- PNG RGBA de 120 × 220 px, margens livres, chão em y52 e reprodução idêntica por SHA-256. As pernas abaixo de y45 não foram redesenhadas nesta correção.
+- 34 testes passam. Os quatro novos verificam repousos, cabeça e pés intactos; substituição do congelamento por diferenças no corpo; preservação dos pixels das mãos na composição; reprodução idêntica das 14 folhas aceitas deste processo, incluindo Pirka.
+- Testes técnicos não comprovam naturalidade da caminhada. A aprovação de Pirka não se transfere a Urdan.
+
+**Próxima condição: aprovação de Urdan v4 e do bloco 3 completo.**

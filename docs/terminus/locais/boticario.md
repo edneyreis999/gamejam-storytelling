@@ -48,7 +48,7 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Atendimento | Ofertas e conversas recorrentes | Cena com o vendedor antes da revelação | Fundo único; o confronto final é proposto no coliseu | A produzir; nome de arquivo pendente |
+| Atendimento | Ofertas e conversas recorrentes | Cena com o vendedor antes da revelação | Fundo único; o confronto final é proposto no coliseu | [PNG produzido](../../../assets/terminus/locais/boticario-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

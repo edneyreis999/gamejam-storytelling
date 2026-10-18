@@ -1,5 +1,5 @@
 window.SPRITESHEETS = {
-  "resumo": "42 folhas disponíveis para inspeção; 13 de 42 folhas aprovadas.",
+  "resumo": "42 folhas disponíveis para inspeção; 18 de 42 folhas aprovadas.",
   "folhas": [
     {
       "id": "rheed",
@@ -55,17 +55,6 @@ window.SPRITESHEETS = {
         "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/neral-revelado-v3-120x220.png"
-    },
-    {
-      "id": "neral-transformado",
-      "nome": "Neral, apresentado como Savel — transformado",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/neral.md",
-      "observacoes": [
-        "Constituição ampliada preservada; mãos, casaco e botas permanecem nos três quadros.",
-        "Repousos intactos. Balanço corporal de um pixel, braços em contrafase e reconstrução das articulações das pernas nos perfis."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/neral-transformado-v3-120x220.png"
     },
     {
       "id": "virmura",
@@ -246,20 +235,16 @@ window.SPRITESHEETS = {
       }
     },
     {
-      "id": "darvek",
-      "nome": "Darvek do Esteio",
+      "id": "neral-transformado",
+      "nome": "Neral, apresentado como Savel — transformado",
       "estado": "Aguardando aprovação",
-      "resumo": "resumos/darvek.md",
+      "resumo": "resumos/neral.md",
       "observacoes": [
-        "Bloco 2 — v5: costas e roupa recompostas sob o braço nos passos laterais.",
-        "Cordas e livro preservados; braço completo e costas sob a camisa.",
-        "Frente, costas, repousos, cabeças e pernas fora das máscaras preservados; aguardando aprovação do bloco completo."
+        "Adaptado ao concept transformado v4 aprovado: anatomia enorme, cabeça calva bestial, garras e casaco rasgado.",
+        "Quatro vistas e passos distintos; perfis corrigidos em duas rodadas. Inspecionados os 12 quadros em resolução nativa e ampliação.",
+        "A largura da criatura limita sua altura na célula; nenhuma parte ultrapassa as bordas. A caminhada aguarda avaliação do autor."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/darvek-v5-120x220.png",
-      "comparacao": {
-        "animada": "revisoes/correcao-blocos/darvek-v5-comparacao.gif",
-        "estatica": "revisoes/correcao-blocos/darvek-v5-comparacao.png"
-      }
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/neral-transformado-v6-120x220.png"
     },
     {
       "id": "zagra",
@@ -295,22 +280,6 @@ window.SPRITESHEETS = {
       "imagem": "../../../../assets/terminus/personagens/em-revisao/sura-v4-120x220.png"
     },
     {
-      "id": "edrin",
-      "nome": "Edrin Marca-Clara",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/edrin.md",
-      "observacoes": [
-        "Bloco 2 — v5: costas e roupa recompostas sob o braço nos passos laterais.",
-        "Bolsa de documentos protegida; marcas dos braços conservadas nos pixels de origem.",
-        "Frente, costas, repousos, cabeças e pernas fora das máscaras preservados; aguardando aprovação do bloco completo."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/edrin-v5-120x220.png",
-      "comparacao": {
-        "animada": "revisoes/correcao-blocos/edrin-v5-comparacao.gif",
-        "estatica": "revisoes/correcao-blocos/edrin-v5-comparacao.png"
-      }
-    },
-    {
       "id": "korr",
       "nome": "Korr Rebite",
       "estado": "Aguardando aprovação",
@@ -331,22 +300,6 @@ window.SPRITESHEETS = {
         "Repouso e caminhada revisados em tamanho nativo e ampliado."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/velka-v3-120x220.png"
-    },
-    {
-      "id": "tessa",
-      "nome": "Tessa Pedra-Viva",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/tessa.md",
-      "observacoes": [
-        "Bloco 2 — v4: costas e roupa recompostas sob o braço nos passos laterais.",
-        "Lenço, orelha e livro preservados; cada braço usa a própria vista, incluindo suas manchas.",
-        "Frente, costas, repousos, cabeças e pernas fora das máscaras preservados; aguardando aprovação do bloco completo."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/tessa-v4-120x220.png",
-      "comparacao": {
-        "animada": "revisoes/correcao-blocos/tessa-v4-comparacao.gif",
-        "estatica": "revisoes/correcao-blocos/tessa-v4-comparacao.png"
-      }
     },
     {
       "id": "mavren",
@@ -371,22 +324,6 @@ window.SPRITESHEETS = {
       "imagem": "../../../../assets/terminus/personagens/em-revisao/jorvi-v2-120x220.png"
     },
     {
-      "id": "rask",
-      "nome": "Rask Voz-de-Arena",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/rask.md",
-      "observacoes": [
-        "Bloco 2 — v3: costas e roupa recompostas sob o braço nos passos laterais.",
-        "Faixa e tabuleta mantidas; reconstrução da lateral da roupa atrás do braço.",
-        "Frente, costas, repousos, cabeças e pernas fora das máscaras preservados; aguardando aprovação do bloco completo."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/rask-v3-120x220.png",
-      "comparacao": {
-        "animada": "revisoes/correcao-blocos/rask-v3-comparacao.gif",
-        "estatica": "revisoes/correcao-blocos/rask-v3-comparacao.png"
-      }
-    },
-    {
       "id": "seldan",
       "nome": "Seldan Portão-Firme",
       "estado": "Aguardando aprovação",
@@ -396,17 +333,6 @@ window.SPRITESHEETS = {
         "Repouso e caminhada revisados em tamanho nativo e ampliado."
       ],
       "imagem": "../../../../assets/terminus/personagens/em-revisao/seldan-v2-120x220.png"
-    },
-    {
-      "id": "pirka",
-      "nome": "Pirka Roda-Seca",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/pirka.md",
-      "observacoes": [
-        "Goblin adulta, cerca de 43 anos propostos. Pele verde-acinzentada, cabelo trançado curto, olhos castanhos; capa impermeabilizada e uma pequena cicatriz na testa.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/pirka-v2-120x220.png"
     },
     {
       "id": "fendro",
@@ -436,10 +362,15 @@ window.SPRITESHEETS = {
       "estado": "Aguardando aprovação",
       "resumo": "resumos/urdan.md",
       "observacoes": [
-        "Troll mais velho, cerca de 190 anos propostos. Pele cinza com manchas verdes, cabelo branco preso em cordão; bolsa de ervas, pequeno instrumento de cordas e mãos firmes.",
-        "Repouso e caminhada revisados em tamanho nativo e ampliado."
+        "Bloco 3 — v4: resposta dos ombros e quadril, braços articulados e costas sem cópia congelada do repouso.",
+        "Instrumento junto ao corpo e bolsa preservados; braços dos perfis recompostos sobre roupa completa.",
+        "Cabeça, cabelo, repousos e pixels abaixo de y45 preservados. Aguarda aprovação de Urdan e do bloco 3."
       ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/urdan-v3-120x220.png"
+      "imagem": "../../../../assets/terminus/personagens/em-revisao/urdan-v4-120x220.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/urdan-v4-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/urdan-v4-comparacao.png"
+      }
     },
     {
       "id": "baska",
@@ -519,6 +450,70 @@ window.SPRITESHEETS = {
       "imagem": "../../../../assets/terminus/personagens/crianca.png"
     },
     {
+      "id": "darvek",
+      "nome": "Darvek do Esteio",
+      "estado": "Aprovado",
+      "resumo": "resumos/darvek.md",
+      "observacoes": [
+        "Bloco 2 — v5: costas e roupa recompostas sob o braço nos passos laterais.",
+        "Cordas e livro preservados; braço completo e costas sob a camisa.",
+        "Bloco 2 aprovado pelo autor; versões anteriores e regiões fora do ajuste preservadas."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/darvek.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/darvek-v5-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/darvek-v5-comparacao.png"
+      }
+    },
+    {
+      "id": "edrin",
+      "nome": "Edrin Marca-Clara",
+      "estado": "Aprovado",
+      "resumo": "resumos/edrin.md",
+      "observacoes": [
+        "Bloco 2 — v5: costas e roupa recompostas sob o braço nos passos laterais.",
+        "Bolsa de documentos protegida; marcas dos braços conservadas nos pixels de origem.",
+        "Bloco 2 aprovado pelo autor; versões anteriores e regiões fora do ajuste preservadas."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/edrin.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/edrin-v5-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/edrin-v5-comparacao.png"
+      }
+    },
+    {
+      "id": "tessa",
+      "nome": "Tessa Pedra-Viva",
+      "estado": "Aprovado",
+      "resumo": "resumos/tessa.md",
+      "observacoes": [
+        "Bloco 2 — v4: costas e roupa recompostas sob o braço nos passos laterais.",
+        "Lenço, orelha e livro preservados; cada braço usa a própria vista, incluindo suas manchas.",
+        "Bloco 2 aprovado pelo autor; versões anteriores e regiões fora do ajuste preservadas."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/tessa.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/tessa-v4-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/tessa-v4-comparacao.png"
+      }
+    },
+    {
+      "id": "rask",
+      "nome": "Rask Voz-de-Arena",
+      "estado": "Aprovado",
+      "resumo": "resumos/rask.md",
+      "observacoes": [
+        "Bloco 2 — v3: costas e roupa recompostas sob o braço nos passos laterais.",
+        "Faixa e tabuleta mantidas; reconstrução da lateral da roupa atrás do braço.",
+        "Bloco 2 aprovado pelo autor; versões anteriores e regiões fora do ajuste preservadas."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/rask.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/rask-v3-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/rask-v3-comparacao.png"
+      }
+    },
+    {
       "id": "guedra",
       "nome": "Guedra Base-Firme",
       "estado": "Aprovado",
@@ -533,9 +528,25 @@ window.SPRITESHEETS = {
         "animada": "revisoes/correcao-blocos/guedra-v4-comparacao.gif",
         "estatica": "revisoes/correcao-blocos/guedra-v4-comparacao.png"
       }
+    },
+    {
+      "id": "pirka",
+      "nome": "Pirka Roda-Seca",
+      "estado": "Aprovado",
+      "resumo": "resumos/pirka.md",
+      "observacoes": [
+        "Amostra do bloco 3 — v3: braços, tronco, quadril e capa participam da caminhada nas quatro direções.",
+        "Poses corporais recuperadas da v1; braço dos perfis articulado no passo B e pernas laterais desenhadas inteiras.",
+        "Pirka v3 aprovada pelo autor; rosto, tranças e repousos preservados. Referência da correção corporal do bloco 3."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/pirka.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/pirka-v3-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/pirka-v3-comparacao.png"
+      }
     }
   ],
-  "proxima_condicao": "Aprovação de Darvek v5, Edrin v5, Tessa v4 e Rask v3 para concluir o bloco 2. Guedra v4 já está aprovada. Após o bloco completo, começar a amostra Pirka.",
+  "proxima_condicao": "Aprovação de Urdan v4 e do bloco 3 completo. Pirka v3 e bloco 2 aprovados; bloco 1 mantido com ressalvas.",
   "estudo_neral": {
     "estado": "Estudo aprovado",
     "imagem": "revisoes/neral-estudo-v1.png",

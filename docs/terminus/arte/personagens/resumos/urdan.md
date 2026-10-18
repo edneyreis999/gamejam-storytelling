@@ -40,3 +40,7 @@ A direção visual está autorizada como base. A imagem ainda não foi aprovada.
 ## Candidata produzida
 
 A folha [urdan](../../../../../assets/terminus/personagens/em-revisao/urdan-v3-120x220.png) foi revisada internamente e aguarda aprovação visual. O [registro do lote 8](../revisoes/lote-8.md) descreve as escolhas visuais e correções. Consulte o [controle](../controle.json) para a versão da ficha, os prompts, entradas, tentativas e hashes. Nenhuma proposta narrativa foi aprovada por esta produção.
+
+## Correção corporal — bloco 3
+
+A [v4](../../../../../assets/terminus/personagens/em-revisao/urdan-v4-120x220.png) substitui a v3 na avaliação atual. Ombros, quadril e braços participam da caminhada; bolsa e instrumento permanecem ligados ao corpo. Cabeça, cabelo, repousos e pixels abaixo de y45 permanecem intactos. Aguarda aprovação de Urdan e do bloco 3. [Comparações e verificações](../revisoes/correcao-blocos/README.md).

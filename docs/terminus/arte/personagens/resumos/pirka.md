@@ -39,4 +39,9 @@ A direção visual está autorizada como base. A imagem ainda não foi aprovada.
 
 ## Candidata produzida
 
-A folha [pirka](../../../../../assets/terminus/personagens/em-revisao/pirka-v2-120x220.png) foi revisada internamente e aguarda aprovação visual. O [registro do lote 7](../revisoes/lote-7.md) descreve as escolhas visuais e correções. Consulte o [controle](../controle.json) para a versão da ficha, os prompts, entradas, tentativas e hashes. Nenhuma proposta narrativa foi aprovada por esta produção.
+A folha v2 foi substituída pela v3 aprovada, preservando o histórico. O [registro do lote 7](../revisoes/lote-7.md) descreve as escolhas visuais e correções. Consulte o [controle](../controle.json) para a versão da ficha, os prompts, entradas, tentativas e hashes. Nenhuma proposta narrativa foi aprovada por esta produção.
+
+
+## Amostra da correção do bloco 3
+
+A [v3](../../../../../assets/terminus/personagens/em-revisao/pirka-v3-120x220.png) recupera poses de caminhada do corpo, articula o braço dos perfis e reconstrói suas pernas. Rosto, tranças e repousos permanecem intactos. Aprovada pelo autor em 18/10/2026: “A Pirka ficou boa. Aprovo a amostra.” Copiada sem alterações para [pirka.png](../../../../../assets/terminus/personagens/pirka.png). [Comparações e verificações](../revisoes/correcao-blocos/README.md).

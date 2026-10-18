@@ -48,7 +48,7 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Salão de preparação | Apresentação, relatos e planejamento | Conversa na sede | Fundo único | A produzir; nome de arquivo pendente |
+| Salão de preparação | Apresentação, relatos e planejamento | Conversa na sede | Fundo único | [PNG produzido](../../../assets/terminus/locais/guilda-borun-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

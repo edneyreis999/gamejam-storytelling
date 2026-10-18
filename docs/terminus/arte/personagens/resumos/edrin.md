@@ -48,4 +48,4 @@ A folha [edrin](../../../../../assets/terminus/personagens/em-revisao/edrin-v4-1
 
 ## Correção das costas — bloco 2
 
-Após aprovação de Guedra v4, a [v5](../../../../../assets/terminus/personagens/em-revisao/edrin-v5-120x220.png) recompõe costas e roupa sob os braços dos perfis. A edição preserva cabeças, pernas, repousos, frente e costas. A candidata aguarda aprovação do bloco completo. [Comparações e verificações](../revisoes/correcao-blocos/README.md).
+Após aprovação de Guedra v4, a [v5](../../../../../assets/terminus/personagens/em-revisao/edrin-v5-120x220.png) recompõe costas e roupa sob os braços dos perfis. A edição preserva cabeças, pernas, repousos, frente e costas. Versão aprovada em 18/10/2026 junto do bloco 2 completo. [Comparações e verificações](../revisoes/correcao-blocos/README.md).

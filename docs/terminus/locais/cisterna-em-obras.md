@@ -48,7 +48,7 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Canteiro da cisterna | Disputa, verificação e reconhecimento do desfecho de R4 | Missão liberada ou cena de consequência | Fundo único; eventual estado de entrega depende do roteiro | A produzir; nome de arquivo pendente |
+| Canteiro da cisterna | Disputa, verificação e reconhecimento do desfecho de R4 | Missão liberada ou cena de consequência | Fundo único; eventual estado de entrega depende do roteiro | [PNG produzido](../../../assets/terminus/locais/cisterna-obras-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 

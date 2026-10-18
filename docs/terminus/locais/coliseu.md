@@ -48,9 +48,9 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Entrada administrativa | Inscrições, avisos e negociação de R5 | Conversas com organização e segurança | Balcão e controle de passagem | A produzir; nome de arquivo pendente |
-| Arena | Partidas e celebração | Etapa esportiva correspondente | Piso aberto e arquibancadas | A produzir; nome de arquivo pendente |
-| Área de serviço | Logística, evacuação e confronto final proposto | Cenas de acesso ou invasão conforme roteiro | Cargas e saídas; ameaça inserida na encenação, não no fundo inicial | A produzir; nome de arquivo pendente |
+| Entrada administrativa | Inscrições, avisos e negociação de R5 | Conversas com organização e segurança | Balcão e controle de passagem | [PNG produzido](../../../assets/terminus/locais/coliseu-entrada-v2.png) — em desenvolvimento |
+| Arena | Partidas e celebração | Etapa esportiva correspondente | Piso aberto e arquibancadas | [PNG produzido](../../../assets/terminus/locais/coliseu-arena-v1.png) — em desenvolvimento |
+| Área de serviço | Logística, evacuação e confronto final proposto | Cenas de acesso ou invasão conforme roteiro | Cargas e saídas; ameaça inserida na encenação, não no fundo inicial | [PNG produzido](../../../assets/terminus/locais/coliseu-servico-v2.png) — em desenvolvimento |
 
 ## 6. Produção e referências
 
