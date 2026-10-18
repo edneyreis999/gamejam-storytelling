@@ -20,6 +20,7 @@ Status: em desenvolvimento.
 | --- | --- |
 | Conhecer as decisões confirmadas e os pontos em aberto | [Visão do jogo](docs/terminus/visao-do-jogo.md) |
 | Escrever personagens, cenas e diálogos | [Índice do elenco e guia de leitura](docs/terminus/personagens/README.md) |
+| Consultar cenários e orientar a produção de fundos | [Catálogo de locais e guia de leitura](docs/terminus/locais/README.md) |
 | Retomar o desenvolvimento da história com o autor | [Roteiro para a próxima entrevista](docs/terminus/proxima-entrevista.md) |
 | Consultar os diagramas e a proposta de matriz de acessos | [Apresentação da campanha — Decisões que se acumulam](docs/terminus/campanha-decisoes-acumuladas.html) |
 

@@ -62,20 +62,11 @@ Registre apenas os fundos exigidos pelas cenas. Dia/noite, outros ângulos e est
 
 ## 6. Produção e referências
 
-### Estilo confirmado
-
-Usar o mesmo estilo das imagens atuais de *Afogados em Terra Seca*: **ilustração a tinta, contornos pretos, hachuras e tons de bege**. A referência concreta de acabamento é a [imagem da taverna](<../../../gamejam-vn-terror/rpg-maker/The Dryland Drowned/img/pictures/Dryland_Taverna.png>).
-
-O vínculo aponta para o projeto de referência no checkout vizinho. A imagem orienta o acabamento; sua arquitetura, atmosfera de terror e regras narrativas não são transferidas automaticamente para Terminus. A direção adotada aqui corresponde às imagens atuais, não à descrição de pintura semirrealista escura presente no GDD daquele projeto.
+Consulte as [diretrizes comuns de arte e produção](locais/README.md#diretrizes-comuns-de-arte-e-produção) para estilo, referência visual, composição e definições técnicas. Registre abaixo apenas referências específicas e diferenças necessárias para este local; mantenha os valores comuns no catálogo.
 
 - **Referências visuais adicionais e finalidade de cada uma:** [preencher]
-- **Proporção da imagem:** [preencher]
-- **Resolução de produção:** [preencher]
-- **Formato de entrega:** [preencher]
-- **Pasta dos arquivos:** [preencher]
+- **Necessidades técnicas específicas:** [preencher, se houver; identificar propostas ainda não validadas]
 - **Estado da produção dos fundos:** [preencher]
-
-Proporção, resolução e configurações técnicas permanecem em aberto até definição para Terminus; não herdam os valores do projeto de referência.
 
 ## 7. Validação e pendências
 

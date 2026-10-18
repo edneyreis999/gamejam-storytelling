@@ -18,6 +18,8 @@ Para consultar o passado de Ghork, use o [livro](../docs_externas/universo-coret
 
 O jogador se desloca por Terminus como em Punch Club, entra nos estabelecimentos e realiza missões. Um portal no mapa de Terminus permite voltar à Noite da História, na pele da criança, no Coreto onde está Rheed. O portal fica acessível entre cenas; diálogos e batalhas precisam terminar antes dessa visita.
 
+O [catálogo de locais](locais/README.md) registra a organização adotada dos cenários e orienta roteiro e arte da visual novel. Descrições visuais, enquadramentos e cenas adicionais permanecem propostas, sem substituir as decisões e pendências desta visão.
+
 Vencer o campeonato de guildas de Terminus com o time de Ghork é o objetivo que conduz a campanha, mas não seu encerramento definitivo. A vitória revela a ameaça dos Ignotos e leva a um confronto obrigatório contra um chefão, incluído na entrega da game jam.
 
 Ghork acredita que vencer o campeonato provará seu valor a quem o rejeitou. A definição de quem ele quer convencer e de qual rejeição pesa mais foi adiada pelo autor para uma etapa posterior da entrevista. Essa motivação expressa a expectativa de Ghork; não estabelece que ele só mereça respeito depois da vitória.

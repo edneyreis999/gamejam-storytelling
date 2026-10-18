@@ -10,6 +10,7 @@ Status: em desenvolvimento.
 | --- | --- |
 | Escrever ou revisar uma conversa | Fichas dos participantes: personalidade, fala, relações e pendências |
 | Alterar relações, recrutamentos ou confrontos | [Análise do elenco e matrizes](../analise-do-elenco.md), depois as fichas envolvidas |
+| Situar uma cena ou consultar seu cenário | [Catálogo de locais](../locais/README.md), depois a ficha do local e suas condições de acesso |
 | Criar uma ficha | [Modelo de personagem](../modelo-ficha-personagem.md); salve o bloco de ficha nesta pasta e atualize este índice |
 | Investigar uma inspiração ou justificar uma adaptação | [Referências do elenco](../referencias-do-elenco.md), depois os eventos ou trechos citados |
 | Retomar a entrevista narrativa | [Próxima entrevista](../proxima-entrevista.md), que preserva o ponto de retomada e as questões adiadas |
