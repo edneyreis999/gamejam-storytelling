@@ -8,7 +8,7 @@ O autor solicitou nova revisão de 15 folhas e aprovou a sequência abaixo. Cada
 | --- | --- | --- | --- | --- |
 | 1 | Pernas cortadas e pés invertidos nos perfis | Odrik | Lethra, Durn, Elune, Lurga, Sivren, Ivara, Ossena | Odrik aprovado; outras sete versões aceitas com ressalvas |
 | 2 | Falhas nas costas dos perfis | Guedra | Darvek, Edrin, Tessa, Rask | Bloco completo aprovado |
-| 3 | Tronco congelado na caminhada | Pirka | Urdan | Pirka v3 aprovada; Urdan v4 aguarda aprovação do bloco |
+| 3 | Tronco congelado na caminhada | Pirka | Urdan | Bloco completo aprovado: Pirka v3 e Urdan v4 |
 
 ## Amostra do bloco 1: Odrik v4
 
@@ -155,7 +155,7 @@ As poses corporais vêm dos respectivos quadros A/B da v1, e não de uma cópia 
 
 Em 18/10/2026, o autor disse: “A Pirka ficou boa. Aprovo a amostra. Pode seguir com Urdan, mantendo o mesmo cuidado na revisão.” A v3 foi copiada para `assets/terminus/personagens/pirka.png`, com hash idêntico ao da candidata. Seus pixels permanecem intactos na expansão.
 
-## Bloco 3 completo: Urdan v4 para avaliação
+## Bloco 3 completo: Urdan v4 aprovado
 
 [Galeria](../../galeria.html#urdan) · [Antes/depois animado](urdan-v4-comparacao.gif) · [Folhas ampliadas](urdan-v4-comparacao.png) · [Tamanho nativo](urdan-v4-nativo.png) · [Troca das direções](urdan-v4-direcoes.gif) · [Pirka e Urdan](bloco-3-completo.gif).
 
@@ -179,4 +179,8 @@ O instrumento continua carregado junto ao corpo. As mãos mantêm a pose de tran
 - 34 testes passam. Os quatro novos verificam repousos, cabeça e pés intactos; substituição do congelamento por diferenças no corpo; preservação dos pixels das mãos na composição; reprodução idêntica das 14 folhas aceitas deste processo, incluindo Pirka.
 - Testes técnicos não comprovam naturalidade da caminhada. A aprovação de Pirka não se transfere a Urdan.
 
-**Próxima condição: aprovação de Urdan v4 e do bloco 3 completo.**
+### Aprovação do bloco 3
+
+Em 18/10/2026, o autor disse: “O Urdan ficou bom. Aprovo o bloco 3 completo. Pode registrar a aprovação e atualizar o controle e a galeria.” Urdan v4 foi copiado para `assets/terminus/personagens/urdan.png`, com SHA-256 `9f6341c98b06a5365230bb8e836200e57ddf6ac686dad9c6fcc8cdaafaee84c1`, idêntico ao da candidata. Pirka v3 mantém sua aprovação e seus pixels.
+
+A revisão dos três blocos está encerrada: blocos 2 e 3 aprovados; bloco 1 mantido com as ressalvas do autor. Essa conclusão se aplica às 15 folhas desta correção. As demais folhas conservam seus estados individuais, e a documentação permanece em desenvolvimento.

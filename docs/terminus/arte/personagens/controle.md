@@ -2,9 +2,9 @@
 
 Status: em desenvolvimento.
 
-Etapa atual: [bloco 3 completo para avaliação](revisoes/correcao-blocos/README.md). Pirka v3 aprovada; Urdan v4 aguarda aprovação. Bloco 2 completo aprovado; bloco 1 mantido com ressalvas.
+Etapa atual: [revisão dos três blocos encerrada](revisoes/correcao-blocos/README.md). Blocos 2 e 3 completos aprovados; bloco 1 mantido com ressalvas.
 
-42 folhas disponíveis: 18 aceitas, sendo sete com ressalvas, e 24 candidatas aguardando avaliação. Pirka foi aprovada e Urdan recebeu correção de movimento corporal. PNGs anteriores e históricos preservados.
+42 folhas disponíveis: 19 aceitas, sendo sete com ressalvas, e 23 candidatas aguardando avaliação. Pirka v3 e Urdan v4 aprovados. PNGs anteriores e históricos preservados.
 
 O [histórico da revisão anterior](revisoes/correcao-movimento/README.md) preserva as contagens e aprovações das etapas precedentes.
 
@@ -46,7 +46,7 @@ O [histórico da revisão anterior](revisoes/correcao-movimento/README.md) prese
 | 7 | [pirka](../../../../assets/terminus/personagens/pirka.png) | [pirka](resumos/pirka.md) | Aprovado — v3 |
 | 7 | [fendro](../../../../assets/terminus/personagens/em-revisao/fendro-v2-120x220.png) | [fendro](resumos/fendro.md) | Aguardando aprovação — v2 |
 | 7 | [zaila](../../../../assets/terminus/personagens/em-revisao/zaila-v2-120x220.png) | [zaila](resumos/zaila.md) | Aguardando aprovação — v2 |
-| 8 | [urdan](../../../../assets/terminus/personagens/em-revisao/urdan-v4-120x220.png) | [urdan](resumos/urdan.md) | Bloco 3 aguardando aprovação — v4 |
+| 8 | [urdan](../../../../assets/terminus/personagens/urdan.png) | [urdan](resumos/urdan.md) | Aprovado — v4 |
 | 8 | [lurga](../../../../assets/terminus/personagens/lurga.png) | [lurga](resumos/lurga.md) | Aceito com ressalvas — v4 |
 | 8 | [sivren](../../../../assets/terminus/personagens/sivren.png) | [sivren](resumos/sivren.md) | Aceito com ressalvas — v4 |
 | 8 | [baska](../../../../assets/terminus/personagens/em-revisao/baska-v2-120x220.png) | [baska](resumos/baska.md) | Aguardando aprovação — v2 |

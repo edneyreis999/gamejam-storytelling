@@ -1,5 +1,5 @@
 window.SPRITESHEETS = {
-  "resumo": "42 folhas disponíveis para inspeção; 18 de 42 folhas aprovadas.",
+  "resumo": "42 folhas disponíveis para inspeção; 19 de 42 folhas aprovadas.",
   "folhas": [
     {
       "id": "rheed",
@@ -357,22 +357,6 @@ window.SPRITESHEETS = {
       "imagem": "../../../../assets/terminus/personagens/em-revisao/zaila-v2-120x220.png"
     },
     {
-      "id": "urdan",
-      "nome": "Urdan Chá-de-Pedra",
-      "estado": "Aguardando aprovação",
-      "resumo": "resumos/urdan.md",
-      "observacoes": [
-        "Bloco 3 — v4: resposta dos ombros e quadril, braços articulados e costas sem cópia congelada do repouso.",
-        "Instrumento junto ao corpo e bolsa preservados; braços dos perfis recompostos sobre roupa completa.",
-        "Cabeça, cabelo, repousos e pixels abaixo de y45 preservados. Aguarda aprovação de Urdan e do bloco 3."
-      ],
-      "imagem": "../../../../assets/terminus/personagens/em-revisao/urdan-v4-120x220.png",
-      "comparacao": {
-        "animada": "revisoes/correcao-blocos/urdan-v4-comparacao.gif",
-        "estatica": "revisoes/correcao-blocos/urdan-v4-comparacao.png"
-      }
-    },
-    {
       "id": "baska",
       "nome": "Baska Vento-Baixo",
       "estado": "Aguardando aprovação",
@@ -544,9 +528,25 @@ window.SPRITESHEETS = {
         "animada": "revisoes/correcao-blocos/pirka-v3-comparacao.gif",
         "estatica": "revisoes/correcao-blocos/pirka-v3-comparacao.png"
       }
+    },
+    {
+      "id": "urdan",
+      "nome": "Urdan Chá-de-Pedra",
+      "estado": "Aprovado",
+      "resumo": "resumos/urdan.md",
+      "observacoes": [
+        "Bloco 3 — v4: resposta dos ombros e quadril, braços articulados e costas sem cópia congelada do repouso.",
+        "Instrumento junto ao corpo e bolsa preservados; braços dos perfis recompostos sobre roupa completa.",
+        "Urdan v4 e bloco 3 aprovados pelo autor. Cabeça, cabelo, repousos e pixels abaixo de y45 preservados."
+      ],
+      "imagem": "../../../../assets/terminus/personagens/urdan.png",
+      "comparacao": {
+        "animada": "revisoes/correcao-blocos/urdan-v4-comparacao.gif",
+        "estatica": "revisoes/correcao-blocos/urdan-v4-comparacao.png"
+      }
     }
   ],
-  "proxima_condicao": "Aprovação de Urdan v4 e do bloco 3 completo. Pirka v3 e bloco 2 aprovados; bloco 1 mantido com ressalvas.",
+  "proxima_condicao": "Revisão dos três blocos encerrada: blocos 2 e 3 aprovados; bloco 1 mantido com ressalvas. As demais folhas mantêm seus estados individuais de avaliação.",
   "estudo_neral": {
     "estado": "Estudo aprovado",
     "imagem": "revisoes/neral-estudo-v1.png",

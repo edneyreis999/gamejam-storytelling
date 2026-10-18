@@ -12,9 +12,9 @@ Este guia serve ao autor e à produção de arte. O [controle](controle.md), os 
 
 [Abrir a galeria de revisão](galeria.html) · [Revisão dos pilotos](revisoes/pilotos.md) · [Lote 1](revisoes/lote-1.md) · [Lote 2](revisoes/lote-2.md)
 
-Situação em 18/10/2026: 42 folhas disponíveis. As [correções anteriores de movimento](revisoes/correcao-movimento/README.md) reabriram dez versões aprovadas. Há 18 folhas aceitas, sendo sete com ressalvas, e 24 candidatas aguardando avaliação. A aprovação anterior do estudo de Neral está preservada como histórico; a correção de concept descrita acima substitui sua direção visual.
+Situação em 18/10/2026: 42 folhas disponíveis. As [correções anteriores de movimento](revisoes/correcao-movimento/README.md) reabriram dez versões aprovadas. Há 19 folhas aceitas, sendo sete com ressalvas, e 23 candidatas aguardando avaliação. A aprovação anterior do estudo de Neral está preservada como histórico; a correção de concept descrita acima substitui sua direção visual.
 
-Revisão atual: o bloco 2 completo foi aprovado. Pirka v3 foi aprovada. Urdan v4 e o bloco 3 completo aguardam avaliação. O bloco 1 permanece aceito com ressalvas. O [registro dos três blocos](revisoes/correcao-blocos/README.md) separa testes técnicos, inspeção e aceite visual.
+Revisão atual: os blocos 2 e 3 completos foram aprovados. A revisão dos três blocos está encerrada; o bloco 1 permanece aceito com ressalvas. O [registro dos três blocos](revisoes/correcao-blocos/README.md) separa testes técnicos, inspeção e aceite visual.
 
 ## Contrato visual
 

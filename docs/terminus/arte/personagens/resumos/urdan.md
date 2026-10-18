@@ -35,12 +35,12 @@ Bastão para defesa e retirada. Não é cura universal nem sexto aliado. Conflit
 
 Preservar raça, idade aparente, constituição, cabelo, roupa, acessórios e assimetrias descritos acima. Traduzir cores em valores sépia; não transformar atributos narrativos em efeitos permanentes. Detalhes não descritos recebem soluções simples, sem nova biografia.
 
-A direção visual está autorizada como base. A imagem ainda não foi aprovada. Usar o [padrão fixo](../prompts/base.md) e as três referências originais.
+A direção visual está autorizada como base. A v4 foi aprovada pelo autor; versões anteriores permanecem no histórico. Usar o [padrão fixo](../prompts/base.md) e as três referências originais.
 
 ## Candidata produzida
 
-A folha [urdan](../../../../../assets/terminus/personagens/em-revisao/urdan-v3-120x220.png) foi revisada internamente e aguarda aprovação visual. O [registro do lote 8](../revisoes/lote-8.md) descreve as escolhas visuais e correções. Consulte o [controle](../controle.json) para a versão da ficha, os prompts, entradas, tentativas e hashes. Nenhuma proposta narrativa foi aprovada por esta produção.
+A folha [v3](../../../../../assets/terminus/personagens/em-revisao/urdan-v3-120x220.png) foi substituída pela v4 aprovada, preservando o histórico. O [registro do lote 8](../revisoes/lote-8.md) descreve as escolhas visuais e correções. Consulte o [controle](../controle.json) para a versão da ficha, os prompts, entradas, tentativas e hashes. Nenhuma proposta narrativa foi aprovada por esta produção.
 
 ## Correção corporal — bloco 3
 
-A [v4](../../../../../assets/terminus/personagens/em-revisao/urdan-v4-120x220.png) substitui a v3 na avaliação atual. Ombros, quadril e braços participam da caminhada; bolsa e instrumento permanecem ligados ao corpo. Cabeça, cabelo, repousos e pixels abaixo de y45 permanecem intactos. Aguarda aprovação de Urdan e do bloco 3. [Comparações e verificações](../revisoes/correcao-blocos/README.md).
+A [v4](../../../../../assets/terminus/personagens/em-revisao/urdan-v4-120x220.png) substitui a v3 e foi aprovada pelo autor em 18/10/2026. Ombros, quadril e braços participam da caminhada; bolsa e instrumento permanecem ligados ao corpo. Cabeça, cabelo, repousos e pixels abaixo de y45 permanecem intactos. Aprovação registrada: “O Urdan ficou bom. Aprovo o bloco 3 completo.” Copiada sem alterações para [urdan.png](../../../../../assets/terminus/personagens/urdan.png). [Comparações e verificações](../revisoes/correcao-blocos/README.md).
