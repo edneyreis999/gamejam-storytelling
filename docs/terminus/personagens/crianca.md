@@ -11,7 +11,7 @@ A base indicada como confirmada vem da visão e das decisões do autor. Aparênc
 ## 1. Identificação
 
 - **Papel:** Ponto de vista da moldura; uma identidade funcional.
-- **Raça, idade e aparência:** Criança ouvinte da Noite da História. Nome, raça, gênero, aparência e idade exata permanecem abertos; não equivale automaticamente a Skarr, Puk, Slug, Amora ou Cazost.
+- **Raça, idade e aparência:** Menina orc ouvinte da Noite da História, com desenvolvimento equivalente ao de uma criança humana de dez anos, sem idade cronológica orc estabelecida. Corpo infantil pequeno, presas discretas, cabelo escuro curto e desalinhado, túnica simples, calças e botas baixas. Direção visual autorizada pelo autor no plano de spritesheets em 18/10/2026. Nome e parentescos permanecem abertos; não equivale a Skarr, Puk, Slug, Amora ou Cazost. Sem armas ou insígnias na sprite.
 - **Personalidade em uma frase:** Pergunta por que as pessoas da história não tentaram outra coisa.
 
 ## 2. Personalidade em ação
@@ -110,6 +110,6 @@ Não luta, não soma bônus e não entra no torneio. Suas intervenções compram
 | [Visão do jogo](../visao-do-jogo.md) | Estrutura, recrutamentos, confrontos, regras e desfecho registrados. | Base confirmada; identidade e cenas novas continuam propostas. |
 | [Ghork, livro, pp. 12–17, 143–156 e 196–212](../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf) | Moldura de Rheed, ferimento, reprovação e despedida de Ghork. | Referência de continuidade; não aprova novos acontecimentos em Terminus. |
 
-**Pendência específica:** Definição de avatar continua aberta; a ficha funciona sem raça ou nome escolhidos.
+**Pendência específica:** A direção do avatar foi autorizada para a produção de spritesheets; a imagem ainda depende de aprovação visual. Nome e idade cronológica orc permanecem abertos.
 
 **Estado editorial:** caracterização e cenas propostas aguardam validação do autor.

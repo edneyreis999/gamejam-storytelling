@@ -4,6 +4,8 @@ Status: em desenvolvimento.
 
 **40 fichas: 22 de estrutura, 8 coadjuvantes recorrentes e 10 de reserva.** Este catálogo serve ao autor e a quem escreverá cenas e diálogos. As identidades novas e suas histórias são propostas; a estrutura aprovada permanece na [visão do jogo](../visao-do-jogo.md).
 
+A [produção das spritesheets](../arte/personagens/README.md) registra o padrão visual, resumos, tentativas e aprovações. São 42 folhas para as 40 fichas, incluindo três formas de Neral. O uso visual das propostas foi autorizado; as imagens e as propostas narrativas têm validações separadas.
+
 ## O que ler para cada tarefa
 
 | Tarefa | Leitura |

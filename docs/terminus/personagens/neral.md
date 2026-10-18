@@ -14,6 +14,10 @@ A base indicada como confirmada vem da visão e das decisões do autor. Aparênc
 - **Raça, idade e aparência:** Ignoto dos Círculos Superiores; idade desconhecida. Sob o disfarce de Savel, luvas, gola alta e camadas de tecido escondem o corpo. Proposta visual: pele muito pálida, dedos longos e sinais rituais sob as mangas; inicialmente sem as deformações dos consumidores.
 - **Personalidade em uma frase:** Reconhece uma carência com precisão e vende a dependência como se fosse cuidado.
 
+### Direção para as spritesheets
+
+O plano autorizado pelo autor em 18/10/2026 prevê três folhas da mesma identidade: disfarce, revelado e transformado. O disfarce mantém luvas, gola alta e corpo coberto; a forma revelada mostra palidez, dedos longos e marcas rituais; a transformação amplia e deforma o mesmo corpo, preservando elementos reconhecíveis. Não acrescentar membros, poderes ou símbolos narrativos por inferência. O estudo das três formas deve ser aprovado antes das folhas completas; o estudo v1 das três formas foi aprovado pelo autor em 18/10/2026, antes da geração das folhas completas. Todas seguem o padrão sépia e a grade de 40 × 55 px por quadro.
+
 ## 2. Personalidade em ação
 
 - **O que deseja:** Instalar em Terminus uma base de produção e domínio alquímico.
@@ -117,3 +121,7 @@ Magia sanguínea e proteção ritual. Proposta de encenação: rompe a própria 
 **Pendência específica:** Nome verdadeiro, disfarce, aparência e movimentos específicos são propostas; os preços e efeitos jogáveis permanecem fora desta ficha.
 
 **Estado editorial:** caracterização e cenas propostas aguardam validação do autor.
+
+### Registro da aprovação visual do estudo
+
+O autor aprovou as três formas da [prancha v1](../arte/personagens/revisoes/neral-estudo-v1.png): cabelo curto escuro com risca lateral, rosto angular sem barba e casaco longo de gola alta com debrum claro. Na revelação, mãos alongadas e marcas simples nos antebraços ficam expostas. Na transformação, ombros e tronco aumentam, a postura se curva e as mangas se rompem, mantendo dois braços e duas pernas. Essa aprovação é visual; não acrescenta poderes, símbolos ou acontecimentos. As spritesheets completas continuam sujeitas à aprovação própria do lote 1.

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revisão dos personagens · Terminus</title>
+  <style>
+    :root { --bg:#fff; --text:#201e1a; --muted:#57534b; --line:#817b70; --surface:#f4f2ed; --action:#725122; --hover:#533a17; --focus:#165cab; --error:#9e251d; --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s6:24px; --s8:32px; --radius:4px; --preview-bg:#e6e4df; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui,sans-serif; }
+    header,main,footer { max-width:1200px; margin:auto; padding:var(--s6); }
+    header { padding-bottom:0; }
+    h1 { font-size:32px; line-height:1.2; margin:var(--s2) 0 var(--s4); }
+    h2 { font-size:24px; margin:0 0 var(--s2); }
+    p { max-width:76ch; margin:var(--s2) 0 var(--s4); }
+    a { color:var(--action); text-underline-offset:3px; }
+    a:hover { color:var(--hover); }
+    :focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+    .muted,figcaption { color:var(--muted); }
+    .toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:var(--s3); margin:var(--s6) 0; }
+    button,select { font:inherit; min-height:44px; padding:var(--s2) var(--s3); border:1px solid var(--line); border-radius:var(--radius); color:var(--text); background:var(--bg); }
+    button { cursor:pointer; }
+    button:hover { background:var(--surface); }
+    button:active { border-color:var(--text); }
+    button:disabled { color:var(--muted); cursor:not-allowed; }
+    #play { background:var(--action); color:var(--bg); border-color:var(--action); }
+    #play:hover { background:var(--hover); }
+    article { padding:var(--s8) 0; border-top:1px solid var(--line); }
+    .sheets,.motions,.references { display:flex; flex-wrap:wrap; gap:var(--s6); align-items:flex-start; }
+    .sheets { margin:var(--s6) 0; }
+    figure { margin:0; max-width:100%; }
+    figcaption { margin-top:var(--s2); font-size:14px; }
+    img,canvas { image-rendering:pixelated; display:block; }
+    .sheet { width:120px; height:220px; background:var(--preview-bg); }
+    .large { width:240px; height:440px; }
+    canvas { width:80px; height:110px; background:var(--preview-bg); }
+    .motions { gap:var(--s3); }
+    .details { flex:1 1 280px; min-width:0; }
+    .notice { padding:var(--s4); background:var(--surface); }
+    .issues { padding-left:var(--s6); max-width:76ch; }
+    .error { color:var(--error); }
+    .study { margin:var(--s6) 0; }
+    .study img { width:700px; max-width:100%; height:auto; }
+    summary { cursor:pointer; padding:var(--s3) 0; }
+    [hidden] { display:none !important; }
+    footer { border-top:1px solid var(--line); }
+    @media(min-width:768px) { .large { width:360px; height:660px; } }
+    @media(max-width:400px) { header,main,footer { padding:var(--s4); } h1 { font-size:28px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="muted">Terminus · Arte em desenvolvimento</p>
+    <h1>Revisão dos personagens</h1>
+    <p id="summary">Carregando o registro de produção…</p>
+    <p class="notice">Aprovações são registradas na conversa. Esta galeria permite comparar desenho, escala e caminhada; não aprova as imagens automaticamente.</p>
+    <nav aria-label="Lotes de produção"><a href="#darvek">Lote 3</a> · <a href="#edrin">Lote 4</a> · <a href="#mavren">Lote 5</a> · <a href="#durn">Lote 6</a> · <a href="#seldan">Lote 7</a> · <a href="#urdan">Lote 8</a> · <a href="#moldren">Lote 9</a> · <a href="#rheed">Pilotos aprovados</a> · <a href="#sevrak">Lote 1 aprovado</a> · <a href="#virmura">Lote 2 aprovado</a></nav>
+    <p><a href="revisoes/elenco-completo.png">Elenco completo</a> · <a href="revisoes/elenco-embaralhado.png">Ordem embaralhada</a> · <a href="revisoes/pilotos-e-lote-9.png">Pilotos e último lote</a> · <a href="controle.md">Controle de produção</a> · <a href="README.md">Guia visual</a></p>
+    <div class="toolbar">
+      <button id="play" type="button" disabled>Iniciar animação</button>
+      <button id="next" type="button" disabled>Avançar quadro</button>
+      <label for="background">Fundo de inspeção</label>
+      <select id="background"><option value="#e6e4df">Cinza</option><option value="#ffffff">Branco</option><option value="#161616">Escuro</option></select>
+      <span id="frame">Repouso · animação pausada</span>
+    </div>
+    <p class="muted">Ciclo: passo A → repouso → passo B → repouso. Cada quadro dura 180 ms.</p>
+  </header>
+  <main>
+    <section aria-labelledby="references-title">
+      <h2 id="references-title">Referências originais</h2>
+      <p class="muted">120 × 220 px, exibidas em tamanho nativo. O fundo preto pertence aos arquivos recebidos.</p>
+      <div class="references">
+        <figure><img src="referencias/modelo-01.png" width="120" height="220" alt="Primeiro modelo de anão com elmo e barba"><figcaption>Modelo 1</figcaption></figure>
+        <figure><img src="referencias/modelo-02.png" width="120" height="220" alt="Segundo modelo de anão sem elmo"><figcaption>Modelo 2</figcaption></figure>
+        <figure><img src="referencias/modelo-03.png" width="120" height="220" alt="Terceiro modelo de anão com elmo"><figcaption>Modelo 3</figcaption></figure>
+      </div>
+    </section>
+    <details id="neral-study" class="study" hidden>
+      <summary id="study-status">Estudo das três formas de Neral</summary>
+      <p>A aprovação deste estudo define o visual. As folhas de caminhada têm aprovação separada.</p>
+      <img id="study-image" width="700" height="780" alt="Estudo de Neral: disfarce, revelado e transformado, em frente, perfil e costas">
+    </details>
+    <div id="characters"></div>
+    <p id="load-error" class="error" hidden>Não foi possível carregar o registro. Mantenha galeria-dados.js ao lado deste arquivo e reabra a galeria.</p>
+    <noscript>Ative JavaScript para visualizar as folhas e suas animações. Os arquivos também estão disponíveis pelo controle de produção.</noscript>
+  </main>
+  <footer><p id="next-stage">As etapas seguintes dependem das aprovações previstas no plano.</p></footer>
+  <script src="galeria-dados.js"></script>
+  <script>
+    const data = window.SPRITESHEETS;
+    const play = document.querySelector('#play');
+    const next = document.querySelector('#next');
+    const label = document.querySelector('#frame');
+    const sprites = [];
+    const sequence = [0,1,2,1];
+    const names = ['Passo A','Repouso','Passo B','Repouso'];
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+    let phase = 1;
+    let playing = false;
+    let previous = 0;
+    let animationId;
+    function draw() {
+      for (const sprite of sprites) {
+        sprite.context.clearRect(0,0,40,55);
+        sprite.context.drawImage(sprite.image,sequence[phase]*40,sprite.row*55,40,55,0,0,40,55);
+      }
+      label.textContent = `${names[phase]} · animação ${playing ? 'em reprodução' : 'pausada'}`;
+      play.textContent = playing ? 'Pausar animação' : 'Iniciar animação';
+    }
+    function animate(now) {
+      if (!playing) return;
+      if (now - previous >= 180) { phase = (phase+1)%4; previous=now; draw(); }
+      animationId=requestAnimationFrame(animate);
+    }
+    play.addEventListener('click', () => {
+      playing = !playing;
+      cancelAnimationFrame(animationId);
+      if (playing) { previous=performance.now(); animationId=requestAnimationFrame(animate); }
+      draw();
+    });
+    next.addEventListener('click', () => { playing=false; cancelAnimationFrame(animationId); phase=(phase+1)%4; draw(); });
+    reduce.addEventListener('change', () => { if (reduce.matches) { playing=false; cancelAnimationFrame(animationId); draw(); } });
+    document.querySelector('#background').addEventListener('change', event => {
+      document.documentElement.style.setProperty('--preview-bg',event.target.value);
+    });
+    if (!data) {
+      document.querySelector('#load-error').hidden=false;
+      document.querySelector('#summary').textContent='Registro indisponível.';
+    } else {
+      document.querySelector('#summary').textContent=data.resumo;
+      document.querySelector('#next-stage').textContent=data.proxima_condicao;
+      if (data.estudo_neral) {
+        document.querySelector('#neral-study').hidden=false;
+        document.querySelector('#study-status').textContent=`Neral · ${data.estudo_neral.estado}`;
+        document.querySelector('#study-image').src=data.estudo_neral.imagem;
+      }
+      for (const item of data.folhas) {
+        const article=document.createElement('article');
+        article.id=item.id;
+        const title=document.createElement('h2'); title.textContent=item.nome;
+        const status=document.createElement('p'); status.textContent=item.estado;
+        article.append(title,status);
+        const issues=document.createElement('ul'); issues.className='issues';
+        for (const text of item.observacoes) { const li=document.createElement('li'); li.textContent=text; issues.append(li); }
+        article.append(issues);
+        const link=document.createElement('a'); link.href=item.resumo; link.textContent='Consultar resumo da ficha'; article.append(link);
+        if (item.imagem) {
+          const group=document.createElement('div'); group.className='sheets';
+          let nativeImage;
+          for (const enlarged of [false,true]) {
+            const figure=document.createElement('figure');
+            const img=document.createElement('img'); img.className=enlarged?'sheet large':'sheet';
+            img.alt=`Folha de ${item.nome}${enlarged?' ampliada':''}`;
+            img.width=120; img.height=220;
+            const caption=document.createElement('figcaption'); caption.textContent=enlarged?'Ampliação sem suavização':'120 × 220 px · tamanho nativo';
+            figure.append(img,caption); group.append(figure);
+            img.addEventListener('error',()=>{ img.hidden=true; caption.textContent='Imagem ausente. Confira o arquivo pelo controle de produção.'; caption.className='error'; });
+            if (!enlarged) nativeImage=img;
+            else img.src=item.imagem;
+          }
+          const details=document.createElement('div'); details.className='details';
+          const note=document.createElement('p'); note.textContent='Caminhada nas quatro direções';
+          const motions=document.createElement('div'); motions.className='motions';
+          const canvases=[];
+          ['Frente','Esquerda','Direita','Costas'].forEach((direction,row)=>{
+            const figure=document.createElement('figure');
+            const canvas=document.createElement('canvas'); canvas.width=40; canvas.height=55;
+            canvas.setAttribute('role','img'); canvas.setAttribute('aria-label',`${item.nome}: ${direction.toLowerCase()}`);
+            const caption=document.createElement('figcaption'); caption.textContent=direction;
+            figure.append(canvas,caption); motions.append(figure); canvases.push({canvas,row});
+          });
+          nativeImage.addEventListener('load',()=>{
+            if(nativeImage.naturalWidth!==120||nativeImage.naturalHeight!==220){
+              note.textContent='Animação indisponível: o arquivo não tem 120 × 220 px.'; note.className='error'; motions.hidden=true; return;
+            }
+            for(const {canvas,row} of canvases){ const context=canvas.getContext('2d'); context.imageSmoothingEnabled=false; sprites.push({context,row,image:nativeImage}); }
+            play.disabled=false; next.disabled=false; draw();
+          });
+          nativeImage.src=item.imagem;
+          details.append(note,motions); group.append(details); article.append(group);
+        }
+        document.querySelector('#characters').append(article);
+      }
+    }
+  </script>
+</body>
+</html>
