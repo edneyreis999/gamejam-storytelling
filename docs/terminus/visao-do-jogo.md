@@ -26,7 +26,26 @@ Ghork acredita que vencer o campeonato provará seu valor a quem o rejeitou. A d
 
 Por preferência autoral, **Punch Club 1 é a referência narrativa principal; Punch Club 2 é complementar**. A inspiração inclui acontecimentos, encontros, conflitos, relações, reviravoltas e progressão da história, além do formato dos diagramas. Esses elementos servem como pontos de partida para adaptações ao passado de Ghork e ao mundo de Terminus, sem se tornarem automaticamente fatos do jogo.
 
+O núcleo do campeão, do vendedor e da invasão combina as seguintes referências, com adaptação validada pelo autor:
+
+- **Punch Club 1 — químico:** os eventos `chemist_hi` e `chemist_bad` do [atlas](../docs_externas/punch-club/punch-club-quests.html) apresentam a promessa de melhoria física, a minimização dos efeitos colaterais e a venda de novas preparações para corrigi-los. Em Terminus, essa relação comercial sustenta a dependência e o controle exercidos pelo vendedor Ignoto.
+- **Naruto — invasão de Konoha no Exame Chūnin:** a aliança reúne interesses diferentes e usa o evento público para preparar o ataque. A quarta guilda busca recuperar influência, enquanto o alquimista pretende estabelecer sua operação na cidade. Referências consultadas: [contexto da Areia](https://naruto.fandom.com/wiki/Konoha_Crush) e [retrospectiva oficial de Orochimaru](https://naruto-official.com/en/news/01_1629).
+- **Grommash Hellscream — trajetória original:** a aceitação do poder que compromete os companheiros e a ruptura posterior com seu fornecedor orientam o campeão. A adaptação usa poções alquímicas e preserva sua sobrevivência e responsabilidade depois do golpe. Referência consultada: [conto oficial da Blizzard](https://media.blizzard.com/wow/lore/pdfdownload/leader-story/garrosh-hellscream/garrosh-enUS.pdf).
+- **Gul’dan — origem apresentada em Harbingers:** a passagem da rejeição à busca de poder e dominação orienta o passado do alquimista. Sua origem entre os Ignotos marginalizados e a ascensão pela exploração da própria comunidade são criações para Terminus. Referências consultadas: [curta oficial](https://worldofwarcraft.blizzard.com/pt-br/news/20186311) e [análise do passado mostrado no curta](https://blizzardwatch.com/2016/07/29/know-lore-guldan-warlords-draenor/).
+
 O [roteiro para a próxima entrevista](proxima-entrevista.md) orienta o uso dessas referências para desenvolver o núcleo dramático da campanha.
+
+## Direção do elenco e dos líderes
+
+O desenvolvimento do elenco parte de um catálogo de **40 fichas**, organizado em 22 posições estruturais, oito coadjuvantes recorrentes e dez personagens de reserva para futuras decisões de roteiro. A prioridade é criar novos habitantes de Terminus, usando amplamente funções e relações de Punch Club 1 e 2 como referências. A reserva não amplia automaticamente a campanha da game jam.
+
+Virmura lidera a guilda dos curandeiros, uma das três opções de adesão, e **não governa Terminus nesta campanha**. Seu passado adotado é o serviço sob Orcquius, a tentativa de impedir a missão em que sua irmã morreu numa emboscada e a ruptura posterior com a Horda. Essa direção substitui as versões de convite recusado e perda de uma amiga como episódio central. A irmã é mantida; não é criado um irmão adicional.
+
+Virmura reconhece em Ghork algo da irmã que perdeu. O vínculo adapta a identificação de Tsunade com Naruto, preservando a identidade própria de Virmura. O segundo líder tem Jiraiya como referência de mentor; o terceiro se inspira no interesse de Orochimaru por Sasuke, adaptado para o desejo de moldar Ghork como sucessor por sua inteligência e determinação. Isso não estabelece um poder excepcional oculto de Ghork, roubo de corpo ou identidade ignota para esse líder.
+
+O dirigente da quarta guilda e o campeão serão caracterizados como pessoas distintas. Os atributos das fichas têm função narrativa, sem acrescentar estatísticas ao combate. Os números fornecidos para Virmura serão conservados como referência recebida, sem efeito sobre o D20.
+
+A [análise do elenco](analise-do-elenco.md), o [levantamento de Punch Club](referencias-do-elenco.md) e as [40 fichas](personagens/README.md) desenvolvem essa direção. Nomes novos, nomes de guildas, passados adicionais, pares de recrutamento e cenas apresentados nesses documentos permanecem propostas até validação específica; não substituem os pontos em aberto desta visão.
 
 ## Estrutura da campanha e guildas
 
@@ -58,32 +77,71 @@ Uma bifurcação curta U/V, antes da final, reconhece as alianças e decisões a
 
 ## Chefão do torneio
 
-O chefão fixo do torneio é um personagem novo de Terminus, representante de uma quarta guilda veterana. Essa guilda participa como adversária e não oferece uma rota de adesão a Ghork; as opções do primeiro arco continuam sendo três.
+O chefão fixo do torneio é um orc veterano, personagem novo de Terminus e representante de uma quarta guilda veterana. Essa guilda participa como adversária e não oferece uma rota de adesão a Ghork; as opções do primeiro arco continuam sendo três.
 
 O campeão é um ídolo popular por seu talento e pelo espetáculo de seus combates. Quer continuar no topo, usa sua influência para obter vantagens na preparação e defende abertamente essa prioridade como um direito conquistado por sua trajetória. Sua popularidade dá ao público motivos para apoiá-lo mesmo contra Ghork.
 
-Nome, aparência e preparação de sua presença ao longo dos arcos permanecem em aberto. A cena em que prolonga uma sessão de treino e ocupa o horário reservado a outro grupo é uma proposta não aprovada. Não foi estabelecida uma ligação do campeão ou das minas com os Ignotos.
+Sua reputação antecede o consumo das poções. Era admirado por conduzir companheiros em contratos que outros recusavam. Numa expedição anterior à chegada de Ghork, o grupo ficou cercado e um fornecedor ofereceu uma preparação capaz de mantê-los lutando. O campeão tomou primeiro para salvar os seus e assumir o risco antes dos companheiros. O grupo voltou vivo e vitorioso.
+
+Depois vieram tremores, exaustão e necessidade de novas doses. O fornecedor apresentou novas fórmulas como tratamento para o desgaste das anteriores. Mesmo após perceber o problema, o campeão continuou consumindo para preservar seu desempenho e sua posição, além de recomendar o produto aos companheiros. A emergência explica sua primeira decisão; as escolhas seguintes estabelecem sua responsabilidade pela dependência do grupo.
+
+Apesar de sua popularidade, a quarta guilda perde contratos para concorrentes e tem custos elevados para manter seu prestígio. Sua direção aceita o apoio clandestino do fornecedor para tomar o controle da arena durante a celebração, intimidar rivais e impor condições aos financiadores. O campeão conhece e aceita essa parte do golpe, acreditando que uma demonstração rápida de força garantirá o futuro dos seus. Não conhece a extensão do objetivo do alquimista de capturar pessoas para sua operação.
+
+Durante a invasão, ao perceber que espectadores e companheiros estão sendo capturados, rompe com o fornecedor e ajuda na evacuação, enfrentando invasores com o corpo debilitado. Sobrevive, perde sua posição e precisa tratar a dependência e responder pelo golpe. Essa reparação não exige perdão das vítimas, amizade ou reconciliação com Ghork.
+
+Nome, aparência detalhada e cenas de preparação permanecem em aberto. A cena em que prolonga uma sessão de treino e ocupa o horário reservado a outro grupo continua sendo uma proposta não aprovada.
 
 ## Ignotos e revelação após o campeonato
 
-A vitória revela a sobrevivência de Ignotos da Grande Guerra que permaneceram na superfície, organizados em grupos dispersos, sem comando central. A expressão “infiltrados” designa remanescentes fisicamente escondidos. Não estabelece disfarces sociais, uma conspiração coordenada ou manipulação secreta dos acontecimentos da campanha.
+### O vendedor e sua origem
 
-Durante os preparativos da festividade, trabalhadores abrem uma passagem e expõem acidentalmente um refúgio desses remanescentes. O ataque acontece durante a celebração após a vitória de Ghork na final. O local da passagem e o trabalho que leva à sua abertura permanecem indefinidos. A abertura não significa que o selo tenha sido rompido.
+O vendedor recorrente de poções é um alquimista Ignoto dos Círculos Superiores e o chefão obrigatório pós-campeonato. Permaneceu na superfície depois da Grande Guerra e reuniu um grupo de remanescentes. Apresenta-se em Terminus como um boticário estrangeiro reservado, com vestes que ocultam boa parte do corpo. Sua identidade é encoberta pela apresentação enganosa e pela proteção de clientes influentes.
 
-Os remanescentes sentem um impulso de alcançar e libertar os Ignotos que continuam selados, sem compreender completamente o selo ou como realizar isso. Esse impulso substitui a hipótese de um plano coordenado. Ainda não está definido como o jogador percebe essa motivação nem o que acontece com o selo no desfecho.
+Nasceu entre os Ignotos pobres que tinham pouco acesso às substâncias e eram desprezados pelos mais fortes. Trabalhando nas oficinas alquímicas, demonstrou talento e atraiu a atenção de um mestre dos Círculos Superiores. Aceitou conhecimento e ascensão em troca de participar de experimentos sobre pessoas da própria comunidade. Quando passou a controlar a produção, manteve as condições que antes o humilhavam.
 
-O passado compartilhado com *Daratrine: A Origem* distingue o aprisionamento ancestral da restauração do selo após a Grande Guerra. Essa restauração bloqueou a chegada de novos Ignotos, enquanto os que permaneceram na superfície foram combatidos. A sobrevivência dos remanescentes ocultos é uma revelação de Terminus diante do relato anterior de eliminação dos Ignotos da superfície; o selo continua intacto no início da campanha.
+Em Terminus, oferece força e alívio enquanto torna guerreiros dependentes de seu fornecimento. Acredita que os povos da superfície se apropriaram da abundância devida aos seus; a vingança religiosa também justifica sua ambição pessoal. Pretende capturar pessoas e recursos para estabelecer uma base permanente de produção alquímica e reproduzir o domínio dos Círculos Superiores na cidade.
 
-As referências consultadas estão no projeto *Daratrine: A Origem*, no checkout local `C:/projetos/projectX`, sob `docs/GDD/`:
+Ghork o conhece cedo. O vendedor reconhece sua necessidade de aprovação e procura explorá-la ao oferecer preparações. A extensão dos efeitos das poções aos orcs e a outros habitantes é uma adaptação aprovada para Terminus. O controle dos consumidores ocorre por dependência, ameaça e fornecimento; não exige obediência automática por comando mágico. A oferta a Ghork não estabelece que ele necessariamente consuma. Preços, efeitos jogáveis e consequências de eventual consumo pelo jogador ainda precisam ser definidos.
 
-- `3-historia/historia-de-daratrine.md`: ruptura e restauração do selo na história da guerra.
-- `2-world-building/o-continente-de-ekios.md`: dispersão dos Ignotos após a perda do comando central, comportamento dos remanescentes e distinção entre Brutos, Sombrios e o Profeta das Sombras.
-- `2-world-building/racas/raca-ignotos.md`: origem, isolamento e transformação dos Ignotos.
-- `2-world-building/magia.md`: relação com a Profundina e limites da influência onírica.
+### A invasão e os interesses da aliança
 
-Esses documentos servem como referência do passado compartilhado; não incorporam automaticamente suas demais decisões a Terminus. Poderes específicos do Profeta das Sombras não devem ser atribuídos aos remanescentes em geral. Não foi aprovada uma ligação do campeão ou do contrato das minas com os Ignotos.
+A quarta guilda facilita a entrada de homens e carregamentos do fornecedor pelas áreas de serviço do coliseu. O campeonato concentra lideranças, financiadores e combatentes desgastados pelas partidas. Durante a celebração após a vitória de Ghork, os invasores fecham acessos e tomam reféns.
 
-O confronto obrigatório pós-campeonato permanece distinto da final do torneio. A última pergunta da entrevista, ainda sem resposta, tratou da natureza desse chefão: Bruto e Sombrio foram apresentados como alternativas, mas o autor ainda não escolheu nenhuma delas.
+O ataque foi preparado independentemente do resultado da final. O campeão deveria aparecer como vencedor capaz de impor ordem; sua derrota muda sua posição no golpe. A direção da guilda espera comandar a cidade. O alquimista pretende tornar os novos governantes tão dependentes quanto os guerreiros que já abastece.
+
+Quando os invasores começam a arrastar feridos e espectadores para junto dos carregamentos, o campeão percebe a extensão da captura. O alquimista condiciona a próxima distribuição das poções à obediência. A recusa do campeão e sua atuação na evacuação antecedem o confronto final de Ghork com o fornecedor.
+
+### Confronto final e desfecho de Terminus
+
+O alquimista luta com magia sanguínea e proteção ritual. Até esse confronto, preservava seu corpo das preparações que deformavam os consumidores. Pressionado por Ghork e pelo fracasso da operação, ingere várias doses concentradas, convencido de que seu conhecimento permitirá controlar o resultado.
+
+A quantidade extrema amplia sua força, deforma seu corpo e deteriora sua precisão mágica. A transformação é uma escalada do mesmo confronto obrigatório, não uma batalha adicional. Ghork precisa derrotá-lo; a preparação não encerra a luta matando o antagonista sozinha. O repertório exato de poderes e sua encenação ainda precisam ser detalhados.
+
+Antes de morrer, o Ignoto revela que existem outros núcleos infiltrados em Ekios, inclusive pelo menos um Ignoto no Conselho de Daratrine. Essa infiltração é verdadeira nos bastidores; as identidades e sua extensão permanecem ocultas. O alquimista conhece parte da rede, sem ser o comandante de todos os Ignotos. Sua afirmação de que a conquista do continente é inevitável expressa sua convicção, não um futuro garantido.
+
+Depois da batalha, Ghork encontra correspondência nos registros do vendedor que comprova uma ligação com o Conselho. A evidência sustenta a ameaça sem identificar os infiltrados. A fala exata do antagonista e o conteúdo da correspondência ainda serão escritos.
+
+O jogo termina em Terminus, com o ataque repelido, o alquimista morto, os capturados libertados e a operação local desmantelada. A dependência dos consumidores não desaparece com a morte do fornecedor. O campeão sobrevive para responder por suas escolhas. A informação sobre Daratrine abre a possibilidade de uma continuação, sem exigir uma viagem, investigação ou nova campanha nesta entrega. A vitória de Ghork é uma perda real para os Ignotos.
+
+### Preparação nos três arcos
+
+O primeiro arco apresenta o vendedor e a fama do campeão. No segundo, aparecem sinais de dependência, efeitos colaterais e pressão econômica sobre a quarta guilda. O terceiro reúne a revelação do pacto, a derrota do campeão, a invasão e o confronto com o alquimista.
+
+Essa preparação deve integrar as missões existentes, preservando as escolhas de guilda e X/Y, os cinco recrutamentos opcionais e a conclusão possível com zero recrutados. O contrato das minas mantém seu conflito próprio; não foi estabelecida ligação entre ele e a operação dos Ignotos. As cenas concretas e sua distribuição nas missões continuam em aberto.
+
+### Continuidade, revisão e fontes
+
+O selo permanece intacto durante a campanha, inclusive no desfecho. O passado compartilhado com *Daratrine: A Origem* distingue o aprisionamento ancestral da restauração após a Grande Guerra. Essa restauração bloqueou a chegada de novos Ignotos, enquanto os que permaneceram na superfície foram combatidos. A sobrevivência e a infiltração dos remanescentes são revelações de Terminus diante do relato anterior de eliminação dos Ignotos da superfície.
+
+A revisão validada substitui o refúgio exposto por acidente e o impulso pouco compreendido de alcançar os selados por uma operação preparada pelo alquimista e apoiada pela quarta guilda. Também substitui a restrição de que os remanescentes estariam apenas fisicamente escondidos, estabelece a ligação do campeão com os Ignotos e encerra a escolha pendente entre Bruto e Sombrio: o chefão final é o vendedor alquimista, com a transformação descrita acima. A existência de outros núcleos não estabelece um comando único para todo o continente.
+
+As referências do passado compartilhado vêm de *Daratrine: A Origem*. As [cópias de referência e sua revisão de origem](../docs_externas/daratrine-a-origem/README.md) estão disponíveis neste repositório:
+
+- [Ignotos](../docs_externas/daratrine-a-origem/ignotos.md): referência indicada pelo autor para marginalização, Círculos Superiores, dependência alquímica, magia sanguínea e motivações materiais e religiosas.
+- [História de Daratrine](../docs_externas/daratrine-a-origem/historia-de-daratrine.md): ruptura e restauração do selo na história da guerra.
+- [Magia](../docs_externas/daratrine-a-origem/magia.md): regras e limites da magia, a consultar conforme o detalhamento exigir.
+
+O perfil dos Ignotos sustenta esta revisão; as demais decisões do projeto externo não são incorporadas automaticamente. O alquimista permanece distinto do Profeta das Sombras, cujos poderes específicos não são atribuídos aos remanescentes em geral.
 
 ## Batalhas
 
@@ -142,7 +200,8 @@ No Coreto, Rheed vende cargas de nova rolagem para batalhas. Após falhar em uma
 - **Alianças X/Y:** definir nomes e composição das equipes, qual abordagem corresponde a cada uma, os riscos e gastos concretos na investigação e qual guilda rejeitada apoia a equipe preterida. A causa da mágoa no reencontro foi adiada.
 - **Detalhamento da campanha:** distribuir os acontecimentos nas sete missões escritas do arco 2, esclarecer a relação das equipes externas com o time de Ghork, definir a função de U/V e as associações à Jornada do Herói.
 - **Recrutamentos:** definir os cinco pares e conflitos, confirmar quais missões são longas e escolher a matriz de restrições por trajetória. Avaliar conteúdo e tempo disponíveis, além da contagem de cores.
-- **Revelação dos Ignotos:** detalhar a passagem e o trabalho que expõe o refúgio nos preparativos da festividade, como o jogador percebe o impulso dos remanescentes e o desfecho do selo. O ataque durante a celebração já está definido.
-- **Chefões — retomada:** escolher a natureza do chefão obrigatório após o campeonato, cuja última pergunta ficou sem resposta. Detalhar separadamente a identidade e a preparação do campeão conforme o perfil confirmado acima; a ocupação do horário de treino segue como proposta não aprovada.
+- **Invasão e desfecho:** detalhar as pistas do pacto, a entrada dos invasores, a evacuação, a responsabilização do campeão e a correspondência ligada ao Conselho. Preservar a derrota da operação local, o selo intacto e as identidades dos infiltrados ocultas.
+- **Chefões e vendedor:** definir nomes, aparência detalhada e cenas conforme os passados confirmados. Detalhar os poderes e a transformação do alquimista dentro do mesmo confronto. A ocupação do horário de treino pelo campeão segue como proposta não aprovada.
+- **Poções:** definir a interação comercial com Ghork, preços, efeitos jogáveis e consequências de eventual consumo, sem presumir compra ou uso obrigatório nem alterar por inferência as regras de batalha.
 - **Economia de Ludos:** definir preços das opções de diálogo e das cargas de nova rolagem, além das recompensas das missões.
 - **Reveses:** definir as consequências narrativas das derrotas e como o jogador se prepara para as revanches.

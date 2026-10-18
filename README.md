@@ -16,6 +16,11 @@ Limitation	???
 
 Status: em desenvolvimento.
 
-- [Visão do jogo](docs/terminus/visao-do-jogo.md)
-- [Apresentação atual da campanha — Decisões que se acumulam](docs/terminus/campanha-decisoes-acumuladas.html)
-- [Roteiro para a próxima entrevista](docs/terminus/proxima-entrevista.md)
+| Para | Consulte |
+| --- | --- |
+| Conhecer as decisões confirmadas e os pontos em aberto | [Visão do jogo](docs/terminus/visao-do-jogo.md) |
+| Escrever personagens, cenas e diálogos | [Índice do elenco e guia de leitura](docs/terminus/personagens/README.md) |
+| Retomar o desenvolvimento da história com o autor | [Roteiro para a próxima entrevista](docs/terminus/proxima-entrevista.md) |
+| Consultar os diagramas e a proposta de matriz de acessos | [Apresentação da campanha — Decisões que se acumulam](docs/terminus/campanha-decisoes-acumuladas.html) |
+
+A apresentação ainda não incorpora as decisões narrativas mais recentes. A visão registra as decisões confirmadas; as fichas e a análise identificam propostas que aguardam validação. Os materiais em `docs/docs_externas/` são referências.
