@@ -2,7 +2,7 @@
 
 Status: em desenvolvimento.
 
-[Índice do elenco](README.md) · [Análise e confrontos](../analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
+[Índice do elenco](README.md) · [Análise e confrontos](../storytelling/analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
 
 **ID:** `torvak` · **Camada:** Estrutura da campanha.
 
@@ -16,8 +16,8 @@ A base indicada como confirmada vem da visão e das decisões do autor. Aparênc
 
 ## 2. Personalidade em ação
 
-- **O que deseja:** Continuar campeão e preservar o lugar dos seus.
-- **O que teme:** Descobrir que já não consegue lutar sem as doses.
+- **O que deseja:** Continuar campeão e preservar a primazia de sua guilda diante das três concorrentes.
+- **O que teme:** Perder desempenho sem as doses e descobrir que seu grupo consegue construir um futuro sem mantê-lo no topo.
 - **Qualidade em ação:** Conhece o nome e o trabalho de cada companheiro.
 - **Defeito e custo nas relações:** Confunde privilégio com recompensa permanente.
 - **Contradição:** Diz tomar a frente para proteger, mas expõe os outros ao mesmo fornecedor.
@@ -86,18 +86,27 @@ Exercícios de voz; não são cenas aprovadas nem citações das fontes.
 
 ## 6. Passado e continuidade
 
-Base confirmada: foi um herói popular antes das poções. Num cerco, tomou a preparação primeiro e salvou o grupo. Depois persistiu no uso, recomendou-o e aderiu ao golpe limitado que Dorga esperava executar. Durante as capturas, rompe com Neral, ajuda a evacuar e sobrevive debilitado. Perde a posição, precisa de tratamento e responde por suas escolhas. Nome e aparência são propostas.
+**Base confirmada:** integrou um time com Titus Orcquius e Glavius. Houve uma ruptura entre os três, cuja causa não será explicada neste jogo. Essa participação é uma expansão autoral para Terminus, não um episódio do livro. Não atribuir traição a qualquer um deles nem ligar a separação à irmã de Virmura, às minas ou aos Ignotos por inferência.
+
+Foi um herói popular antes das poções. Num cerco anterior à chegada de Ghork, tomou a preparação primeiro e salvou o grupo. Depois persistiu no uso, recomendou-o e aderiu ao golpe limitado que Dorga esperava executar. Durante as capturas, rompe com Neral, ajuda a evacuar e sobrevive debilitado. Perde a posição, precisa de tratamento e responde por suas escolhas. Nome e aparência são propostas.
+
+**Rivalidade confirmada:** vê a perda de espaço para as três guildas como ameaça a direitos que julga ter conquistado. Após a adesão de Ghork, exige retratação do mentor que contestou sua prioridade no coliseu. Diante da recusa, pressiona Rask e consegue cancelar os horários de preparação concedidos à guilda escolhida. A inscrição permanece válida; a guilda reorganiza o trabalho em instalações próprias. Não começa acolhendo Ghork como protegido. Primeiro enfrenta uma instituição concorrente; o avanço do jovem torna a rivalidade pessoal.
+
+O [arco do campeão](../storytelling/arco-do-campeao.md) acompanha suas decisões fora de vista, o que o jogador descobre e o encontro com o arco de Ghork. A distribuição dos bastidores e as reações específicas continuam propostas de escrita.
 
 ## 7. Relações e participação
 
 | Pessoa | Relação |
 | --- | --- |
-| [Ghork](ghork.md) | Adversário da final e contraste com sua ambição de reconhecimento. |
+| [Ghork](ghork.md) | Inicialmente um recém-chegado ligado aos rivais; torna-se ameaça ao título. O abuso contra sua guilda dá ao jovem motivo próprio para enfrentá-lo. |
 | [Dorga Malho-Negro](dorga.md) | Dirigente que depende da imagem pública do campeão. |
 | [Neral, apresentado como Savel](neral.md) | Fornecedor que converte alívio em coerção; Torvak recusa a ordem durante a invasão. |
-| [Virmura](virmura.md) | Possível responsável pelo tratamento posterior, sem obrigação de perdão. |
+| [Virmura](virmura.md) | Líder rival que contesta seus privilégios; pode tratar dependentes sem perdoar seus atos. Não fundir seus passados por compartilharem vínculo com Orcquius. |
+| [Borun](borun.md) e [Sevrak](sevrak.md) | Líderes concorrentes; a rivalidade existe em qualquer rota. Se um deles for escolhido, sofre a retaliação por recusar retratar-se. |
+| [Rask](rask.md) | Cede à pressão que cancela os horários da guilda de Ghork; isso não o torna cúmplice informado do golpe. |
+| Titus Orcquius e Glavius | Antigos companheiros de time, conforme a [expansão confirmada](../storytelling/base-narrativa.md#chefão-do-torneio). A causa da ruptura não será revelada nesta campanha. |
 
-**Conversas e entrada na campanha:** Fama no arco 1; sinais de desgaste no arco 2; final, invasão e consequência no arco 3. Tem diálogos antes e depois da derrota. O ataque ocorreria independentemente do resultado da final. Não criar uma segunda vitória obrigatória sobre Torvak após o título.
+**Conversas e entrada na campanha:** Fama, rivalidade prévia e ligação com Orcquius no arco 1; retaliação após a adesão, sinais de desgaste e cobrança pelo abuso no arco 2; confronto pessoal, final, invasão e consequência no arco 3. Tem diálogos antes e depois da derrota. O ataque ocorreria independentemente do resultado da final. Não criar uma segunda vitória obrigatória sobre Torvak após o título. O cancelamento não altera D20, inscrição, acesso aos recrutamentos ou possibilidade de campanha solo.
 
 ## 8. Capacidades, limites e confrontos
 
@@ -113,6 +122,6 @@ Luta de impacto, controle de distância curta e resistência adquirida em expedi
 | [Ivangief](../../docs_externas/punch-club/punch-club-quests.html#s%3Arussia_afterfight) | Adversário que amplia a escala do desafio esportivo. | Referência externa; função adaptada, não biografia transferida. |
 | [Silver / Freddie](../../docs_externas/punch-club/punch-club-quests.html#s%3Athird_place_rookie_silver) | Treinador competente envolvido em dívida e interesses próprios. | Referência externa; função adaptada, não biografia transferida. |
 
-**Pendência específica:** Nome, visual e cenas de desgaste são propostas. Não usar ocupação do horário de treino como fato já aprovado.
+**Pendência específica:** Nome, visual, apresentação do antigo time, reações por guilda e cenas de desgaste e responsabilização são propostas. A retaliação confirmada é o cancelamento dos horários após a recusa de retratação; não acrescentar a antiga cena de prolongar um treino nem a alternativa descartada de retirar trabalho de Guedra. A causa da ruptura com Orcquius e Glavius fica fora desta campanha.
 
-**Estado editorial:** caracterização e cenas propostas aguardam validação do autor.
+**Estado editorial:** passado do time, rivalidade, retaliação e desfecho confirmados; caracterização adicional, nomes, falas e encenação detalhada aguardam validação do autor.

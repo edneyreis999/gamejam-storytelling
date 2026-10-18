@@ -5,6 +5,7 @@
 - Leia `docs/terminus/visao-do-jogo.md` antes de definir ou alterar escopo, narrativa ou mecânicas.
 - Antes de criar ou alterar personagens, cenas ou diálogos, consulte `docs/terminus/personagens/README.md` e siga as leituras indicadas para a tarefa.
 - Confirme com o usuário as ambiguidades das instruções e da documentação antes de tomar decisões que dependam delas.
+- Ao trabalhar no protótipo HTML, consulte `docs/terminus/prototipo/README.md` e aplique `.agents/skills/game-prototype-vn-html/SKILL.md`.
 
 # Planejamento e entregas
 

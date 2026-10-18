@@ -2,7 +2,7 @@
 
 Status: em desenvolvimento.
 
-[Índice do elenco](README.md) · [Análise e confrontos](../analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
+[Índice do elenco](README.md) · [Análise e confrontos](../storytelling/analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
 
 **ID:** `dorga` · **Camada:** Estrutura da campanha.
 
@@ -98,6 +98,8 @@ A quarta guilda e sua adesão ao golpe são confirmadas na visão; nome e dirige
 | [Seldan Portão-Firme](seldan.md) | Precisa contornar a fiscalização; não se estabelece que ele saiba do pacto. |
 
 **Conversas e entrada na campanha:** Aparece em conversas sobre patrocínio antes da final. É interlocutora do golpe e de sua responsabilização, sem exigir outro chefão. Proposta de desfecho: detida por Seldan após a libertação dos reféns; não decidir julgamento ou perdão nesta etapa.
+
+No [arco do campeão](../storytelling/arco-do-campeao.md), propõe-se que apresente a perda de contratos enquanto Ghork constrói suas alianças e obtenha a adesão de Torvak ao golpe antes da classificação. Nas eliminatórias, coordena os acessos com o fornecedor. Torvak responde pela retaliação contra a guilda de Ghork e por aceitar o pacto; Dorga não é a autora oculta de todas as suas decisões. O conhecimento de ambos sobre a tomada da arena não estabelece que conheçam toda a operação de capturas.
 
 ## 8. Capacidades, limites e confrontos
 

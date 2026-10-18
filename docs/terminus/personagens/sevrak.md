@@ -2,11 +2,11 @@
 
 Status: em desenvolvimento.
 
-[Índice do elenco](README.md) · [Análise e confrontos](../analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
+[Índice do elenco](README.md) · [Análise e confrontos](../storytelling/analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
 
 **ID:** `sevrak` · **Camada:** Estrutura da campanha.
 
-Proposta de caracterização e integração; consultar a separação de fontes ao final.
+O primeiro encontro com Ghork está confirmado. A caracterização adicional permanece proposta; consultar a separação de fontes ao final.
 
 ## 1. Identificação
 
@@ -88,17 +88,22 @@ Exercícios de voz; não são cenas aprovadas nem citações das fontes.
 
 Proposta: pesquisador de técnicas de combate e uso disciplinado de cristais que perdeu prestígio por avaliar discípulos como resultados. Fundou uma guilda que recebe candidatos rejeitados por outras escolas. Seu interesse confirmado em Ghork nasce da inteligência e da determinação, não de poder excepcional. Inspiração em Orochimaru/Sasuke adaptada para sucessão e controle intelectual; Silver oferece a tensão entre instrutor competente e interesse próprio.
 
+**Primeiro encontro confirmado:** observa os treinos no coliseu quando Ghork orienta um iniciante a escapar de um movimento repetido de um veterano. O veterano tenta agredir Ghork; Sevrak intercepta o ataque e o desarma. Depois, pede a explicação do jovem e reconhece sua inteligência. A [sinopse na visão](../visao-do-jogo.md#primeiros-vínculos-com-os-mentores) estabelece uma proteção genuína: Sevrak não provocou nem preparou o perigo. Seu interesse em formar um sucessor nasce desse contato; a evolução para uma relação de controle ainda será desenvolvida.
+
 ## 7. Relações e participação
 
 | Pessoa | Relação |
 | --- | --- |
-| [Ghork](ghork.md) | Quer transformá-lo no sucessor que comprovará a escola; pode oferecer reconhecimento sincero e condicionado ao mesmo tempo. |
+| [Ghork](ghork.md) | Protege-o no coliseu e reconhece sua inteligência ao ouvir a explicação sobre o treino. Quer formá-lo como sucessor; a combinação de reconhecimento e controle será desenvolvida no convívio posterior. |
 | [Virmura](virmura.md) | Acusa sua proteção de limitar os jovens; ela contesta seu uso de pessoas. |
 | [Borun Passo-Largo](borun.md) | Considera seu ensino pouco reproduzível; é confrontado por esconder informações. |
+| [Torvak](torvak.md) | Rivalidade confirmada anterior à chegada de Ghork. Se escolhido, contesta seus privilégios, recusa retratar-se e tem os horários de preparação da guilda cancelados por pressão dele. |
 | [Velka do Arco Antigo](velka.md) | Valoriza sua preservação de técnicas antigas, mas quer acesso ao material. |
 | [Neral, apresentado como Savel](neral.md) | Não é aliado, fornecedor ou identidade alternativa do alquimista; qualquer contato futuro exigiria nova proposta. |
 
-**Conversas e entrada na campanha:** Guilda escolhível legítima, com técnicas e companheiros capazes de contribuir. Escolhê-la não obriga Ghork a cometer atrocidades ou consumir poções. Se rejeitada, sustenta competição hostil. Na invasão, propõe-se que coordene retirada de aprendizes e neutralize obstáculos do acesso; isso não lhe dá a solução do ritual final.
+**Conversas e entrada na campanha:** O encontro no coliseu integra a apresentação obrigatória de C, após Ghork melhorar o suficiente para pequenos deslocamentos, sem depender de já conhecer Borun. É uma intervenção narrada, sem batalha de D20 ou adesão automática. Sua guilda é uma opção legítima, com técnicas e companheiros capazes de contribuir. Escolhê-la não obriga Ghork a cometer atrocidades ou consumir poções. Se rejeitada, sustenta competição hostil. Na invasão, propõe-se que coordene retirada de aprendizes e neutralize obstáculos do acesso; isso não lhe dá a solução do ritual final.
+
+**Desenvolvimento da rivalidade:** o cancelamento pelo campeão está confirmado quando Ghork escolhe esta guilda, sem retirar sua inscrição. Propõe-se que Sevrak adapte os exercícios às instalações da escola e aumente a cobrança, vendo na vitória uma demonstração pública de seu método. Sua crítica aos privilégios de Torvak não lhe concede o direito de controlar a carreira de Ghork. Ver o [arco do campeão](../storytelling/arco-do-campeao.md). Se preterido, mantém competição própria apesar do adversário comum.
 
 ## 8. Capacidades, limites e confrontos
 
@@ -110,9 +115,10 @@ Esgrima precisa, análise de postura e instrumentos de treino com cristais. Prec
 
 | Fonte e localização | Evidência ou decisão | Interpretação e uso em Terminus |
 | --- | --- | --- |
+| [Primeiros vínculos com os mentores](../visao-do-jogo.md#primeiros-vínculos-com-os-mentores) | Proteção de Ghork no coliseu e reconhecimento de sua inteligência, confirmados pelo autor. | Integra a apresentação de C; não é perigo armado pelo mentor. Diálogos e encenação detalhada pendentes. |
 | [Orochimaru, retrospectiva oficial](https://naruto-official.com/en/news/01_1629) | Interesse em Sasuke ligado à busca de poder e conhecimento. | Autor escolheu adaptar como sucessão e manipulação, sem roubo de corpo. |
 | [Silver / Freddie](../../docs_externas/punch-club/punch-club-quests.html#s%3Athird_place_rookie_silver) | Treinador competente envolvido em dívida e interesses próprios. | Referência externa; função adaptada, não biografia transferida. |
 
 **Pendência específica:** Métodos concretos de ensino e limites éticos devem ganhar cenas; não aprovar experimentos em pessoas por associação ao modelo de Naruto.
 
-**Estado editorial:** caracterização e cenas propostas aguardam validação do autor.
+**Estado editorial:** primeiro encontro e participação na rivalidade com o campeão confirmados; diálogos pendentes. Reação específica ao cancelamento, caracterização adicional e demais cenas propostas aguardam validação do autor.

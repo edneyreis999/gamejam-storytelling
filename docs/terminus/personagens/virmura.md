@@ -2,7 +2,7 @@
 
 Status: em desenvolvimento.
 
-[Índice do elenco](README.md) · [Análise e confrontos](../analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
+[Índice do elenco](README.md) · [Análise e confrontos](../storytelling/analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
 
 **ID:** `virmura` · **Camada:** Estrutura da campanha.
 
@@ -32,6 +32,8 @@ A base indicada como confirmada vem da visão e das decisões do autor. Aparênc
 | Ser confrontado | Ouve até o fim e faz uma pergunta precisa sobre a responsabilidade |
 
 ## 3. Assinatura de fala escrita
+
+A voz cerimoniosa abaixo é uma proposta anterior. Nas [anotações antigas da chegada](../storytelling/ghork-chegada-anotacoes-antigas.md), Virmura fala de modo direto, faz piadas e perde a paciência. Recomenda-se comparar essa voz com a proposta atual antes de escrever diálogos finais; a leitura não altera por si só seu modo de falar no jogo.
 
 | Aspecto | Direção de escrita |
 | --- | --- |
@@ -88,17 +90,22 @@ Exercícios de voz; não são cenas aprovadas nem citações das fontes.
 
 Confirmado pelo autor: nasceu em Daratrine, aprendeu artes místicas com elfos do Conselho dos Mestres e serviu sob Orcquius. Durante o conflito dele com Glavius, permaneceu inicialmente ao lado do superior. Rompeu com Orcquius após tentar impedir a missão em que a irmã morreu numa emboscada. Foi a Terminus, tornou-se curandeira de prestígio e mantém o desejo de justiça. A irmã, não um irmão adicional, é a perda central. A decisão mais recente retira seu governo da cidade e substitui as versões de convite recusado e morte da amiga. Proposta: as pinturas vermelhas passam a lembrar a irmã. O vínculo com Ghork adapta Tsunade/Naruto, sem parentesco secreto.
 
+**Encontro e convívio confirmados:** salva Ghork quando ele chega a Terminus quase morrendo. Depois, oferece abrigo em troca de trabalho compatível com a recuperação, criando proximidade sem torná-lo membro da guilda. O salvamento e o acordo posterior são distintos, conforme os [primeiros vínculos na visão](../visao-do-jogo.md#primeiros-vínculos-com-os-mentores). Local exato do socorro, etapas e duração da recuperação ainda precisam de confirmação.
+
 ## 7. Relações e participação
 
 | Pessoa | Relação |
 | --- | --- |
-| [Ghork](ghork.md) | Reconhece a insistência da irmã; precisa aprender a apoiá-lo sem governar suas escolhas. |
+| [Ghork](ghork.md) | Salva sua vida, oferece abrigo em troca de trabalho durante a recuperação e reconhece nele algo da irmã. O convívio não exige adesão. Aprender a apoiá-lo sem governar suas escolhas continua como desenvolvimento proposto. |
 | [Borun Passo-Largo](borun.md) | Respeita a experiência dele, mas cobra planejamento antes de aventuras. |
 | [Sevrak Vey](sevrak.md) | Contesta a ideia de avaliar uma pessoa apenas pelo resultado que produz. |
+| [Torvak](torvak.md) | Rivalidade confirmada anterior à chegada de Ghork. Se escolhida, contesta seus privilégios, recusa retratar-se e tem os horários de preparação da guilda cancelados por pressão dele. O passado do time de Torvak com Orcquius e Glavius não define a causa da morte de sua irmã. |
 | [Sura Folha-Firme](sura.md) | Propõe-se uma relação de mestra e curandeira de campo; Sura pode discordar de sua tutela. |
 | [Neral, apresentado como Savel](neral.md) | Percebe sintomas nos consumidores, sem identificar de imediato a origem ignota. |
 
-**Conversas e entrada na campanha:** Apresentação obrigatória da guilda, propostas para o contrato, preparação e crise. Se preterida, mantém oposição institucional: disputa contratos e apoia a equipe rival, embora não deixe de tratar feridos. Proposta para a invasão: coordena o atendimento e sustenta a retirada de vítimas; sair para caçar o alquimista abandonaria pessoas sob seus cuidados. Relação afetiva com Bugdurash preservada como referência do autor; identidade e papel dele não foram desenvolvidos neste catálogo.
+**Conversas e entrada na campanha:** O socorro estabelece sua presença na chegada; o acordo de abrigo e trabalho sustenta o convívio nos primeiros dias. Ghork conhece Borun e Sevrak durante entregas, após melhora suficiente para pequenos deslocamentos. A encenação da apresentação obrigatória de A ainda será detalhada. Seguem propostas para o contrato, preparação e crise. Se preterida, mantém oposição institucional: disputa contratos e apoia a equipe rival, embora não deixe de tratar feridos. Proposta para a invasão: coordena o atendimento e sustenta a retirada de vítimas; sair para caçar o alquimista abandonaria pessoas sob seus cuidados. Relação afetiva com Bugdurash preservada como referência do autor; identidade e papel dele não foram desenvolvidos neste catálogo.
+
+**Desenvolvimento da rivalidade:** o cancelamento pelo campeão está confirmado quando Ghork escolhe esta guilda, sem retirar sua inscrição. Propõe-se que Virmura reorganize as práticas na sede, preserve pausas e se recuse a compensar o prejuízo exigindo mais desgaste dos combatentes. Isso não elimina sua tendência a decidir por Ghork. A apresentação do antigo time antes da adesão também é proposta: pode informar Ghork sem expor a causa da ruptura. Ver o [arco do campeão](../storytelling/arco-do-campeao.md). Se preterida, a rivalidade com Torvak não a reconcilia automaticamente com Ghork.
 
 ## 8. Capacidades, limites e confrontos
 
@@ -111,9 +118,10 @@ Mestre em corpo a corpo, machado pesado de duas mãos, cura e cristais mágicos;
 | Fonte e localização | Evidência ou decisão | Interpretação e uso em Terminus |
 | --- | --- | --- |
 | [Direção do elenco confirmada](../visao-do-jogo.md#direção-do-elenco-e-dos-líderes) | Virmura apenas líder de guilda; irmã, emboscada e identificação com Ghork; três referências de mentores. | Base confirmada; complementos explicitamente propostos. |
+| [Chegada nas anotações antigas](../storytelling/ghork-chegada-anotacoes-antigas.md), capítulo 5; [primeiros vínculos confirmados](../visao-do-jogo.md#primeiros-vínculos-com-os-mentores) | Resgate e acordo posterior de abrigo e trabalho confirmados. As notas também mostram humor e ensino. | Convívio incorporado sem filiação automática; revisão de voz pendente. Não transferir a raça de ogra nem o governo da cidade da versão antiga. |
 | [Tsunade, retrospectiva oficial](https://naruto-official.com/en/news/01_1868) | Perde Nawaki e reconhece em Naruto sonhos de pessoas que perdeu. | Dinâmica afetiva escolhida pelo autor; Virmura perdeu a irmã. |
 | [Mick](../../docs_externas/punch-club/punch-club-quests.html#s%3Amick_first_time) | Mentor, acolhimento e entrada no circuito de luta. | Referência externa; função adaptada, não biografia transferida. |
 
-**Pendência específica:** Nome da irmã, significado revisado das pinturas e pormenores da emboscada permanecem propostas; não reintroduzir sua liderança da cidade.
+**Pendências específicas:** Nome da irmã, significado revisado das pinturas e pormenores da emboscada permanecem propostas; não reintroduzir sua liderança da cidade. Confirmar local e encenação do socorro, etapas e duração da recuperação; comparar a voz cerimoniosa proposta com a fala direta das notas antigas.
 
-**Estado editorial:** caracterização e cenas propostas aguardam validação do autor.
+**Estado editorial:** socorro, acordo de abrigo e trabalho e participação na rivalidade com o campeão confirmados; reação específica ao cancelamento, caracterização adicional e demais cenas propostas aguardam validação do autor.
