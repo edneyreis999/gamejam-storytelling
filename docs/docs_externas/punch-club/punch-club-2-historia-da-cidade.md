@@ -410,7 +410,7 @@ A [referência de Terminus](../universo-coreto/terminus.md) descreve uma cidade 
 
 Sua economia depende de contratos mercenários, cassino e coliseu. A praça divulga trabalhos; ruas largas comportam carroças de espólios; guildas mantêm espaços sociais e pequenos templos; o cuidado médico ocorre em barracas no centro. O cemitério próximo à entrada funciona como aviso, e estátuas diante das residências demonstram prestígio. O Dia do Combate, a cada cinco invernos, define a liderança entre os participantes dispostos a disputá-la.
 
-A [ficha de Ghork](../../terminus/personagens/nucleo/ghork.md) registra um personagem que chega à transição para o jogo após rejeição institucional, violência familiar e ajuda de pessoas próximas. Ele ainda tem a perna ferida; não há cura demonstrada. Sua capacidade de observar, estudar e improvisar oferece maneiras de participar da vida urbana sem reduzir sua contribuição à força física.
+A [ficha de Ghork](../universo-coreto/personagens/nucleo/ghork.md) registra um personagem que chega à transição para o jogo após rejeição institucional, violência familiar e ajuda de pessoas próximas. Ele ainda tem a perna ferida; não há cura demonstrada. Sua capacidade de observar, estudar e improvisar oferece maneiras de participar da vida urbana sem reduzir sua contribuição à força física.
 
 Essas bases permitem uma comparação produtiva: ambas as cidades valorizam combatentes, mas Terminus pode desenvolver seu próprio conflito sobre quem tem direito a trabalho, proteção e reconhecimento. Não precisa reproduzir chips, conspiração corporativa ou Cidade Alta.
 
@@ -476,7 +476,7 @@ Como hipótese, uma intervenção numa rua de carroças poderia ser importante t
 
 O efeito urbano seria mais convincente se continuasse existindo quando Ghork saísse do mapa: alguém assumiu uma tarefa, um serviço ganhou regularidade, uma pessoa passou a ser atendida. Isso permite mostrar reconhecimento por contribuição concreta sem antecipar uma cura, uma patente ou uma autoridade política para o protagonista.
 
-O [inventário de personagens](../../terminus/personagens/README.md) preserva outras restrições importantes: os amigos da despedida não estão automaticamente na viagem; a chegada ainda precisa ser desenvolvida; a estátua da moldura não explica por si só como Ghork será homenageado. O estudo da cidade deve ajudar a construir essas relações futuras, sem usar sua existência posterior para inventar retrospectivamente uma campanha já resolvida.
+O [inventário de personagens](../universo-coreto/personagens/README.md) preserva outras restrições importantes: os amigos da despedida não estão automaticamente na viagem; a chegada ainda precisa ser desenvolvida; a estátua da moldura não explica por si só como Ghork será homenageado. O estudo da cidade deve ajudar a construir essas relações futuras, sem usar sua existência posterior para inventar retrospectivamente uma campanha já resolvida.
 
 ## 9 Um registro de evolução para cada lugar
 
@@ -532,7 +532,7 @@ Punch Club 2 oferece exemplos especialmente úteis de recuperação de uma insti
 - [Atlas de Punch Club 2](punch-club-2-quests.html): diálogos, objetivos de missões, parâmetros e conexões extraídos da instalação local; inclui a campanha principal, Iron Fist e registros auxiliares. Os links ao longo do estudo abrem os eventos usados em cada análise.
 - Fontes primárias do atlas: `resources.assets`, com `lng_pt-br` e fallback `lng_en`; `StreamingAssets/aa/StandaloneWindows64/visualscripts_assets_flowscripts.bundle`, com os grafos FlowCanvas. Versão Unity identificada: `2022.3.30f1`. Os hashes estão em “Como ler e fontes” no HTML.
 - [Referência de Terminus](../universo-coreto/terminus.md): história de fundação, economia, espaços e costumes utilizados na comparação. Permanece material de referência externa.
-- [Ficha editorial de Ghork](../../terminus/personagens/nucleo/ghork.md): síntese do estado do personagem ao final do livro, com suas próprias referências e distinções entre fonte e criação.
-- [Inventário e critérios de continuidade](../../terminus/personagens/README.md): limites temporais, estatuto editorial e cuidados para a adaptação.
+- [Ficha editorial de Ghork](../universo-coreto/personagens/nucleo/ghork.md): síntese do estado do personagem ao final do livro, com suas próprias referências e distinções entre fonte e criação.
+- [Inventário e critérios de continuidade](../universo-coreto/personagens/README.md): limites temporais, estatuto editorial e cuidados para a adaptação.
 
 Os eventos do jogo foram analisados estaticamente. As fontes permitem discutir funções, acontecimentos e estados registrados; não constituem uma planta arquitetônica, um levantamento visual de todos os mapas ou uma simulação completa de todas as rotas de uma partida. A comparação com Terminus é uma análise de design, e as possibilidades futuras estão reunidas nas seções de adaptação.

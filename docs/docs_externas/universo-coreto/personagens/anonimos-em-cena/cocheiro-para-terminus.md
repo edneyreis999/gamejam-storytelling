@@ -78,7 +78,7 @@ As ações e limitações históricas estão registradas na seção 3. Elas não
 
 - **Estado editorial:** proposta com fontes identificadas; os complementos criativos não são fatos retroativamente atribuídos ao livro.
 - **Questões de continuidade e identidade:** O livro não mostra a viagem concluída. Nenhuma identidade secreta ou vínculo com guilda é criado.
-- **Livro, páginas impressas:** [205–206](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=103), [209](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=105), [211](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=106).
-- **Modelo:** [template de ficha de personagem](../../../template-ficha-personagem.md).
+- **Livro, páginas impressas:** [205–206](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=103), [209](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=105), [211](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=106).
+- **Modelo:** [template de ficha de personagem](../../../../template-ficha-personagem.md).
 - **Documentação relacionada:** [inventário, divergências e critérios](../README.md).
 - **Revisão aplicada:** limite temporal, distinção de fontes e estrutura da ficha. Escolhas, rotas e recursos aguardam o desenvolvimento do jogo, conforme o escopo desta entrega.

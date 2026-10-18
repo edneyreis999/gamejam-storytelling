@@ -11,3 +11,11 @@ Theme	STORYTELLING
 Every game tells a story. This week, the story is the point: what happens, who tells it, and how it unfolds as you play.
 
 Limitation	???
+
+## Documentação de Terminus
+
+Status: em desenvolvimento.
+
+- [Visão do jogo](docs/terminus/visao-do-jogo.md)
+- [Apresentação atual da campanha — Decisões que se acumulam](docs/terminus/campanha-decisoes-acumuladas.html)
+- [Roteiro para a próxima entrevista](docs/terminus/proxima-entrevista.md)

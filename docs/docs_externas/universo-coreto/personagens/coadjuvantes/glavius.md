@@ -85,7 +85,7 @@ As falas abaixo são **Criação**, exemplos de atuação; não são citações 
 
 - **Estado editorial:** proposta com fontes identificadas; os complementos criativos não são fatos retroativamente atribuídos ao livro.
 - **Questões de continuidade e identidade:** As notas falam em exílio, inimizade e desaparecimento de Orcquius, sem situar claramente tudo no tempo do livro. Não importar esse desfecho como fato já ocorrido nem contrariar sua defesa da Horda nas pp. 39–40.
-- **Livro, páginas impressas:** [30](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=16), [36–40](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=19), [74–75](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=38).
-- **Modelo:** [template de ficha de personagem](../../../template-ficha-personagem.md).
+- **Livro, páginas impressas:** [30](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=16), [36–40](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=19), [74–75](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=38).
+- **Modelo:** [template de ficha de personagem](../../../../template-ficha-personagem.md).
 - **Documentação relacionada:** [inventário, divergências e critérios](../README.md).
 - **Revisão aplicada:** limite temporal, distinção de fontes e estrutura da ficha. Escolhas, rotas e recursos aguardam o desenvolvimento do jogo, conforme o escopo desta entrega.

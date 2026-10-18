@@ -78,7 +78,7 @@ As ações e limitações históricas estão registradas na seção 3. Elas não
 
 - **Estado editorial:** proposta com fontes identificadas; os complementos criativos não são fatos retroativamente atribuídos ao livro.
 - **Questões de continuidade e identidade:** As páginas Surbag, Grug e Dubok no Notion parecem descrever o trio, mas o livro não fornece nomes nem correspondência segura entre as falas e essas identidades. Manter a designação ordinal.
-- **Livro, páginas impressas:** [192](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=97), [199](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=100), [203](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=102), [206](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=104), [208–209](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=105).
-- **Modelo:** [template de ficha de personagem](../../../template-ficha-personagem.md).
+- **Livro, páginas impressas:** [192](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=97), [199](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=100), [203](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=102), [206](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=104), [208–209](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=105).
+- **Modelo:** [template de ficha de personagem](../../../../template-ficha-personagem.md).
 - **Documentação relacionada:** [inventário, divergências e critérios](../README.md).
 - **Revisão aplicada:** limite temporal, distinção de fontes e estrutura da ficha. Escolhas, rotas e recursos aguardam o desenvolvimento do jogo, conforme o escopo desta entrega.

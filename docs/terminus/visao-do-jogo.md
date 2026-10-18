@@ -20,6 +20,12 @@ O jogador se desloca por Terminus como em Punch Club, entra nos estabelecimentos
 
 Vencer o campeonato de guildas de Terminus com o time de Ghork é o objetivo que conduz a campanha, mas não seu encerramento definitivo. A vitória revela a ameaça dos Ignotos e leva a um confronto obrigatório contra um chefão, incluído na entrega da game jam.
 
+## Referências narrativas
+
+Por preferência autoral, **Punch Club 1 é a referência narrativa principal; Punch Club 2 é complementar**. A inspiração inclui acontecimentos, encontros, conflitos, relações, reviravoltas e progressão da história, além do formato dos diagramas. Esses elementos servem como pontos de partida para adaptações ao passado de Ghork e ao mundo de Terminus, sem se tornarem automaticamente fatos do jogo.
+
+O [roteiro para a próxima entrevista](proxima-entrevista.md) orienta o uso dessas referências para desenvolver o núcleo dramático da campanha.
+
 ## Estrutura da campanha e guildas
 
 A Jornada do Herói serve como referência flexível para a transformação de Ghork. Seus marcos podem se combinar ou atravessar mais de um arco da campanha; não representam doze capítulos obrigatórios.

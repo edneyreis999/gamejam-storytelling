@@ -87,7 +87,7 @@ As falas abaixo são **Criação**, exemplos de atuação; não são citações 
 
 - **Estado editorial:** proposta com fontes identificadas; os complementos criativos não são fatos retroativamente atribuídos ao livro.
 - **Questões de continuidade e identidade:** O broche é um presente material; o calor e a sensação de proteção não comprovam encantamento.
-- **Livro, páginas impressas:** [41](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=21), [44](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=23), [172](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=87), [174–175](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=88), [194](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=98), [196–197](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=99), [200–201](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=101).
-- **Modelo:** [template de ficha de personagem](../../../template-ficha-personagem.md).
+- **Livro, páginas impressas:** [41](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=21), [44](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=23), [172](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=87), [174–175](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=88), [194](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=98), [196–197](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=99), [200–201](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=101).
+- **Modelo:** [template de ficha de personagem](../../../../template-ficha-personagem.md).
 - **Documentação relacionada:** [inventário, divergências e critérios](../README.md).
 - **Revisão aplicada:** limite temporal, distinção de fontes e estrutura da ficha. Escolhas, rotas e recursos aguardam o desenvolvimento do jogo, conforme o escopo desta entrega.

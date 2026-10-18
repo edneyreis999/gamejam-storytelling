@@ -87,7 +87,7 @@ As falas abaixo são **Criação**, exemplos de atuação; não são citações 
 
 - **Estado editorial:** proposta com fontes identificadas; os complementos criativos não são fatos retroativamente atribuídos ao livro.
 - **Questões de continuidade e identidade:** Grafia do livro: Theodor Rheed. Theodore e Reed são variantes de referência. Não criar sua presença no passado narrado, não explicar a construção da estátua e não inventar a origem exata das memórias além da explicação que ele dá.
-- **Livro, páginas impressas:** [12–16](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=7), [43](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=22), [212](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=107).
-- **Modelo:** [template de ficha de personagem](../../../template-ficha-personagem.md).
+- **Livro, páginas impressas:** [12–16](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=7), [43](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=22), [212](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=107).
+- **Modelo:** [template de ficha de personagem](../../../../template-ficha-personagem.md).
 - **Documentação relacionada:** [inventário, divergências e critérios](../README.md).
 - **Revisão aplicada:** limite temporal, distinção de fontes e estrutura da ficha. Escolhas, rotas e recursos aguardam o desenvolvimento do jogo, conforme o escopo desta entrega.

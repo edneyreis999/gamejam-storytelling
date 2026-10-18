@@ -78,7 +78,7 @@ A ficha documenta crença e menção. Não há manifestação controlável, avat
 
 - **Estado editorial:** proposta com fontes identificadas; os complementos criativos não são fatos retroativamente atribuídos ao livro.
 - **Questões de continuidade e identidade:** O nome aparece sem acento no texto da wiki. Não atribuir a esta entidade a profecia de Banxir.
-- **Livro, páginas impressas:** [64](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=33).
-- **Modelo:** [template de ficha de personagem](../../../template-ficha-personagem.md).
+- **Livro, páginas impressas:** [64](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=33).
+- **Modelo:** [template de ficha de personagem](../../../../template-ficha-personagem.md).
 - **Documentação relacionada:** [inventário, divergências e critérios](../README.md).
 - **Revisão aplicada:** limite temporal, distinção de fontes e estrutura da ficha. Escolhas, rotas e recursos aguardam o desenvolvimento do jogo, conforme o escopo desta entrega.

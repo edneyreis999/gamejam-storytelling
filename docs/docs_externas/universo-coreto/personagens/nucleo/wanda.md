@@ -87,7 +87,7 @@ As falas abaixo são **Criação**, exemplos de atuação; não são citações 
 
 - **Estado editorial:** proposta com fontes identificadas; os complementos criativos não são fatos retroativamente atribuídos ao livro.
 - **Questões de continuidade e identidade:** O livro a descreve baixa (p. 190); as notas dizem alta, 1,92 m. Prevalece o livro. Sua competência médica e arcana anotada não autoriza curar o ferimento que ela admite não conseguir tratar.
-- **Livro, páginas impressas:** [185](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=93), [190–193](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=96), [196](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=99), [198–199](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=100).
-- **Modelo:** [template de ficha de personagem](../../../template-ficha-personagem.md).
+- **Livro, páginas impressas:** [185](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=93), [190–193](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=96), [196](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=99), [198–199](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=100).
+- **Modelo:** [template de ficha de personagem](../../../../template-ficha-personagem.md).
 - **Documentação relacionada:** [inventário, divergências e critérios](../README.md).
 - **Revisão aplicada:** limite temporal, distinção de fontes e estrutura da ficha. Escolhas, rotas e recursos aguardam o desenvolvimento do jogo, conforme o escopo desta entrega.

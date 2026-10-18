@@ -32,7 +32,7 @@ A história de Ghork ocorre anos antes desta noite. Não criar uma versão conte
 
 ## Referências
 
-- **Livro, páginas impressas:** [13–15](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=7).
+- **Livro, páginas impressas:** [13–15](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=7).
 - **Origem dos complementos:** criação editorial, identificada acima; sem nova biografia adulta.
-- **Estrutura:** versão reduzida do [template](../../../template-ficha-personagem.md), conforme o recorte da entrevista.
+- **Estrutura:** versão reduzida do [template](../../../../template-ficha-personagem.md), conforme o recorte da entrevista.
 - **Critérios:** [fontes e continuidade](../README.md#fontes-e-critérios).

@@ -78,7 +78,7 @@ Não se aplica como personagem de combate ou NPC real neste recorte. Eventual re
 
 - **Estado editorial:** proposta com fontes identificadas; os complementos criativos não são fatos retroativamente atribuídos ao livro.
 - **Questões de continuidade e identidade:** A participação de Dam nesse relato também não é um fato de sua biografia. A ave não recebe nome de espécie confirmado: o valor sobrenatural da pena também faz parte do engano.
-- **Livro, páginas impressas:** [23–24](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=12).
-- **Modelo:** [template de ficha de personagem](../../../template-ficha-personagem.md).
+- **Livro, páginas impressas:** [23–24](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=12).
+- **Modelo:** [template de ficha de personagem](../../../../template-ficha-personagem.md).
 - **Documentação relacionada:** [inventário, divergências e critérios](../README.md).
 - **Revisão aplicada:** limite temporal, distinção de fontes e estrutura da ficha. Escolhas, rotas e recursos aguardam o desenvolvimento do jogo, conforme o escopo desta entrega.

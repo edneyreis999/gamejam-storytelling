@@ -78,7 +78,7 @@ As ações e limitações históricas estão registradas na seção 3. Elas não
 
 - **Estado editorial:** proposta com fontes identificadas; os complementos criativos não são fatos retroativamente atribuídos ao livro.
 - **Questões de continuidade e identidade:** O livro usa El’Doron. O Notion usa Polis El’rodon; a equivalência é provável, mas a grafia do livro prevalece. Não inventar nova reconciliação familiar.
-- **Livro, páginas impressas:** [34](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=18), [47–49](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=24), [209](../../../docs_externas/universo-coreto/AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=105).
-- **Modelo:** [template de ficha de personagem](../../../template-ficha-personagem.md).
+- **Livro, páginas impressas:** [34](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=18), [47–49](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=24), [209](../../AF_Miolo_Ghork_214Pgs_14x21cm_V3.pdf#page=105).
+- **Modelo:** [template de ficha de personagem](../../../../template-ficha-personagem.md).
 - **Documentação relacionada:** [inventário, divergências e critérios](../README.md).
 - **Revisão aplicada:** limite temporal, distinção de fontes e estrutura da ficha. Escolhas, rotas e recursos aguardam o desenvolvimento do jogo, conforme o escopo desta entrega.
