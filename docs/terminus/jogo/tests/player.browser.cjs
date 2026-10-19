@@ -384,45 +384,83 @@ for (const sample of [{ id: 'long-dialogue', scene: 'gB5', choices: false }, { i
     }
   });
 
-test('P19: real audio becomes audible after interaction and stays silent when muted', async ({ page }, info) => {
+for (const transport of ['file', 'http']) test('P19-' + transport + ': recorded audio starts after input, keeps playing and obeys independent volumes', async ({ page, serverURL }, info) => {
   await page.addInitScript(() => {
-    const NativeAudioContext = window.AudioContext;
-    window.playerAudioObservations = { contexts: 0, peaks: [] };
-    window.AudioContext = class extends NativeAudioContext {
-      constructor(...args) {
-        super(...args);
-        window.playerAudioObservations.contexts++;
-        const analyser = this.createAnalyser();
-        analyser.fftSize = 256;
-        analyser.connect(this.destination);
-        const createGain = this.createGain.bind(this);
-        this.createGain = () => {
-          const gain = createGain(), connect = gain.connect.bind(gain);
-          gain.connect = target => connect(target === this.destination ? analyser : target);
-          return gain;
-        };
-        const samples = new Uint8Array(analyser.fftSize);
-        setInterval(() => {
-          analyser.getByteTimeDomainData(samples);
-          window.playerAudioObservations.peaks.push(Math.max(...samples.map(value => Math.abs(value - 128))));
-        }, 20);
+    const NativeAudio = window.Audio;
+    window.observedAudio = [];
+    window.Audio = function (...args) {
+      const media = new NativeAudio(...args);
+      window.observedAudio.push(media);
+      if (location.protocol === 'http:') {
+        const context = window.audioProbeContext ||= new AudioContext();
+        const analyser = context.createAnalyser();
+        context.createMediaElementSource(media).connect(analyser);
+        analyser.connect(context.destination);
+        media.probe = analyser;
       }
+      return media;
     };
   });
+  await page.goto(transport === 'file' ? fileURL : serverURL);
+  expect(await page.evaluate(() => observedAudio.length)).toBe(0);
+  await page.locator('#menu-button').click();
+  await expect.poll(() => page.evaluate(() => observedAudio.some(a => a.src.endsWith('Theme1.ogg') && a.currentTime > 0.1 && !a.paused && a.volume > 0))).toBe(true);
+  if (transport === 'http') await expect.poll(() => page.evaluate(() => observedAudio.some(a => {
+    const samples = new Uint8Array(a.probe.fftSize); a.probe.getByteTimeDomainData(samples);
+    return samples.some(value => Math.abs(value - 128) > 1);
+  }))).toBe(true);
+  await page.locator('#menu-close').click();
+  await page.locator('#menu-button').click();
+  expect(await page.evaluate(() => observedAudio.filter(a => a.src.endsWith('Theme1.ogg')).length)).toBe(1);
+  await page.locator('#music-volume').fill('0');
+  await expect.poll(() => page.evaluate(() => observedAudio.filter(a => a.loop).every(a => a.paused || a.volume === 0))).toBe(true);
+  await page.locator('#menu-close').click();
+  await expect.poll(() => page.evaluate(() => observedAudio.some(a => a.src.endsWith('Cancel1.ogg') && !a.paused && a.volume > 0))).toBe(true);
+  await page.locator('#menu-button').click();
+  await page.locator('#volume').fill('0');
+  await page.locator('#music-volume').fill('0.25');
+  await expect.poll(() => page.evaluate(() => observedAudio.some(a => a.loop && !a.paused && a.volume > 0))).toBe(true);
+  await capture(page, info, 'audio-menu');
+  await page.locator('#sound').uncheck();
+  expect(await page.evaluate(() => observedAudio.every(a => a.paused))).toBe(true);
+  await page.reload();
+  await page.locator('#menu-button').click();
+  await expect(page.locator('#sound')).not.toBeChecked();
+  await expect(page.locator('#volume')).toHaveValue('0');
+  await expect(page.locator('#music-volume')).toHaveValue('0.25');
+  expect(await page.evaluate(() => observedAudio.every(a => a.paused))).toBe(true);
+  await page.locator('#sound').check();
+  await expect.poll(() => page.evaluate(() => observedAudio.some(a => a.loop && !a.paused && a.currentTime > 0.1))).toBe(true);
+});
+
+test('P20: music follows imported scenes and battles, with no replayed rewards', async ({ page }, info) => {
+  await page.addInitScript(() => {
+    const NativeAudio = window.Audio;
+    window.observedAudio = [];
+    window.Audio = function (...args) { const media = new NativeAudio(...args); observedAudio.push(media); return media; };
+  });
   await page.goto(fileURL);
-  expect(await page.evaluate(() => window.playerAudioObservations.contexts)).toBe(0);
+  const cases = [
+    [mapFixture(), 'Town1'],
+    [sceneFixture('intro'), 'Town6'],
+    [sceneFixture('invasion'), 'Dungeon1'],
+    [play({ mode: 'max', stopAt: s => s.battle?.id === 't5' }).game, 'Battle5'],
+    [sceneFixture('ending'), 'Theme2'],
+  ];
+  for (const [game, track] of cases) {
+    await importSave(page, game.save());
+    await expect.poll(() => page.evaluate(name => observedAudio.some(a => a.src.endsWith('/' + name + '.ogg') && !a.paused && a.currentTime > 0.1), track)).toBe(true);
+    await expect.poll(() => page.evaluate(() => observedAudio.filter(a => a.loop && !a.paused).length)).toBe(1);
+    expect(await page.evaluate(() => observedAudio.some(a => /Item1|Victory1|Defeat1/.test(a.src)))).toBe(false);
+    expect(await saved(page)).toEqual(game.save());
+  }
+  await settings(page, { language: 'pt-BR' });
+  await page.setViewportSize({ width: 900, height: 600 });
   await page.locator('#menu-button').click();
-  await page.locator('#menu-close').click();
-  await expect.poll(() => page.evaluate(() => window.playerAudioObservations.peaks.some(peak => peak > 0))).toBe(true);
-  const audible = await page.evaluate(() => Math.max(...window.playerAudioObservations.peaks));
-  await settings(page, { sound: false });
-  await expect.poll(() => page.evaluate(() => window.playerAudioObservations.peaks.slice(-5).every(peak => peak === 0))).toBe(true);
-  await page.evaluate(() => { window.playerAudioObservations.peaks = []; });
-  await page.locator('#menu-button').click();
-  await page.locator('#menu-close').click();
-  await expect.poll(() => page.evaluate(() => window.playerAudioObservations.peaks.length)).toBeGreaterThanOrEqual(5);
-  expect(await page.evaluate(() => Math.max(...window.playerAudioObservations.peaks))).toBe(0);
-  await info.attach('audio-signal', { body: JSON.stringify({ audiblePeak: audible, mutedPeak: 0 }), contentType: 'application/json' });
+  const slider = page.getByLabel('Volume da música');
+  await slider.focus(); await slider.press('ArrowRight');
+  await expect(slider).toHaveValue('0.3');
+  await capture(page, info, 'audio-menu-pt-narrow');
 });
 
 const narrationSamples = [

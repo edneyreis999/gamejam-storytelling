@@ -15,7 +15,7 @@ Abra [index.html](index.html) no Chrome ou Edge. A edição funciona diretamente
 - Clique em um destino do mapa para visitar. No toque, selecione e toque novamente. Tab e setas percorrem os locais; Enter confirma. Ghork caminha até o destino; **Chegar ao destino** abrevia o percurso. **Localizar no mapa**, no diário, apenas destaca o local.
 - Os percursos levam até 2,4 segundos, com deslocamento e passos na metade da velocidade da primeira edição.
 - No combate, role o D20. O resultado é salvo antes da animação. **Abreviar animação** não muda o dado. D20 + aliados precisa superar a dificuldade; empate é revés. Cargas permitem outra rolagem; aceitar o revés permite revanche gratuita.
-- O menu oferece efeitos sonoros, volume e movimento reduzido. A preferência de movimento do sistema também é respeitada. Os sons são sintetizados localmente, começam somente após interação e não incluem música ou voz.
+- O menu oferece som geral, volumes separados de música e efeitos e movimento reduzido. A preferência de movimento do sistema também é respeitada. Músicas e efeitos começam após a primeira interação; não há voz nem som por letra ou avanço de fala. A música pausa ao ocultar a aba.
 - Use a janela na horizontal. Textos extensos, escolhas, diário e menu têm rolagem interna quando necessário.
 
 ## Guardar ou transportar a partida
@@ -44,7 +44,8 @@ O gerador consulta as fontes de produção em Node e escreve `runtime/`: imagens
 | Responsabilidade | Fonte |
 | --- | --- |
 | Entradas, diário, opções, leitura e armazenamento | `player.js` |
-| Caminhos do mapa, caminhada, formações e síntese sonora | `presentation.js` |
+| Caminhos do mapa, caminhada e formações | `presentation.js` |
+| Catálogo, seleção de trilha, reprodução e volumes | `audio.js`, com gravações em `audio/` |
 | Composição, estados e transições | `player.css` |
 | Tokens adicionais da edição | `tokens.css` |
 | Registro de arte e traduções para execução | `scripts/build-runtime.cjs`, a partir das fontes do protótipo |
@@ -69,11 +70,30 @@ node .agents/skills/ui-craft/scripts/detect-token-drift.mjs docs/terminus/jogo -
 
 Os testes usam saves produzidos pelas regras reais e importados pela interface. Verificação automatizada não representa aceite artístico, dispositivo físico ou playtest humano completo. O protótipo editorial continua em [prototipo/index.html](../prototipo/index.html).
 
-### Resultado em 19 de outubro de 2026
+## Áudio
 
-Passaram 93 testes Node e 40 cenários de navegador (28 da edição para jogadores e 12 do protótipo), sem cenários ignorados ou instáveis. A execução final usou dois workers e dois navegadores; os limites de dez workers e dez navegadores vieram de `loki.config.json`. Durante a inspeção visual paralela, o pico coordenado foi de três navegadores. Contextos, navegadores e servidores de teste foram encerrados sem falhas de limpeza.
+As 16 gravações de [audio/](audio/) são cópias sem alteração de [rpg-maker/Terminus/audio/](../../../rpg-maker/Terminus/audio/). O catálogo em [audio.js](audio.js) registra seus caminhos e ganhos por efeito. O HTML usa somente as cópias locais; não precisa acessar a pasta do RPG Maker para reproduzi-las.
 
-As evidências estão em `.artifacts/terminus-player/unit-tests.tap`, `.artifacts/terminus-player/browser-results.json` e nas pastas `browser/` e `visual/` desse mesmo diretório. A conferência incluiu abertura local e por servidor, retomada de navegação, áudio após interação, leitura e escolhas em janela estreita, além das verificações de campanha, idiomas e saves. A entrega permanece **em desenvolvimento**.
+| Contexto | Arquivo em audio/ |
+| --- | --- |
+| Abertura | bgm/Theme1.ogg |
+| Cidade e conversas comuns | bgm/Town1.ogg |
+| Coreto e moldura da história | bgm/Town6.ogg |
+| Invasão e preparação do confronto final | bgm/Dungeon1.ogg |
+| Combates comuns e campeonato | bgm/Battle1.ogg |
+| Confronto com Neral | bgm/Battle5.ogg |
+| Encerramento | bgm/Theme2.ogg |
+| Navegação, escolhas, retorno | se/Cursor1.ogg, se/Decision1.ogg, se/Cancel1.ogg |
+| Passos, dado, recompensa, portal | se/Move1.ogg, se/Switch1.ogg, se/Item1.ogg, se/Teleport.ogg |
+| Vitória e revés | me/Victory1.ogg, me/Defeat1.ogg |
+
+A transição de trilha dura um segundo. Menus e diário conservam a música atual. As vinhetas de resultado reduzem temporariamente a trilha a 25% do volume configurado. Efeitos repetidos do mesmo tipo substituem a própria cauda para evitar acúmulo.
+
+Os padrões são música em 25% e efeitos em 35%, com som ativado. Preferências anteriores de silêncio e volume de efeitos são preservadas; `musicVolume` é acrescentado às opções, sem alterar o save V3. Os controles usam os mesmos tokens e estados nativos do menu: rótulos nos dois idiomas, foco visível e operação por teclado. Silenciar é reversível; os controles de volume continuam disponíveis.
+
+Para trocar uma gravação, copie o arquivo de origem para a categoria correspondente e atualize o catálogo e esta tabela. Mantenha a seleção por contexto fora das regras da campanha. A ausência de áudio não bloqueia a história.
+
+A verificação técnica não substitui a avaliação auditiva da seleção musical, que permanece pendente.
 
 ### Revisão de cores, caminhada e narração — 19 de outubro de 2026
 
