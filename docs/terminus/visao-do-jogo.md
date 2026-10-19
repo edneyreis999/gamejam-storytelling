@@ -54,6 +54,8 @@ O plano de escrita prevê três momentos de contato integrados à campanha, com 
 
 ## Estrutura da campanha e guildas
 
+A guilda C, liderada por Sevrak Vey, chama-se **Chapéu Minúsculo** (**Tiny Hat** em inglês), conforme alteração confirmada pelo autor em 19/10/2026. Seus bustos usam um pequeno chapéu pontudo escuro, com faixa e borda claras. Sevrak o usa sempre; Ghork e os aliados convidados o usam somente depois da adesão à guilda C. O traje representa a equipe dessa trajetória, sem alterar vínculos anteriores, regras ou recrutamentos. A [produção de bustos](arte/bustos/tiny-hat/README.md) registra as variantes.
+
 A Jornada do Herói serve como referência flexível para a transformação de Ghork. Seus marcos podem se combinar ou atravessar mais de um arco da campanha; não representam doze capítulos obrigatórios.
 
 O primeiro arco trata da escolha entre três guildas. Cada guilda tem cinco missões sequenciais, das quais a primeira é obrigatória. O jogador pode intercalar o avanço entre elas. As três apresentações precisam estar concluídas antes do compromisso no confronto final desse arco.

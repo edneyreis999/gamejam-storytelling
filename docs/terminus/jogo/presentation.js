@@ -76,7 +76,7 @@
     const path = route(from, to);
     const lengths = path.slice(1).map((point, i) => distance(path[i], point));
     const total = lengths.reduce((sum, length) => sum + length, 0);
-    const duration = Math.min(1200, Math.max(360, total * 1.6));
+    const duration = Math.min(2400, Math.max(720, total * 3.2));
     let frame = null;
     let started = null;
     let settled = false;
@@ -113,7 +113,7 @@
       const dx = b[0] - a[0];
       const dy = b[1] - a[1];
       direction = Math.abs(dx) > Math.abs(dy) ? (dx < 0 ? 1 : 2) : (dy < 0 ? 3 : 0);
-      const step = Math.floor(elapsed / 180);
+      const step = Math.floor(elapsed / 360);
       const point = [a[0] + dx * progress, a[1] + dy * progress];
       draw(point, [0, 1, 2, 1][step % 4]);
       if (step !== lastStep && step % 2 === 0) {

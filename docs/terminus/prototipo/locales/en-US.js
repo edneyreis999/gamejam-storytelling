@@ -2098,8 +2098,8 @@
   },
   {
     "id": "text.0d54a2910f67a9a4",
-    "pt": "E04 · Defender Ofício da Ascensão",
-    "en": "E04 · Speak for the Guild of Ascension"
+    "pt": "E04 · Defender Chapéu Minúsculo",
+    "en": "E04 · Speak for Tiny Hat"
   },
   {
     "id": "text.a108c7240b84d1b0",
@@ -5802,9 +5802,9 @@
     "en": "Open Roads"
   },
   {
-    "id": "ui.dab52042e0830ae4",
-    "pt": "Ofício da Ascensão",
-    "en": "Guild of Ascension"
+    "id": "ui.eb811ac8b775fe38",
+    "pt": "Chapéu Minúsculo",
+    "en": "Tiny Hat"
   },
   {
     "id": "ui.e7c2478a3d108987",
@@ -9119,9 +9119,9 @@
     "template": true
   },
   {
-    "id": "ui.edf54043adb0d9a5",
-    "pt": "E04 · Defender Ofício da Ascensão: {p0}",
-    "en": "E04 · Speak for the Guild of Ascension: {p0}",
+    "id": "ui.580be196b7c96500",
+    "pt": "E04 · Defender Chapéu Minúsculo: {p0}",
+    "en": "E04 · Speak for Tiny Hat: {p0}",
     "template": true
   },
   {

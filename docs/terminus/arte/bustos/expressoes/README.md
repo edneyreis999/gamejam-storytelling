@@ -2,6 +2,10 @@
 
 Status: em desenvolvimento.
 
+O lote [Chapéu Minúsculo — Tiny Hat](../tiny-hat/README.md) acrescenta 60 variantes de traje para Sevrak, Ghork e os dez recrutáveis. Cada conjunto tem cinco expressões em `<id>/tiny-hat/`, preservando os originais. O chapéu pontudo escuro tem faixa e borda claras para destacar-se do cabelo.
+
+O conjunto ativo de Rheed passou a ser [rheed-colorido-v1](../../../../../assets/terminus/bustos/expressoes/rheed-colorido-v1/) em 19/10/2026. As cinco expressões foram geradas individualmente com `image_gen`, a partir da referência colorida do autor e do novo neutro. [Prompts e exportação](../rheed-coreto-coloridos.json). Os arquivos sépia de `rheed/` e seus registros históricos continuam preservados. Nesta versão colorida, a exportação de tamanho usa interpolação bicúbica; o formato final permanece PNG RGBA 504 × 672.
+
 Rheed foi atualizado em 19/10/2026 conforme a nova referência do autor: [busto base e registro v2](../rheed-v2.json). As cinco expressões preservam o figurino ornamentado, a caneca e o tapa-olho à direita da imagem. Prompts e verificações atuais estão em `registros/rheed-*.json`; os arquivos anteriores permanecem no [histórico da revisão](../historico/rheed-2026-10-19/).
 
 Produção concluída de 255 bustos: cinco expressões para cada um dos 51 visuais, incluindo as três formas de Neral. O lote de [Lala e oito figurantes](lala-figurantes.md) acrescenta 45 imagens aos 210 bustos anteriores. Os 42 concepts anteriores permanecem preservados; nos nove conjuntos novos, o neutro também serve como base. Todos os conjuntos passaram pela revisão interna; a aprovação artística do autor permanece pendente.

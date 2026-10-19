@@ -8,6 +8,62 @@ const fs = require('node:fs');
 
 test.use({ hasTouch: true, launchOptions: { ignoreDefaultArgs: ['--disable-back-forward-cache'] } });
 
+for (const language of ['pt-BR', 'en-US']) test(`Tiny Hat ${language}: confirmed adhesion changes Ghork during the commitment scene`, async ({page}, info) => {
+  const game = play({guild: 'C', mode: 'solo', stopAt: current => current.scene?.quest === 'commitC'}).game;
+  while (E.page(game.state).passage.speaker !== 'Ghork') game.dispatch({type: 'advance'});
+  expect(game.state.guild).toBe('C');
+  expect(game.state.stage).toBe(1);
+  await page.goto(fileURL);
+  await settings(page, {language, 'text-speed': 'instant'});
+  await importSave(page, game.save());
+  await expect(page.locator('.portrait:not(.portrait-out) img')).toHaveAttribute('src', /\/ghork\/tiny-hat\//);
+  await capture(page, info, 'confirmed-adhesion-' + language);
+  expect(await saved(page)).toEqual(game.save());
+});
+
+for (const guild of ['A', 'B', 'C']) test(`Tiny Hat ${guild}: recruited allies in battle, journal and restored save`, async ({page}, info) => {
+  const game = play({guild, mode: 'max', paid: true, stopAt: current => current.battle?.id === 't3'}).game;
+  expect(game.state.battle.id).toBe('t3');
+  await page.goto(fileURL);
+  await settings(page, {'text-speed': 'instant'});
+  await importSave(page, game.save());
+  const allies = page.locator('.formation.allies img');
+  await expect(allies).toHaveCount(1 + game.state.recruits.filter(r => r.invited).length);
+  for (const portrait of await allies.all()) {
+    if (guild === 'C') await expect(portrait).toHaveAttribute('src', /\/tiny-hat\/neutro\.png$/);
+    else await expect(portrait).not.toHaveAttribute('src', /\/tiny-hat\//);
+  }
+  for (const portrait of await page.locator('.formation.enemies img').all())
+    await expect(portrait).not.toHaveAttribute('src', /\/tiny-hat\//);
+  await capture(page, info, 'battle-'+guild);
+  await page.locator('#journal-button').click();
+  await page.locator('#tab-team').click();
+  for (const portrait of await page.locator('.journal-member img').all()) {
+    if (guild === 'C') await expect(portrait).toHaveAttribute('src', /\/tiny-hat\/neutro\.png$/);
+    else await expect(portrait).not.toHaveAttribute('src', /\/tiny-hat\//);
+  }
+  await capture(page, info, 'journal-'+guild);
+  await page.reload();
+  await page.locator('#continue-game').click();
+  expect(await state(page)).toEqual(game.state);
+  if (guild === 'C') await expect(page.locator('.formation.allies img').first()).toHaveAttribute('src', /\/tiny-hat\/neutro\.png$/);
+});
+
+test('Tiny Hat: Sevrak wears it before adhesion while Ghork does not', async ({page}, info) => {
+  await page.goto(fileURL);
+  await settings(page, {'text-speed': 'instant'});
+  for (const speaker of ['Ghork', 'Sevrak']) {
+    const game = sceneFixture('gC1', current => current.passage.type === 'dialogue' && current.passage.speaker === speaker);
+    expect(game.state.guild).toBeNull();
+    await importSave(page, game.save());
+    const portrait = page.locator('.portrait:not(.portrait-out) img');
+    await expect(portrait).toBeVisible();
+    if (speaker === 'Sevrak') await expect(portrait).toHaveAttribute('src', /\/tiny-hat\//);
+    else await expect(portrait).not.toHaveAttribute('src', /\/tiny-hat\//);
+    await capture(page, info, 'before-adhesion-'+speaker);
+  }
+});
+
 for (const transport of ['file', 'http']) test(`P01-${transport}: local title, shared game, no editorial or external resources`, async ({ page, serverURL }, info) => {
   const resources = [];
   page.on('request', request => resources.push(request.url()));
@@ -367,4 +423,127 @@ test('P19: real audio becomes audible after interaction and stays silent when mu
   await expect.poll(() => page.evaluate(() => window.playerAudioObservations.peaks.length)).toBeGreaterThanOrEqual(5);
   expect(await page.evaluate(() => Math.max(...window.playerAudioObservations.peaks))).toBe(0);
   await info.attach('audio-signal', { body: JSON.stringify({ audiblePeak: audible, mutedPeak: 0 }), contentType: 'application/json' });
+});
+
+const narrationSamples = [
+  { id: 'short', scene: 'intro', passage: 'intro.p3.body.1' },
+  { id: 'long', scene: 'side2', passage: 'side2.p1.body.1' },
+  { id: 'choices', scene: 'alliance', passage: 'alliance.p2.body.1' },
+  { id: 'action', scene: 'gB3', passage: 'gB3.p2.body.2' },
+];
+for (const sample of narrationSamples) for (const width of [1280, 844]) for (const language of ['en-US', 'pt-BR'])
+  test(`P20-${sample.id}-${width}-${language}: narration stays centered and readable with reachable controls`, async ({ page }, info) => {
+    await page.setViewportSize({ width, height: width === 1280 ? 720 : 390 });
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await page.goto(fileURL);
+    await settings(page, { language, 'text-speed': 'slow', 'reduce-motion': false });
+    const game = sceneFixture(sample.scene, current => current.passage.id === sample.passage);
+    await importSave(page, game.save());
+    const card = page.locator('.description-panel');
+    await expect(card).toHaveAttribute('data-revealing', 'false');
+    await expect(card.locator('.speaker-plate')).toHaveCount(0);
+    await expect(page.locator('.dialogue-panel')).toHaveCount(0);
+    L.setLanguage(language);
+    await expect(card.locator('.passage-text > [aria-hidden="true"]')).toHaveText(L.text(E.page(game.state).passage.text));
+    const frame = await page.locator('#game-frame').boundingBox();
+    const bounds = await card.boundingBox();
+    expect(Math.abs(bounds.x + bounds.width / 2 - frame.x - frame.width / 2)).toBeLessThan(1);
+    expect(Math.abs(bounds.y + bounds.height / 2 - frame.y - frame.height / 2)).toBeLessThan(1);
+    expect(await card.evaluate(node => {
+      const style = getComputedStyle(node);
+      return { colors: [style.backgroundColor, style.color, style.borderLeftColor].map(color => color.match(/\d+/g).map(Number)), alignment: style.textAlign };
+    })).toEqual({ colors: [[85, 32, 112], [248, 233, 204], [248, 233, 204]], alignment: 'left' });
+    if (sample.id === 'action') {
+      const object = await page.locator('.scene-object').boundingBox();
+      expect(object.y + object.height).toBeLessThanOrEqual(bounds.y);
+      await expect(page.locator('.scene-object img')).toBeVisible();
+    }
+    const control = card.locator('button:visible').last();
+    await control.scrollIntoViewIfNeeded();
+    const button = await control.boundingBox();
+    expect(button.height).toBeGreaterThanOrEqual(44);
+    expect(button.y + button.height).toBeLessThanOrEqual(frame.y + frame.height);
+    expect(await control.evaluate(node => {
+      const rect = node.getBoundingClientRect();
+      return node.contains(document.elementFromPoint(rect.x + rect.width / 2, rect.y + rect.height / 2));
+    })).toBe(true);
+    await capture(page, info, 'narration');
+    const before = await saved(page);
+    if (width === 844) await control.tap();
+    else { await control.focus(); await page.keyboard.press('Enter'); }
+    expect((await saved(page)).commands.length).toBe(before.commands.length + 1);
+  });
+
+test('P21: entering narration displays all text immediately before returning to dialogue', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto(fileURL);
+  await settings(page, { 'text-speed': 'slow', 'reduce-motion': false });
+  const game = sceneFixture('intro', current => current.passage.id === 'intro.p2.body.1');
+  await importSave(page, game.save());
+  await page.locator('.advance').click();
+  await expect(page.locator('.description-panel')).toHaveAttribute('data-revealing', 'false');
+  game.dispatch({ type: 'advance' });
+  L.setLanguage('en-US');
+  await expect(page.locator('.passage-text > [aria-hidden="true"]')).toHaveText(L.text(E.page(game.state).passage.text));
+  await page.locator('.advance').click();
+  await expect(page.locator('.dialogue-panel')).toHaveAttribute('data-revealing', 'true');
+  await expect(page.locator('.description-panel')).toHaveCount(0);
+});
+
+test('P22: colored Coreto and Reed persist from title through portal visits and finale', async ({ page, serverURL }, info) => {
+  await page.goto(serverURL);
+  const background = page.locator('.scene-background:not(.outgoing-background)');
+  await expect(background).toHaveAttribute('src', /coreto-noite-historia-colorido-v1\.png$/);
+  await capture(page, info, 'colored-title');
+  await page.locator('#start-game').click();
+  await expect(background).toHaveAttribute('src', /coreto-noite-historia-colorido-v1\.png$/);
+  await expect(page.locator('.portrait:not(.portrait-out) img')).toHaveAttribute('src', /rheed-colorido-v1\//);
+  await capture(page, info, 'colored-intro');
+  const portraits = await page.evaluate(async () => {
+    const A = window.TerminusArt;
+    return Promise.all(['neutro', 'feliz', 'triste', 'raiva', 'confuso'].map(async expression => {
+      const src = A.assets[A.portrait('Rheed', expression)].preview;
+      const image = new Image(); image.src = src; await image.decode();
+      const canvas = document.createElement('canvas'); canvas.width = canvas.height = 128;
+      const context = canvas.getContext('2d');
+      context.drawImage(image, 0, 0, 128, 128);
+      const pixels = context.getImageData(0, 0, 128, 128).data;
+      let transparent = 0, colored = 0;
+      for (let index = 0; index < pixels.length; index += 4) {
+        if (pixels[index + 3] === 0) transparent++;
+        if (pixels[index + 3] > 200 && Math.max(...pixels.slice(index, index + 3)) - Math.min(...pixels.slice(index, index + 3)) > 35) colored++;
+      }
+      return { expression, src, width: image.naturalWidth, height: image.naturalHeight, transparent, colored };
+    }));
+  });
+  expect(new Set(portraits.map(portrait => portrait.src)).size).toBe(5);
+  expect(new Set(portraits.map(portrait => `${portrait.width}x${portrait.height}`)).size).toBe(1);
+  for (const portrait of portraits) {
+    expect(portrait.src).toMatch(new RegExp(`rheed-colorido-v1/${portrait.expression}\\.png$`));
+    expect(portrait.transparent).toBeGreaterThan(1000);
+    expect(portrait.colored).toBeGreaterThan(1000);
+  }
+  await info.attach('colored-portrait-pixels', { body: JSON.stringify(portraits), contentType: 'application/json' });
+  await importSave(page, mapFixture().save());
+  await expect(page.locator('.city-map')).toHaveAttribute('data-ready', 'true');
+  await page.locator('#destination-coreto').focus();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('[data-passage]')).toHaveAttribute('data-passage', 'coreto.p1.body.1');
+  await expect(background).toHaveAttribute('src', /coreto-noite-historia-colorido-v1\.png$/);
+  for (let index = 0; index < 3; index++) await page.locator('.advance').click();
+  await expect(page.locator('.location-panel')).toBeVisible();
+  await expect(background).toHaveAttribute('src', /coreto-noite-historia-colorido-v1\.png$/);
+  await expect(page.locator('.portrait img')).toHaveAttribute('src', /rheed-colorido-v1\/feliz\.png$/);
+  for (const viewport of [{ width: 1280, height: 720 }, { width: 844, height: 390 }]) {
+    await page.setViewportSize(viewport);
+    const portraitBounds = await page.locator('.portrait').boundingBox();
+    const panelBounds = await page.locator('.location-panel').boundingBox();
+    expect(portraitBounds.x + portraitBounds.width).toBeLessThan(panelBounds.x);
+    await capture(page, info, `colored-coreto-visit-${viewport.width}`);
+  }
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await importSave(page, play({ mode: 'solo' }).game.save());
+  await expect(page.locator('.end-screen')).toBeVisible();
+  await expect(background).toHaveAttribute('src', /coreto-noite-historia-colorido-v1\.png$/);
+  await capture(page, info, 'colored-finale');
 });

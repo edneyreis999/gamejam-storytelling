@@ -48,9 +48,11 @@ Status: em desenvolvimento.
 
 | Enquadramento | Uso narrativo | Condição de exibição | Diferença visual | Arquivo |
 | --- | --- | --- | --- | --- |
-| Coreto visto pelo ouvinte | Abertura, retornos e encerramento | Moldura narrativa ou retorno entre cenas | Fundo único, com Rheed sobreposto | [PNG produzido](../../../assets/terminus/locais/coreto-noite-historia-v1.png) — em desenvolvimento |
+| Coreto visto pelo ouvinte | Abertura, retornos e encerramento | Moldura narrativa ou retorno entre cenas | Fundo colorido, com Rheed sobreposto | [PNG colorido](../../../assets/terminus/locais/coreto-noite-historia-colorido-v1.png) — em desenvolvimento |
 
 ## 6. Produção e referências
+
+Colorização de 19/10/2026: madeira quente, vegetação verde, lanternas douradas e sombras azuis e roxas, preservando a composição e as hachuras do [fundo sépia anterior](../../../assets/terminus/locais/coreto-noite-historia-v1.png). O [registro de geração](../arte/bustos/rheed-coreto-coloridos.json) reúne o prompt e a verificação dos arquivos usados no protótipo e na edição para jogadores.
 
 Aplicam-se as [diretrizes comuns de arte e produção](README.md#diretrizes-comuns-de-arte-e-produção). As fichas dos personagens associados orientam objetos e usos deste espaço; a tabela de fundos registra seus arquivos de produção.
 

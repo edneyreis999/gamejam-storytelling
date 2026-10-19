@@ -105,14 +105,14 @@
         },
       },
       rheed: {
-        concept: "../../../assets/terminus/bustos/em-revisao/rheed-v2.png",
+        concept: "../arte/bustos/referencias/rheed-concept-autor.png",
         files: {
-          neutro: "../../../assets/terminus/bustos/expressoes/rheed/neutro.png",
-          feliz: "../../../assets/terminus/bustos/expressoes/rheed/feliz.png",
-          triste: "../../../assets/terminus/bustos/expressoes/rheed/triste.png",
-          raiva: "../../../assets/terminus/bustos/expressoes/rheed/raiva.png",
+          neutro: "../../../assets/terminus/bustos/expressoes/rheed-colorido-v1/neutro.png",
+          feliz: "../../../assets/terminus/bustos/expressoes/rheed-colorido-v1/feliz.png",
+          triste: "../../../assets/terminus/bustos/expressoes/rheed-colorido-v1/triste.png",
+          raiva: "../../../assets/terminus/bustos/expressoes/rheed-colorido-v1/raiva.png",
           confuso:
-            "../../../assets/terminus/bustos/expressoes/rheed/confuso.png",
+            "../../../assets/terminus/bustos/expressoes/rheed-colorido-v1/confuso.png",
         },
       },
       crianca: {
@@ -657,9 +657,15 @@
       "minas-entrada": "minas-entrada-v1",
       "minas-subsolo": "minas-galeria-v1",
       cisterna: "cisterna-obras-v1",
-      coreto: "coreto-noite-historia-v1",
+      coreto: "coreto-noite-historia-colorido-v1",
     },
   };
+  for (const id of ["sevrak", "ghork", "brakka", "nima", "sura", "edrin", "korr", "velka", "tessa", "mavren", "odrik", "lethra"]) {
+    files.portraits[id].costumes = {
+      "tiny-hat": Object.fromEntries(["neutro", "feliz", "triste", "raiva", "confuso"].map(expression =>
+        [expression, `../../../assets/terminus/bustos/expressoes/${id}/tiny-hat/${expression}.png`])),
+    };
+  }
   root.TerminusAssetFiles = files;
   if (typeof module !== "undefined") module.exports = files;
 })(globalThis);

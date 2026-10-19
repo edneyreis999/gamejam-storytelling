@@ -220,7 +220,8 @@
   }
   function scene() {
     const pg = E.page(game.state), p = pg.passage;
-    main.className = `scene-screen ${p.type === 'description' ? 'describing' : ''}`;
+    const narrated = p.type === 'description' || p.type === 'action';
+    main.className = `scene-screen ${narrated ? 'describing' : ''}`;
     main.dataset.passage = p.id;
     background(p.background);
     const changed = previousVisual && previousVisual.background !== p.background;
@@ -235,7 +236,7 @@
     const portrait = renderPortrait(p.bust, !restored && p.bust !== previousVisual?.bust ? (previousVisual?.speaker === p.speaker ? 'expression-change' : 'enter-portrait') : '');
     if (portrait) main.append(portrait);
     if (p.object) main.append(el('div', {class: `scene-object ${p.operation === 'give' && !restored && p.id !== previousVisual?.id ? 'handover' : ''}`, 'data-recipient': p.recipient === 'Ghork' ? 'left' : 'right'}, image(p.object, '', A.assets[p.object].name)));
-    const panel = el('article', {class: p.type === 'description' ? 'description-panel' : 'dialogue-panel'});
+    const panel = el('article', {class: narrated ? 'description-panel' : 'dialogue-panel'});
     if (p.type === 'dialogue' || p.type === 'thought') panel.append(el('h1', {class: 'speaker-plate'}, p.speaker + (p.type === 'thought' ? say(' · pensamento', ' · thought') : '')));
     else panel.append(el('h1', {class: 'sr-only'}, pg.title));
     const paragraph = el('p', {class: 'passage-text'});
@@ -338,6 +339,7 @@
     if (!s.location) { map(); return; }
     main.className = 'location-screen';
     if (s.location === 'coreto') {
+      main.classList.add('coreto-visit');
       background('bg-coreto'); main.append(renderPortrait(A.portrait('Rheed', 'feliz')));
       main.append(el('section', {class: 'location-panel'}, el('p', {class: 'eyebrow'}, say('A Noite da História', 'Story Night')),
         el('h1', {}, say('Um intervalo com Rheed', 'A moment with Rheed')),
@@ -365,7 +367,7 @@
       const team = el('div', {class: `formation ${side}`, 'aria-label': side === 'allies' ? say('Seu time', 'Your team') : say('Adversários', 'Opponents')});
       for (const member of roster[side]) {
         const figure = el('figure', {class: `fighter ${member.collective ? 'collective' : ''}`}, el('figcaption', {}, member.label || member.name));
-        if (member.name && !member.collective) figure.prepend(image(A.portrait(member.name, member.expression || 'neutro', member.pose || 'base'), '', member.name));
+        if (member.name && !member.collective) figure.prepend(image(A.portrait(member.name, member.expression || 'neutro', member.pose || 'base', A.costume(member.name, side === 'allies' ? s : {})), '', member.name));
         team.append(figure);
       }
       main.append(team);
@@ -437,7 +439,7 @@
     } else if (journalTab === 'team') {
       const allies = s.recruits.filter(r => r.invited);
       content.append(el('p', {}, say(`${allies.length} de 5 aliados · bônus +${allies.length}`, `${allies.length} of 5 allies · bonus +${allies.length}`)));
-      for (const r of allies) content.append(el('figure', {class: 'journal-member'}, image(A.portrait(r.name, 'neutro'), '', r.name), el('figcaption', {}, r.name)));
+      for (const r of allies) content.append(el('figure', {class: 'journal-member'}, image(A.portrait(r.name, 'neutro', 'base', A.costume(r.name, s)), '', r.name), el('figcaption', {}, r.name)));
       if (!allies.length) content.append(el('p', {}, say('Ghork segue sozinho. Recrutar é opcional.', 'Ghork travels alone. Recruiting allies is optional.')));
       for (let i = 0; i < s.recruits.length; i++) {
         const r = s.recruits[i], status = E.recruitStatus(s, i);

@@ -2,6 +2,8 @@
 
 Status: em desenvolvimento.
 
+A guilda C chama-se **Chapéu Minúsculo** em português e **Tiny Hat** em inglês. Sevrak usa o chapéu sempre; Ghork, desde a confirmação da adesão; recrutáveis, somente após o convite para a equipe nessa rota. Diálogos, entregas, combate e diário compartilham a seleção em `TerminusArt.costume`, derivada de `guild` e `recruits[].invited`, sem alterar o save V3. [Artes e revisão](../arte/bustos/tiny-hat/README.md).
+
 Abra [index.html](index.html) no Chrome ou Edge. A edição funciona diretamente do arquivo, offline, sem instalação ou build para jogar. Mantenha a estrutura do repositório: imagens e fontes continuam nas pastas compartilhadas. Esta entrega ainda não é um pacote portátil.
 
 ## Jogar
@@ -9,7 +11,9 @@ Abra [index.html](index.html) no Chrome ou Edge. A edição funciona diretamente
 - **Começar a história** inicia uma campanha. **Continuar a história** retoma o progresso desta edição.
 - O jogo começa em inglês. Escolha português na abertura ou no menu.
 - Uma fala aparece gradualmente. Clique em **Revelar texto** ou pressione Enter/Espaço para completá-la; o próximo avanço continua a história. Escolhas aparecem ao completar a fala. O menu permite leitura lenta, normal, rápida ou instantânea.
+- Descrições e ações narradas aparecem integralmente em um card roxo central, com detalhe lateral creme. Falas e pensamentos mantêm o painel de diálogo.
 - Clique em um destino do mapa para visitar. No toque, selecione e toque novamente. Tab e setas percorrem os locais; Enter confirma. Ghork caminha até o destino; **Chegar ao destino** abrevia o percurso. **Localizar no mapa**, no diário, apenas destaca o local.
+- Os percursos levam até 2,4 segundos, com deslocamento e passos na metade da velocidade da primeira edição.
 - No combate, role o D20. O resultado é salvo antes da animação. **Abreviar animação** não muda o dado. D20 + aliados precisa superar a dificuldade; empate é revés. Cargas permitem outra rolagem; aceitar o revés permite revanche gratuita.
 - O menu oferece efeitos sonoros, volume e movimento reduzido. A preferência de movimento do sistema também é respeitada. Os sons são sintetizados localmente, começam somente após interação e não incluem música ou voz.
 - Use a janela na horizontal. Textos extensos, escolhas, diário e menu têm rolagem interna quando necessário.
@@ -23,6 +27,8 @@ Para continuar um save do protótipo, exporte-o por lá e escolha **Importar par
 O armazenamento depende da pasta/origem e do navegador. Use **Exportar partida** para guardar uma cópia ou mudar de navegador. Se o armazenamento não estiver disponível, é possível jogar e exportar durante a sessão.
 
 ## Manter o jogo
+
+O Coreto e as cinco expressões de Rheed usam as versões coloridas selecionadas em `prototipo/asset-files.js`, também consumidas pelo protótipo editorial. O [registro das artes](../arte/bustos/rheed-coreto-coloridos.json) conserva prompts, referências e arquivos. As versões sépia anteriores permanecem no projeto.
 
 Campanha, efeitos, regras, textos e localização continuam nas fontes do [protótipo](../prototipo/README.md). Esta edição não é uma cópia independente do roteiro. Siga aquele guia para alterar conteúdo e regenerar os arquivos narrativos e de idioma.
 
@@ -68,3 +74,13 @@ Os testes usam saves produzidos pelas regras reais e importados pela interface. 
 Passaram 93 testes Node e 40 cenários de navegador (28 da edição para jogadores e 12 do protótipo), sem cenários ignorados ou instáveis. A execução final usou dois workers e dois navegadores; os limites de dez workers e dez navegadores vieram de `loki.config.json`. Durante a inspeção visual paralela, o pico coordenado foi de três navegadores. Contextos, navegadores e servidores de teste foram encerrados sem falhas de limpeza.
 
 As evidências estão em `.artifacts/terminus-player/unit-tests.tap`, `.artifacts/terminus-player/browser-results.json` e nas pastas `browser/` e `visual/` desse mesmo diretório. A conferência incluiu abertura local e por servidor, retomada de navegação, áudio após interação, leitura e escolhas em janela estreita, além das verificações de campanha, idiomas e saves. A entrega permanece **em desenvolvimento**.
+
+### Revisão de cores, caminhada e narração — 19 de outubro de 2026
+
+As artes coloridas do Coreto e as cinco expressões de Rheed foram conferidas em abertura, introdução, retorno pelo portal, visita e encerramento. Na visita, Rheed fica à esquerda do painel de opções. A narração central foi inspecionada em português e inglês, em 1280 × 720 e 844 × 390, incluindo texto longo, escolhas e objetos; o contraste entre texto creme e card roxo é 9,59:1. Os testes de caminhada verificam duração duplicada em todas as rotas, quadros a cada 360 ms, passos a cada 720 ms e encerramento único por chegada, abreviação ou cancelamento.
+
+A seleção de 58 cenários de navegador passou após reconferências. A primeira execução identificou a expectativa antiga do caminho do retrato de Rheed e restrições do sandbox para HTTP/download; a expectativa foi atualizada e os casos afetados passaram com a execução autorizada fora do sandbox. A última conferência da visita ao Coreto passou nas duas resoluções. A execução usou dois workers e até dois navegadores, dentro dos limites 10/10 de `loki.config.json`, sem sobreposição com outra execução desta revisão; os recursos foram encerrados sem falhas de limpeza.
+
+O conjunto Node teve 93 de 95 testes aprovados: duas verificações globais de arquivos encontraram PNGs ausentes de `brakka/tiny-hat/neutro.png` e `nima/tiny-hat/neutro.png`, referentes à produção paralela de figurinos. Isso limita a aprovação global daquele estado do projeto; os arquivos e o código dessa outra produção foram preservados.
+
+Evidências em `.artifacts/terminus-player/`: `visual-adjustments-final-unit.tap`, `visual-adjustments-first-browser-results.json`, `visual-adjustments-recheck-browser-results.json`, `visual-adjustments-coreto-responsive-results.json`, `color-art-checks.json` e capturas nas pastas correspondentes. As artes e a interface passaram pela revisão interna; isso não substitui avaliação artística nem playtest humano.

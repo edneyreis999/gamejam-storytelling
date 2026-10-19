@@ -63,7 +63,7 @@ Aplicam-se as [diretrizes comuns de arte e produção](README.md#diretrizes-comu
 | [Organização adotada](README.md#organização-e-estado-editorial) e [modelo](../modelo-ficha-local.md) | Organização do catálogo e apresentação da visual novel | Uma sede e uma ficha próprias para a guilda C. | Organização autorizada; descrição visual proposta |
 
 - **Propostas ainda não validadas individualmente:** descrição visual, enquadramentos e o ambiente de estudo e suas conversas.
-- **Pendências narrativas:** Nome Ofício da Ascensão e métodos de ensino; não definir novos efeitos de cristais ou bônus de treino.
+- **Pendências narrativas:** Nome Chapéu Minúsculo e métodos de ensino; não definir novos efeitos de cristais ou bônus de treino.
 
 ### Validação visual pendente
 

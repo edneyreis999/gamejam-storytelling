@@ -95,9 +95,9 @@
       else if (bg !== visual.background)
         visual = { background: bg, bust: null, era };
       if (p.type === "dialogue" || p.type === "thought")
-        visual.bust = A.portrait(p.speaker, p.expression, p.pose);
+        visual.bust = A.portrait(p.speaker, p.expression, p.pose, A.costume(p.speaker, state));
       if (p.type === "action" && p.recipient)
-        visual.bust = A.portrait(p.recipient, "atento");
+        visual.bust = A.portrait(p.recipient, "atento", "base", A.costume(p.recipient, state));
       const assets = [bg];
       if (visual.bust) assets.push(visual.bust);
       if (p.object) assets.push(p.object);

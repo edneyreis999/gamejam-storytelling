@@ -10,9 +10,11 @@ O primeiro encontro com Ghork está confirmado. A caracterização adicional per
 
 ## 1. Identificação
 
-- **Papel:** Líder do Ofício da Ascensão (C); novo habitante.
+- **Papel:** Líder da Chapéu Minúsculo (C); novo habitante.
 - **Raça, idade e aparência:** Elfo adulto, cerca de 240 anos propostos. Magro, cabelo negro liso preso baixo, olhos cinzentos, dedos manchados de tinta e roupas de corte preciso com fechos de cristal.
 - **Personalidade em uma frase:** Elogia exatamente a capacidade que pretende passar a controlar.
+
+**Direção visual confirmada em 19/10/2026:** usa um chapéu pontudo minúsculo nos cinco bustos de expressão, em marrom quase preto, com faixa e borda claras para contrastar com o cabelo. O acessório identifica a guilda Chapéu Minúsculo (Tiny Hat); rosto, cabelo, fechos e postura permanecem os do concept.
 
 ## 2. Personalidade em ação
 

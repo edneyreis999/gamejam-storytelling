@@ -8,7 +8,7 @@ Etapa: lote 1. Resumo extraído do texto integral da ficha; reler a ficha antes 
 
 ## Identificação e traços
 
-- **Papel:** Líder do Ofício da Ascensão (C); novo habitante.
+- **Papel:** Líder da Chapéu Minúsculo (C); novo habitante.
 
 - **Raça, idade e aparência:** Elfo adulto, cerca de 240 anos propostos. Magro, cabelo negro liso preso baixo, olhos cinzentos, dedos manchados de tinta e roupas de corte preciso com fechos de cristal.
 

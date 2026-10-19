@@ -2,6 +2,8 @@
 
 Status: em desenvolvimento.
 
+A guilda C chama-se **Chapéu Minúsculo** / **Tiny Hat**. Seus [60 bustos com chapéu](../arte/bustos/tiny-hat/galeria.md) são variantes dos originais: Sevrak sempre, Ghork após a adesão e recrutáveis somente depois do convite na rota C. As prévias editoriais respeitam o momento da adesão e os conflitos ainda sem convite. O traje e a expressão são selecionados separadamente; os saves mantêm o formato V3.
+
 Para jogar sem ferramentas de produção, abra a [edição para jogadores](../jogo/index.html). Ela compartilha esta campanha, usa saves separados com importação V3 e tem [instruções próprias de uso e manutenção](../jogo/README.md).
 
 Abra [index.html](index.html) em um navegador atual. O jogo roda localmente, sem build, servidor ou instalação. Também pode ser servido a partir da raiz do repositório; mantenha a pasta `assets/terminus/` disponível, pois o protótipo referencia esses arquivos diretamente.

@@ -209,7 +209,17 @@
   }
   function pageState(q, page, choice, state) {
     const s = structuredClone(state);
+    if (q.kind === "guild" || q.kind === "opening" || q.id === "champion") {
+      s.guild = null;
+      s.recruits.forEach(recruit => { recruit.invited = false; });
+    }
+    if (q.kind === "commit") {
+      s.guild = q.guild;
+      s.recruits.forEach(recruit => { recruit.invited = false; });
+    }
+    if (q.kind === "recruit") s.recruits[q.index].invited = false;
     if (q.id === "coreto") s.stage = page || state.stage;
+    if (q.id === "coreto" && s.stage === 1) s.guild = null;
     if (choice !== null)
       Object.assign(s.flags, q.pages[page].choices[choice].flags);
     if (choice !== null && q.pages[page].question)

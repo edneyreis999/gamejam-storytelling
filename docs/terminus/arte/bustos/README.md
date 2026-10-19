@@ -2,6 +2,8 @@
 
 Status: em desenvolvimento.
 
+Revisão colorida de Rheed em 19/10/2026: o jogo agora usa [cinco retratos coloridos](../../../../assets/terminus/bustos/expressoes/rheed-colorido-v1/) derivados da mesma referência do autor. O [registro de produção](rheed-coreto-coloridos.json) reúne prompts, referências e exportação; o neutro define enquadramento e escala para as outras expressões. O conjunto sépia abaixo permanece preservado como versão anterior.
+
 Revisão de Rheed em 19/10/2026: o busto base v2 e as cinco expressões seguem [Reed final, referência indicada pelo autor](referencias/rheed-concept-autor.png). Foram adequados rosto, barba volumosa com pontas laterais atadas, figurino ornamentado, mangas bufantes e caneca. O tapa-olho aparece à direita de quem olha, sobre o olho anatômico esquerdo, conforme essa imagem; nesta revisão visual ela prevalece sobre a lateralidade registrada anteriormente na ficha. A ficha narrativa e as sprites não foram alteradas. O busto anterior e as expressões substituídas estão no [histórico](historico/rheed-2026-10-19/), fora da entrega. Os novos bustos aguardam avaliação artística do autor.
 
 As cinco expressões por visual estão disponíveis em pasta própria: [galeria e controle das 255 expressões](expressoes/README.md). O lote de [Lala e oito figurantes](expressoes/lala-figurantes.md) acrescenta nove visuais, cujos neutros também servem como base. A produção e a revisão interna foram concluídas; a avaliação artística do autor permanece pendente. Os 42 bustos abaixo são as referências preservadas da produção anterior.

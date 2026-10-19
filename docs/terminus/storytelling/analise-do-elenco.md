@@ -52,7 +52,7 @@ Nomes institucionais e métodos abaixo são propostas. A/B/C continuam identific
 | --- | --- | --- | --- | --- |
 | A — Mãos do Amparo | [Virmura](../personagens/virmura.md) | Cuidado, disciplina e reconhecimento de uma pessoa além da força | Contrato que pode sustentar atendimento e trabalho de campo | Pode protegê-lo em excesso; precisa reconhecer que ele não é sua irmã |
 | B — Caminhos Abertos | [Borun](../personagens/borun.md) | Observação, improviso responsável e aprendizado por experiência | Contrato que valorize reconhecimento de terreno e resgate | Pode esconder informação sob pretexto de ensinar autonomia |
-| C — Ofício da Ascensão | [Sevrak](../personagens/sevrak.md) | Ensino exigente que reconhece sua inteligência | Contrato que demonstre a qualidade do método da guilda | Tenta fazer da aprovação do mestre a medida de valor do discípulo |
+| C — Chapéu Minúsculo | [Sevrak](../personagens/sevrak.md) | Ensino exigente que reconhece sua inteligência | Contrato que demonstre a qualidade do método da guilda | Tenta fazer da aprovação do mestre a medida de valor do discípulo |
 | D — Estandarte de Ferro | [Dorga](../personagens/dorga.md); campeão [Torvak](../personagens/torvak.md) | Não oferece adesão | Recuperar contratos e impor influência; direção aceita o golpe | A fama de Torvak não torna legítimos os privilégios nem absolve o pacto |
 
 Os três líderes têm razão para desejar o contrato. A proposta em [A5–A6](acontecimentos-da-campanha.md#a5--três-maneiras-de-disputar-o-mesmo-trabalho) transforma a intervenção pública de Ghork em escolha de um projeto institucional, com recusa de recursos e competição pelas guildas preteridas. Ainda precisa de confirmação; não pressupõe fraude ou humilhação obrigatória.
@@ -134,9 +134,9 @@ As equipes operam o contrato sob a guilda escolhida. **Darvek e Zagra não entra
 
 | Adesão | Guildas enfrentadas nas duas primeiras partidas | Interlocutores que sustentam a rivalidade |
 | --- | --- | --- |
-| A — Mãos do Amparo | B — Caminhos Abertos e C — Ofício da Ascensão | Borun e Sevrak |
-| B — Caminhos Abertos | A — Mãos do Amparo e C — Ofício da Ascensão | Virmura e Sevrak |
-| C — Ofício da Ascensão | A — Mãos do Amparo e B — Caminhos Abertos | Virmura e Borun |
+| A — Mãos do Amparo | B — Caminhos Abertos e C — Chapéu Minúsculo | Borun e Sevrak |
+| B — Caminhos Abertos | A — Mãos do Amparo e C — Chapéu Minúsculo | Virmura e Sevrak |
+| C — Chapéu Minúsculo | A — Mãos do Amparo e B — Caminhos Abertos | Virmura e Borun |
 
 A ordem acima só lista adversários; não decide qual partida vem primeiro. O patrocinador da equipe X/Y preterida deve ser escolhido entre as duas guildas rejeitadas, sem eliminar suas próprias equipes da sequência.
 
