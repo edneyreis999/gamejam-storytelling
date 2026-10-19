@@ -114,34 +114,34 @@ São objetos de missão com origem e destino, sem inventário de equipamento, pe
 
 [A criança encontra um lugar perto de Rheed. Ele vira o frasco entre os dedos.]
 
-**Rheed:** Chegou bem na hora. A história começa com alguém que quase não chegou ao seu destino.
+**Rheed:** [expressao=feliz] Aí está você. Chegue mais perto; guardamos um lugar. Eu ia contar justamente a história de alguém que quase não chegou.
 
 **Criança — escolha:**
 
-1. **“Quem?”** — **Rheed:** Ghork. Guardem esse nome. Ele ficaria muito satisfeito de me ouvir dizendo isso.
-2. **“Essa história acaba mal?”** — **Rheed:** Tem partes difíceis. Mas vamos chegar ao final juntos, sem pular nada.
+1. **“Quem não chegou?”** [expressao=confuso] — **Rheed:** [expressao=feliz] Ghork. Guardem esse nome, todos vocês. Ele ia adorar saber que eu pedi.
+2. **“Espera... essa história tem um final triste?”** [expressao=triste] — **Rheed:** [expressao=neutro] Tem seus momentos difíceis. Fique por perto, e vamos passar por eles juntos. Mas nada de espiar o final. Acabei de abrir o frasco.
 
-**Rheed:** Ghork foi a Terminus atrás de trabalho. Mas, quando chegou, precisava primeiro de alguém que tratasse sua perna.
+**Rheed:** [expressao=neutro] Ghork tinha vindo de longe, de Daratrine. Trabalho, um novo começo, alguém que cuidasse da perna ferida... Terminus devia ter tudo isso. Mas, quando chegou, mal conseguia respirar.
 
 [Rheed bebe. O som da plateia cede à respiração de Ghork. A chegada é fragmentada; não se inventam acompanhantes identificados.]
 
-**Ghork:** Eu consigo... só preciso...
+**Ghork:** [expressao=triste] Eu consigo... só preciso de um instante...
 
-**Virmura:** Não tente levantar. Olhe para mim.
+**Virmura:** [expressao=neutro] Calma. Não tente levantar. Olhe para mim, aqui.
 
-**Ghork:** Isto é... Terminus?
+**Ghork:** [expressao=confuso] Eu cheguei...? Aqui é Terminus?
 
-**Virmura:** É. Você chegou. Agora fique comigo.
+**Virmura:** [expressao=neutro] É. Você chegou. Continue olhando para mim, Ghork. Agora deixe o trabalho comigo.
 
 [O atendimento prossegue sem escolha de procedimento pelo jogador. Elipse. Ghork desperta estabilizado na enfermaria; a perna permanece enfaixada.]
 
-**Ghork:** Eu tinha pensado numa apresentação melhor.
+**Ghork:** [expressao=feliz] Bom... eu tinha planejado uma primeira impressão melhor.
 
-**Virmura:** Essa quase foi a última. Deixe o discurso para quando tiver fôlego.
+**Virmura:** [expressao=neutro] Eu já me contento com uma que você sobreviva para contar. Guarde o discurso, está bem? Mal recuperou o fôlego.
 
-**Ghork:** Foi você que me...?
+**Ghork:** [expressao=neutro] Foi você que... Você me salvou?
 
-**Virmura:** Fui. E ainda não terminei de cuidar de você.
+**Virmura:** [expressao=neutro] Salvei. E você ainda está sob meus cuidados. Nada de começar a me agradecer saindo da cama.
 
 **Conclusão:** socorro realizado; inicia Q-A1 em momento posterior da recuperação. Não declarar prazo de cura nem usar o atendimento como dívida de adesão.
 
@@ -150,27 +150,27 @@ São objetos de missão com origem e destino, sem inventário de equipamento, pe
 
 **Encaixe:** introdução única à primeira Q-A2, Q-B2 ou Q-C2 iniciada. O mentor acompanha Ghork à casa de contratos; os outros líderes estão presentes, com apresentação breve caso ainda desconhecidos. Essas presenças não substituem B1/C1. **Referência:** PC2-compromisso; ver fontes.
 
-**Meruna:** Estes dois mapas não parecem descrever as mesmas galerias. Os relatos também não esclarecem isso. Antes de financiar uma investigação maior, preciso entender o que temos.
+**Meruna:** [expressao=neutro] Olhem estes dois mapas. Supostamente da mesma mina, mas não parecem concordar. Os relatos também não ajudam muito. Estou disposta a financiar uma investigação completa, mas antes preciso saber quem é capaz de entender isso.
 
-**Ghork:** Quer que a gente entre nas minas para conferir?
+**Ghork:** [expressao=confuso] Então quer que a gente entre lá e veja qual mapa está certo?
 
-**Meruna:** Só depois de eu escolher uma guilda. Primeiro, vocês vão mostrar o que conseguem descobrir com os mapas e as fontes aqui fora.
+**Meruna:** [expressao=neutro] Ainda não. Primeiro vou escolher uma guilda. Por enquanto, trabalhem com os mapas e as fontes que podemos consultar aqui fora. Mostrem o que conseguem descobrir antes de alguém pôr os pés nas galerias.
 
-**Virmura:** E como vão trazer a equipe de volta em segurança.
+**Virmura:** [expressao=neutro] E mostrem como pretendem tirar sua gente de lá depois. De preferência, inteira.
 
-**Borun:** Voltar vivo costuma ser a melhor parte do trabalho.
+**Borun:** [expressao=feliz] Também gosto bastante dessa parte. Fica difícil aproveitar o pagamento quando a gente não volta.
 
-**Sevrak:** Todas as guildas terão acesso às mesmas cópias?
+**Sevrak:** [expressao=neutro] Antes de começarmos: todas as guildas recebem as mesmas cópias, correto?
 
-**Meruna:** Sim. O pagamento é alto, mas o contrato será de uma só guilda. Preciso de uma equipe responsável pelo levantamento inteiro.
+**Meruna:** [expressao=neutro] Correto. O pagamento é alto, e o contrato é exclusivo. Uma guilda responde pelo levantamento inteiro. Não vou dividir o trabalho entre três planos concorrentes.
 
 **Ghork — perguntas livres:**
 
-- **“Por que não contratar quem já conhece as minas?”** — **Meruna:** Cada um conhece um trecho. Preciso de quem consiga juntar esses relatos e admitir o que ainda não sabe.
-- **“O dinheiro pode ajudar na preparação para o campeonato?”** — **Meruna:** A guilda pode usar a parte dela no campeonato. Eu estou pagando pelo levantamento das minas. Ganhar na arena é com vocês.
-- **“Posso ouvir as três propostas antes de escolher?”** — **Meruna:** Pode. Mas, quando defender uma delas aqui, estará assumindo um compromisso com aquela guilda.
+- **“Não seria mais fácil contratar alguém que já andou por essas minas?”** [expressao=confuso] — **Meruna:** [expressao=neutro] Cada pessoa conhece um pedaço. Preciso de alguém que junte esses relatos e me diga onde faltam informações. Até agora, ninguém conseguiu me mostrar o quadro completo.
+- **“E a guilda poderia usar uma parte do pagamento para se preparar para o campeonato?”** [expressao=neutro] — **Meruna:** [expressao=neutro] Depois de ganhar sua parte, a guilda decide o que fazer com ela. Eu estou pagando por um levantamento das minas, Ghork. Se quiser um título na arena também, vai ter de conquistá-lo por conta própria.
+- **“Posso ouvir o que as três guildas pretendem fazer antes de escolher uma?”** [expressao=confuso] — **Meruna:** [expressao=neutro] Pode. Ouvir uma proposta não obriga você a aceitá-la. Mas, quando vier a esta mesa e se comprometer a executar uma delas, estará entrando naquela guilda. Tenha certeza antes de decidir.
 
-**Meruna:** Quero saber de onde vieram as informações, como vão conferir os mapas e o que ainda ficará sem resposta. Vou ouvir as três guildas. Ghork, pode aprender com todas antes de decidir a quem vai se juntar.
+**Meruna:** [expressao=neutro] Tragam suas fontes e mostrem como vão conferir os mapas. Se algo continuar incerto, digam. Cada guilda será ouvida. Ghork, conheça o trabalho delas antes de escolher de qual vai fazer parte.
 
 **Saída:** volta à segunda missão que disparou E01. As demais segundas missões retomam o contrato sem repetir esta reunião. A pista cartográfica concreta é tratada na decisão P01, ao final; sua resolução não atribui a divergência a fraude ou geografia mutável.
 
@@ -179,42 +179,42 @@ São objetos de missão com origem e destino, sem inventário de equipamento, pe
 
 **Encaixe:** depois da terceira apresentação. Conversa breve com Virmura e passagem no coliseu, integradas à entrega que acaba de terminar. **Base:** passado do campeão e rivalidade; **proposta:** modo de revelá-los.
 
-**Virmura:** Já ouviu falar do campeão?
+**Virmura:** [expressao=neutro] Você anda olhando bastante para o coliseu. Já ouviu falar do campeão de lá?
 
-**Ghork:** Desde que cheguei, vi o nome dele mais vezes do que o meu.
+**Ghork:** [expressao=feliz] O nome dele está em todo lugar. Desde que cheguei, vi mais vezes que o meu.
 
-**Virmura:** Torvak lutou ao lado de Orcquius e Glavius.
+**Virmura:** [expressao=neutro] Então vou contar uma coisa que não está nos cartazes. Torvak lutou ao lado de Orcquius e Glavius.
 
-**Ghork:** Dos dois?
+**Ghork:** [expressao=confuso] Orcquius e Glavius? Os dois?
 
-**Virmura:** Os três eram do mesmo time. Agora cada um segue seu caminho.
+**Virmura:** [expressao=neutro] Os três eram do mesmo time. Isso acabou. Cada um seguiu seu caminho.
 
-**Ghork:** Se eu vencer alguém que lutou ao lado de Orcquius...
+**Ghork:** [expressao=neutro] Se eu vencesse alguém que lutou ao lado de Orcquius... ele ia ter de...
 
-**Virmura:** Você terá vencido Torvak. Primeiro conheça o homem. Não faça dessa luta um recado para o general.
+**Virmura:** [expressao=neutro] Você teria vencido Torvak, Ghork. Já é bastante coisa para querer. Conheça o homem antes de transformar essa luta num recado para o general.
 
 [No coliseu, Torvak devolve a atenção a um veterano no meio dos cumprimentos.]
 
-**Torvak:** Ele carregou dois dos nossos até a saída. Quem for contar como voltamos vivos precisa contar essa parte também.
+**Torvak:** [expressao=feliz] Este homem carregou dois dos nossos até a saída! Se vão contar como voltamos para casa, tratem de contar a parte dele também.
 
 [O público responde. Ghork aproxima-se depois.]
 
-**Ghork:** Você lutou com Orcquius e Glavius?
+**Ghork:** [expressao=confuso] Torvak? É verdade que você lutou ao lado de Orcquius e Glavius?
 
-**Torvak:** Lutei. Você é de Daratrine?
+**Torvak:** [expressao=neutro] É verdade. Pelo jeito, você veio de Daratrine?
 
-**Ghork:** Sou. Ghork.
+**Ghork:** [expressao=neutro] Vim. Meu nome é Ghork.
 
-**Torvak:** E agora anda com essas guildas que acham que podem me ensinar a comandar uma arena.
+**Torvak:** [expressao=neutro] Ghork. E agora está andando com aquelas guildas que acham que podem me ensinar a administrar uma arena.
 
 **Ghork — escolha:**
 
-1. **“Quero chegar à final.”** — **Torvak:** Então tem muito trabalho pela frente antes da nossa próxima conversa.
-2. **“Por que vocês se separaram?”** — **Torvak:** A equipe acabou. É tudo que vou dizer.
+1. **“Vou tentar chegar à final. Quero enfrentar você lá.”** [expressao=neutro] — **Torvak:** [expressao=feliz] Então tem um bocado de trabalho antes da nossa próxima conversa. Melhor começar.
+2. **“O que aconteceu com seu antigo time? Por que vocês se separaram?”** [expressao=confuso] — **Torvak:** [expressao=neutro] A equipe acabou. Essa parte da minha vida não está aberta a perguntas.
 
-**Ghork:** Se eu chegar à final, vai lembrar do meu nome?
+**Ghork:** [expressao=neutro] Se eu conseguir chegar à final... vai lembrar do meu nome, não vai?
 
-**Torvak:** Rask vai anunciar bem alto. Não tem como esquecer.
+**Torvak:** [expressao=feliz] Rask vai gritar seu nome para o coliseu inteiro. Acredite, não vai precisar me lembrar.
 
 **Saída:** prestígio e ligação com Orcquius conhecidos em qualquer rota. A causa da ruptura não vira objetivo ou promessa de investigação. Segue E03.
 
@@ -223,24 +223,24 @@ São objetos de missão com origem e destino, sem inventário de equipamento, pe
 
 **Local:** entrada do coliseu. **Participantes:** Ghork e Savel. **Referência:** PC1-químico. Oferta conhecida, sem compra ou consumo presumidos.
 
-**Savel:** Ghork. Ouvi sua conversa. Para chegar à final, vai precisar manter o ritmo dos treinos.
+**Savel:** [expressao=neutro] Ghork, não é? Acabei ouvindo a conversa. Chegar à final é uma bela ambição. A parte difícil vai ser acompanhar o ritmo dos treinos.
 
-**Ghork:** E você vende uma solução para isso?
+**Ghork:** [expressao=confuso] Deixe eu adivinhar. Você vende alguma coisa que ajuda?
 
-**Savel:** Tenho algumas preparações. Já ajudaram gente que não conseguia mais trabalhar por causa do desgaste.
+**Savel:** [expressao=neutro] Preparo fórmulas para quem já não consegue acompanhar o esforço que o trabalho exige. Alguns puderam voltar a ganhar a vida. Achei que gostaria de saber.
 
-**Ghork:** Minha perna ainda está sendo tratada.
+**Ghork:** [expressao=neutro] Já estou tratando essa perna. Não quero atrapalhar o tratamento.
 
-**Savel:** Eu percebi. Preferi falar com você antes que se machuque tentando acompanhar os outros.
+**Savel:** [expressao=neutro] Claro. Percebi que ainda está se recuperando. Por isso vim falar agora, antes que a pressão para acompanhar os outros acabe em outro ferimento.
 
 **Ghork — escolha:**
 
-1. **“O que tem no frasco?”** — **Savel:** A fórmula depende de como o corpo está. Não seria responsável oferecer uma dose e deixar você sem acompanhamento. **Ghork:** Você ainda não disse o que tem dentro. **Savel:** Podemos conversar com calma no boticário.
-2. **“Por enquanto, vou continuar com o tratamento que tenho.”** — **Savel:** Continue. Se precisar de outra coisa, já sabe onde me encontrar.
+1. **“Antes de falar em tomar isso... o que tem nesse frasco?”** [expressao=confuso] — **Savel:** [expressao=neutro] A preparação dependeria do seu estado. Eu não entregaria uma dose para depois deixar você por sua conta. Seria preciso acompanhar o tratamento. **Ghork:** [expressao=neutro] Está bem, mas você ainda não me disse o que tem dentro. **Savel:** [expressao=neutro] Passe no boticário. Lá podemos conversar com calma sobre suas dúvidas.
+2. **“Por enquanto, vou continuar com o tratamento que já tenho. Está ajudando.”** [expressao=neutro] — **Savel:** [expressao=neutro] Como preferir. Se sentir que precisa de algo mais, já sabe onde procurar.
 
-**Savel:** Boa sorte na seleção. Às vezes, só falta uma oportunidade para alguém mostrar do que é capaz.
+**Savel:** [expressao=neutro] Boa sorte para conquistar sua vaga, Ghork. É uma pena ver alguém capaz passar despercebido por falta de uma única oportunidade.
 
-**Ghork:** Uma basta para começar.
+**Ghork:** [expressao=neutro] Me deem uma. O resto eu faço.
 
 **Saída:** vendedor apresentado. Preços, efeitos e eventual consumo permanecem uma decisão de sistema; este roteiro escreve a campanha completa sem consumo. Não mostrar um botão de compra sem essas definições.
 
@@ -251,28 +251,28 @@ São objetos de missão com origem e destino, sem inventário de equipamento, pe
 
 [Ao longo das atividades anteriores, os cuidados continuam. Uma elipse mostra Ghork voltando de uma caminhada sem precisar interrompê-la no mesmo ponto. Virmura confere sua condição antes de ele começar a praticar.]
 
-**Virmura:** Pode começar a praticar movimentos curtos, com alguém acompanhando. Se a perna falhar, pare. Estar melhor não significa que você deva aguentar qualquer dor.
+**Virmura:** [expressao=neutro] Você já pode praticar movimentos curtos, com alguém acompanhando. Se essa perna falhar, pare. Eu sei que está se sentindo melhor. Isso não significa que pode ignorar qualquer dor e continuar.
 
-**Ghork:** Eu quero lutar. Também quero conseguir voltar andando.
+**Ghork:** [expressao=neutro] Eu quero lutar, Virmura. Mas também gostaria de voltar andando depois.
 
-**Virmura:** Guedra sabe adaptar o treino a quem está aprendendo. Vá falar com ela.
+**Virmura:** [expressao=neutro] Ótimo. Diga isso à Guedra. Ela sabe preparar um treino que sirva para você, em vez de obrigar você a caber no exercício dos outros.
 
 [No espaço de treino, Guedra observa Ghork antes de pedir uma tentativa.]
 
-**Guedra:** Sou Guedra. Mostre como recua quando alguém avança. Não tente me vencer ainda.
+**Guedra:** [expressao=neutro] Sou Guedra. Vamos ver como você se move. Vou avançar; mostre como recuaria. Ainda não estamos tentando ganhar nada.
 
-**Ghork:** E eu preparando uma entrada triunfal...
+**Ghork:** [expressao=feliz] E eu tinha planejado um primeiro ataque tão magnífico...
 
-**Guedra:** Prepare a saída primeiro.
+**Guedra:** [expressao=feliz] Guarde para depois. Primeiro me mostre uma fuga magnífica.
 
 [Práticas acompanhadas, separadas por elipses: Ghork aprende a guardar uma passagem de recuo e a observar a preparação do golpe. Não são batalhas, testes ou montagens de cura milagrosa.]
 
-**Guedra:** Já pode enfrentar alguém sem depender de um resgate. Mas ainda precisa perceber quando é hora de recuar.
+**Guedra:** [expressao=neutro] Você já pode enfrentar alguém sem depender de um resgate. Aprendeu a deixar espaço para recuar. Agora precisa reconhecer quando usá-lo, mesmo que queira continuar lutando.
 
 **Ghork — escolha:**
 
-1. **“Posso começar por alguém que não seja o maior da arena?”** — **Guedra:** Pode. Saber escolher a luta também faz parte do treino.
-2. **“Se eu deixar fecharem minha saída, pelo menos vou saber o que fiz errado.”** — **Guedra:** E vai precisar praticar. Saber qual foi o erro não faz seu corpo corrigir o movimento.
+1. **“Meu primeiro adversário pode ser alguém que não seja o maior lutador da arena? Só para começar com calma.”** [expressao=feliz] — **Guedra:** [expressao=neutro] Pode. Escolher uma luta que consegue enfrentar faz parte do treino. Não precisa se arriscar só para impressionar alguém.
+2. **“E, se eu deixar alguém fechar minha saída, pelo menos vou saber onde errei.”** [expressao=neutro] — **Guedra:** [expressao=neutro] Vai saber. Depois vai praticar de novo. Entender o erro é um começo; fazer os pés se moverem de outro jeito exige treino.
 
 **Saída:** preparação demonstrada; retomar a notícia inicial de B4 ou C4. Virmura oferece esse cuidado antes da adesão, sem pedir promessa de guilda. A cena justifica a possibilidade de lutar, não uma vitória automática.
 
@@ -288,51 +288,51 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 [Virmura põe uma caixa de ataduras perto da cadeira.]
 
-**Virmura:** Separe as ataduras limpas das que precisam de lavagem. Sentado. Se cansar, me avise.
+**Virmura:** [expressao=neutro] Está vendo esta caixa? Ataduras limpas de um lado, as que precisam de lavagem do outro. Pode fazer sentado. Se cansar, me avise.
 
-**Ghork:** Com esse trabalho, posso ficar aqui?
+**Ghork:** [expressao=confuso] E se eu ajudar... posso ficar aqui? Ainda não tenho onde morar.
 
-**Virmura:** Pode. Você ajuda no que conseguir enquanto se recupera. O atendimento de quando chegou não é uma dívida.
+**Virmura:** [expressao=neutro] Pode. Um lugar para ficar, em troca do trabalho que conseguir fazer enquanto melhora. Esse é o acordo. Ter salvado sua vida não faz de você meu devedor.
 
 **Ghork — escolha:**
 
-1. **“Quero ajudar. Só não sei quanto vou conseguir fazer.”** — **Virmura:** Comece por essa caixa. Ela não vai fugir se você precisar parar.
-2. **“Então vou impressionar você com minhas ataduras.”** — **Virmura:** Deixe as limpas de um lado e já vou ficar impressionada o bastante por hoje.
+1. **“Quero ajudar. Só não quero prometer mais do que essa perna vai deixar.”** [expressao=triste] — **Virmura:** [expressao=feliz] Então comece pela caixa. Se precisar descansar, ela continua aqui. Ataduras não têm o costume de fugir.
+2. **“Então prepare-se para ver uma separação de ataduras digna de entrar para a história.”** [expressao=feliz] — **Virmura:** [expressao=feliz] As limpas numa pilha separada, por favor. Vamos conseguir isso antes de encomendar sua estátua.
 
 [Ghork encontra no fundo da caixa tiras separadas para transporte de feridos.]
 
-**Ghork:** Vocês também vão buscar os feridos?
+**Ghork:** [expressao=confuso] Então vocês não cuidam só de quem chega aqui? Também saem para buscar os feridos?
 
-**Virmura:** Vamos. E precisamos de gente que saiba encontrar o caminho de volta. Braços fortes não resolvem tudo.
+**Virmura:** [expressao=neutro] Saímos. E alguém precisa encontrar o caminho para trazer todos de volta. Braços fortes não adiantam muito se a equipe inteira se perder.
 
-**Ghork:** Eu quero entrar no campeonato. Se eu ganhar... quero ver continuarem dizendo que não sirvo para nada.
+**Ghork:** [expressao=neutro] Eu quero entrar no campeonato. E ganhar. Se eu voltar com esse título... quero ver dizerem outra vez que não sirvo para nada.
 
-**Virmura:** Pode sonhar com o título. Por hoje, termine essas ataduras.
+**Virmura:** [expressao=neutro] Pode me contar tudo sobre esse título enquanto separa. As ataduras não vão se arrumar sozinhas, campeão.
 
 [Mais tarde, Ghork prepara o contato com Lala. Proposta de recarga: Virmura verifica e repõe mana quando necessário, como parte desse convívio, sem preço ou prazo fixado.]
 
-**Ghork:** Lala disse que alguém que soubesse usar mana podia recarregar o colar.
+**Ghork:** [expressao=neutro] Lala me deu esse colar para a gente continuar conversando. Disse que alguém que sabe usar mana pode recarregar. Você conseguiria...?
 
-**Virmura:** Eu posso recarregar. Depois fale com ela. Deve estar esperando notícias suas.
+**Virmura:** [expressao=neutro] Me dê aqui. Isso eu consigo. Depois fale com ela e conte que chegou. Imagino que queira ouvir de você.
 
-**Lala:** Ghork! Você chegou! Espera... onde é que você está?
+**Lala:** [expressao=feliz] Ghork! Até que enfim! Eu estava... espera. Onde você está? O que é isso atrás de você?
 
 **Ghork — escolha:**
 
-1. **“Numa enfermaria. A perna estava pior do que eu pensava.”** — **Lala:** E quando você ia me contar? Tem alguém cuidando de você?
-2. **“Encontrei uma curandeira. Ela se chama Virmura.”** — **Lala:** Ainda bem. Agora me conta o que aconteceu.
+1. **“É uma enfermaria. A perna estava pior do que eu pensava, Lala.”** [expressao=triste] — **Lala:** [expressao=confuso] Uma enfermaria? Ghork, por que não falou logo? Tem alguém aí com você?
+2. **“Encontrei uma curandeira. Virmura. Ela está cuidando de mim.”** [expressao=neutro] — **Lala:** [expressao=neutro] Ai, ainda bem. Está bem. Me conta o que aconteceu, desde o começo.
 
-**Ghork:** Quase não cheguei vivo. Virmura me salvou. Vou ficar aqui até melhorar e ajudar no que conseguir.
+**Ghork:** [expressao=triste] Quase não cheguei vivo. Virmura salvou minha vida. Vai me deixar ficar enquanto melhoro, e eu ajudo no que conseguir.
 
-**Lala:** Sem se forçar, ouviu? O resto você me conta depois. Dam quer saber como está sua perna, onde você está dormindo e se está comendo. Nessa ordem. Fez questão.
+**Lala:** [expressao=neutro] Então deixe ela cuidar de você, por favor. Depois você me conta da cidade. Dam me passou uma lista: como está sua perna, onde está dormindo e se está comendo. Nessa ordem. Pelo visto, não posso improvisar.
 
-**Ghork:** Pode dizer que não tiram o olho de mim.
+**Ghork:** [expressao=feliz] Diga que estou sendo muito bem vigiado. Nem consegui impressionar a curandeira com as ataduras ainda.
 
-**Lala:** Vou dizer que estão cuidando de você. Vigiado? Você sempre dava um jeito de escapar.
+**Lala:** [expressao=feliz] Vou dizer que tem alguém cuidando de você. Ser vigiado nunca impediu você de se meter em confusão.
 
 [Elipse de recuperação. Ghork passa a tolerar pequenos deslocamentos; não há cura declarada.]
 
-**Virmura:** Tenho duas entregas perto daqui: uma no mercado, outra no coliseu. Escolha por qual começar. E pare para descansar quando precisar.
+**Virmura:** [expressao=neutro] Tenho duas entregas aqui perto que você pode fazer: uma no mercado, outra no coliseu. Escolha por qual começar. E, se precisar descansar, pare. Os pacotes podem esperar junto com você.
 
 **Conclusão:** apresentação A feita; abre Q-A2, B1 e C1. Conhecer/resolver R1 e R2 passa a ser possível conforme seus locais. Trabalho não concede adesão nem Ludos por inferência.
 
@@ -341,32 +341,32 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 **Acesso:** A1; E01 se ainda não vista. **Locais:** enfermaria e casa de contratos. **Objetivo:** levar uma cópia autorizada a Elune e voltar com as referências a conferir. **Participantes:** Virmura, Elune e Ghork; registros sem pacientes nomeados.
 
-**Virmura:** Este registro descreve o resgate de um ferido. Vamos ocultar o nome. Para o contrato, só precisamos do trajeto.
+**Virmura:** [expressao=neutro] Podemos usar este registro de resgate. Cubra o nome do paciente antes de copiar. Meruna precisa conhecer o caminho, não saber de quem eram os ferimentos que nos levaram até lá.
 
-**Ghork:** Diz: "Da passagem estreita até o ponto de troca da maca." Mas começaram a contar a distância de onde?
+**Ghork:** [expressao=confuso] Olhe isto: "Da passagem estreita até o ponto de troca da maca." Tem uma distância, mas... começaram a contar de onde?
 
-**Virmura:** E precisamos saber se dá para passar andando ou levando alguém numa maca.
+**Virmura:** [expressao=neutro] Essa é uma pergunta. Outra: passaram andando por esse espaço ou levaram uma maca? Não quero descobrir a diferença com um paciente em cima.
 
 **Ghork — investigação, ambas disponíveis:**
 
-- **“Vou marcar os pontos que identificam o caminho.”** — **Virmura:** Marque só o que o relato diz. O que faltar, anote como pergunta.
-- **“Quero saber quem carregava a maca.”** — **Virmura:** Uma equipe de resgate. O tempo que levaram não é o mesmo de alguém andando sozinho.
+- **“Vou marcar os pontos de referência. Pelo menos assim dá para ver de que parte do caminho estão falando.”** [expressao=neutro] — **Virmura:** [expressao=neutro] Só os que realmente descreveram. Se precisar adivinhar, deixe uma pergunta. Podemos procurar a resposta depois; um erro que parece certeza só atrapalha.
+- **“Quem carregava a maca? Isso não mudaria o tempo do percurso?”** [expressao=confuso] — **Virmura:** [expressao=neutro] Uma equipe de resgate. E mudaria, sim. Carregar alguém em grupo é diferente de andar sozinho. Não use o passo de uma pessoa para calcular o deles.
 
 [Ghork organiza e recebe uma cópia sem dados pessoais. O objetivo passa a ser levá-la a Elune, na casa de contratos. A cópia registra o ponto de partida e a direção da retirada, conforme P01.]
 
-**Elune:** Posso ficar com uma cópia? Preciso desse registro junto dos mapas para comparar.
+**Elune:** [expressao=neutro] Posso ficar com uma cópia? Preciso pôr ao lado dos mapas e acompanhar o caminho como está descrito.
 
-**Ghork:** Virmura autorizou compartilhar o trajeto. Tirei os nomes.
+**Ghork:** [expressao=neutro] Virmura autorizou compartilhar o trajeto. Tirei os nomes, para a história dos pacientes não ir junto.
 
-**Elune:** Ótimo. Leve estas anotações. Antes de comparar o registro com os mapas, preciso que confirmem onde o trajeto começou.
+**Elune:** [expressao=neutro] Obrigada. Leve estas anotações para ela. Consigo comparar os marcos, mas preciso confirmar de onde partiram para essas distâncias fazerem sentido.
 
 [Ghork recebe os apontamentos e volta à enfermaria. Entregar a Virmura conclui a etapa de investigação.]
 
-**Ghork:** Não parece muita coisa para ganhar um contrato.
+**Ghork:** [expressao=triste] Depois de tudo isso, só podemos garantir um trecho? Eu esperava ter mais para mostrar à Meruna.
 
-**Virmura:** É menos vistoso do que prometer que sabemos tudo. Mas é o que podemos provar.
+**Virmura:** [expressao=neutro] Preferia ficar na frente dela e fingir que conhece a mina inteira? Podemos mostrar como conferimos esta parte. Nisso ela pode confiar.
 
-**Ghork:** Então vou apresentar bem o que temos.
+**Ghork:** [expressao=neutro] Não. Quero que ela acredite na gente. Vou mostrar o trabalho que deu chegar até aqui.
 
 **Conclusão:** ouvir as duas perguntas, consultar Elune e entregar seus apontamentos a Virmura abre A3. Não exige R2 nem transforma os feridos em pistas dos Ignotos.
 
@@ -377,38 +377,38 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 [Ghork vê duas listas: atendimento e possível equipe da expedição.]
 
-**Ghork:** Se levarmos todos que sabem fazer resgate, Meruna vai ver uma equipe enorme.
+**Ghork:** [expressao=feliz] E se levássemos todo mundo que entende de resgate para a demonstração? Meruna ia ver quanta ajuda esta guilda pode oferecer.
 
-**Virmura:** E vai encontrar a enfermaria vazia se precisar de atendimento.
+**Virmura:** [expressao=neutro] E, se precisasse de uma curandeira depois, encontraria uma bela enfermaria vazia.
 
-**Ghork:** É. Quantos podemos levar sem deixar a enfermaria descoberta?
+**Ghork:** [expressao=confuso] É. Não pensei nisso. Quantos podemos levar sem fazer falta aqui?
 
-**Virmura:** Para a demonstração, basta uma equipe pequena, cada um com sua tarefa. Depois calculamos quanto custa manter o atendimento e o trabalho de campo.
+**Virmura:** [expressao=neutro] Uma equipe pequena basta para mostrar como trabalhamos. Cada um com uma tarefa. Depois fazemos a conta direito: quem vai a campo e quem mantém este lugar funcionando.
 
 **Ghork — escolha:**
 
-1. **“Eu registro quem fica e quem sai.”** — **Virmura:** Anote a função de cada um. Ninguém pode estar nos dois lugares ao mesmo tempo.
-2. **“Quero explicar isso à Meruna.”** — **Virmura:** Explique. Só não prometa que a enfermaria vai bancar a expedição sem receber nada.
+1. **“Vou preparar uma escala. Quem sai, quem fica e do que cada pessoa vai cuidar.”** [expressao=neutro] — **Virmura:** [expressao=neutro] Ótimo. Nada de pôr a mesma pessoa nas duas listas. Eu adoraria aprender esse truque, mas ainda não consegui.
+2. **“Deixe eu explicar à Meruna. Ela precisa saber por que não vamos levar a guilda inteira.”** [expressao=neutro] — **Virmura:** [expressao=neutro] Explique. Só não ofereça o trabalho da enfermaria de graça para melhorar a proposta. Alguém precisa pagar pelo atendimento que continua aqui.
 
 [Nas duas alternativas, Ghork prepara a mesma escala; muda quem introduz sua justificativa em A5. Virmura entrega um pedido de empréstimo de material.]
 
-**Virmura:** Durn tem uma maca de demonstração e os suportes. Leve este pedido. A equipe carrega o material; você confere as peças.
+**Virmura:** [expressao=neutro] Leve este pedido a Durn. Ele tem uma maca e suportes para a demonstração. A equipe vai carregar. Seu trabalho é conferir se vieram todas as peças.
 
 [Na oficina, Ghork entrega o pedido.]
 
-**Durn:** É emprestado para o teste, certo? Quero tudo de volta depois.
+**Durn:** [expressao=neutro] Vão pegar emprestado para o teste? Está bem. Depois me devolvam cada peça. Inclusive as pequenas que o pessoal costuma esquecer.
 
-**Ghork:** Certo. Posso conferir as peças com você?
+**Ghork:** [expressao=neutro] Entendido. Podemos conferir juntos antes de a equipe levar? Quero saber pelo que estou respondendo.
 
-**Durn:** Pode. Fique de frente para mim enquanto explico como encaixam.
+**Durn:** [expressao=neutro] Podemos. Fique onde eu consiga ver seu rosto quando falar. Vou mostrar como as peças encaixam, e você pergunta o que precisar.
 
 [Durn demonstra. Ghork acompanha a entrega à sede e apresenta o recibo a Virmura.]
 
-**Ghork:** E ainda precisamos de gente e tempo para o campeonato.
+**Ghork:** [expressao=confuso] Depois de cuidar da enfermaria e da equipe de campo... ainda vai sobrar gente e tempo para o campeonato?
 
-**Virmura:** Precisamos. O contrato ajudaria a pagar esse trabalho. Não vai pôr mais horas no dia.
+**Virmura:** [expressao=neutro] Isso faz parte do planejamento. O contrato ajudaria a pagar o trabalho. Não vai espremer mais uma hora no dia, por mais bonito que você peça.
 
-**Ghork:** Já ouvi gente prometer isso. Nunca vi conseguir.
+**Ghork:** [expressao=feliz] Já ouvi umas promessas bem confiantes sobre isso. Ainda estou esperando alguém cumprir.
 
 **Conclusão:** escala definida e material recebido na sede, sem gasto do jogador; abre A4. Memória de tom: “registro” ou “explicação”, retomada na primeira fala de A5.
 
@@ -419,32 +419,32 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 [Maca vazia com uma carga de treino. Ghork observa sentado; outros fazem o esforço.]
 
-**Virmura:** Você orienta a passagem da maca. A equipe segue suas instruções.
+**Virmura:** [expressao=neutro] Sua vez de orientar a passagem da maca. A equipe vai seguir o que você disser. Dê tempo para entenderem antes de se mover.
 
-**Ghork:** Para a esquerda, depois... Não, a minha esquerda.
+**Ghork:** [expressao=confuso] Um pouco para a esquerda, depois... espera, a minha esquerda. Desculpem. Assim não ajuda, não é?
 
 [Ajudantes param antes da passagem.]
 
-**Virmura:** Onde você quer que coloquem a maca?
+**Virmura:** [expressao=neutro] Diga onde a maca precisa chegar. Escolha alguma coisa que todos na sala consigam ver.
 
 **Ghork — escolha:**
 
-1. **“Perto da porta. Vou usar os pontos da sala como referência.”** — **Virmura:** Tente de novo. Eles ainda não leem pensamento.
-2. **“Posso marcar onde cada um deve parar?”** — **Virmura:** Pode. Confira se todos conseguem ver a marca.
+1. **“Ao lado da porta. Vou usar a sala como referência, para ninguém precisar descobrir para que lado estou virado.”** [expressao=neutro] — **Virmura:** [expressao=feliz] Melhor. Tente de novo. A gente ensinou a equipe a carregar uma maca, não a ler sua cabeça.
+2. **“Posso marcar onde cada um deve parar? Assim eles mesmos podem conferir.”** [expressao=confuso] — **Virmura:** [expressao=neutro] Pode. Dê uma volta e confira se cada pessoa consegue ver a marca do lado em que está.
 
 [A nova orientação permite a passagem. A opção não muda os mapas nem concede estatística.]
 
-**Ghork:** Melhor errar com a maca vazia.
+**Ghork:** [expressao=neutro] Ainda bem que não tem ninguém nessa maca. Eu não queria aprender isso com alguém esperando atendimento.
 
-**Virmura:** E anote a correção. Vamos mostrar como o teste melhorou o procedimento.
+**Virmura:** [expressao=neutro] É por isso que estamos praticando. Anote o que mudou enquanto ainda lembra bem. Meruna precisa ver a correção, não só a tentativa.
 
 [Depois do teste, Ghork acompanha a devolução à oficina.]
 
-**Durn:** Alguma peça cedeu?
+**Durn:** [expressao=neutro] Como se saiu? Alguma peça entortou ou saiu do lugar com o peso?
 
-**Ghork:** Não. Minhas primeiras instruções é que saíram tortas. Corrigi antes de continuarmos.
+**Ghork:** [expressao=feliz] A maca estava boa. Minhas instruções é que saíram meio tortas. Arrumamos isso antes de continuar.
 
-**Durn:** Então o teste serviu. Está tudo aqui.
+**Durn:** [expressao=feliz] Então o teste serviu para alguma coisa. Deixe eu contar... sim, está tudo aqui. Obrigado por devolver direito.
 
 **Conclusão:** procedimento testado e material devolvido; abre A5. A correção é parte da cena, sem punição ou teste de D20.
 
@@ -453,19 +453,19 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 **Acesso:** A4. **Local:** sede. **Objetivo:** conhecer a estratégia A antes de decidir. **Participantes:** Ghork e Virmura.
 
-**Ghork, se escolheu registro em A3:** A escala está pronta. Quem atende na enfermaria não entra na lista da equipe de campo.
+**Ghork, se escolheu registro em A3:** [expressao=neutro] A escala está pronta. Conferi as duas listas: ninguém ficou encarregado de estar em campo e junto a um leito da enfermaria ao mesmo tempo.
 
-**Ghork, se escolheu explicação em A3:** Vou começar explicando por que parte da guilda precisa ficar na enfermaria.
+**Ghork, se escolheu explicação em A3:** [expressao=neutro] Então vou explicar por que precisamos de gente aqui e em campo. É por aí que quero começar.
 
-**Virmura:** Depois mostramos o registro de resgate e as instruções que você testou. Meruna precisa saber o que conseguimos conferir e como vamos cuidar de quem voltar ferido.
+**Virmura:** [expressao=neutro] Ótimo. Junte com o registro de resgate e as instruções que testou. Meruna precisa ver o que conferimos. E, se alguém voltar ferido, precisa saber que deixamos gente aqui para cuidar.
 
-**Ghork:** E o trecho do mapa que não conseguimos explicar?
+**Ghork:** [expressao=confuso] O que eu digo quando ela apontar as partes do mapa que ainda não sabemos explicar?
 
-**Virmura:** Vamos marcar que não sabemos. Não vou esconder um perigo de quem terá de entrar lá.
+**Virmura:** [expressao=neutro] Que não sabemos. Marque bem. Quem entrar lá merece ver onde faltam informações antes de ter de descobrir no escuro.
 
-**Ghork:** Se eu apoiar vocês, Borun e Sevrak perdem esse contrato.
+**Ghork:** [expressao=triste] Se eu ficar do seu lado naquela reunião, Borun e Sevrak vão perder o contrato. Depois de tudo que fizeram por mim...
 
-**Virmura:** Sim. Os dois têm planos para esse dinheiro. Você precisa saber disso antes de decidir trabalhar conosco.
+**Virmura:** [expressao=neutro] Sim. Eles também precisam desse dinheiro, e não vão gostar. Não vou fingir o contrário para convencer você a entrar. Pense nisso antes de me dar sua palavra.
 
 **Interface — escolha:**
 
@@ -484,46 +484,46 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 [Ghork chega ao mercado com a lista de Virmura.]
 
-**Jorvi:** Ataduras e material de lavagem. Está tudo na bolsa. Confira antes de sair.
+**Jorvi:** [expressao=neutro] Ataduras e material de lavagem para Virmura. Coloquei tudo nesta bolsa. Confira antes de sair; é mais fácil corrigir um erro enquanto você está aqui.
 
-**Ghork:** Se estiver faltando algo, melhor descobrir aqui do que lá na enfermaria.
+**Ghork:** [expressao=neutro] Prefiro descobrir agora a ter de explicar uma bolsa vazia para Virmura. Vamos ver...
 
 [O jogador recebe a bolsa. Na saída, dois assaltantes fecham o corredor de cargas.]
 
-**Assaltante:** Deixa a bolsa e pode ir embora.
+**Assaltante:** [expressao=raiva] A bolsa. Deixa no chão e pode continuar andando.
 
-**Ghork:** Vão fazer curativo um no outro? Porque só tem isso aqui.
+**Ghork:** [expressao=confuso] São ataduras. Vão fazer curativo um no outro? Escolheram a bolsa errada.
 
 [Ghork protege a bolsa. Borun, junto de uma descarga próxima, interpõe o bastão.]
 
-**Borun:** O carrinho vazio, Ghork! Empurre para cá!
+**Borun:** [expressao=neutro] Ghork! Aquele carrinho vazio... empurre para cá. Agora!
 
 [Ghork empurra o carrinho, dificulta a perseguição e segue a passagem aberta por Borun. Na área movimentada, ambos param.]
 
-**Ghork:** Como sabia meu nome?
+**Ghork:** [expressao=confuso] Você sabia meu nome. Como sabia meu nome?
 
-**Borun:** Ouvi quando você buscou a bolsa. Depois vi aqueles dois largarem o trabalho para seguir você.
+**Borun:** [expressao=neutro] Ouvi quando você pegou a bolsa. Depois aqueles dois largaram o que estavam fazendo e seguiram você. Achei que valia ficar de olho.
 
 **Ghork — escolha:**
 
-1. **“Eu não percebi.”** — **Borun:** Agora sabe o que procurar. Neste mercado, um sorriso não é garantia de nada.
-2. **“Achei que só estavam esperando para passar.”** — **Borun:** Eu também. Até deixarem passar uma abertura bem na frente deles.
+1. **“Eu não percebi nada. Só quando fecharam a passagem.”** [expressao=triste] — **Borun:** [expressao=neutro] É fácil não perceber quando ainda está tentando se achar por aqui. Agora você já viu uma vez. Na próxima, olhe o que as pessoas fazem, não só o sorriso que mostram.
+2. **“Achei que estavam esperando espaço para passar. Tinha tanta gente.”** [expressao=confuso] — **Borun:** [expressao=neutro] Eu também achei, no começo. Mas abriu um espaço bem na frente deles e nenhum se moveu. Não estavam esperando passagem. Estavam esperando você.
 
-**Ghork:** Obrigado por me tirar de lá. E por explicar o que viu.
+**Ghork:** [expressao=neutro] Obrigado. Por me tirar de lá e por ficar para explicar. Eu ia continuar tentando entender o que não percebi.
 
-**Borun:** Sou Borun. Minha guilda conhece os caminhos daqui. Até os que começam mal assim. Vou com você até sairmos dessa confusão.
+**Borun:** [expressao=feliz] Borun. Minha guilda se chama Caminhos Abertos. Tentamos fazer jus ao nome, até em manhãs como esta. Venha, acompanho você até passarmos dessa confusão.
 
-**Ghork:** Você sabe como funciona o campeonato?
+**Ghork:** [expressao=neutro] Caminhos Abertos... vocês entram no campeonato? Estou tentando entender como funciona.
 
-**Borun:** Sei. Sei também que o campeão quer os melhores horários para a equipe dele. Se vai entrar, escolha bem quem vai trabalhar com você.
+**Borun:** [expressao=neutro] Entramos. Encontrar uma equipe é uma parte. Achar onde treinar é outra, com o campeão querendo os melhores horários para os dele. Conheça quem vai trabalhar com você antes de se comprometer.
 
 [O jogador volta à sede e entrega a bolsa.]
 
-**Virmura:** Demorou. O que aconteceu?
+**Virmura:** [expressao=confuso] Aí está você. Demorou mais do que eu esperava. O que houve?
 
-**Ghork:** Dois homens tentaram roubar os materiais. Borun me ajudou a escapar. Consegui trazer a bolsa.
+**Ghork:** [expressao=triste] Dois homens tentaram levar os materiais. Borun me ajudou a sair do corredor. Não perdi a bolsa, está vendo? Está tudo aqui.
 
-**Virmura:** Sente um pouco. Já vi que a bolsa está inteira. Quero saber como você está.
+**Virmura:** [expressao=neutro] Ponha a bolsa aí e sente um pouco. Estou vendo que os materiais estão bem. Estou perguntando de você.
 
 **Conclusão:** bolsa entregue, apresentação B concluída; abre B2. Se completou o trio, executar E02–E03. Nenhum D20, recrutamento ou conhecimento prévio de Sevrak.
 
@@ -532,30 +532,30 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 **Acesso:** B1; E01 se necessária. **Local:** mercado. **Participantes:** Borun, Pirka, Ghork. **Objetivo:** separar memória do trajeto e registro de carga. **Referência:** PC1-Casey, trabalho cotidiano como entrada numa rede.
 
-**Pirka:** O registro acompanha a carga. Quem olha só a data de chegada acha que eu fui com ela até o fim da galeria.
+**Pirka:** [expressao=neutro] Este registro acompanha a carga, não a mim. Se olhar só essa data de chegada, parece que levei a carroça até o fim da galeria.
 
-**Ghork:** E não foi?
+**Ghork:** [expressao=confuso] Você não foi até o fim com ela?
 
-**Pirka:** Fui até onde a carroça cabia. Depois passei a carga para quem ia seguir a pé.
+**Pirka:** [expressao=neutro] Só até onde a carroça cabia. Dali em diante, entreguei a carga. O resto do caminho foi outra pessoa que fez, a pé.
 
-**Borun:** Agora entende por que eu queria que perguntasse a ela?
+**Borun:** [expressao=neutro] Entendeu por que eu queria que ouvisse a Pirka? O registro não conta onde ela deixou de acompanhar a carga.
 
 **Ghork — investigação:**
 
-- **“Onde aconteceu a troca?”** — **Pirka:** O ponto está descrito aqui. Copie a descrição junto com o nome. Já perdi uma tarde procurando um lugar que só me disseram como se chamava.
-- **“Você chegou a ver o caminho depois da troca?”** — **Pirka:** Não. Se alguém disser que eu vi, mande essa pessoa conversar comigo.
+- **“Onde exatamente você passou a carga adiante? Dá para achar esse ponto no mapa?”** [expressao=confuso] — **Pirka:** [expressao=neutro] Tem uma descrição aqui. Copie também, não só o nome do lugar. Já perdi uma tarde procurando um ponto que todo mundo sabia nomear e ninguém sabia indicar.
+- **“Você chegou a ver o caminho depois desse ponto, mesmo sem levar a carga até lá?”** [expressao=confuso] — **Pirka:** [expressao=neutro] Não. Minha parte termina ali. Se alguém disser que vi mais alguma coisa, traga aqui. Eu mesma quero ouvir essa história.
 
 [Ghork anota o limite do testemunho, sem preencher o trecho interno. A cópia registra o ponto de partida e a direção da entrada no trecho conhecido, conforme P01.]
 
-**Ghork:** Então você percorreu menos do que o registro dava a entender.
+**Ghork:** [expressao=neutro] Então o registro fez sua parte da viagem parecer maior. Vou marcar onde você realmente parou.
 
-**Borun:** E agora sabemos exatamente que parte ela pode descrever.
+**Borun:** [expressao=neutro] Ótimo. Agora sabemos sobre que trecho perguntar a ela e onde precisamos procurar outra pessoa.
 
-**Pirka:** E eu consigo voltar ao trabalho?
+**Pirka:** [expressao=neutro] Falando em viagem, tenho outra carga para cuidar. Terminamos por aqui?
 
-**Ghork:** Só preciso da cópia para levar a Elune.
+**Ghork:** [expressao=neutro] Quase. Posso levar uma cópia para Elune? Ela vai precisar comparar com os mapas.
 
-**Pirka:** Leve esta. O original fica comigo. Preciso conferir a próxima carga.
+**Pirka:** [expressao=neutro] Leve esta. O original fica comigo; preciso dele para conferir a próxima carga.
 
 **Conclusão:** após as duas perguntas, registro de carga e limite do testemunho obtidos; abre B3.
 
@@ -566,28 +566,28 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 [Borun não chega à hora combinada. Ghork entrega a Elune a cópia autorizada por Pirka; ela abre os materiais de comparação.]
 
-**Elune:** Você trouxe as perguntas ou Borun ficou com tudo?
+**Elune:** [expressao=confuso] Achei que Borun vinha com você. Trouxe as perguntas ou ficaram com ele também?
 
-**Ghork:** Trouxe. Só achei que ele ia pensar em perguntas melhores.
+**Ghork:** [expressao=triste] Trouxe. Só estava esperando que ele viesse para pensar nas que eu deixei passar.
 
-**Elune:** Podemos começar pelas suas.
+**Elune:** [expressao=neutro] Bom, você está aqui. Quero ouvir as suas. Podemos começar por elas.
 
 **Ghork — escolha:**
 
-1. **“Quero separar o que Pirka viu do que contaram a ela.”** — **Elune:** Então mantenha marcado onde ela passou a carga adiante. Depois desse ponto, precisamos ouvir outra pessoa.
-2. **“Quero que outra pessoa possa conferir como chegamos à conclusão.”** — **Elune:** Anote de onde veio cada informação. Assim, quem tiver dúvida vai saber a quem perguntar.
+1. **“Primeiro, quero separar o que Pirka viu do que contaram a ela depois.”** [expressao=neutro] — **Elune:** [expressao=neutro] Então não perca esse ponto de troca. O relato dela leva até ali. Depois, precisamos de alguém que tenha seguido pelo caminho.
+2. **“Quero que alguém leia isto depois e entenda como chegamos à resposta, sem ter de acreditar só na minha palavra.”** [expressao=neutro] — **Elune:** [expressao=neutro] Então ponha uma fonte ao lado de cada informação. Se alguma coisa não bater, saberão onde conferir, sem precisar procurar você primeiro.
 
 [Elune mostra como separar as anotações e devolve a cópia com seus apontamentos. Ghork recebe o material, volta à guilda e o entrega a Borun, que está chegando.]
 
-**Borun:** Fiquei preso numa descarga. Deu conta da conversa?
+**Borun:** [expressao=neutro] Aí está você. Uma carga me prendeu na descarga. Como foi com Elune?
 
-**Ghork:** Deu certo. Mas você podia ter avisado.
+**Ghork:** [expressao=neutro] Deu certo. Mas eu fiquei esperando você. Podia ter mandado um recado.
 
-**Borun:** Podia. Vou combinar melhor os horários com Pirka.
+**Borun:** [expressao=triste] Devia ter mandado. Vou combinar os horários com Pirka e avisar quando mudarem.
 
-**Ghork:** Não vou fingir que você me deixou sozinho de propósito, para ensinar uma lição.
+**Ghork:** [expressao=neutro] Ótimo. Porque eu não ia fingir que você me deixou lá para me ensinar a ser independente.
 
-**Borun:** Ainda bem. Eu podia me acostumar com uma desculpa dessas.
+**Borun:** [expressao=feliz] Não finja mesmo. Uma desculpa tão boa dessas, sou capaz de acabar acreditando.
 
 **Conclusão:** fontes organizadas, ausência reconhecida sem punição ao jogador; abre B4. Ghork não assume culpa pelo atraso do mentor.
 
@@ -596,40 +596,40 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 **Acesso:** B3; executar E08 se ainda não vista. **Percurso:** sede → corredor de cargas do mercado → banca de Jorvi → sede. **Participantes:** Borun, Ghork, Pirka, Jorvi e os dois assaltantes de B1. **Objetivo:** cobrar a devolução de um fardo roubado, recuperá-lo em combate e entregá-lo. **Proposta nova solicitada pelo autor. Referência:** PC1-Bobo, reclamação que leva a outro lugar e a confronto.
 
-**Pirka:** Roubaram as cordas e estacas que separei para a demonstração. Dois homens no corredor: um levou o fardo e o outro bloqueou a passagem.
+**Pirka:** [expressao=raiva] Levaram as cordas e estacas da nossa demonstração. Dois homens no corredor: um saiu com o fardo enquanto o outro impedia a gente de ir atrás.
 
-**Ghork:** Será que são os mesmos que me cercaram?
+**Ghork:** [expressao=confuso] Dois, agindo juntos? Será que são os mesmos que me cercaram?
 
-**Borun:** A descrição bate. Antes de ir atrás deles, descubra por onde pode sair. Você está melhor para lutar, mas ainda precisa se proteger.
+**Borun:** [expressao=neutro] Parece. Antes de ir atrás, descubra como sair daquele corredor. Você já pode tentar uma luta, mas isso não significa deixar os dois prenderem você de novo.
 
-**Ghork:** Vou recuperar a carga. Não vou lá bancar o invencível.
+**Ghork:** [expressao=neutro] Eu lembro de como foi. Vou buscar a carga da Pirka, não provar que nada pode me machucar.
 
 [Pirka descreve a marca do fardo. Ghork vai ao corredor e encontra os assaltantes tentando abrir a carga.]
 
 **Ghork — abordagem:**
 
-1. **“Esse fardo é da Pirka. Devolvam.”** — **Assaltante:** Hoje veio sem o velho?
-2. **“Da outra vez, vocês tentaram roubar ataduras. Agora acharam algo que sabem vender?”** — **Assaltante:** Veio buscar a carga ou perder os dentes?
+1. **“Vocês levaram o fardo da Pirka. Devolvam, e podemos encerrar isso aqui.”** [expressao=neutro] — **Assaltante:** [expressao=feliz] Olha quem voltou. Veio sem o velho para se esconder atrás dele?
+2. **“Da outra vez eram ataduras. Finalmente acharam uma bolsa que vale roubar ou pegam qualquer coisa que estiver perto?”** [expressao=feliz] — **Assaltante:** [expressao=raiva] Quer o fardo ou quer perder os dentes?
 
-**Ghork:** Vim buscar a carga.
+**Ghork:** [expressao=neutro] O fardo. Foi para isso que eu vim.
 
 [Um deles avança; Ghork usa o corredor para impedir que os dois o cerquem ao mesmo tempo. **Batalha B4:** dupla tratada como um encontro de D20, sem rolagem obrigatória para cada assaltante.]
 
 **Vitória:**
 
-**Assaltante:** Leva! Não vale apanhar por isso.
+**Assaltante:** [expressao=triste] Está bem! Leva! Não vou apanhar mais por um saco de cordas.
 
-**Ghork:** Então parem de roubar.
+**Ghork:** [expressao=raiva] Então parem de levar o que não é de vocês.
 
 [Os assaltantes recuam. O jogador recolhe o fardo; Ghork chama os carregadores de Pirka para o transporte até a banca, sem arrastá-lo com a perna ferida.]
 
-**Pirka:** É a nossa marca. Vamos ver se está tudo aqui.
+**Pirka:** [expressao=neutro] É a nossa marca no fardo. Ótimo. Ponha aqui; quero ver o que deixaram dentro.
 
-**Jorvi:** Todas as cordas e estacas. Aqui está o recibo.
+**Jorvi:** [expressao=neutro] Cordas, estacas... está tudo aqui. Este é o recibo, para ninguém precisar ficar só na nossa palavra de que chegou.
 
-**Ghork:** Quero uma cópia para Borun.
+**Ghork:** [expressao=neutro] Posso ficar com uma cópia para Borun? Ele vai querer saber que recuperamos tudo.
 
-**Pirka:** E me mostre como descreveu o caminho. Se eu precisar que você explique por fora, ainda falta arrumar o texto.
+**Pirka:** [expressao=neutro] Já que está aqui, me mostre as instruções. Eu preciso conseguir seguir sem você ao meu lado explicando cada curva.
 
 [Ghork mostra sua descrição; Pirka aponta uma referência vaga e ele a substitui pela banca visível na saída. Ela consegue acompanhar a indicação.]
 
@@ -637,13 +637,13 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 **Entrega final, depois da vitória:**
 
-**Borun:** O recibo está aqui. E a carga?
+**Borun:** [expressao=confuso] Está com o recibo. E a carga? Veio tudo?
 
-**Ghork:** Pirka e Jorvi conferiram tudo. Também corrigi a descrição do corredor. Antes, só entendia quem já conhecia o lugar.
+**Ghork:** [expressao=neutro] Pirka e Jorvi conferiram cada peça. Também arrumei as instruções do corredor. Percebi que tinha escrito para quem já conhecia o caminho.
 
-**Borun:** Leia como ficou.
+**Borun:** [expressao=neutro] É fácil cair nessa. Vamos lá, leia a versão nova.
 
-**Ghork:** Passe pela área de descarga, ao lado da banca. Melhor do que escrever "pelo caminho de sempre" para quem nunca veio aqui.
+**Ghork:** [expressao=feliz] Passe pela área de descarga, ao lado da banca. Isso alguém novo consegue achar. "Pelo caminho de sempre" só ajuda quem já tem um caminho de sempre.
 
 **Conclusão:** recuperação e entrega registradas, B5 aberta. O combate demonstra competência adquirida; não revela que Borun preparou o assalto inicial nem faz os ladrões trabalharem para Torvak. Não há morte obrigatória ou prêmio em Ludos definido.
 
@@ -652,19 +652,19 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 **Acesso:** B4. **Local:** sede. **Objetivo:** ouvir a estratégia B. **Participantes:** Borun e Ghork. **Referência:** PC1-Silver para mentor com interesses próprios, sem dívida ou luta combinada.
 
-**Borun:** Vamos levar o registro da carga, o relato da Pirka e as instruções que outra pessoa conseguiu seguir. Esse contrato serve para pôr gente em campo e trazer informação que preste.
+**Borun:** [expressao=neutro] Vamos pôr o relato da Pirka ao lado do registro da carga e mostrar as instruções que outra pessoa conseguiu seguir. É esse trabalho que quero financiar com o contrato: gente saindo, olhando direito e trazendo algo útil para a próxima equipe.
 
-**Ghork:** Você também quer usar o dinheiro para resgates.
+**Ghork:** [expressao=neutro] E usaria parte do dinheiro para resgates. Você falou disso antes.
 
-**Borun:** Quero. Tem contratante que só pensa no caminho de volta quando falta alguém.
+**Borun:** [expressao=neutro] Usaria. Tem contratante muito interessado no caminho de ida que só pergunta pelo de volta quando alguém não aparece.
 
-**Ghork:** Meruna pode reclamar que os relatos estão incompletos.
+**Ghork:** [expressao=confuso] E se Meruna disser que os relatos estão incompletos demais para confiar?
 
-**Borun:** E estão. Mostre o que conseguimos comparar e o que ainda falta conferir. Se prometer que nunca erramos, eu desminto na hora.
+**Borun:** [expressao=neutro] Mostre exatamente o que pudemos conferir e o que ainda precisa de uma visita. Os relatos estão incompletos. Blefar não melhora isso. E, se prometer que nunca erramos, vou ter de interromper você.
 
-**Ghork:** Virmura cuidou de mim. Sevrak também me ajudou.
+**Ghork:** [expressao=triste] Virmura salvou minha vida. Sevrak também me protegeu. É estranho falar em escolher entre vocês.
 
-**Borun:** Escolher a nossa guilda não apaga isso. Mas também não faz os dois desistirem do que querem.
+**Borun:** [expressao=neutro] Pode ser grato aos dois e ainda escolher seu trabalho. Mas eles têm guildas para cuidar, assim como eu. Não espere que sua gratidão faça os dois saírem do caminho.
 
 **Interface — escolha:**
 
@@ -683,42 +683,42 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 [Ghork trouxe da sede de Virmura um pacote de ataduras para Rask, com a orientação de entregá-lo na entrada administrativa. Antes de encontrar o destinatário, observa o veterano derrubar repetidamente um iniciante.]
 
-**Veterano:** De novo. Vê se dessa vez continua de pé.
+**Veterano:** [expressao=raiva] Levanta. De novo. Vai passar o treino inteiro no chão?
 
-**Ghork:** Ele ergue o ombro antes de atacar. Espere o ombro subir e saia do alcance.
+**Ghork:** [expressao=neutro] Olhe o ombro dele! Ele ergue antes de atacar. Quando subir, saia do alcance. Não espere pelo golpe.
 
 [O iniciante evita o ataque seguinte. O veterano se volta contra Ghork.]
 
-**Veterano:** Quer mostrar como se faz?
+**Veterano:** [expressao=raiva] Então ajudou ele a escapar de um. Acha que consegue fazer melhor? Venha mostrar.
 
 [Ele tenta agredir Ghork. Sevrak intercepta o golpe e o desarma.]
 
-**Sevrak:** O treino acabou para você.
+**Sevrak:** [expressao=raiva] Basta. Seu treino acabou.
 
-**Ghork:** Eu só estava...
+**Ghork:** [expressao=confuso] Eu só estava tentando ajudar o rapaz. Não queria...
 
-**Sevrak:** Eu vi. Agora explique o que percebeu.
+**Sevrak:** [expressao=neutro] Eu vi o que aconteceu. Pode parar de se justificar e explicar o movimento. O que percebeu?
 
 **Ghork — escolha:**
 
-1. **“Ele se preparava do mesmo jeito antes de cada ataque.”** — **Sevrak:** E o rapaz só reagia quando o golpe já vinha. Você percebeu o aviso antes.
-2. **“O rapaz precisava aprender a escapar, não a cair mais uma vez.”** — **Sevrak:** E você soube explicar como. Mostre o que chamou sua atenção.
+1. **“Ele se preparava do mesmo jeito toda vez. Depois que percebi, dava para saber quando vinha o próximo ataque.”** [expressao=neutro] — **Sevrak:** [expressao=neutro] Enquanto o rapaz esperava ver o próprio golpe. Você deu a ele um sinal que permitia agir antes. Uma diferença útil.
+2. **“Alguém precisava dizer ao rapaz como escapar. Derrubar de novo não estava ensinando nada.”** [expressao=neutro] — **Sevrak:** [expressao=neutro] E você tinha mais a oferecer do que compaixão. Deu uma instrução que ele conseguiu usar. Mostre o que viu.
 
-**Ghork:** O ombro. Ele mexia antes do resto do corpo.
+**Ghork:** [expressao=neutro] O ombro, ali. Mexia antes do resto do corpo. Quando o braço avançava, o aviso já tinha passado.
 
-**Sevrak:** Sevrak Vey. Na minha escola, saber observar assim tem utilidade.
+**Sevrak:** [expressao=neutro] Sevrak Vey. Dirijo uma escola em que vale a pena desenvolver esse tipo de observação. Já pensou no que poderia fazer com isso?
 
-**Ghork:** Ghork. Obrigado por me poupar da demonstração prática.
+**Ghork:** [expressao=feliz] Ghork. E obrigado. Eu preferia não descobrir pessoalmente como é receber aquele golpe.
 
-**Sevrak:** Faça sua entrega. Depois venha conhecer a escola. Precisamos de alunos que saibam mais do que copiar movimentos.
+**Sevrak:** [expressao=neutro] Parece que tem uma entrega para terminar. Depois, venha conhecer a escola. Tenho muitos alunos que sabem copiar um movimento. Gostaria de ter mais que soubessem explicar.
 
 [Ghork encontra Rask e entrega o pacote.]
 
-**Rask:** As ataduras de Virmura? Pode entregar. Ela pediu confirmação; leve este recibo.
+**Rask:** [expressao=neutro] São as ataduras de Virmura? Obrigado, pode entregar. Ela pediu confirmação, então leve este recibo para ela.
 
-**Ghork:** Levo. E preciso avisar: um veterano tentou me agredir no treino. Sevrak impediu.
+**Ghork:** [expressao=neutro] Levo. Rask, aconteceu uma coisa na entrada. Um veterano tentou me bater durante o treino. Sevrak impediu, mas você precisa saber.
 
-**Rask:** Vou falar com os envolvidos. Obrigado pela entrega e pelo aviso.
+**Rask:** [expressao=neutro] Vou conversar com os envolvidos. Fez bem em me contar. E obrigado por trazer os materiais.
 
 **Conclusão:** entrega concluída, apresentação C feita, abre C2; E02–E03 se completou o trio. Sevrak não preparou o perigo; iniciante não vira recrutável. A omissão posterior de Rask pode ser cobrada em C4.
 
@@ -727,22 +727,22 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 **Acesso:** C1; E01 se necessária. **Local:** sede de Sevrak. **Participantes:** Sevrak e Ghork. **Objetivo:** elaborar uma comparação que explicite suas premissas.
 
-**Sevrak:** O que podemos concluir colocando uma cópia sobre a outra?
+**Sevrak:** [expressao=neutro] Aqui estão as duas cópias. Digamos que coloquemos uma sobre a outra. O que isso permite concluir?
 
-**Ghork:** Que o papel de cima impede a gente de ler o de baixo.
+**Ghork:** [expressao=feliz] Que não dá mais para ler a de baixo.
 
-**Sevrak:** E além dessa observação indispensável?
+**Sevrak:** [expressao=neutro] Uma descoberta indispensável. Agora, o que tornaria a comparação útil?
 
 **Ghork — escolha:**
 
-1. **“Precisamos conferir os pontos de referência antes de comparar os desenhos.”** — **Sevrak:** Anote quais. Outra pessoa deve conseguir repetir o que você fez.
-2. **“Os desenhos podem ser diferentes por mais de um motivo.”** — **Sevrak:** Liste as possibilidades. Depois procure informações que permitam eliminar alguma.
+1. **“Precisaríamos conferir os pontos de referência primeiro. Senão podemos estar comparando desenhos de lugares diferentes.”** [expressao=neutro] — **Sevrak:** [expressao=neutro] Então identifique os marcos e escreva como vai compará-los. Quero que outra pessoa consiga fazer isso sem você apontando para o papel.
+2. **“Uma diferença nos desenhos pode significar várias coisas. Não devíamos escolher uma explicação só porque foi a primeira que veio à cabeça.”** [expressao=confuso] — **Sevrak:** [expressao=neutro] Concordo. Anote as possibilidades. Depois procure algo que possa conferir para eliminar uma delas. Uma lista de palpites é só o começo.
 
 [Ghork prepara campos para origem da medida, referência e trecho descrito. As fontes autorizadas de entrada e retirada permitem preencher esses campos, conforme P01.]
 
-**Ghork:** Você já sabe a resposta?
+**Ghork:** [expressao=confuso] Está esperando que eu descubra uma resposta que você já sabe?
 
-**Sevrak:** Sei que seria um erro dar uma resposta sem ter como sustentá-la. Quero ver como você chega à sua.
+**Sevrak:** [expressao=neutro] Estou esperando para ver o que consegue sustentar. Dar uma conclusão sem as provas só ensinaria você a me repetir. Mostre como chega à sua.
 
 **Conclusão:** comparação preparada, sem resolver por suposição a causa dos mapas; abre C3.
 
@@ -751,24 +751,24 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 **Acesso:** C2. **Local:** casa de contratos. **Participantes:** Ghork e Elune. **Objetivo:** submeter o procedimento à leitura de outra pessoa.
 
-**Elune:** Sevrak quer que eu confira o resultado?
+**Elune:** [expressao=confuso] Sevrak mandou você com isto? O que ele quer conferir, o resultado?
 
-**Ghork:** E o modo como chegamos nele. Se precisa do mestre para explicar, o texto ainda não está bom.
+**Ghork:** [expressao=neutro] Isso, e se você consegue seguir as etapas sem ele ao lado. Se precisar chamar o mestre para explicar cada linha, não escrevi muito bem.
 
-**Elune:** Você escreveu "normalizar" aqui. O que exatamente quer que eu faça?
+**Elune:** [expressao=confuso] Então foi aqui que me perdi. "Normalizar." O que devo fazer com o mapa quando chegar nessa palavra?
 
 **Ghork — escolha:**
 
-1. **“Vou escrever os passos em vez de deixar só esse termo.”** — **Elune:** Melhor. Agora posso seguir o que você fez, sem adivinhar o que quis dizer.
-2. **“Vou incluir um exemplo, deixando claro que ele não é um dado das minas.”** — **Elune:** Deixe bem claro. Não quero ver alguém citando o exemplo como se tivesse sido medido lá.
+1. **“Entendi o problema. Vou escrever o que fazer, passo a passo, em vez de esconder tudo numa palavra.”** [expressao=neutro] — **Elune:** [expressao=neutro] Obrigada. Agora posso tentar a mesma comparação que você fez, sem ter de adivinhar o que quis dizer.
+2. **“Vou incluir um exemplo explicado. E marcar que é só um exemplo, para ninguém confundir com medidas tiradas da mina.”** [expressao=neutro] — **Elune:** [expressao=neutro] Ponha o aviso onde ninguém deixe de ver. Essas páginas são copiadas. Não quero uma medida inventada circulando sem a explicação.
 
 [Ghork revisa; Elune repete a comparação até o limite das fontes disponíveis.]
 
-**Elune:** Daqui em diante, faltam informações. Não posso preencher por você.
+**Elune:** [expressao=neutro] Até aqui consigo acompanhar. Depois deste ponto, faltam informações. Não posso preencher os espaços só para terminar a página.
 
-**Ghork:** Nem quero. Sevrak ia perguntar de onde tirei.
+**Ghork:** [expressao=feliz] Por favor, não preencha. Sevrak ia perguntar onde achei as informações que faltavam, e minha resposta seria bem constrangedora.
 
-**Elune:** Eu perguntaria também.
+**Elune:** [expressao=neutro] Ele não seria o único a perguntar.
 
 [Elune devolve a cópia com a revisão. Ghork recebe o material e o entrega na escola; o pedido do iniciante em C4 só começa depois desse retorno.]
 
@@ -781,61 +781,61 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 [O iniciante traz à escola notícia de um estojo de treino emprestado por Sevrak. O veterano se recusou a devolvê-lo e mandou Ghork buscá-lo pessoalmente.]
 
-**Iniciante:** Ele quer que Ghork repita a explicação sobre o ombro. Mas sem você por perto, Sevrak.
+**Iniciante:** [expressao=triste] Sevrak, aquele veterano não quer devolver seu estojo de treino. Diz que Ghork tem de ir buscar e explicar de novo o truque do ombro. Sem você por perto.
 
-**Sevrak:** Vou falar com Rask para devolverem o estojo.
+**Sevrak:** [expressao=neutro] Reter meu equipamento para forçar um confronto? Vou falar com Rask. O estojo tem de ser devolvido.
 
-**Ghork:** Eu vou buscar. Quero ver se ele repete isso na minha frente.
+**Ghork:** [expressao=raiva] Eu vou buscar. Se tem alguma coisa para dizer de mim, pode dizer na minha frente.
 
-**Sevrak:** Você está preparado para um duelo supervisionado. Se aceitar lutar, exija um juiz. Não precisa se arriscar para defender meu orgulho.
+**Sevrak:** [expressao=neutro] Você já pode enfrentar um duelo supervisionado. Se aceitar lutar, exija um juiz. E tenha clareza do motivo. Meu orgulho ferido não é razão para você se arriscar.
 
 [No coliseu, o veterano está com o estojo.]
 
-**Ghork:** Disseram que você queria falar comigo.
+**Ghork:** [expressao=neutro] Mandou me chamar. Estou aqui. O que queria dizer?
 
-**Veterano:** Quero ver se sabe lutar ou só dar palpite.
+**Veterano:** [expressao=raiva] Quero ver se tem um lutador por trás de tanto conselho. Ou só sabe falar?
 
-**Ghork:** Primeiro, devolva o estojo. Não é seu.
+**Ghork:** [expressao=neutro] Pode descobrir depois de devolver o estojo. Ele pertence à escola.
 
-**Rask:** Vou recolher o estojo para devolução. Fui avisado da agressão e devia ter impedido essa intimidação. Se quiserem lutar, será na área de duelo, comigo supervisionando.
+**Rask:** [expressao=neutro] Entregue para mim. O estojo será devolvido, aconteça o que acontecer aqui. Ghork me avisou da agressão; eu devia ter impedido que isso continuasse. Se os dois querem lutar, usem a área de duelo. Eu mesmo vou supervisionar.
 
 [Rask recolhe o estojo; a restituição não depende de a vítima vencer uma luta. O veterano desafia Ghork, que aceita.]
 
 **Ghork — resposta:**
 
-1. **“Queria me ver lutar? Vamos.”** — **Veterano:** Espero que tenha aprendido mais de um movimento.
-2. **“Antes eu vi de fora. Agora vou ver de perto.”** — **Veterano:** Quero ver você terminar essa frase deitado no chão.
+1. **“Queria saber se consigo lutar. Está bem. Vamos fazer isso direito.”** [expressao=neutro] — **Veterano:** [expressao=raiva] Vamos torcer para ter aprendido alguma coisa além de olhar ombros.
+2. **“Da outra vez eu estava olhando de fora. Vamos ver o que percebo de perto.”** [expressao=feliz] — **Veterano:** [expressao=raiva] Continue falando. Quero ver como fica esperto de costas no chão.
 
-**Rask:** Quando eu mandar parar, os dois param. Encerro a luta se alguém não puder continuar.
+**Rask:** [expressao=neutro] Quando eu mandar parar, os dois param. Se um dos lutadores não puder continuar, a luta acaba ali. Entendido?
 
 [**Batalha C4:** duelo de D20. Ghork observa a preparação dos golpes, mas o conhecimento não garante sucesso automático.]
 
 **Vitória:**
 
-**Rask:** Acabou. Ghork venceu.
+**Rask:** [expressao=neutro] Parem! A luta acabou. Ghork venceu.
 
-**Ghork:** O rapaz aprendeu quando alguém deu uma chance. Você podia ter tentado ensinar.
+**Ghork:** [expressao=neutro] Aquele rapaz aprendeu quando alguém deu uma chance. Você podia ter feito isso por ele, em vez de deixar com medo de levantar outra vez.
 
-**Veterano:** Já ganhou. Precisa fazer discurso também?
+**Veterano:** [expressao=raiva] Já ganhou. Ainda tenho de ouvir sermão?
 
-**Ghork:** Quero pegar o estojo e ir embora.
+**Ghork:** [expressao=neutro] Não. Vou levar o estojo de volta para a escola. Já estou indo.
 
 **Derrota sem nova rolagem:** Rask interrompe o duelo; **Veterano:** “Conselho não vence luta.” **Ghork:** “Essa tentativa não venceu. Vou voltar.” O desafio permanece aberto, sem retirar o estojo já restituído ou legitimar a intimidação. Ghork pode preparar-se e pedir revanche sem pagar. **Rask, na retomada:** “Mesmas condições. Se eu interromper, os dois param.” A quest aguarda a vitória no desafio aceito; não se torna uma derrota permanente da campanha.
 
 **Depois da vitória, entrega na escola:**
 
-**Sevrak:** Trouxe o estojo. Como foi o duelo?
+**Sevrak:** [expressao=neutro] O estojo voltou. Ótimo. Agora me diga como foi o duelo.
 
-**Ghork:** Rask supervisionou. Eu ganhei. Mas vencer uma luta não prova que eu estava certo em tudo.
+**Ghork:** [expressao=neutro] Rask foi o juiz. Eu ganhei. Foi bom, mas... vencer não faz tudo que eu disse estar certo. Essa parte ainda precisa se sustentar sozinha.
 
-**Sevrak:** Bom. De volta ao relatório: você colocou o que não sabemos antes do resultado.
+**Sevrak:** [expressao=neutro] Uma diferença que vale guardar. Agora, seu relatório: você colocou o que não sabemos antes do que descobrimos. Por que começar por aí?
 
-**Ghork:** Não quero que essa parte passe despercebida.
+**Ghork:** [expressao=neutro] Porque alguém pode ler o resultado e parar ali. Não quero Meruna mandando gente para a mina com metade da explicação.
 
 **Escolha:**
 
-1. **“Coloco ao lado da conclusão. Assim, quem ler uma também vê a outra.”** — **Sevrak:** Faça. Se continuar legível, serve.
-2. **“Quero explicar primeiro o que não sabemos. Depois mostro o que conseguimos fazer mesmo assim.”** — **Sevrak:** Então esteja pronto para defender essa escolha. Não vou responder por você.
+1. **“Vou pôr o aviso ao lado da conclusão. Assim ela vê o que descobrimos e onde deixa de haver certeza.”** [expressao=neutro] — **Sevrak:** [expressao=neutro] Tente. Se eu conseguir ler os dois sem procurar pela página, deve servir.
+2. **“Prefiro explicar primeiro o que não conseguimos descobrir. Depois mostro quanto ainda conseguimos conferir.”** [expressao=neutro] — **Sevrak:** [expressao=neutro] Então esteja pronto para explicar isso à Meruna. Essa escolha de apresentação é sua. Não vou intervir para defendê-la por você.
 
 **Conclusão:** duelo vencido, estojo devolvido e versão do relatório definida; abre C5. A ordem da ressalva reaparece em E04. O veterano continua um figurante, sem vínculo inventado com o campeão ou com os Ignotos.
 
@@ -844,19 +844,19 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 **Acesso:** C4. **Local:** sede. **Objetivo:** ouvir a estratégia C. **Participantes:** Sevrak e Ghork.
 
-**Sevrak:** Vamos apresentar um método que Meruna possa verificar. Se conseguir o contrato, a escola poderá ensinar outras pessoas a fazer esse levantamento.
+**Sevrak:** [expressao=neutro] Meruna poderá conferir nosso trabalho por conta própria. É isso que oferecemos. Com o contrato, a escola pode ensinar mais pessoas a fazer o mesmo levantamento, em vez de depender do julgamento de uma só.
 
-**Ghork:** E o contrato paga o trabalho da sua escola.
+**Ghork:** [expressao=neutro] E o dinheiro mantém sua escola funcionando. Não se trata só dos mapas.
 
-**Sevrak:** Nossa escola, se você se juntar a ela.
+**Sevrak:** [expressao=neutro] Ela poderia ser sua escola também, Ghork. Se decidir entrar.
 
-**Ghork:** Ainda estou decidindo.
+**Ghork:** [expressao=neutro] Ainda não decidi. Quero deixar isso claro.
 
-**Sevrak:** Então saiba o que estou pedindo. Quero você na investigação e na preparação para o campeonato. Fazer parte da escola vai exigir trabalho.
+**Sevrak:** [expressao=neutro] Então também vou ser claro. Quero você trabalhando na investigação e se preparando para o campeonato. Vejo algo em você que vale desenvolver, mas entrar na escola significa trabalhar.
 
-**Ghork:** Você quer que eu repita seu método ou que aponte quando ele estiver errado?
+**Ghork:** [expressao=confuso] E se eu encontrar um erro no seu método? Quer que eu aponte ou aprenda a fazer do seu jeito mesmo assim?
 
-**Sevrak:** Que demonstre o erro. Eu esperaria a mesma cobrança sobre meu trabalho.
+**Sevrak:** [expressao=neutro] Mostre o erro. Dizer que discorda não basta, mas demonstrar uma falha é útil. Você deve exigir de mim o mesmo cuidado.
 
 **Interface — escolha:**
 
@@ -877,48 +877,48 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 “Voltar” retorna ao mapa sem mudança. “Confirmar” inicia a defesa da guilda selecionada; perguntas posteriores não desfazem a decisão nem permitem que uma resposta de tom cause perda definitiva do contrato.
 
-**Meruna:** As três guildas apresentaram suas propostas. Ghork, qual delas você vai ajudar a executar?
+**Meruna:** [expressao=neutro] Ghork, você conheceu o trabalho dessas guildas. Agora preciso de uma resposta: qual proposta vai ajudar a executar?
 
 **Defesa A:**
 
-**Ghork:** A de Virmura. Comparamos o trajeto de um resgate com os mapas. Testamos as instruções usando uma maca e dividimos a equipe entre o trabalho de campo e a enfermaria.
+**Ghork:** [expressao=neutro] A de Virmura. Conferimos um trajeto de resgate com os mapas e depois testamos as instruções com uma maca. Sabemos quem vai a campo e quem fica para cuidar de quem precisa da guilda.
 
-**Sevrak:** Um relato de resgate não cobre a mina inteira.
+**Sevrak:** [expressao=neutro] Conferiram um trajeto de resgate. Uma mina tem um pouco mais do que isso. O que vão dizer à Meruna sobre o restante?
 
 **Ghork — escolha:**
 
-1. **“Nem dissemos que cobre. Marcamos o que ainda precisa ser investigado.”**
-2. **“É para isso que serve o contrato: investigar o resto. Já testamos como vamos trabalhar.”**
+1. **“Que ainda precisa ser investigado. Está marcado na proposta. Não estamos pedindo que acredite que conferimos mais do que realmente conferimos.”** [expressao=neutro]
+2. **“É isso que o contrato vai pagar para investigar. O que mostramos hoje foi como vamos fazer. Já testamos o procedimento.”** [expressao=neutro]
 
-**Meruna:** Está claro o que vocês já fizeram e o que ainda vão entregar. Virmura, registre no plano os custos da enfermaria e da equipe de campo.
+**Meruna:** [expressao=neutro] Consigo distinguir o que conferiram do que estão propondo. Ótimo. Virmura, inclua os custos da enfermaria no plano, junto com os da equipe de campo. Preciso ver o custo completo desse acordo.
 
 **Defesa B:**
 
-**Ghork:** A de Borun. Conferimos o registro com quem transportou a carga, separamos o que ela viu do que ouviu e pedimos a outra pessoa para seguir as instruções.
+**Ghork:** [expressao=neutro] A de Borun. Conferimos o registro da carga com Pirka, que fez o transporte. Separamos o que ela viu do que contaram a ela e depois demos as instruções a outra pessoa, para ver se conseguia seguir.
 
-**Virmura:** E se esses relatos não bastarem para saber como retirar alguém?
+**Virmura:** [expressao=neutro] E quando alguém se machucar lá embaixo? O que acontece se esses relatos não bastarem para indicar como tirar a pessoa?
 
 **Ghork — escolha:**
 
-1. **“Vamos anotar o que falta antes de entrar. Ninguém vai chamar um palpite de rota segura.”**
-2. **“Se a equipe não conseguir conferir, volta sem a resposta. Estar sendo pago não obriga ninguém a inventar uma.”**
+1. **“Anotamos o que falta antes de alguém entrar. Se não podemos confirmar uma saída, não marcamos como segura e torcemos para dar certo.”** [expressao=neutro]
+2. **“Então a equipe volta com essa pergunta sem resposta. Receber pelo trabalho não obriga ninguém a inventar o que não conseguiu descobrir.”** [expressao=neutro]
 
-**Meruna:** Inclua isso no relatório. Borun, a conferência das fontes em campo fica sob sua responsabilidade.
+**Meruna:** [expressao=neutro] Inclua esse limite no relatório. Borun, você fica responsável por conferir essas fontes em campo. Espero que o registro mostre o que realmente encontraram.
 
 **Defesa C:**
 
-**Ghork, se C4 começou pelo limite:** Vou explicar primeiro o que não conseguimos verificar. Depois mostro como conferimos o restante.
+**Ghork, se C4 começou pelo limite:** [expressao=neutro] Antes de mostrar o resultado, quero apontar o que não conseguimos verificar. Depois explico como conferimos o restante.
 
-**Ghork, se C4 colocou a ressalva ao lado:** Cada conclusão vem com uma nota sobre o que ainda não sabemos. Elune conseguiu repetir o método sem precisar chamar Sevrak.
+**Ghork, se C4 colocou a ressalva ao lado:** [expressao=neutro] Escolho a proposta de Sevrak. Cada conclusão indica o que ainda não sabemos. Elune conseguiu repetir o método sem chamar o mestre para explicar, então você também pode conferir nosso trabalho.
 
-**Borun:** Mesmo um método bem explicado pode partir de um relato errado.
+**Borun:** [expressao=neutro] Instruções bem arrumadas não fazem um relato errado virar verdade. E se a pessoa que passou a informação tiver se enganado?
 
 **Ghork — escolha:**
 
-1. **“Por isso anotamos de onde veio cada informação.”**
-2. **“Por isso deixamos as etapas escritas. Quem discordar pode conferir e apontar o erro.”**
+1. **“É por isso que cada informação tem uma fonte ao lado. Se alguma coisa não bater, sabemos onde voltar para conferir.”** [expressao=neutro]
+2. **“Então alguém pode seguir as etapas escritas e mostrar onde erramos. Não precisa aceitar só porque Sevrak ou eu dissemos.”** [expressao=neutro]
 
-**Meruna:** Sevrak, mantenha esse registro durante a investigação. Mesmo quando os resultados contrariarem sua primeira hipótese.
+**Meruna:** [expressao=neutro] Sevrak, quero esse registro mantido durante toda a investigação. Especialmente quando um resultado contrariar sua primeira explicação. Não pago a mais para manter coerência com um erro.
 
 **Trecho comum:**
 
@@ -926,16 +926,16 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 
 [A demonstração concreta que compara os mapas deve acompanhar essa avaliação conforme P01. A financiadora escolhe entre propostas viáveis; não anuncia que as demais são incompetentes.]
 
-**Virmura, se rejeitada:** Eu contava com esse dinheiro para a equipe de campo. Não posso ceder gente nem materiais de que a enfermaria precisa. Minha guilda vai disputar os próximos contratos e o campeonato contra a sua.
+**Virmura, se rejeitada:** [expressao=triste] Eu contava com esse dinheiro para pôr uma equipe em campo. Sem ele, não posso ceder gente e materiais que fazem falta na enfermaria. Vamos disputar os próximos contratos. E vamos enfrentar vocês no campeonato.
 
-**Borun, se rejeitado:** Vou procurar trabalho para a minha gente. Nossa guilda não vai acompanhar essa expedição. E, na arena, vamos estar do outro lado.
+**Borun, se rejeitado:** [expressao=triste] Então vou ter de procurar outro trabalho para minha gente. Não vamos acompanhar sua expedição. E, quando chegar o campeonato, lembre que vamos competir contra você.
 
-**Sevrak, se rejeitado:** Nossos instrutores e métodos ficam na escola. Haverá outras oportunidades de mostrar o que poderíamos fazer. O campeonato é uma delas.
+**Sevrak, se rejeitado:** [expressao=neutro] Nossos instrutores e métodos continuam na escola. Terá a chance de ver do que abriu mão, Ghork. Imagino que o campeonato ofereça uma.
 
 **Ghork — escolha, depois das duas recusas:**
 
-1. **“Continuo grato pelo que fizeram por mim.”** — **Mentor rejeitado, primeira fala aplicável:** Virmura: “Eu sei. Mas ainda preciso cuidar do trabalho da minha guilda.” / Borun: “Eu sei. Isso não acaba só porque escolhemos lados diferentes.” / Sevrak: “Não estou contestando sua gratidão. Estou contestando sua escolha.”
-2. **“Escolhi o trabalho que quero fazer. Nunca prometi entrar nas três guildas.”** — **Meruna:** Havia um contrato, não três. Vamos registrar quem vai assumir o trabalho.
+1. **“Não esqueci o que fizeram por mim. Escolher esta guilda não significa que deixei de ser grato.”** [expressao=triste] — **Mentor rejeitado, primeira fala aplicável:** Virmura: [expressao=triste] “Eu sei que é grato. Não estou pedindo que negue isso. Mas ainda tenho uma guilda cheia de gente dependendo de mim.” / Borun: [expressao=triste] “Eu sei, rapaz. Não acho que esqueceu. Mas, neste trabalho, ainda vamos seguir caminhos diferentes.” / Sevrak: “Não estou contestando sua gratidão. Estou contestando sua escolha.”
+2. **“Escolhi o trabalho que quero fazer. Nunca prometi entrar nas três guildas, e nem conseguiria cumprir essa promessa.”** [expressao=neutro] — **Meruna:** [expressao=neutro] Ofereci um contrato. Alguém ia sair daqui sem ele. Vamos registrar quem assume a responsabilidade pelo trabalho.
 
 **Mentor escolhido:**
 
@@ -956,28 +956,28 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 - **Borun:** Rask, você nos deu a faixa de treino. Se a palavra só vale depois de Torvak aprovar, devia ter dito antes.
 - **Sevrak:** Há um horário concedido à nossa escola. Qual regra permite que a quarta guilda o substitua pela própria preferência?
 
-**Torvak:** É a minha equipe que traz o público que paga por este coliseu. Querem usar a arena que sustentamos e ainda chamam nossa prioridade de abuso?
+**Torvak:** [expressao=raiva] Minha equipe traz o público que mantém este coliseu aberto. Vocês querem treinar na arena que pagamos e chamam de abuso quando pedimos prioridade?
 
-**Mentor:** Virmura: “Quando toma o que já foi concedido a outra equipe, é abuso.” / Borun: “Quero que cumpram o combinado.” / Sevrak: “Quero uma resposta à pergunta.”
+**Mentor:** Virmura: [expressao=raiva] “Quando sua prioridade tira o horário já prometido a outra equipe, sim. É exatamente de abuso que estou chamando.” / Borun: [expressao=raiva] “Estou pedindo que cumpra o acordo. Não devíamos ter de implorar por um horário que já era nosso.” / Sevrak: [expressao=neutro] “Uma descrição da sua popularidade não responde à pergunta. Que regra permite isso?”
 
-**Torvak:** Retire a acusação. Agora.
+**Torvak:** [expressao=raiva] Retire o que disse. Aqui, na frente de todos.
 
-**Mentor:** Virmura: “Não retiro.” / Borun: “Não vou pedir desculpas por isso.” / Sevrak: “Mantenho o que disse.”
+**Mentor:** Virmura: [expressao=raiva] “Não. Você ouviu muito bem.” / Borun: [expressao=raiva] “Não. Não vou pedir desculpas por esperar que cumpram a palavra.” / Sevrak: [expressao=neutro] “Mantenho a pergunta. Não vejo motivo para retirá-la.”
 
-**Torvak:** Rask, resolva os horários dessa guilda. Ou reveja se pode contar comigo no seu campeonato.
+**Torvak:** [expressao=raiva] Rask. Cancele os horários de treino dessa guilda. Se não consegue fazer isso, talvez deva ver como seu campeonato se sai sem mim.
 
 [Rask olha a lista. Risca os horários da guilda escolhida.]
 
-**Rask:** Vocês terão de treinar fora do coliseu. A inscrição no campeonato continua válida.
+**Rask:** [expressao=triste] Estou retirando seus horários de treino. Vocês terão de treinar fora do coliseu. A inscrição no campeonato continua válida... isso não vou retirar.
 
 **Ghork — escolha:**
 
-1. **“Você está desfazendo uma decisão que já tinha confirmado.”** — **Rask:** Estou. Não vou fingir que houve um erro na lista.
-2. **“E ele fica com a arena?”** — **Torvak:** Minha equipe fica com o espaço de que precisa para treinar.
+1. **“Você já tinha confirmado esses horários. Agora vai tirar porque ele mandou?”** [expressao=raiva] — **Rask:** [expressao=triste] Sim. Tem todo o direito de dizer que voltei atrás no que prometi. Não foi um erro na agenda.
+2. **“E ele fica com a arena? Ele ameaça ir embora, e nós perdemos nosso lugar?”** [expressao=raiva] — **Torvak:** [expressao=raiva] Minha equipe vai ter o espaço de que precisa. Fizemos o bastante por este coliseu para merecer isso.
 
-**Ghork:** Vamos ter de organizar os treinos outra vez.
+**Ghork:** [expressao=triste] A gente já tinha organizado os treinos. Agora vai ter de encontrar espaço para tudo outra vez.
 
-**Mentor:** Virmura: “Na sede. E ninguém vai perder descanso por causa disso.” / Borun: “Vamos dividir o trabalho. Eu acompanho os treinos que prometi.” / Sevrak: “Vamos adaptar os exercícios à escola. Primeiro, precisamos conferir o espaço.”
+**Mentor:** Virmura: [expressao=neutro] “Vamos abrir espaço na sede. E ninguém vai perder descanso para pagar pela birra dele.” / Borun: [expressao=neutro] “Vamos dividir o trabalho na sede. Prometi acompanhar aqueles treinos e vou acompanhar. Vamos ver o que cabe em cada espaço.” / Sevrak: [expressao=neutro] “Na escola, então. Vamos avaliar o espaço e adaptar os exercícios. Ainda temos um campeonato para preparar.”
 
 **Saída:** encerra arco 1. Na abertura comum do arco 2, Ghork ajuda a reorganizar materiais leves e horários; a tarefa não vira quest, pagamento ou penalidade. A crítica escolhida ocorre depois do cancelamento e não o causa.
 
@@ -992,7 +992,7 @@ Antes da primeira apresentação, exibir a reorganização e uma fala do mentor:
 - **Borun:** Aqui cabe menos gente. Dividi o acompanhamento e avisei Pirka. Dessa vez você não vai descobrir meu atraso olhando uma cadeira vazia.
 - **Sevrak:** Mudei a sequência dos exercícios para este espaço. Quero que registre onde ela não funcionar. Não me serve um aluno que concorda e depois improvisa escondido.
 
-**Ghork:** Vou ajudar no que conseguir. Se não der conta de algo, aviso.
+**Ghork:** [expressao=neutro] Vou ajudar no que puder. E, se não der conta de alguma coisa, aviso antes que vire outro problema.
 
 Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas apresentações externas podem ser iniciadas em seguida.
 
@@ -1001,26 +1001,26 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 **Local:** oficina de Durn. **Participantes:** Darvek, Durn e Ghork. **Objetivo:** compreender a proposta cautelosa. **Acesso:** entrada do arco 2. **Referência:** PC2-compromisso, pela apresentação das exigências antes da adesão.
 
-**Darvek:** Este suporte fica de reserva. Se levarmos tudo para avançar, o que sobra para tirar alguém de lá?
+**Darvek:** [expressao=neutro] Esse esteio fica aqui. Se levarmos todos lá para dentro, o que sobra para trazer alguém de volta?
 
-**Durn:** E não adianta ter suporte sem saber montar. É preciso saber onde a peça aguenta o peso.
+**Durn:** [expressao=neutro] Primeiro, aprendam a montar. Um esteio no lugar errado não sustenta grande coisa.
 
-**Ghork:** Quanto disso sai do pagamento?
+**Ghork:** [expressao=confuso] E tudo isso sai do nosso pagamento? Quanto, mais ou menos?
 
-**Darvek:** Mais do que no plano de Zagra. Vamos pagar inspeções, apoios e gente pronta para ajudar na retirada. Sobra menos para o torneio.
+**Darvek:** [expressao=neutro] Mais do que a Zagra está pedindo. Vamos pagar pelas inspeções, pelos esteios, por gente pronta para ajudar na saída. Vai sobrar menos para o campeonato.
 
 **Ghork — perguntas, ambas necessárias:**
 
-- **“O que conseguimos fazer com essa reserva?”** — **Darvek:** Parar e organizar a volta com gente descansada, sem tirar ninguém do transporte dos feridos. Ainda pode haver acidentes.
-- **“E se não precisarmos usar?”** — **Darvek:** Ainda teremos pago pelo material e pela equipe. Preciso que você aceite esse custo antes de entrarmos.
+- **“Digamos que alguma coisa dê errado. O que essa reserva permite fazer?”** [expressao=neutro] — **Darvek:** [expressao=neutro] Parar. Preparar a volta. Ter alguém livre para ajudar, em vez de todo mundo ocupado carregando os feridos. Não nos torna invulneráveis.
+- **“E se a gente sair sem usar nada disso?”** [expressao=neutro] — **Darvek:** [expressao=neutro] O material continua custando. O tempo da equipe também. Prefiro que você reclame do custo aqui em cima. Pior seria só descobrir isso lá embaixo.
 
-**Durn:** Olhe o encaixe. Confira a marca e anote o resultado do teste. Deixe o peso comigo.
+**Durn:** [expressao=neutro] Chegue mais perto. Está vendo esta junção? Confira com a marca e anote o que acontecer no teste. O peso fica comigo.
 
 [Ghork confere a marca enquanto Durn demonstra.]
 
-**Ghork:** Pelo menos agora sei pelo que estamos pagando.
+**Ghork:** [expressao=neutro] Está bem. Fica mais fácil entender a conta quando vejo o que estamos pagando.
 
-**Darvek:** É um começo. Ouça Zagra antes de decidir.
+**Darvek:** [expressao=neutro] Ótimo. Agora deixe a Zagra mostrar a dela. Você ainda não escolheu.
 
 **Conclusão:** apresentação X completa. Se Y0 falta, mapa; se ambas concluídas, E06. Nenhuma compra pessoal nem adesão automática.
 
@@ -1029,24 +1029,24 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 **Local:** mercado, junto à carga. **Participantes:** Zagra, Pirka e Ghork. **Objetivo:** conhecer o limite e o custo da operação leve. **Acesso:** entrada do arco 2, independente de X0.
 
-**Zagra:** Levamos estas cargas. A reserva pesada fica para trás neste primeiro reconhecimento. Vamos examinar um trecho curto e voltar.
+**Zagra:** [expressao=neutro] Estas cargas vão conosco. A reserva pesada fica aqui em cima. Levantamos um trecho curto e voltamos. Esse é o trabalho que estou propondo.
 
-**Pirka:** Menos carga barateia o transporte. Mas minha carroça continua sem caber numa galeria.
+**Pirka:** [expressao=feliz] Menos peso, frete mais barato. Só lembrem: onde começa o túnel, termina o caminho da minha carroça.
 
-**Ghork:** Então, se alguém se machucar lá dentro...
+**Ghork:** [expressao=confuso] E se alguém se machucar depois desse ponto... a gente traz de volta por conta própria?
 
-**Zagra:** Teremos menos meios de tirar essa pessoa de lá. Esse é o risco. Em troca, sobra mais do pagamento para nossa preparação.
+**Zagra:** [expressao=neutro] Com menos equipamento para ajudar. Sim. Não vou enfeitar isso. Em troca, sobraria mais do pagamento para os treinos.
 
 **Ghork — perguntas, ambas necessárias:**
 
-- **“O que faria vocês voltarem antes do ponto combinado?”** — **Zagra:** Sinais de instabilidade, perda das referências do caminho ou alguém sem condições de continuar. Não vou prometer uma saída que não posso encontrar.
-- **“O que você se recusa a cortar?”** — **Zagra:** Marcas para achar a saída, comunicação entre nós e um limite de carga que todos consigam carregar. Sem isso, o plano não funciona.
+- **“O que faria você encerrar o trabalho antes de terminar?”** [expressao=neutro] — **Zagra:** [expressao=neutro] Rocha instável. Perder o caminho. Alguém sem condições de continuar. Se eu não enxergar uma saída, não levo vocês mais para dentro.
+- **“Tem alguma coisa de que você não abre mão para economizar?”** [expressao=neutro] — **Zagra:** [expressao=neutro] Marcas para encontrar a saída. Um jeito de manter contato. Cargas que cada um consiga carregar. Sem isso, já não é o trabalho que propus.
 
 [Ghork confere a lista com Pirka.]
 
-**Ghork:** Você e Darvek já trabalharam juntos.
+**Ghork:** [expressao=neutro] Você e o Darvek já trabalharam na mesma equipe, não foi?
 
-**Zagra:** Sim. Ele leva uma reserva maior. Eu limito o serviço para precisar de menos. Nós já discutíamos isso muito antes de você chegar.
+**Zagra:** [expressao=neutro] Já. Ele leva o suficiente para enfrentar um problema maior. Eu aceito um trabalho menor. Pode acreditar: essa discussão é mais velha que o seu contrato.
 
 **Conclusão:** apresentação Y completa; E06 depois de ambas. Não escolher a equipe ao simplesmente visitar seu local.
 
@@ -1055,7 +1055,7 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 **Encaixe:** conclusão da segunda apresentação realizada. **Local:** casa de contratos. **Participantes:** Ghork, Darvek, Zagra e mentor escolhido. **Objetivo:** assumir uma abordagem sabendo o que custa.
 
-**Mentor:** Virmura: “Ouviu os dois. Que risco vai aceitar? E como vai explicar isso à equipe?” / Borun: “Conte o que você conferiu, não só qual conversa agradou mais.” / Sevrak: “Escolha o método adequado ao trabalho. Depois, terá de responder pelo resultado.”
+**Mentor:** Virmura: [expressao=neutro] “Você ouviu os dois planos. Agora escolha um que consiga defender quando a equipe perguntar por quê.” / Borun: [expressao=neutro] “Antes de me contar quem convenceu você, conte o que foi conferir por conta própria.” / Sevrak: [expressao=neutro] “Uma proposta convincente não basta. Escolha um método que consiga justificar quando tivermos o resultado.”
 
 **Interface:** “Escolher X ou Y abre duas missões exclusivas e fecha a outra abordagem nesta campanha. A equipe preterida seguirá com apoio de outra guilda e poderá enfrentá-lo. Confirmar X / Confirmar Y / Pensar mais.”
 
@@ -1063,33 +1063,33 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 **Escolha X:**
 
-**Ghork:** Quero deixar a reserva de resgate pronta antes de entrar. Aceito ficar com menos dinheiro depois.
+**Ghork:** [expressao=neutro] Vamos com o Darvek. Quero essa reserva pronta antes de alguém entrar. Vou ter que me virar com menos para os treinos.
 
-**Darvek:** Então começamos testando os apoios.
+**Darvek:** [expressao=neutro] Está bem. Venha ajudar a testar os esteios.
 
-**Zagra:** Você ouviu os limites do meu plano. Ainda acha que eu só entro torcendo para ninguém se machucar?
+**Zagra:** [expressao=raiva] Você ouviu até onde eu iria. Ainda acha que eu arrastaria minha equipe para dentro e torceria para dar certo?
 
 **Ghork — escolha:**
 
-1. **“Ouvi. Para este trabalho, prefiro ter mais recursos para a volta.”**
-2. **“Não acho que você abandone os seus. Só quero uma margem maior de segurança.”**
+1. **“Eu ouvi. Mesmo assim, quero mais ajuda preparada se a volta der errado.”** [expressao=neutro]
+2. **“Não acho que você abandonaria ninguém. Eu só dormiria melhor sabendo que temos mais recursos à mão.”** [expressao=neutro]
 
-**Zagra:** Minha equipe ainda vai mostrar o que sabe fazer. Com ou sem você.
+**Zagra:** [expressao=raiva] Está bem. Minha equipe sabe fazer esse trabalho. Vamos encontrar alguém disposto a vir conosco.
 
 **Escolha Y:**
 
-**Ghork:** Vamos com Zagra e ficamos no reconhecimento limitado. Quero guardar recursos, mas não vou prometer mais do que podemos investigar.
+**Ghork:** [expressao=neutro] Vamos com a Zagra. Um levantamento curto, com dinheiro sobrando para os treinos. Se não der para verificar um trecho com o que levamos, deixamos esse trecho para depois.
 
-**Zagra:** Com esses limites por escrito, podemos preparar a carga.
+**Zagra:** [expressao=neutro] Então ponha isso no plano. Quero que todos ouçam a mesma coisa antes de arrumarmos a carga.
 
-**Darvek:** E se precisarem de mais do que levaram para sair de lá? Minha reserva já virou exagero?
+**Darvek:** [expressao=triste] E se a volta exigir mais de vocês do que a ida? A minha reserva ainda vai parecer exagero?
 
 **Ghork — escolha:**
 
-1. **“Seu plano cobre esse risco. Eu aceitei ter menos recursos para enfrentá-lo.”**
-2. **“Não estou chamando você de medroso. Estou escolhendo fazer um trabalho menor.”**
+1. **“Sua reserva cobriria isso. Eu sei. Estou aceitando o risco de ter menos recursos à mão.”** [expressao=neutro]
+2. **“Não estou chamando você de covarde, Darvek. Estou dizendo que vamos parar antes.”** [expressao=neutro]
 
-**Darvek:** Espero que respeite esse limite lá dentro. Vou procurar quem queira trabalhar com a minha equipe.
+**Darvek:** [expressao=neutro] Então lembre disso quando faltar só mais uma curva para verificar. Vou encontrar trabalho para minha equipe.
 
 **Saída:** X ou Y registrado, inicia X1 ou Y1. A mágoa profissional desenvolve a proposta já existente de B2; não estabelece promessa quebrada, roubo de pagamento ou ruína de reputação. Sua causa ainda depende de confirmação autoral.
 
@@ -1098,28 +1098,28 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 **Acesso:** compromisso X. **Locais:** oficina e entrada das minas. **Participantes:** Darvek, Durn e Ghork. **Objetivo:** preparar e testar a reserva de retirada.
 
-**Durn:** As peças estão prontas. Quem vai montar?
+**Durn:** [expressao=neutro] As peças estão prontas. Quem vai montar? Quero mostrar as junções a essa pessoa.
 
-**Darvek:** Minha equipe. Ghork confere a lista e o caminho até o ponto de espera.
+**Darvek:** [expressao=neutro] Minha equipe monta. Ghork, confira a lista e o caminho até o ponto de espera. Veja se conseguimos chegar lá com tudo isso.
 
-**Ghork:** Posso acompanhar o teste.
+**Ghork:** [expressao=neutro] Quero ficar para o teste. Fui eu que disse que precisávamos disso.
 
-**Darvek:** Fique. Se eu não explicar alguma coisa direito, não dê essa parte por conferida.
+**Darvek:** [expressao=neutro] Então fique. E pergunte. Não aprove nada por vergonha de dizer que não entendeu minha explicação.
 
 [Na entrada, a equipe ensaia a circulação com uma carga de treino. Uma reserva fica livre para atender a retirada; não se cria acidente real.]
 
 **Ghork — escolha:**
 
-1. **“Quero ver quem pega a carga se alguém precisar parar.”** — **Darvek:** Troquem de posição. Vamos ver se ainda conseguem voltar.
-2. **“Quero ver se conseguimos alcançar os apoios com a equipe passando.”** — **Darvek:** Boa pergunta. Liberem o corredor antes de tentar de novo.
+1. **“Digamos que um de nós precise parar. Quem fica com a carga dessa pessoa?”** [expressao=neutro] — **Darvek:** [expressao=neutro] Boa pergunta. Troquem de lugar, pessoal. Vamos tentar a volta desse jeito.
+2. **“Com todo mundo passando por aqui, ainda dá para alcançar os esteios?”** [expressao=neutro] — **Darvek:** [expressao=neutro] Assim, não. Desobstruam a passagem. Vamos tentar de novo.
 
 [As duas conferências fazem parte do ensaio; a opção decide a primeira atenção de Ghork.]
 
-**Darvek:** Pronto. Aqui está o custo da reserva, separado do material que vamos usar na investigação.
+**Darvek:** [expressao=neutro] Agora sim. Aqui está o custo da reserva, separado do material que vamos usar no levantamento.
 
-**Ghork:** Isso já levou boa parte do que eu queria gastar na preparação.
+**Ghork:** [expressao=triste] Isso dá... um bom número de treinos, empilhados na forma de esteios.
 
-**Darvek:** Levou. Pode conferir cada gasto. Não vou fingir que isso saiu de graça.
+**Darvek:** [expressao=neutro] Dá mesmo. Confira as contas comigo se quiser. Pedi que você abrisse mão disso; não vou esconder o preço.
 
 **Conclusão:** preparação concluída, abre X2; nenhum desconto em Ludos ou atributo. O pagamento do contrato sustenta a operação, sem exigir saldo pessoal.
 
@@ -1130,24 +1130,24 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 [A equipe identifica uma passagem que exige conferência antes de levar a carga adiante.]
 
-**Darvek:** Vamos parar aqui. Preciso conferir esse apoio antes de continuar.
+**Darvek:** [expressao=neutro] Parem aqui. Não gostei daquele suporte. Vamos conferir antes de alguém avançar.
 
-**Ghork:** Depois de toda aquela preparação, ainda precisamos parar?
+**Ghork:** [expressao=confuso] Já vamos parar? Depois de todo o tempo que passamos preparando a entrada?
 
-**Darvek:** Nós nos preparamos para poder parar e organizar a saída. A rocha ainda pode ceder.
+**Darvek:** [expressao=neutro] Foi para isso que nos preparamos. Para poder parar e organizar a saída. Aqueles esteios não mudam a rocha.
 
 **Ghork — escolha:**
 
-1. **“Vou anotar o que vimos enquanto vocês conferem.”** — **Darvek:** Marque até onde chegamos. Do restante, ainda não sabemos.
-2. **“Mostre o que precisa conferir. Quero saber explicar o atraso.”** — **Darvek:** Este apoio sustenta a passagem. Minha equipe vai examiná-lo. Anote por que paramos.
+1. **“Está bem. Enquanto você verifica, vou anotar o que vimos.”** [expressao=neutro] — **Darvek:** [expressao=neutro] Marque onde paramos. Deixe o resto em branco; ainda não vimos o que há lá.
+2. **“Mostre o que está preocupando você. Se perguntarem por que paramos, quero saber responder.”** [expressao=neutro] — **Darvek:** [expressao=neutro] Aquele suporte sustenta esta passagem. Minha equipe vai verificar. Anote isso como o motivo da parada.
 
 [A equipe reorganiza o percurso usando a reserva; obtém observações úteis e delimita a parte ainda incerta. Não descrever desabamento como causa dos mapas.]
 
-**Ghork:** Vamos entregar menos do que eu queria.
+**Ghork:** [expressao=triste] Achei que teríamos mais para mostrar na volta.
 
-**Darvek:** Vamos entregar o que verificamos e explicar por que não fomos além.
+**Darvek:** [expressao=neutro] Eu também. Vamos mostrar o que conferimos e explicar por que não avançamos.
 
-**Ghork:** Eu escolhi esse plano. Também vou explicar os gastos.
+**Ghork:** [expressao=neutro] E quanto custou. Eu escolhi a reserva. Não vou deixar você explicar a conta sozinho.
 
 **Conclusão:** investigação X realizada; libera Q-20, R3 e R4. Convites dependentes de X/Y podem agora ser avaliados. Nenhum aliado automático. A equipe retorna viva sem uma conclusão universal de que só X é responsável.
 
@@ -1156,22 +1156,22 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 **Acesso:** compromisso Y. **Locais:** mercado e entrada das minas. **Participantes:** Ghork, Zagra e Pirka. **Objetivo:** preparar uma carga compatível com o reconhecimento limitado.
 
-**Pirka:** A lista diminuiu. O risco não aparece na balança; confiram tudo antes de subir.
+**Pirka:** [expressao=neutro] Lista curta. Confiram mesmo assim. O que esquecerem aqui não vai ficar mais perto depois que sairmos.
 
-**Zagra:** Ghork, diga o que não vamos fazer lá dentro. Quero ter certeza de que entendemos o serviço do mesmo jeito.
+**Zagra:** [expressao=neutro] Ghork. Antes de carregar, diga onde esse trabalho termina. Não quero que cada um esteja concordando com uma coisa diferente.
 
 **Ghork — escolha:**
 
-1. **“Não vamos entrar num trecho que exija uma operação maior.”** — **Zagra:** Certo. Esse limite vai constar no relatório.
-2. **“Guardar dinheiro não nos dá a reserva de Darvek.”** — **Zagra:** Isso. Se precisarmos dela, encerramos o reconhecimento.
+1. **“Se um trecho exigir mais equipamento ou gente do que levamos, não entramos nele.”** [expressao=neutro] — **Zagra:** [expressao=neutro] Isso. Ponha no relatório também. Ninguém vai chamar de serviço incompleto porque resolveu querer mais depois.
+2. **“E o dinheiro que vamos guardar não vai ajudar a carregar alguém para fora. Não teremos a reserva do Darvek.”** [expressao=neutro] — **Zagra:** [expressao=neutro] Certo. Se o trabalho exigir essa reserva, nosso serviço termina ali.
 
 [Na entrada, Ghork confere marcações, carga e sinais de parada com a equipe.]
 
-**Ghork:** E se alguém tiver vergonha de pedir para voltar?
+**Ghork:** [expressao=confuso] E se alguém quiser voltar, mas não quiser ser a pessoa que pede?
 
-**Zagra:** Eu pergunto antes de avançarmos. Você também pode falar. Se eu apressar alguém, me avise.
+**Zagra:** [expressao=neutro] Vou perguntar antes de avançar. Você também pode perguntar. E, se for eu quem estiver apressando os outros, espero que me interrompa.
 
-**Ghork:** Combinado. Não quero descobrir depois que todo mundo foi sem querer.
+**Ghork:** [expressao=neutro] Isso eu consigo. Prefiro uma conversa desconfortável aqui a descobrir lá embaixo que ninguém queria ir.
 
 **Conclusão:** limites apresentados à equipe, abre Y2. O plano preserva mais recursos, mas não concede bônus ou elimina o risco.
 
@@ -1182,26 +1182,26 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 [A equipe observa sinais de instabilidade antes do ponto pretendido. Zagra levanta a mão; todos param.]
 
-**Zagra:** Com o equipamento que trouxemos, não vamos além daqui.
+**Zagra:** [expressao=neutro] Este é o nosso limite. Não trouxemos o suficiente para passar daqui.
 
-**Ghork:** Ainda não chegamos ao trecho que queríamos ver.
+**Ghork:** [expressao=triste] Mas o trecho que viemos examinar ainda está mais à frente.
 
-**Zagra:** Não. Mas, se alguém se machucar ali, teremos menos meios de tirá-lo. Combinamos que pararíamos nessas condições.
+**Zagra:** [expressao=neutro] Eu sei. E, se alguém se machucar lá dentro, teremos pouca coisa para ajudar na volta. Foi aqui que eu disse que pararíamos.
 
 **Ghork — escolha:**
 
-1. **“Vou marcar onde paramos.”** — **Zagra:** Anote o que vimos e por que paramos. Não diga que é impossível passar. Nós não conferimos.
-2. **“Eu explico por que paramos quando entregarmos o trabalho.”** — **Zagra:** Explique comigo. Fui eu quem propôs esse plano.
+1. **“Então vou marcar este ponto. Pelo menos vão saber até onde chegamos.”** [expressao=neutro] — **Zagra:** [expressao=neutro] E por quê. Não marque o próximo trecho como intransponível. Não sabemos disso; não fomos conferir.
+2. **“Na entrega, eu explico por que voltamos.”** [expressao=neutro] — **Zagra:** [expressao=neutro] Nós explicamos. Eu propus esse plano, Ghork. Você não precisa responder por ele sozinho.
 
 [Eles registram o que observaram e recuam sem acidente obrigatório.]
 
-**Ghork:** Vamos voltar com mais dinheiro, mas sem saber o que há naquele trecho.
+**Ghork:** [expressao=triste] Então continuo com o dinheiro dos treinos. E continuo sem poder dizer o que tem lá embaixo.
 
-**Zagra:** Sim. E as duas coisas precisam constar no relatório.
+**Zagra:** [expressao=neutro] Foi o que aconteceu. Ponha as duas coisas no relatório, mesmo que não seja o final que queríamos.
 
-**Ghork:** Não quero que façam piada de Darvek quando contarmos.
+**Ghork:** [expressao=neutro] Seja lá o que dissermos, não quero que o Darvek vire piada.
 
-**Zagra:** Nem eu. A reserva dele teria sido útil aqui. Também teria custado mais.
+**Zagra:** [expressao=neutro] Não vai virar, se depender de mim. A reserva dele teria ajudado aqui. Também teríamos pago por ela.
 
 **Conclusão:** investigação Y realizada; libera Q-20, R3 e R4 e a avaliação dos convites dependentes. O recuo não transforma a rota numa falha nem afirma que assumir risco sempre compensa.
 
@@ -1212,22 +1212,22 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 #### 1. A entrega
 
-**Meruna:** Mostrem o que investigaram e o que ainda não puderam verificar.
+**Meruna:** [expressao=neutro] Primeiro, mostrem por onde passaram. Depois, onde tiveram que parar.
 
-**Ghork, X:** Preparamos uma reserva. Paramos para conferir um apoio e a usamos para reorganizar a retirada. Sobrou menos dinheiro para a preparação.
+**Ghork, X:** [expressao=neutro] Montamos a reserva. Quando foi preciso verificar um suporte, paramos e usamos a reserva para organizar a saída. Sobrou menos do pagamento para os treinos.
 
-**Ghork, Y:** Levamos menos equipamento e voltamos ao encontrar instabilidade. Sobrou mais dinheiro, mas não examinamos o trecho além desta marca.
+**Ghork, Y:** [expressao=neutro] Levamos menos equipamento. Quando chegamos ao terreno instável, voltamos. Sobrou mais dinheiro, mas depois desta marca? Não conseguimos verificar.
 
-**Elune:** Vou marcar onde fizeram cada observação. O mapa também precisa mostrar o que ainda não sabemos.
+**Elune:** [expressao=neutro] Vou colocar cada observação aqui, onde vocês a fizeram. O espaço em branco fica em branco. Não quero que a próxima equipe entenda isso como caminho livre.
 
-**Meruna:** O relatório descreve o que vocês fizeram. Não prova que o restante esteja seguro para explorar. A guilda receberá o pagamento combinado; vocês o dividem conforme seu acordo.
+**Meruna:** [expressao=neutro] Isso explica o serviço feito. Não libera o restante da mina para exploração. O pagamento combinado vai para a guilda; a divisão segue o acordo de vocês.
 
 **Ghork — escolha:**
 
-1. **“Quero incluir os gastos do plano.”** — **Meruna:** Inclua. Vou precisar desses valores para avaliar outra investigação.
-2. **“Quero explicar por que paramos.”** — **Meruna:** Descreva o que encontraram. Não prometa que o próximo grupo encontrará as mesmas condições.
+1. **“Quero incluir o custo do plano também. Isso pesou na nossa escolha.”** [expressao=neutro] — **Meruna:** [expressao=neutro] Inclua. Se contratarmos outro levantamento, vou precisar saber quanto este exigiu.
+2. **“Podemos explicar melhor a parada? Não quero que pareça que só nos cansamos do serviço.”** [expressao=neutro] — **Meruna:** [expressao=neutro] Descreva o que fez vocês pararem. Seja específico, mas não diga à próxima equipe o que ela vai encontrar. As condições podem mudar.
 
-**Representante:** Darvek: “Usamos a reserva para reorganizar a equipe. Aqui estão os gastos.” / Zagra: “Respeitamos o limite. O pagamento não muda aquilo que conseguimos descobrir.”
+**Representante:** Darvek: [expressao=neutro] “A reserva permitiu reorganizar a equipe para a volta. Aqui estão as despesas, uma por uma.” / Zagra: [expressao=neutro] “Nosso plano terminava ali. Respeitamos isso. Receber o pagamento não nos dá uma resposta sobre o resto.”
 
 **Saída da cena:** remuneração pessoal conhecida em termos narrativos. Valores permanecem pendentes. Uma conversa de contribuição nunca usa dinheiro da guilda.
 
@@ -1235,60 +1235,60 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 [Na sede escolhida, Ghork prepara o segundo contato. Proposta: Virmura mantém o serviço de recarga necessário aos contatos mesmo se rival, sem ceder recursos da expedição ou exigir adesão. A montagem só mostra uma recarga quando necessária, sem frequência inventada.]
 
-**Lala:** Terminei duas peças! Vou começar a oferecer meu trabalho.
+**Lala:** [expressao=feliz] Duas peças prontas! Duas! Vou começar a mostrar para as pessoas. Ver se alguém quer comprar alguma coisa.
 
-**Ghork:** Já?
+**Ghork:** [expressao=confuso] Duas? Quando você achou tempo para tudo isso?
 
-**Lala:** Era para eu esperar pela loja? Primeiro preciso descobrir quem quer comprar minhas roupas.
+**Lala:** [expressao=feliz] O quê, era para esperar a loja aparecer? Preciso de clientes antes de precisar de um balcão.
 
 **Ghork — escolha:**
 
-1. **“Deixa eu ver como ficaram.”** — **Lala:** Esta é minha preferida. A outra deu mais trabalho... ainda estou brigada com aquela manga.
-2. **“Ainda quero ajudar você com a loja.”** — **Lala:** Eu sei. Mas olha o que já consegui fazer. Está vendo essa manga?
+1. **“Vamos, mostre. Quero ver o que você fez.”** [expressao=feliz] — **Lala:** [expressao=feliz] Esta é minha preferida. Aquela deu mais trabalho. Não pergunte pela manga. Eu e a manga ainda estamos discutindo.
+2. **“Eu estava falando sério sobre a loja. Ainda quero ajudar você a chegar lá.”** [expressao=neutro] — **Lala:** [expressao=feliz] Eu sei. Mas olhe esta parte primeiro. Aqui, a manga. Fui eu que fiz, Ghork.
 
-**Ghork:** Estou. Eu também terminei um trabalho. Nas minas.
+**Ghork:** [expressao=feliz] Estou olhando. Ficou boa. Também tenho uma coisa para contar... terminei um trabalho nas minas.
 
-**Lala:** Nas minas? Depois vai me contar essa história inteira. Antes, um recado de Dam. E não vale responder prometendo uma casa nova.
+**Lala:** [expressao=confuso] Nas minas? Ah, você vai me contar tudo. Mas, primeiro, o Dam mandou um recado. Escute antes de prometer uma casa inteira.
 
-**Lala, lendo o recado de Dam:** "Tem uma goteira no quarto comum. Estou cuidando do conserto, mas ainda falta material. Você consegue ajudar agora? Preciso saber para organizar o resto."
+**Lala, lendo o recado de Dam:** [expressao=neutro] “Apareceu uma goteira no quarto coletivo. Estou organizando o conserto, mas falta material. Você consegue ajudar com alguma coisa agora? Preciso saber o que mais vou ter que arranjar.”
 
-**Ghork:** Recebi minha parte do pagamento. Estava guardando para treinar mais.
+**Ghork:** [expressao=triste] Estou com a minha parte do pagamento. Ia usar para treinar mais...
 
-**Lala:** Ele precisa de uma resposta para se organizar. Vou passar o que você disser.
+**Lala:** [expressao=neutro] Ele precisa saber, seja qual for a resposta. Diga o que você consegue fazer e eu passo o recado.
 
 **Interface:** “Contribuir usa uma parte da remuneração pessoal e abre mão de uma sessão paga adicional de preparação. Guardar preserva essa preparação. Nenhuma opção altera o D20, exige Ludos ou encerra a amizade.”
 
 **Escolha contribuir:**
 
-**Ghork:** Posso mandar uma parte para o material. A casa inteira ainda vai ter que esperar.
+**Ghork:** [expressao=neutro] Consigo mandar uma parte para o material. Diga isso a ele. A casa inteira vai demorar um pouco mais.
 
-**Lala:** Ótimo. É isso que vou dizer. Ele vai perguntar quando chega.
+**Lala:** [expressao=feliz] Vou dizer. Ele vai perguntar quando chega. O que respondo?
 
-**Ghork:** Vou confirmar o envio antes de prometer uma data.
+**Ghork:** [expressao=neutro] Que vou combinar a entrega primeiro. Não quero deixar ele esperando por uma data que inventei.
 
 [Proposta de remessa, sujeita à validação: Jorvi registra o valor e Pirka aceita transportá-lo numa saída já existente para Daratrine; não é uma viagem jogável, não os identifica com o cocheiro do livro e não cria taxa obrigatória.]
 
-**Jorvi:** Confira o valor e para quem vai. Pirka leva na saída combinada. Eu guardo uma cópia.
+**Jorvi:** [expressao=neutro] Confira aqui a quantia e o nome de quem recebe. A Pirka leva na saída que combinamos. Esta cópia fica comigo.
 
-**Pirka:** Levo o que está no registro. Se a saída mudar, aviso. Nada de dizer que chegou antes de chegar.
+**Pirka:** [expressao=neutro] É isso que vou levar. Se a saída mudar, eu aviso. Enquanto eu não entregar, não diga a eles que já chegou.
 
-**Ghork:** Certo. Quero uma cópia também.
+**Ghork:** [expressao=neutro] Entendi. Posso ficar com uma cópia? Quero passar os dados certos para o Dam.
 
 **Escolha guardar:**
 
-**Ghork:** Vou guardar o dinheiro para a preparação. Diga que não consigo contribuir agora.
+**Ghork:** [expressao=triste] Desta vez, preciso guardar para os treinos. Diga a ele... diga que não consigo mandar nada agora.
 
-**Lala:** Vou dizer. Ele pode ficar decepcionado, Ghork. Mas precisa saber.
+**Lala:** [expressao=neutro] Está bem. Talvez ele fique decepcionado. Prefiro dar a sua resposta a deixar ele esperando.
 
-**Ghork:** Queria ter mais para oferecer.
+**Ghork:** [expressao=triste] Achei que a esta altura já teria mais para mandar para ele.
 
-**Lala:** Por enquanto, dê essa resposta. E, na próxima conversa, me conte como você está.
+**Lala:** [expressao=neutro] Vou dar o recado a ele. Mas, da próxima vez, conte como você está também, está bem?
 
 **Convergência:**
 
-**Ghork:** Você também vai me contar se vendeu as peças.
+**Ghork:** [expressao=feliz] E você tem que me contar quando vender essas peças. Quero saber disso.
 
-**Lala:** Vou contar mesmo se não vender. Você ainda vai ouvir muito sobre aquela manga.
+**Lala:** [expressao=feliz] Vou contar vendendo ou não. Você não vai escapar da história da manga.
 
 **Saída:** registrar contribuir/adiar. As duas opções estão disponíveis em X e Y; custos de segurança não forçam uma resposta. Nenhum contador econômico novo é implementado por este roteiro.
 
@@ -1296,29 +1296,29 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 [Na casa de contratos, Dorga cobra Meruna; Ghork chega após a própria entrega.]
 
-**Dorga:** Nossa guilda bancou expedições quando ninguém mais aceitava o custo. Agora vocês dão os contratos a quem acabou de chegar.
+**Dorga:** [expressao=raiva] Quando ninguém queria pagar por aquelas expedições, nossa guilda pagou. Agora os contratos vão para gente que nem estava lá.
 
-**Meruna:** Avalio as propostas que recebo hoje. Os serviços de antes não substituem as informações de que preciso agora.
+**Meruna:** [expressao=neutro] Eu não esqueci. Mas estou avaliando o trabalho proposto agora. Preciso dos detalhes, seja quem for que traga a proposta.
 
-**Dorga:** As famílias dos veteranos continuam aqui. Mudar seus critérios não fez essas pessoas desaparecerem.
+**Dorga:** [expressao=raiva] E as famílias dos nossos veteranos? Ainda estão aqui, Meruna. Você pode mudar os critérios. Não pode esperar que elas deixem de precisar de trabalho.
 
 [A conversa termina sem confissão do pacto. No coliseu, um companheiro entrega uma dose a Torvak. Ele espera a mão firmar antes de cumprimentar o público. Savel recolhe o estojo.]
 
 **Ghork — escolha:**
 
-1. **“Sua mão está tremendo.”** — **Torvak:** Anos de luta cobram seu preço. Meu fornecedor está cuidando disso.
-2. **“Está pronto para a classificação?”** — **Torvak:** Pronto para os próximos que vierem tomar meu lugar.
+1. **“Sua mão... você está bem?”** [expressao=confuso] — **Torvak:** [expressao=neutro] São os anos de arena. Uma hora eles pesam. Meu fornecedor está cuidando disso.
+2. **“Então, pronto para as eliminatórias?”** [expressao=neutro] — **Torvak:** [expressao=feliz] Estou pronto para quem achar que chegou sua vez de tomar meu lugar.
 
-**Savel:** É preciso cuidado para manter a preparação. Parar as doses sem acompanhamento seria pior.
+**Savel:** [expressao=neutro] O treinamento dele exige muito do corpo. Interromper as doses sem acompanhamento só agravaria a situação.
 
-**Ghork:** E o nosso treino? Você mandou Rask cancelar nossos horários.
+**Ghork:** [expressao=raiva] Já que estamos falando de treino... foi você que fez o Rask cancelar os nossos.
 
-**Torvak:** Mandei. Seu mentor podia ter retirado a acusação. Não vou tirar minha equipe do caminho toda vez que alguém contestar o que conquistamos.
+**Torvak:** [expressao=raiva] Fui eu. Seu mentor poderia ter retirado aquela acusação. Minha equipe não vai abrir espaço toda vez que alguém decidir que não merecemos o que conquistamos.
 
 **Ghork — escolha:**
 
-1. **“Então admita. Não quero que mudem essa história depois.”** — **Torvak:** Está admitido. Ainda vai ter que vencer na arena.
-2. **“É fácil ter prioridade quando os outros pagam por ela.”** — **Torvak:** Manter meu lugar por todos esses anos também custou. Volte depois de fazer a sua parte.
+1. **“Então diga isso com todas as letras. Não venha chamar de erro de agenda depois.”** [expressao=raiva] — **Torvak:** [expressao=neutro] Acabei de dizer. Pronto. Agora tente me vencer na arena.
+2. **“É fácil chamar de conquista quando quem abre mão de alguma coisa são os outros.”** [expressao=raiva] — **Torvak:** [expressao=raiva] Acha que fiquei neste lugar por tantos anos sem pagar um preço? Volte quando tiver feito tanto quanto eu.
 
 **Saída:** abuso reconhecido pelo autor do ato; observação de dependência sem diagnóstico completo. O jogador não conhece a adesão ao golpe. Nos bastidores, conforme proposta do arco do campeão, ela ocorre neste período e independe de recrutamentos.
 
@@ -1326,21 +1326,21 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 [No espaço de Guedra, Ghork pratica com o que tem.]
 
-**Guedra, se contribuiu:** Sem a sessão extra, vamos aproveitar o tempo que já tínhamos combinado. Mostre onde você perde o equilíbrio.
+**Guedra, se contribuiu:** [expressao=neutro] Não temos o treino extra, mas ainda temos nosso horário marcado. Vamos aproveitar. Mostre onde você perde o apoio.
 
-**Guedra, se guardou:** Com a sessão extra, temos mais tempo para acertar sua base. A vitória eu não posso prometer.
+**Guedra, se guardou:** [expressao=neutro] Com esse treino extra, dá para dedicar mais tempo à sua base. Nisso, consigo ajudar. Ganhar já é outra história.
 
-**Ghork:** Podemos começar pela parte em que eu paro de esticar a perna para compensar o braço curto.
+**Ghork:** [expressao=feliz] Vamos começar pela parte em que tento fazer a perna ficar mais comprida porque meus braços não alcançam.
 
-**Guedra:** Bom. Faça o movimento devagar.
+**Guedra:** [expressao=neutro] Então vamos pegar esse momento. Devagar, para eu enxergar.
 
 [Rheed narra a continuidade da fase de grupos e da preparação, sem resultados numéricos ou batalhas extras. Rask recebe Ghork na entrada do coliseu.]
 
-**Rask:** Sua equipe se classificou. Ainda dá para fazer convites antes das eliminatórias. Quando confirmar a entrada, a equipe fica fechada.
+**Rask:** [expressao=neutro] Sua equipe está classificada. Ainda dá tempo de convidar pessoas antes do mata-mata. Confirme a inscrição quando estiver pronto; depois disso, a equipe fica fechada.
 
-**Ghork:** Meu nome está na lista?
+**Ghork:** [expressao=confuso] Ali. É o meu nome?
 
-**Rask:** Está. Pode ler.
+**Rask:** [expressao=feliz] É seu. Pode ler de novo, se quiser.
 
 **Mentor escolhido:**
 
@@ -1350,14 +1350,14 @@ Não exigir um recrutado para carregar objetos ou ouvir essa conversa. As duas a
 
 **Ghork — escolha:**
 
-1. **“Vocês me ajudaram. Mas as próximas decisões continuam sendo minhas.”** — **Mentor:** Virmura: “Então diga o que quer fazer. Vou tentar ouvir antes de responder por você.” / Borun: “É o que eu espero.” / Sevrak: “E esteja pronto para defendê-las.”
-2. **“Posso comemorar antes de receber a próxima cobrança?”** — **Mentor:** Virmura: “Justo. Hoje podemos comemorar.” / Borun: “Pode começar reclamando do tamanho da minha lista.” / Sevrak: “Comemore. As cobranças podem esperar até terminarmos esta conversa.”
+1. **“Você me ajudou a chegar aqui. Não esqueci disso. Mas, daqui para a frente, quero fazer minhas próprias escolhas.”** [expressao=neutro] — **Mentor:** Virmura: [expressao=neutro] “Está bem. Conte o que está pensando. Vou tentar não responder por você antes que termine.” / Borun: [expressao=feliz] “Ótimo. Eu ficaria decepcionado se você não fizesse isso.” / Sevrak: [expressao=neutro] “Então esteja pronto para explicar essas escolhas quando alguém questionar.”
+2. **“Posso aproveitar meu nome ali antes de chegarmos à próxima lista do que devo fazer por todo mundo?”** [expressao=feliz] — **Mentor:** Virmura: [expressao=feliz] “Pode. Tem razão. Hoje, vamos comemorar.” / Borun: [expressao=feliz] “Ah, minha lista está tão comprida assim? Então é melhor começar a reclamar agora.” / Sevrak: [expressao=feliz] “Muito bem. Comemore. Vou guardar minhas cobranças até você pelo menos terminar esta conversa.”
 
-**Torvak:** Classificado, Ghork. Seu mentor achou onde treinar depois de comprar aquela briga, então.
+**Torvak:** [expressao=neutro] Então se classificou, Ghork. Seu mentor conseguiu onde treinar depois de toda aquela confusão.
 
-**Ghork:** Achou. Tivemos que refazer tudo o que você atrapalhou.
+**Ghork:** [expressao=raiva] Conseguimos. Teria sido mais fácil sem você nos obrigar a refazer tudo.
 
-**Torvak:** Agora vamos ver se adiantou.
+**Torvak:** [expressao=neutro] Então vamos ver o que conseguiram fazer.
 
 **Conclusão:** classificação, R5 disponível e cinco convites ainda sujeitos às condições. Não iniciar Q-31 automaticamente; abrir mapa para pendências e aviso de não retorno.
 
@@ -1394,21 +1394,21 @@ As restrições usam compromissos de trabalho, e não ódio automático pela gui
 
 #### 1. Ver antes de prometer
 
-**Nyra:** Tenho um turno livre no pátio e duas propostas. Ghork, pode olhar o espaço com eles? Quero saber quem vai cuidar dele depois que eu abrir a porta.
+**Nyra:** [expressao=neutro] Sobrou um horário à noite no pátio e tenho duas pessoas querendo usar. Ghork, dê uma olhada com elas. Antes de abrir, quero saber quem vai cuidar do lugar.
 
-**Brakka:** Quero oferecer treino depois do trabalho. Tem gente que nunca consegue chegar a tempo das aulas.
+**Brakka:** [expressao=neutro] Treino depois do trabalho. É isso que estou pedindo. Tem gente ainda no serviço quando as aulas começam. Nunca consegue participar.
 
-**Nima:** Eu preciso de uma base para as entregas noturnas. Saímos juntos e conferimos quem voltou. Cada um saindo de um canto acaba sozinho na rua.
+**Nima:** [expressao=neutro] E eu preciso de um lugar para despachar as entregas noturnas. Saímos juntos, conferimos quem voltou. Sem uma base, cada um acaba andando sozinho por essas ruas.
 
-**Ghork:** Não dá para dividir o turno?
+**Ghork:** [expressao=confuso] Um de vocês não podia começar depois? Dividir a noite?
 
-**Nyra:** Só se as caixas atravessarem quem está treinando. E não tenho quem cuide do pátio em outro horário.
+**Nyra:** [expressao=neutro] Se conseguir fazer as caixas atravessarem as pessoas. É um horário, Ghork. Não tenho quem cuide do pátio em outro momento.
 
 [O jogador examina a passagem e o canto de armazenamento, em qualquer ordem.]
 
-**Na passagem — Nima:** A carga entra por aqui. Essa passagem precisa ficar livre.
+**Na passagem — Nima:** [expressao=neutro] As cargas passam por aqui. Bloqueie isso e nada entra nem sai.
 
-**No canto — Brakka:** Os bancos cabem aqui. Mas, se encher de caixas, não sobra espaço para treinar.
+**No canto — Brakka:** [expressao=neutro] Posso pôr os bancos aqui. A menos que fique tudo cheio de caixas, claro. Aí terei uma turma sem espaço nem para ficar em pé.
 
 **Ghork:** Entendi. Não vou prometer o mesmo pátio duas vezes.
 
@@ -1420,31 +1420,31 @@ As restrições usam compromissos de trabalho, e não ódio automático pela gui
 
 **Treino:**
 
-**Ghork:** Vou ajudar Brakka a organizar o treino.
+**Ghork:** [expressao=neutro] Vamos abrir espaço para os treinos do Brakka. Eu ajudo a preparar.
 
-**Nima:** Então vou procurar outro lugar para o despacho. Mais trabalho do que eu esperava.
+**Nima:** [expressao=triste] Então preciso de outro lugar para as entregas. Achei que finalmente fôssemos resolver isso.
 
-**Brakka:** Vou começar pelos bancos. Ghork, pegue a lista e veja quem pode vir. Eu já estava contando até quem não respondeu.
+**Brakka:** [expressao=feliz] Certo! Primeiro, os bancos. Ghork, confira esta lista, veja quem consegue vir. Talvez eu tenha me animado antes de receber todas as respostas.
 
 [Ghork recebe a lista, confere presenças e entrega-a a Nyra. Brakka e os trabalhadores movem os bancos.]
 
-**Nyra:** Lista recebida. Quem guardar o material também fecha o pátio.
+**Nyra:** [expressao=neutro] A lista está certa. Quem guardar o material tranca o pátio. Não quero que deixem isso para mim.
 
-**Ghork:** Combinado. Essa parte não vai sobrar para você.
+**Ghork:** [expressao=neutro] Combinamos cuidar do lugar. Isso inclui a fechadura.
 
 **Despacho:**
 
-**Ghork:** Vou ajudar Nima a organizar as entregas.
+**Ghork:** [expressao=neutro] Vamos dar uma base às entregas da Nima. Eu ajudo com as caixas.
 
-**Brakka:** Certo. Ainda preciso de um lugar para treinar. Vou procurar outro apoio.
+**Brakka:** [expressao=triste] Está bem. Vou continuar procurando. Aquelas pessoas ainda precisam de onde treinar, mesmo que não seja aqui.
 
-**Nima:** Ghork, leve estas etiquetas para as caixas e confira os retornos comigo. Se ninguém reconhecer uma caixa, separe.
+**Nima:** [expressao=neutro] Ótimo. Aqui estão as etiquetas. Confira as caixas comigo, depois os retornos. O que ninguém reconhecer fica de lado. Nada de adivinhar.
 
 [Ghork recebe etiquetas, marca os volumes e devolve a lista conferida a Nyra. Nima divide o trabalho com os entregadores.]
 
-**Nyra:** Recebido. E mantenham a passagem livre até o último voltar.
+**Nyra:** [expressao=neutro] Está bem. Mantenham a passagem livre até a última pessoa voltar. Não só até cansarem de prestar atenção nela.
 
-**Ghork:** Vou lembrar de tirar o banco do caminho. Já descobri como isso atrapalha uma fuga.
+**Ghork:** [expressao=feliz] Nada de banco no caminho. Pode acreditar: aprendi o estrago que um banco faz quando você precisa sair depressa.
 
 **Conclusão do conflito:** treino/Brakka ou despacho/Nima registrado; Ludos uma vez. Reabrir a conversa não permite trocar o desfecho.
 
@@ -1470,85 +1470,85 @@ As restrições usam compromissos de trabalho, e não ódio automático pela gui
 
 #### 1. A autorização
 
-**Sura:** Quero evitar mais feridos naquele pátio. Posso reunir os registros de atendimento sem revelar quem são os pacientes.
+**Sura:** [expressao=neutro] Continuo atendendo gente que se machucou naquele pátio. Quero que isso pare. Podemos usar os registros de atendimento para mostrar o que acontece sem expor os pacientes.
 
-**Edrin:** Alguns querem falar em público. Proponho ouvir quem se oferecer e usar os depoimentos para cobrar os responsáveis.
+**Edrin:** [expressao=neutro] Algumas dessas pessoas querem falar em público, com nome. Eu reuniria quem quiser depor e cobraria uma resposta dos responsáveis.
 
-**Ghork:** Querem resolver o mesmo problema, mas de jeitos diferentes.
+**Ghork:** [expressao=confuso] Vocês dois querem impedir que mais gente se machuque. O que impede vocês de fazer isso juntos?
 
-**Sura:** E discordamos sobre o risco de expor essas pessoas. Antes de decidir, ouça quem se machucou.
+**Sura:** [expressao=neutro] O que acontece com essas pessoas depois. É aí que discordamos. Antes de escolher, ouça alguém que se machucou.
 
-**Ferido:** Pode usar o que eu contar, mas sem meu nome. Não quero que quem ainda me dá trabalho me reconheça.
+**Ferido:** [expressao=triste] Podem usar o que eu contar. Só... sem nome. Ainda preciso que aquela gente me contrate. Não posso deixar que me reconheçam nisso.
 
 **Ghork — escolha:**
 
-1. **“Vou respeitar isso.”** — **Ferido:** Então pode perguntar sobre o aparelho.
-2. **“O que posso contar desta conversa?”** — **Ferido:** O que aconteceu. Não diga meu nome nem onde trabalho.
+1. **“Está bem. Seu nome fica de fora.”** [expressao=neutro] — **Ferido:** [expressao=neutro] Então... pergunte sobre o equipamento. Disso eu posso falar.
+2. **“Diga o que você se sente à vontade para deixar a gente contar.”** [expressao=neutro] — **Ferido:** [expressao=neutro] O que aconteceu comigo. Meu nome, não. Nem onde trabalho.
 
-**Ferido:** O apoio cedeu durante o exercício. Disseram que eu não tinha jeito. Quem me ajudou guardou uma peça e levou para Guedra examinar.
+**Ferido:** [expressao=triste] O suporte cedeu no meio do exercício. Disseram que eu era desastrado. Quem me ajudou guardou um pedaço e levou para a Guedra. Pelo menos alguém quis olhar aquilo.
 
-**Sura:** Guedra aceitou emprestar a peça. Leve esta autorização e volte com ela. Primeiro precisamos examiná-la; só encontrá-la não prova de quem foi a culpa.
+**Sura:** [expressao=neutro] A Guedra vai nos emprestar a peça. Leve esta autorização e traga o pedaço. Vamos ver o que ele pode nos dizer antes de decidir de quem é a culpa.
 
 [Ghork recebe autorização e cópia anônima do relato. Não há opção de expor o paciente à força.]
 
 #### 2. Buscar a peça e conferir o que ela mostra
 
-**Guedra:** Trouxeram a peça para mim. Eu não estava lá quando quebrou. Dou minhas aulas aqui, não naquele pátio.
+**Guedra:** [expressao=neutro] Trouxeram isso para mim depois. Não vi quebrar, Ghork. Eu dou aula aqui; o acidente foi em outro pátio.
 
-**Ghork:** Preciso saber o que o desgaste revela, sem adivinhar o resto do acidente.
+**Ghork:** [expressao=neutro] Entendi. Precisamos que alguém examine o dano, não que complete a história que ninguém viu.
 
-**Guedra:** Durn pode examinar. Aqui está. Traga de volta; precisamos guardar a peça.
+**Guedra:** [expressao=neutro] Leve ao Durn. Ele pode fazer isso. E traga de volta depois. Precisamos guardar essa peça.
 
 [Receber a peça avariada muda o objetivo para a oficina.]
 
-**Durn:** Dá para ver uma falha aqui. Mas só a peça não diz quem instalou nem quem sabia desse desgaste.
+**Durn:** [expressao=neutro] Está vendo aqui? Há uma falha. Isso eu consigo mostrar. Quem montou, quem percebeu o desgaste antes de quebrar... a peça não me conta isso.
 
 **Ghork — escolha:**
 
-1. **“Deixe isso claro no seu registro.”** — **Durn:** Vou descrever o estado da peça. Para acusar alguém, precisam de outras provas.
-2. **“Quero mostrar o exame aos envolvidos antes de levar o caso adiante.”** — **Durn:** Leve uma cópia. Se encontrarem algo errado, quero saber.
+1. **“Anote isso também. Não quero que seu laudo diga mais do que você pode afirmar.”** [expressao=neutro] — **Durn:** [expressao=neutro] Não vai dizer. Vou descrever o que encontrei. Para acusar alguém, vocês vão precisar de mais do que isso.
+2. **“Deixe as pessoas envolvidas lerem antes de levarmos isso adiante. Elas precisam saber o que estamos associando ao relato delas.”** [expressao=neutro] — **Durn:** [expressao=neutro] Leve uma cópia. Se encontrarem alguma coisa errada, tragam para mim. Prefiro corrigir agora.
 
 [Durn não destrói a peça no exame. Ghork recebe uma nota de condição, devolve a peça a Guedra e leva a cópia à enfermaria.]
 
-**Guedra:** Vou guardar a peça junto com o registro de quem a examinou.
+**Guedra:** [expressao=neutro] Vou guardar a peça aqui, junto com o registro de quem examinou. Podemos precisar dela de novo.
 
-**Edrin, na enfermaria:** Com isso, podemos pedir uma investigação. Ainda não prova o que alguém pretendia fazer.
+**Edrin, na enfermaria:** [expressao=neutro] Isso basta para pedir uma investigação. Não para dizer que alguém quis que acontecesse.
 
-**Sura:** Vou conferir se algum detalhe da cópia revela quem pediu sigilo.
+**Sura:** [expressao=neutro] Deixe eu conferir a cópia mais uma vez. Tirar o nome não protege ninguém se os detalhes entregarem a pessoa.
 
 #### 3. Uma apresentação inicial
 
-**Edrin:** Posso reunir quem quiser depor. Quem pediu sigilo não entra na lista de nomes.
+**Edrin:** [expressao=neutro] Vou reunir quem quer depor. Só essas pessoas. Quem pediu sigilo fica fora da lista de nomes.
 
-**Sura:** Posso apresentar as lesões e o exame sem revelar os pacientes. Ghork, escolha qual apresentação vai ajudar a preparar. Não dá para assumir as duas.
+**Sura:** [expressao=neutro] E eu posso apresentar os ferimentos e as conclusões do Durn sem identificar os pacientes. Ghork, qual apresentação você vai ajudar a preparar? Não dá tempo de fazer as duas.
 
 **Interface:** “Relatório anônimo favorece Sura. Depoimentos públicos voluntários favorecem Edrin. Os outros caminhos podem continuar na cidade, mas esta missão dá a Ghork um compromisso e um recrutamento possível. Confirmar / Decidir depois.”
 
 **Relatório anônimo, na casa de contratos:**
 
-**Ghork:** Reunimos os relatos e o exame da peça. Os pacientes autorizaram o uso, desde que seus nomes não apareçam.
+**Ghork:** [expressao=neutro] Aqui estão os relatos que recolhemos e as conclusões sobre a peça quebrada. Os pacientes permitiram que usássemos suas histórias. Não que revelássemos seus nomes.
 
-**Sura:** Pedimos uma investigação dos equipamentos e das condições do pátio. Estas são as informações que temos até agora.
+**Sura:** [expressao=neutro] Por favor, investigue o equipamento e as condições daquele pátio. Isto é o que conseguimos apurar. Não queremos esperar alguém se machucar de novo.
 
-**Seldan:** Vou receber o material e registrar o pedido de investigação. Ainda não temos como apontar um culpado.
+**Seldan:** [expressao=neutro] Vou receber o material e registrar o pedido. Apontar um responsável vem depois da investigação, não antes.
 
-**Edrin:** Vou continuar procurando quem queira depor. Quem aparece nessa cópia terá seu sigilo respeitado.
+**Edrin:** [expressao=neutro] Vou continuar procurando quem queira depor. Isso não muda o que prometemos aos pacientes deste relatório.
 
 **Depoimentos voluntários, no mesmo local:**
 
-**Ghork:** Estas pessoas decidiram falar. O relato de quem pediu sigilo continua separado.
+**Ghork:** [expressao=neutro] Todos aqui escolheram falar. Mantivemos o relato sigiloso separado. Aquele paciente não faz parte destes depoimentos.
 
-**Edrin:** Antes de confirmar, cada testemunha pode corrigir o que disse. O exame explica o estado da peça; precisamos de vocês para contar o que viram.
+**Edrin:** [expressao=neutro] Antes de confirmar qualquer coisa, releiam seus depoimentos. Corrijam o que precisar. Já temos o exame da peça; de vocês, precisamos do que viram.
 
-**Testemunha figurante:** Quero corrigir quando aconteceu. Foi depois de mudarem o exercício, não antes.
+**Testemunha figurante:** [expressao=confuso] Esta parte está errada. A ordem. Aconteceu depois que mudaram o exercício, não antes.
 
-**Edrin:** Corrigido. O restante está certo?
+**Edrin:** [expressao=neutro] Depois da mudança. Pronto, corrigido. O resto está como você lembra?
 
-**Testemunha:** Está.
+**Testemunha:** [expressao=neutro] Sim. Está certo.
 
-**Seldan:** Vou receber os depoimentos e o pedido. Na investigação, também teremos de ouvir os responsáveis pelo pátio.
+**Seldan:** [expressao=neutro] Vou receber os depoimentos e o pedido. Também precisamos ouvir os responsáveis pelo pátio antes de chegar a uma conclusão.
 
-**Sura:** Continuarei atendendo quem precisar. E o paciente que pediu sigilo não aceitou ser identificado só porque houve uma audiência.
+**Sura:** [expressao=neutro] Vou continuar atendendo quem precisar de mim. E, por favor, lembrem: uma audiência pública não desfaz uma promessa de sigilo.
 
 **Conclusão do conflito:** apresentação escolhida entregue; Ludos uma vez. Não prometer indenização, fechamento definitivo do pátio, prisão ou cura como resultado imediato. O caso não revela os Ignotos.
 
@@ -1568,26 +1568,26 @@ Na janela correta, apresentar “Convidar / Depois”; restrição ou espera usa
 
 **Duração proposta:** curta. **Acesso:** X2/Y2 e condição da matriz. **Locais:** oficina → espaço de Guedra → oficina. **Participantes:** Durn, Korr, Velka, Ghork e Guedra. **Objetivo:** conhecer dois usos de uma armação e autorizar um destino. **Referência:** PC1-objeto, circulação de um objeto e pessoas com necessidades próprias; o dilema é autoral.
 
-**Durn:** Vou ceder esta armação a um projeto. Korr quer aproveitar as peças; Velka quer usá-la inteira. Vamos decidir antes que alguém pegue uma ferramenta.
+**Durn:** [expressao=neutro] Vou doar esta estrutura para um projeto. Korr quer as peças; Velka quer ela inteira. Ninguém pega ferramenta até decidirmos.
 
-**Korr:** Com esse material, faço proteções para quem não pode pagar caro. Não dá para equipar a cidade inteira.
+**Korr:** [expressao=feliz] Olhe esse material! Dá para fazer proteção que as pessoas consigam pagar. Não para Terminus inteira, antes que alguém pergunte. Mas alguns conjuntos.
 
-**Velka:** Eu a uso para ensinar um movimento. Posso demonstrar. Se desmontarmos, não teremos como praticá-lo aqui.
+**Velka:** [expressao=neutro] E eu posso ensinar com ela assim. Deixem eu mostrar o movimento. Depois de desmontada, perdemos onde praticar.
 
-**Ghork:** Quero ver antes de escolher.
+**Ghork:** [expressao=neutro] Quero ver. Não quero escolher só pelas duas descrições do mesmo monte de metal.
 
 [A armação segue com ajudantes ao espaço de treino; Ghork recebe de Durn a autorização de apresentação, sem direito de desmonte ainda.]
 
-**Guedra:** Deixem a passagem livre. Velka, mostre onde muda o apoio.
+**Guedra:** [expressao=neutro] Deem espaço para ela. Mantenham a passagem livre. Velka, mostre a transferência de peso.
 
-**Velka:** Aqui. Precisamos deste intervalo entre os apoios. Ghork, observe primeiro. Não precisa forçar a perna para concordar comigo.
+**Velka:** [expressao=neutro] Aqui. Viu quanto espaço preciso entre os apoios? Por enquanto, só olhe, Ghork. Não preciso que você force a perna para provar meu argumento.
 
-**Korr:** Agora entendi. Mas preciso justamente dessas partes. Se eu tirar, não dá mais para fazer o movimento.
+**Korr:** [expressao=neutro] Ah. Sim, agora entendi. Mas são justamente as peças que eu usaria. Não consigo tirar sem acabar com esse movimento.
 
 **Ghork — perguntas livres:**
 
-- **“Korr, o que você conseguiria fazer?”** — **Korr:** Alguns conjuntos de proteção, todos testados antes do uso. Quero aproveitar esse material para quem não consegue comprar equipamento novo.
-- **“Velka, quem vai poder aprender?”** — **Velka:** Quem vier às práticas que eu organizar. Não basta guardar a armação; vou ter que dar as aulas.
+- **“Korr, explique melhor. O que daria para fazer com isso?”** [expressao=neutro] — **Korr:** [expressao=feliz] Alguns conjuntos de proteção. Testados antes de alguém vestir, claro. Pense em quem está se virando como pode porque equipamento novo custa caro demais.
+- **“Velka, se mantivermos a estrutura, quem vai poder usar?”** [expressao=neutro] — **Velka:** [expressao=neutro] Quem vier às aulas que eu organizar. E eu vou ensinar. Não pediria para você preservar isso só para eu admirar a estrutura parada aqui.
 
 [De volta à oficina, o jogador entrega a autorização de retorno.]
 
@@ -1595,23 +1595,23 @@ Na janela correta, apresentar “Convidar / Depois”; restrição ou espera usa
 
 **Reaproveitar:**
 
-**Ghork:** Vou apoiar as proteções. Korr, vamos conferir as peças antes de desmontar.
+**Ghork:** [expressao=neutro] Vou apoiar as proteções. Korr, vamos conferir o que temos antes de soltar qualquer peça.
 
-**Velka:** Eu queria manter a armação. Vou buscar outra forma de ensinar, mas não vou fingir que consigo substituí-la amanhã.
+**Velka:** [expressao=triste] Eu queria manter a estrutura. Vou procurar outro jeito de ensinar o movimento, mas... não, não consigo substituir isso amanhã.
 
-**Durn:** Podem começar. Korr desmonta; você anota as peças que saírem.
+**Durn:** [expressao=neutro] Está bem. Korr desmonta. Ghork, anote cada peça que sair. Não vamos perder nada pelo chão.
 
-**Korr:** Vamos testar o primeiro conjunto antes de usar. Vai levar meu nome. Se algo falhar, quero que saibam quem fez.
+**Korr:** [expressao=neutro] O primeiro conjunto vai ser testado antes de ser usado. E leva meu nome. Se der problema, quero que venham falar comigo.
 
 **Preservar:**
 
-**Ghork:** Vou manter a armação inteira e ajudar Velka com as aulas.
+**Ghork:** [expressao=neutro] A estrutura fica inteira. Velka, vou ajudar você a começar as aulas.
 
-**Korr:** Vou buscar outro material. Só não deixem isso pegando poeira depois de tanta conversa.
+**Korr:** [expressao=triste] Vou encontrar outro material. Só... usem, está bem? Depois disso tudo, não quero ver a estrutura aqui juntando poeira.
 
-**Velka:** Também não quero isso. Vou combinar a primeira aula com Guedra.
+**Velka:** [expressao=neutro] Nem eu. Vou falar com a Guedra e marcar a primeira aula.
 
-**Durn:** Então fica para as aulas. Vou registrar a entrega; a armação sai inteira.
+**Durn:** [expressao=neutro] Então fica para as aulas. Vou registrar a entrega. Uma estrutura, ainda inteira.
 
 **Conclusão:** destino registrado e executado; Ludos uma vez. O objeto não volta ao estado anterior para permitir o outro convite. As proteções não concedem bônus além do +1 caso Korr seja recrutado.
 
@@ -1629,15 +1629,15 @@ Mostrar “Convidar / Depois” conforme acesso. **Preterido:** Korr: “Outra e
 
 #### 1. A chave ainda está aqui
 
-**Tessa:** A cisterna está quase pronta, mas os trabalhadores ainda não receberam. Queremos segurar a entrega até pagarem tudo.
+**Tessa:** [expressao=raiva] Estamos quase terminando a cisterna e a equipe ainda não recebeu. Queremos o pagamento antes da entrega. Depois que a chave sair da nossa mão, o que sobra para negociar?
 
-**Mavren:** Propus deixar o dinheiro com Jorvi, para ele liberar quando entregarmos. Precisamos conferir o valor e as condições primeiro.
+**Mavren:** [expressao=neutro] Propus deixar o dinheiro com Jorvi para liberar na entrega. Mas precisamos conferir a quantia e as condições. Não estou pedindo que ninguém aceite só na confiança.
 
-**Ghork:** O dinheiro está lá ou só prometeram?
+**Ghork:** [expressao=neutro] O dinheiro já está com Jorvi? Ou ainda estamos falando de uma promessa?
 
-**Mavren:** Vou conferir. Não entrego a chave só porque alguém disse que pagou.
+**Mavren:** [expressao=neutro] Vamos descobrir. Até lá, a chave fica aqui. Alguém dizer que pagou não basta.
 
-**Tessa:** Antes de voltar com tudo decidido, ouça quem está esperando receber.
+**Tessa:** [expressao=neutro] E, antes de voltar com a resposta pronta, ouça quem está esperando pelo salário.
 
 [O jogador ouve dois trabalhadores, em qualquer ordem.]
 
@@ -1645,30 +1645,30 @@ Mostrar “Convidar / Depois” conforme acesso. **Preterido:** Korr: “Outra e
 
 **Trabalhador 2:** Se parar, minha conta continua chegando. Quero saber se a garantia é dinheiro de verdade.
 
-**Ghork:** Vou conferir as contas e o depósito. Depois volto para vocês decidirem sabendo o que existe.
+**Ghork:** [expressao=neutro] Vou comparar o que devem com o depósito e trazer a resposta. Assim vocês vão saber o que estão pedindo que aceitem.
 
 [Tessa entrega uma cópia dos valores devidos. Mavren entrega a proposta de garantia; a chave permanece no canteiro.]
 
 #### 2. O que está depositado
 
-**Jorvi:** O dinheiro está aqui. Comparem esta cópia com a lista do que é devido.
+**Jorvi:** [expressao=neutro] O dinheiro está aqui. Esta é a sua cópia do registro. Confira com cada pagamento devido.
 
 **Ghork — investigação, ambas necessárias:**
 
-- **“O contratante pode sacar antes da entrega?”** — **Jorvi:** Pelo acordo que aceitei, não. Esse dinheiro está reservado para os pagamentos deste registro.
-- **“Quem confirma a entrega?”** — **Jorvi:** Quem receber a obra e os representantes dos trabalhadores. Não libero o dinheiro sem a confirmação deles.
+- **“O cliente pode retirar o dinheiro antes de entregarmos a cisterna?”** [expressao=neutro] — **Jorvi:** [expressao=neutro] Não. Pelo acordo que aceitei, está reservado para estes pagamentos. O cliente não pode simplesmente retirar.
+- **“E quem precisa confirmar que a entrega foi concluída?”** [expressao=neutro] — **Jorvi:** [expressao=neutro] Quem recebe e os representantes dos trabalhadores. Preciso da confirmação dos dois lados antes de liberar qualquer quantia.
 
-**Ghork:** E se os trabalhadores não aceitarem o acordo?
+**Ghork:** [expressao=neutro] E se os trabalhadores lerem isso e ainda assim não aceitarem?
 
-**Jorvi:** Não entregue a chave como se tivessem aceitado. Leve uma cópia para discutirem.
+**Jorvi:** [expressao=neutro] Então não entregue a chave dizendo que concordaram. Leve a cópia. Deixe que leiam por conta própria.
 
 [Ghork recebe comprovante e condições de liberação; não recebe o dinheiro dos trabalhadores nem o adiciona à própria bolsa.]
 
 #### 3. O acordo que cada um aceita
 
-**Mavren:** Conferi a lista. O depósito cobre toda a dívida. Nessas condições, posso terminar a obra.
+**Mavren:** [expressao=neutro] Conferi a lista. Está tudo lá, o suficiente para cobrir a dívida. Nessas condições, estou disposto a terminar e entregar.
 
-**Tessa:** Dinheiro reservado é melhor que promessa. Mas ainda quero receber antes de entregar. Enquanto a obra está conosco, podemos exigir isso.
+**Tessa:** [expressao=neutro] É melhor do que uma promessa, sim. Ainda quero os salários pagos primeiro. Podemos exigir isso enquanto a cisterna estiver nas nossas mãos.
 
 **Ghork — escolha:**
 
@@ -1680,29 +1680,29 @@ Antes de confirmar 1/2, informar: “Escolher uma posição define o recrutament
 
 **Suspensão:**
 
-**Ghork:** O depósito existe, mas vou apoiar o pagamento antes da entrega.
+**Ghork:** [expressao=neutro] Conferimos o depósito. Ele existe. Mesmo assim, apoio esperar o pagamento da equipe antes de entregar a chave.
 
-**Tessa:** Vou anotar quem apoia essa decisão comigo. Quem discordar pode falar, como acabou de fazer.
+**Tessa:** [expressao=neutro] Vou anotar quem apoia essa decisão comigo. Quem não apoiar, pode dizer. Não vou falar por vocês.
 
-**Mavren:** Eu discordo. Vou respeitar a retenção da chave, mas preciso arranjar trabalho enquanto esperamos.
+**Mavren:** [expressao=triste] Não concordo. Não vou tirar a chave das mãos de vocês, mas não posso passar essa espera sem trabalho. Vou ter que procurar.
 
 [O jogador entrega o comprovante a Tessa, que o anexa à comunicação de suspensão. A chave fica sob custódia dos trabalhadores.]
 
-**Tessa:** Essa conversa não quitou a dívida. Amanhã ainda vamos ter que negociar.
+**Tessa:** [expressao=neutro] Ainda não recebemos, Ghork. Isso não acaba porque concordamos. Amanhã, vamos ter que negociar de novo.
 
-**Ghork:** Eu sei. Vou manter meu apoio, sem fingir que esperar não custa nada.
+**Ghork:** [expressao=neutro] Eu sei. Vou manter o que disse. E não vou dizer ao Mavren que essa espera não custa nada a ele.
 
 **Entrega garantida:**
 
-**Ghork:** Vou ajudar a terminar. Conferimos o depósito, e o dinheiro só sai com a participação dos representantes.
+**Ghork:** [expressao=neutro] Vou ajudar a terminar. Conferimos o dinheiro, e os representantes precisam confirmar a entrega antes da liberação.
 
-**Tessa:** A garantia existe. Eu preferia receber antes, mas quem aceitou esse acordo pode declarar seu apoio.
+**Tessa:** [expressao=neutro] O dinheiro está garantido. Reconheço isso. Ainda preferia receber primeiro. Quem quiser aceitar esse acordo pode falar por si.
 
 [Mavren e os trabalhadores concluem a etapa restante. Ghork recebe a chave para acompanhar a entrega e a passa ao responsável figurante diante dos representantes. Jorvi confirma a liberação registrada; não há novo contratante nomeado.]
 
-**Mavren:** Chave entregue, pagamento autorizado. Antes de irmos, quero que cada um receba sua cópia.
+**Mavren:** [expressao=neutro] A chave foi entregue. O pagamento está autorizado. Antes de alguém ir embora, confira se está com sua cópia.
 
-**Ghork:** Depois de carregar tanto papel, eu ia desconfiar se acabasse só num aperto de mão.
+**Ghork:** [expressao=feliz] Depois de carregar tanto papel, eu ficaria preocupado se isso terminasse num “confia em mim” e um aperto de mão.
 
 **Conclusão:** suspensão ou entrega registrada; Ludos uma vez. Suspender não provoca desastre na cidade; entregar não exige intimidação dos trabalhadores. No desfecho de suspensão, a negociação segue aberta, sem inventar quitação instantânea.
 
@@ -1720,54 +1720,54 @@ Mostrar “Convidar / Depois” conforme acesso. **Preterido:** Tessa: “Vou re
 
 **Duração proposta:** curta. **Acesso:** classificação em Q-20, matriz e ponto de não retorno ainda não cruzado. **Locais:** coliseu → treino → coliseu. **Participantes:** Odrik, Lethra, Rask, Ghork e aprendizes figurantes. **Objetivo:** preparar e realizar um dos formatos na única vaga de exibição. **Referência:** PC1-Roy, parceria fora da luta principal; o conflito de apresentação é autoral.
 
-**Rask:** Tenho uma vaga de apresentação antes das eliminatórias e duas propostas. Não cabe tudo no horário.
+**Rask:** [expressao=neutro] Tenho um horário de exibição antes do mata-mata. Duas propostas para ele. Por favor, não me peçam para encaixar as duas.
 
-**Odrik:** Quero fazer um espetáculo em benefício da enfermaria. Posso atrair público sem pôr os pacientes em exposição.
+**Odrik:** [expressao=feliz] Um espetáculo para arrecadar para a enfermaria. Consiga um público e eu dou a ele um motivo para abrir a bolsa. Os pacientes não vão precisar ficar lá sendo olhados.
 
-**Lethra:** Quero mostrar o trabalho dos aprendizes, com o nome de cada um. Eles não vão ser figurantes de um lutador famoso.
+**Lethra:** [expressao=neutro] Quero que os aprendizes mostrem seu trabalho. Com seus próprios nomes. Quando há um lutador famoso na frente, as pessoas esquecem de olhar para o resto.
 
-**Ghork:** E o que eu faço?
+**Ghork:** [expressao=confuso] E onde eu entro? Além de ser quem tem que escolher.
 
-**Rask:** Ajude a preparar a proposta que escolher. Depois me entregue o programa, para eu anunciar tudo direito.
+**Rask:** [expressao=neutro] Ajude a preparar a apresentação que escolher e traga o programa. Preciso saber o que vou anunciar antes de subir lá.
 
 **Escolha com confirmação:** “Espetáculo beneficente, favorece Odrik / Demonstração dos aprendizes, favorece Lethra / Depois”. Não adiciona sexta partida de campeonato nem D20 obrigatório.
 
 **Espetáculo, preparação no treino:**
 
-**Odrik:** Pensei em "Ghork, o terror que..." Pela sua cara, não gostou.
+**Odrik:** [expressao=feliz] Imagine: “Ghork, o terror que...” Não? Seu rosto está dizendo um não bem firme.
 
 **Ghork — escolha:**
 
-1. **“Meu nome já dá trabalho suficiente.”** — **Odrik:** Ghork, então. Guardo o terror para quando você atrasar minha entrada.
-2. **“Anuncie a luta. Minha história eu conto.”** — **Odrik:** Justo. Vou chamar o público pelo que vamos mostrar aqui.
+1. **“Meu nome já me dá problema suficiente sem a sua ajuda.”** [expressao=feliz] — **Odrik:** [expressao=feliz] Só Ghork, então. Guardo o terror para quando você perder a hora da minha entrada.
+2. **“Conte sobre a luta. Minha história, deixe comigo.”** [expressao=neutro] — **Odrik:** [expressao=neutro] Justo. Temos uma apresentação que vale assistir. Posso atrair o público com isso.
 
 [Ghork recebe o programa, confere o nome e ajuda a marcar as entradas da exibição. No coliseu, entrega o programa a Rask.]
 
-**Rask:** Odrik e seus parceiros se apresentam em benefício da enfermaria. Os organizadores recolherão as contribuições e prestarão contas do valor arrecadado.
+**Rask:** [expressao=neutro] Odrik e seus parceiros se apresentam em apoio à enfermaria! As contribuições serão recolhidas pelos organizadores, que prestarão contas do valor arrecadado.
 
 [A apresentação é narrada; não simula vitória no torneio.]
 
-**Odrik:** O público veio, ninguém virou motivo de humilhação e arrecadamos para a enfermaria. Gostei de trabalhar com você.
+**Odrik:** [expressao=feliz] Público, dinheiro para a enfermaria e ninguém virando piada. Nada mal, hein? Gostei, Ghork. De trabalhar com você.
 
-**Lethra:** Vou procurar outro lugar para os alunos. Espero que a próxima oportunidade não dependa de ter alguém famoso junto.
+**Lethra:** [expressao=triste] Vou encontrar outro lugar para os aprendizes. Queria que tivessem um público sem precisar pegar a fama de alguém emprestada.
 
 **Demonstração, preparação no treino:**
 
-**Lethra:** Ghork, leia o programa como se estivesse anunciando. Quero saber se dá tempo de falar todos os nomes antes de começarmos.
+**Lethra:** [expressao=neutro] Leia como se estivesse anunciando, Ghork. Todos os nomes. Quero saber quanto tempo leva antes de começarmos os movimentos.
 
-**Ghork:** Dá. Mas vocês já teriam dado o primeiro golpe antes de eu acabar.
+**Ghork:** [expressao=feliz] Dá tempo de falar todos. Mas você teria dado o primeiro golpe enquanto eu ainda estivesse lendo.
 
-**Lethra:** Então vamos esperar o anúncio. O público precisa saber quem está vendo.
+**Lethra:** [expressao=neutro] Então o primeiro golpe pode esperar. Deixe o público ouvir quem vai assistir.
 
 [Ghork recebe o programa corrigido e o entrega a Rask.]
 
-**Rask:** Uma demonstração dos aprendizes de Lethra. Vamos apresentar cada participante antes de começarem o exercício.
+**Rask:** [expressao=neutro] A seguir, uma demonstração dos aprendizes de Lethra! Cada participante será apresentado antes do início do exercício.
 
 [Rask apresenta figurantes sem criar novas fichas recorrentes; a demonstração acontece.]
 
-**Lethra:** Dessa vez, ouviram os nomes deles antes de olhar para mim. Obrigada por conferir o programa.
+**Lethra:** [expressao=feliz] Ouviram os nomes dos alunos antes de procurar por mim. Era isso que eu queria. Obrigada por conferir o programa.
 
-**Odrik:** Vou levar o espetáculo a outra equipe. Se quiser ajuda com a entrada, pode pedir. Mas eu queria essa vaga, sim.
+**Odrik:** [expressao=neutro] Vou procurar outra equipe para o espetáculo. Se precisarem de ajuda com uma entrada, sabem onde me achar. E sim, eu queria esse horário. Posso ficar decepcionado.
 
 **Conclusão do conflito:** formato realizado, Ludos uma vez. Arrecadação pertence à enfermaria, não à moeda da criança nem ao bolso de Ghork; não cria obrigação de quantia mínima.
 
@@ -1787,17 +1787,17 @@ Não iniciar a eliminatória ao terminar R5. O jogador ainda pode resolver outro
 
 **Acesso:** Q-20. **Local:** entrada administrativa do coliseu. **Participantes:** Ghork e Rask. **Encaixe:** abertura de Q-31, sem outra quest.
 
-**Rask:** Confira sua equipe antes de entrar. Ao confirmar, você encerra os convites. Se ainda quer procurar alguém, esta é a hora.
+**Rask:** [expressao=neutro] Última conferência antes de entrar. Depois que confirmar a equipe, os convites se encerram. Se ainda quer procurar alguém, é agora.
 
 **Interface:** apresentar pares não conhecidos, conflitos incompletos, favorecidos sem convite, restrições e heróis já recrutados, sem revelar personagens desconhecidos pelo nome. Exemplo de rótulo: “R3: oportunidade de recrutamento não explorada”. “Voltar à cidade / Confirmar equipe e entrar”. Cancelar preserva todas as pendências; confirmar encerra novos conflitos e convites, mesmo com zero aliados. O mapa não deixa de existir, mas visitar um local não reabre a janela.
 
-**Ghork, zero recrutados:** Vou entrar sozinho.
+**Ghork, zero recrutados:** [expressao=neutro] Vou entrar sozinho.
 
-**Rask:** Sua inscrição permite. Confirme quando estiver pronto para enfrentar os adversários.
+**Rask:** [expressao=neutro] Sua inscrição permite. Confirme quando estiver pronto para enfrentá-los.
 
-**Ghork, com aliados:** Esta é a equipe. Vamos entrar.
+**Ghork, com aliados:** [expressao=feliz] Esta é a minha equipe. Estamos prontos.
 
-**Rask:** Inscrição confirmada. Já vamos anunciar a primeira partida.
+**Rask:** [expressao=neutro] Confirmado. Aguarde a chamada para a primeira partida.
 
 <a id="q-31"></a>
 <a id="q-32"></a>
@@ -1809,64 +1809,64 @@ O bloco correspondente à guilda é executado uma vez na respectiva partida. Q-3
 
 #### Contra Virmura
 
-**Virmura:** Minha equipe quer vencer. O trabalho que perdemos no contrato ainda precisa ser financiado.
+**Virmura:** [expressao=neutro] Minha equipe veio para vencer. Ainda temos pacientes para atender, e aquele contrato teria ajudado a pagar o trabalho.
 
-**Ghork:** Eu lembro.
+**Ghork:** [expressao=neutro] Eu não esqueci.
 
-**Virmura:** E isso não quer dizer que eu vá tirar minha equipe da disputa.
+**Virmura:** [expressao=neutro] Que bom. Então entende por que não vou pedir que abram caminho para você.
 
 **Ghork — escolha:**
 
-1. **“Nem pediria. Você me ajudou, mas eles vieram para lutar.”** — **Virmura:** Então estamos entendidos.
-2. **“Quero ganhar de vocês também.”** — **Virmura:** Ainda bem. Eles vieram disputar uma luta de verdade.
+1. **“Nem pediria. Você me ajudou, mas eles também vieram disputar esta luta.”** [expressao=neutro] — **Virmura:** [expressao=neutro] Então não temos mais nada para acertar antes da partida.
+2. **“Quero ganhar deles numa luta de verdade.”** [expressao=feliz] — **Virmura:** [expressao=feliz] Ainda bem. Foi para isso que eles vieram.
 
-**Rask:** Equipe de Ghork contra os representantes da guilda de Virmura. Aos lugares.
+**Rask:** [expressao=neutro] Equipe de Ghork contra a guilda de Virmura! Aos lugares.
 
-**Depois da vitória — Virmura:** Vocês venceram. Se precisarem de atendimento, vamos cuidar dos feridos dos dois lados.
+**Depois da vitória — Virmura:** [expressao=neutro] Vocês venceram. Agora, alguém precisa de atendimento? Vamos cuidar das duas equipes.
 
-**Ghork:** Obrigado. E diga a eles que não foi fácil.
+**Ghork:** [expressao=neutro] Obrigado. Diga a eles que deram trabalho.
 
 **Revés:** a equipe de Ghork perde a tentativa; Virmura mantém atendimento sem pedir adesão. **Virmura:** “Volte quando estiver em condição. Minha equipe também vai se preparar.”
 
 #### Contra Borun
 
-**Borun:** Conseguimos outro serviço para manter a equipe. Eu queria aquele contrato, mas não fiquei esperando você se arrepender.
+**Borun:** [expressao=neutro] Arranjamos outro serviço para manter o pessoal. Eu queria aquele contrato, claro. Mas não dava para ficar sentado esperando você mudar de ideia.
 
 **Ghork — escolha:**
 
-1. **“Fico feliz que tenham seguido em frente. Mas ainda quero vencer.”** — **Borun:** Pode tentar. Eles sabem se virar.
-2. **“Você já me ajudou bastante. Hoje não vou pedir conselho.”** — **Borun:** Ainda bem. Hoje meus conselhos vão para eles.
+1. **“Que bom que vocês se acertaram. Mas ainda quero ganhar de vocês.”** [expressao=feliz] — **Borun:** [expressao=feliz] Pode tentar. Eles vão dar trabalho.
+2. **“Você já me deu bastante conselho. Hoje eu não vou pedir nenhum.”** [expressao=feliz] — **Borun:** [expressao=feliz] Ainda bem. Hoje os conselhos são para eles.
 
-**Rask:** Equipe de Ghork contra os representantes da guilda de Borun. Preparem-se.
+**Rask:** [expressao=neutro] Equipe de Ghork contra a guilda de Borun! Lutadores, preparem-se.
 
-**Depois da vitória — Borun:** Você leu bem a luta. Só não espere que eu fique feliz com o resultado.
+**Depois da vitória — Borun:** [expressao=neutro] Você leu bem a luta. Só não me peça para comemorar.
 
-**Ghork:** Não esperava. Gostei o suficiente por nós dois.
+**Ghork:** [expressao=feliz] Nem ia pedir. Eu comemoro o suficiente por nós dois.
 
 **Revés:** Ghork recua depois da interrupção da tentativa. **Borun:** “Eles também aprenderam a observar. Se voltar, encontrará gente prestando atenção em você.” Não entrega dica secreta que traia sua equipe.
 
 #### Contra Sevrak
 
-**Sevrak:** Minha escola continuou trabalhando depois da sua escolha. Meus representantes estão prontos para mostrar o que aprenderam.
+**Sevrak:** [expressao=neutro] Minha escola não parou quando você escolheu outra guilda. Meus representantes querem mostrar o que aprenderam.
 
 **Ghork — escolha:**
 
-1. **“Quero ver o que prepararam.”** — **Sevrak:** Verá de perto.
-2. **“Não preciso me arrepender para reconhecer que são bons.”** — **Sevrak:** Espero que continue pensando assim depois da partida.
+1. **“Estou curioso para ver o que prepararam para a arena.”** [expressao=feliz] — **Sevrak:** [expressao=neutro] Vai poder conferir de perto.
+2. **“Eles são bons. Posso reconhecer isso e continuar satisfeito com minha escolha.”** [expressao=neutro] — **Sevrak:** [expressao=neutro] Veremos se diz o mesmo depois da partida.
 
-**Rask:** Equipe de Ghork contra os representantes da escola de Sevrak. Podem assumir as posições.
+**Rask:** [expressao=neutro] Equipe de Ghork contra a escola de Sevrak! Lutadores, aos lugares.
 
-**Depois da vitória — Sevrak:** Você venceu. Reconheço sua competência, mas continuo discordando da escolha no contrato.
+**Depois da vitória — Sevrak:** [expressao=neutro] Você lutou bem. A vitória é sua. Isso não mudou minha opinião sobre o contrato.
 
-**Ghork:** E eu posso ouvir isso sem voltar a pedir uma vaga na sua escola.
+**Ghork:** [expressao=neutro] Não esperava que mudasse. E não estou pedindo para me aceitar de volta.
 
 **Revés:** **Sevrak:** “Minha equipe soube usar o que preparou. A próxima tentativa exigirá mais atenção.” Ghork pode preparar-se sem receber treino exclusivo gratuito da guilda hostil.
 
 #### Conclusão de cada partida
 
-**Rask, vitória:** Resultado confirmado. A equipe de Ghork avança.
+**Rask, vitória:** [expressao=feliz] Resultado confirmado! A equipe de Ghork avança!
 
-**Rask, revés:** A equipe adversária venceu esta tentativa. Vocês podem pedir revanche. Falem comigo quando estiverem prontos.
+**Rask, revés:** [expressao=neutro] A equipe adversária vence esta luta. Vocês podem pedir revanche. Falem comigo quando estiverem prontos.
 
 Essa convenção proposta explicita a regra de reveses e revanches da visão: a etapa só fecha ao superar o confronto, sem eliminação definitiva após a falha do D20. Precisa de validação de ritmo e regulamento; não acrescenta outra rodada obrigatória para quem vence de primeira. Preparação e cargas seguem [retornos](#retornos).
 
@@ -1879,35 +1879,35 @@ Essa convenção proposta explicita a regra de reveses e revanches da visão: a 
 
 **Se adversária é Zagra:**
 
-**Zagra:** Conseguimos apoio para preparar a equipe. Quero que veja o que fizemos com os recursos que tínhamos.
+**Zagra:** [expressao=neutro] Conseguimos apoio. Investimos no treino. Venha ver o que esse pessoal sabe fazer.
 
-**Ghork:** Eu não disse que vocês eram incapazes.
+**Ghork:** [expressao=neutro] Eu nunca duvidei de que vocês soubessem lutar.
 
-**Zagra:** Naquela reunião, parecia que aceitar nosso plano era concordar em abandonar alguém lá embaixo.
+**Zagra:** [expressao=neutro] Eu sei. Mas saí daquela reunião sentindo que ainda precisava provar que minha equipe traria todo mundo de volta.
 
 **Ghork — escolha:**
 
-1. **“Escolhi uma reserva maior para aquele serviço. Não quis dizer que vocês abandonariam alguém.”** — **Zagra:** Então vamos ver o que acha do nosso trabalho na arena.
-2. **“Eu podia ter explicado melhor. Mas ainda escolheria a reserva.”** — **Zagra:** Isso eu consigo ouvir. Ainda quero vencer você.
+1. **“Eu queria uma reserva de segurança maior para aquele serviço. Não estava dizendo que vocês abandonariam alguém.”** [expressao=neutro] — **Zagra:** [expressao=neutro] Então deixe nossa luta falar por nós.
+2. **“Eu podia ter explicado melhor. Ainda assim, colocaria o dinheiro na reserva.”** [expressao=neutro] — **Zagra:** [expressao=neutro] Isso eu aceito. Mas ainda vou tentar ganhar de você.
 
 **Se adversário é Darvek:**
 
-**Darvek:** Gastamos com segurança e mesmo assim chegamos às quartas. Conseguimos apoio e treinamos.
+**Darvek:** [expressao=neutro] Pagamos pela segurança e mesmo assim chegamos às quartas. Conseguimos apoio e pusemos o treino em dia.
 
-**Ghork:** Eu não achei que vocês fossem ficar parados.
+**Ghork:** [expressao=neutro] Não achei que vocês fossem desistir.
 
-**Darvek:** Naquela reunião, pareceu que a segurança dos meus era só uma despesa que vocês não queriam pagar.
+**Darvek:** [expressao=neutro] Eu ouvi. Mesmo assim, doeu ver minha reserva de segurança virar algo de que vocês podiam abrir mão.
 
 **Ghork — escolha:**
 
-1. **“Aceitei menos reserva porque o reconhecimento era limitado. Entendi por que você queria mais.”** — **Darvek:** Espero que lembre disso quando contar o contrato.
-2. **“Eu podia ter reconhecido melhor o risco que você queria evitar.”** — **Darvek:** Podia. Agora temos outra disputa para resolver.
+1. **“Era um reconhecimento limitado. Por isso aceitei uma reserva menor. Eu entendi por que você queria mais.”** [expressao=neutro] — **Darvek:** [expressao=neutro] Então lembre dessa parte quando contar como foi o serviço.
+2. **“Eu devia ter dado mais atenção ao risco que você estava explicando.”** [expressao=neutro] — **Darvek:** [expressao=neutro] Devia. Mas, agora, temos uma partida pela frente.
 
 **Batalha:** D20 contra a equipe preterida. Nenhum representante externo foi recrutado por inferência. Não remover bônus nem acrescentar personagens nomeados para completar o time rival.
 
-**Vitória — Zagra:** Você passou. Mas demos trabalho. **Ghork:** Deram. Ganhar não muda isso.
+**Vitória — Zagra:** [expressao=neutro] Você passou. Não foi fácil, hein? **Ghork:** [expressao=feliz] Não foi mesmo. Vou lembrar dessa luta por um tempo.
 
-**Vitória — Darvek:** Você venceu. Vou cuidar do retorno dos meus. **Ghork:** Boa volta. Obrigado pela luta.
+**Vitória — Darvek:** [expressao=neutro] Você venceu. Vou cuidar da volta do meu pessoal. **Ghork:** [expressao=neutro] Boa viagem. E obrigado pela luta.
 
 **Revés — Zagra:** Trouxemos menos do que alguns queriam e o suficiente para esta tentativa. / **Darvek:** Preparar a volta não nos impediu de avançar hoje.
 
@@ -1920,11 +1920,11 @@ Essa convenção proposta explicita a regra de reveses e revanches da visão: a 
 
 **Acesso:** Q-33. **Local:** arena. **Objetivo:** vencer a semifinal. **Base:** exatamente cinco adversários, um por par; recrutou um, enfrenta o outro; recrutou nenhum, sorteio entre os dois. Sortear apenas na primeira entrada e preservar o resultado nas revanches. Isso evita que recarregar uma tentativa invente outro reencontro.
 
-**Rask:** Do outro lado, cinco adversários. Talvez vocês já tenham se encontrado pela cidade. Hoje, todos querem a vaga na final.
+**Rask:** [expressao=neutro] Cinco adversários entre vocês e a final! Talvez já tenham se encontrado pela cidade. Hoje, eles vieram disputar a mesma vaga que vocês.
 
-**Ghork, zero aliados:** Alguns eu ainda não conheço. Com os outros, já tenho conversa pendente.
+**Ghork, zero aliados:** [expressao=neutro] Alguns rostos novos. E algumas conversas que ainda não terminaram.
 
-**Ghork, com aliados:** Já conhecemos alguns deles. E todos querem chegar à final tanto quanto nós.
+**Ghork, com aliados:** [expressao=neutro] Já conhecemos alguns deles. Não esperem facilidade: eles também querem chegar à final.
 
 Na primeira entrada, cada adversário recebe uma fala curta. Selecionar a coluna pelo estado real do conflito. “Favorecido sem convite” vale também para um convite bloqueado; não inventar que Ghork o recusou. “Conhecido, não resolvido” exige que a apresentação daquele candidato tenha ocorrido. Se Ghork só ouviu o responsável explicar um bloqueio e nunca viu o candidato, usar “Conflito desconhecido” para essa pessoa.
 
@@ -1943,14 +1943,14 @@ Na primeira entrada, cada adversário recebe uma fala curta. Selecionar a coluna
 
 **Ghork — resposta ao conjunto:**
 
-1. **“Boa luta. Quero chegar à final tanto quanto vocês.”** — **Rask:** Aos lugares.
-2. **“Quero vencer vocês. Não preciso fingir que nunca nos conhecemos.”** — **Rask:** Conhecidos ou não, só uma equipe passa. Preparem-se.
+1. **“Vamos fazer uma boa luta. Quero chegar à final tanto quanto vocês.”** [expressao=feliz] — **Rask:** [expressao=neutro] Aos lugares.
+2. **“Quero ganhar de vocês. Nem por isso precisamos fingir que nunca nos vimos.”** [expressao=neutro] — **Rask:** [expressao=neutro] Conhecidos ou não, só uma equipe passa. Preparem-se!
 
 **Batalha:** uma rolagem por tentativa contra o time completo, bônus normal de recrutamento. Não há cinco lutas extras.
 
-**Vitória — Rask:** A equipe de Ghork está na final.
+**Vitória — Rask:** [expressao=feliz] A equipe de Ghork está na final!
 
-**Ghork:** Obrigado pela luta. Foi bom encontrar vocês. Melhor ainda ganhar.
+**Ghork:** [expressao=feliz] Que luta. Foi bom encontrar vocês de novo. Melhor ainda ganhar.
 
 **Representante adversário:** usar o primeiro do time na ordem R1–R5. Brakka/Nima: “Vamos querer ouvir como foi a final.” Sura/Edrin: “Vá fazer sua parte. Nós cuidamos da nossa.” Korr/Velka: “Agora você já viu como trabalhamos.” Tessa/Mavren: “A arena acaba; o trabalho continua.” Odrik/Lethra: “Faça uma final que valha assistir.”
 
@@ -1975,58 +1975,58 @@ Na primeira entrada, cada adversário recebe uma fala curta. Selecionar a coluna
 
 **U — sede:**
 
-**Mentor:** Virmura: “Quero que você saia dessa luta inteiro. Ainda há muito para viver depois dela.” / Borun: “Quero ouvir como pretende enfrentar Torvak.” / Sevrak: “A final mostrará à cidade o trabalho que fizemos.”
+**Mentor:** Virmura: [expressao=neutro] “Volte inteiro dessa luta. Quero ver o que vai fazer com todos os dias que vêm depois dela.” / Borun: [expressao=neutro] “Então me conte. Como pretende enfrentar Torvak?” / Sevrak: [expressao=neutro] “A cidade inteira vai ver você na final. Mostre o que nosso trabalho produziu.”
 
-**Ghork:** Quando cheguei, achei que bastava ganhar um título para todo mundo parar de me tratar como inútil.
+**Ghork:** [expressao=triste] Quando cheguei, eu pensei... é só ganhar um título, e vão parar de olhar para mim como se eu não servisse para nada.
 
-**Mentor:** Virmura: “Alguns vão continuar discordando, mesmo se você vencer.” / Borun: “Torvak tem o título há anos. Você viu como ainda cobra reconhecimento dos outros.” / Sevrak: “Podem concordar com o resultado e continuar discordando sobre você.”
+**Mentor:** Virmura: [expressao=neutro] “Talvez alguns nunca enxerguem você como gostaria. Mesmo com esse título.” / Borun: [expressao=neutro] “Torvak tem esse título há anos. Não foi o bastante para ele parar de cobrar reverência dos outros, foi?” / Sevrak: [expressao=neutro] “Podem aceitar o resultado. Isso não significa que todos vão aceitar você.”
 
 **Ghork — escolha:**
 
 1. **“Quero ganhar mesmo assim. Não preciso que você escolha por mim.”**
 2. **“Vou entrar por mim e pelo trabalho que fizemos. Não para encerrar toda discussão.”**
 
-**Mentor:** Virmura: “Está bem. Vou cuidar dos nossos.” / Borun: “Então vá. Você não precisa da minha aprovação para cada passo.” / Sevrak: “Defenda essa posição quando sair da arena também.”
+**Mentor:** Virmura: [expressao=feliz] “Está bem. Vá, então. Eu cuido dos nossos.” / Borun: [expressao=feliz] “Então vá. Não precisa parar para pedir minha aprovação a cada passo.” / Sevrak: [expressao=neutro] “Lembre do que acabou de dizer. Vai precisar sustentar essa posição fora da arena também.”
 
 **V — espaço de Guedra:**
 
-**Darvek, se X:** Trouxe a versão final do levantamento. Registrei a reserva de segurança e o custo, como você pediu.
+**Darvek, se X:** [expressao=neutro] Aqui está o levantamento completo. Reserva de segurança, custos... tudo registrado, como você pediu.
 
-**Zagra, se Y:** A versão final deixa claro qual trecho não verificamos. Não deixei ninguém exagerar o alcance da nossa viagem.
+**Zagra, se Y:** [expressao=neutro] O relatório final aponta o trecho que não verificamos. Ninguém vai dizer que exploramos mais do que de fato vimos.
 
-**Ghork:** Obrigado. Não achei que fosse querer ver um relatório antes da final.
+**Ghork:** [expressao=feliz] Obrigado. Se alguém me dissesse que eu ia ficar feliz de ver um relatório antes da final...
 
-**Guedra:** Pode deixar aí. Quero ver sua base, não sua caligrafia.
+**Guedra:** [expressao=feliz] Deixe isso de lado um instante. Pedi para ver sua base, não sua caligrafia.
 
-**Ghork:** Eu achava que ganhar esta luta resolveria tudo. Já tenho uma lista do que vai continuar pendente.
+**Ghork:** [expressao=neutro] Achei que uma vitória ia resolver tudo. Pelo visto, tem uma lista inteira me esperando depois.
 
 **Ghork — escolha:**
 
-1. **“Vou ganhar o título. As outras respostas eu dou depois.”**
-2. **“Quero lutar sem prometer que a vitória vai resolver tudo.”**
+1. **“Primeiro, vou ganhar o título. Das outras perguntas eu cuido depois.”** [expressao=neutro]
+2. **“Ainda quero ganhar. Só não posso prometer que isso vai resolver tudo.”** [expressao=neutro]
 
-**Representante:** Darvek: “Isso eu consigo entender.” / Zagra: “Bom. Prometa que vai lutar, então.”
+**Representante:** Darvek: [expressao=neutro] “Está bem. Agora vá se preparar para a luta.” / Zagra: [expressao=feliz] “Ótimo. Então me prometa uma boa luta.”
 
-**Guedra:** Mostre sua base. Depois vá para a chamada.
+**Guedra:** [expressao=neutro] Primeiro, a base. Depois vá quando chamarem.
 
 #### A final
 
-**Torvak:** Você chegou. O general não está aqui para ver.
+**Torvak:** [expressao=neutro] Então você chegou. Pena que o general não está aqui para ver.
 
-**Ghork:** Não preciso dele aqui para lutar.
+**Ghork:** [expressao=neutro] Posso lutar sem ele assistindo.
 
-**Torvak:** Sua guilda vai usar qualquer resultado contra mim. Até depois de tudo que fiz por esta cidade.
+**Torvak:** [expressao=raiva] Aconteça o que acontecer aqui, sua guilda vai usar isso contra mim. Depois de tudo que fiz por esta cidade.
 
-**Ghork:** Você cancelou nossos treinos porque meu mentor não pediu desculpas. Chegamos aqui apesar de você.
+**Ghork:** [expressao=raiva] Você tirou nossos horários de treino porque meu mentor não pediu desculpas. Tentou nos impedir. Chegamos mesmo assim.
 
-**Torvak:** E agora acha que merece ocupar meu lugar?
+**Torvak:** [expressao=raiva] E acha que isso lhe dá o direito de tomar meu lugar?
 
 **Ghork — escolha:**
 
-1. **“Quero conquistar o título. Você ainda vai ter que lutar para mantê-lo.”** — **Torvak:** É o que pretendo fazer.
-2. **“Você já fez seu nome. Vim conquistar o meu.”** — **Torvak:** Então pare de falar dos meus e entre na arena.
+1. **“Vim conquistar o título. Se quiser ficar com ele, vai ter que me vencer.”** [expressao=neutro] — **Torvak:** [expressao=neutro] Foi para isso que vim.
+2. **“Você já fez seu nome. Vim conquistar o meu.”** [expressao=neutro] — **Torvak:** [expressao=raiva] Então chega de falar do meu. Entre na arena.
 
-**Rask:** Final do campeonato de guildas de Terminus. Torvak e sua equipe contra a equipe de Ghork.
+**Rask:** [expressao=neutro] Final do campeonato de guildas de Terminus! Torvak e sua equipe enfrentam a equipe de Ghork!
 
 [Batalha de D20. A reputação do campeão aparece em sua técnica e resistência; não perde automaticamente por abstinência ou dose errada.]
 
@@ -2042,16 +2042,16 @@ Na primeira entrada, cada adversário recebe uma fala curta. Selecionar a coluna
 
 **Ghork — escolha:**
 
-1. **“Pode repetir? Quero ouvir mais uma vez.”** — **Rask:** Ghork, campeão de Terminus!
-2. **“Eu consegui.”** — **Mentor:** Virmura: “Conseguiu.” / Borun: “Conseguiu. Agora pode se gabar um pouco.” / Sevrak: “Você trabalhou por esta vitória. Aproveite.”
+1. **“Pode repetir? Só mais uma vez.”** [expressao=feliz] — **Rask:** [expressao=feliz] Ghork! Campeão de Terminus!
+2. **“Eu... eu consegui.”** [expressao=feliz] — **Mentor:** Virmura: [expressao=feliz] “Conseguiu.” / Borun: [expressao=feliz] “Conseguiu. Vá, pode se gabar um pouco. Não vou impedir.” / Sevrak: [expressao=feliz] “Você trabalhou por esta vitória. Tire um instante para aproveitar.”
 
-**Torvak:** Eu perdi. Ouvi o resultado.
+**Torvak:** [expressao=neutro] Eu ouvi. Perdi.
 
-**Ghork:** Eu também. Não vou pedir que goste dele.
+**Ghork:** [expressao=neutro] Eu também ouvi. Você não precisa gostar.
 
 [Se houver aliados, cada um aparece na comemoração; uma fala é escolhida pela ordem R1–R5: Brakka “O turno de hoje vai dar assunto.”; Nima “Todo mundo aqui? Então podemos comemorar.”; Sura “Primeiro, deixem eu ver esse braço. Depois eu comemoro junto.”; Edrin “Este resultado eu faço questão de registrar.”; Korr “A proteção aguentou. Eu também, por pouco.”; Velka “Quero lembrar o último movimento.”; Tessa “Tem muita gente que vai querer saber como foi.”; Mavren “Finalmente uma entrega que dá vontade de anunciar.”; Odrik “Eu tinha uma fala pronta. Esqueci. Ganhei junto!”; Lethra “Vou ouvir os alunos comentarem cada passo.”]
 
-**Rheed:** Parte da torcida gritava o nome de Ghork até perder a voz. Outros ainda defendiam o antigo campeão. Ghork demorou a sair da arena e ouviu os dois lados.
+**Rheed:** Parte da torcida grita o nome de Ghork até a voz falhar. Outros ainda aplaudem o antigo campeão. Ghork fica mais um pouco na arena, ouvindo os dois lados.
 
 **Conclusão:** título conquistado, sem prêmio em dinheiro inventado, mensagem de Orcquius ou cura. A celebração termina quando Q-36 começa; o ataque já estava preparado.
 
@@ -2064,73 +2064,73 @@ Na primeira entrada, cada adversário recebe uma fala curta. Selecionar a coluna
 
 [Invasores, misturados às equipes de serviço e apoiados pelos acessos facilitados pela quarta guilda, fecham passagens. Seldan tenta deter o movimento.]
 
-**Seldan:** As cargas estavam autorizadas. Homens armados bloqueando o público, não. Saiam da frente da saída!
+**Seldan:** [expressao=raiva] Autorizei aquelas entregas, não homens armados! Saiam das saídas. Deixem o público passar!
 
-**Dorga:** Mantenha a ordem. A arena fica sob nosso comando até acertarmos as condições com as outras guildas.
+**Dorga:** [expressao=neutro] Mantenham a ordem. A arena fica sob nosso comando até acertarmos as condições com as outras guildas.
 
-**Ghork:** Vocês prepararam isso antes da luta.
+**Ghork:** [expressao=raiva] Vocês prepararam isso antes mesmo da nossa luta.
 
-**Torvak:** A tomada da arena estava combinada. Eu...
+**Torvak:** [expressao=confuso] Combinamos a tomada da arena. Eu...
 
 [Invasores arrastam espectadores e um companheiro da quarta guilda para junto dos carregamentos.]
 
-**Torvak:** Soltem essas pessoas. Não era isso que vocês me disseram.
+**Torvak:** [expressao=raiva] Soltem essas pessoas! Vocês não falaram nada disso.
 
-**Savel:** Precisamos de gente para sustentar a produção. Você precisa da próxima dose. Cumpra sua parte.
+**Savel:** [expressao=neutro] A produção precisa de gente. E você precisa de outra dose. Cumpra sua parte do acordo.
 
-**Torvak:** Eu aceitei tomar a arena. Não vou entregar os meus para você.
+**Torvak:** [expressao=raiva] Concordei em tomar a arena. Não em entregar meu pessoal para você.
 
-**Savel:** Vai voltar a pedir quando sentir falta da dose.
+**Savel:** [expressao=neutro] Vai voltar a pedir. Quando começar a sentir falta da dose.
 
-**Torvak:** Então vai ter que esperar até eu tirar essas pessoas daqui.
+**Torvak:** [expressao=raiva] Então vai esperar. Vou tirar essas pessoas daqui.
 
 [Torvak intervém contra os invasores e abre uma retirada. Sua decisão não cura sua dependência. O capuz e a apresentação do fornecedor deixam de esconder sua origem; ele assume o comando dos remanescentes como Neral.]
 
-**Neral:** Continuem levando os capturados. Eu cuido de quem chegar ao corredor.
+**Neral:** [expressao=neutro] Continuem levando os capturados. Quem chegar ao corredor fica por minha conta.
 
 #### 2. Um caminho até o responsável
 
-**Virmura:** Feridos por aqui. Deixem esta passagem livre!
+**Virmura:** [expressao=neutro] Tragam os feridos por aqui! Deixem a passagem livre!
 
-**Borun:** A saída lateral está livre. Eu fico aqui até o último passar.
+**Borun:** [expressao=neutro] A saída lateral está livre! Só saio daqui quando o último de vocês passar.
 
-**Sevrak:** Aprendizes comigo. Retirem o obstáculo sem bloquear quem está vindo.
+**Sevrak:** [expressao=neutro] Aprendizes, comigo! Retirem aquele obstáculo. Deixem espaço para quem está passando.
 
-**Rask:** Sigam as orientações nas saídas. Não voltem para buscar seus pertences!
+**Rask:** [expressao=neutro] Sigam as orientações nas saídas! Deixem os pertences. Não voltem para buscar nada!
 
 **Ghork — escolha:**
 
-1. **“Eu vou atrás do fornecedor. Mantenham a passagem.”** — **Borun:** Vá pelo corredor de serviço. Estamos tirando o público deste lado.
-2. **“Quem está cuidando dos que já saíram?”** — **Virmura:** Nyra e Jorvi estão recebendo quem saiu. Pirka cuida do transporte. Vá atrás de quem está dando as ordens.
+1. **“Vou atrás do fornecedor. Mantenham esta passagem livre.”** [expressao=raiva] — **Borun:** [expressao=neutro] Corredor de serviço! Vá por lá. Estamos tirando o público por aqui.
+2. **“Quem está cuidando de quem já saiu?”** [expressao=neutro] — **Virmura:** [expressao=neutro] Nyra e Jorvi estão com eles. Pirka cuida do transporte. Vá. Encontre quem está dando essas ordens.
 
 [Ghork segue com todos os recrutados que tiver; com zero, segue sozinho. Mentores e Torvak continuam nas próprias tarefas. Não há requisito de herói para abrir a passagem, acertar ritual ou resistir à transformação.]
 
-**Torvak, ao cruzar Ghork:** O fornecedor está junto das caixas. Eu fico com estes aqui.
+**Torvak, ao cruzar Ghork:** [expressao=neutro] Ele está junto das caixas. Eu tiro essas pessoas daqui.
 
-**Ghork:** Vou atrás dele. Depois, você ainda vai responder pelo que combinou.
+**Ghork:** [expressao=raiva] Vou atrás dele. Isso não livra você de responder pelo acordo que fez.
 
-**Torvak:** Sei.
+**Torvak:** [expressao=neutro] Eu sei.
 
 #### 3. O fornecedor
 
-**Neral:** Você viu quantos dependem de mim. Acha que matar o fornecedor acaba com a necessidade da dose?
+**Neral:** [expressao=neutro] Você viu quantas pessoas precisam de mim. Mate o fornecedor, e depois? Acha que a necessidade morre com ele?
 
-**Ghork:** Vi você usar isso para mandar levar pessoas à força.
+**Ghork:** [expressao=raiva] Vi você usar isso para ameaçar essas pessoas. Depois, mandar arrastar outras à força.
 
-**Neral:** Quando eu era pequeno, só recebia a dose quem tinha força ou posição. Aprendi a produzi-la. Depois, aprendi a decidir quem recebia.
+**Neral:** [expressao=neutro] Quando eu era criança, via as doses irem para quem tinha força ou posição para exigi-las. Então aprendi a produzi-las. Com o tempo, fui eu quem passou a decidir quem recebia.
 
 **Ghork — escolha:**
 
-1. **“E passou a fazer com os outros o que fizeram com você.”** — **Neral:** Passei a decidir. Não vou abrir mão disso.
-2. **“Solte os capturados. Eles não são pagamento.”** — **Neral:** São o que permite que tudo continue funcionando.
+1. **“E agora faz com eles o que fizeram com você.”** [expressao=raiva] — **Neral:** [expressao=neutro] Agora eu decido. Não pretendo abrir mão disso.
+2. **“Solte essas pessoas. Elas não são pagamento.”** [expressao=raiva] — **Neral:** [expressao=neutro] Sem elas, a produção para. É simples assim.
 
 [Neral usa sangue como catalisador e ergue uma proteção ritual; Ghork enfrenta a defesa, sem puzzle de símbolos ou poder exclusivo de recrutado. Pressionado, Neral ingere os concentrados. A metamorfose deforma o corpo, amplia a força e torna os movimentos e a magia menos precisos.]
 
-**Neral:** Eu conheço as doses. As fórmulas são minhas.
+**Neral:** [expressao=raiva] Eu criei essas fórmulas. Conheço as doses!
 
-**Ghork:** Então sabe o que está tomando.
+**Ghork:** [expressao=neutro] Então sabe o que está engolindo.
 
-**Neral:** Sei o que posso fazer com isso.
+**Neral:** [expressao=raiva] Sei o que elas me permitem fazer.
 
 **Batalha única:** a transformação integra a apresentação e a escalada deste confronto. Uma vitória no D20 resolve a batalha inteira, sem segunda rolagem obrigatória para uma “fase dois”. As falhas produzem tentativas e reveses dentro do mesmo encontro; não repetem o consumo ou fazem o vilão voltar à forma anterior. O tiro de cena da transformação ocorre uma única vez, antes da resolução decisiva.
 
@@ -2138,9 +2138,9 @@ Na primeira entrada, cada adversário recebe uma fala curta. Selecionar a coluna
 
 **Vitória:** [Ghork supera a proteção e derrota Neral; as doses não matam o antagonista no lugar do jogador.]
 
-**Neral:** Acha que só tenho gente aqui? Há outros grupos. Em Daratrine... até no Conselho. Vamos tomar este continente antes que percebam por onde entramos.
+**Neral:** [expressao=raiva] Acha que isso termina aqui? Existem outros grupos. Em Daratrine... até no Conselho. Teremos este continente antes que vocês descubram por onde entramos.
 
-**Ghork:** Quem está no Conselho?
+**Ghork:** [expressao=confuso] Quem? Quem está no Conselho?
 
 [Neral morre sem identificar infiltrados. A previsão de conquista é sua convicção, não a voz do narrador. O selo permanece intacto.]
 
@@ -2148,19 +2148,19 @@ Na primeira entrada, cada adversário recebe uma fala curta. Selecionar a coluna
 
 [Com o comando derrotado, os demais completam a retirada e libertam os capturados. Ghork recolhe correspondência entre os registros do fornecedor e a entrega a Seldan para preservação, mantendo uma cópia para exame.]
 
-**Seldan:** Vou registrar onde encontraram a correspondência. Mantenham esses papéis separados das cargas de retirada.
+**Seldan:** [expressao=neutro] Mostre onde encontraram estas cartas. Preciso registrar. Deixem separadas dos materiais que estão retirando.
 
-**Ghork:** Ele falou no Conselho de Daratrine. Isso tem relação?
+**Ghork:** [expressao=confuso] Ele falou no Conselho de Daratrine. É disso que tratam estas cartas?
 
 **Trecho de correspondência proposto para revisão de continuidade:** “O recebimento anterior foi confirmado pelo nosso contato dentro do Conselho de Daratrine. Mantenha as próximas instruções neste canal. Nenhum nome deve acompanhar a remessa.”
 
 [O conjunto inclui resposta ao recebimento e registros correspondentes; sua coerência comprova a ligação, conforme o desfecho confirmado. A forma material de autenticação e o conteúdo final precisam de validação; não desenhar um brasão como prova suficiente nem inventar um conselheiro identificado.]
 
-**Seldan:** As informações dos registros conferem. Eles tinham contato dentro do Conselho, mas não há nome aqui.
+**Seldan:** [expressao=neutro] Os registros conferem. Havia um contato dentro do Conselho. Nada aqui diz quem era.
 
-**Ghork:** Então não vou sair acusando alguém só por causa da ameaça que ele fez antes de morrer.
+**Ghork:** [expressao=neutro] Então não temos um nome. Não vou acusar alguém só porque ele quis me assustar antes de morrer.
 
-**Virmura:** Estamos cuidando dos resgatados. Quem tomava as doses também precisa de tratamento. A morte dele não acabou com a dependência.
+**Virmura:** [expressao=neutro] Estamos cuidando dos resgatados. Quem tomava as doses dele também precisa de atendimento. A morte dele não acaba com a abstinência.
 
 **Conclusão:** operação local desmantelada, Neral morto, capturados libertados, vínculo documental com o Conselho preservado. Sem terceiro chefe, viagem ou investigação obrigatória adicional. Segue E07.
 
@@ -2171,80 +2171,80 @@ Na primeira entrada, cada adversário recebe uma fala curta. Selecionar a coluna
 
 #### Responsabilidade
 
-**Torvak:** Pressionei Rask para cancelar os treinos de vocês. Aceitei tomar a arena. Queria forçar a cidade a devolver nosso lugar.
+**Torvak:** [expressao=neutro] Pressionei Rask para cancelar seus treinos. Concordei em tomar a arena. Achei que podia obrigar esta cidade a devolver nosso lugar.
 
-**Ghork:** Você ajudou no resgate. Mas aquelas pessoas foram capturadas por causa do acordo que você aceitou.
+**Ghork:** [expressao=raiva] Você ajudou a tirá-los de lá. Eu vi. Mas foi o seu acordo que permitiu que aquelas pessoas fossem capturadas.
 
-**Torvak:** Eu sei. O resgate não desfaz o que aceitei.
+**Torvak:** [expressao=triste] Eu sei. Tirar as pessoas de lá não desfaz o que fiz.
 
 **Ghork — escolha:**
 
-1. **“Não estou pronto para perdoar.”** — **Torvak:** Não vou pedir que decida agora.
-2. **“Quero que você responda pelo que fez.”** — **Torvak:** Vou ter que responder.
+1. **“Não estou pronto para perdoar você.”** [expressao=triste] — **Torvak:** [expressao=neutro] Não vou pedir que decida isso agora.
+2. **“Quero que você responda pelo que fez.”** [expressao=neutro] — **Torvak:** [expressao=neutro] Vou ter que responder.
 
-**Virmura:** Primeiro, ele precisa de tratamento. Depois ainda terá de responder pelo que fez.
+**Virmura:** [expressao=neutro] Primeiro, ele precisa de tratamento. Isso não vai livrá-lo de responder pelo que fez.
 
 [Dorga permanece vinculada ao golpe pelos fatos presenciados; esta versão não decide prisão, julgamento ou reparação específica. Não criar cena de absolvição por silêncio.]
 
 #### Terceiro contato
 
-**Lala:** Ghork? Você está bem?
+**Lala:** [expressao=confuso] Ghork? Você está bem?
 
-**Ghork:** Estou vivo. Ganhei o campeonato.
+**Ghork:** [expressao=feliz] Estou vivo. E ganhei o campeonato.
 
-**Lala:** Ganhou? Ghork! Espera... por que começou dizendo que está vivo?
+**Lala:** [expressao=confuso] Você ganhou? Ghork! Espere... por que estar vivo foi a primeira coisa que você disse?
 
-**Ghork:** Atacaram a festa. Libertamos os capturados e derrotamos quem comandava. Ainda tem feridos e muita coisa para fazer.
+**Ghork:** [expressao=neutro] Atacaram a festa. Levaram pessoas à força. Conseguimos libertá-las e derrotamos quem comandava, mas... ainda tem feridos. O trabalho não terminou.
 
-**Lala:** Você ganhou... e depois passou por tudo isso. Conte no seu tempo. Estou ouvindo.
+**Lala:** [expressao=neutro] Você ganhou e depois... tudo isso. Vá com calma, Ghork. Estou aqui.
 
 **Ghork — escolha:**
 
-1. **“Quero contar a final primeiro.”** — **Lala:** Conte. Mas depois vai me contar o que aconteceu na festa também.
-2. **“Primeiro, me diga como você está.”** — **Lala:** Continuo trabalhando nas peças. E tentando entender como cabe tanta notícia numa conversa com você.
+1. **“Posso contar a final primeiro?”** [expressao=feliz] — **Lala:** [expressao=feliz] Claro. Mas depois quero saber o que aconteceu na festa. Está bem?
+2. **“Primeiro, me conte como você está.”** [expressao=neutro] — **Lala:** [expressao=feliz] Continuo trabalhando nas peças. E, pelo visto, tentando acompanhar você. É muita notícia para uma conversa só.
 
-**Ghork:** E as peças?
+**Ghork:** [expressao=feliz] Como vai o trabalho com as peças?
 
-**Lala:** Comecei a mostrar para as pessoas. Algumas gostaram, outras pediram ajustes. Estou descobrindo o trabalho que cada encomenda dá.
+**Lala:** [expressao=feliz] Comecei a mostrar para as pessoas. Algumas gostam como estão; outras sugerem mudanças. Estou descobrindo quanto trabalho pode dar até um ajuste pequeno.
 
 **Se contribuiu:**
 
-**Lala, recado de Dam:** Dam mandou um recado: "Sua contribuição chegou. Compramos parte do material e estamos acertando o resto do reparo. Obrigado por dizer quanto podia mandar."
+**Lala, recado de Dam:** [expressao=neutro] Dam mandou um recado: "O dinheiro chegou. Compramos parte do material e estamos acertando o resto do reparo. Obrigado por avisar quanto podia mandar."
 
-**Ghork:** Uma parte do material. Ainda longe da casa que prometi.
+**Ghork:** [expressao=triste] Parte do material. Ainda está longe da casa que prometi.
 
-**Lala:** Mas era dessa parte que ele precisava agora.
+**Lala:** [expressao=neutro] Era disso que ele precisava agora, Ghork.
 
 **Se adiou:**
 
-**Lala, recado de Dam:** Dam mandou um recado: "Reorganizei o reparo sem contar com o dinheiro. Ainda falta material. Queria sua ajuda, mas prefiro saber com o que posso contar a ficar esperando sem prazo. Me conte como você está."
+**Lala, recado de Dam:** [expressao=neutro] Dam mandou um recado: "Reorganizei o reparo sem contar com seu dinheiro. Ainda falta material. Queria sua ajuda, mas prefiro saber como estão as coisas a continuar esperando. Me conte como você está."
 
-**Ghork:** Ganhar o campeonato não pagou aquele reparo. Eu sei.
+**Ghork:** [expressao=triste] Ganhar não pagou aquele reparo. Eu sei.
 
-**Lala:** Então conte como você está. Sem prometer uma casa só para encerrar o assunto.
+**Lala:** [expressao=neutro] Então conte como você está. Não precisa prometer uma casa inteira para responder isso.
 
 **Convergência:**
 
-**Ghork:** Quero continuar minha vida aqui. Hoje tenho uma vitória para contar. Antes de prometer outra coisa, preciso saber como vou cumprir.
+**Ghork:** [expressao=neutro] Quero ficar aqui. Construir minha vida. Já tenho uma vitória para contar, pelo menos... mas, antes de prometer outra coisa, preciso saber como vou cumprir.
 
-**Lala:** Pode começar prometendo notícias.
+**Lala:** [expressao=feliz] Pode prometer que vai dar notícias. Eu aceito.
 
-**Ghork:** Essa eu faço questão de cumprir.
+**Ghork:** [expressao=feliz] Essa eu vou cumprir.
 
-**Ghork:** Encontramos documentos ligados ao Conselho. Ainda não sabemos quem está envolvido. Preciso contar isso, mas não quero que acusem alguém sem prova.
+**Ghork:** [expressao=neutro] Tem outra coisa. Encontramos papéis ligando esse grupo ao Conselho. Ainda não sabemos a quem. Eu precisava contar, mas... não deixe que comecem a acusar pessoas sem prova.
 
-**Lala:** Vou contar o que você sabe. E deixar claro o que ainda não sabemos.
+**Lala:** [expressao=neutro] Vou contar o que vocês descobriram. E deixar claro o que ainda não sabem.
 
 #### Volta ao Coreto
 
-**Rheed:** Foi assim que terminou aquela vitória em Terminus. Ghork ficou com o título. E ainda havia quem discordasse dele.
+**Rheed:** [expressao=feliz] E assim foi a vitória de Ghork em Terminus. O título era dele. A aprovação de todo mundo, veja bem, não. Mas o título era dele.
 
 **Criança — escolha:**
 
-1. **“E ele foi para Daratrine?”** — **Rheed:** Esta história termina em Terminus. Os papéis ficam para outra conversa.
-2. **“Ele ainda queria ser um grande mercenário?”** — **Rheed:** Queria. Aprender a fazer uma promessa que podia cumprir não diminuiu esse sonho.
+1. **“Depois ele foi para Daratrine?”** [expressao=confuso] — **Rheed:** [expressao=neutro] Este conto termina em Terminus. Aqueles papéis vão ter que esperar outra conversa.
+2. **“Ele ainda queria ser um grande mercenário?”** [expressao=confuso] — **Rheed:** [expressao=feliz] Ah, queria. Os sonhos não tinham acabado. Só aprendeu a pensar um pouco mais antes de prometer uma casa a alguém.
 
-**Rheed:** Agora posso guardar o frasco. Ele também trabalhou bastante hoje.
+**Rheed:** [expressao=feliz] Pronto. Já posso guardar o frasco. A noite dele também foi movimentada.
 
 **Conclusão da campanha:** encerrar após a conversa, sem abrir missão obrigatória no Conselho. O percurso solo conserva todos esses vínculos, sem sermão por não ter recrutado.
 

@@ -2,62 +2,64 @@
 
 Status: em desenvolvimento.
 
-Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estão no inventário HTML. O registro integra 19 fundos, 210 expressões produzidas para 42 visuais e 15 artes do mapa. A tabela conta referências usadas nas passagens ou na navegação, incluindo representações provisórias; não é uma encomenda de novos desenhos.
+Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estão no inventário HTML. O registro integra 19 fundos, 255 expressões produzidas para 51 visuais e 15 artes do mapa. A tabela conta referências usadas nas passagens ou na navegação, incluindo representações provisórias; não é uma encomenda de novos desenhos.
 
 | Categoria | Imagens/componentes com uso |
 | --- | ---: |
 | Fundos | 17 |
-| Bustos | 63 |
+| Bustos | 100 |
 | Objetos | 35 |
 | Interface e mapa | 17 |
 
-42 bases agrupam as 63 imagens de bustos; não são desenhos adicionais. 41 identidades visuais, com Savel e Neral separados. A criança usa o visual produzido. Lala e figurantes sem arquivo permanecem provisórios.
+43 bases agrupam as 100 imagens de bustos; não são desenhos adicionais. 41 identidades visuais, com Savel e Neral separados. A criança, Lala e figurantes com arte produzida usam seus arquivos; vozes coletivas sem correspondência permanecem provisórias.
+
+35 objetos usados possuem ilustração associada. As imagens permanecem em avaliação artística; consulte a [galeria dos objetos](../arte/objetos/galeria.md).
 
 ## Bustos por personagem
 
 | Personagem | Imagens | Bases | Variantes |
 | --- | ---: | ---: | --- |
-| Assaltante | 1 | 1 | neutro |
-| Borun | 1 | 1 | neutro |
-| Brakka | 2 | 1 | neutro; feliz |
-| Criança | 1 | 1 | confuso |
-| Darvek | 1 | 1 | neutro |
-| Dorga | 1 | 1 | neutro |
-| Durn | 2 | 1 | confuso; neutro |
+| Assaltante | 3 | 1 | raiva; feliz; triste |
+| Borun | 5 | 1 | feliz; neutro; triste; confuso; raiva |
+| Brakka | 3 | 1 | neutro; feliz; triste |
+| Criança | 3 | 1 | confuso; triste; feliz |
+| Darvek | 2 | 1 | neutro; triste |
+| Dorga | 2 | 1 | raiva; neutro |
+| Durn | 2 | 1 | neutro; feliz |
 | Edrin | 2 | 1 | neutro; feliz |
 | Elune | 2 | 1 | neutro; confuso |
-| Ferido | 1 | 1 | neutro |
-| Ghork | 4 | 1 | neutro; confuso; feliz; triste |
-| Guedra | 1 | 1 | neutro |
-| Iniciante | 1 | 1 | neutro |
+| Ferido | 2 | 1 | triste; neutro |
+| Ghork | 5 | 1 | feliz; confuso; triste; neutro; raiva |
+| Guedra | 2 | 1 | neutro; feliz |
+| Iniciante | 1 | 1 | triste |
 | Jorvi | 1 | 1 | neutro |
-| Korr | 2 | 1 | neutro; feliz |
-| Lala | 1 | 1 | neutro |
-| Lethra | 2 | 1 | neutro; feliz |
-| Mavren | 2 | 1 | neutro; feliz |
+| Korr | 3 | 1 | feliz; neutro; triste |
+| Lala | 3 | 1 | feliz; confuso; neutro |
+| Lethra | 3 | 1 | neutro; triste; feliz |
+| Mavren | 3 | 1 | neutro; triste; feliz |
 | Meruna | 1 | 1 | neutro |
-| Neral | 4 | 2 | raiva; neutro; raiva · transformado; neutro · transformado |
-| Nima | 2 | 1 | neutro; feliz |
-| Nyra | 1 | 1 | neutro |
-| Odrik | 2 | 1 | neutro; feliz |
-| Pirka | 1 | 1 | neutro |
+| Neral | 2 | 2 | neutro; raiva · transformado |
+| Nima | 3 | 1 | neutro; triste; feliz |
+| Nyra | 2 | 1 | feliz; neutro |
+| Odrik | 2 | 1 | feliz; neutro |
+| Pirka | 3 | 1 | neutro; raiva; feliz |
 | Pirka e Jorvi | 1 | 1 | neutro |
-| Rask | 2 | 1 | neutro; feliz |
+| Rask | 3 | 1 | neutro; triste; feliz |
 | Representantes dos trabalhadores | 1 | 1 | neutro |
 | Responsável pela cisterna | 1 | 1 | neutro |
-| Rheed | 2 | 1 | neutro; feliz |
+| Rheed | 2 | 1 | feliz; neutro |
 | Savel | 1 | 1 | neutro |
-| Seldan | 2 | 1 | triste; neutro |
-| Sevrak | 1 | 1 | neutro |
+| Seldan | 2 | 1 | neutro; raiva |
+| Sevrak | 3 | 1 | neutro; raiva; feliz |
 | Sura | 2 | 1 | neutro; feliz |
-| Tessa | 2 | 1 | neutro; feliz |
-| Testemunha | 1 | 1 | neutro |
-| Torvak | 2 | 1 | neutro; raiva |
-| Trabalhador | 1 | 1 | triste |
-| Velka | 2 | 1 | neutro; feliz |
-| Veterano | 1 | 1 | neutro |
-| Virmura | 1 | 1 | neutro |
-| Zagra | 1 | 1 | neutro |
+| Tessa | 3 | 1 | raiva; neutro; feliz |
+| Testemunha | 2 | 1 | confuso; neutro |
+| Torvak | 5 | 1 | feliz; neutro; raiva; confuso; triste |
+| Trabalhador | 2 | 2 | raiva; triste · segundo |
+| Velka | 3 | 1 | neutro; triste; feliz |
+| Veterano | 1 | 1 | raiva |
+| Virmura | 5 | 1 | neutro; feliz; confuso; triste; raiva |
+| Zagra | 3 | 1 | neutro; raiva; feliz |
 
 ## Fundos
 
@@ -75,7 +77,7 @@ Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estã
 | bg-coliseu-servico | Coliseu — área de serviço | 26 |
 | bg-oficina | Oficina de Durn | 58 |
 | bg-treino | Espaço de treino de Guedra | 44 |
-| bg-contratos | Casa de contratos — interior | 152 |
+| bg-contratos | Casa de contratos — interior | 153 |
 | bg-minas-entrada | Minas — entrada | 13 |
 | bg-minas-subsolo | Minas — galerias | 23 |
 | bg-cisterna | Cisterna em obras | 32 |
@@ -126,7 +128,7 @@ Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estã
 | ID | Desenho | Usos |
 | --- | --- | ---: |
 | ui-description | Painel descritivo | 62 |
-| ui-dialogue | Caixa de diálogo | 922 |
+| ui-dialogue | Caixa de diálogo | 923 |
 | map-terrain | Terreno de Terminus | 1 |
 | map-estalagem | Estalagem de Nyra | 1 |
 | map-mercado | Mercado de provisões | 1 |
@@ -145,7 +147,7 @@ Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estã
 
 ## Cobertura
 
-3179 relações entre arte e apresentação; 1213 variantes de apresentação/texto indexadas. Repetições em contextos diferentes não multiplicam a quantidade de desenhos.
+3192 relações entre arte e apresentação; 1216 variantes de apresentação/texto indexadas. Repetições em contextos diferentes não multiplicam a quantidade de desenhos.
 
 Referências sem passagem de roteiro indexada, excluídas das contagens (fundos de locais continuam acessíveis pelo mapa):
 

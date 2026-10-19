@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Enter Terminus. Choose a guild, find your allies, and make your own way.">
+  <title>Terminus · Coreto Studio</title>
+  <link rel="stylesheet" href="../prototipo/tokens.css">
+  <link rel="stylesheet" href="../prototipo/map.css">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="player.css">
+  <script defer src="runtime/locale.js"></script>
+  <script defer src="../prototipo/localization.js"></script>
+  <script defer src="../prototipo/content.js"></script>
+  <script defer src="../prototipo/supplementary.js"></script>
+  <script defer src="runtime/script.js"></script>
+  <script defer src="../prototipo/campaign.js"></script>
+  <script defer src="runtime/art.js"></script>
+  <script defer src="runtime/map.js"></script>
+  <script defer src="../prototipo/staging.js"></script>
+  <script defer src="../prototipo/engine.js"></script>
+  <script defer src="../prototipo/map-view.js"></script>
+  <script defer src="presentation.js"></script>
+  <script defer src="player.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to game / Ir ao jogo</a>
+  <section id="orientation" hidden role="status"></section>
+  <div id="game-frame">
+    <header id="hud"></header>
+    <main id="main" tabindex="-1"></main>
+    <div id="effects" aria-hidden="true"></div>
+    <button id="skip-animation" hidden type="button"></button>
+    <div id="reward" role="status" hidden></div>
+  </div>
+  <aside id="notice" role="status" hidden></aside>
+  <dialog id="menu" aria-labelledby="menu-title"></dialog>
+  <dialog id="modal" aria-labelledby="modal-title">
+    <h2 id="modal-title"></h2><div id="modal-body"></div><div id="modal-actions" class="actions"></div>
+  </dialog>
+  <input id="import-file" type="file" accept=".json,application/json" hidden aria-label="Import save / Importar partida">
+  <noscript><p>Enable JavaScript to play. / Ative JavaScript para jogar.</p></noscript>
+</body>
+</html>

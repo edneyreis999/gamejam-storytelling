@@ -2,6 +2,97 @@
 (function (root) {
   const files = {
     portraits: {
+      "lala": {
+        "concept": "../arte/bustos/expressoes/referencias/lala-concept-autor.png",
+        "files": {
+          "neutro": "../../../assets/terminus/bustos/expressoes/lala/neutro.png",
+          "feliz": "../../../assets/terminus/bustos/expressoes/lala/feliz.png",
+          "triste": "../../../assets/terminus/bustos/expressoes/lala/triste.png",
+          "raiva": "../../../assets/terminus/bustos/expressoes/lala/raiva.png",
+          "confuso": "../../../assets/terminus/bustos/expressoes/lala/confuso.png"
+        }
+      },
+      "assaltante-1": {
+        "concept": "../../../assets/terminus/bustos/expressoes/assaltante-1/neutro.png",
+        "files": {
+          "neutro": "../../../assets/terminus/bustos/expressoes/assaltante-1/neutro.png",
+          "feliz": "../../../assets/terminus/bustos/expressoes/assaltante-1/feliz.png",
+          "triste": "../../../assets/terminus/bustos/expressoes/assaltante-1/triste.png",
+          "raiva": "../../../assets/terminus/bustos/expressoes/assaltante-1/raiva.png",
+          "confuso": "../../../assets/terminus/bustos/expressoes/assaltante-1/confuso.png"
+        }
+      },
+      "assaltante-2": {
+        "concept": "../../../assets/terminus/bustos/expressoes/assaltante-2/neutro.png",
+        "files": {
+          "neutro": "../../../assets/terminus/bustos/expressoes/assaltante-2/neutro.png",
+          "feliz": "../../../assets/terminus/bustos/expressoes/assaltante-2/feliz.png",
+          "triste": "../../../assets/terminus/bustos/expressoes/assaltante-2/triste.png",
+          "raiva": "../../../assets/terminus/bustos/expressoes/assaltante-2/raiva.png",
+          "confuso": "../../../assets/terminus/bustos/expressoes/assaltante-2/confuso.png"
+        }
+      },
+      "veterano": {
+        "concept": "../../../assets/terminus/bustos/expressoes/veterano/neutro.png",
+        "files": {
+          "neutro": "../../../assets/terminus/bustos/expressoes/veterano/neutro.png",
+          "feliz": "../../../assets/terminus/bustos/expressoes/veterano/feliz.png",
+          "triste": "../../../assets/terminus/bustos/expressoes/veterano/triste.png",
+          "raiva": "../../../assets/terminus/bustos/expressoes/veterano/raiva.png",
+          "confuso": "../../../assets/terminus/bustos/expressoes/veterano/confuso.png"
+        }
+      },
+      "iniciante": {
+        "concept": "../../../assets/terminus/bustos/expressoes/iniciante/neutro.png",
+        "files": {
+          "neutro": "../../../assets/terminus/bustos/expressoes/iniciante/neutro.png",
+          "feliz": "../../../assets/terminus/bustos/expressoes/iniciante/feliz.png",
+          "triste": "../../../assets/terminus/bustos/expressoes/iniciante/triste.png",
+          "raiva": "../../../assets/terminus/bustos/expressoes/iniciante/raiva.png",
+          "confuso": "../../../assets/terminus/bustos/expressoes/iniciante/confuso.png"
+        }
+      },
+      "ferido": {
+        "concept": "../../../assets/terminus/bustos/expressoes/ferido/neutro.png",
+        "files": {
+          "neutro": "../../../assets/terminus/bustos/expressoes/ferido/neutro.png",
+          "feliz": "../../../assets/terminus/bustos/expressoes/ferido/feliz.png",
+          "triste": "../../../assets/terminus/bustos/expressoes/ferido/triste.png",
+          "raiva": "../../../assets/terminus/bustos/expressoes/ferido/raiva.png",
+          "confuso": "../../../assets/terminus/bustos/expressoes/ferido/confuso.png"
+        }
+      },
+      "testemunha": {
+        "concept": "../../../assets/terminus/bustos/expressoes/testemunha/neutro.png",
+        "files": {
+          "neutro": "../../../assets/terminus/bustos/expressoes/testemunha/neutro.png",
+          "feliz": "../../../assets/terminus/bustos/expressoes/testemunha/feliz.png",
+          "triste": "../../../assets/terminus/bustos/expressoes/testemunha/triste.png",
+          "raiva": "../../../assets/terminus/bustos/expressoes/testemunha/raiva.png",
+          "confuso": "../../../assets/terminus/bustos/expressoes/testemunha/confuso.png"
+        }
+      },
+      "trabalhador-1": {
+        "concept": "../../../assets/terminus/bustos/expressoes/trabalhador-1/neutro.png",
+        "files": {
+          "neutro": "../../../assets/terminus/bustos/expressoes/trabalhador-1/neutro.png",
+          "feliz": "../../../assets/terminus/bustos/expressoes/trabalhador-1/feliz.png",
+          "triste": "../../../assets/terminus/bustos/expressoes/trabalhador-1/triste.png",
+          "raiva": "../../../assets/terminus/bustos/expressoes/trabalhador-1/raiva.png",
+          "confuso": "../../../assets/terminus/bustos/expressoes/trabalhador-1/confuso.png"
+        }
+      },
+      "trabalhador-2": {
+        "concept": "../../../assets/terminus/bustos/expressoes/trabalhador-2/neutro.png",
+        "files": {
+          "neutro": "../../../assets/terminus/bustos/expressoes/trabalhador-2/neutro.png",
+          "feliz": "../../../assets/terminus/bustos/expressoes/trabalhador-2/feliz.png",
+          "triste": "../../../assets/terminus/bustos/expressoes/trabalhador-2/triste.png",
+          "raiva": "../../../assets/terminus/bustos/expressoes/trabalhador-2/raiva.png",
+          "confuso": "../../../assets/terminus/bustos/expressoes/trabalhador-2/confuso.png"
+        }
+      },
+
       ghork: {
         concept: "../../../assets/terminus/bustos/em-revisao/ghork-v2.png",
         files: {
@@ -509,6 +600,43 @@
             "../../../assets/terminus/bustos/expressoes/nodri/confuso.png",
         },
       },
+    },
+    objects: {
+      "obj-mapa-entrada": "../../../assets/terminus/objetos/obj-mapa-entrada.png",
+      "obj-mapa-retirada": "../../../assets/terminus/objetos/obj-mapa-retirada.png",
+      "quest-lista-patio": "../../../assets/terminus/objetos/quest-lista-patio.png",
+      "quest-etiquetas-patio": "../../../assets/terminus/objetos/quest-etiquetas-patio.png",
+      "quest-registro-retirada": "../../../assets/terminus/objetos/quest-registro-retirada.png",
+      "quest-apontamentos-a": "../../../assets/terminus/objetos/quest-apontamentos-a.png",
+      "quest-pedido-maca": "../../../assets/terminus/objetos/quest-pedido-maca.png",
+      "quest-maca": "../../../assets/terminus/objetos/quest-maca.png",
+      "quest-recibo-maca": "../../../assets/terminus/objetos/quest-recibo-maca.png",
+      "quest-lista-virmura": "../../../assets/terminus/objetos/quest-lista-virmura.png",
+      "quest-bolsa-materiais": "../../../assets/terminus/objetos/quest-bolsa-materiais.png",
+      "quest-registro-carga": "../../../assets/terminus/objetos/quest-registro-carga.png",
+      "quest-apontamentos-b": "../../../assets/terminus/objetos/quest-apontamentos-b.png",
+      "quest-fardo": "../../../assets/terminus/objetos/quest-fardo.png",
+      "quest-recibo-fardo": "../../../assets/terminus/objetos/quest-recibo-fardo.png",
+      "quest-ataduras": "../../../assets/terminus/objetos/quest-ataduras.png",
+      "quest-recibo-ataduras": "../../../assets/terminus/objetos/quest-recibo-ataduras.png",
+      "quest-procedimento": "../../../assets/terminus/objetos/quest-procedimento.png",
+      "quest-apontamentos-c": "../../../assets/terminus/objetos/quest-apontamentos-c.png",
+      "quest-estojo": "../../../assets/terminus/objetos/quest-estojo.png",
+      "quest-apoios": "../../../assets/terminus/objetos/quest-apoios.png",
+      "quest-carga-leve": "../../../assets/terminus/objetos/quest-carga-leve.png",
+      "quest-levantamento": "../../../assets/terminus/objetos/quest-levantamento.png",
+      "quest-recibo-dam": "../../../assets/terminus/objetos/quest-recibo-dam.png",
+      "quest-autorizacao-r2": "../../../assets/terminus/objetos/quest-autorizacao-r2.png",
+      "quest-relato-anonimo": "../../../assets/terminus/objetos/quest-relato-anonimo.png",
+      "quest-peca-avariada": "../../../assets/terminus/objetos/quest-peca-avariada.png",
+      "quest-nota-condicao": "../../../assets/terminus/objetos/quest-nota-condicao.png",
+      "quest-autorizacao-armacao": "../../../assets/terminus/objetos/quest-autorizacao-armacao.png",
+      "quest-contas-cisterna": "../../../assets/terminus/objetos/quest-contas-cisterna.png",
+      "quest-deposito": "../../../assets/terminus/objetos/quest-deposito.png",
+      "quest-chave-cisterna": "../../../assets/terminus/objetos/quest-chave-cisterna.png",
+      "quest-programa": "../../../assets/terminus/objetos/quest-programa.png",
+      "quest-correspondencia": "../../../assets/terminus/objetos/quest-correspondencia.png",
+      "quest-copia-correspondencia": "../../../assets/terminus/objetos/quest-copia-correspondencia.png",
     },
     backgrounds: {
       "estalagem-salao": "estalagem-nyra-salao-v1",

@@ -2,7 +2,27 @@
 
 Status: em desenvolvimento.
 
-## Revisão bilíngue para a jam — 19/10/2026
+## Segunda rodada: contexto, voz e atuação — 19/10/2026
+
+O autor autorizou a revisão integral sem novo piloto: inglês primeiro, com `rewrite-en-us`, seguido de localização para português. Os três lotes revisaram novamente as 1.156 unidades, sem reutilizar o estado de revisão anterior como evidência. Foram alteradas 1.014 versões inglesas e 1.018 portuguesas. As unidades mantidas incluem títulos, objetivos e ações que já comunicavam corretamente sua função. Todas as falas montadas têm direção explícita entre as cinco expressões existentes, incluindo respostas às escolhas, pensamentos e variantes; três ocorrências compartilham texto, mas recebem expressão própria conforme o contexto.
+
+O trabalho acrescentou referências concretas, reações e transições para sustentar a compreensão das cenas. Preservou acontecimentos, informações decisivas, escolhas e consequências. Virmura continua direta e protetora, com humor seco; os demais personagens mantêm suas diferenças de voz. A leitura cruzada corrigiu referências aos mapas, respostas que pressupunham uma promessa não feita, acusações incompatíveis com alternativas anteriores e uma fala que confundia gratidão com dívida. As quarenta reações da semifinal, bloqueios, convites, Coreto, reveses e recados de Dam foram incluídos.
+
+Os [lotes e inventários](README.md#idiomas-e-revisão-para-a-jam) preservam os IDs editoriais. `previousPt` e `previousEn` registram a versão anterior; `pt`, `en`, `expression` e eventuais `expressionOverrides` registram o resultado. A aplicação conferiu os textos anteriores antes de substituir as fontes. O roteiro mantém as mesmas 2.459 linhas e 712 registros extraídos. Permanecem 76 cenas, 139 etapas e 246 páginas, com os mesmos IDs, condições, custos e efeitos. As direções no Markdown não aparecem nos textos exibidos. O catálogo inglês e as prévias foram regenerados; 22 templates do diário foram atualizados para acompanhar títulos revisados.
+
+Foram associados os arquivos existentes de Lala e oito visuais de figurantes, sem criação de arte. O registro agora dispõe de 51 visuais e 255 expressões. A direção preserva a identidade de Savel e os momentos da revelação e transformação de Neral. Perguntas não recebem confusão automaticamente; firmeza e ironia são dirigidas conforme a cena.
+
+Verificação desta rodada:
+
+- **84 testes aprovados**, incluindo cobertura integral da rodada, expressões, extração, traduções, parâmetros e percursos das seis combinações de guilda/X/Y, com campanha solo e recrutamento.
+- **12 saves anteriores** reproduzidos com o mesmo estado de jogo e comandos; apenas a redação do histórico mudou. A comparação também conferiu condições, intervalos do roteiro, custos, flags, itens e batalhas.
+- **9.202 estados e 1.346 textos dinâmicos** conferidos em 12 percursos, sem tradução ausente.
+- **12 cenários no Edge aprovados**, cada um em EN-US e PT-BR: abertura, socorro, cuidado de Virmura, trabalho e abrigo, Lala, contrato X/Y, recrutamento, semifinal, revelação, transformação e recado final de Dam. As 24 capturas foram produzidas; a inspeção visual cobriu esses momentos, incluindo o recado em 844 × 390 nos dois idiomas.
+- **Teste adicional de localização aprovado no Edge via arquivo local**: preferência, retomada, mapa, diário, objetivos, importação, exportação, batalha e troca de idioma sem alterar passagem ou save. Nenhuma limitação foi registrada nessa execução.
+
+Evidências locais em `.artifacts/terminus-localization/round2/`: `unit-tests.tap`, `compatibility.json`, `integration-dry-run.json`, `browser-results.json` e `browser/`. O teste adicional registra `browser/report.json` na pasta superior. Os comandos reproduzíveis estão no [README](README.md). A conferência automatizada e visual não registra aceite humano de ritmo. Layout e mapa não foram alterados nesta rodada.
+
+## Primeira revisão bilíngue para a jam — histórico de 19/10/2026
 
 O autor aprovou o padrão do [piloto E00/Q-A1/contrato](editorial/piloto.md) nesta revisão. Os textos jogáveis anteriores foram tratados como primeira versão, independentemente dos registros editoriais abaixo. Os três lotes passaram por coerência em PT-BR, tradução e polimento EN-US com `rewrite-en-us`, seguidos de segunda leitura e conferência da integração. A aprovação do padrão não substitui uma partida humana completa para avaliar ritmo.
 
@@ -73,7 +93,7 @@ As falas condicionais, respostas, intervalos e reveses pertencem ao roteiro, mes
 
 ## Arte integrada
 
-A criança usa o visual produzido. Lala e figurantes sem correspondência continuam provisórios; nenhuma identidade recebe o retrato de outra. Savel, Neral revelado e Neral transformado são separados no registro. O palco usa cinco expressões produzidas, com mapeamento documentado das intenções anteriores. Os fundos atuais, inclusive o Coreto, seguem a produção em tinta e bege. Isso não converte a imagem sépia em aprovação de uma futura direção colorida.
+A criança, Lala e os figurantes com arte produzida usam seus visuais próprios; vozes coletivas sem correspondência continuam provisórias. Nenhuma identidade recebe o retrato de outra. Savel, Neral revelado e Neral transformado são separados no registro. O palco usa cinco expressões produzidas, com direção explícita por ocorrência nesta rodada. Os fundos atuais, inclusive o Coreto, seguem a produção em tinta e bege. Isso não converte a imagem sépia em aprovação de uma futura direção colorida.
 
 Consulte os [registros de fundos](../arte/locais/README.md), [concepts](../arte/bustos/README.md), [expressões](../arte/bustos/expressoes/README.md) e o [inventário de uso](INVENTARIO.md). A seleção para o protótipo preserva o status de avaliação artística.
 

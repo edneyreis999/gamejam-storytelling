@@ -3,1278 +3,1278 @@
   const records = [
   {
     "id": "text.89b41d2b408ce3f1",
-    "pt": "Chegou bem na hora. A história começa com alguém que quase não chegou ao seu destino.",
-    "en": "Just in time. Our story begins with someone who nearly didn't make it to his destination."
+    "pt": "Aí está você. Chegue mais perto; guardamos um lugar. Eu ia contar justamente a história de alguém que quase não chegou.",
+    "en": "There you are. Come closer; we've saved you a place. I was just about to tell you about someone who nearly didn't arrive at all."
   },
   {
     "id": "text.7cf439199dab8aba",
-    "pt": "Quem?",
-    "en": "Who?"
+    "pt": "Quem não chegou?",
+    "en": "Who didn't?"
   },
   {
     "id": "text.7d0000c09af2a1f9",
-    "pt": "Ghork. Guardem esse nome. Ele ficaria muito satisfeito de me ouvir dizendo isso.",
-    "en": "Ghork. Remember that name. He'd be very pleased to hear me say that."
+    "pt": "Ghork. Guardem esse nome, todos vocês. Ele ia adorar saber que eu pedi.",
+    "en": "Ghork. Remember that name, everyone. He'd be delighted to know I asked you to."
   },
   {
     "id": "text.728711c0435a1993",
-    "pt": "Essa história acaba mal?",
-    "en": "Does this story end badly?"
+    "pt": "Espera... essa história tem um final triste?",
+    "en": "Wait... does this story have a sad ending?"
   },
   {
     "id": "text.5d194716ce559b8f",
-    "pt": "Tem partes difíceis. Mas vamos chegar ao final juntos, sem pular nada.",
-    "en": "There are some hard parts. But we'll get to the end together. No skipping ahead."
+    "pt": "Tem seus momentos difíceis. Fique por perto, e vamos passar por eles juntos. Mas nada de espiar o final. Acabei de abrir o frasco.",
+    "en": "It has its share of hard moments. Stay close, and we'll get through them together. But no peeking at the ending. I've only just opened the bottle."
   },
   {
     "id": "text.6fbca6ec7cb8c5f8",
-    "pt": "Ghork foi a Terminus atrás de trabalho. Mas, quando chegou, precisava primeiro de alguém que tratasse sua perna.",
-    "en": "Ghork came to Terminus looking for work. By the time he arrived, though, finding someone to treat his leg couldn't wait."
+    "pt": "Ghork tinha vindo de longe, de Daratrine. Trabalho, um novo começo, alguém que cuidasse da perna ferida... Terminus devia ter tudo isso. Mas, quando chegou, mal conseguia respirar.",
+    "en": "Ghork had come a long way from Daratrine. Work, a fresh start, someone who could help his injured leg... Terminus was supposed to have all of that. By the time he arrived, though, he could barely draw a breath."
   },
   {
     "id": "text.ce8fdb30c00175b5",
-    "pt": "Rheed bebe a poção. As vozes da plateia somem, dando lugar à respiração de Ghork.",
-    "en": "Rheed drinks the potion. The audience's voices fade into the sound of Ghork's breathing."
+    "pt": "Rheed bebe a poção. As vozes ao redor do Coreto se afastam, até restar apenas a respiração difícil de Ghork.",
+    "en": "Rheed drinks the potion. The voices around the Bandstand recede, until all you hear is Ghork struggling for breath."
   },
   {
     "id": "text.0a85f039d925eadf",
-    "pt": "Eu consigo... só preciso...",
-    "en": "I can... I just need..."
+    "pt": "Eu consigo... só preciso de um instante...",
+    "en": "I can... just give me a moment..."
   },
   {
     "id": "text.4e783c24fb6a5b5a",
-    "pt": "Não tente levantar. Olhe para mim.",
-    "en": "Don't try to get up. Look at me."
+    "pt": "Calma. Não tente levantar. Olhe para mim, aqui.",
+    "en": "Easy. Don't try to stand. Look at me, right here."
   },
   {
     "id": "text.c4be8653bae7e2d0",
-    "pt": "Isto é... Terminus?",
-    "en": "Is this... Terminus?"
+    "pt": "Eu cheguei...? Aqui é Terminus?",
+    "en": "Did I... is this Terminus?"
   },
   {
     "id": "text.6810f74d4dc62ab4",
-    "pt": "É. Você chegou. Agora fique comigo.",
-    "en": "Yes. You made it. Now stay with me."
+    "pt": "É. Você chegou. Continue olhando para mim, Ghork. Agora deixe o trabalho comigo.",
+    "en": "Yes. You made it. Keep your eyes on me, Ghork. Let me do the work now."
   },
   {
     "id": "text.d446711ded29798b",
-    "pt": "Eu tinha pensado numa apresentação melhor.",
-    "en": "I had a better introduction planned."
+    "pt": "Bom... eu tinha planejado uma primeira impressão melhor.",
+    "en": "Well... I'd planned to make a better first impression."
   },
   {
     "id": "text.d29f9e17e14ada8e",
-    "pt": "Essa quase foi a última. Deixe o discurso para quando tiver fôlego.",
-    "en": "That was nearly your last one. Save the speech until you've got your breath back."
+    "pt": "Eu já me contento com uma que você sobreviva para contar. Guarde o discurso, está bem? Mal recuperou o fôlego.",
+    "en": "I'd settle for one you survive. Save the speech, will you? You've barely got your breath back."
   },
   {
     "id": "text.cde690bb3a0424cf",
-    "pt": "Foi você que me...?",
-    "en": "Were you the one who...?"
+    "pt": "Foi você que... Você me salvou?",
+    "en": "You were the one who... You saved me?"
   },
   {
     "id": "text.912c5a968ceedc68",
-    "pt": "Fui. E ainda não terminei de cuidar de você.",
-    "en": "I was. And I'm not done looking after you."
+    "pt": "Salvei. E você ainda está sob meus cuidados. Nada de começar a me agradecer saindo da cama.",
+    "en": "I did. And you're still in my care, so don't start thanking me by getting out of bed."
   },
   {
     "id": "text.2a6cb1b08262c973",
-    "pt": "Separe as ataduras limpas das que precisam de lavagem. Sentado. Se cansar, me avise.",
-    "en": "Sort the clean bandages from the ones that need washing. Sitting down. Tell me when you get tired."
+    "pt": "Está vendo esta caixa? Ataduras limpas de um lado, as que precisam de lavagem do outro. Pode fazer sentado. Se cansar, me avise.",
+    "en": "See this box? Clean bandages in one pile, the ones that need washing in another. You can do it sitting down. If you get tired, tell me."
   },
   {
     "id": "text.7e88e86a97fc8d6f",
-    "pt": "Com esse trabalho, posso ficar aqui?",
-    "en": "Would that earn me a bed here?"
+    "pt": "E se eu ajudar... posso ficar aqui? Ainda não tenho onde morar.",
+    "en": "And if I help out... I can stay here? I don't have a place yet."
   },
   {
     "id": "text.d025aa7840ba31d3",
-    "pt": "Pode. Você ajuda no que conseguir enquanto se recupera. O atendimento de quando chegou não é uma dívida.",
-    "en": "Yes. Help with what you can while you recover. You don't owe me for saving your life."
+    "pt": "Pode. Um lugar para ficar, em troca do trabalho que conseguir fazer enquanto melhora. Esse é o acordo. Ter salvado sua vida não faz de você meu devedor.",
+    "en": "Yes. A place to stay, in exchange for work you can manage while you recover. That's our arrangement. Saving your life didn't put you in my debt."
   },
   {
     "id": "text.c3e1a26040ea7989",
-    "pt": "Quero ajudar. Só não sei quanto vou conseguir fazer.",
-    "en": "I want to help. I'm just not sure how much I can manage."
+    "pt": "Quero ajudar. Só não quero prometer mais do que essa perna vai deixar.",
+    "en": "I want to help. I just don't want to promise more than this leg will let me do."
   },
   {
     "id": "text.862317719c136c2b",
-    "pt": "Comece por essa caixa. Ela não vai fugir se você precisar parar.",
-    "en": "Start with that box. It won't run off if you need a break."
+    "pt": "Então comece pela caixa. Se precisar descansar, ela continua aqui. Ataduras não têm o costume de fugir.",
+    "en": "Then start with the box. If you need a rest, it'll still be here. Bandages aren't known for running away."
   },
   {
     "id": "text.33d216196000fe3f",
-    "pt": "Então vou impressionar você com minhas ataduras.",
-    "en": "Then prepare to be impressed by my bandage sorting."
+    "pt": "Então prepare-se para ver uma separação de ataduras digna de entrar para a história.",
+    "en": "Then you're about to witness some truly remarkable bandage sorting."
   },
   {
     "id": "text.322f85cc9f8944cb",
-    "pt": "Deixe as limpas de um lado e já vou ficar impressionada o bastante por hoje.",
-    "en": "Get the clean ones into their own pile. That'll impress me enough for today."
+    "pt": "As limpas numa pilha separada, por favor. Vamos conseguir isso antes de encomendar sua estátua.",
+    "en": "Clean ones in their own pile, please. Let's aim for that before we start carving your statue."
   },
   {
     "id": "text.cadd1529cc89efe7",
-    "pt": "Vocês também vão buscar os feridos?",
-    "en": "You go out to bring the wounded back, too?"
+    "pt": "Então vocês não cuidam só de quem chega aqui? Também saem para buscar os feridos?",
+    "en": "So your people don't just treat whoever comes through the door? You go out and bring the wounded back, too?"
   },
   {
     "id": "text.f883836993cc81e2",
-    "pt": "Vamos. E precisamos de gente que saiba encontrar o caminho de volta. Braços fortes não resolvem tudo.",
-    "en": "We do. And we need people who can find the way back. Strong arms only get you so far."
+    "pt": "Saímos. E alguém precisa encontrar o caminho para trazer todos de volta. Braços fortes não adiantam muito se a equipe inteira se perder.",
+    "en": "We do. And someone has to find a way to bring them home. Strong arms aren't much use if the whole crew gets lost."
   },
   {
     "id": "text.531c798a0d1a4627",
-    "pt": "Eu quero entrar no campeonato. Se eu ganhar... quero ver continuarem dizendo que não sirvo para nada.",
-    "en": "I want to enter the tournament. If I win... let's see them call me useless then."
+    "pt": "Eu quero entrar no campeonato. E ganhar. Se eu voltar com esse título... quero ver dizerem outra vez que não sirvo para nada.",
+    "en": "I want to enter the tournament. Win it, too. If I come back with that title... let's see them tell me I'm no use to anyone then."
   },
   {
     "id": "text.77ef5fe220e7b98a",
-    "pt": "Pode sonhar com o título. Por hoje, termine essas ataduras.",
-    "en": "You can dream about the title. Today, let's finish those bandages."
+    "pt": "Pode me contar tudo sobre esse título enquanto separa. As ataduras não vão se arrumar sozinhas, campeão.",
+    "en": "You can tell me all about that title while you sort. These bandages won't sort themselves, champion."
   },
   {
     "id": "text.55a26f5f71dd358b",
-    "pt": "Lala disse que alguém que soubesse usar mana podia recarregar o colar.",
-    "en": "Lala said someone who knows how to use mana could recharge the necklace."
+    "pt": "Lala me deu esse colar para a gente continuar conversando. Disse que alguém que sabe usar mana pode recarregar. Você conseguiria...?",
+    "en": "Lala gave me this necklace so we could keep talking. She said someone who knows how to use mana could recharge it. Could you...?"
   },
   {
     "id": "text.0b4a424e79ed1fca",
-    "pt": "Eu posso recarregar. Depois fale com ela. Deve estar esperando notícias suas.",
-    "en": "I can recharge it. Then talk to her. She must be waiting to hear from you."
+    "pt": "Me dê aqui. Isso eu consigo. Depois fale com ela e conte que chegou. Imagino que queira ouvir de você.",
+    "en": "Give it here. I can do that. Then you call her and tell her you've arrived. I imagine she'd like to hear it from you."
   },
   {
     "id": "text.d46013f8f5937b12",
-    "pt": "Ghork! Você chegou! Espera... onde é que você está?",
-    "en": "Ghork! You made it! Wait... where are you?"
+    "pt": "Ghork! Até que enfim! Eu estava... espera. Onde você está? O que é isso atrás de você?",
+    "en": "Ghork! There you are! I was--wait. Where are you? What's that behind you?"
   },
   {
     "id": "text.f6c716aa1c13f30e",
-    "pt": "Numa enfermaria. A perna estava pior do que eu pensava.",
-    "en": "In an infirmary. My leg was worse than I thought."
+    "pt": "É uma enfermaria. A perna estava pior do que eu pensava, Lala.",
+    "en": "It's an infirmary. My leg was worse than I thought, Lala."
   },
   {
     "id": "text.e8d6522a860c53ea",
-    "pt": "E quando você ia me contar? Tem alguém cuidando de você?",
-    "en": "When were you going to tell me? Is someone looking after you?"
+    "pt": "Uma enfermaria? Ghork, por que não falou logo? Tem alguém aí com você?",
+    "en": "An infirmary? Ghork, why didn't you say so? Is somebody there with you?"
   },
   {
     "id": "text.8773b0b89e7b1fe2",
-    "pt": "Encontrei uma curandeira. Ela se chama Virmura.",
-    "en": "I found a healer. Her name's Virmura."
+    "pt": "Encontrei uma curandeira. Virmura. Ela está cuidando de mim.",
+    "en": "I found a healer. Virmura. She's looking after me."
   },
   {
     "id": "text.2f4bb9ba995d0df2",
-    "pt": "Ainda bem. Agora me conta o que aconteceu.",
-    "en": "Thank goodness. Now tell me what happened."
+    "pt": "Ai, ainda bem. Está bem. Me conta o que aconteceu, desde o começo.",
+    "en": "Oh, thank goodness. All right. Tell me what happened, from the beginning."
   },
   {
     "id": "text.d9c0952c9d11f1f8",
-    "pt": "Quase não cheguei vivo. Virmura me salvou. Vou ficar aqui até melhorar e ajudar no que conseguir.",
-    "en": "I barely made it here alive. Virmura saved me. I'm staying here while I get better, helping where I can."
+    "pt": "Quase não cheguei vivo. Virmura salvou minha vida. Vai me deixar ficar enquanto melhoro, e eu ajudo no que conseguir.",
+    "en": "I nearly didn't make it. Virmura saved my life. She's letting me stay while I get better, and I help with whatever I can manage."
   },
   {
     "id": "text.67147f932c13ba78",
-    "pt": "Sem se forçar, ouviu? O resto você me conta depois. Dam quer saber como está sua perna, onde você está dormindo e se está comendo. Nessa ordem. Fez questão.",
-    "en": "Don't push yourself, all right? You can tell me the rest later. Dam wants to know how your leg is, where you're sleeping, and whether you're eating. In that order. He was very clear."
+    "pt": "Então deixe ela cuidar de você, por favor. Depois você me conta da cidade. Dam me passou uma lista: como está sua perna, onde está dormindo e se está comendo. Nessa ordem. Pelo visto, não posso improvisar.",
+    "en": "Then let her look after you, please. You can tell me about the city later. Dam gave me a whole list: how's your leg, where are you sleeping, and are you eating? In that order. Apparently I'm not to improvise."
   },
   {
     "id": "text.4274950da8506db3",
-    "pt": "Pode dizer que não tiram o olho de mim.",
-    "en": "Tell him I'm under constant surveillance."
+    "pt": "Diga que estou sendo muito bem vigiado. Nem consegui impressionar a curandeira com as ataduras ainda.",
+    "en": "Tell him I'm under very close supervision. I haven't even managed to impress her with the bandages yet."
   },
   {
     "id": "text.38b8212fa56ecad1",
-    "pt": "Vou dizer que estão cuidando de você. Vigiado? Você sempre dava um jeito de escapar.",
-    "en": "I'll tell him you're being looked after. Surveillance? You always found a way around that."
+    "pt": "Vou dizer que tem alguém cuidando de você. Ser vigiado nunca impediu você de se meter em confusão.",
+    "en": "I'll tell him someone's taking care of you. Being watched never stopped you getting into trouble before."
   },
   {
     "id": "text.8f5d171dc3eec4ef",
-    "pt": "Os cuidados continuam. Aos poucos, Ghork consegue caminhar pequenas distâncias.",
-    "en": "The treatment continues. Little by little, Ghork can manage short walks."
+    "pt": "Os cuidados e as pequenas tarefas passam a fazer parte da rotina. Aos poucos, Ghork consegue caminhar pequenas distâncias, sempre atento a um lugar para descansar.",
+    "en": "The days of care and small jobs begin to blur together. Ghork gradually manages short walks, with somewhere to sit always in mind."
   },
   {
     "id": "text.f8249a7d0387e2fc",
-    "pt": "Tenho duas entregas perto daqui: uma no mercado, outra no coliseu. Escolha por qual começar. E pare para descansar quando precisar.",
-    "en": "I've got two deliveries nearby: one to the market, one to the coliseum. Start with either. And stop to rest when you need to."
+    "pt": "Tenho duas entregas aqui perto que você pode fazer: uma no mercado, outra no coliseu. Escolha por qual começar. E, se precisar descansar, pare. Os pacotes podem esperar junto com você.",
+    "en": "I have two deliveries you can make nearby: one to the market, one to the coliseum. Pick whichever you like first. And if you need a rest, take it. The parcels can wait with you."
   },
   {
     "id": "text.5e6b75b42dfb5dd8",
-    "pt": "Estes dois mapas não parecem descrever as mesmas galerias. Os relatos também não esclarecem isso. Antes de financiar uma investigação maior, preciso entender o que temos.",
-    "en": "These two maps don't seem to describe the same tunnels. The accounts don't clear things up, either. Before I fund a larger survey, I need to know what we're working with."
+    "pt": "Olhem estes dois mapas. Supostamente da mesma mina, mas não parecem concordar. Os relatos também não ajudam muito. Estou disposta a financiar uma investigação completa, mas antes preciso saber quem é capaz de entender isso.",
+    "en": "Look at these two maps. Supposedly the same mine, yet they don't seem to agree. The accounts aren't much help either. I'm willing to fund a proper survey, but first I need to know who's capable of making sense of this."
   },
   {
     "id": "text.7e16367857059010",
-    "pt": "Quer que a gente entre nas minas para conferir?",
-    "en": "You want us to go into the mines and check?"
+    "pt": "Então quer que a gente entre lá e veja qual mapa está certo?",
+    "en": "So you want us to go down there and see which map is right?"
   },
   {
     "id": "text.44894025ce9c5fa0",
-    "pt": "Só depois de eu escolher uma guilda. Primeiro, vocês vão mostrar o que conseguem descobrir com os mapas e as fontes aqui fora.",
-    "en": "Once I've chosen a guild. First, show me what you can learn from the maps and the sources we have up here."
+    "pt": "Ainda não. Primeiro vou escolher uma guilda. Por enquanto, trabalhem com os mapas e as fontes que podemos consultar aqui fora. Mostrem o que conseguem descobrir antes de alguém pôr os pés nas galerias.",
+    "en": "Not yet. First I'll choose a guild. For now, work with the maps and the sources we can consult up here. Show me what you can establish before anyone sets foot in those tunnels."
   },
   {
     "id": "text.f32b7980226ba00d",
-    "pt": "E como vão trazer a equipe de volta em segurança.",
-    "en": "And how you plan to bring the crew back safely."
+    "pt": "E mostrem como pretendem tirar sua gente de lá depois. De preferência, inteira.",
+    "en": "And show us how you intend to get your people out again. Preferably in one piece."
   },
   {
     "id": "text.4d247e716d814bee",
-    "pt": "Voltar vivo costuma ser a melhor parte do trabalho.",
-    "en": "Getting home alive is usually the best part of the job."
+    "pt": "Também gosto bastante dessa parte. Fica difícil aproveitar o pagamento quando a gente não volta.",
+    "en": "I'm rather fond of that part myself. Hard to enjoy the pay if you don't make it home."
   },
   {
     "id": "text.b225010ed5d376fe",
-    "pt": "Todas as guildas terão acesso às mesmas cópias?",
-    "en": "Will every guild have access to the same copies?"
+    "pt": "Antes de começarmos: todas as guildas recebem as mesmas cópias, correto?",
+    "en": "Before we begin: every guild gets the same copies, correct?"
   },
   {
     "id": "text.b9f1a4dff214df1c",
-    "pt": "Sim. O pagamento é alto, mas o contrato será de uma só guilda. Preciso de uma equipe responsável pelo levantamento inteiro.",
-    "en": "Yes. The pay is substantial, but the contract goes to one guild. I need one team responsible for the entire survey."
+    "pt": "Correto. O pagamento é alto, e o contrato é exclusivo. Uma guilda responde pelo levantamento inteiro. Não vou dividir o trabalho entre três planos concorrentes.",
+    "en": "Correct. The pay is substantial, and I'm offering an exclusive contract. One guild answers for the entire survey. I won't divide the work among three competing plans."
   },
   {
     "id": "text.186150bada5d3952",
-    "pt": "Por que não contratar quem já conhece as minas?",
-    "en": "Why not hire people who already know the mines?"
+    "pt": "Não seria mais fácil contratar alguém que já andou por essas minas?",
+    "en": "Wouldn't it be easier to hire someone who's already been through the mines?"
   },
   {
     "id": "text.9bf6a1f60eaabb37",
-    "pt": "Cada um conhece um trecho. Preciso de quem consiga juntar esses relatos e admitir o que ainda não sabe.",
-    "en": "Each of them knows one stretch. I need someone who can piece those accounts together and admit what's still missing."
+    "pt": "Cada pessoa conhece um pedaço. Preciso de alguém que junte esses relatos e me diga onde faltam informações. Até agora, ninguém conseguiu me mostrar o quadro completo.",
+    "en": "Each person knows a piece of the place. I need someone who can put those accounts together and tell me where the gaps are. So far, nobody has given me the whole picture."
   },
   {
     "id": "text.edd9e5291545f61f",
-    "pt": "O dinheiro pode ajudar na preparação para o campeonato?",
-    "en": "Could the money help us prepare for the tournament?"
+    "pt": "E a guilda poderia usar uma parte do pagamento para se preparar para o campeonato?",
+    "en": "And the guild could use some of that pay to prepare for the tournament?"
   },
   {
     "id": "text.5aab64cdf4c2f5f9",
-    "pt": "A guilda pode usar a parte dela no campeonato. Eu estou pagando pelo levantamento das minas. Ganhar na arena é com vocês.",
-    "en": "The guild can spend its share on the tournament. I'm paying for a mine survey. Winning in the arena is your business."
+    "pt": "Depois de ganhar sua parte, a guilda decide o que fazer com ela. Eu estou pagando por um levantamento das minas, Ghork. Se quiser um título na arena também, vai ter de conquistá-lo por conta própria.",
+    "en": "Once the guild has earned its share, that's its decision. I'm buying a mine survey, Ghork. If you want an arena title as well, you'll have to earn that separately."
   },
   {
     "id": "text.db84846336decbfb",
-    "pt": "Posso ouvir as três propostas antes de escolher?",
-    "en": "Can I hear all three proposals before I choose?"
+    "pt": "Posso ouvir o que as três guildas pretendem fazer antes de escolher uma?",
+    "en": "Can I hear what all three guilds have in mind before I choose one?"
   },
   {
     "id": "text.24ca522d1ba7188e",
-    "pt": "Pode. Mas, quando defender uma delas aqui, estará assumindo um compromisso com aquela guilda.",
-    "en": "Yes. But once you argue for one at this table, you're committing to that guild."
+    "pt": "Pode. Ouvir uma proposta não obriga você a aceitá-la. Mas, quando vier a esta mesa e se comprometer a executar uma delas, estará entrando naquela guilda. Tenha certeza antes de decidir.",
+    "en": "Yes. Hearing a proposal doesn't bind you to it. But when you stand at this table and agree to carry one out, you're joining that guild. Make sure you mean it."
   },
   {
     "id": "text.6efc45ec8e195e8f",
-    "pt": "Quero saber de onde vieram as informações, como vão conferir os mapas e o que ainda ficará sem resposta. Vou ouvir as três guildas. Ghork, pode aprender com todas antes de decidir a quem vai se juntar.",
-    "en": "Show me where your information came from, how you'll check the maps, and what you still can't answer. I'll hear all three guilds. Ghork, you can learn from all of them before deciding which one to join."
+    "pt": "Tragam suas fontes e mostrem como vão conferir os mapas. Se algo continuar incerto, digam. Cada guilda será ouvida. Ghork, conheça o trabalho delas antes de escolher de qual vai fazer parte.",
+    "en": "Bring me your sources and show me how you'll check these maps. If something remains uncertain, say so. Each guild will get a hearing. Ghork, take the time to learn how they work before you choose whose work you'll share."
   },
   {
     "id": "text.c52133b70cc7d271",
-    "pt": "Já ouviu falar do campeão?",
-    "en": "Have you heard of the champion?"
+    "pt": "Você anda olhando bastante para o coliseu. Já ouviu falar do campeão de lá?",
+    "en": "You've been looking toward the coliseum a lot. Heard much about its champion yet?"
   },
   {
     "id": "text.6eb2c8c5e2a99db5",
-    "pt": "Desde que cheguei, vi o nome dele mais vezes do que o meu.",
-    "en": "I've seen his name more often than my own since I got here."
+    "pt": "O nome dele está em todo lugar. Desde que cheguei, vi mais vezes que o meu.",
+    "en": "His name's everywhere. I've seen it more often than my own since I arrived."
   },
   {
     "id": "text.75bfacb8aacf7ebb",
-    "pt": "Torvak lutou ao lado de Orcquius e Glavius.",
-    "en": "Torvak fought alongside Orcquius and Glavius."
+    "pt": "Então vou contar uma coisa que não está nos cartazes. Torvak lutou ao lado de Orcquius e Glavius.",
+    "en": "Then here's something the posters won't tell you. Torvak fought alongside Orcquius and Glavius."
   },
   {
     "id": "text.350d16913aab4b7f",
-    "pt": "Dos dois?",
-    "en": "Both of them?"
+    "pt": "Orcquius e Glavius? Os dois?",
+    "en": "Orcquius and Glavius? Both of them?"
   },
   {
     "id": "text.b839e6f543263b88",
-    "pt": "Os três eram do mesmo time. Agora cada um segue seu caminho.",
-    "en": "They were on the same team. These days, they go their separate ways."
+    "pt": "Os três eram do mesmo time. Isso acabou. Cada um seguiu seu caminho.",
+    "en": "The three of them were on the same team. That ended. They each went their own way."
   },
   {
     "id": "text.c7eb879b88842e7e",
-    "pt": "Se eu vencer alguém que lutou ao lado de Orcquius...",
-    "en": "If I beat someone who fought alongside Orcquius..."
+    "pt": "Se eu vencesse alguém que lutou ao lado de Orcquius... ele ia ter de...",
+    "en": "If I could beat someone who fought beside Orcquius... he'd have to--"
   },
   {
     "id": "text.f2b872a49cd89674",
-    "pt": "Você terá vencido Torvak. Primeiro conheça o homem. Não faça dessa luta um recado para o general.",
-    "en": "You'll have beaten Torvak. Get to know the man first. Don't make this fight a message to the general."
+    "pt": "Você teria vencido Torvak, Ghork. Já é bastante coisa para querer. Conheça o homem antes de transformar essa luta num recado para o general.",
+    "en": "You'd have beaten Torvak, Ghork. That's plenty to aim for. Meet the man before you turn him into a message for the general."
   },
   {
     "id": "text.8080b8ae17a28da9",
-    "pt": "Ele carregou dois dos nossos até a saída. Quem for contar como voltamos vivos precisa contar essa parte também.",
-    "en": "He carried two of our people to the exit. If you're telling the story of how we got out, tell that part too."
+    "pt": "Este homem carregou dois dos nossos até a saída! Se vão contar como voltamos para casa, tratem de contar a parte dele também.",
+    "en": "This man carried two of our people all the way to the exit! If you're telling folks how we got home, make sure his part gets told too."
   },
   {
     "id": "text.78cda552826098e8",
-    "pt": "Você lutou com Orcquius e Glavius?",
-    "en": "You fought with Orcquius and Glavius?"
+    "pt": "Torvak? É verdade que você lutou ao lado de Orcquius e Glavius?",
+    "en": "Torvak? Is it true you fought alongside Orcquius and Glavius?"
   },
   {
     "id": "text.c3eaca8e5216ecf3",
-    "pt": "Lutei. Você é de Daratrine?",
-    "en": "I did. Are you from Daratrine?"
+    "pt": "É verdade. Pelo jeito, você veio de Daratrine?",
+    "en": "True enough. I take it you're from Daratrine?"
   },
   {
     "id": "text.d83ee90ef1efb430",
-    "pt": "Sou. Ghork.",
-    "en": "I am. Ghork."
+    "pt": "Vim. Meu nome é Ghork.",
+    "en": "I am. My name's Ghork."
   },
   {
     "id": "text.e146ebf5487300ed",
-    "pt": "E agora anda com essas guildas que acham que podem me ensinar a comandar uma arena.",
-    "en": "And now you're running around with guilds that think they can teach me how to run an arena."
+    "pt": "Ghork. E agora está andando com aquelas guildas que acham que podem me ensinar a administrar uma arena.",
+    "en": "Ghork. And now you've fallen in with those guilds that think they can teach me how an arena ought to be run."
   },
   {
     "id": "text.658c1d6c23b9158d",
-    "pt": "Quero chegar à final.",
-    "en": "I want to make it to the final."
+    "pt": "Vou tentar chegar à final. Quero enfrentar você lá.",
+    "en": "I'm going to try for the final. I want to face you there."
   },
   {
     "id": "text.4096512293ee6210",
-    "pt": "Então tem muito trabalho pela frente antes da nossa próxima conversa.",
-    "en": "Then you've got plenty of work ahead of you before our next conversation."
+    "pt": "Então tem um bocado de trabalho antes da nossa próxima conversa. Melhor começar.",
+    "en": "Then you've got a fair bit of work before our next conversation. Best get to it."
   },
   {
     "id": "text.9275390026e7f9c9",
-    "pt": "Por que vocês se separaram?",
-    "en": "Why did you split up?"
+    "pt": "O que aconteceu com seu antigo time? Por que vocês se separaram?",
+    "en": "What happened to your old team? Why did you split up?"
   },
   {
     "id": "text.618a56db39f206fc",
-    "pt": "A equipe acabou. É tudo que vou dizer.",
-    "en": "The team ended. That's all I'll say about it."
+    "pt": "A equipe acabou. Essa parte da minha vida não está aberta a perguntas.",
+    "en": "The team ended. That part of my life isn't up for discussion."
   },
   {
     "id": "text.cd90d7e58f80af4c",
-    "pt": "Se eu chegar à final, vai lembrar do meu nome?",
-    "en": "If I make it to the final, will you remember my name?"
+    "pt": "Se eu conseguir chegar à final... vai lembrar do meu nome, não vai?",
+    "en": "If I do make it to the final... you'll remember my name, won't you?"
   },
   {
     "id": "text.7c8ebb75b45eacc8",
-    "pt": "Rask vai anunciar bem alto. Não tem como esquecer.",
-    "en": "Rask will announce it loud enough. Hard to forget."
+    "pt": "Rask vai gritar seu nome para o coliseu inteiro. Acredite, não vai precisar me lembrar.",
+    "en": "Rask will shout it across the coliseum. Believe me, you won't need to remind me."
   },
   {
     "id": "text.f0457ab81c81ed26",
-    "pt": "Ghork. Ouvi sua conversa. Para chegar à final, vai precisar manter o ritmo dos treinos.",
-    "en": "Ghork. I heard your conversation. If you want to reach the final, you'll need to keep up your training."
+    "pt": "Ghork, não é? Acabei ouvindo a conversa. Chegar à final é uma bela ambição. A parte difícil vai ser acompanhar o ritmo dos treinos.",
+    "en": "Ghork, wasn't it? I couldn't help hearing. Quite an ambition, reaching the final. Keeping up with the training will be the difficult part."
   },
   {
     "id": "text.d3f7c8a924bb8ffc",
-    "pt": "E você vende uma solução para isso?",
-    "en": "And you happen to sell something for that?"
+    "pt": "Deixe eu adivinhar. Você vende alguma coisa que ajuda?",
+    "en": "Let me guess. You happen to sell something that helps?"
   },
   {
     "id": "text.9f85485b67b0eb2b",
-    "pt": "Tenho algumas preparações. Já ajudaram gente que não conseguia mais trabalhar por causa do desgaste.",
-    "en": "I offer certain preparations. They've helped people get back to work when their bodies couldn't keep up anymore."
+    "pt": "Preparo fórmulas para quem já não consegue acompanhar o esforço que o trabalho exige. Alguns puderam voltar a ganhar a vida. Achei que gostaria de saber.",
+    "en": "I prepare remedies for people whose bodies can no longer keep up with the work they need to do. Some have been able to return to their livelihoods. I thought you might like to know."
   },
   {
     "id": "text.0c91defd9c358938",
-    "pt": "Minha perna ainda está sendo tratada.",
-    "en": "My leg's still being treated."
+    "pt": "Já estou tratando essa perna. Não quero atrapalhar o tratamento.",
+    "en": "I'm already having this leg treated. I don't want to interfere with that."
   },
   {
     "id": "text.5be00c2d732befd3",
-    "pt": "Eu percebi. Preferi falar com você antes que se machuque tentando acompanhar os outros.",
-    "en": "I noticed. I thought I'd speak to you before you hurt yourself trying to keep up with everyone else."
+    "pt": "Claro. Percebi que ainda está se recuperando. Por isso vim falar agora, antes que a pressão para acompanhar os outros acabe em outro ferimento.",
+    "en": "Of course. I noticed you were still recovering. That's why I approached you now, before the pressure to keep pace leads to another injury."
   },
   {
     "id": "text.284d78d2e1f4c1e8",
-    "pt": "O que tem no frasco?",
-    "en": "What's in the bottle?"
+    "pt": "Antes de falar em tomar isso... o que tem nesse frasco?",
+    "en": "Before we talk about taking it... what's actually in that bottle?"
   },
   {
     "id": "text.c526b9f14171aed0",
-    "pt": "A fórmula depende de como o corpo está. Não seria responsável oferecer uma dose e deixar você sem acompanhamento.",
-    "en": "The formula depends on your condition. It wouldn't be responsible to offer a dose without following up."
+    "pt": "A preparação dependeria do seu estado. Eu não entregaria uma dose para depois deixar você por sua conta. Seria preciso acompanhar o tratamento.",
+    "en": "The preparation would depend on your condition. I wouldn't simply hand you a dose and send you away. You'd need someone to oversee the treatment."
   },
   {
     "id": "text.e04d112a14183be1",
-    "pt": "Você ainda não disse o que tem dentro.",
-    "en": "You still haven't told me what's in it."
+    "pt": "Está bem, mas você ainda não me disse o que tem dentro.",
+    "en": "That's nice, but you still haven't told me what's in it."
   },
   {
     "id": "text.707070af41f68ccd",
-    "pt": "Podemos conversar com calma no boticário.",
-    "en": "We can discuss it properly at the apothecary."
+    "pt": "Passe no boticário. Lá podemos conversar com calma sobre suas dúvidas.",
+    "en": "Come by the apothecary. We can discuss your questions properly there."
   },
   {
     "id": "text.737b258c0a3139b5",
-    "pt": "Por enquanto, vou continuar com o tratamento que tenho.",
-    "en": "I'll stick with my current treatment for now."
+    "pt": "Por enquanto, vou continuar com o tratamento que já tenho. Está ajudando.",
+    "en": "I'll stay with the treatment I've got for now. It's helping."
   },
   {
     "id": "text.ec3a3ade112118dd",
-    "pt": "Continue. Se precisar de outra coisa, já sabe onde me encontrar.",
-    "en": "Of course. If your needs change, you know where to find me."
+    "pt": "Como preferir. Se sentir que precisa de algo mais, já sabe onde procurar.",
+    "en": "As you wish. If you find you need something more, you know where to look."
   },
   {
     "id": "text.2a8cf7bbc5082b73",
-    "pt": "Boa sorte na seleção. Às vezes, só falta uma oportunidade para alguém mostrar do que é capaz.",
-    "en": "Good luck with the selection. Sometimes all a person needs is a chance to show what they can do."
+    "pt": "Boa sorte para conquistar sua vaga, Ghork. É uma pena ver alguém capaz passar despercebido por falta de uma única oportunidade.",
+    "en": "Good luck earning your place, Ghork. It's a shame to see ability go unrecognized for want of a single opportunity."
   },
   {
     "id": "text.b09269d0248f8fc6",
-    "pt": "Uma basta para começar.",
-    "en": "One's enough to get started."
+    "pt": "Me deem uma. O resto eu faço.",
+    "en": "Give me one. I'll take it from there."
   },
   {
     "id": "text.70bd994d147e6f84",
-    "pt": "Pode começar a praticar movimentos curtos, com alguém acompanhando. Se a perna falhar, pare. Estar melhor não significa que você deva aguentar qualquer dor.",
-    "en": "You can start practicing short movements, with someone watching. If your leg gives out, stop. Feeling better doesn't mean you should push through every pain."
+    "pt": "Você já pode praticar movimentos curtos, com alguém acompanhando. Se essa perna falhar, pare. Eu sei que está se sentindo melhor. Isso não significa que pode ignorar qualquer dor e continuar.",
+    "en": "You're ready to practice short movements, with someone there to watch. If that leg gives way, you stop. I know you're feeling better. That doesn't make every pain something to grit your teeth through."
   },
   {
     "id": "text.58c3994d9f810f12",
-    "pt": "Eu quero lutar. Também quero conseguir voltar andando.",
-    "en": "I want to fight. I also want to walk home afterward."
+    "pt": "Eu quero lutar, Virmura. Mas também gostaria de voltar andando depois.",
+    "en": "I want to fight, Virmura. But I'd quite like to walk back afterward, too."
   },
   {
     "id": "text.8e1551b3b06603e4",
-    "pt": "Guedra sabe adaptar o treino a quem está aprendendo. Vá falar com ela.",
-    "en": "Guedra knows how to adapt her training to the person learning. Go talk to her."
+    "pt": "Ótimo. Diga isso à Guedra. Ela sabe preparar um treino que sirva para você, em vez de obrigar você a caber no exercício dos outros.",
+    "en": "Good. Tell Guedra that. She can work out a way to train that suits you, instead of making you fit somebody else's exercises."
   },
   {
     "id": "text.155ea85eaea3c216",
-    "pt": "Guedra acompanha as práticas curtas. A cada tentativa, Ghork aprende a deixar espaço para recuar.",
-    "en": "Guedra supervises the short practice sessions. With each attempt, Ghork learns to leave himself room to retreat."
+    "pt": "Guedra acompanha Ghork em práticas curtas. Ele aprende a observar o espaço atrás de si com o mesmo cuidado que dedica ao adversário à frente.",
+    "en": "Under Guedra's eye, Ghork practices in short sessions. He learns to watch the space behind him as carefully as the opponent in front."
   },
   {
     "id": "text.04f1efd979f868df",
-    "pt": "Sou Guedra. Mostre como recua quando alguém avança. Não tente me vencer ainda.",
-    "en": "I'm Guedra. Show me how you back away when someone advances. Don't try to beat me yet."
+    "pt": "Sou Guedra. Vamos ver como você se move. Vou avançar; mostre como recuaria. Ainda não estamos tentando ganhar nada.",
+    "en": "I'm Guedra. Let's see how you move. I'll come toward you; show me how you'd back away. We're not trying to win anything yet."
   },
   {
     "id": "text.c625c7118fda85df",
-    "pt": "E eu preparando uma entrada triunfal...",
-    "en": "And here I was planning a grand entrance..."
+    "pt": "E eu tinha planejado um primeiro ataque tão magnífico...",
+    "en": "And I'd been planning such a magnificent first attack..."
   },
   {
     "id": "text.bde3bd851522bb2a",
-    "pt": "Prepare a saída primeiro.",
-    "en": "Plan your exit first."
+    "pt": "Guarde para depois. Primeiro me mostre uma fuga magnífica.",
+    "en": "Save it. Show me a magnificent escape first."
   },
   {
     "id": "text.d2c0b1acbed1f030",
-    "pt": "Já pode enfrentar alguém sem depender de um resgate. Mas ainda precisa perceber quando é hora de recuar.",
-    "en": "You can face an opponent without counting on someone to rescue you now. But you still need to know when to pull back."
+    "pt": "Você já pode enfrentar alguém sem depender de um resgate. Aprendeu a deixar espaço para recuar. Agora precisa reconhecer quando usá-lo, mesmo que queira continuar lutando.",
+    "en": "You're ready to face someone without relying on a rescue. You've learned to leave yourself room. Now you have to notice when it's time to use it, even if you'd rather keep fighting."
   },
   {
     "id": "text.b576337a3cdfc723",
-    "pt": "Posso começar por alguém que não seja o maior da arena?",
-    "en": "Can I start with someone who isn't the biggest fighter in the arena?"
+    "pt": "Meu primeiro adversário pode ser alguém que não seja o maior lutador da arena? Só para começar com calma.",
+    "en": "Could my first opponent be someone who isn't the biggest fighter in the arena? Just to ease into it."
   },
   {
     "id": "text.ab53f6ac0fb43e0e",
-    "pt": "Pode. Saber escolher a luta também faz parte do treino.",
-    "en": "Yes. Knowing which fight to take is part of training too."
+    "pt": "Pode. Escolher uma luta que consegue enfrentar faz parte do treino. Não precisa se arriscar só para impressionar alguém.",
+    "en": "Certainly. Choosing a fight you can handle is part of the training. You don't owe anyone a reckless demonstration."
   },
   {
     "id": "text.955df64edf975c71",
-    "pt": "Se eu deixar fecharem minha saída, pelo menos vou saber o que fiz errado.",
-    "en": "If I let them cut off my escape, at least I'll know where I went wrong."
+    "pt": "E, se eu deixar alguém fechar minha saída, pelo menos vou saber onde errei.",
+    "en": "And if I let someone block my way out, at least I'll know what I did wrong."
   },
   {
     "id": "text.94a5fdb38137990f",
-    "pt": "E vai precisar praticar. Saber qual foi o erro não faz seu corpo corrigir o movimento.",
-    "en": "And you'll need to practice. Knowing what went wrong won't make your body fix the movement."
+    "pt": "Vai saber. Depois vai praticar de novo. Entender o erro é um começo; fazer os pés se moverem de outro jeito exige treino.",
+    "en": "You will. Then you'll practice it again. Knowing the mistake is a start; getting your feet to do something different takes work."
   },
   {
     "id": "text.206312ef46ea1baf",
-    "pt": "Este registro descreve o resgate de um ferido. Vamos ocultar o nome. Para o contrato, só precisamos do trajeto.",
-    "en": "This report describes an injured person's rescue. We'll cover the name. All we need for the contract is the route."
+    "pt": "Podemos usar este registro de resgate. Cubra o nome do paciente antes de copiar. Meruna precisa conhecer o caminho, não saber de quem eram os ferimentos que nos levaram até lá.",
+    "en": "Here's a rescue report we can use. Cover the patient's name before you copy it. Meruna needs to know the route, not whose injuries brought us there."
   },
   {
     "id": "text.60cc2d09d9cafeea",
-    "pt": "Diz: \"Da passagem estreita até o ponto de troca da maca.\" Mas começaram a contar a distância de onde?",
-    "en": "It says, \"From the narrow passage to the stretcher handoff point.\" But where did they start measuring?"
+    "pt": "Olhe isto: \"Da passagem estreita até o ponto de troca da maca.\" Tem uma distância, mas... começaram a contar de onde?",
+    "en": "Listen to this: \"From the narrow passage to the stretcher handoff point.\" It gives a distance, but... where did they start counting?"
   },
   {
     "id": "text.21554e9feb75b23f",
-    "pt": "E precisamos saber se dá para passar andando ou levando alguém numa maca.",
-    "en": "And we need to know whether you can walk through there or carry someone on a stretcher."
+    "pt": "Essa é uma pergunta. Outra: passaram andando por esse espaço ou levaram uma maca? Não quero descobrir a diferença com um paciente em cima.",
+    "en": "That's one question. Here's another: did they walk through that space, or bring a stretcher through it? I don't want to discover the difference with a patient on board."
   },
   {
     "id": "text.7f4d70ad2aab9cd7",
-    "pt": "Vou marcar os pontos que identificam o caminho.",
-    "en": "I'll mark the landmarks along the route."
+    "pt": "Vou marcar os pontos de referência. Pelo menos assim dá para ver de que parte do caminho estão falando.",
+    "en": "I'll mark the landmarks. At least we can see which part of the route they're describing."
   },
   {
     "id": "text.9ed2d2a6391f9c0c",
-    "pt": "Marque só o que o relato diz. O que faltar, anote como pergunta.",
-    "en": "Mark only what the account tells us. Write down anything missing as a question."
+    "pt": "Só os que realmente descreveram. Se precisar adivinhar, deixe uma pergunta. Podemos procurar a resposta depois; um erro que parece certeza só atrapalha.",
+    "en": "Only the ones they actually described. If you have to guess, leave a question. We can go looking for an answer; we can't do much with a convincing mistake."
   },
   {
     "id": "text.5c1d65469cae77fc",
-    "pt": "Quero saber quem carregava a maca.",
-    "en": "I want to know who was carrying the stretcher."
+    "pt": "Quem carregava a maca? Isso não mudaria o tempo do percurso?",
+    "en": "Who was carrying the stretcher? Wouldn't that change how long the trip took?"
   },
   {
     "id": "text.61986cfce9d30a9a",
-    "pt": "Uma equipe de resgate. O tempo que levaram não é o mesmo de alguém andando sozinho.",
-    "en": "A rescue crew. Don't assume they moved as fast as someone walking alone."
+    "pt": "Uma equipe de resgate. E mudaria, sim. Carregar alguém em grupo é diferente de andar sozinho. Não use o passo de uma pessoa para calcular o deles.",
+    "en": "A rescue crew. And yes, it would. Carrying someone together isn't the same as walking alone. Don't use one person's pace to estimate theirs."
   },
   {
     "id": "text.1be4936ee901cd87",
-    "pt": "Posso ficar com uma cópia? Preciso desse registro junto dos mapas para comparar.",
-    "en": "May I keep a copy? I need this report alongside the maps to compare them."
+    "pt": "Posso ficar com uma cópia? Preciso pôr ao lado dos mapas e acompanhar o caminho como está descrito.",
+    "en": "Could I keep a copy of this? I need to lay it beside the maps and follow the route as it's written."
   },
   {
     "id": "text.4706df93889e0869",
-    "pt": "Virmura autorizou compartilhar o trajeto. Tirei os nomes.",
-    "en": "Virmura said we could share the route. I left out the names."
+    "pt": "Virmura autorizou compartilhar o trajeto. Tirei os nomes, para a história dos pacientes não ir junto.",
+    "en": "Virmura said you could have the route. I took out the names, so nobody's medical history goes with it."
   },
   {
     "id": "text.09943a97697fd276",
-    "pt": "Ótimo. Leve estas anotações. Antes de comparar o registro com os mapas, preciso que confirmem onde o trajeto começou.",
-    "en": "Good. Take these notes back. Before I compare the report with the maps, I need you to confirm where the route began."
+    "pt": "Obrigada. Leve estas anotações para ela. Consigo comparar os marcos, mas preciso confirmar de onde partiram para essas distâncias fazerem sentido.",
+    "en": "Thank you. Take these notes back to her. I can compare the landmarks, but I need confirmation of where they started before those distances mean much."
   },
   {
     "id": "text.64961d872592b209",
-    "pt": "Este desenho vai da entrada da passagem estreita até a bifurcação. O outro mostra a retirada, no sentido contrário.",
-    "en": "This sketch runs from the mouth of the narrow passage to the fork. The other follows the retreat, in the opposite direction."
+    "pt": "Olhe aqui. Este desenho vai da entrada, pela passagem estreita, até a bifurcação. O outro descreve a retirada. Estamos lendo no sentido contrário.",
+    "en": "Look here. This sketch takes us from the entrance, through the narrow passage, toward the fork. The other describes the retreat. We're reading it from the opposite direction."
   },
   {
     "id": "text.9cadb400ae8b476b",
-    "pt": "Então a esquerda de quem entra é a direita de quem sai. Temos algum registro que confirme o sentido?",
-    "en": "So left on the way in is right on the way out. Do we have a record that confirms which way they were going?"
+    "pt": "Então a esquerda de quem entrava seria a direita de quem saía. Isso explicaria... mas temos como confirmar o sentido de cada grupo?",
+    "en": "Then their left going in would be their right coming out. That could explain it... but can we prove which way each group was going?"
   },
   {
     "id": "text.d693ea8c0a8c4d37",
-    "pt": "Os registros que nos deram mostram onde cada percurso começou e em que direção seguiu. Vamos acompanhar os marcos nessa ordem.",
-    "en": "The records we were given show where each route started and which way it went. Let's follow the landmarks in that order."
+    "pt": "Nestes dois trajetos, temos. Os registros indicam o ponto de partida e a direção. Ponha o dedo no primeiro marco; vamos seguir a ordem.",
+    "en": "For these two routes, yes. The records give us the starting point and direction. Put your finger on the first landmark; we'll follow them in order."
   },
   {
     "id": "text.c5ff3163441d54bb",
-    "pt": "Entrada, passagem estreita, bifurcação. Na volta: bifurcação, passagem, entrada. É o mesmo trecho.",
-    "en": "Entrance, narrow passage, fork. Coming back: fork, passage, entrance. It's the same stretch."
+    "pt": "Entrada, passagem estreita, bifurcação. Depois a volta: bifurcação, passagem, entrada. Está aí! É o mesmo trecho, visto de lados opostos.",
+    "en": "Entrance, narrow passage, fork. Then back again: fork, passage, entrance. There! We're looking at the same stretch from opposite ends."
   },
   {
     "id": "text.096b5eb29a3d6d65",
-    "pt": "Esse trecho, sim. Sobre as outras galerias ainda sabemos pouco. Vou marcar o que conferimos e deixar o resto em aberto.",
-    "en": "That stretch, yes. We still know too little about the other tunnels. I'll mark what we've checked and leave the rest open."
+    "pt": "Esse trecho, sim. Não leve a conclusão além do que os registros mostram. Vou marcar a parte conferida; as outras galerias continuam com perguntas.",
+    "en": "That stretch, yes. Don't carry the conclusion farther than the evidence. I'll mark the part we've checked; the other tunnels still have questions attached."
   },
   {
     "id": "text.68d137b3a1782416",
-    "pt": "Não parece muita coisa para ganhar um contrato.",
-    "en": "It doesn't seem like much to win a contract with."
+    "pt": "Depois de tudo isso, só podemos garantir um trecho? Eu esperava ter mais para mostrar à Meruna.",
+    "en": "After all that, we can only vouch for one stretch? I was hoping we'd have more to offer Meruna."
   },
   {
     "id": "text.f5727a79f598b036",
-    "pt": "É menos vistoso do que prometer que sabemos tudo. Mas é o que podemos provar.",
-    "en": "It won't sound as impressive as claiming we know everything. But we can prove it."
+    "pt": "Preferia ficar na frente dela e fingir que conhece a mina inteira? Podemos mostrar como conferimos esta parte. Nisso ela pode confiar.",
+    "en": "Would you rather stand in front of her and pretend you know the whole mine? We can show how we checked this part. That's something she can trust."
   },
   {
     "id": "text.3cbb837a9e7125cf",
-    "pt": "Então vou apresentar bem o que temos.",
-    "en": "Then I'll make a good case for what we have."
+    "pt": "Não. Quero que ela acredite na gente. Vou mostrar o trabalho que deu chegar até aqui.",
+    "en": "No, I want her to believe us. I'll make sure she sees what went into it."
   },
   {
     "id": "text.16eeb4fe9ec81393",
-    "pt": "Se levarmos todos que sabem fazer resgate, Meruna vai ver uma equipe enorme.",
-    "en": "If we bring everyone who knows rescue work, Meruna will see a huge crew."
+    "pt": "E se levássemos todo mundo que entende de resgate para a demonstração? Meruna ia ver quanta ajuda esta guilda pode oferecer.",
+    "en": "What if we brought everyone who knows rescue work to the demonstration? Meruna would see just how much help this guild can offer."
   },
   {
     "id": "text.dca4b891648490bf",
-    "pt": "E vai encontrar a enfermaria vazia se precisar de atendimento.",
-    "en": "And an empty infirmary if she needs treatment."
+    "pt": "E, se precisasse de uma curandeira depois, encontraria uma bela enfermaria vazia.",
+    "en": "And if she needed a healer afterward, she'd find a lovely empty infirmary."
   },
   {
     "id": "text.8e9c1f1737f59b84",
-    "pt": "É. Quantos podemos levar sem deixar a enfermaria descoberta?",
-    "en": "Right. How many can we take without leaving the infirmary short?"
+    "pt": "É. Não pensei nisso. Quantos podemos levar sem fazer falta aqui?",
+    "en": "Right. Hadn't thought of that. How many can we take without leaving you short here?"
   },
   {
     "id": "text.d3ea0b1c68927d3b",
-    "pt": "Para a demonstração, basta uma equipe pequena, cada um com sua tarefa. Depois calculamos quanto custa manter o atendimento e o trabalho de campo.",
-    "en": "A small crew will do for the demonstration, each with a job to handle. Then we work out the cost of keeping the infirmary and the field team running."
+    "pt": "Uma equipe pequena basta para mostrar como trabalhamos. Cada um com uma tarefa. Depois fazemos a conta direito: quem vai a campo e quem mantém este lugar funcionando.",
+    "en": "A small crew is enough to show her how we work. Give each person a job. Then we'll cost it properly: the people who go into the field and the people who keep this place running."
   },
   {
     "id": "text.f7c7685db92ef825",
-    "pt": "Eu registro quem fica e quem sai.",
-    "en": "I'll list who's staying and who's going."
+    "pt": "Vou preparar uma escala. Quem sai, quem fica e do que cada pessoa vai cuidar.",
+    "en": "I'll make a roster. Who's going, who's staying, and what each person will handle."
   },
   {
     "id": "text.eff50fe37e6260ff",
-    "pt": "Anote a função de cada um. Ninguém pode estar nos dois lugares ao mesmo tempo.",
-    "en": "Write down everyone's job. Nobody can be in both places at once."
+    "pt": "Ótimo. Nada de pôr a mesma pessoa nas duas listas. Eu adoraria aprender esse truque, mas ainda não consegui.",
+    "en": "Good. No putting the same person on both lists. I'd love to learn that trick, but I haven't managed it yet."
   },
   {
     "id": "text.6c3081dd24b604df",
-    "pt": "Quero explicar isso à Meruna.",
-    "en": "I want to explain that to Meruna."
+    "pt": "Deixe eu explicar à Meruna. Ela precisa saber por que não vamos levar a guilda inteira.",
+    "en": "Let me explain it to Meruna. She should know why we aren't bringing the whole guild."
   },
   {
     "id": "text.c9341c0c6853b2a6",
-    "pt": "Explique. Só não prometa que a enfermaria vai bancar a expedição sem receber nada.",
-    "en": "Do. Just don't promise the infirmary will support the expedition without funding."
+    "pt": "Explique. Só não ofereça o trabalho da enfermaria de graça para melhorar a proposta. Alguém precisa pagar pelo atendimento que continua aqui.",
+    "en": "Go ahead. Just don't offer the infirmary's work for free to sweeten the deal. Someone has to pay for the care that continues here."
   },
   {
     "id": "text.e8314718f603d995",
-    "pt": "Durn tem uma maca de demonstração e os suportes. Leve este pedido. A equipe carrega o material; você confere as peças.",
-    "en": "Durn has a demonstration stretcher and its supports. Take him this request. The crew will carry the equipment; you check the pieces."
+    "pt": "Leve este pedido a Durn. Ele tem uma maca e suportes para a demonstração. A equipe vai carregar. Seu trabalho é conferir se vieram todas as peças.",
+    "en": "Take this request to Durn. He has a stretcher and supports we can use for the demonstration. The crew will carry them. Your job is to check that we've got all the pieces."
   },
   {
     "id": "text.cdd62a06d110b47a",
-    "pt": "É emprestado para o teste, certo? Quero tudo de volta depois.",
-    "en": "A loan for the test, right? I'll want all of it back afterward."
+    "pt": "Vão pegar emprestado para o teste? Está bem. Depois me devolvam cada peça. Inclusive as pequenas que o pessoal costuma esquecer.",
+    "en": "Borrowing these for the test, are you? All right. Every piece comes back to me afterward. Including the little ones people tend to forget."
   },
   {
     "id": "text.54068021a26b527a",
-    "pt": "Certo. Posso conferir as peças com você?",
-    "en": "Right. Can I check the pieces with you?"
+    "pt": "Entendido. Podemos conferir juntos antes de a equipe levar? Quero saber pelo que estou respondendo.",
+    "en": "Understood. Could we check them together before the crew takes them? I want to know what I'm signing for."
   },
   {
     "id": "text.1ccca6bbe85be6b8",
-    "pt": "Pode. Fique de frente para mim enquanto explico como encaixam.",
-    "en": "Sure. Face me while I explain how they fit together."
+    "pt": "Podemos. Fique onde eu consiga ver seu rosto quando falar. Vou mostrar como as peças encaixam, e você pergunta o que precisar.",
+    "en": "We can. Stand where I can see your face when you speak. I'll show you how the pieces fit, and you can ask as we go."
   },
   {
     "id": "text.6cc9d60c0fe90605",
-    "pt": "E ainda precisamos de gente e tempo para o campeonato.",
-    "en": "And we still need people and time for the tournament."
+    "pt": "Depois de cuidar da enfermaria e da equipe de campo... ainda vai sobrar gente e tempo para o campeonato?",
+    "en": "Once we've covered the infirmary and the field crew... will there still be time and people for the tournament?"
   },
   {
     "id": "text.7191c9e4a7a3f37e",
-    "pt": "Precisamos. O contrato ajudaria a pagar esse trabalho. Não vai pôr mais horas no dia.",
-    "en": "We do. The contract would help pay for that work. It won't put more hours in the day."
+    "pt": "Isso faz parte do planejamento. O contrato ajudaria a pagar o trabalho. Não vai espremer mais uma hora no dia, por mais bonito que você peça.",
+    "en": "That's part of the planning. The contract would help pay for the work. It won't squeeze another hour into the day, however nicely you ask."
   },
   {
     "id": "text.4bfc21e82a065369",
-    "pt": "Já ouvi gente prometer isso. Nunca vi conseguir.",
-    "en": "I've heard people promise that. Never seen anyone pull it off."
+    "pt": "Já ouvi umas promessas bem confiantes sobre isso. Ainda estou esperando alguém cumprir.",
+    "en": "I've heard some very confident promises about that. Still waiting to see someone deliver."
   },
   {
     "id": "text.93ba1a60d88cedc4",
-    "pt": "Você orienta a passagem da maca. A equipe segue suas instruções.",
-    "en": "You guide the stretcher through. The crew will follow your instructions."
+    "pt": "Sua vez de orientar a passagem da maca. A equipe vai seguir o que você disser. Dê tempo para entenderem antes de se mover.",
+    "en": "Your turn to guide the stretcher through. The crew will follow what you say, so give them time to understand before they move."
   },
   {
     "id": "text.db98c258445a2724",
-    "pt": "Para a esquerda, depois... Não, a minha esquerda.",
-    "en": "To the left, then... No, my left."
+    "pt": "Um pouco para a esquerda, depois... espera, a minha esquerda. Desculpem. Assim não ajuda, não é?",
+    "en": "Left a little, then... wait, my left. Sorry. That's not helping, is it?"
   },
   {
     "id": "text.7366f4f0cee20f4e",
-    "pt": "Onde você quer que coloquem a maca?",
-    "en": "Where do you want them to put the stretcher?"
+    "pt": "Diga onde a maca precisa chegar. Escolha alguma coisa que todos na sala consigam ver.",
+    "en": "Tell them where the stretcher needs to go. Pick something everyone in the room can see."
   },
   {
     "id": "text.e33753a704e05985",
-    "pt": "Perto da porta. Vou usar os pontos da sala como referência.",
-    "en": "By the door. I'll use things in the room as landmarks."
+    "pt": "Ao lado da porta. Vou usar a sala como referência, para ninguém precisar descobrir para que lado estou virado.",
+    "en": "Beside the door. I'll use the room as a reference, so they don't have to work out which way I'm facing."
   },
   {
     "id": "text.632584915b876faa",
-    "pt": "Tente de novo. Eles ainda não leem pensamento.",
-    "en": "Try again. They still can't read minds."
+    "pt": "Melhor. Tente de novo. A gente ensinou a equipe a carregar uma maca, não a ler sua cabeça.",
+    "en": "Better. Try it again. We've trained them to carry a stretcher, not read your mind."
   },
   {
     "id": "text.aadeb9528706ca1d",
-    "pt": "Posso marcar onde cada um deve parar?",
-    "en": "Can I mark where each person should stop?"
+    "pt": "Posso marcar onde cada um deve parar? Assim eles mesmos podem conferir.",
+    "en": "Could I mark where each person should stop? Then they could check it themselves."
   },
   {
     "id": "text.1a019b5417822d5c",
-    "pt": "Pode. Confira se todos conseguem ver a marca.",
-    "en": "Yes. Make sure everyone can see the mark."
+    "pt": "Pode. Dê uma volta e confira se cada pessoa consegue ver a marca do lado em que está.",
+    "en": "Yes. Walk around and make sure every carrier can see the mark from their side."
   },
   {
     "id": "text.4b64ded32e6cc98e",
-    "pt": "Melhor errar com a maca vazia.",
-    "en": "Better to make mistakes with an empty stretcher."
+    "pt": "Ainda bem que não tem ninguém nessa maca. Eu não queria aprender isso com alguém esperando atendimento.",
+    "en": "I'm glad there's nobody on that stretcher. I'd hate to learn this with someone waiting for treatment."
   },
   {
     "id": "text.7f8de456165709cb",
-    "pt": "E anote a correção. Vamos mostrar como o teste melhorou o procedimento.",
-    "en": "And write down the correction. We'll show how the test improved the procedure."
+    "pt": "É por isso que estamos praticando. Anote o que mudou enquanto ainda lembra bem. Meruna precisa ver a correção, não só a tentativa.",
+    "en": "That's why we're practicing. Write down what you changed while it's fresh. Meruna should see the correction as well as the attempt."
   },
   {
     "id": "text.02a66a609bd01e96",
-    "pt": "Alguma peça cedeu?",
-    "en": "Did any of the pieces give way?"
+    "pt": "Como se saiu? Alguma peça entortou ou saiu do lugar com o peso?",
+    "en": "How did it hold up? Any pieces bend or slip under the load?"
   },
   {
     "id": "text.184b01708add38cc",
-    "pt": "Não. Minhas primeiras instruções é que saíram tortas. Corrigi antes de continuarmos.",
-    "en": "No. My first instructions were the crooked part. I fixed those before we went on."
+    "pt": "A maca estava boa. Minhas instruções é que saíram meio tortas. Arrumamos isso antes de continuar.",
+    "en": "The stretcher was fine. My directions were a bit crooked. We straightened those out before going on."
   },
   {
     "id": "text.ba54ef7a54849246",
-    "pt": "Então o teste serviu. Está tudo aqui.",
-    "en": "Then the test did its job. Everything's here."
+    "pt": "Então o teste serviu para alguma coisa. Deixe eu contar... sim, está tudo aqui. Obrigado por devolver direito.",
+    "en": "Then you got some use out of the test. Let me count... yes, all here. Thank you for bringing it back properly."
   },
   {
     "id": "text.5500b41543882fc0",
-    "pt": "Virmura entrega a Ghork uma lista de ataduras e material de lavagem. Ele deve buscá-los com Jorvi.",
-    "en": "Virmura gives Ghork a list of bandages and washing supplies to collect from Jorvi."
+    "pt": "Virmura entrega uma lista de materiais a Ghork. Jorvi, no mercado, tem as ataduras e o material de lavagem de que ela precisa.",
+    "en": "Virmura hands Ghork a supply list. Jorvi at the market has the bandages and washing materials she needs."
   },
   {
     "id": "text.a41793df8e238d4f",
-    "pt": "Ataduras e material de lavagem. Está tudo na bolsa. Confira antes de sair.",
-    "en": "Bandages and washing supplies. All in the bag. Check it before you leave."
+    "pt": "Ataduras e material de lavagem para Virmura. Coloquei tudo nesta bolsa. Confira antes de sair; é mais fácil corrigir um erro enquanto você está aqui.",
+    "en": "Bandages and washing supplies for Virmura. I've packed them in this bag. Have a look before you go; easier to fix a mistake while you're still here."
   },
   {
     "id": "text.c1f80d49107d494b",
-    "pt": "Se estiver faltando algo, melhor descobrir aqui do que lá na enfermaria.",
-    "en": "If anything's missing, better to find out here than back at the infirmary."
+    "pt": "Prefiro descobrir agora a ter de explicar uma bolsa vazia para Virmura. Vamos ver...",
+    "en": "I'd rather find it now than have to explain an empty bag to Virmura. Let's see..."
   },
   {
     "id": "text.227919f756b318b0",
-    "pt": "Dois assaltantes bloqueiam o corredor. Ghork segura a bolsa junto ao corpo. Perto da área de descarga, Borun ergue o bastão entre eles.",
-    "en": "Two robbers block the passage. Ghork clutches the bag. Near the unloading area, Borun steps between them with his staff."
+    "pt": "Dois assaltantes bloqueiam a passagem. Ghork aperta a bolsa de materiais contra o peito. Perto da descarga, Borun põe o bastão entre eles.",
+    "en": "Two robbers block the passage ahead. Ghork draws the supply bag against his chest. By the unloading area, Borun plants his staff between them."
   },
   {
     "id": "text.7c5c1b5b0e6b8516",
-    "pt": "Deixa a bolsa e pode ir embora.",
-    "en": "Leave the bag and you can walk away."
+    "pt": "A bolsa. Deixa no chão e pode continuar andando.",
+    "en": "The bag. Put it down, and you can keep walking."
   },
   {
     "id": "text.afebe6fe2cb4ee66",
-    "pt": "Vão fazer curativo um no outro? Porque só tem isso aqui.",
-    "en": "Going to bandage each other up? Because that's all I've got in here."
+    "pt": "São ataduras. Vão fazer curativo um no outro? Escolheram a bolsa errada.",
+    "en": "It's bandages. What are you going to do, patch each other up? You've picked the wrong bag."
   },
   {
     "id": "text.e7fe8870312894dd",
-    "pt": "O carrinho vazio, Ghork! Empurre para cá!",
-    "en": "The empty cart, Ghork! Push it this way!"
+    "pt": "Ghork! Aquele carrinho vazio... empurre para cá. Agora!",
+    "en": "Ghork! That empty cart--push it toward me. Now!"
   },
   {
     "id": "text.90e95b8e37bc6139",
-    "pt": "Ghork empurra o carrinho para atrapalhar os assaltantes e escapa pela passagem que Borun abriu.",
-    "en": "Ghork pushes the cart into the robbers' path and escapes through the opening Borun has made."
+    "pt": "Ghork empurra o carrinho vazio para o caminho dos assaltantes. Enquanto eles tentam contornar, ele passa pela abertura que Borun mantém livre.",
+    "en": "Ghork shoves the empty cart across the robbers' path. While they scramble around it, he slips through the opening Borun holds for him."
   },
   {
     "id": "text.94f68c579b7e56dd",
-    "pt": "Como sabia meu nome?",
-    "en": "How did you know my name?"
+    "pt": "Você sabia meu nome. Como sabia meu nome?",
+    "en": "You knew my name. How did you know my name?"
   },
   {
     "id": "text.2f15f9ca9210e7b4",
-    "pt": "Ouvi quando você buscou a bolsa. Depois vi aqueles dois largarem o trabalho para seguir você.",
-    "en": "Heard it when you picked up the bag. Then I saw those two stop working to follow you."
+    "pt": "Ouvi quando você pegou a bolsa. Depois aqueles dois largaram o que estavam fazendo e seguiram você. Achei que valia ficar de olho.",
+    "en": "Heard it when you collected the bag. Then those two stopped what they were doing and followed you. That seemed worth keeping an eye on."
   },
   {
     "id": "text.0b8b4c9909a051b9",
-    "pt": "Eu não percebi.",
-    "en": "I didn't notice."
+    "pt": "Eu não percebi nada. Só quando fecharam a passagem.",
+    "en": "I didn't notice a thing. Not until they blocked the way."
   },
   {
     "id": "text.b2ea41c421b242f1",
-    "pt": "Agora sabe o que procurar. Neste mercado, um sorriso não é garantia de nada.",
-    "en": "Now you know what to look for. In this market, a friendly smile isn't much of a guarantee."
+    "pt": "É fácil não perceber quando ainda está tentando se achar por aqui. Agora você já viu uma vez. Na próxima, olhe o que as pessoas fazem, não só o sorriso que mostram.",
+    "en": "Easy to miss when you're finding your own way around. Now you've seen it once. Next time, watch what people do, not just how friendly they look."
   },
   {
     "id": "text.b531c513ec9f3e19",
-    "pt": "Achei que só estavam esperando para passar.",
-    "en": "I thought they were just waiting for room to get through."
+    "pt": "Achei que estavam esperando espaço para passar. Tinha tanta gente.",
+    "en": "I thought they were waiting for space to get through. It was crowded."
   },
   {
     "id": "text.9e241cb22dbebf96",
-    "pt": "Eu também. Até deixarem passar uma abertura bem na frente deles.",
-    "en": "So did I. Until they let a perfectly good opening go by."
+    "pt": "Eu também achei, no começo. Mas abriu um espaço bem na frente deles e nenhum se moveu. Não estavam esperando passagem. Estavam esperando você.",
+    "en": "So did I, at first. Then a gap opened right in front of them and neither one moved. They weren't waiting for room. They were waiting for you."
   },
   {
     "id": "text.7819491a137bc70d",
-    "pt": "Obrigado por me tirar de lá. E por explicar o que viu.",
-    "en": "Thanks for getting me out. And for telling me what you saw."
+    "pt": "Obrigado. Por me tirar de lá e por ficar para explicar. Eu ia continuar tentando entender o que não percebi.",
+    "en": "Thank you. For getting me out, and for staying to explain. I'd have kept wondering what I missed."
   },
   {
     "id": "text.953697d3e55d6789",
-    "pt": "Sou Borun. Minha guilda conhece os caminhos daqui. Até os que começam mal assim. Vou com você até sairmos dessa confusão.",
-    "en": "I'm Borun. My guild knows the roads around here. Even the ones that start this badly. I'll walk with you until we're clear of this crowd."
+    "pt": "Borun. Minha guilda se chama Caminhos Abertos. Tentamos fazer jus ao nome, até em manhãs como esta. Venha, acompanho você até passarmos dessa confusão.",
+    "en": "Borun. My guild's called Open Roads. We do our best to live up to the name, even on mornings like this. Come on, I'll walk with you until we're past the crowd."
   },
   {
     "id": "text.960f2cb9aeea8699",
-    "pt": "Você sabe como funciona o campeonato?",
-    "en": "Do you know how the tournament works?"
+    "pt": "Caminhos Abertos... vocês entram no campeonato? Estou tentando entender como funciona.",
+    "en": "Open Roads... do you enter the tournament? I'm trying to find out how it works."
   },
   {
     "id": "text.15e681628dffb26f",
-    "pt": "Sei. Sei também que o campeão quer os melhores horários para a equipe dele. Se vai entrar, escolha bem quem vai trabalhar com você.",
-    "en": "I do. I also know the champion wants the best practice times for his own team. If you're entering, get to know the people you'll be working with."
+    "pt": "Entramos. Encontrar uma equipe é uma parte. Achar onde treinar é outra, com o campeão querendo os melhores horários para os dele. Conheça quem vai trabalhar com você antes de se comprometer.",
+    "en": "We do. Finding a team is part of it. Finding somewhere to practice is another, with the champion claiming the best hours for his own people. Get to know who you'd be working with before you sign up."
   },
   {
     "id": "text.ff6990ec27e6e552",
-    "pt": "Demorou. O que aconteceu?",
-    "en": "You took a while. What happened?"
+    "pt": "Aí está você. Demorou mais do que eu esperava. O que houve?",
+    "en": "There you are. That took longer than I expected. What happened?"
   },
   {
     "id": "text.c1e03437534ec1bc",
-    "pt": "Dois homens tentaram roubar os materiais. Borun me ajudou a escapar. Consegui trazer a bolsa.",
-    "en": "Two men tried to steal the supplies. Borun helped me get away. I got the bag back here."
+    "pt": "Dois homens tentaram levar os materiais. Borun me ajudou a sair do corredor. Não perdi a bolsa, está vendo? Está tudo aqui.",
+    "en": "Two men tried to take the supplies. Borun helped me get out of the passage. I didn't lose the bag, see? It's all here."
   },
   {
     "id": "text.e66e11bf4c2429d4",
-    "pt": "Sente um pouco. Já vi que a bolsa está inteira. Quero saber como você está.",
-    "en": "Sit down a moment. I can see the bag's all right. I want to know how you are."
+    "pt": "Ponha a bolsa aí e sente um pouco. Estou vendo que os materiais estão bem. Estou perguntando de você.",
+    "en": "Put it down and sit a moment. I can see the supplies are fine. I'm asking about you."
   },
   {
     "id": "text.0414efea38c9d33d",
-    "pt": "O registro acompanha a carga. Quem olha só a data de chegada acha que eu fui com ela até o fim da galeria.",
-    "en": "The record follows the cargo. If you only look at the arrival date, you'd think I went with it to the end of the tunnel."
+    "pt": "Este registro acompanha a carga, não a mim. Se olhar só essa data de chegada, parece que levei a carroça até o fim da galeria.",
+    "en": "This record follows the cargo, not me. Look at that arrival date by itself and you'd think I drove the cart to the end of the tunnel."
   },
   {
     "id": "text.e371f27f1a5c670b",
-    "pt": "E não foi?",
-    "en": "Didn't you?"
+    "pt": "Você não foi até o fim com ela?",
+    "en": "You didn't go all the way with it?"
   },
   {
     "id": "text.ebd51287c608cc0f",
-    "pt": "Fui até onde a carroça cabia. Depois passei a carga para quem ia seguir a pé.",
-    "en": "Only as far as the cart could go. Then I handed the load to the people continuing on foot."
+    "pt": "Só até onde a carroça cabia. Dali em diante, entreguei a carga. O resto do caminho foi outra pessoa que fez, a pé.",
+    "en": "Only as far as the cart would fit. After that I handed the load over. The rest of the way was someone else's journey, on foot."
   },
   {
     "id": "text.d59c16fc63f65d2f",
-    "pt": "Agora entende por que eu queria que perguntasse a ela?",
-    "en": "Now do you see why I wanted you to ask her?"
+    "pt": "Entendeu por que eu queria que ouvisse a Pirka? O registro não conta onde ela deixou de acompanhar a carga.",
+    "en": "See why I wanted you to hear it from Pirka? The record doesn't tell you where she stopped walking beside the load."
   },
   {
     "id": "text.8ce4d400a39e30e9",
-    "pt": "Onde aconteceu a troca?",
-    "en": "Where did you hand it over?"
+    "pt": "Onde exatamente você passou a carga adiante? Dá para achar esse ponto no mapa?",
+    "en": "Where exactly did you hand it over? Can we find that point on the map?"
   },
   {
     "id": "text.4437b161dac04d62",
-    "pt": "O ponto está descrito aqui. Copie a descrição junto com o nome. Já perdi uma tarde procurando um lugar que só me disseram como se chamava.",
-    "en": "The spot's described right here. Copy that along with the name. I've lost an afternoon looking for a place when all I had was what someone called it."
+    "pt": "Tem uma descrição aqui. Copie também, não só o nome do lugar. Já perdi uma tarde procurando um ponto que todo mundo sabia nomear e ninguém sabia indicar.",
+    "en": "There's a description here. Copy that, not just the place's name. I once spent an afternoon looking for a spot everyone could name and nobody could point to."
   },
   {
     "id": "text.52ffeb65cf3945ec",
-    "pt": "Você chegou a ver o caminho depois da troca?",
-    "en": "Did you see any of the route beyond the handoff?"
+    "pt": "Você chegou a ver o caminho depois desse ponto, mesmo sem levar a carga até lá?",
+    "en": "Did you see any of the way beyond that point, even if you didn't take the load there?"
   },
   {
     "id": "text.4d0a0dc19f53a531",
-    "pt": "Não. Se alguém disser que eu vi, mande essa pessoa conversar comigo.",
-    "en": "No. If anyone says I did, send them to me."
+    "pt": "Não. Minha parte termina ali. Se alguém disser que vi mais alguma coisa, traga aqui. Eu mesma quero ouvir essa história.",
+    "en": "No. That's where my part ends. If someone claims I saw more, bring them here. I'd like to hear this myself."
   },
   {
     "id": "text.c2cada67b5693b31",
-    "pt": "Então você percorreu menos do que o registro dava a entender.",
-    "en": "So you traveled less of it than the record made it sound like."
+    "pt": "Então o registro fez sua parte da viagem parecer maior. Vou marcar onde você realmente parou.",
+    "en": "Then the record made your part of the journey look longer than it was. I'll mark where you actually stopped."
   },
   {
     "id": "text.8f97a3caed36cb4e",
-    "pt": "E agora sabemos exatamente que parte ela pode descrever.",
-    "en": "And now we know exactly which part she can tell us about."
+    "pt": "Ótimo. Agora sabemos sobre que trecho perguntar a ela e onde precisamos procurar outra pessoa.",
+    "en": "Good. Now we know which stretch to ask her about, and where we need to find somebody else."
   },
   {
     "id": "text.0a54c4b4a5d07c95",
-    "pt": "E eu consigo voltar ao trabalho?",
-    "en": "Can I get back to work now?"
+    "pt": "Falando em viagem, tenho outra carga para cuidar. Terminamos por aqui?",
+    "en": "Speaking of journeys, I've got another load to see to. Are we finished here?"
   },
   {
     "id": "text.6f5c45a22e65b723",
-    "pt": "Só preciso da cópia para levar a Elune.",
-    "en": "I just need the copy for Elune."
+    "pt": "Quase. Posso levar uma cópia para Elune? Ela vai precisar comparar com os mapas.",
+    "en": "Almost. Could I take a copy to Elune? She'll need it beside the maps."
   },
   {
     "id": "text.0c0681464c24e330",
-    "pt": "Leve esta. O original fica comigo. Preciso conferir a próxima carga.",
-    "en": "Take this one. I keep the original. I'll need it to check the next load."
+    "pt": "Leve esta. O original fica comigo; preciso dele para conferir a próxima carga.",
+    "en": "Take this one. The original stays with me; I've got the next load to check against it."
   },
   {
     "id": "text.235d94ba7b6152ac",
-    "pt": "Você trouxe as perguntas ou Borun ficou com tudo?",
-    "en": "Did you bring the questions, or does Borun have them all?"
+    "pt": "Achei que Borun vinha com você. Trouxe as perguntas ou ficaram com ele também?",
+    "en": "I thought Borun was coming with you. Have you brought the questions, or is he carrying those too?"
   },
   {
     "id": "text.94547c6c028cf08b",
-    "pt": "Trouxe. Só achei que ele ia pensar em perguntas melhores.",
-    "en": "I brought them. I just thought he'd come up with better ones."
+    "pt": "Trouxe. Só estava esperando que ele viesse para pensar nas que eu deixei passar.",
+    "en": "I've got them. I was rather hoping he'd be here to think of the ones I missed."
   },
   {
     "id": "text.350061e54b39bd4b",
-    "pt": "Podemos começar pelas suas.",
-    "en": "We can start with yours."
+    "pt": "Bom, você está aqui. Quero ouvir as suas. Podemos começar por elas.",
+    "en": "Well, you're here. Let me hear yours. We can work from those."
   },
   {
     "id": "text.64e894470da27669",
-    "pt": "Quero separar o que Pirka viu do que contaram a ela.",
-    "en": "I want to separate what Pirka saw from what she was told."
+    "pt": "Primeiro, quero separar o que Pirka viu do que contaram a ela depois.",
+    "en": "First, I want to separate what Pirka saw herself from what people told her afterward."
   },
   {
     "id": "text.08c99408af030788",
-    "pt": "Então mantenha marcado onde ela passou a carga adiante. Depois desse ponto, precisamos ouvir outra pessoa.",
-    "en": "Then keep the handoff point marked. Beyond that, we need to hear from someone else."
+    "pt": "Então não perca esse ponto de troca. O relato dela leva até ali. Depois, precisamos de alguém que tenha seguido pelo caminho.",
+    "en": "Then don't lose that handoff point. Her account takes us that far. Beyond it, we'll need a witness who actually continued along the route."
   },
   {
     "id": "text.5ed4e7d0de8c428c",
-    "pt": "Quero que outra pessoa possa conferir como chegamos à conclusão.",
-    "en": "I want someone else to be able to check how we reached our conclusion."
+    "pt": "Quero que alguém leia isto depois e entenda como chegamos à resposta, sem ter de acreditar só na minha palavra.",
+    "en": "I want someone reading this later to see how we reached the answer, without having to take my word for it."
   },
   {
     "id": "text.7b0bea46228cd547",
-    "pt": "Anote de onde veio cada informação. Assim, quem tiver dúvida vai saber a quem perguntar.",
-    "en": "Write down where each piece of information came from. That way, anyone with questions will know whom to ask."
+    "pt": "Então ponha uma fonte ao lado de cada informação. Se alguma coisa não bater, saberão onde conferir, sem precisar procurar você primeiro.",
+    "en": "Then put a source beside each detail. If something doesn't fit, they'll know where to check, instead of trying to find you first."
   },
   {
     "id": "text.82c6c0d005c1ee29",
-    "pt": "Fiquei preso numa descarga. Deu conta da conversa?",
-    "en": "Got held up unloading a shipment. How did the meeting go?"
+    "pt": "Aí está você. Uma carga me prendeu na descarga. Como foi com Elune?",
+    "en": "There you are. A shipment kept me at the unloading area. How did you get on with Elune?"
   },
   {
     "id": "text.cb004b5510a22e3e",
-    "pt": "Deu certo. Mas você podia ter avisado.",
-    "en": "It went well. But you could've let me know."
+    "pt": "Deu certo. Mas eu fiquei esperando você. Podia ter mandado um recado.",
+    "en": "We managed. But I kept waiting for you. You could've sent word."
   },
   {
     "id": "text.d89cc6930c06b607",
-    "pt": "Podia. Vou combinar melhor os horários com Pirka.",
-    "en": "I could have. I'll sort out the schedule with Pirka."
+    "pt": "Devia ter mandado. Vou combinar os horários com Pirka e avisar quando mudarem.",
+    "en": "I should have. I'll sort the times out with Pirka, and let you know when they change."
   },
   {
     "id": "text.4f59d5a414dd6d8b",
-    "pt": "Não vou fingir que você me deixou sozinho de propósito, para ensinar uma lição.",
-    "en": "I'm not pretending you left me on my own to teach me a lesson."
+    "pt": "Ótimo. Porque eu não ia fingir que você me deixou lá para me ensinar a ser independente.",
+    "en": "Good. Because I wasn't going to pretend you left me there to teach me independence."
   },
   {
     "id": "text.24924e56ff765c0e",
-    "pt": "Ainda bem. Eu podia me acostumar com uma desculpa dessas.",
-    "en": "Good. I could get far too used to an excuse like that."
+    "pt": "Não finja mesmo. Uma desculpa tão boa dessas, sou capaz de acabar acreditando.",
+    "en": "Please don't. Give me an excuse that convenient and I might start believing it myself."
   },
   {
     "id": "text.13b9dfe98da75374",
-    "pt": "Roubaram as cordas e estacas que separei para a demonstração. Dois homens no corredor: um levou o fardo e o outro bloqueou a passagem.",
-    "en": "They stole the ropes and stakes I'd set aside for the demonstration. Two men in the passage: one took the bundle, the other blocked the way."
+    "pt": "Levaram as cordas e estacas da nossa demonstração. Dois homens no corredor: um saiu com o fardo enquanto o outro impedia a gente de ir atrás.",
+    "en": "Someone took the ropes and stakes for our demonstration. Two men in the passage: one ran off with the bundle while the other kept us from following."
   },
   {
     "id": "text.3045c197e98a29e5",
-    "pt": "Será que são os mesmos que me cercaram?",
-    "en": "Could they be the same two who cornered me?"
+    "pt": "Dois, agindo juntos? Será que são os mesmos que me cercaram?",
+    "en": "Two of them, working together? Could they be the ones who cornered me?"
   },
   {
     "id": "text.6460bf1aba10b303",
-    "pt": "A descrição bate. Antes de ir atrás deles, descubra por onde pode sair. Você está melhor para lutar, mas ainda precisa se proteger.",
-    "en": "The description fits. Before you go after them, work out your way back out. You're fit enough to try a fight, but you still need to protect yourself."
+    "pt": "Parece. Antes de ir atrás, descubra como sair daquele corredor. Você já pode tentar uma luta, mas isso não significa deixar os dois prenderem você de novo.",
+    "en": "Sounds like them. Before you go looking, work out how to get out of that passage. You're ready to try a fight now, but that doesn't mean you let them trap you again."
   },
   {
     "id": "text.a87777a817e372cc",
-    "pt": "Vou recuperar a carga. Não vou lá bancar o invencível.",
-    "en": "I'm going to get the cargo back. Not to act like I'm invincible."
+    "pt": "Eu lembro de como foi. Vou buscar a carga da Pirka, não provar que nada pode me machucar.",
+    "en": "I remember how that felt. I'm going for Pirka's cargo, not to prove nothing can hurt me."
   },
   {
     "id": "text.eb8cb2989c932078",
-    "pt": "Exigir a devolução no corredor",
-    "en": "Demand the cargo back in the passage"
+    "pt": "Exigir a devolução da carga roubada",
+    "en": "Demand the stolen cargo back"
   },
   {
     "id": "text.8d9010a90d254d13",
-    "pt": "Esse fardo é da Pirka. Devolvam.",
-    "en": "That bundle belongs to Pirka. Hand it over."
+    "pt": "Vocês levaram o fardo da Pirka. Devolvam, e podemos encerrar isso aqui.",
+    "en": "You took Pirka's bundle. Hand it back, and we can be done here."
   },
   {
     "id": "text.d7f4d6e14c564f49",
-    "pt": "Hoje veio sem o velho?",
-    "en": "No old man with you today?"
+    "pt": "Olha quem voltou. Veio sem o velho para se esconder atrás dele?",
+    "en": "Look who's back. No old man to hide behind this time?"
   },
   {
     "id": "text.0a4aa92c531424e3",
-    "pt": "Da outra vez, vocês tentaram roubar ataduras. Agora acharam algo que sabem vender?",
-    "en": "Last time you tried to steal bandages. Found something you can actually sell this time?"
+    "pt": "Da outra vez eram ataduras. Finalmente acharam uma bolsa que vale roubar ou pegam qualquer coisa que estiver perto?",
+    "en": "Last time it was bandages. Did you finally find a bag worth stealing, or do you just grab whatever's nearest?"
   },
   {
     "id": "text.5b7b03ecb488522f",
-    "pt": "Veio buscar a carga ou perder os dentes?",
-    "en": "You here for the cargo or to lose a few teeth?"
+    "pt": "Quer o fardo ou quer perder os dentes?",
+    "en": "You want the bundle, or do you want your teeth knocked out?"
   },
   {
     "id": "text.be1ba1a15d25e190",
-    "pt": "Vim buscar a carga.",
-    "en": "I'm here for the cargo."
+    "pt": "O fardo. Foi para isso que eu vim.",
+    "en": "The bundle. That's what I came for."
   },
   {
     "id": "text.85cde50d38e0b1a3",
-    "pt": "Leva! Não vale apanhar por isso.",
-    "en": "Take it! It's not worth getting beaten over."
+    "pt": "Está bem! Leva! Não vou apanhar mais por um saco de cordas.",
+    "en": "Fine! Take it! I'm not getting beaten again over a bag of rope."
   },
   {
     "id": "text.b3bcbf2fe3aeb228",
-    "pt": "Então parem de roubar.",
-    "en": "Then stop stealing."
+    "pt": "Então parem de levar o que não é de vocês.",
+    "en": "Then stop taking things that aren't yours."
   },
   {
     "id": "text.e86ecfc06b278e10",
-    "pt": "É a nossa marca. Vamos ver se está tudo aqui.",
-    "en": "That's our mark. Let's see if it's all here."
+    "pt": "É a nossa marca no fardo. Ótimo. Ponha aqui; quero ver o que deixaram dentro.",
+    "en": "That's our mark on the bundle. Good. Set it here; I want to see what they left inside."
   },
   {
     "id": "text.ce3d1a921fc328b8",
-    "pt": "Todas as cordas e estacas. Aqui está o recibo.",
-    "en": "All the ropes and stakes. Here's the receipt."
+    "pt": "Cordas, estacas... está tudo aqui. Este é o recibo, para ninguém precisar ficar só na nossa palavra de que chegou.",
+    "en": "Ropes, stakes... all accounted for. Here's the receipt, so nobody has to take our word that it arrived."
   },
   {
     "id": "text.8f75282b5d222101",
-    "pt": "Quero uma cópia para Borun.",
-    "en": "I'd like a copy for Borun."
+    "pt": "Posso ficar com uma cópia para Borun? Ele vai querer saber que recuperamos tudo.",
+    "en": "Could I have a copy for Borun? He'll want to know we got it all back."
   },
   {
     "id": "text.3f9c817af4dcefd7",
-    "pt": "E me mostre como descreveu o caminho. Se eu precisar que você explique por fora, ainda falta arrumar o texto.",
-    "en": "And show me your directions. If I need you standing there to explain them, they still need work."
+    "pt": "Já que está aqui, me mostre as instruções. Eu preciso conseguir seguir sem você ao meu lado explicando cada curva.",
+    "en": "While you're here, show me those directions. I should be able to follow them without you standing at my shoulder explaining every turn."
   },
   {
     "id": "text.7b1a953cfd19ba0c",
-    "pt": "O recibo está aqui. E a carga?",
-    "en": "Here's the receipt. What about the cargo?"
+    "pt": "Está com o recibo. E a carga? Veio tudo?",
+    "en": "You've got the receipt. Tell me about the cargo--everything there?"
   },
   {
     "id": "text.c0d43569a6d752dc",
-    "pt": "Pirka e Jorvi conferiram tudo. Também corrigi a descrição do corredor. Antes, só entendia quem já conhecia o lugar.",
-    "en": "Pirka and Jorvi checked it all. I fixed the directions through the passage, too. Before, they only made sense if you already knew the place."
+    "pt": "Pirka e Jorvi conferiram cada peça. Também arrumei as instruções do corredor. Percebi que tinha escrito para quem já conhecia o caminho.",
+    "en": "Pirka and Jorvi checked every piece. I fixed the directions through the passage, too. Turns out I'd written them for someone who already knew the way."
   },
   {
     "id": "text.d28e48e59349e4ab",
-    "pt": "Leia como ficou.",
-    "en": "Read me what you've got."
+    "pt": "É fácil cair nessa. Vamos lá, leia a versão nova.",
+    "en": "A common trap. Go on, read me the new version."
   },
   {
     "id": "text.658f15fa0869e6b0",
-    "pt": "Passe pela área de descarga, ao lado da banca. Melhor do que escrever \"pelo caminho de sempre\" para quem nunca veio aqui.",
-    "en": "Go through the unloading area, beside the stall. Better than telling someone who's never been here to take \"the usual way.\""
+    "pt": "Passe pela área de descarga, ao lado da banca. Isso alguém novo consegue achar. \"Pelo caminho de sempre\" só ajuda quem já tem um caminho de sempre.",
+    "en": "Go through the unloading area, beside the stall. That's a place a newcomer can actually find. \"The usual way\" only helps if you've already got a usual way."
   },
   {
     "id": "text.94ed6bb8da24688f",
-    "pt": "Ghork recebe o pacote que Virmura separou. Deve entregá-lo a Rask, na entrada administrativa do coliseu.",
-    "en": "Ghork takes the package Virmura has set aside. It is for Rask, at the coliseum's administrative entrance."
+    "pt": "Virmura entrega a Ghork um pacote de ataduras para Rask. A entrega o leva à entrada administrativa do coliseu, de onde já se ouvem os treinos.",
+    "en": "Virmura gives Ghork a package of bandages for Rask. The delivery takes him to the coliseum's administrative entrance, within earshot of the training floor."
   },
   {
     "id": "text.aa7efbaf3778c0df",
-    "pt": "Um veterano derruba o mesmo iniciante, de novo e de novo.",
-    "en": "A veteran knocks the same beginner down, again and again."
+    "pt": "Na área de treino, um veterano derruba um iniciante. O rapaz se levanta, tenta se firmar e cai outra vez com o mesmo ataque.",
+    "en": "On the training floor, a veteran knocks a beginner down. The boy gets up, braces himself, and falls to the same attack again."
   },
   {
     "id": "text.2a04c5bc0d2ecf34",
-    "pt": "De novo. Vê se dessa vez continua de pé.",
-    "en": "Again. Try staying on your feet this time."
+    "pt": "Levanta. De novo. Vai passar o treino inteiro no chão?",
+    "en": "Up. Again. You planning to spend the whole session on the floor?"
   },
   {
     "id": "text.a93299b74ef036b1",
-    "pt": "Ele ergue o ombro antes de atacar. Espere o ombro subir e saia do alcance.",
-    "en": "He raises his shoulder before he attacks. Wait for that, then move out of reach."
+    "pt": "Olhe o ombro dele! Ele ergue antes de atacar. Quando subir, saia do alcance. Não espere pelo golpe.",
+    "en": "Watch his shoulder! He lifts it before he strikes. When it goes up, move out of reach. Don't wait for the blow."
   },
   {
     "id": "text.c7d7bdeafe05947b",
-    "pt": "Quer mostrar como se faz?",
-    "en": "Want to show him how it's done?"
+    "pt": "Então ajudou ele a escapar de um. Acha que consegue fazer melhor? Venha mostrar.",
+    "en": "So you helped him dodge one. Think you can do better yourself? Come show us."
   },
   {
     "id": "text.089306e175e2b49c",
-    "pt": "O treino acabou para você.",
-    "en": "You're done training for today."
+    "pt": "Basta. Seu treino acabou.",
+    "en": "Enough. Your training session is over."
   },
   {
     "id": "text.105814b788ad65b4",
-    "pt": "O veterano avança contra Ghork. Sevrak intercepta o golpe e o desarma.",
-    "en": "The veteran lunges at Ghork. Sevrak intercepts the blow and disarms him."
+    "pt": "O veterano se volta contra Ghork e avança. Sevrak entra entre os dois, intercepta o ataque e o desarma.",
+    "en": "The veteran turns on Ghork and lunges. Sevrak steps in, catches the attack, and strips the weapon from his grip."
   },
   {
     "id": "text.2483cd0cb85d0f3a",
-    "pt": "Eu só estava...",
-    "en": "I was just..."
+    "pt": "Eu só estava tentando ajudar o rapaz. Não queria...",
+    "en": "I was only trying to help him. I didn't mean to--"
   },
   {
     "id": "text.c34c8eb2cc178dd7",
-    "pt": "Eu vi. Agora explique o que percebeu.",
-    "en": "I saw. Now explain what you noticed."
+    "pt": "Eu vi o que aconteceu. Pode parar de se justificar e explicar o movimento. O que percebeu?",
+    "en": "I saw what happened. You can stop explaining yourself and explain the movement. What did you notice?"
   },
   {
     "id": "text.c0b8cae424138b5c",
-    "pt": "Ele se preparava do mesmo jeito antes de cada ataque.",
-    "en": "He set himself up the same way before every attack."
+    "pt": "Ele se preparava do mesmo jeito toda vez. Depois que percebi, dava para saber quando vinha o próximo ataque.",
+    "en": "He got ready the same way every time. Once I noticed, I knew when the next attack was coming."
   },
   {
     "id": "text.8ecff8e0278dc493",
-    "pt": "E o rapaz só reagia quando o golpe já vinha. Você percebeu o aviso antes.",
-    "en": "And the boy only reacted once the blow was coming. You noticed the warning first."
+    "pt": "Enquanto o rapaz esperava ver o próprio golpe. Você deu a ele um sinal que permitia agir antes. Uma diferença útil.",
+    "en": "While the boy was waiting to see the blow itself. You gave him something he could act on sooner. A useful distinction."
   },
   {
     "id": "text.edd8bce4bcf1af59",
-    "pt": "O rapaz precisava aprender a escapar, não a cair mais uma vez.",
-    "en": "He needed to learn how to get out of the way, not how to fall down again."
+    "pt": "Alguém precisava dizer ao rapaz como escapar. Derrubar de novo não estava ensinando nada.",
+    "en": "Someone had to tell the boy how to get clear. Knocking him down again wasn't teaching him anything."
   },
   {
     "id": "text.c0613e3b290c81c4",
-    "pt": "E você soube explicar como. Mostre o que chamou sua atenção.",
-    "en": "And you could explain how. Show me what caught your attention."
+    "pt": "E você tinha mais a oferecer do que compaixão. Deu uma instrução que ele conseguiu usar. Mostre o que viu.",
+    "en": "And you had more to offer than sympathy. You gave him an instruction he could use. Show me what you saw."
   },
   {
     "id": "text.7f4ea07770cc8af0",
-    "pt": "O ombro. Ele mexia antes do resto do corpo.",
-    "en": "His shoulder. It moved before the rest of him."
+    "pt": "O ombro, ali. Mexia antes do resto do corpo. Quando o braço avançava, o aviso já tinha passado.",
+    "en": "The shoulder, there. It moved before the rest of him. By the time his arm came forward, the warning was already gone."
   },
   {
     "id": "text.2ae4144434ced22e",
-    "pt": "Sevrak Vey. Na minha escola, saber observar assim tem utilidade.",
-    "en": "Sevrak Vey. At my school, an eye like that can be put to good use."
+    "pt": "Sevrak Vey. Dirijo uma escola em que vale a pena desenvolver esse tipo de observação. Já pensou no que poderia fazer com isso?",
+    "en": "Sevrak Vey. I run a school where that sort of observation is worth developing. Have you considered what you could do with it?"
   },
   {
     "id": "text.8c8e0969cae6f0a2",
-    "pt": "Ghork. Obrigado por me poupar da demonstração prática.",
-    "en": "Ghork. Thanks for sparing me the practical demonstration."
+    "pt": "Ghork. E obrigado. Eu preferia não descobrir pessoalmente como é receber aquele golpe.",
+    "en": "Ghork. And thank you. I'd rather not have found out what that attack feels like firsthand."
   },
   {
     "id": "text.c3e32c8c3c8a0b73",
-    "pt": "Faça sua entrega. Depois venha conhecer a escola. Precisamos de alunos que saibam mais do que copiar movimentos.",
-    "en": "Finish your delivery. Then come see the school. We need students who can do more than copy movements."
+    "pt": "Parece que tem uma entrega para terminar. Depois, venha conhecer a escola. Tenho muitos alunos que sabem copiar um movimento. Gostaria de ter mais que soubessem explicar.",
+    "en": "You appear to have a delivery to finish. Afterward, come see the school. I have plenty of students who can copy a movement. I'd like more who can explain it."
   },
   {
     "id": "text.602e8ae5494068f1",
-    "pt": "As ataduras de Virmura? Pode entregar. Ela pediu confirmação; leve este recibo.",
-    "en": "Virmura's bandages? I'll take those. She asked for confirmation; take this receipt back."
+    "pt": "São as ataduras de Virmura? Obrigado, pode entregar. Ela pediu confirmação, então leve este recibo para ela.",
+    "en": "Those are Virmura's bandages? Thank you, I'll take them. She asked for confirmation, so bring this receipt back to her."
   },
   {
     "id": "text.17b8e336c6625331",
-    "pt": "Levo. E preciso avisar: um veterano tentou me agredir no treino. Sevrak impediu.",
-    "en": "I will. And you should know: a veteran tried to attack me during training. Sevrak stopped him."
+    "pt": "Levo. Rask, aconteceu uma coisa na entrada. Um veterano tentou me bater durante o treino. Sevrak impediu, mas você precisa saber.",
+    "en": "I will. Rask, something happened on the way in. A veteran tried to hit me during training. Sevrak stopped him, but you need to know."
   },
   {
     "id": "text.8e2d6a8f95348b5c",
-    "pt": "Vou falar com os envolvidos. Obrigado pela entrega e pelo aviso.",
-    "en": "I'll speak to everyone involved. Thank you for the delivery, and for telling me."
+    "pt": "Vou conversar com os envolvidos. Fez bem em me contar. E obrigado por trazer os materiais.",
+    "en": "I'll speak to the people involved. You were right to tell me. Thank you for bringing the supplies, too."
   },
   {
     "id": "text.8034385c85ac48c3",
-    "pt": "O que podemos concluir colocando uma cópia sobre a outra?",
-    "en": "What can we conclude by placing one copy over the other?"
+    "pt": "Aqui estão as duas cópias. Digamos que coloquemos uma sobre a outra. O que isso permite concluir?",
+    "en": "Here are the two copies. Suppose we place one over the other. What does that allow us to conclude?"
   },
   {
     "id": "text.f8cc7e30a9897c6b",
-    "pt": "Que o papel de cima impede a gente de ler o de baixo.",
-    "en": "That the top sheet stops us reading the bottom one."
+    "pt": "Que não dá mais para ler a de baixo.",
+    "en": "That we can't read the one underneath anymore."
   },
   {
     "id": "text.d0856418348f0683",
-    "pt": "E além dessa observação indispensável?",
-    "en": "And beyond that indispensable observation?"
+    "pt": "Uma descoberta indispensável. Agora, o que tornaria a comparação útil?",
+    "en": "An indispensable discovery. Now, what would make the comparison useful?"
   },
   {
     "id": "text.54ea0baf7d53c88c",
-    "pt": "Precisamos conferir os pontos de referência antes de comparar os desenhos.",
-    "en": "We need to check the landmarks before comparing the drawings."
+    "pt": "Precisaríamos conferir os pontos de referência primeiro. Senão podemos estar comparando desenhos de lugares diferentes.",
+    "en": "We'd have to check the landmarks first. Otherwise we might be lining up two drawings of different places."
   },
   {
     "id": "text.db12db55074f3dc1",
-    "pt": "Anote quais. Outra pessoa deve conseguir repetir o que você fez.",
-    "en": "Write down which ones. Someone else must be able to repeat what you did."
+    "pt": "Então identifique os marcos e escreva como vai compará-los. Quero que outra pessoa consiga fazer isso sem você apontando para o papel.",
+    "en": "Then name the landmarks and write down how you'll match them. I want another reader to be able to do this without you pointing at the paper."
   },
   {
     "id": "text.05f13391504e34cd",
-    "pt": "Os desenhos podem ser diferentes por mais de um motivo.",
-    "en": "There could be more than one reason the drawings are different."
+    "pt": "Uma diferença nos desenhos pode significar várias coisas. Não devíamos escolher uma explicação só porque foi a primeira que veio à cabeça.",
+    "en": "A difference in the drawings could mean several things. We shouldn't choose an explanation just because it's the first one we think of."
   },
   {
     "id": "text.32ab57bcebd23a70",
-    "pt": "Liste as possibilidades. Depois procure informações que permitam eliminar alguma.",
-    "en": "List the possibilities. Then look for evidence that lets you rule some out."
+    "pt": "Concordo. Anote as possibilidades. Depois procure algo que possa conferir para eliminar uma delas. Uma lista de palpites é só o começo.",
+    "en": "Agreed. Write down the possibilities. Then find something you can check that would rule one out. A list of guesses is only the beginning."
   },
   {
     "id": "text.ea6db252f513b9c5",
-    "pt": "Você já sabe a resposta?",
-    "en": "Do you already know the answer?"
+    "pt": "Está esperando que eu descubra uma resposta que você já sabe?",
+    "en": "Are you waiting for me to discover an answer you already know?"
   },
   {
     "id": "text.fa8421f139296da8",
-    "pt": "Sei que seria um erro dar uma resposta sem ter como sustentá-la. Quero ver como você chega à sua.",
-    "en": "I know it would be a mistake to give an answer I cannot support. I want to see how you reach yours."
+    "pt": "Estou esperando para ver o que consegue sustentar. Dar uma conclusão sem as provas só ensinaria você a me repetir. Mostre como chega à sua.",
+    "en": "I'm waiting to see what you can support. Giving you a conclusion without the evidence would teach you to repeat me. Show me how you arrive at your own."
   },
   {
     "id": "text.130cd4008b060585",
-    "pt": "Sevrak quer que eu confira o resultado?",
-    "en": "Does Sevrak want me to check the result?"
+    "pt": "Sevrak mandou você com isto? O que ele quer conferir, o resultado?",
+    "en": "Sevrak sent you with this? What does he want checked, the result?"
   },
   {
     "id": "text.b964efc955c7021e",
-    "pt": "E o modo como chegamos nele. Se precisa do mestre para explicar, o texto ainda não está bom.",
-    "en": "And how we got there. If it takes the master himself to explain it, the write-up still needs work."
+    "pt": "Isso, e se você consegue seguir as etapas sem ele ao lado. Se precisar chamar o mestre para explicar cada linha, não escrevi muito bem.",
+    "en": "That, and whether you can follow the steps without him standing here. If you have to call the master to explain every line, I haven't written it very well."
   },
   {
     "id": "text.dc673a13c166dfac",
-    "pt": "Você escreveu \"normalizar\" aqui. O que exatamente quer que eu faça?",
-    "en": "You've written \"normalize\" here. What exactly do you want me to do?"
+    "pt": "Então foi aqui que me perdi. \"Normalizar.\" O que devo fazer com o mapa quando chegar nessa palavra?",
+    "en": "Then here's where you've lost me. \"Normalize.\" What am I supposed to do to the map when I reach that word?"
   },
   {
     "id": "text.ef94bbaeb59479dd",
-    "pt": "Vou escrever os passos em vez de deixar só esse termo.",
-    "en": "I'll write out the steps instead of just using that word."
+    "pt": "Entendi o problema. Vou escrever o que fazer, passo a passo, em vez de esconder tudo numa palavra.",
+    "en": "I see the problem. I'll spell out what to do, step by step, instead of hiding it all in one word."
   },
   {
     "id": "text.3ce4c3afe7ecc021",
-    "pt": "Melhor. Agora posso seguir o que você fez, sem adivinhar o que quis dizer.",
-    "en": "Better. Now I can follow what you did instead of guessing what you meant."
+    "pt": "Obrigada. Agora posso tentar a mesma comparação que você fez, sem ter de adivinhar o que quis dizer.",
+    "en": "Thank you. Now I can try the same comparison you made, instead of trying to guess what you meant."
   },
   {
     "id": "text.94bc2a8b40aa8843",
-    "pt": "Vou incluir um exemplo, deixando claro que ele não é um dado das minas.",
-    "en": "I'll add an example and make it clear it isn't data from the mines."
+    "pt": "Vou incluir um exemplo explicado. E marcar que é só um exemplo, para ninguém confundir com medidas tiradas da mina.",
+    "en": "I'll add a worked example. And label it as an example, so nobody mistakes it for measurements from the mine."
   },
   {
     "id": "text.8460f28a0418221b",
-    "pt": "Deixe bem claro. Não quero ver alguém citando o exemplo como se tivesse sido medido lá.",
-    "en": "Make that very clear. I don't want someone quoting the example as if we'd measured it down there."
+    "pt": "Ponha o aviso onde ninguém deixe de ver. Essas páginas são copiadas. Não quero uma medida inventada circulando sem a explicação.",
+    "en": "Put that warning where they can't miss it. These pages get copied. I don't want an invented measurement traveling farther than the explanation."
   },
   {
     "id": "text.9e721380a3a94d8c",
-    "pt": "Daqui em diante, faltam informações. Não posso preencher por você.",
-    "en": "Beyond this point, we're missing information. I can't fill it in for you."
+    "pt": "Até aqui consigo acompanhar. Depois deste ponto, faltam informações. Não posso preencher os espaços só para terminar a página.",
+    "en": "That's as far as I can follow it. Past this point, we don't have the information. I can't fill in the blanks just to finish the page."
   },
   {
     "id": "text.d4458a2faa513d21",
-    "pt": "Nem quero. Sevrak ia perguntar de onde tirei.",
-    "en": "I wouldn't want you to. Sevrak would ask where I got it."
+    "pt": "Por favor, não preencha. Sevrak ia perguntar onde achei as informações que faltavam, e minha resposta seria bem constrangedora.",
+    "en": "Please don't. Sevrak would ask where I found the missing facts, and I'd have a very awkward answer."
   },
   {
     "id": "text.7204d49b2eb4f374",
-    "pt": "Eu perguntaria também.",
-    "en": "So would I."
+    "pt": "Ele não seria o único a perguntar.",
+    "en": "He wouldn't be the only one asking."
   },
   {
     "id": "text.d1d3b51184592106",
-    "pt": "Ghork leva à escola a cópia revisada por Elune. Ela mostra o trecho conferido e o que ainda não foi possível concluir.",
-    "en": "Ghork brings the copy Elune reviewed back to the school. It shows the section they checked and what they still cannot determine."
+    "pt": "Ghork volta à escola com a cópia revisada por Elune. O trecho conferido está bem marcado; as perguntas ainda sem resposta continuam ao lado.",
+    "en": "Ghork returns to the school with Elune's revised copy. The checked section is marked clearly; the unanswered questions remain beside it."
   },
   {
     "id": "text.a22760f563e26fca",
-    "pt": "Ele quer que Ghork repita a explicação sobre o ombro. Mas sem você por perto, Sevrak.",
-    "en": "He wants Ghork to explain that shoulder move again. Without you around, Sevrak."
+    "pt": "Sevrak, aquele veterano não quer devolver seu estojo de treino. Diz que Ghork tem de ir buscar e explicar de novo o truque do ombro. Sem você por perto.",
+    "en": "Sevrak, that veteran won't give back your training case. He says Ghork has to come for it and explain the shoulder trick again. Without you there."
   },
   {
     "id": "text.981faa78c4561703",
-    "pt": "Vou falar com Rask para devolverem o estojo.",
-    "en": "I'll speak to Rask about getting the case back."
+    "pt": "Reter meu equipamento para forçar um confronto? Vou falar com Rask. O estojo tem de ser devolvido.",
+    "en": "Holding my equipment to force a confrontation? I'll speak to Rask. The case is to be returned."
   },
   {
     "id": "text.0cb96ec036d8bac2",
-    "pt": "Eu vou buscar. Quero ver se ele repete isso na minha frente.",
-    "en": "I'll go get it. Let's see if he'll say that to my face."
+    "pt": "Eu vou buscar. Se tem alguma coisa para dizer de mim, pode dizer na minha frente.",
+    "en": "I'll go get it. If he has something to say about me, he can say it to my face."
   },
   {
     "id": "text.c6b74dbdb466ebfa",
-    "pt": "Você está preparado para um duelo supervisionado. Se aceitar lutar, exija um juiz. Não precisa se arriscar para defender meu orgulho.",
-    "en": "You're ready for a supervised duel. If you accept a fight, insist on a referee. You needn't risk yourself for my pride."
+    "pt": "Você já pode enfrentar um duelo supervisionado. Se aceitar lutar, exija um juiz. E tenha clareza do motivo. Meu orgulho ferido não é razão para você se arriscar.",
+    "en": "You can handle a supervised duel now. If you agree to fight, insist on a referee. And be clear about why you're doing it. My wounded pride is no reason to risk yourself."
   },
   {
     "id": "text.a647ab313e7c7187",
-    "pt": "Disseram que você queria falar comigo.",
-    "en": "I hear you wanted to speak to me."
+    "pt": "Mandou me chamar. Estou aqui. O que queria dizer?",
+    "en": "You sent for me. I'm here. What did you want to say?"
   },
   {
     "id": "text.3e28c0a177fcf822",
-    "pt": "Quero ver se sabe lutar ou só dar palpite.",
-    "en": "I want to see if you can fight or just run your mouth."
+    "pt": "Quero ver se tem um lutador por trás de tanto conselho. Ou só sabe falar?",
+    "en": "I want to see if there's a fighter behind all that advice. Or do you only know how to talk?"
   },
   {
     "id": "text.984ac4298ca677a1",
-    "pt": "Primeiro, devolva o estojo. Não é seu.",
-    "en": "First, hand over the case. It isn't yours."
+    "pt": "Pode descobrir depois de devolver o estojo. Ele pertence à escola.",
+    "en": "You can find out after you give back the case. It belongs to the school."
   },
   {
     "id": "text.9bedc04aba3922a2",
-    "pt": "Vou recolher o estojo para devolução. Fui avisado da agressão e devia ter impedido essa intimidação. Se quiserem lutar, será na área de duelo, comigo supervisionando.",
-    "en": "I'll take the case and see it returned. I was told about the attack; I should have put a stop to this intimidation. If you want a match, it'll be in the dueling area, under my supervision."
+    "pt": "Entregue para mim. O estojo será devolvido, aconteça o que acontecer aqui. Ghork me avisou da agressão; eu devia ter impedido que isso continuasse. Se os dois querem lutar, usem a área de duelo. Eu mesmo vou supervisionar.",
+    "en": "Give it to me. The case goes back, whatever happens here. Ghork told me about the attack; I should have stopped this before it went further. If you both want a match, use the dueling area. I'll supervise it myself."
   },
   {
     "id": "text.f0c13aed7c99b3ea",
@@ -1283,508 +1283,508 @@
   },
   {
     "id": "text.fa098a11360360cb",
-    "pt": "Queria me ver lutar? Vamos.",
-    "en": "You wanted to see me fight? Let's go."
+    "pt": "Queria saber se consigo lutar. Está bem. Vamos fazer isso direito.",
+    "en": "You wanted to see whether I can fight. All right. Let's do it properly."
   },
   {
     "id": "text.9919ab1635cf4115",
-    "pt": "Espero que tenha aprendido mais de um movimento.",
-    "en": "Hope you learned more than one move."
+    "pt": "Vamos torcer para ter aprendido alguma coisa além de olhar ombros.",
+    "en": "Let's hope you learned something besides watching shoulders."
   },
   {
     "id": "text.d1c5d0eea2b033fc",
-    "pt": "Antes eu vi de fora. Agora vou ver de perto.",
-    "en": "I watched from the sidelines before. Now I'll get a closer look."
+    "pt": "Da outra vez eu estava olhando de fora. Vamos ver o que percebo de perto.",
+    "en": "Last time I was watching from the sidelines. Let's see what I notice up close."
   },
   {
     "id": "text.0039f15f8e268407",
-    "pt": "Quero ver você terminar essa frase deitado no chão.",
-    "en": "Let's see you finish that sentence flat on the ground."
+    "pt": "Continue falando. Quero ver como fica esperto de costas no chão.",
+    "en": "Keep talking. I'll see how clever you are with your back on the floor."
   },
   {
     "id": "text.1d25d2b74b0bc93c",
-    "pt": "Quando eu mandar parar, os dois param. Encerro a luta se alguém não puder continuar.",
-    "en": "When I call a stop, you both stop. I'll end the match if either of you can't continue."
+    "pt": "Quando eu mandar parar, os dois param. Se um dos lutadores não puder continuar, a luta acaba ali. Entendido?",
+    "en": "When I call a stop, you stop. Both of you. If either fighter can't continue, the match ends there. Understood?"
   },
   {
     "id": "text.c838a6fa8b74ff2e",
-    "pt": "Acabou. Ghork venceu.",
-    "en": "That's it. Ghork wins."
+    "pt": "Parem! A luta acabou. Ghork venceu.",
+    "en": "Stop! That's the match. Ghork wins."
   },
   {
     "id": "text.d89cdd1502009fa1",
-    "pt": "O rapaz aprendeu quando alguém deu uma chance. Você podia ter tentado ensinar.",
-    "en": "The kid learned when someone gave him a chance. You could've tried teaching him."
+    "pt": "Aquele rapaz aprendeu quando alguém deu uma chance. Você podia ter feito isso por ele, em vez de deixar com medo de levantar outra vez.",
+    "en": "That boy learned when someone gave him a chance. You could've done that for him, instead of making him afraid to stand up again."
   },
   {
     "id": "text.1348ad5bba31cafc",
-    "pt": "Já ganhou. Precisa fazer discurso também?",
-    "en": "You won. Need to make a speech too?"
+    "pt": "Já ganhou. Ainda tenho de ouvir sermão?",
+    "en": "You've won already. Do I have to listen to a lecture too?"
   },
   {
     "id": "text.89d372937e003cac",
-    "pt": "Quero pegar o estojo e ir embora.",
-    "en": "I want to get the case and leave."
+    "pt": "Não. Vou levar o estojo de volta para a escola. Já estou indo.",
+    "en": "No. I'm taking the case back to the school, and then I'm leaving."
   },
   {
     "id": "text.43457de8024ce1f7",
-    "pt": "Trouxe o estojo. Como foi o duelo?",
-    "en": "You brought the case back. How did the duel go?"
+    "pt": "O estojo voltou. Ótimo. Agora me diga como foi o duelo.",
+    "en": "The case is back. Good. Now tell me how the duel went."
   },
   {
     "id": "text.9996b1483324be8b",
-    "pt": "Rask supervisionou. Eu ganhei. Mas vencer uma luta não prova que eu estava certo em tudo.",
-    "en": "Rask supervised. I won. But winning a fight doesn't prove I was right about everything."
+    "pt": "Rask foi o juiz. Eu ganhei. Foi bom, mas... vencer não faz tudo que eu disse estar certo. Essa parte ainda precisa se sustentar sozinha.",
+    "en": "Rask refereed. I won. It felt good, but... beating him doesn't make everything I said right. That part still has to hold up on its own."
   },
   {
     "id": "text.2f84d75cd0628d06",
-    "pt": "Bom. De volta ao relatório: você colocou o que não sabemos antes do resultado.",
-    "en": "Good. Back to the report. You've put what we don't know before the result."
+    "pt": "Uma diferença que vale guardar. Agora, seu relatório: você colocou o que não sabemos antes do que descobrimos. Por que começar por aí?",
+    "en": "A distinction worth keeping. Now, your report: you've put what we don't know ahead of what we found. Why lead with that?"
   },
   {
     "id": "text.310adb0a64c289f6",
-    "pt": "Não quero que essa parte passe despercebida.",
-    "en": "I don't want that part overlooked."
+    "pt": "Porque alguém pode ler o resultado e parar ali. Não quero Meruna mandando gente para a mina com metade da explicação.",
+    "en": "Because someone might read the result and stop there. I don't want Meruna sending people into the mine on half an explanation."
   },
   {
     "id": "text.dbc4b31bf7303890",
-    "pt": "Coloco ao lado da conclusão. Assim, quem ler uma também vê a outra.",
-    "en": "I'll put it beside the conclusion. Anyone reading one will see the other."
+    "pt": "Vou pôr o aviso ao lado da conclusão. Assim ela vê o que descobrimos e onde deixa de haver certeza.",
+    "en": "I'll put the warning beside the conclusion. Then she can see what we found and where it stops being certain."
   },
   {
     "id": "text.4a6d6c4994d06bc4",
-    "pt": "Faça. Se continuar legível, serve.",
-    "en": "Do that. If it stays readable, it will work."
+    "pt": "Tente. Se eu conseguir ler os dois sem procurar pela página, deve servir.",
+    "en": "Try it. If I can read both without hunting across the page, that should serve."
   },
   {
     "id": "text.f8deaa8aa8d53c2d",
-    "pt": "Quero explicar primeiro o que não sabemos. Depois mostro o que conseguimos fazer mesmo assim.",
-    "en": "I want to explain what we don't know first. Then show what we managed to do anyway."
+    "pt": "Prefiro explicar primeiro o que não conseguimos descobrir. Depois mostro quanto ainda conseguimos conferir.",
+    "en": "I'd rather explain what we couldn't establish first. Then show how much we still managed to check."
   },
   {
     "id": "text.281e35af6fe900f3",
-    "pt": "Então esteja pronto para defender essa escolha. Não vou responder por você.",
-    "en": "Then be prepared to defend that choice. I won't answer for you."
+    "pt": "Então esteja pronto para explicar isso à Meruna. Essa escolha de apresentação é sua. Não vou intervir para defendê-la por você.",
+    "en": "Then be ready to explain that to Meruna. This is your choice of presentation. I won't step in and defend it for you."
   },
   {
     "id": "text.dd165890208fd866",
-    "pt": "A escala está pronta. Quem atende na enfermaria não entra na lista da equipe de campo.",
-    "en": "The roster's ready. Nobody on infirmary duty is listed on the field crew."
+    "pt": "A escala está pronta. Conferi as duas listas: ninguém ficou encarregado de estar em campo e junto a um leito da enfermaria ao mesmo tempo.",
+    "en": "The roster's ready. I've checked both lists: nobody's supposed to be in the field and at an infirmary bed at the same time."
   },
   {
     "id": "text.33c61bb5303a3446",
-    "pt": "Depois mostramos o registro de resgate e as instruções que você testou. Meruna precisa saber o que conseguimos conferir e como vamos cuidar de quem voltar ferido.",
-    "en": "Then we show the rescue report and the instructions you tested. Meruna needs to know what we can verify, and how we'll care for anyone who comes back injured."
+    "pt": "Ótimo. Junte com o registro de resgate e as instruções que testou. Meruna precisa ver o que conferimos. E, se alguém voltar ferido, precisa saber que deixamos gente aqui para cuidar.",
+    "en": "Good. Put it with the rescue report and the directions you tested. Meruna needs to see what we've checked. And if someone comes back hurt, she needs to know we left people here to help them."
   },
   {
     "id": "text.91feafef936b2236",
-    "pt": "E o trecho do mapa que não conseguimos explicar?",
-    "en": "And the part of the map we couldn't explain?"
+    "pt": "O que eu digo quando ela apontar as partes do mapa que ainda não sabemos explicar?",
+    "en": "What do I say when she points to the parts of the map we still can't explain?"
   },
   {
     "id": "text.471f4f03fd8b5a26",
-    "pt": "Vamos marcar que não sabemos. Não vou esconder um perigo de quem terá de entrar lá.",
-    "en": "We'll mark it as unknown. I won't hide a danger from the people going in there."
+    "pt": "Que não sabemos. Marque bem. Quem entrar lá merece ver onde faltam informações antes de ter de descobrir no escuro.",
+    "en": "That we don't know. Mark them plainly. Whoever goes down there deserves to see the gaps before they find themselves standing in one."
   },
   {
     "id": "text.57d42e4d00002836",
-    "pt": "Se eu apoiar vocês, Borun e Sevrak perdem esse contrato.",
-    "en": "If I back you, Borun and Sevrak lose out on this contract."
+    "pt": "Se eu ficar do seu lado naquela reunião, Borun e Sevrak vão perder o contrato. Depois de tudo que fizeram por mim...",
+    "en": "If I stand with you at that meeting, Borun and Sevrak won't get the contract. After everything they've done for me..."
   },
   {
     "id": "text.7e672a994b6c24f0",
-    "pt": "Sim. Os dois têm planos para esse dinheiro. Você precisa saber disso antes de decidir trabalhar conosco.",
-    "en": "Yes. They both have plans for that money. You need to know that before you decide to work with us."
+    "pt": "Sim. Eles também precisam desse dinheiro, e não vão gostar. Não vou fingir o contrário para convencer você a entrar. Pense nisso antes de me dar sua palavra.",
+    "en": "Yes. They need that money too, and they won't be pleased. I won't pretend otherwise to get you to join us. Think about it before you give me your word."
   },
   {
     "id": "text.5a8826dac5d301bb",
-    "pt": "Vou começar explicando por que parte da guilda precisa ficar na enfermaria.",
-    "en": "I'll start by explaining why part of the guild has to stay at the infirmary."
+    "pt": "Então vou explicar por que precisamos de gente aqui e em campo. É por aí que quero começar.",
+    "en": "Then I'll explain why we need people here as well as in the field. That's where I want to start."
   },
   {
     "id": "text.681cdb5587a1c483",
-    "pt": "Vamos levar o registro da carga, o relato da Pirka e as instruções que outra pessoa conseguiu seguir. Esse contrato serve para pôr gente em campo e trazer informação que preste.",
-    "en": "We'll bring the cargo record, Pirka's account, and the directions someone else managed to follow. This contract pays for people to scout the ground and bring back information worth using."
+    "pt": "Vamos pôr o relato da Pirka ao lado do registro da carga e mostrar as instruções que outra pessoa conseguiu seguir. É esse trabalho que quero financiar com o contrato: gente saindo, olhando direito e trazendo algo útil para a próxima equipe.",
+    "en": "We'll put Pirka's account beside the cargo record and show the directions somebody else managed to follow. That's the work I want this contract to pay for: people going out, looking properly, and bringing back something the next crew can use."
   },
   {
     "id": "text.b7ad0e9eab658159",
-    "pt": "Você também quer usar o dinheiro para resgates.",
-    "en": "You want to fund rescue work too."
+    "pt": "E usaria parte do dinheiro para resgates. Você falou disso antes.",
+    "en": "And you'd use some of the money for rescue work. You mentioned that before."
   },
   {
     "id": "text.f18ce2d493a26a04",
-    "pt": "Quero. Tem contratante que só pensa no caminho de volta quando falta alguém.",
-    "en": "I do. Some employers only think about the way back when someone's missing."
+    "pt": "Usaria. Tem contratante muito interessado no caminho de ida que só pergunta pelo de volta quando alguém não aparece.",
+    "en": "I would. Some employers are very interested in the road out and only ask about the road home when somebody fails to come back."
   },
   {
     "id": "text.fdde2975fc3a3a9f",
-    "pt": "Meruna pode reclamar que os relatos estão incompletos.",
-    "en": "Meruna might say the accounts are incomplete."
+    "pt": "E se Meruna disser que os relatos estão incompletos demais para confiar?",
+    "en": "What if Meruna says the accounts are too incomplete to trust?"
   },
   {
     "id": "text.22384aea030c02f7",
-    "pt": "E estão. Mostre o que conseguimos comparar e o que ainda falta conferir. Se prometer que nunca erramos, eu desminto na hora.",
-    "en": "They are. Show her what we've compared and what still needs checking. If you promise we never make mistakes, I'll correct you on the spot."
+    "pt": "Mostre exatamente o que pudemos conferir e o que ainda precisa de uma visita. Os relatos estão incompletos. Blefar não melhora isso. E, se prometer que nunca erramos, vou ter de interromper você.",
+    "en": "Then show her exactly what we could check and what still needs a visit. The accounts are incomplete. We won't improve them by bluffing. And if you promise her we never get things wrong, I'll have to interrupt you."
   },
   {
     "id": "text.6ad6d69521a234fb",
-    "pt": "Virmura cuidou de mim. Sevrak também me ajudou.",
-    "en": "Virmura looked after me. Sevrak helped me too."
+    "pt": "Virmura salvou minha vida. Sevrak também me protegeu. É estranho falar em escolher entre vocês.",
+    "en": "Virmura saved my life. Sevrak protected me, too. It feels strange talking about choosing between you."
   },
   {
     "id": "text.67307308fe558028",
-    "pt": "Escolher a nossa guilda não apaga isso. Mas também não faz os dois desistirem do que querem.",
-    "en": "Joining us doesn't erase that. But it won't make them give up what they want, either."
+    "pt": "Pode ser grato aos dois e ainda escolher seu trabalho. Mas eles têm guildas para cuidar, assim como eu. Não espere que sua gratidão faça os dois saírem do caminho.",
+    "en": "You can be grateful to both of them and still choose your own work. But they have guilds to look after, same as I do. Don't expect your gratitude to make them step aside."
   },
   {
     "id": "text.885ec21f183a3450",
-    "pt": "Vamos apresentar um método que Meruna possa verificar. Se conseguir o contrato, a escola poderá ensinar outras pessoas a fazer esse levantamento.",
-    "en": "We'll present a method Meruna can verify. If we win the contract, the school can teach others to carry out the same survey."
+    "pt": "Meruna poderá conferir nosso trabalho por conta própria. É isso que oferecemos. Com o contrato, a escola pode ensinar mais pessoas a fazer o mesmo levantamento, em vez de depender do julgamento de uma só.",
+    "en": "Meruna will be able to check our work herself. That's what we offer. With the contract, the school can train more people to carry out the same survey, instead of depending on one person's judgment."
   },
   {
     "id": "text.1091fda85b94d774",
-    "pt": "E o contrato paga o trabalho da sua escola.",
-    "en": "And the contract funds your school."
+    "pt": "E o dinheiro mantém sua escola funcionando. Não se trata só dos mapas.",
+    "en": "And the money keeps your school running. This isn't only about the maps."
   },
   {
     "id": "text.f1328f3d7d44200d",
-    "pt": "Nossa escola, se você se juntar a ela.",
-    "en": "Our school, if you join it."
+    "pt": "Ela poderia ser sua escola também, Ghork. Se decidir entrar.",
+    "en": "It could be your school too, Ghork. If you decide to join."
   },
   {
     "id": "text.317519510912900b",
-    "pt": "Ainda estou decidindo.",
-    "en": "I'm still deciding."
+    "pt": "Ainda não decidi. Quero deixar isso claro.",
+    "en": "I haven't decided yet. I want to be clear about that."
   },
   {
     "id": "text.6ce37d0d7e5380c6",
-    "pt": "Então saiba o que estou pedindo. Quero você na investigação e na preparação para o campeonato. Fazer parte da escola vai exigir trabalho.",
-    "en": "Then understand what I am asking. I want you involved in the survey and in preparing for the tournament. Membership here comes with work."
+    "pt": "Então também vou ser claro. Quero você trabalhando na investigação e se preparando para o campeonato. Vejo algo em você que vale desenvolver, mas entrar na escola significa trabalhar.",
+    "en": "Then let me be clear as well. I want you working on the survey and preparing for the tournament. I see something worth teaching in you, but joining the school means doing the work."
   },
   {
     "id": "text.77ebac47f960c030",
-    "pt": "Você quer que eu repita seu método ou que aponte quando ele estiver errado?",
-    "en": "Do you want me to repeat your method or point out when it's wrong?"
+    "pt": "E se eu encontrar um erro no seu método? Quer que eu aponte ou aprenda a fazer do seu jeito mesmo assim?",
+    "en": "And if I find a mistake in your method? Do you want me to point it out, or learn to do it your way anyway?"
   },
   {
     "id": "text.928a4fba9bb33bd0",
-    "pt": "Que demonstre o erro. Eu esperaria a mesma cobrança sobre meu trabalho.",
-    "en": "To demonstrate the error. I would expect you to demand the same of my work."
+    "pt": "Mostre o erro. Dizer que discorda não basta, mas demonstrar uma falha é útil. Você deve exigir de mim o mesmo cuidado.",
+    "en": "Show me the error. Saying you disagree isn't enough, but demonstrating a mistake is useful. You should expect the same standard from me."
   },
   {
     "id": "text.099efac2e01f4acf",
-    "pt": "As três guildas apresentaram suas propostas. Ghork, qual delas você vai ajudar a executar?",
-    "en": "All three guilds have presented their proposals. Ghork, which one will you help carry out?"
+    "pt": "Ghork, você conheceu o trabalho dessas guildas. Agora preciso de uma resposta: qual proposta vai ajudar a executar?",
+    "en": "Ghork, you've seen how these guilds work. Now I need an answer: which proposal will you help carry out?"
   },
   {
     "id": "text.0af5d581438b99ff",
-    "pt": "A de Virmura. Comparamos o trajeto de um resgate com os mapas. Testamos as instruções usando uma maca e dividimos a equipe entre o trabalho de campo e a enfermaria.",
-    "en": "Virmura's. We compared a rescue route with the maps. We tested the directions with a stretcher and divided the crew between fieldwork and the infirmary."
+    "pt": "A de Virmura. Conferimos um trajeto de resgate com os mapas e depois testamos as instruções com uma maca. Sabemos quem vai a campo e quem fica para cuidar de quem precisa da guilda.",
+    "en": "Virmura's. We checked a rescue route against the maps, then tested the directions with a stretcher. We know who'll go into the field and who'll stay to care for the people who need this guild."
   },
   {
     "id": "text.96954197defad611",
-    "pt": "Um relato de resgate não cobre a mina inteira.",
-    "en": "One rescue account doesn't cover the entire mine."
+    "pt": "Conferiram um trajeto de resgate. Uma mina tem um pouco mais do que isso. O que vão dizer à Meruna sobre o restante?",
+    "en": "You've checked one rescue route. A mine contains rather more than that. What will you tell Meruna about the rest?"
   },
   {
     "id": "text.d583d41cd078027c",
-    "pt": "Nem dissemos que cobre. Marcamos o que ainda precisa ser investigado.",
-    "en": "We never said it did. We marked what still needs investigating."
+    "pt": "Que ainda precisa ser investigado. Está marcado na proposta. Não estamos pedindo que acredite que conferimos mais do que realmente conferimos.",
+    "en": "That it still needs investigating. It's marked in the proposal. We aren't asking her to believe we checked more than we did."
   },
   {
     "id": "text.8ebe4ce2171a21b7",
-    "pt": "É para isso que serve o contrato: investigar o resto. Já testamos como vamos trabalhar.",
-    "en": "That's what the contract is for: surveying the rest. We've already tested how we'll do the work."
+    "pt": "É isso que o contrato vai pagar para investigar. O que mostramos hoje foi como vamos fazer. Já testamos o procedimento.",
+    "en": "That's what the contract would pay us to investigate. What we've shown today is how we'll do it. We've already tested the procedure."
   },
   {
     "id": "text.131f7995320ec0f6",
-    "pt": "Está claro o que vocês já fizeram e o que ainda vão entregar. Virmura, registre no plano os custos da enfermaria e da equipe de campo.",
-    "en": "It's clear what you've done and what you still intend to deliver. Virmura, include the costs of both the infirmary and the field crew in your plan."
+    "pt": "Consigo distinguir o que conferiram do que estão propondo. Ótimo. Virmura, inclua os custos da enfermaria no plano, junto com os da equipe de campo. Preciso ver o custo completo desse acordo.",
+    "en": "I can distinguish what you've verified from what you're proposing. Good. Virmura, put the infirmary's costs in the plan alongside the field crew's. I need to see the full cost of this arrangement."
   },
   {
     "id": "text.b9dd3edb1011d046",
-    "pt": "O primeiro desenho mostra a entrada até a bifurcação. O segundo mostra o caminho de volta. Os registros confirmam o ponto de partida e a direção de cada um.",
-    "en": "The first sketch follows the way in to the fork. The second follows the way out. The records confirm each starting point and direction."
+    "pt": "E aqui está o trecho que pudemos conferir. Este desenho acompanha a entrada até a bifurcação; o outro, a volta. Os registros confirmam onde cada percurso começou e em que sentido seguiu.",
+    "en": "And here is the section we could check. This sketch follows the way in to the fork; the other follows the way back. The records confirm where each journey started and which direction it took."
   },
   {
     "id": "text.ef24bb401e94ff07",
-    "pt": "Vocês conseguiram conferir esse trecho. O restante fica para a investigação. O contrato será da guilda que você escolheu.",
-    "en": "You've verified that section. The rest remains for the survey. The contract goes to the guild you've chosen."
+    "pt": "Esse trecho está conferido. As galerias restantes farão parte da investigação. O contrato fica com a guilda que você escolheu, Ghork. Vamos registrar as responsabilidades por escrito.",
+    "en": "That section is accounted for. The remaining tunnels will be part of the survey. I'm awarding the contract to the guild you've chosen, Ghork. We'll put the responsibilities in writing."
   },
   {
     "id": "text.236d347f6566502e",
-    "pt": "Vou procurar trabalho para a minha gente. Nossa guilda não vai acompanhar essa expedição. E, na arena, vamos estar do outro lado.",
-    "en": "I'll find work for my people. Our guild won't be joining this expedition. And in the arena, we'll be on the other side."
+    "pt": "Então vou ter de procurar outro trabalho para minha gente. Não vamos acompanhar sua expedição. E, quando chegar o campeonato, lembre que vamos competir contra você.",
+    "en": "Then I'll have to find other work for my people. We won't be joining your expedition. And when the tournament comes, remember that we'll be competing against you."
   },
   {
     "id": "text.52db912f918ad925",
-    "pt": "Nossos instrutores e métodos ficam na escola. Haverá outras oportunidades de mostrar o que poderíamos fazer. O campeonato é uma delas.",
-    "en": "Our instructors and methods stay with the school. There will be other chances to demonstrate what we could have done. The tournament among them."
+    "pt": "Nossos instrutores e métodos continuam na escola. Terá a chance de ver do que abriu mão, Ghork. Imagino que o campeonato ofereça uma.",
+    "en": "Our instructors and methods remain with the school. You'll have a chance to see what you passed over, Ghork. I expect the tournament will provide one."
   },
   {
     "id": "text.94f432f70c7f9828",
-    "pt": "Continuo grato pelo que fizeram por mim.",
-    "en": "I'm still grateful for what you did for me."
+    "pt": "Não esqueci o que fizeram por mim. Escolher esta guilda não significa que deixei de ser grato.",
+    "en": "I haven't forgotten what you did for me. Choosing this guild doesn't mean I'm no longer grateful."
   },
   {
     "id": "text.3d76e16801acf43c",
-    "pt": "Eu sei. Isso não acaba só porque escolhemos lados diferentes.",
-    "en": "I know. Choosing different sides doesn't make that disappear."
+    "pt": "Eu sei, rapaz. Não acho que esqueceu. Mas, neste trabalho, ainda vamos seguir caminhos diferentes.",
+    "en": "I know, lad. I don't think you've forgotten. But we still have to go our separate ways on this."
   },
   {
     "id": "text.573e02fcf9eb2f20",
-    "pt": "Escolhi o trabalho que quero fazer. Nunca prometi entrar nas três guildas.",
-    "en": "I chose the work I want to do. I never promised to join all three guilds."
+    "pt": "Escolhi o trabalho que quero fazer. Nunca prometi entrar nas três guildas, e nem conseguiria cumprir essa promessa.",
+    "en": "I chose the work I want to do. I never promised to join all three guilds, and I couldn't have kept that promise anyway."
   },
   {
     "id": "text.a8b270359ed3a4fa",
-    "pt": "Havia um contrato, não três. Vamos registrar quem vai assumir o trabalho.",
-    "en": "There was one contract, not three. Let's record who will take on the work."
+    "pt": "Ofereci um contrato. Alguém ia sair daqui sem ele. Vamos registrar quem assume a responsabilidade pelo trabalho.",
+    "en": "I offered one contract. Someone was always going to leave without it. Let's record who is taking responsibility for the work."
   },
   {
     "id": "text.249f4d60b7679d7b",
-    "pt": "E se deixassem ele terminar de falar sem interromper?",
-    "en": "What if they let him finish without interrupting?"
+    "pt": "Mas ele não terminou! Não podem deixar ele falar o resto antes de ficar bravos?",
+    "en": "But he hasn't finished! Can't they let him say the rest before they get angry?"
   },
   {
     "id": "text.cd0d720500b87c43",
-    "pt": "Meruna tinha um sininho para pôr ordem na reunião. Esqueci de colocar na mesa. Ora, como fui esquecer o sino?",
-    "en": "Meruna had a little bell for keeping order at meetings. I forgot to put it on the table. Now, how did I forget the bell?"
+    "pt": "Poderiam... Meruna tinha um sininho para reuniões assim. Que descuido o meu deixar de fora. Uma reunião sem sino! Não admira que ninguém consiga se ouvir.",
+    "en": "They could... Meruna had a little bell for meetings like this. How careless of me to leave it out. A meeting without a bell! No wonder nobody can hear themselves think."
   },
   {
     "id": "text.9f97794caf04e10b",
-    "pt": "Deixem Ghork concluir.",
-    "en": "Let Ghork finish."
+    "pt": "Um de cada vez, por favor. Ghork, termine o que estava dizendo.",
+    "en": "One at a time, please. Ghork, finish what you were saying."
   },
   {
     "id": "text.342ddd8cd3c9021d",
-    "pt": "Vou trabalhar com a guilda que escolhi. Continuo grato a vocês, mas não posso oferecer um pedaço de um contrato que não é divisível.",
-    "en": "I'm working with the guild I chose. I'm still grateful to you, but I can't offer you a share of a contract I have no right to split."
+    "pt": "Vou trabalhar com a guilda que escolhi. Isso não apaga o que fizeram por mim. Mas não posso agradecer prometendo parte de um contrato que não posso dividir.",
+    "en": "I'm going to work with the guild I chose. That doesn't erase what you did for me. But I can't thank you by promising part of a contract I'm not allowed to split."
   },
   {
     "id": "text.dec0b028269efb17",
-    "pt": "Entendi. E nos próximos contratos, a sua guilda vai disputar com a minha.",
-    "en": "Understood. And on the next contracts, your guild will be competing with mine."
+    "pt": "Está bem. Você foi claro. Quando vier o próximo contrato, porém, sua guilda e a minha vão disputar o mesmo trabalho.",
+    "en": "All right. You've made yourself clear. When the next contract comes, though, your guild and mine will be after the same work."
   },
   {
     "id": "text.5d3cf48740eeb188",
-    "pt": "Seu pagamento fica separado do dinheiro da equipe. Primeiro, vamos combinar que trabalho você pode assumir.",
-    "en": "Your pay stays separate from the crew's funds. First, let's agree on the work you can take on."
+    "pt": "Agora, seu pagamento é seu. Fica separado do dinheiro da equipe. Antes de nos empolgarmos com os planos, vamos combinar que trabalho você pode assumir.",
+    "en": "Now, your pay is yours. It stays separate from the crew's funds. Before we get carried away with plans, let's agree on what work you can take on."
   },
   {
     "id": "text.6c027a761b6480a4",
-    "pt": "A de Borun. Conferimos o registro com quem transportou a carga, separamos o que ela viu do que ouviu e pedimos a outra pessoa para seguir as instruções.",
-    "en": "Borun's. We checked the record with the person who carried the cargo, separated what she saw from what she'd heard, and had someone else follow the directions."
+    "pt": "A de Borun. Conferimos o registro da carga com Pirka, que fez o transporte. Separamos o que ela viu do que contaram a ela e depois demos as instruções a outra pessoa, para ver se conseguia seguir.",
+    "en": "Borun's. We checked the cargo record with Pirka, who actually carried it. We separated what she'd seen from what she'd been told, then gave the directions to someone else to see if they could follow them."
   },
   {
     "id": "text.20e71e5770cdfaf3",
-    "pt": "E se esses relatos não bastarem para saber como retirar alguém?",
-    "en": "And if those accounts aren't enough to work out how to get someone out?"
+    "pt": "E quando alguém se machucar lá embaixo? O que acontece se esses relatos não bastarem para indicar como tirar a pessoa?",
+    "en": "And when someone is hurt down there? What happens if those accounts aren't enough to tell you how to get them out?"
   },
   {
     "id": "text.28c96111f2ba3076",
-    "pt": "Vamos anotar o que falta antes de entrar. Ninguém vai chamar um palpite de rota segura.",
-    "en": "We'll record what's missing before we go in. Nobody's calling a guess a safe route."
+    "pt": "Anotamos o que falta antes de alguém entrar. Se não podemos confirmar uma saída, não marcamos como segura e torcemos para dar certo.",
+    "en": "We write down what's missing before anyone goes in. If we can't confirm a way out, we don't label it safe and hope for the best."
   },
   {
     "id": "text.1f0d5d1ac5fefb5b",
-    "pt": "Se a equipe não conseguir conferir, volta sem a resposta. Estar sendo pago não obriga ninguém a inventar uma.",
-    "en": "If the crew can't check it, they come back without an answer. Being paid doesn't mean they have to make one up."
+    "pt": "Então a equipe volta com essa pergunta sem resposta. Receber pelo trabalho não obriga ninguém a inventar o que não conseguiu descobrir.",
+    "en": "Then the crew comes back with that question unanswered. Being paid doesn't mean they have to invent an answer they couldn't find."
   },
   {
     "id": "text.ab532b6dbbf81048",
-    "pt": "Inclua isso no relatório. Borun, a conferência das fontes em campo fica sob sua responsabilidade.",
-    "en": "Put that in the report. Borun, verifying the sources in the field is your responsibility."
+    "pt": "Inclua esse limite no relatório. Borun, você fica responsável por conferir essas fontes em campo. Espero que o registro mostre o que realmente encontraram.",
+    "en": "Include that limit in the report. Borun, you'll be responsible for checking those sources in the field. I expect the record to show what you actually found."
   },
   {
     "id": "text.6a11eeeb97fa906c",
-    "pt": "Eu contava com esse dinheiro para a equipe de campo. Não posso ceder gente nem materiais de que a enfermaria precisa. Minha guilda vai disputar os próximos contratos e o campeonato contra a sua.",
-    "en": "I was counting on that money for the field crew. I can't spare people or supplies the infirmary needs. My guild will compete against yours for the next contracts, and in the tournament."
+    "pt": "Eu contava com esse dinheiro para pôr uma equipe em campo. Sem ele, não posso ceder gente e materiais que fazem falta na enfermaria. Vamos disputar os próximos contratos. E vamos enfrentar vocês no campeonato.",
+    "en": "I was counting on that money to put a crew in the field. Without it, I can't lend you people and supplies the infirmary needs. We'll compete for the next contracts. And we'll face you in the tournament."
   },
   {
     "id": "text.843151dfdc49ba7f",
-    "pt": "Eu sei. Mas ainda preciso cuidar do trabalho da minha guilda.",
-    "en": "I know. But I still have my own guild to look after."
+    "pt": "Eu sei que é grato. Não estou pedindo que negue isso. Mas ainda tenho uma guilda cheia de gente dependendo de mim.",
+    "en": "I know you're grateful. I'm not asking you to deny it. But I still have a guild full of people depending on me."
   },
   {
     "id": "text.36421fb7abb9bf9f",
-    "pt": "Eu ouvi. E ainda preciso garantir o sustento da minha equipe.",
-    "en": "I heard you. And I still have to keep my own crew working."
+    "pt": "Eu ouvi. Agora me escute: minha equipe ainda precisa de trabalho. Vou procurar, mesmo que isso nos coloque no seu caminho.",
+    "en": "I heard you. Now hear me: my crew still needs work. I'll be looking for it, even when that puts us in your way."
   },
   {
     "id": "text.ddfe48da96515c05",
-    "pt": "Seu pagamento fica separado das contas da guilda. Quero que saiba quanto recebe pelo seu trabalho.",
-    "en": "We'll keep your pay separate from the guild's accounts. I want you to know what you're earning."
+    "pt": "Vamos separar seu pagamento das contas da guilda. Você precisa saber exatamente o que ganhou, sem ter de me pedir permissão para usar.",
+    "en": "We'll keep your pay separate from the guild's accounts. You ought to know exactly what you've earned, without having to ask me for permission to use it."
   },
   {
     "id": "text.8106bb5fc11ddefd",
-    "pt": "Cada conclusão vem com uma nota sobre o que ainda não sabemos. Elune conseguiu repetir o método sem precisar chamar Sevrak.",
-    "en": "Every conclusion includes a note on what we still don't know. Elune repeated the method without needing Sevrak there to explain it."
+    "pt": "Escolho a proposta de Sevrak. Cada conclusão indica o que ainda não sabemos. Elune conseguiu repetir o método sem chamar o mestre para explicar, então você também pode conferir nosso trabalho.",
+    "en": "I'm choosing Sevrak's proposal. Every conclusion says what we still don't know. Elune could repeat the method without calling him over to explain, so you can check our work too."
   },
   {
     "id": "text.f15590b4c59a921c",
-    "pt": "Mesmo um método bem explicado pode partir de um relato errado.",
-    "en": "Even a well-explained method can start from a bad account."
+    "pt": "Instruções bem arrumadas não fazem um relato errado virar verdade. E se a pessoa que passou a informação tiver se enganado?",
+    "en": "A tidy set of instructions won't make a bad account true. What if the person who gave you the information got it wrong?"
   },
   {
     "id": "text.3b774ea65789145a",
-    "pt": "Por isso anotamos de onde veio cada informação.",
-    "en": "That's why we recorded where each piece of information came from."
+    "pt": "É por isso que cada informação tem uma fonte ao lado. Se alguma coisa não bater, sabemos onde voltar para conferir.",
+    "en": "That's why each detail has a source beside it. If something doesn't fit, we know where to go back and check."
   },
   {
     "id": "text.c860e18525ecdc9d",
-    "pt": "Por isso deixamos as etapas escritas. Quem discordar pode conferir e apontar o erro.",
-    "en": "That's why we wrote out the steps. Anyone who disagrees can check them and point out the error."
+    "pt": "Então alguém pode seguir as etapas escritas e mostrar onde erramos. Não precisa aceitar só porque Sevrak ou eu dissemos.",
+    "en": "Then someone can follow the written steps and show us where it went wrong. They don't have to accept it just because Sevrak or I said so."
   },
   {
     "id": "text.dca055bd0466c030",
-    "pt": "Sevrak, mantenha esse registro durante a investigação. Mesmo quando os resultados contrariarem sua primeira hipótese.",
-    "en": "Sevrak, keep that record throughout the survey. Even when the results contradict your original hypothesis."
+    "pt": "Sevrak, quero esse registro mantido durante toda a investigação. Especialmente quando um resultado contrariar sua primeira explicação. Não pago a mais para manter coerência com um erro.",
+    "en": "Sevrak, I want that record maintained throughout the survey. Especially when a result contradicts your first explanation. I don't pay extra for consistency with a mistake."
   },
   {
     "id": "text.4bd80dc534779c7e",
-    "pt": "Seu pagamento e o dinheiro da investigação terão registros separados. Vamos começar os preparativos.",
-    "en": "Your pay and the survey funds will be recorded separately. Let us begin preparations."
+    "pt": "Vamos registrar seu pagamento separado do dinheiro da investigação. Você saberá qual parte é sua para usar. Agora temos preparativos a fazer.",
+    "en": "We'll record your pay separately from the survey funds. You'll know which is yours to use. Now, there are preparations to make."
   },
   {
     "id": "text.4455f08137cc12ab",
-    "pt": "Vou explicar primeiro o que não conseguimos verificar. Depois mostro como conferimos o restante.",
-    "en": "I'll explain what we couldn't verify first. Then show how we checked the rest."
+    "pt": "Antes de mostrar o resultado, quero apontar o que não conseguimos verificar. Depois explico como conferimos o restante.",
+    "en": "Before I show you the result, I want to point out what we couldn't verify. Then I'll take you through how we checked the rest."
   },
   {
     "id": "text.a96f5fc17d2534b3",
-    "pt": "Esses horários foram reservados para a nossa equipe. Ter um campeão não dá à quarta guilda o direito de tomar o treino dos outros.",
-    "en": "Those practice times were reserved for our team. Having a champion doesn't give the fourth guild the right to take everyone else's time."
+    "pt": "Esses horários estavam reservados para nossa equipe, Torvak. Ter um campeão não dá à quarta guilda o direito de tirar os outros da arena.",
+    "en": "Those hours were reserved for our team, Torvak. Having a champion doesn't give the fourth guild the right to push everyone else out of the arena."
   },
   {
     "id": "text.c8009f455ec41aa1",
-    "pt": "É a minha equipe que traz o público que paga por este coliseu. Querem usar a arena que sustentamos e ainda chamam nossa prioridade de abuso?",
-    "en": "My team brings in the crowds that pay for this coliseum. You want to use the arena we keep open, and you call our priority an abuse?"
+    "pt": "Minha equipe traz o público que mantém este coliseu aberto. Vocês querem treinar na arena que pagamos e chamam de abuso quando pedimos prioridade?",
+    "en": "My team brings in the crowds that keep this coliseum open. You want to train in the arena we pay for, then call it abuse when we ask for priority?"
   },
   {
     "id": "text.940d21a720e47e57",
-    "pt": "Quando toma o que já foi concedido a outra equipe, é abuso.",
-    "en": "When you take time already granted to another team, it is an abuse."
+    "pt": "Quando sua prioridade tira o horário já prometido a outra equipe, sim. É exatamente de abuso que estou chamando.",
+    "en": "When your priority takes away time already promised to another team, yes. That's exactly what I'm calling it."
   },
   {
     "id": "text.8d0450317f65dee0",
-    "pt": "Retire a acusação. Agora.",
-    "en": "Take that back. Now."
+    "pt": "Retire o que disse. Aqui, na frente de todos.",
+    "en": "Take that back. Here, in front of everyone."
   },
   {
     "id": "text.158ae5620a5f46b8",
-    "pt": "Não retiro.",
-    "en": "I won't."
+    "pt": "Não. Você ouviu muito bem.",
+    "en": "No. You heard me perfectly well."
   },
   {
     "id": "text.e976fee94a8b37a8",
-    "pt": "Rask, resolva os horários dessa guilda. Ou reveja se pode contar comigo no seu campeonato.",
-    "en": "Rask, deal with that guild's practice times. Or reconsider whether you can count on me for your tournament."
+    "pt": "Rask. Cancele os horários de treino dessa guilda. Se não consegue fazer isso, talvez deva ver como seu campeonato se sai sem mim.",
+    "en": "Rask. Cancel that guild's training hours. If you can't manage that, perhaps you should see how your tournament fares without me."
   },
   {
     "id": "text.077c1db12308c912",
-    "pt": "Vocês terão de treinar fora do coliseu. A inscrição no campeonato continua válida.",
-    "en": "You'll have to train outside the coliseum. Your tournament entry is still valid."
+    "pt": "Estou retirando seus horários de treino. Vocês terão de treinar fora do coliseu. A inscrição no campeonato continua válida... isso não vou retirar.",
+    "en": "I'm withdrawing your practice times. You'll have to train outside the coliseum. Your tournament entry remains valid... I won't remove that."
   },
   {
     "id": "text.1a15af8784c23e03",
-    "pt": "Você está desfazendo uma decisão que já tinha confirmado.",
-    "en": "You're going back on a decision you'd already confirmed."
+    "pt": "Você já tinha confirmado esses horários. Agora vai tirar porque ele mandou?",
+    "en": "You already confirmed those hours. Now you're taking them away because he told you to?"
   },
   {
     "id": "text.da1946c6af117bc5",
-    "pt": "Estou. Não vou fingir que houve um erro na lista.",
-    "en": "I am. I won't pretend it was a mistake on the list."
+    "pt": "Sim. Tem todo o direito de dizer que voltei atrás no que prometi. Não foi um erro na agenda.",
+    "en": "Yes. You have every right to say I went back on my word. This wasn't a mistake in the schedule."
   },
   {
     "id": "text.5fc0d472b1357f0b",
-    "pt": "E ele fica com a arena?",
-    "en": "And he gets the arena?"
+    "pt": "E ele fica com a arena? Ele ameaça ir embora, e nós perdemos nosso lugar?",
+    "en": "And he keeps the arena? He threatens to leave, and we lose our place?"
   },
   {
     "id": "text.e7005d5308e10feb",
-    "pt": "Minha equipe fica com o espaço de que precisa para treinar.",
-    "en": "My team keeps the space it needs to train."
+    "pt": "Minha equipe vai ter o espaço de que precisa. Fizemos o bastante por este coliseu para merecer isso.",
+    "en": "My team will have the space it needs. We've done enough for this coliseum to deserve that."
   },
   {
     "id": "text.89a7fdc518a0d27c",
-    "pt": "Vamos ter de organizar os treinos outra vez.",
-    "en": "We'll have to organize the training all over again."
+    "pt": "A gente já tinha organizado os treinos. Agora vai ter de encontrar espaço para tudo outra vez.",
+    "en": "We had the training arranged. Now we have to find room for it all over again."
   },
   {
     "id": "text.deb1f6e88ef726c6",
-    "pt": "Na sede. E ninguém vai perder descanso por causa disso.",
-    "en": "At our headquarters. And nobody loses their rest over this."
+    "pt": "Vamos abrir espaço na sede. E ninguém vai perder descanso para pagar pela birra dele.",
+    "en": "We'll make room at headquarters. And nobody's giving up their rest to pay for his tantrum."
   },
   {
     "id": "text.8645b71973915926",
-    "pt": "Na sede da guilda, Ghork ajuda a reorganizar os materiais leves e os horários de treino.",
-    "en": "Back at guild headquarters, Ghork helps rearrange the light equipment and training schedule."
+    "pt": "De volta à sede da guilda, Ghork leva os materiais mais leves enquanto reorganizam o espaço e os horários de treino.",
+    "en": "Back at guild headquarters, Ghork carries the lighter pieces of equipment while the training space and schedule are rearranged."
   },
   {
     "id": "text.a277e88e0a2069dd",
-    "pt": "O atendimento continua deste lado. O treino fica do outro. Se faltar tempo, fale comigo. Não corte seu descanso para fazer caber tudo.",
-    "en": "Treatment stays on this side. Training goes on the other. If there isn't enough time, tell me. Don't skip your rest to fit it all in."
+    "pt": "Atendimento deste lado, treino do outro. Se os horários não couberem, me procure. Não tente resolver cortando seu descanso, Ghork. Deu trabalho demais cuidar dessa perna.",
+    "en": "Care on this side, training over there. If the schedule doesn't fit, bring it to me. Don't try to solve this by skipping your rest, Ghork. We've worked too hard on that leg."
   },
   {
     "id": "text.56e4a63667b505c2",
-    "pt": "Vou ajudar no que conseguir. Se não der conta de algo, aviso.",
-    "en": "I'll help with what I can. If something's too much, I'll say so."
+    "pt": "Vou ajudar no que puder. E, se não der conta de alguma coisa, aviso antes que vire outro problema.",
+    "en": "I'll help where I can. And if I can't manage something, I'll tell you before it becomes another problem."
   },
   {
     "id": "text.237f973ae9ceb313",
-    "pt": "Rask, você nos prometeu esses horários. Se precisava da licença de Torvak para cumprir, devia ter avisado.",
-    "en": "Rask, you promised us those hours. If you needed Torvak's permission to keep your word, you should've said so."
+    "pt": "Rask, você nos deu esses horários. Se sua palavra só vale até Torvak reclamar, devia ter avisado antes de fazermos os planos.",
+    "en": "Rask, you gave us those hours. If your word only holds until Torvak objects, you should've warned us before we planned around it."
   },
   {
     "id": "text.095c777361b5a055",
-    "pt": "Quero que cumpram o combinado.",
-    "en": "I want the agreement honored."
+    "pt": "Estou pedindo que cumpra o acordo. Não devíamos ter de implorar por um horário que já era nosso.",
+    "en": "I'm asking you to keep the agreement. We shouldn't have to beg for time that was already ours."
   },
   {
     "id": "text.e69abea51d817d57",
-    "pt": "Não vou pedir desculpas por isso.",
-    "en": "I'm not apologizing for that."
+    "pt": "Não. Não vou pedir desculpas por esperar que cumpram a palavra.",
+    "en": "No. I won't apologize for expecting you to keep your word."
   },
   {
     "id": "text.7cec855e78ecbf6d",
-    "pt": "Vamos dividir o trabalho. Eu acompanho os treinos que prometi.",
-    "en": "We'll divide up the work. I'll supervise the sessions I promised to."
+    "pt": "Vamos dividir o trabalho na sede. Prometi acompanhar aqueles treinos e vou acompanhar. Vamos ver o que cabe em cada espaço.",
+    "en": "We'll split the work at headquarters. I promised to supervise those sessions, and I will. Let's see what we can fit where."
   },
   {
     "id": "text.fc753b6c5bbb3b66",
-    "pt": "Cabe menos gente aqui. Dividi os grupos e avisei Pirka dos horários. Desta vez você não vai descobrir que estou atrasado olhando para uma cadeira vazia.",
-    "en": "There's less room here. I've split the groups and told Pirka the times. This time you won't find out I'm late by staring at an empty chair."
+    "pt": "Aqui é mais apertado, então dividi os grupos. Pirka tem os horários, e você também vai ter. Desta vez não vai descobrir meu atraso esperando ao lado de uma cadeira vazia.",
+    "en": "It's tighter here, so I've split the groups. Pirka has the times, and so will you. This time you won't learn I'm late by sitting beside an empty chair."
   },
   {
     "id": "text.99cb37edd8af88c0",
-    "pt": "Nossa escola já tinha um horário. Que regra permite cancelá-lo para atender à preferência da quarta guilda?",
-    "en": "Our school already had a time slot. What rule allows you to cancel it to suit the fourth guild?"
+    "pt": "A escola recebeu esse horário. Gostaria de saber que regra permite cancelar porque a quarta guilda o prefere.",
+    "en": "The school was assigned that time slot. I'd like to know which rule allows you to revoke it because the fourth guild prefers it."
   },
   {
     "id": "text.d6f9190cb5f5b90a",
-    "pt": "Quero uma resposta à pergunta.",
-    "en": "I want an answer to the question."
+    "pt": "Uma descrição da sua popularidade não responde à pergunta. Que regra permite isso?",
+    "en": "An account of your popularity isn't an answer. Which rule allows it?"
   },
   {
     "id": "text.01869a44d0a82caa",
-    "pt": "Mantenho o que disse.",
-    "en": "I stand by what I said."
+    "pt": "Mantenho a pergunta. Não vejo motivo para retirá-la.",
+    "en": "I stand by the question. I see no reason to retract it."
   },
   {
     "id": "text.04e1bfd234729eef",
-    "pt": "Vamos adaptar os exercícios à escola. Primeiro, precisamos conferir o espaço.",
-    "en": "We will adapt the exercises to the school. First, we assess the space."
+    "pt": "Na escola, então. Vamos avaliar o espaço e adaptar os exercícios. Ainda temos um campeonato para preparar.",
+    "en": "At the school, then. We'll assess the space and adapt the exercises. We still have a tournament to prepare for."
   },
   {
     "id": "text.6d41cf5fefcf4bc7",
-    "pt": "Adaptei a sequência ao espaço disponível. Anote o que não funcionar. Concordar comigo e improvisar escondido depois não ajuda ninguém.",
-    "en": "I've adapted the sequence to the space available. Note anything that doesn't work. Agreeing with me and then improvising in secret helps no one."
+    "pt": "Adaptei a sequência a esta sala. Teste e registre o que falhar. Preciso que diga quando um exercício não funciona, não que concorde agora e troque escondido depois.",
+    "en": "I've adapted the sequence to this room. Try it, and record what fails. I need you to tell me when an exercise doesn't work, not agree now and quietly replace it later."
   },
   {
     "id": "text.2059358a43ba4931",
     "pt": "E00 · Um lugar perto do contador",
-    "en": "E00 · A Seat by the Storyteller"
+    "en": "E00 · A Place Beside the Storyteller"
   },
   {
     "id": "text.5e9598ca20573f3a",
@@ -1793,8 +1793,8 @@
   },
   {
     "id": "text.313dd8cf80ae7e18",
-    "pt": "O socorro",
-    "en": "The rescue"
+    "pt": "Sobreviver à chegada a Terminus",
+    "en": "Survive the arrival in Terminus"
   },
   {
     "id": "text.6a1fe67dde68776f",
@@ -1804,7 +1804,7 @@
   {
     "id": "text.1311b22162fb104f",
     "pt": "Combinar abrigo e trabalho",
-    "en": "Agree on work and lodging"
+    "en": "Arrange work and a place to stay"
   },
   {
     "id": "text.77beb2b7b6005957",
@@ -1813,8 +1813,8 @@
   },
   {
     "id": "text.e5279859df040dd9",
-    "pt": "E01 · O mesmo problema sobre a mesa",
-    "en": "E01 · The Same Problem on the Table"
+    "pt": "E01 · Dois mapas, um contrato",
+    "en": "E01 · Two Maps, One Contract"
   },
   {
     "id": "text.4d2188dc177be4d1",
@@ -1828,8 +1828,8 @@
   },
   {
     "id": "text.ae2032b97a96cca9",
-    "pt": "Conversar sobre o campeão",
-    "en": "Ask about the champion"
+    "pt": "Perguntar a Virmura sobre o campeão",
+    "en": "Ask Virmura about the champion"
   },
   {
     "id": "text.54ef9bda0b9aa557",
@@ -1848,8 +1848,8 @@
   },
   {
     "id": "text.5c38dc4ecf7025cc",
-    "pt": "E08 · Aprender a escapar do golpe",
-    "en": "E08 · Learning to Get Out of the Way"
+    "pt": "E08 · Aprender a recuar",
+    "en": "E08 · Learning When to Step Back"
   },
   {
     "id": "text.e599576a424a378f",
@@ -1859,7 +1859,7 @@
   {
     "id": "text.d2f5f4c8d78f6fed",
     "pt": "Praticar movimentos e recuo",
-    "en": "Practice movement and retreat"
+    "en": "Practice moving and retreating"
   },
   {
     "id": "text.cd8386e4264e2e76",
@@ -1868,8 +1868,8 @@
   },
   {
     "id": "text.768dc3b909544cc5",
-    "pt": "Consultar o registro e receber a cópia sem nomes",
-    "en": "Read the report and collect the anonymous copy"
+    "pt": "Consultar o registro de resgate e receber a cópia sem nomes",
+    "en": "Read the rescue report and collect a copy without names"
   },
   {
     "id": "text.1fa60a53cb79d1f0",
@@ -1883,13 +1883,13 @@
   },
   {
     "id": "text.872eeee448f37f33",
-    "pt": "Q-A3 · Quem fica sem atendimento",
-    "en": "Q-A3 · Who Gets Left Without Care"
+    "pt": "Q-A3 · Alguém precisa ficar",
+    "en": "Q-A3 · Someone Has to Stay"
   },
   {
     "id": "text.a2c2462482650364",
-    "pt": "Preparar a escala e receber o pedido",
-    "en": "Prepare the roster and collect the request"
+    "pt": "Preparar a escala e receber o pedido para Durn",
+    "en": "Prepare the duty roster and collect the request for Durn"
   },
   {
     "id": "text.bd4272d1635a31e2",
@@ -1908,8 +1908,8 @@
   },
   {
     "id": "text.e5ac7249d28528ad",
-    "pt": "Testar a passagem da maca com a equipe",
-    "en": "Practice moving the stretcher through with the crew"
+    "pt": "Orientar a equipe no teste de passagem da maca",
+    "en": "Guide the crew through the stretcher test"
   },
   {
     "id": "text.7cd1e7f078cdba1c",
@@ -1923,8 +1923,8 @@
   },
   {
     "id": "text.59f39497494d5144",
-    "pt": "Receber a lista de Virmura",
-    "en": "Collect Virmura's list"
+    "pt": "Receber a lista de materiais de Virmura",
+    "en": "Collect Virmura's supply list"
   },
   {
     "id": "text.87c66817303c9f7c",
@@ -1933,8 +1933,8 @@
   },
   {
     "id": "text.c3fddc4e259884ce",
-    "pt": "Sair do corredor",
-    "en": "Get out of the passage"
+    "pt": "Escapar do corredor bloqueado",
+    "en": "Escape the blocked passage"
   },
   {
     "id": "text.f9ce90d0f0f8f405",
@@ -1943,13 +1943,13 @@
   },
   {
     "id": "text.c857d3047947af09",
-    "pt": "Q-B2 · A carga que chegou antes",
-    "en": "Q-B2 · The Cargo That Arrived First"
+    "pt": "Q-B2 · Onde a carroça parou",
+    "en": "Q-B2 · Where the Cart Stopped"
   },
   {
     "id": "text.a5d3c7e4513f841e",
-    "pt": "Investigar o percurso e receber a cópia de Pirka",
-    "en": "Ask about the route and collect Pirka's copy"
+    "pt": "Perguntar a Pirka sobre o percurso e receber a cópia",
+    "en": "Ask Pirka about the route and collect her copy"
   },
   {
     "id": "text.33c69f982ff7bd95",
@@ -1973,8 +1973,8 @@
   },
   {
     "id": "text.c1d5ded5085bced1",
-    "pt": "Recolher o fardo após a vitória",
-    "en": "Collect the bundle after winning"
+    "pt": "Recolher o fardo após vencer a luta",
+    "en": "Collect the bundle after winning the fight"
   },
   {
     "id": "text.ba0befd0290fd19d",
@@ -1998,8 +1998,8 @@
   },
   {
     "id": "text.eca83f750460274e",
-    "pt": "Intervir no treino",
-    "en": "Intervene in the training session"
+    "pt": "Ajudar o iniciante durante o treino",
+    "en": "Help the beginner during training"
   },
   {
     "id": "text.9fc4d31a9d54f9a6",
@@ -2013,8 +2013,8 @@
   },
   {
     "id": "text.9323eced3f5f5fe1",
-    "pt": "Preparar a comparação para Elune",
-    "en": "Prepare the comparison for Elune"
+    "pt": "Preparar a comparação dos mapas para Elune",
+    "en": "Prepare the map comparison for Elune"
   },
   {
     "id": "text.93814ae73a179f84",
@@ -2028,7 +2028,7 @@
   },
   {
     "id": "text.ae79d08fcaa52360",
-    "pt": "Entregar a revisão a Sevrak",
+    "pt": "Entregar a cópia revisada a Sevrak",
     "en": "Give the revised copy to Sevrak"
   },
   {
@@ -2038,13 +2038,13 @@
   },
   {
     "id": "text.62bfb78a99b9c907",
-    "pt": "Ouvir o iniciante",
-    "en": "Listen to the beginner"
+    "pt": "Ouvir o que aconteceu com o estojo de treino",
+    "en": "Hear what happened to the training case"
   },
   {
     "id": "text.55e2fb5499f0bb41",
-    "pt": "Cobrar com Rask a devolução do estojo",
-    "en": "Ask Rask to secure the case's return"
+    "pt": "Falar com Rask e exigir a devolução do estojo",
+    "en": "Speak to Rask and demand the case's return"
   },
   {
     "id": "text.0f56366072622c5d",
@@ -2053,8 +2053,8 @@
   },
   {
     "id": "text.e92263ede68423ae",
-    "pt": "Devolver o estojo e revisar a nota sobre os limites",
-    "en": "Return the case and revise the note on limitations"
+    "pt": "Devolver o estojo e revisar a ressalva do relatório",
+    "en": "Return the case and revise the report's caveat"
   },
   {
     "id": "text.936c8306e1983115",
@@ -2084,7 +2084,7 @@
   {
     "id": "text.ecc88d900db30a66",
     "pt": "Confirmar adesão e defender a estratégia",
-    "en": "Confirm your membership and defend the strategy"
+    "en": "Commit to the guild and defend its strategy"
   },
   {
     "id": "text.ab1f28aedad7a316",
@@ -2108,158 +2108,158 @@
   },
   {
     "id": "text.2db91edaff4e78e9",
-    "pt": "Contestar o cancelamento",
-    "en": "Challenge the cancellation"
+    "pt": "Contestar a retirada dos horários de treino",
+    "en": "Challenge the loss of your training hours"
   },
   {
     "id": "text.cd81a05d0d177501",
-    "pt": "Reorganizar os treinos",
-    "en": "Reorganize training"
+    "pt": "Reorganizar os treinos na sede da guilda",
+    "en": "Reorganize training at guild headquarters"
   },
   {
     "id": "text.283f9cab7bc29e51",
-    "pt": "Este suporte fica de reserva. Se levarmos tudo para avançar, o que sobra para tirar alguém de lá?",
-    "en": "This brace stays in reserve. If we use everything to push farther in, what do we have left to get someone out?"
+    "pt": "Esse esteio fica aqui. Se levarmos todos lá para dentro, o que sobra para trazer alguém de volta?",
+    "en": "Leave that brace here. If we carry every last one farther in, what do we use to bring someone back?"
   },
   {
     "id": "text.4dad2f636033195f",
-    "pt": "E não adianta ter suporte sem saber montar. É preciso saber onde a peça aguenta o peso.",
-    "en": "And a brace is no use if you can't set it properly. You need to know where it'll hold the weight."
+    "pt": "Primeiro, aprendam a montar. Um esteio no lugar errado não sustenta grande coisa.",
+    "en": "First, make sure you can set it. A brace in the wrong place won't hold up much of anything."
   },
   {
     "id": "text.770e1d8174233726",
-    "pt": "Quanto disso sai do pagamento?",
-    "en": "How much of our pay goes into this?"
+    "pt": "E tudo isso sai do nosso pagamento? Quanto, mais ou menos?",
+    "en": "And all this comes out of our pay? How much are we talking?"
   },
   {
     "id": "text.9b267dbf55ebe9be",
-    "pt": "Mais do que no plano de Zagra. Vamos pagar inspeções, apoios e gente pronta para ajudar na retirada. Sobra menos para o torneio.",
-    "en": "More than in Zagra's plan. Inspections, bracing, people ready to help us get out. That leaves less for the tournament."
+    "pt": "Mais do que a Zagra está pedindo. Vamos pagar pelas inspeções, pelos esteios, por gente pronta para ajudar na saída. Vai sobrar menos para o campeonato.",
+    "en": "More than Zagra's asking. We pay for inspections, bracing, people ready to help us out. You won't have as much left for the tournament."
   },
   {
     "id": "text.117cbfa04668e9ea",
-    "pt": "O que conseguimos fazer com essa reserva?",
-    "en": "What does that reserve let us do?"
+    "pt": "Digamos que alguma coisa dê errado. O que essa reserva permite fazer?",
+    "en": "Say something goes wrong. What does that reserve actually let us do?"
   },
   {
     "id": "text.1bced087cd8b75f7",
-    "pt": "Parar e organizar a volta com gente descansada, sem tirar ninguém do transporte dos feridos. Ainda pode haver acidentes.",
-    "en": "Stop and plan the way back with people who aren't already carrying the wounded. Accidents can still happen."
+    "pt": "Parar. Preparar a volta. Ter alguém livre para ajudar, em vez de todo mundo ocupado carregando os feridos. Não nos torna invulneráveis.",
+    "en": "Stop. Work out a way back. Have someone free to help, instead of every pair of hands carrying the injured. It doesn't make us untouchable."
   },
   {
     "id": "text.c63bf49f339c18b9",
-    "pt": "E se não precisarmos usar?",
-    "en": "What if we never need it?"
+    "pt": "E se a gente sair sem usar nada disso?",
+    "en": "And if we come out without touching any of it?"
   },
   {
     "id": "text.095d35496d8bdb82",
-    "pt": "Ainda teremos pago pelo material e pela equipe. Preciso que você aceite esse custo antes de entrarmos.",
-    "en": "We still pay for the supplies and the crew. I need you to accept that before we go in."
+    "pt": "O material continua custando. O tempo da equipe também. Prefiro que você reclame do custo aqui em cima. Pior seria só descobrir isso lá embaixo.",
+    "en": "The supplies still cost money. So does the crew's time. I'd rather hear you grumble about the cost up here than have you discover it down there."
   },
   {
     "id": "text.e45323bbbf15a356",
-    "pt": "Olhe o encaixe. Confira a marca e anote o resultado do teste. Deixe o peso comigo.",
-    "en": "Look at the joint. Check the mark and write down how the test goes. Leave the weight to me."
+    "pt": "Chegue mais perto. Está vendo esta junção? Confira com a marca e anote o que acontecer no teste. O peso fica comigo.",
+    "en": "Come closer. See this joint? Check it against the mark, then write down what happens in the test. I'll handle the weight."
   },
   {
     "id": "text.ce4fa5b603f857d8",
-    "pt": "Pelo menos agora sei pelo que estamos pagando.",
-    "en": "At least now I know what we're paying for."
+    "pt": "Está bem. Fica mais fácil entender a conta quando vejo o que estamos pagando.",
+    "en": "All right. It's a lot easier to understand the bill when I can see what it's buying."
   },
   {
     "id": "text.9b3d8d25eac0608f",
-    "pt": "É um começo. Ouça Zagra antes de decidir.",
-    "en": "It's a start. Hear Zagra out before you decide."
+    "pt": "Ótimo. Agora deixe a Zagra mostrar a dela. Você ainda não escolheu.",
+    "en": "Good. Now let Zagra show you hers. You haven't chosen yet."
   },
   {
     "id": "text.97822fc680e47688",
-    "pt": "Levamos estas cargas. A reserva pesada fica para trás neste primeiro reconhecimento. Vamos examinar um trecho curto e voltar.",
-    "en": "These loads come with us. The heavy reserve stays behind for this first survey. We check a short stretch and come back."
+    "pt": "Estas cargas vão conosco. A reserva pesada fica aqui em cima. Levantamos um trecho curto e voltamos. Esse é o trabalho que estou propondo.",
+    "en": "These loads come with us. The heavy reserve stays up here. We survey a short stretch, then come back. That's the job I'm offering."
   },
   {
     "id": "text.52816ecf8b142e87",
-    "pt": "Menos carga barateia o transporte. Mas minha carroça continua sem caber numa galeria.",
-    "en": "A lighter load makes hauling cheaper. Still won't fit my cart down a mine tunnel."
+    "pt": "Menos peso, frete mais barato. Só lembrem: onde começa o túnel, termina o caminho da minha carroça.",
+    "en": "Less weight, cheaper haul. Just remember: my cart stops where the tunnel starts."
   },
   {
     "id": "text.99ff557ed0375375",
-    "pt": "Então, se alguém se machucar lá dentro...",
-    "en": "So if someone gets hurt down there..."
+    "pt": "E se alguém se machucar depois desse ponto... a gente traz de volta por conta própria?",
+    "en": "And if someone's hurt beyond that point... we carry them back ourselves?"
   },
   {
     "id": "text.5d6597a6e2f4fb17",
-    "pt": "Teremos menos meios de tirar essa pessoa de lá. Esse é o risco. Em troca, sobra mais do pagamento para nossa preparação.",
-    "en": "We'll have less to get them out with. That's the risk. In return, we keep more of our pay for training."
+    "pt": "Com menos equipamento para ajudar. Sim. Não vou enfeitar isso. Em troca, sobraria mais do pagamento para os treinos.",
+    "en": "With less equipment to help us. Yes. I won't dress that up. But we'd keep more of the pay for training."
   },
   {
     "id": "text.c60557dfe51daec3",
-    "pt": "O que faria vocês voltarem antes do ponto combinado?",
-    "en": "What would make you turn back early?"
+    "pt": "O que faria você encerrar o trabalho antes de terminar?",
+    "en": "What would make you call it off before we're done?"
   },
   {
     "id": "text.6a834d4d4b7a4791",
-    "pt": "Sinais de instabilidade, perda das referências do caminho ou alguém sem condições de continuar. Não vou prometer uma saída que não posso encontrar.",
-    "en": "Signs of unstable rock, losing our bearings, someone who can't keep going. I won't promise a way out I can't find."
+    "pt": "Rocha instável. Perder o caminho. Alguém sem condições de continuar. Se eu não enxergar uma saída, não levo vocês mais para dentro.",
+    "en": "Loose rock. Losing the route. Someone struggling to keep up. If I can't see a way out, I'm not taking you farther in."
   },
   {
     "id": "text.a96058d91d4fdb13",
-    "pt": "O que você se recusa a cortar?",
-    "en": "What won't you cut?"
+    "pt": "Tem alguma coisa de que você não abre mão para economizar?",
+    "en": "Is there anything you won't leave behind to save money?"
   },
   {
     "id": "text.3e64daf0183557c9",
-    "pt": "Marcas para achar a saída, comunicação entre nós e um limite de carga que todos consigam carregar. Sem isso, o plano não funciona.",
-    "en": "Markers to find our way out, a way to keep in touch, and loads everyone can carry. Cut those and the plan falls apart."
+    "pt": "Marcas para encontrar a saída. Um jeito de manter contato. Cargas que cada um consiga carregar. Sem isso, já não é o trabalho que propus.",
+    "en": "Route markers. A way to stay in touch. Loads people can actually carry. Lose any of those and we're no longer doing the job I proposed."
   },
   {
     "id": "text.92d191256785cf65",
-    "pt": "Você e Darvek já trabalharam juntos.",
-    "en": "You and Darvek used to work together."
+    "pt": "Você e o Darvek já trabalharam na mesma equipe, não foi?",
+    "en": "You and Darvek used to be on the same crew, didn't you?"
   },
   {
     "id": "text.f681412850f784e7",
-    "pt": "Sim. Ele leva uma reserva maior. Eu limito o serviço para precisar de menos. Nós já discutíamos isso muito antes de você chegar.",
-    "en": "We did. He packs a bigger reserve. I keep the job small enough to need less. We've been arguing about this since long before you showed up."
+    "pt": "Já. Ele leva o suficiente para enfrentar um problema maior. Eu aceito um trabalho menor. Pode acreditar: essa discussão é mais velha que o seu contrato.",
+    "en": "We did. He brings enough to handle a bigger problem. I take a smaller job. Believe me, this argument's older than your contract."
   },
   {
     "id": "text.f5adc9af45cb1191",
-    "pt": "Ouviu os dois. Que risco vai aceitar? E como vai explicar isso à equipe?",
-    "en": "You've heard them both. What risk will you accept? And how will you explain it to the crew?"
+    "pt": "Você ouviu os dois planos. Agora escolha um que consiga defender quando a equipe perguntar por quê.",
+    "en": "You've heard both plans. Now choose one you can stand behind when your crew asks why."
   },
   {
     "id": "text.ab3f295bd27bdcf8",
-    "pt": "A escolha abre duas missões da rota escolhida e fecha a outra rota. A equipe que ficar de fora seguirá com outra guilda.",
-    "en": "Your choice opens two missions on the selected route and closes the other. The team you don't choose will join another guild."
+    "pt": "Esta escolha abre duas missões na rota selecionada e fecha a outra. A equipe que você não escolher trabalhará com outra guilda.",
+    "en": "This choice opens two missions on the selected route and closes the other route. The team you do not choose will work with another guild."
   },
   {
     "id": "text.0aaeb65ad713ba1c",
-    "pt": "Quero deixar a reserva de resgate pronta antes de entrar. Aceito ficar com menos dinheiro depois.",
-    "en": "I want the rescue reserve ready before we go in. I'll accept having less money afterward."
+    "pt": "Vamos com o Darvek. Quero essa reserva pronta antes de alguém entrar. Vou ter que me virar com menos para os treinos.",
+    "en": "We'll go with Darvek. I want that reserve ready before anyone goes in. I'll make do with less for training."
   },
   {
     "id": "text.2f3954764dc9c2dd",
-    "pt": "Então começamos testando os apoios.",
-    "en": "Then we start by testing the braces."
+    "pt": "Está bem. Venha ajudar a testar os esteios.",
+    "en": "All right. Come help us test the braces."
   },
   {
     "id": "text.61541a018c57e417",
-    "pt": "Você ouviu os limites do meu plano. Ainda acha que eu só entro torcendo para ninguém se machucar?",
-    "en": "You heard the limits of my plan. Do you still think I just go in hoping no one gets hurt?"
+    "pt": "Você ouviu até onde eu iria. Ainda acha que eu arrastaria minha equipe para dentro e torceria para dar certo?",
+    "en": "You heard where I'd draw the line. Do you still think I'd just drag my crew in and hope for the best?"
   },
   {
     "id": "text.66adc6114ef43f74",
-    "pt": "Vamos com Zagra e ficamos no reconhecimento limitado. Quero guardar recursos, mas não vou prometer mais do que podemos investigar.",
-    "en": "We'll take Zagra's crew and keep the survey limited. I want resources left over, but I won't promise more than we can check."
+    "pt": "Vamos com a Zagra. Um levantamento curto, com dinheiro sobrando para os treinos. Se não der para verificar um trecho com o que levamos, deixamos esse trecho para depois.",
+    "en": "We'll go with Zagra. A short survey, with money left for training. If we can't check a stretch with what we've brought, we leave it alone."
   },
   {
     "id": "text.92bd30aa1c697cba",
-    "pt": "Com esses limites por escrito, podemos preparar a carga.",
-    "en": "Put those limits in writing, and we can pack."
+    "pt": "Então ponha isso no plano. Quero que todos ouçam a mesma coisa antes de arrumarmos a carga.",
+    "en": "Then put that in the plan. I want everyone to hear the same thing before we pack."
   },
   {
     "id": "text.96e76fd4d4957fca",
-    "pt": "E se precisarem de mais do que levaram para sair de lá? Minha reserva já virou exagero?",
-    "en": "And if getting out takes more than you brought? Is my reserve already too much to ask?"
+    "pt": "E se a volta exigir mais de vocês do que a ida? A minha reserva ainda vai parecer exagero?",
+    "en": "And if the way back asks more of you than the way in? Is my reserve still too much to carry?"
   },
   {
     "id": "text.89e786c79b7338fa",
@@ -2268,18 +2268,18 @@
   },
   {
     "id": "text.7c2a6941bfdfe35d",
-    "pt": "Ouvi. Para este trabalho, prefiro ter mais recursos para a volta.",
-    "en": "I heard you. For this job, I'd rather have more help getting back."
+    "pt": "Eu ouvi. Mesmo assim, quero mais ajuda preparada se a volta der errado.",
+    "en": "I heard you. I still want more help ready if getting back goes wrong."
   },
   {
     "id": "text.fd1dbe54d2af883f",
-    "pt": "Não acho que você abandone os seus. Só quero uma margem maior de segurança.",
-    "en": "I don't think you abandon your people. I just want more room for things to go wrong."
+    "pt": "Não acho que você abandonaria ninguém. Eu só dormiria melhor sabendo que temos mais recursos à mão.",
+    "en": "I don't think you'd abandon anyone. I'd just sleep better knowing we had more to work with."
   },
   {
     "id": "text.968aefb63fc218fc",
-    "pt": "Minha equipe ainda vai mostrar o que sabe fazer. Com ou sem você.",
-    "en": "My crew will show what we can do. With or without you."
+    "pt": "Está bem. Minha equipe sabe fazer esse trabalho. Vamos encontrar alguém disposto a vir conosco.",
+    "en": "Fine. My crew can do this job. We'll find someone willing to come with us."
   },
   {
     "id": "text.c57c60cb0a0be25c",
@@ -2288,1303 +2288,1303 @@
   },
   {
     "id": "text.4e2f56a9bcc11ac5",
-    "pt": "Não estou chamando você de medroso. Estou escolhendo fazer um trabalho menor.",
-    "en": "I'm not calling you a coward. I'm choosing a smaller job."
+    "pt": "Não estou chamando você de covarde, Darvek. Estou dizendo que vamos parar antes.",
+    "en": "I'm not calling you a coward, Darvek. I'm saying we'll stop sooner."
   },
   {
     "id": "text.1554c6bf10f7feb7",
-    "pt": "Espero que respeite esse limite lá dentro. Vou procurar quem queira trabalhar com a minha equipe.",
-    "en": "I hope you respect that limit once you're down there. I'll find someone who wants to work with my crew."
+    "pt": "Então lembre disso quando faltar só mais uma curva para verificar. Vou encontrar trabalho para minha equipe.",
+    "en": "Then remember that when there's just one more bend to check. I'll find work for my crew."
   },
   {
     "id": "text.04b2e5742d5b0ded",
-    "pt": "Conte o que você conferiu, não só qual conversa agradou mais.",
-    "en": "Tell me what you checked, not just whose pitch you liked."
+    "pt": "Antes de me contar quem convenceu você, conte o que foi conferir por conta própria.",
+    "en": "Before you tell me whose plan won you over, tell me what you actually went and checked."
   },
   {
     "id": "text.5d3141cbf6a400fa",
-    "pt": "Escolha o método adequado ao trabalho. Depois, terá de responder pelo resultado.",
-    "en": "Choose the method that suits the work. You'll answer for the result afterward."
+    "pt": "Uma proposta convincente não basta. Escolha um método que consiga justificar quando tivermos o resultado.",
+    "en": "A persuasive pitch isn't enough. Choose a method you can justify when the results come in."
   },
   {
     "id": "text.33691a29d2df4d76",
-    "pt": "As peças estão prontas. Quem vai montar?",
-    "en": "The parts are ready. Who's putting them together?"
+    "pt": "As peças estão prontas. Quem vai montar? Quero mostrar as junções a essa pessoa.",
+    "en": "The parts are ready. Who's assembling them? I want to show them the joints."
   },
   {
     "id": "text.afd45d141f42284a",
-    "pt": "Minha equipe. Ghork confere a lista e o caminho até o ponto de espera.",
-    "en": "My crew. Ghork checks the list and the route to the waiting point."
+    "pt": "Minha equipe monta. Ghork, confira a lista e o caminho até o ponto de espera. Veja se conseguimos chegar lá com tudo isso.",
+    "en": "My crew will. Ghork, check the list and the route to the waiting point. Make sure we can reach it with all this."
   },
   {
     "id": "text.1f980865b54b3a8a",
-    "pt": "Posso acompanhar o teste.",
-    "en": "I can stay for the test."
+    "pt": "Quero ficar para o teste. Fui eu que disse que precisávamos disso.",
+    "en": "I'd like to stay for the test. I'm the one who said we needed this."
   },
   {
     "id": "text.d47df433d437fe86",
-    "pt": "Fique. Se eu não explicar alguma coisa direito, não dê essa parte por conferida.",
-    "en": "Stay. If I can't explain something properly, don't sign off on it."
+    "pt": "Então fique. E pergunte. Não aprove nada por vergonha de dizer que não entendeu minha explicação.",
+    "en": "Stay, then. And ask. Don't approve something because you're embarrassed to tell me you don't understand it."
   },
   {
     "id": "text.d4d259311b45efb0",
-    "pt": "Entregar os apoios e testar a retirada",
+    "pt": "Entregar os esteios e testar a saída",
     "en": "Deliver the braces and test the way out"
   },
   {
     "id": "text.55aea37a742b2aec",
-    "pt": "Quero ver quem pega a carga se alguém precisar parar.",
-    "en": "I want to see who takes the load if someone has to stop."
+    "pt": "Digamos que um de nós precise parar. Quem fica com a carga dessa pessoa?",
+    "en": "Let's say one of us has to stop. Who takes their load?"
   },
   {
     "id": "text.27c70a10edcca64e",
-    "pt": "Troquem de posição. Vamos ver se ainda conseguem voltar.",
-    "en": "Switch places. Let's see if you can still get back."
+    "pt": "Boa pergunta. Troquem de lugar, pessoal. Vamos tentar a volta desse jeito.",
+    "en": "Good. Switch places, everyone. Try the return trip like that."
   },
   {
     "id": "text.0d76692c1a3ebb9f",
-    "pt": "Quero ver se conseguimos alcançar os apoios com a equipe passando.",
-    "en": "I want to see if we can reach the braces while the crew moves through."
+    "pt": "Com todo mundo passando por aqui, ainda dá para alcançar os esteios?",
+    "en": "Can we still reach the braces with everyone moving through here?"
   },
   {
     "id": "text.817a6b48bf540f51",
-    "pt": "Boa pergunta. Liberem o corredor antes de tentar de novo.",
-    "en": "Good question. Clear the passage before we try again."
+    "pt": "Assim, não. Desobstruam a passagem. Vamos tentar de novo.",
+    "en": "Not like this. Clear that passage. We'll try again."
   },
   {
     "id": "text.7b7501744b2f6c52",
-    "pt": "Pronto. Aqui está o custo da reserva, separado do material que vamos usar na investigação.",
-    "en": "Ready. Here's the cost of the reserve, separate from the supplies we'll use on the survey."
+    "pt": "Agora sim. Aqui está o custo da reserva, separado do material que vamos usar no levantamento.",
+    "en": "That'll do. Here's what the reserve cost. I've kept it separate from what we'll use on the survey."
   },
   {
     "id": "text.baa87d9c76f8a917",
-    "pt": "Isso já levou boa parte do que eu queria gastar na preparação.",
-    "en": "That's already taken a good chunk of what I wanted to spend on training."
+    "pt": "Isso dá... um bom número de treinos, empilhados na forma de esteios.",
+    "en": "That's... quite a few training sessions sitting in a pile of braces."
   },
   {
     "id": "text.c1f3025cf2adf455",
-    "pt": "Levou. Pode conferir cada gasto. Não vou fingir que isso saiu de graça.",
-    "en": "It has. You can check every expense. I won't pretend any of this was free."
+    "pt": "Dá mesmo. Confira as contas comigo se quiser. Pedi que você abrisse mão disso; não vou esconder o preço.",
+    "en": "It does. Go through the figures with me if you want. I asked you to give that up; I won't hide the price."
   },
   {
     "id": "text.d93cf2d0d446ce0b",
-    "pt": "A lista diminuiu. O risco não aparece na balança; confiram tudo antes de subir.",
-    "en": "Shorter list. Risk doesn't show up on the scales, so check everything before you climb aboard."
+    "pt": "Lista curta. Confiram mesmo assim. O que esquecerem aqui não vai ficar mais perto depois que sairmos.",
+    "en": "Short list. Check it anyway. Whatever you forgot won't get any closer once we're on the road."
   },
   {
     "id": "text.c08b64c346f99f0f",
-    "pt": "Ghork, diga o que não vamos fazer lá dentro. Quero ter certeza de que entendemos o serviço do mesmo jeito.",
-    "en": "Ghork, tell me what we won't do down there. I want to know we're agreeing to the same job."
+    "pt": "Ghork. Antes de carregar, diga onde esse trabalho termina. Não quero que cada um esteja concordando com uma coisa diferente.",
+    "en": "Ghork. Before we load up, tell me where this job ends. I don't want us agreeing to two different things."
   },
   {
     "id": "text.e755e69e9096c4fe",
-    "pt": "Não vamos entrar num trecho que exija uma operação maior.",
-    "en": "We won't enter a stretch that needs a bigger operation."
+    "pt": "Se um trecho exigir mais equipamento ou gente do que levamos, não entramos nele.",
+    "en": "If a stretch needs more equipment or people than we brought, we don't enter it."
   },
   {
     "id": "text.b0489097437e1b02",
-    "pt": "Certo. Esse limite vai constar no relatório.",
-    "en": "Right. That limit goes in the report."
+    "pt": "Isso. Ponha no relatório também. Ninguém vai chamar de serviço incompleto porque resolveu querer mais depois.",
+    "en": "Exactly. Put it in the report too. No one gets to call it unfinished work because they wanted more afterward."
   },
   {
     "id": "text.7835fdb0d63305d0",
-    "pt": "Guardar dinheiro não nos dá a reserva de Darvek.",
-    "en": "Keeping the money doesn't give us Darvek's reserve."
+    "pt": "E o dinheiro que vamos guardar não vai ajudar a carregar alguém para fora. Não teremos a reserva do Darvek.",
+    "en": "And the money we're saving won't help us haul someone out. We won't have Darvek's reserve."
   },
   {
     "id": "text.1a1ce8353eaedd4b",
-    "pt": "Isso. Se precisarmos dela, encerramos o reconhecimento.",
-    "en": "Exactly. If we need it, the survey ends there."
+    "pt": "Certo. Se o trabalho exigir essa reserva, nosso serviço termina ali.",
+    "en": "Right. If that's what the job needs, we're done for the day."
   },
   {
     "id": "text.ca5a89b37716b37a",
-    "pt": "E se alguém tiver vergonha de pedir para voltar?",
-    "en": "What if someone's too embarrassed to ask to turn back?"
+    "pt": "E se alguém quiser voltar, mas não quiser ser a pessoa que pede?",
+    "en": "What if someone wants to turn back but doesn't want to be the one who says it?"
   },
   {
     "id": "text.dfb98a69c0d06d6e",
-    "pt": "Eu pergunto antes de avançarmos. Você também pode falar. Se eu apressar alguém, me avise.",
-    "en": "I'll ask before we move on. You can speak up too. If I rush anyone, call me on it."
+    "pt": "Vou perguntar antes de avançar. Você também pode perguntar. E, se for eu quem estiver apressando os outros, espero que me interrompa.",
+    "en": "I'll ask before we move on. You can ask too. And if I'm the one rushing people, I expect you to stop me."
   },
   {
     "id": "text.c1f6d24b190960bc",
-    "pt": "Combinado. Não quero descobrir depois que todo mundo foi sem querer.",
-    "en": "Deal. I don't want to find out afterward that nobody wanted to go."
+    "pt": "Isso eu consigo. Prefiro uma conversa desconfortável aqui a descobrir lá embaixo que ninguém queria ir.",
+    "en": "I can do that. Better an awkward conversation up here than finding out down there that nobody wanted to go."
   },
   {
     "id": "text.53428094f0e7ec58",
-    "pt": "Vamos parar aqui. Preciso conferir esse apoio antes de continuar.",
-    "en": "We stop here. I need to check that support before we go on."
+    "pt": "Parem aqui. Não gostei daquele suporte. Vamos conferir antes de alguém avançar.",
+    "en": "Hold here. I don't like that support. We check it before anyone goes farther."
   },
   {
     "id": "text.06187f851e1dbb94",
-    "pt": "Depois de toda aquela preparação, ainda precisamos parar?",
-    "en": "After all that preparation, we still have to stop?"
+    "pt": "Já vamos parar? Depois de todo o tempo que passamos preparando a entrada?",
+    "en": "We're stopping already? After all the time we spent getting ready?"
   },
   {
     "id": "text.1fc2b3db95b71efe",
-    "pt": "Nós nos preparamos para poder parar e organizar a saída. A rocha ainda pode ceder.",
-    "en": "We prepared so we could stop and plan the way out. The rock can still give way."
+    "pt": "Foi para isso que nos preparamos. Para poder parar e organizar a saída. Aqueles esteios não mudam a rocha.",
+    "en": "That's why we got ready. So we could stop and work out how to leave. All those braces don't change the rock."
   },
   {
     "id": "text.c5cc7fea716d772a",
-    "pt": "Vou anotar o que vimos enquanto vocês conferem.",
-    "en": "I'll write down what we've seen while you check."
+    "pt": "Está bem. Enquanto você verifica, vou anotar o que vimos.",
+    "en": "All right. I'll write up what we saw while you check it."
   },
   {
     "id": "text.8949de4be5680af7",
-    "pt": "Marque até onde chegamos. Do restante, ainda não sabemos.",
-    "en": "Mark how far we got. We don't know about the rest yet."
+    "pt": "Marque onde paramos. Deixe o resto em branco; ainda não vimos o que há lá.",
+    "en": "Mark where we stopped. Leave the rest blank; we haven't seen it."
   },
   {
     "id": "text.f46ee0a6a691132c",
-    "pt": "Mostre o que precisa conferir. Quero saber explicar o atraso.",
-    "en": "Show me what needs checking. I want to be able to explain the delay."
+    "pt": "Mostre o que está preocupando você. Se perguntarem por que paramos, quero saber responder.",
+    "en": "Show me what's worrying you. If someone asks why we stopped, I want to give them an answer."
   },
   {
     "id": "text.c39f09f88d5d3d9e",
-    "pt": "Este apoio sustenta a passagem. Minha equipe vai examiná-lo. Anote por que paramos.",
-    "en": "This support holds up the passage. My crew will check it. Write down why we stopped."
+    "pt": "Aquele suporte sustenta esta passagem. Minha equipe vai verificar. Anote isso como o motivo da parada.",
+    "en": "That support carries this passage. My crew will check it. Put that down as the reason for the stop."
   },
   {
     "id": "text.6b43cdc85082f138",
-    "pt": "Vamos entregar menos do que eu queria.",
-    "en": "We'll have less to show than I'd hoped."
+    "pt": "Achei que teríamos mais para mostrar na volta.",
+    "en": "I thought we'd have more to show when we came back."
   },
   {
     "id": "text.5c20f56172cb6fda",
-    "pt": "Vamos entregar o que verificamos e explicar por que não fomos além.",
-    "en": "We'll give them what we checked and explain why we didn't go farther."
+    "pt": "Eu também. Vamos mostrar o que conferimos e explicar por que não avançamos.",
+    "en": "So did I. We'll show them what we checked and tell them why we couldn't go farther."
   },
   {
     "id": "text.841f0495be73ad59",
-    "pt": "Eu escolhi esse plano. Também vou explicar os gastos.",
-    "en": "I chose this plan. I'll explain the costs too."
+    "pt": "E quanto custou. Eu escolhi a reserva. Não vou deixar você explicar a conta sozinho.",
+    "en": "And what it cost. I chose the reserve. I'm not leaving you to explain the bill alone."
   },
   {
     "id": "text.8356cf9be7f536f4",
-    "pt": "Com o equipamento que trouxemos, não vamos além daqui.",
-    "en": "With the gear we've brought, this is as far as we go."
+    "pt": "Este é o nosso limite. Não trouxemos o suficiente para passar daqui.",
+    "en": "That's our limit. We haven't brought enough to go beyond here."
   },
   {
     "id": "text.b69b60a41bb250f3",
-    "pt": "Ainda não chegamos ao trecho que queríamos ver.",
-    "en": "We haven't reached the stretch we came to see."
+    "pt": "Mas o trecho que viemos examinar ainda está mais à frente.",
+    "en": "But the stretch we came for is still up ahead."
   },
   {
     "id": "text.647e3e6886829fdf",
-    "pt": "Não. Mas, se alguém se machucar ali, teremos menos meios de tirá-lo. Combinamos que pararíamos nessas condições.",
-    "en": "No. But if someone gets hurt in there, we've got less to get them out with. We agreed we'd stop if it came to this."
+    "pt": "Eu sei. E, se alguém se machucar lá dentro, teremos pouca coisa para ajudar na volta. Foi aqui que eu disse que pararíamos.",
+    "en": "I know. And if someone gets hurt in there, we haven't got much to bring them back with. This is where I said we'd stop."
   },
   {
     "id": "text.a2a45a2a01a405f5",
-    "pt": "Vou marcar onde paramos.",
-    "en": "I'll mark where we stopped."
+    "pt": "Então vou marcar este ponto. Pelo menos vão saber até onde chegamos.",
+    "en": "I'll mark this point, then. At least they'll know how far we got."
   },
   {
     "id": "text.a3c4deaca47cb9ff",
-    "pt": "Anote o que vimos e por que paramos. Não diga que é impossível passar. Nós não conferimos.",
-    "en": "Write down what we saw and why we stopped. Don't call it impassable. We haven't checked."
+    "pt": "E por quê. Não marque o próximo trecho como intransponível. Não sabemos disso; não fomos conferir.",
+    "en": "And why. Don't mark the next stretch as impassable. We don't know that; we haven't checked it."
   },
   {
     "id": "text.65440205d27a3d53",
-    "pt": "Eu explico por que paramos quando entregarmos o trabalho.",
-    "en": "I'll explain why we stopped when we hand in the survey."
+    "pt": "Na entrega, eu explico por que voltamos.",
+    "en": "When we hand this in, I'll tell them why we turned back."
   },
   {
     "id": "text.fed59e3db7af0aa5",
-    "pt": "Explique comigo. Fui eu quem propôs esse plano.",
-    "en": "We'll explain it together. It was my plan."
+    "pt": "Nós explicamos. Eu propus esse plano, Ghork. Você não precisa responder por ele sozinho.",
+    "en": "We will. I proposed this, Ghork. You don't have to answer for it alone."
   },
   {
     "id": "text.a0210aaf1f576788",
-    "pt": "Vamos voltar com mais dinheiro, mas sem saber o que há naquele trecho.",
-    "en": "We're going back with more money, but we still don't know what's down that stretch."
+    "pt": "Então continuo com o dinheiro dos treinos. E continuo sem poder dizer o que tem lá embaixo.",
+    "en": "So I've still got my training money. And I still can't tell them what's down there."
   },
   {
     "id": "text.72c113b7eeba3778",
-    "pt": "Sim. E as duas coisas precisam constar no relatório.",
-    "en": "Right. Both of those things belong in the report."
+    "pt": "Foi o que aconteceu. Ponha as duas coisas no relatório, mesmo que não seja o final que queríamos.",
+    "en": "That's what happened. Put both in the report, even if it isn't the ending we wanted."
   },
   {
     "id": "text.51418e1226de1f7c",
-    "pt": "Não quero que façam piada de Darvek quando contarmos.",
-    "en": "I don't want this turning into a joke at Darvek's expense."
+    "pt": "Seja lá o que dissermos, não quero que o Darvek vire piada.",
+    "en": "Whatever we say, I don't want Darvek turned into the punchline."
   },
   {
     "id": "text.c53a3d7169fc83bc",
-    "pt": "Nem eu. A reserva dele teria sido útil aqui. Também teria custado mais.",
-    "en": "Neither do I. His reserve would've been useful here. It also would've cost more."
+    "pt": "Não vai virar, se depender de mim. A reserva dele teria ajudado aqui. Também teríamos pago por ela.",
+    "en": "He won't, if I can help it. We could've used his reserve here. We'd also have paid for it."
   },
   {
     "id": "text.6e8a741589c45397",
-    "pt": "Mostrem o que investigaram e o que ainda não puderam verificar.",
-    "en": "Show me what you surveyed and what you couldn't check."
+    "pt": "Primeiro, mostrem por onde passaram. Depois, onde tiveram que parar.",
+    "en": "Show me where you went first. Then show me where you had to stop."
   },
   {
     "id": "text.d75ca70e4f20d44a",
-    "pt": "Preparamos uma reserva. Paramos para conferir um apoio e a usamos para reorganizar a retirada. Sobrou menos dinheiro para a preparação.",
-    "en": "We set up a reserve, stopped to check a support, and used it to organize the way out. That left less money for training."
+    "pt": "Montamos a reserva. Quando foi preciso verificar um suporte, paramos e usamos a reserva para organizar a saída. Sobrou menos do pagamento para os treinos.",
+    "en": "We set up the reserve. When a support needed checking, we stopped and used it to organize the way out. That left less of the pay available for training."
   },
   {
     "id": "text.7949959b5ecbf65b",
-    "pt": "Vou marcar onde fizeram cada observação. O mapa também precisa mostrar o que ainda não sabemos.",
-    "en": "I'll mark where each observation was made. The map needs to show what we don't know, too."
+    "pt": "Vou colocar cada observação aqui, onde vocês a fizeram. O espaço em branco fica em branco. Não quero que a próxima equipe entenda isso como caminho livre.",
+    "en": "I'll put each observation here, where you made it. The blank space stays blank. I don't want the next crew mistaking it for a clear route."
   },
   {
     "id": "text.8f78922b8c4171f4",
-    "pt": "O relatório descreve o que vocês fizeram. Não prova que o restante esteja seguro para explorar. A guilda receberá o pagamento combinado; vocês o dividem conforme seu acordo.",
-    "en": "The report covers the work you did. It doesn't prove the rest is safe to explore. The guild gets the agreed payment; you divide it under your own agreement."
+    "pt": "Isso explica o serviço feito. Não libera o restante da mina para exploração. O pagamento combinado vai para a guilda; a divisão segue o acordo de vocês.",
+    "en": "That accounts for the work. It doesn't clear the rest of the mine for exploration. The agreed payment goes to your guild; your agreement determines the shares."
   },
   {
     "id": "text.1ca687370205336d",
-    "pt": "Quero incluir os gastos do plano.",
-    "en": "I want to include what the plan cost."
+    "pt": "Quero incluir o custo do plano também. Isso pesou na nossa escolha.",
+    "en": "I'd like the cost of the plan in there too. It mattered when we chose it."
   },
   {
     "id": "text.5e1d40d67c0b3729",
-    "pt": "Inclua. Vou precisar desses valores para avaliar outra investigação.",
-    "en": "Include them. I'll need those figures to assess another survey."
+    "pt": "Inclua. Se contratarmos outro levantamento, vou precisar saber quanto este exigiu.",
+    "en": "Include it. If we commission another survey, I'll need to know what this one took."
   },
   {
     "id": "text.400f5960c4e7c133",
-    "pt": "Quero explicar por que paramos.",
-    "en": "I want to explain why we stopped."
+    "pt": "Podemos explicar melhor a parada? Não quero que pareça que só nos cansamos do serviço.",
+    "en": "Can we explain the stop in more detail? I don't want it to look like we just got tired of the job."
   },
   {
     "id": "text.fbe15975790bb6c2",
-    "pt": "Descreva o que encontraram. Não prometa que o próximo grupo encontrará as mesmas condições.",
-    "en": "Describe what you found. Don't promise the next crew will find the same conditions."
+    "pt": "Descreva o que fez vocês pararem. Seja específico, mas não diga à próxima equipe o que ela vai encontrar. As condições podem mudar.",
+    "en": "Describe what made you stop. Be specific, but don't tell the next crew what they'll find. Conditions may change."
   },
   {
     "id": "text.ccad3369bd97e488",
-    "pt": "Usamos a reserva para reorganizar a equipe. Aqui estão os gastos.",
-    "en": "We used the reserve to reorganize the crew. Here are the costs."
+    "pt": "A reserva permitiu reorganizar a equipe para a volta. Aqui estão as despesas, uma por uma.",
+    "en": "The reserve let us reorganize the crew for the return. These are the expenses, item by item."
   },
   {
     "id": "text.4ef03caf3add66ee",
-    "pt": "Terminei duas peças! Vou começar a oferecer meu trabalho.",
-    "en": "I finished two pieces! I'm going to start offering my work."
+    "pt": "Duas peças prontas! Duas! Vou começar a mostrar para as pessoas. Ver se alguém quer comprar alguma coisa.",
+    "en": "Two pieces finished! Two! I'm going to start showing people. See if anyone wants to buy something."
   },
   {
     "id": "text.2522b14e89fbbcaa",
-    "pt": "Já?",
-    "en": "Already?"
+    "pt": "Duas? Quando você achou tempo para tudo isso?",
+    "en": "Two? When did you find time for all that?"
   },
   {
     "id": "text.e1608376cf44ef71",
-    "pt": "Era para eu esperar pela loja? Primeiro preciso descobrir quem quer comprar minhas roupas.",
-    "en": "Was I supposed to wait for the shop? First I need to find out who wants to buy my clothes."
+    "pt": "O quê, era para esperar a loja aparecer? Preciso de clientes antes de precisar de um balcão.",
+    "en": "What, was I supposed to wait for the shop to appear? I need customers before I need a counter."
   },
   {
     "id": "text.391becacf6e3d50f",
-    "pt": "Deixa eu ver como ficaram.",
-    "en": "Let me see how they turned out."
+    "pt": "Vamos, mostre. Quero ver o que você fez.",
+    "en": "Come on, show me. I want to see what you've made."
   },
   {
     "id": "text.56c7df56339c5318",
-    "pt": "Esta é minha preferida. A outra deu mais trabalho... ainda estou brigada com aquela manga.",
-    "en": "This one's my favorite. The other took more work... I'm still not on speaking terms with that sleeve."
+    "pt": "Esta é minha preferida. Aquela deu mais trabalho. Não pergunte pela manga. Eu e a manga ainda estamos discutindo.",
+    "en": "This one's my favorite. That one took longer. Don't ask about the sleeve. The sleeve and I are still having words."
   },
   {
     "id": "text.973764d374180d68",
-    "pt": "Ainda quero ajudar você com a loja.",
-    "en": "I still want to help with the shop."
+    "pt": "Eu estava falando sério sobre a loja. Ainda quero ajudar você a chegar lá.",
+    "en": "I meant what I said about the shop. I still want to help you get there."
   },
   {
     "id": "text.a0dc6481346ad39e",
-    "pt": "Eu sei. Mas olha o que já consegui fazer. Está vendo essa manga?",
-    "en": "I know. But look at what I've made already. See that sleeve?"
+    "pt": "Eu sei. Mas olhe esta parte primeiro. Aqui, a manga. Fui eu que fiz, Ghork.",
+    "en": "I know you did. But look at this part first. Here, the sleeve. I made that, Ghork."
   },
   {
     "id": "text.3dfbf76a199e592e",
-    "pt": "Estou. Eu também terminei um trabalho. Nas minas.",
-    "en": "I see it. I finished a job too. Down in the mines."
+    "pt": "Estou olhando. Ficou boa. Também tenho uma coisa para contar... terminei um trabalho nas minas.",
+    "en": "I'm looking. It's good. I've got something to tell you too--I finished a job in the mines."
   },
   {
     "id": "text.7964891d85317aec",
-    "pt": "Nas minas? Depois vai me contar essa história inteira. Antes, um recado de Dam. E não vale responder prometendo uma casa nova.",
-    "en": "The mines? You're telling me that whole story later. First, a message from Dam. And no promising him a new house."
+    "pt": "Nas minas? Ah, você vai me contar tudo. Mas, primeiro, o Dam mandou um recado. Escute antes de prometer uma casa inteira.",
+    "en": "The mines? Oh, you're telling me all of that. But first, Dam sent a message. Listen before you promise him an entire house."
   },
   {
     "id": "text.133eb1a14de763fe",
-    "pt": "\"Tem uma goteira no quarto comum. Estou cuidando do conserto, mas ainda falta material. Você consegue ajudar agora? Preciso saber para organizar o resto.\"",
-    "en": "\"There's a leak in the shared bedroom. I'm arranging repairs, but we're still short on materials. Can you help now? I need to know so I can sort out the rest.\""
+    "pt": "“Apareceu uma goteira no quarto coletivo. Estou organizando o conserto, mas falta material. Você consegue ajudar com alguma coisa agora? Preciso saber o que mais vou ter que arranjar.”",
+    "en": "“We've got a leak in the shared bedroom. I'm sorting out repairs, but we're short on materials. Can you help with anything now? I need to know what else to arrange.”"
   },
   {
     "id": "text.8448572a9846dcae",
-    "pt": "Recebi minha parte do pagamento. Estava guardando para treinar mais.",
-    "en": "I got my share of the pay. I was saving it for more training."
+    "pt": "Estou com a minha parte do pagamento. Ia usar para treinar mais...",
+    "en": "I've got my share of the pay. I was going to put it toward more training..."
   },
   {
     "id": "text.2985d356b2feebae",
-    "pt": "Ele precisa de uma resposta para se organizar. Vou passar o que você disser.",
-    "en": "He needs an answer so he can plan. I'll pass on whatever you tell me."
+    "pt": "Ele precisa saber, seja qual for a resposta. Diga o que você consegue fazer e eu passo o recado.",
+    "en": "He needs to know either way. Tell me what you can do, and I'll pass it on."
   },
   {
     "id": "text.ee8e97b69f7f59a5",
-    "pt": "Contribuir usa parte do pagamento pessoal de Ghork e dispensa uma sessão extra de treino. Guardar o dinheiro mantém essa sessão. Nenhuma escolha gasta Ludos ou muda o D20.",
-    "en": "Contributing uses part of Ghork's personal pay and gives up an extra training session. Saving the money keeps that session. Neither choice costs Ludos or changes the D20."
+    "pt": "Contribuir usa parte do pagamento pessoal de Ghork e abre mão de um treino extra. Guardar o dinheiro mantém esse treino. Nenhuma das opções gasta Ludos ou altera o D20.",
+    "en": "Contributing uses part of Ghork's personal pay and gives up an extra training session. Keeping the money preserves that session. Neither choice spends Ludos or changes the D20."
   },
   {
     "id": "text.07fb9a2121941c4d",
-    "pt": "Posso mandar uma parte para o material. A casa inteira ainda vai ter que esperar.",
-    "en": "I can send something for the materials. The whole house will have to wait a little longer."
+    "pt": "Consigo mandar uma parte para o material. Diga isso a ele. A casa inteira vai demorar um pouco mais.",
+    "en": "I can send something for the materials. Tell him that. The whole house is going to take me a little longer."
   },
   {
     "id": "text.68dbd11ae665c41f",
-    "pt": "Ótimo. É isso que vou dizer. Ele vai perguntar quando chega.",
-    "en": "Good. That's what I'll tell him. He'll want to know when it's coming."
+    "pt": "Vou dizer. Ele vai perguntar quando chega. O que respondo?",
+    "en": "I will. He'll ask when it'll get there. What should I tell him?"
   },
   {
     "id": "text.420557634a0208a8",
-    "pt": "Vou confirmar o envio antes de prometer uma data.",
-    "en": "I'll arrange the delivery before I promise a date."
+    "pt": "Que vou combinar a entrega primeiro. Não quero deixar ele esperando por uma data que inventei.",
+    "en": "That I'll sort out the delivery first. I don't want him waiting on a date I made up."
   },
   {
     "id": "text.2598d1bbe2ef8633",
-    "pt": "Vou guardar o dinheiro para a preparação. Diga que não consigo contribuir agora.",
-    "en": "I'm keeping the money for training. Tell him I can't contribute right now."
+    "pt": "Desta vez, preciso guardar para os treinos. Diga a ele... diga que não consigo mandar nada agora.",
+    "en": "I need to keep it for training this time. Tell him... tell him I can't send anything right now."
   },
   {
     "id": "text.d12aa8a6c07eda8f",
-    "pt": "Vou dizer. Ele pode ficar decepcionado, Ghork. Mas precisa saber.",
-    "en": "I'll tell him. He might be disappointed, Ghork. But he needs to know."
+    "pt": "Está bem. Talvez ele fique decepcionado. Prefiro dar a sua resposta a deixar ele esperando.",
+    "en": "All right. He may be disappointed. I'd rather give him your answer than leave him waiting."
   },
   {
     "id": "text.801a2101f4b702bd",
-    "pt": "Queria ter mais para oferecer.",
-    "en": "I wish I had more to offer."
+    "pt": "Achei que a esta altura já teria mais para mandar para ele.",
+    "en": "I thought I'd have more to send him by now."
   },
   {
     "id": "text.8124046a707df3e7",
-    "pt": "Por enquanto, dê essa resposta. E, na próxima conversa, me conte como você está.",
-    "en": "For now, give him that answer. And next time, tell me how you're doing too."
+    "pt": "Vou dar o recado a ele. Mas, da próxima vez, conte como você está também, está bem?",
+    "en": "I'll make sure he knows. But next time, tell me how you're doing too, all right?"
   },
   {
     "id": "text.e16437b3473e7b2a",
-    "pt": "Você também vai me contar se vendeu as peças.",
-    "en": "You'd better tell me if you sell those pieces."
+    "pt": "E você tem que me contar quando vender essas peças. Quero saber disso.",
+    "en": "And you have to tell me when those pieces sell. I want to hear about that."
   },
   {
     "id": "text.3dd4c7ae11d40d8a",
-    "pt": "Vou contar mesmo se não vender. Você ainda vai ouvir muito sobre aquela manga.",
-    "en": "I'll tell you even if I don't. You're going to hear plenty more about that sleeve."
+    "pt": "Vou contar vendendo ou não. Você não vai escapar da história da manga.",
+    "en": "You'll hear about them whether they sell or not. You're not escaping the sleeve story."
   },
   {
     "id": "text.c0abb7344ea7e670",
-    "pt": "Confira o valor e para quem vai. Pirka leva na saída combinada. Eu guardo uma cópia.",
-    "en": "Check the amount and who it's for. Pirka takes it on the agreed departure. I'll keep a copy."
+    "pt": "Confira aqui a quantia e o nome de quem recebe. A Pirka leva na saída que combinamos. Esta cópia fica comigo.",
+    "en": "Check the amount here, and the recipient's name. Pirka will take it on the departure we've agreed on. I'll keep this copy."
   },
   {
     "id": "text.68aa3c5c40eb766d",
-    "pt": "Levo o que está no registro. Se a saída mudar, aviso. Nada de dizer que chegou antes de chegar.",
-    "en": "I'll carry what's on the record. If the departure changes, I'll tell you. Don't say it's arrived before it has."
+    "pt": "É isso que vou levar. Se a saída mudar, eu aviso. Enquanto eu não entregar, não diga a eles que já chegou.",
+    "en": "That's what I'll carry. If the departure changes, you'll hear from me. Until I've delivered it, don't tell them it's there."
   },
   {
     "id": "text.10d4063e8352fdfc",
-    "pt": "Certo. Quero uma cópia também.",
-    "en": "Right. I'd like a copy too."
+    "pt": "Entendi. Posso ficar com uma cópia? Quero passar os dados certos para o Dam.",
+    "en": "Understood. Can I have a copy? I want to send Dam the right details."
   },
   {
     "id": "text.72b648561c965a14",
-    "pt": "Nossa guilda bancou expedições quando ninguém mais aceitava o custo. Agora vocês dão os contratos a quem acabou de chegar.",
-    "en": "Our guild paid for expeditions when nobody else would bear the cost. Now you hand the contracts to newcomers."
+    "pt": "Quando ninguém queria pagar por aquelas expedições, nossa guilda pagou. Agora os contratos vão para gente que nem estava lá.",
+    "en": "When no one else would pay for those expeditions, our guild did. Now the contracts go to people who weren't there."
   },
   {
     "id": "text.ecb527d33625eb82",
-    "pt": "Avalio as propostas que recebo hoje. Os serviços de antes não substituem as informações de que preciso agora.",
-    "en": "I assess the proposals in front of me. Past service can't replace the information I need now."
+    "pt": "Eu não esqueci. Mas estou avaliando o trabalho proposto agora. Preciso dos detalhes, seja quem for que traga a proposta.",
+    "en": "I haven't forgotten. But I'm assessing the work proposed now. I need details, whoever brings me the proposal."
   },
   {
     "id": "text.caa598b2daafce14",
-    "pt": "As famílias dos veteranos continuam aqui. Mudar seus critérios não fez essas pessoas desaparecerem.",
-    "en": "Our veterans' families are still here. Changing your criteria didn't make those people disappear."
+    "pt": "E as famílias dos nossos veteranos? Ainda estão aqui, Meruna. Você pode mudar os critérios. Não pode esperar que elas deixem de precisar de trabalho.",
+    "en": "And our veterans' families? They're still here, Meruna. You can change the criteria. You can't expect them to stop needing work."
   },
   {
     "id": "text.295f8a3578d4c58f",
-    "pt": "Um companheiro entrega uma dose a Torvak. Ele espera o tremor da mão passar antes de saudar o público. Savel guarda o estojo.",
-    "en": "A companion hands Torvak a dose. He waits for his hand to steady before greeting the crowd. Savel puts the case away."
+    "pt": "Um companheiro passa uma dose a Torvak. Ele espera o tremor da mão diminuir antes de se virar para cumprimentar o público. Savel fecha o estojo.",
+    "en": "A companion passes Torvak a dose. He waits for the shaking in his hand to settle, then turns to greet the crowd. Savel closes the case."
   },
   {
     "id": "text.9eb92bae28235d76",
-    "pt": "Encontrar Torvak e Savel",
+    "pt": "Procurar Torvak e Savel",
     "en": "Find Torvak and Savel"
   },
   {
     "id": "text.c6c74269819410a7",
-    "pt": "Sua mão está tremendo.",
-    "en": "Your hand's shaking."
+    "pt": "Sua mão... você está bem?",
+    "en": "Your hand... are you all right?"
   },
   {
     "id": "text.ca37e610daf7d342",
-    "pt": "Anos de luta cobram seu preço. Meu fornecedor está cuidando disso.",
-    "en": "Years of fighting take their toll. My supplier's seeing to it."
+    "pt": "São os anos de arena. Uma hora eles pesam. Meu fornecedor está cuidando disso.",
+    "en": "Years in the arena. They catch up with you. My supplier has it in hand."
   },
   {
     "id": "text.bffd0dcaa731e494",
-    "pt": "Está pronto para a classificação?",
-    "en": "Ready for the qualifiers?"
+    "pt": "Então, pronto para as eliminatórias?",
+    "en": "Ready for the knockout rounds, then?"
   },
   {
     "id": "text.ff5c1dbd3fede80c",
-    "pt": "Pronto para os próximos que vierem tomar meu lugar.",
-    "en": "Ready for the next ones who come for my place."
+    "pt": "Estou pronto para quem achar que chegou sua vez de tomar meu lugar.",
+    "en": "I'm ready for whoever thinks it's their turn to take my place."
   },
   {
     "id": "text.b2654a6b7408ccb9",
-    "pt": "É preciso cuidado para manter a preparação. Parar as doses sem acompanhamento seria pior.",
-    "en": "Keeping up that training takes care. Stopping the doses without supervision would be worse."
+    "pt": "O treinamento dele exige muito do corpo. Interromper as doses sem acompanhamento só agravaria a situação.",
+    "en": "His training places considerable demands on the body. Interrupting the doses without supervision would only make matters worse."
   },
   {
     "id": "text.68b607f9cec4ed99",
-    "pt": "E o nosso treino? Você mandou Rask cancelar nossos horários.",
-    "en": "What about our training? You made Rask cancel our sessions."
+    "pt": "Já que estamos falando de treino... foi você que fez o Rask cancelar os nossos.",
+    "en": "Speaking of training--you made Rask cancel ours."
   },
   {
     "id": "text.bfeecbcb9801a9e1",
-    "pt": "Mandei. Seu mentor podia ter retirado a acusação. Não vou tirar minha equipe do caminho toda vez que alguém contestar o que conquistamos.",
-    "en": "I did. Your mentor could have withdrawn the accusation. I won't move my team aside every time someone questions what we've earned."
+    "pt": "Fui eu. Seu mentor poderia ter retirado aquela acusação. Minha equipe não vai abrir espaço toda vez que alguém decidir que não merecemos o que conquistamos.",
+    "en": "I did. Your mentor could have withdrawn that accusation. My team won't step aside every time someone decides we don't deserve what we've earned."
   },
   {
     "id": "text.4e77e92751e87301",
-    "pt": "Então admita. Não quero que mudem essa história depois.",
-    "en": "Then admit it. I don't want that story changing later."
+    "pt": "Então diga isso com todas as letras. Não venha chamar de erro de agenda depois.",
+    "en": "Then say that plainly. Don't let this turn into a scheduling mistake later."
   },
   {
     "id": "text.6ea53f6d67a83593",
-    "pt": "Está admitido. Ainda vai ter que vencer na arena.",
-    "en": "I've admitted it. You still have to win in the arena."
+    "pt": "Acabei de dizer. Pronto. Agora tente me vencer na arena.",
+    "en": "I just did. There. Now try beating me in the arena."
   },
   {
     "id": "text.07c132fa1dc28c82",
-    "pt": "É fácil ter prioridade quando os outros pagam por ela.",
-    "en": "Priority's easy when everyone else pays for it."
+    "pt": "É fácil chamar de conquista quando quem abre mão de alguma coisa são os outros.",
+    "en": "Easy to call it earned when everyone else has to give something up."
   },
   {
     "id": "text.9ff8c34365606fee",
-    "pt": "Manter meu lugar por todos esses anos também custou. Volte depois de fazer a sua parte.",
-    "en": "Keeping my place all these years cost plenty. Come back when you've done your share."
+    "pt": "Acha que fiquei neste lugar por tantos anos sem pagar um preço? Volte quando tiver feito tanto quanto eu.",
+    "en": "You think I've kept this place for years without paying for it? Come back when you've done as much."
   },
   {
     "id": "text.3a43b3746b094d37",
-    "pt": "Não pode ter alguém por perto que ouviu Rask prometer os horários?",
-    "en": "Couldn't someone nearby have heard Rask promise those training times?"
+    "pt": "Espera. Não tinha mais ninguém perto quando o Rask prometeu aqueles horários?",
+    "en": "Wait. Wasn't anyone else there when Rask promised them those training times?"
   },
   {
     "id": "text.b6675b187010c468",
-    "pt": "Alguém voltara para buscar um objeto esquecido e ficou ouvindo. Um atraso muito conveniente, não acha?",
-    "en": "Someone had come back for a forgotten item and stayed to listen. A very convenient delay, wouldn't you say?"
+    "pt": "Por acaso, alguém tinha voltado para buscar uma coisa esquecida. E ficou um instante ouvindo. Sorte não estar com pressa, não é?",
+    "en": "Someone had come back for a forgotten belonging, as it happened. Then lingered a moment to listen. Lucky they weren't in a hurry, eh?"
   },
   {
     "id": "text.c0b2de0d4b917583",
-    "pt": "Eu estava aqui quando Rask deu os horários a vocês. O combinado foi claro.",
-    "en": "I was here when Rask gave you those sessions. The agreement was clear."
+    "pt": "Eu ouvi o Rask liberar aqueles treinos para vocês. O combinado existiu.",
+    "en": "I heard Rask give you those sessions. You didn't imagine the agreement."
   },
   {
     "id": "text.0c5d72a51390cfb6",
-    "pt": "Não neguei isso. Eu mandei mudar.",
-    "en": "I never denied that. I ordered the change."
+    "pt": "Ninguém disse que não. Eu mandei mudar.",
+    "en": "No one said they did. I ordered the change."
   },
   {
     "id": "text.ada5b3b783d703b7",
-    "pt": "Então ninguém vai dizer que fomos nós que entendemos errado.",
-    "en": "Then nobody gets to say we misunderstood."
+    "pt": "Ótimo. Então ninguém vai usar a desculpa de que entendemos errado.",
+    "en": "Good. So we can put “you misunderstood” to rest."
   },
   {
     "id": "text.6fecd331404ba4f1",
-    "pt": "Sem a sessão extra, vamos aproveitar o tempo que já tínhamos combinado. Mostre onde você perde o equilíbrio.",
-    "en": "Without the extra session, we'll use the time we already booked. Show me where you're losing your footing."
+    "pt": "Não temos o treino extra, mas ainda temos nosso horário marcado. Vamos aproveitar. Mostre onde você perde o apoio.",
+    "en": "We haven't got the extra session, but we still have our booked time. Let's use it. Show me where your footing goes."
   },
   {
     "id": "text.098ff93edf01ea0e",
-    "pt": "Podemos começar pela parte em que eu paro de esticar a perna para compensar o braço curto.",
-    "en": "We can start with the part where I stop stretching my leg to make up for my short arms."
+    "pt": "Vamos começar pela parte em que tento fazer a perna ficar mais comprida porque meus braços não alcançam.",
+    "en": "Let's start with the part where I try to make my leg longer because my arms won't reach."
   },
   {
     "id": "text.b7a9aee782f75273",
-    "pt": "Bom. Faça o movimento devagar.",
-    "en": "Good. Show me the movement slowly."
+    "pt": "Então vamos pegar esse momento. Devagar, para eu enxergar.",
+    "en": "Then let's catch that moment. Slowly, so I can see it."
   },
   {
     "id": "text.459804bed34db91e",
-    "pt": "Sua equipe se classificou. Ainda dá para fazer convites antes das eliminatórias. Quando confirmar a entrada, a equipe fica fechada.",
-    "en": "Your team has qualified. You can still invite people before the knockout rounds. Once you confirm your entry, your roster is locked."
+    "pt": "Sua equipe está classificada. Ainda dá tempo de convidar pessoas antes do mata-mata. Confirme a inscrição quando estiver pronto; depois disso, a equipe fica fechada.",
+    "en": "Your team has qualified. There's still time to invite people before the knockout rounds. Confirm your entry when you're ready; that locks your roster."
   },
   {
     "id": "text.f804157060470da9",
-    "pt": "Meu nome está na lista?",
-    "en": "My name's on the list?"
+    "pt": "Ali. É o meu nome?",
+    "en": "There. That's my name?"
   },
   {
     "id": "text.c9a0d5e900cfdfc6",
-    "pt": "Está. Pode ler.",
-    "en": "It is. Take a look."
+    "pt": "É seu. Pode ler de novo, se quiser.",
+    "en": "Yours. Go on, read it again if you like."
   },
   {
     "id": "text.2090c803b36920c9",
-    "pt": "Você chegou até aqui sem ultrapassar seus limites no trabalho. Continue me dizendo quando precisar de ajuda.",
-    "en": "You got this far without pushing past your limits on the job. Keep telling me when you need help."
+    "pt": "Você conseguiu. E não precisou ultrapassar seus limites no trabalho para chegar aqui. Me avise quando precisar de uma mão, está bem?",
+    "en": "You made it. And you didn't have to push past your limits on the job to get here. Tell me when you need a hand, all right?"
   },
   {
     "id": "text.606d62d4ed79c20a",
-    "pt": "Confirmar a classificação",
+    "pt": "Confirmar classificação",
     "en": "Confirm qualification"
   },
   {
     "id": "text.879979bf800cdbee",
-    "pt": "Vocês me ajudaram. Mas as próximas decisões continuam sendo minhas.",
-    "en": "You've helped me. But the next decisions are still mine."
+    "pt": "Você me ajudou a chegar aqui. Não esqueci disso. Mas, daqui para a frente, quero fazer minhas próprias escolhas.",
+    "en": "You've helped me get here. I haven't forgotten. But I want to make my own choices from here on."
   },
   {
     "id": "text.6f6ced62964523cf",
-    "pt": "Então diga o que quer fazer. Vou tentar ouvir antes de responder por você.",
-    "en": "Then tell me what you want to do. I'll try to listen before I answer for you."
+    "pt": "Está bem. Conte o que está pensando. Vou tentar não responder por você antes que termine.",
+    "en": "All right. Tell me what you have in mind. I'll try not to answer for you before you've finished."
   },
   {
     "id": "text.ce66d75908dd0bae",
-    "pt": "Posso comemorar antes de receber a próxima cobrança?",
-    "en": "Can I celebrate before the next demand comes in?"
+    "pt": "Posso aproveitar meu nome ali antes de chegarmos à próxima lista do que devo fazer por todo mundo?",
+    "en": "Could I enjoy seeing my name up there before we get to the next list of things I owe everyone?"
   },
   {
     "id": "text.77481462b0317148",
-    "pt": "Justo. Hoje podemos comemorar.",
-    "en": "Fair enough. We can celebrate today."
+    "pt": "Pode. Tem razão. Hoje, vamos comemorar.",
+    "en": "Yes. You can. Today, we celebrate."
   },
   {
     "id": "text.356ec433e5c67342",
-    "pt": "Classificado, Ghork. Seu mentor achou onde treinar depois de comprar aquela briga, então.",
-    "en": "Qualified, Ghork. So your mentor found somewhere to train after picking that fight."
+    "pt": "Então se classificou, Ghork. Seu mentor conseguiu onde treinar depois de toda aquela confusão.",
+    "en": "So you qualified, Ghork. Your mentor found you somewhere to train after all that trouble."
   },
   {
     "id": "text.622e0763fa7a5ae1",
-    "pt": "Achou. Tivemos que refazer tudo o que você atrapalhou.",
-    "en": "We did. We had to redo everything you disrupted."
+    "pt": "Conseguimos. Teria sido mais fácil sem você nos obrigar a refazer tudo.",
+    "en": "We found a way. It would've been easier without you making us start over."
   },
   {
     "id": "text.b54da28d9fbee83f",
-    "pt": "Agora vamos ver se adiantou.",
-    "en": "Now we'll see if it paid off."
+    "pt": "Então vamos ver o que conseguiram fazer.",
+    "en": "We'll see what you made of it, then."
   },
   {
     "id": "text.5d796f4bea5c36c4",
-    "pt": "Com a sessão extra, temos mais tempo para acertar sua base. A vitória eu não posso prometer.",
-    "en": "That extra session gives us more time to work on your stance. I can't promise you a win."
+    "pt": "Com esse treino extra, dá para dedicar mais tempo à sua base. Nisso, consigo ajudar. Ganhar já é outra história.",
+    "en": "With that extra session, we can spend more time on your stance. I can help you with that. Winning is another matter."
   },
   {
     "id": "text.697b35e6537a2100",
-    "pt": "Levamos menos equipamento e voltamos ao encontrar instabilidade. Sobrou mais dinheiro, mas não examinamos o trecho além desta marca.",
-    "en": "We took less gear and turned back when we found unstable ground. We kept more money, but we didn't check beyond this mark."
+    "pt": "Levamos menos equipamento. Quando chegamos ao terreno instável, voltamos. Sobrou mais dinheiro, mas depois desta marca? Não conseguimos verificar.",
+    "en": "We traveled light. When we reached unstable ground, we turned back. I've got more money left, but beyond this mark? We couldn't check it."
   },
   {
     "id": "text.8a0d4e81d9a1cac1",
-    "pt": "Respeitamos o limite. O pagamento não muda aquilo que conseguimos descobrir.",
-    "en": "We respected the limit. Getting paid doesn't change what we found."
+    "pt": "Nosso plano terminava ali. Respeitamos isso. Receber o pagamento não nos dá uma resposta sobre o resto.",
+    "en": "That's where our plan stopped. We kept to it. Being paid doesn't give us an answer about the rest."
   },
   {
     "id": "text.870bed04e03c97f0",
-    "pt": "Você sabe contar como chegou até aqui. Não precisa mais esperar que eu conte por você.",
-    "en": "You know how you got here. You don't need me telling the story for you."
+    "pt": "Olhe seu nome ali. Você sabe o que deu trabalho. Vá, conte do seu jeito; eu não preciso falar por nós dois.",
+    "en": "Look at your name up there. You know what it took. Go on, tell it your way; I don't have to do all the talking."
   },
   {
     "id": "text.52a88d577a14bdbb",
-    "pt": "É o que eu espero.",
-    "en": "That's what I'm hoping for."
+    "pt": "Ótimo. Eu ficaria decepcionado se você não fizesse isso.",
+    "en": "Good. I'd be disappointed if you didn't."
   },
   {
     "id": "text.a23f36e3b8e7a8ef",
-    "pt": "Pode começar reclamando do tamanho da minha lista.",
-    "en": "You can start by complaining about the length of my list."
+    "pt": "Ah, minha lista está tão comprida assim? Então é melhor começar a reclamar agora.",
+    "en": "Oh, my list is that long? You'd better start complaining now, then."
   },
   {
     "id": "text.861fff678bdcf11a",
-    "pt": "Essa classificação mostra o trabalho da escola. Quero que reconheçam nossa preparação.",
-    "en": "This qualification shows what the school can do. I want our preparation recognized."
+    "pt": "Está aí. Sua classificação. A preparação da escola ajudou você a chegar aqui, Ghork. Pretendo garantir que isso seja reconhecido.",
+    "en": "There it is. Your qualification. The school's preparation helped get you here, Ghork. I intend to see that recognized."
   },
   {
     "id": "text.75e0188f5ea784b1",
-    "pt": "E esteja pronto para defendê-las.",
-    "en": "And be ready to defend them."
+    "pt": "Então esteja pronto para explicar essas escolhas quando alguém questionar.",
+    "en": "Then be ready to explain those choices when someone questions them."
   },
   {
     "id": "text.f0b3868d787bc039",
-    "pt": "Comemore. As cobranças podem esperar até terminarmos esta conversa.",
-    "en": "Celebrate. My demands can wait until this conversation is over."
+    "pt": "Muito bem. Comemore. Vou guardar minhas cobranças até você pelo menos terminar esta conversa.",
+    "en": "Very well. Celebrate. I'll save my demands until you've at least finished this conversation."
   },
   {
     "id": "text.2d286387555b2fc5",
-    "pt": "Tenho um turno livre no pátio e duas propostas. Ghork, pode olhar o espaço com eles? Quero saber quem vai cuidar dele depois que eu abrir a porta.",
-    "en": "I've got one free evening slot in the yard and two proposals. Ghork, will you look it over with them? I need to know who'll look after it once I open the door."
+    "pt": "Sobrou um horário à noite no pátio e tenho duas pessoas querendo usar. Ghork, dê uma olhada com elas. Antes de abrir, quero saber quem vai cuidar do lugar.",
+    "en": "One evening slot left in the yard, and two people asking for it. Ghork, walk through with them, will you? Before I open it up, I want to know who's taking care of the place."
   },
   {
     "id": "text.7dfd7a08356b97f8",
-    "pt": "Quero oferecer treino depois do trabalho. Tem gente que nunca consegue chegar a tempo das aulas.",
-    "en": "I want training after work. Some people can never make it in time for classes."
+    "pt": "Treino depois do trabalho. É isso que estou pedindo. Tem gente ainda no serviço quando as aulas começam. Nunca consegue participar.",
+    "en": "Training after work. That's all I'm asking. Some people are still on the job when the classes start. They never get a chance."
   },
   {
     "id": "text.692715d8e313400a",
-    "pt": "Eu preciso de uma base para as entregas noturnas. Saímos juntos e conferimos quem voltou. Cada um saindo de um canto acaba sozinho na rua.",
-    "en": "I need a base for night deliveries. We leave together and check everyone gets back. Send people out from different places, and they end up alone on the streets."
+    "pt": "E eu preciso de um lugar para despachar as entregas noturnas. Saímos juntos, conferimos quem voltou. Sem uma base, cada um acaba andando sozinho por essas ruas.",
+    "en": "And I need somewhere to send out the night deliveries. We leave together, check who's back. Without a base, people wind up walking those streets alone."
   },
   {
     "id": "text.5429d4654636737c",
-    "pt": "Não dá para dividir o turno?",
-    "en": "Can't you split the time?"
+    "pt": "Um de vocês não podia começar depois? Dividir a noite?",
+    "en": "Could one of you start later? Split the evening?"
   },
   {
     "id": "text.d5f7a1ecb017a772",
-    "pt": "Só se as caixas atravessarem quem está treinando. E não tenho quem cuide do pátio em outro horário.",
-    "en": "Only if the crates can pass straight through the people training. And I've got no one to watch the yard at another time."
+    "pt": "Se conseguir fazer as caixas atravessarem as pessoas. É um horário, Ghork. Não tenho quem cuide do pátio em outro momento.",
+    "en": "If you can get crates to walk through people. It's one slot, Ghork. I haven't got anyone to watch the yard at another time."
   },
   {
     "id": "text.48b9bc635e9d149d",
-    "pt": "Ghork examina a passagem e o canto onde guardam os materiais.",
-    "en": "Ghork checks the passage and the storage corner."
+    "pt": "Ghork percorre a passagem e examina o canto disponível para guardar material.",
+    "en": "Ghork walks the passage, then checks the corner available for storage."
   },
   {
     "id": "text.4bf9df7001f7c972",
-    "pt": "A carga entra por aqui. Essa passagem precisa ficar livre.",
-    "en": "The loads come through here. This passage has to stay clear."
+    "pt": "As cargas passam por aqui. Bloqueie isso e nada entra nem sai.",
+    "en": "Here's where the loads come through. Block this, and nothing gets in or out."
   },
   {
     "id": "text.838a3dfeed129247",
-    "pt": "Os bancos cabem aqui. Mas, se encher de caixas, não sobra espaço para treinar.",
-    "en": "The benches fit here. Fill it with crates, though, and there's nowhere to train."
+    "pt": "Posso pôr os bancos aqui. A menos que fique tudo cheio de caixas, claro. Aí terei uma turma sem espaço nem para ficar em pé.",
+    "en": "I can put the benches here. Unless it's all crates, of course. Then I've got a class with nowhere to stand."
   },
   {
     "id": "text.2f91c561d20fb246",
-    "pt": "Escolha qual projeto vai apoiar. Nesta missão, você só poderá convidar a pessoa favorecida pela decisão.",
-    "en": "Choose which project to support. In this mission, you can only invite the person whose project you choose."
+    "pt": "Escolha qual projeto apoiar. Nesta missão, você só poderá convidar a pessoa responsável pelo projeto escolhido.",
+    "en": "Choose which project to support. You can only invite the person whose project you choose in this mission."
   },
   {
     "id": "text.e236dac7d54f91e4",
-    "pt": "Preparar treino · Brakka",
-    "en": "Set up training · Brakka"
+    "pt": "Vou ajudar o Brakka a começar os treinos.",
+    "en": "I'll help Brakka get the training started."
   },
   {
     "id": "text.5890c4d44d5be221",
-    "pt": "Vou ajudar Brakka a organizar o treino.",
-    "en": "I'll help Brakka set up the training."
+    "pt": "Vamos abrir espaço para os treinos do Brakka. Eu ajudo a preparar.",
+    "en": "Let's make room for Brakka's training. I'll help set it up."
   },
   {
     "id": "text.2f390b3acdcfe854",
-    "pt": "Então vou procurar outro lugar para o despacho. Mais trabalho do que eu esperava.",
-    "en": "Then I'll find somewhere else for dispatch. More work than I'd hoped."
+    "pt": "Então preciso de outro lugar para as entregas. Achei que finalmente fôssemos resolver isso.",
+    "en": "Then I need somewhere else for dispatch. I thought we might finally have that settled."
   },
   {
     "id": "text.5b139931b4565bf3",
-    "pt": "Vou começar pelos bancos. Ghork, pegue a lista e veja quem pode vir. Eu já estava contando até quem não respondeu.",
-    "en": "I'll start with the benches. Ghork, take the list and check who can come. I was already counting people who hadn't even answered."
+    "pt": "Certo! Primeiro, os bancos. Ghork, confira esta lista, veja quem consegue vir. Talvez eu tenha me animado antes de receber todas as respostas.",
+    "en": "Right! Benches first. Ghork, check this list for me, see who can come. I may have got a little ahead of the answers."
   },
   {
     "id": "text.6f21244eeaa562c5",
-    "pt": "Organizar despacho · Nima",
-    "en": "Organize dispatch · Nima"
+    "pt": "Vou ajudar a Nima a organizar as entregas noturnas.",
+    "en": "I'll help Nima organize the night deliveries."
   },
   {
     "id": "text.04897a0640f40a2e",
-    "pt": "Vou ajudar Nima a organizar as entregas.",
-    "en": "I'll help Nima organize the deliveries."
+    "pt": "Vamos dar uma base às entregas da Nima. Eu ajudo com as caixas.",
+    "en": "Let's give Nima's deliveries a base. I'll help with the crates."
   },
   {
     "id": "text.181002a6504cbf38",
-    "pt": "Certo. Ainda preciso de um lugar para treinar. Vou procurar outro apoio.",
-    "en": "All right. I still need somewhere to train. I'll look for someone else to help."
+    "pt": "Está bem. Vou continuar procurando. Aquelas pessoas ainda precisam de onde treinar, mesmo que não seja aqui.",
+    "en": "All right. I'll keep looking. Those people still need somewhere to train, even if it isn't here."
   },
   {
     "id": "text.43706ac7c4bf4246",
-    "pt": "Ghork, leve estas etiquetas para as caixas e confira os retornos comigo. Se ninguém reconhecer uma caixa, separe.",
-    "en": "Ghork, take these labels to the crates and check the returns with me. If no one recognizes a crate, set it aside."
+    "pt": "Ótimo. Aqui estão as etiquetas. Confira as caixas comigo, depois os retornos. O que ninguém reconhecer fica de lado. Nada de adivinhar.",
+    "en": "Good. Here are the labels. Check the crates with me, then the returns. Anything no one recognizes goes to one side. We don't guess."
   },
   {
     "id": "text.a12d52095de5e39a",
-    "pt": "Ghork pega a lista de Brakka e confere quem pode vir. Os trabalhadores arrastam os bancos.",
-    "en": "Ghork takes Brakka's list and checks who can come. The workers move the benches."
+    "pt": "Ghork pega a lista de Brakka e confere quem pode participar enquanto os trabalhadores arrumam os bancos.",
+    "en": "Ghork takes Brakka's list and checks who can attend while the workers move the benches into place."
   },
   {
     "id": "text.e66a50716a64ab5d",
-    "pt": "Lista recebida. Quem guardar o material também fecha o pátio.",
-    "en": "Got the list. Whoever puts the gear away locks up the yard too."
+    "pt": "A lista está certa. Quem guardar o material tranca o pátio. Não quero que deixem isso para mim.",
+    "en": "That's the list sorted. Whoever puts the gear away locks the yard. I don't want that left for me."
   },
   {
     "id": "text.aae3ae6eb9762415",
-    "pt": "Combinado. Essa parte não vai sobrar para você.",
-    "en": "Deal. We won't leave that part to you."
+    "pt": "Combinamos cuidar do lugar. Isso inclui a fechadura.",
+    "en": "We agreed to look after it. That includes the lock."
   },
   {
     "id": "text.292d8bb5293e0876",
-    "pt": "Nima entrega as etiquetas a Ghork. Juntos, identificam as caixas, separam as que ninguém reconhece e conferem os retornos.",
-    "en": "Nima hands Ghork the labels. Together, they identify the crates, set aside those no one recognizes, and check the returns."
+    "pt": "Com as etiquetas de Nima em mãos, Ghork ajuda a identificar as caixas e conferir os retornos. Eles separam tudo o que ninguém reconhece.",
+    "en": "With Nima's labels in hand, Ghork helps identify the crates and check the returns. They set aside anything no one recognizes."
   },
   {
     "id": "text.b3925a51367d3d00",
-    "pt": "Ghork coloca as etiquetas nas caixas que já conferiu.",
-    "en": "Ghork attaches the labels to the crates he's checked."
+    "pt": "Ghork prende uma etiqueta em cada caixa que conferiu.",
+    "en": "Ghork attaches a label to each crate he has checked."
   },
   {
     "id": "text.5b7e7d45bb833e5e",
-    "pt": "Recebido. E mantenham a passagem livre até o último voltar.",
-    "en": "Got it. Keep the passage clear until the last person gets back."
+    "pt": "Está bem. Mantenham a passagem livre até a última pessoa voltar. Não só até cansarem de prestar atenção nela.",
+    "en": "All right. Keep that passage clear until the last person is back. Not just until you get tired of watching it."
   },
   {
     "id": "text.18e67982ea276473",
-    "pt": "Vou lembrar de tirar o banco do caminho. Já descobri como isso atrapalha uma fuga.",
-    "en": "I'll remember to keep the bench out of the way. I've learned how much it can slow down an escape."
+    "pt": "Nada de banco no caminho. Pode acreditar: aprendi o estrago que um banco faz quando você precisa sair depressa.",
+    "en": "No bench in the way. Believe me, I've learned how much trouble one bench can cause when you're trying to get out."
   },
   {
     "id": "text.694009e005f543c0",
-    "pt": "Quero evitar mais feridos naquele pátio. Posso reunir os registros de atendimento sem revelar quem são os pacientes.",
-    "en": "I want to stop more people getting hurt at that yard. I can collect the treatment records without revealing who the patients are."
+    "pt": "Continuo atendendo gente que se machucou naquele pátio. Quero que isso pare. Podemos usar os registros de atendimento para mostrar o que acontece sem expor os pacientes.",
+    "en": "I keep treating people hurt at that yard. I want it to stop. We can use the treatment records to show what's happening without exposing the patients."
   },
   {
     "id": "text.d612c0526ba26ed4",
-    "pt": "Alguns querem falar em público. Proponho ouvir quem se oferecer e usar os depoimentos para cobrar os responsáveis.",
-    "en": "Some want to speak in public. I propose taking voluntary statements and using them to hold those responsible to account."
+    "pt": "Algumas dessas pessoas querem falar em público, com nome. Eu reuniria quem quiser depor e cobraria uma resposta dos responsáveis.",
+    "en": "Some of them want to be heard by name. I'd gather those people, let them testify, and push for those responsible to answer."
   },
   {
     "id": "text.05351327f6d8b137",
-    "pt": "Querem resolver o mesmo problema, mas de jeitos diferentes.",
-    "en": "You want to solve the same problem, just in different ways."
+    "pt": "Vocês dois querem impedir que mais gente se machuque. O que impede vocês de fazer isso juntos?",
+    "en": "You both want the injuries to stop. What's keeping you from doing this together?"
   },
   {
     "id": "text.371c5d6931184db4",
-    "pt": "E discordamos sobre o risco de expor essas pessoas. Antes de decidir, ouça quem se machucou.",
-    "en": "And we disagree about the risk of exposing these people. Hear from someone who was hurt before you decide."
+    "pt": "O que acontece com essas pessoas depois. É aí que discordamos. Antes de escolher, ouça alguém que se machucou.",
+    "en": "What happens to the people afterward. That's where we disagree. Before you choose, hear from someone who was hurt."
   },
   {
     "id": "text.95e58f67ba5de046",
-    "pt": "Pode usar o que eu contar, mas sem meu nome. Não quero que quem ainda me dá trabalho me reconheça.",
-    "en": "You can use what I tell you, but leave my name out. I don't want the people who still hire me to recognize me."
+    "pt": "Podem usar o que eu contar. Só... sem nome. Ainda preciso que aquela gente me contrate. Não posso deixar que me reconheçam nisso.",
+    "en": "You can use what I tell you. Just... no name. I still need those people to hire me. I can't have them recognizing me in this."
   },
   {
     "id": "text.cfb3e69cd8dee38d",
-    "pt": "Vou respeitar isso.",
-    "en": "I'll respect that."
+    "pt": "Está bem. Seu nome fica de fora.",
+    "en": "All right. Your name stays out."
   },
   {
     "id": "text.dd5be709d6f92f99",
-    "pt": "Então pode perguntar sobre o aparelho.",
-    "en": "Then you can ask about the equipment."
+    "pt": "Então... pergunte sobre o equipamento. Disso eu posso falar.",
+    "en": "Then... ask me about the equipment. I can tell you that much."
   },
   {
     "id": "text.52195917b87aaf58",
-    "pt": "O que posso contar desta conversa?",
-    "en": "What can I share from this conversation?"
+    "pt": "Diga o que você se sente à vontade para deixar a gente contar.",
+    "en": "Tell me what you're comfortable having us share."
   },
   {
     "id": "text.d47024012cb5d97e",
-    "pt": "O que aconteceu. Não diga meu nome nem onde trabalho.",
-    "en": "What happened. Don't say my name or where I work."
+    "pt": "O que aconteceu comigo. Meu nome, não. Nem onde trabalho.",
+    "en": "What happened to me. Not my name. Not where I work."
   },
   {
     "id": "text.12b0b41bfbb90646",
-    "pt": "O apoio cedeu durante o exercício. Disseram que eu não tinha jeito. Quem me ajudou guardou uma peça e levou para Guedra examinar.",
-    "en": "The support gave way during the exercise. They said I was clumsy. The person who helped me kept a piece and took it to Guedra to check."
+    "pt": "O suporte cedeu no meio do exercício. Disseram que eu era desastrado. Quem me ajudou guardou um pedaço e levou para a Guedra. Pelo menos alguém quis olhar aquilo.",
+    "en": "The support gave way in the middle of the exercise. They called me clumsy. The person who helped me kept a broken piece and took it to Guedra. At least someone thought to look at it."
   },
   {
     "id": "text.487ceaa28890db16",
-    "pt": "Guedra aceitou emprestar a peça. Leve esta autorização e volte com ela. Primeiro precisamos examiná-la; só encontrá-la não prova de quem foi a culpa.",
-    "en": "Guedra agreed to lend us the piece. Take this authorization and bring it back. We need to examine it first. Having it doesn't tell us whose fault this was."
+    "pt": "A Guedra vai nos emprestar a peça. Leve esta autorização e traga o pedaço. Vamos ver o que ele pode nos dizer antes de decidir de quem é a culpa.",
+    "en": "Guedra will lend it to us. Take this authorization and bring the piece back. Let's see what it can tell us before we decide who to blame."
   },
   {
     "id": "text.68bc94b1b7f7f650",
-    "pt": "Trouxeram a peça para mim. Eu não estava lá quando quebrou. Dou minhas aulas aqui, não naquele pátio.",
-    "en": "They brought the piece to me. I wasn't there when it broke. I teach here, not at that yard."
+    "pt": "Trouxeram isso para mim depois. Não vi quebrar, Ghork. Eu dou aula aqui; o acidente foi em outro pátio.",
+    "en": "They brought this to me afterward. I didn't see it break, Ghork. I teach here; that accident happened at another yard."
   },
   {
     "id": "text.68fda2b4d2c1d6fd",
-    "pt": "Preciso saber o que o desgaste revela, sem adivinhar o resto do acidente.",
-    "en": "I need to know what the wear tells us, without guessing the rest of the accident."
+    "pt": "Entendi. Precisamos que alguém examine o dano, não que complete a história que ninguém viu.",
+    "en": "Understood. We need someone to check the damage, not fill in the parts nobody saw."
   },
   {
     "id": "text.b08b73b91f18c22f",
-    "pt": "Durn pode examinar. Aqui está. Traga de volta; precisamos guardar a peça.",
-    "en": "Durn can examine it. Here. Bring it back; we need to keep it."
+    "pt": "Leve ao Durn. Ele pode fazer isso. E traga de volta depois. Precisamos guardar essa peça.",
+    "en": "Take it to Durn. He can do that. And bring it back afterward. We need to keep this piece."
   },
   {
     "id": "text.c29669c5da7f23bd",
-    "pt": "Dá para ver uma falha aqui. Mas só a peça não diz quem instalou nem quem sabia desse desgaste.",
-    "en": "There's a visible fault here. But this piece alone won't tell me who installed it or who knew it was worn."
+    "pt": "Está vendo aqui? Há uma falha. Isso eu consigo mostrar. Quem montou, quem percebeu o desgaste antes de quebrar... a peça não me conta isso.",
+    "en": "See this? There is a fault. That much I can show you. Who fitted it, who noticed the wear before it broke--the piece can't tell me that."
   },
   {
     "id": "text.6244a5dcf69e7803",
-    "pt": "Deixe isso claro no seu registro.",
-    "en": "Make that clear in your report."
+    "pt": "Anote isso também. Não quero que seu laudo diga mais do que você pode afirmar.",
+    "en": "Write that down too. I don't want your report saying more than you can tell us."
   },
   {
     "id": "text.862523159873b5f9",
-    "pt": "Vou descrever o estado da peça. Para acusar alguém, precisam de outras provas.",
-    "en": "I'll describe the condition of the piece. You'll need other evidence to accuse anyone."
+    "pt": "Não vai dizer. Vou descrever o que encontrei. Para acusar alguém, vocês vão precisar de mais do que isso.",
+    "en": "It won't. I'll describe what I found. To accuse someone, you'll need more than this."
   },
   {
     "id": "text.3746e549421c9666",
-    "pt": "Quero mostrar o exame aos envolvidos antes de levar o caso adiante.",
-    "en": "I want the people involved to see the findings before we take this further."
+    "pt": "Deixe as pessoas envolvidas lerem antes de levarmos isso adiante. Elas precisam saber o que estamos associando ao relato delas.",
+    "en": "Let the people involved read it before we take it any further. They should know what we're putting their story behind."
   },
   {
     "id": "text.399ace0143e2e20e",
-    "pt": "Leve uma cópia. Se encontrarem algo errado, quero saber.",
-    "en": "Take a copy. If they find anything wrong, I want to know."
+    "pt": "Leve uma cópia. Se encontrarem alguma coisa errada, tragam para mim. Prefiro corrigir agora.",
+    "en": "Take a copy. If they spot something wrong, bring it to me. I'd rather correct it now."
   },
   {
     "id": "text.94afde4a156ec228",
-    "pt": "Vou guardar a peça junto com o registro de quem a examinou.",
-    "en": "I'll keep the piece with the record of who examined it."
+    "pt": "Vou guardar a peça aqui, junto com o registro de quem examinou. Podemos precisar dela de novo.",
+    "en": "I'll keep the piece here, along with the record of who's examined it. We may need it again."
   },
   {
     "id": "text.a5f1d07841f82ed6",
-    "pt": "Com isso, podemos pedir uma investigação. Ainda não prova o que alguém pretendia fazer.",
-    "en": "This gives us grounds to ask for an investigation. It still doesn't prove anyone's intent."
+    "pt": "Isso basta para pedir uma investigação. Não para dizer que alguém quis que acontecesse.",
+    "en": "This is enough to ask for an investigation. Not enough to say someone meant for it to happen."
   },
   {
     "id": "text.4830fb1fc78d4ac3",
-    "pt": "Vou conferir se algum detalhe da cópia revela quem pediu sigilo.",
-    "en": "I'll check that nothing in the copy gives away the patient who asked for privacy."
+    "pt": "Deixe eu conferir a cópia mais uma vez. Tirar o nome não protege ninguém se os detalhes entregarem a pessoa.",
+    "en": "Let me check the copy once more. A missing name won't protect someone if the details give them away."
   },
   {
     "id": "text.636f4611fe78fa09",
-    "pt": "Posso reunir quem quiser depor. Quem pediu sigilo não entra na lista de nomes.",
-    "en": "I can gather the people who want to testify. Anyone who asked for privacy stays off the list of names."
+    "pt": "Vou reunir quem quer depor. Só essas pessoas. Quem pediu sigilo fica fora da lista de nomes.",
+    "en": "I'll gather the people who want to testify. Only those people. Anyone who asked us for privacy stays off that list."
   },
   {
     "id": "text.c3b9114c41d80d8f",
-    "pt": "Posso apresentar as lesões e o exame sem revelar os pacientes. Ghork, escolha qual apresentação vai ajudar a preparar. Não dá para assumir as duas.",
-    "en": "I can present the injuries and the findings without identifying patients. Ghork, choose which presentation you'll help prepare. You can't take on both."
+    "pt": "E eu posso apresentar os ferimentos e as conclusões do Durn sem identificar os pacientes. Ghork, qual apresentação você vai ajudar a preparar? Não dá tempo de fazer as duas.",
+    "en": "And I can present the injuries and Durn's findings without identifying patients. Ghork, which will you help prepare? You haven't got time to do both."
   },
   {
     "id": "text.1edecd9a5fb108a0",
-    "pt": "Preparar relatório anônimo · Sura",
-    "en": "Prepare an anonymous report · Sura"
+    "pt": "Sura, vou ajudar a preparar o relatório sem identificar os pacientes.",
+    "en": "Sura, I'll help prepare the report without naming the patients."
   },
   {
     "id": "text.d452822671b690c8",
-    "pt": "Preparar depoimentos voluntários · Edrin",
-    "en": "Prepare voluntary statements · Edrin"
+    "pt": "Edrin, vou ajudar quem quer depor a preparar seus relatos.",
+    "en": "Edrin, I'll help the people who want to testify prepare their statements."
   },
   {
     "id": "text.44ecad7cbb274a66",
-    "pt": "Reunimos os relatos e o exame da peça. Os pacientes autorizaram o uso, desde que seus nomes não apareçam.",
-    "en": "We've collected the accounts and the findings on the broken piece. The patients agreed to their use as long as their names stay out."
+    "pt": "Aqui estão os relatos que recolhemos e as conclusões sobre a peça quebrada. Os pacientes permitiram que usássemos suas histórias. Não que revelássemos seus nomes.",
+    "en": "These are the accounts we collected, and the findings on the broken piece. The patients agreed to let us use their stories. They didn't agree to be named."
   },
   {
     "id": "text.b81ab8b0ed56f5a4",
-    "pt": "Pedimos uma investigação dos equipamentos e das condições do pátio. Estas são as informações que temos até agora.",
-    "en": "We're asking for an investigation into the equipment and conditions at the yard. This is the information we have so far."
+    "pt": "Por favor, investigue o equipamento e as condições daquele pátio. Isto é o que conseguimos apurar. Não queremos esperar alguém se machucar de novo.",
+    "en": "Please investigate the equipment and the conditions at that yard. This is what we've been able to establish. We don't want to wait for another injury."
   },
   {
     "id": "text.043fce6a98461d34",
-    "pt": "Vou receber o material e registrar o pedido de investigação. Ainda não temos como apontar um culpado.",
-    "en": "I'll accept the material and file the request for an investigation. We can't name anyone responsible yet."
+    "pt": "Vou receber o material e registrar o pedido. Apontar um responsável vem depois da investigação, não antes.",
+    "en": "I'll take the material and file the request. Naming someone responsible comes after the investigation, not before."
   },
   {
     "id": "text.e8f9464929915451",
-    "pt": "Vou continuar procurando quem queira depor. Quem aparece nessa cópia terá seu sigilo respeitado.",
-    "en": "I'll keep looking for people who want to testify. The people in that copy will keep their privacy."
+    "pt": "Vou continuar procurando quem queira depor. Isso não muda o que prometemos aos pacientes deste relatório.",
+    "en": "I'll keep looking for people willing to testify. That doesn't change what we promised the patients in this report."
   },
   {
     "id": "text.8d0ac5f55ad16d07",
-    "pt": "Estas pessoas decidiram falar. O relato de quem pediu sigilo continua separado.",
-    "en": "These people chose to speak. The account from the patient who requested privacy stays separate."
+    "pt": "Todos aqui escolheram falar. Mantivemos o relato sigiloso separado. Aquele paciente não faz parte destes depoimentos.",
+    "en": "Everyone here chose to speak. We've kept the private account separate. That patient isn't part of this testimony."
   },
   {
     "id": "text.321fe6b10a736669",
-    "pt": "Antes de confirmar, cada testemunha pode corrigir o que disse. O exame explica o estado da peça; precisamos de vocês para contar o que viram.",
-    "en": "Before confirming your statements, you can correct anything you said. The examination tells us about the piece. We need you to tell us what you saw."
+    "pt": "Antes de confirmar qualquer coisa, releiam seus depoimentos. Corrijam o que precisar. Já temos o exame da peça; de vocês, precisamos do que viram.",
+    "en": "Before we confirm anything, read your statement again. Correct whatever needs correcting. We have an examination of the piece; what we need from you is what you saw."
   },
   {
     "id": "text.18359ed2de8576d2",
-    "pt": "Quero corrigir quando aconteceu. Foi depois de mudarem o exercício, não antes.",
-    "en": "I need to correct when it happened. It was after they changed the exercise, not before."
+    "pt": "Esta parte está errada. A ordem. Aconteceu depois que mudaram o exercício, não antes.",
+    "en": "This part's wrong. The timing. It happened after they changed the exercise, not before."
   },
   {
     "id": "text.a163c36cc6e15fca",
-    "pt": "Corrigido. O restante está certo?",
-    "en": "Corrected. Is the rest right?"
+    "pt": "Depois da mudança. Pronto, corrigido. O resto está como você lembra?",
+    "en": "After the change. There, corrected. Is everything else how you remember it?"
   },
   {
     "id": "text.30276867e44f8412",
-    "pt": "Está.",
-    "en": "Yes."
+    "pt": "Sim. Está certo.",
+    "en": "Yes. That's right."
   },
   {
     "id": "text.f45a21a06ec02851",
-    "pt": "Vou receber os depoimentos e o pedido. Na investigação, também teremos de ouvir os responsáveis pelo pátio.",
-    "en": "I'll accept the statements and the request. The investigation will also have to hear from those responsible for the yard."
+    "pt": "Vou receber os depoimentos e o pedido. Também precisamos ouvir os responsáveis pelo pátio antes de chegar a uma conclusão.",
+    "en": "I'll accept the statements and the request. We'll also need to hear from the people responsible for the yard before reaching a conclusion."
   },
   {
     "id": "text.64f48ad00341837e",
-    "pt": "Continuarei atendendo quem precisar. E o paciente que pediu sigilo não aceitou ser identificado só porque houve uma audiência.",
-    "en": "I'll keep treating whoever needs help. And holding a hearing doesn't mean the patient who asked for privacy agreed to be named."
+    "pt": "Vou continuar atendendo quem precisar de mim. E, por favor, lembrem: uma audiência pública não desfaz uma promessa de sigilo.",
+    "en": "I'll keep treating whoever comes to me. And please remember: a public hearing doesn't release us from a promise of privacy."
   },
   {
     "id": "text.d61d9f5c674e8b91",
-    "pt": "Vou ceder esta armação a um projeto. Korr quer aproveitar as peças; Velka quer usá-la inteira. Vamos decidir antes que alguém pegue uma ferramenta.",
-    "en": "I'm donating this frame to a project. Korr wants the parts; Velka wants to use it whole. We decide before anyone picks up a tool."
+    "pt": "Vou doar esta estrutura para um projeto. Korr quer as peças; Velka quer ela inteira. Ninguém pega ferramenta até decidirmos.",
+    "en": "I'm giving this frame to one project. Korr wants its parts; Velka wants it intact. Hands off the tools until we decide."
   },
   {
     "id": "text.851f421ad5186de3",
-    "pt": "Com esse material, faço proteções para quem não pode pagar caro. Não dá para equipar a cidade inteira.",
-    "en": "I can turn that material into protective gear people can afford. Not enough to outfit the whole city, mind you."
+    "pt": "Olhe esse material! Dá para fazer proteção que as pessoas consigam pagar. Não para Terminus inteira, antes que alguém pergunte. Mas alguns conjuntos.",
+    "en": "Look at that material! I could make protective gear people could actually afford. Not for everyone in Terminus, before you ask. But a few sets."
   },
   {
     "id": "text.a9dfb8b6fada8099",
-    "pt": "Eu a uso para ensinar um movimento. Posso demonstrar. Se desmontarmos, não teremos como praticá-lo aqui.",
-    "en": "I use it to teach a movement. Let me show you. Take it apart, and we won't be able to practice it here."
+    "pt": "E eu posso ensinar com ela assim. Deixem eu mostrar o movimento. Depois de desmontada, perdemos onde praticar.",
+    "en": "And I can teach with it as it is. Let me show you the movement. Once it's in pieces, we lose the place to practice it."
   },
   {
     "id": "text.7af2aa3cbe0a094c",
-    "pt": "Quero ver antes de escolher.",
-    "en": "I'd like to see before I choose."
+    "pt": "Quero ver. Não quero escolher só pelas duas descrições do mesmo monte de metal.",
+    "en": "I'd like to see that. I don't want to choose from two descriptions of the same pile of metal."
   },
   {
     "id": "text.b5d03380ef2daac3",
-    "pt": "Deixem a passagem livre. Velka, mostre onde muda o apoio.",
-    "en": "Keep the passage clear. Velka, show us where you shift your weight."
+    "pt": "Deem espaço para ela. Mantenham a passagem livre. Velka, mostre a transferência de peso.",
+    "en": "Give her room. Keep the passage clear. Velka, show us the weight shift."
   },
   {
     "id": "text.a4cb539194b8b2ac",
-    "pt": "Aqui. Precisamos deste intervalo entre os apoios. Ghork, observe primeiro. Não precisa forçar a perna para concordar comigo.",
-    "en": "Here. We need this gap between the supports. Watch first, Ghork. You don't need to strain your leg to prove my point."
+    "pt": "Aqui. Viu quanto espaço preciso entre os apoios? Por enquanto, só olhe, Ghork. Não preciso que você force a perna para provar meu argumento.",
+    "en": "Here. See how much space I need between the supports? Watch for now, Ghork. I don't need you straining your leg to make my case."
   },
   {
     "id": "text.87103e1f5570fc52",
-    "pt": "Agora entendi. Mas preciso justamente dessas partes. Se eu tirar, não dá mais para fazer o movimento.",
-    "en": "Now I see. But those are the very parts I need. Take them out, and you can't do the movement anymore."
+    "pt": "Ah. Sim, agora entendi. Mas são justamente as peças que eu usaria. Não consigo tirar sem acabar com esse movimento.",
+    "en": "Oh. Yes, I see it now. Those are exactly the parts I'd use, though. I can't take them without taking that movement away."
   },
   {
     "id": "text.f7024f9d9e2e6e1e",
-    "pt": "Korr, o que você conseguiria fazer?",
-    "en": "Korr, what could you make?"
+    "pt": "Korr, explique melhor. O que daria para fazer com isso?",
+    "en": "Korr, be specific. What could you make with it?"
   },
   {
     "id": "text.d786b785e37e9213",
-    "pt": "Alguns conjuntos de proteção, todos testados antes do uso. Quero aproveitar esse material para quem não consegue comprar equipamento novo.",
-    "en": "A few sets of protective gear, all tested before use. I want this material helping people who can't afford new equipment."
+    "pt": "Alguns conjuntos de proteção. Testados antes de alguém vestir, claro. Pense em quem está se virando como pode porque equipamento novo custa caro demais.",
+    "en": "A few sets of protective gear. Tested before anyone puts them on, of course. Think of someone who's been making do because new equipment costs too much."
   },
   {
     "id": "text.12593f8efb4924d3",
-    "pt": "Velka, quem vai poder aprender?",
-    "en": "Velka, who gets to learn?"
+    "pt": "Velka, se mantivermos a estrutura, quem vai poder usar?",
+    "en": "Velka, if we keep it, who gets to use it?"
   },
   {
     "id": "text.9c8bc4f3a24310ad",
-    "pt": "Quem vier às práticas que eu organizar. Não basta guardar a armação; vou ter que dar as aulas.",
-    "en": "Anyone who comes to the sessions I arrange. Keeping the frame isn't enough. I'll have to teach."
+    "pt": "Quem vier às aulas que eu organizar. E eu vou ensinar. Não pediria para você preservar isso só para eu admirar a estrutura parada aqui.",
+    "en": "Whoever comes to the sessions I arrange. And I'll teach them. I won't ask you to save it just so I can admire it sitting here."
   },
   {
     "id": "text.6c9db5394e34f55f",
-    "pt": "Reaproveitar · Korr",
-    "en": "Repurpose it · Korr"
+    "pt": "Vamos usar as peças para as proteções do Korr.",
+    "en": "Let's use the parts for Korr's protective gear."
   },
   {
     "id": "text.cc6e0f160493926e",
-    "pt": "Vou apoiar as proteções. Korr, vamos conferir as peças antes de desmontar.",
-    "en": "I'll back the protective gear. Korr, let's check the parts before we take it apart."
+    "pt": "Vou apoiar as proteções. Korr, vamos conferir o que temos antes de soltar qualquer peça.",
+    "en": "I'll back the protective gear. Korr, let's check what we've got before anything comes apart."
   },
   {
     "id": "text.d11460c5f0d19f19",
-    "pt": "Eu queria manter a armação. Vou buscar outra forma de ensinar, mas não vou fingir que consigo substituí-la amanhã.",
-    "en": "I wanted to keep the frame. I'll find another way to teach, but I won't pretend I can replace it tomorrow."
+    "pt": "Eu queria manter a estrutura. Vou procurar outro jeito de ensinar o movimento, mas... não, não consigo substituir isso amanhã.",
+    "en": "I wanted to keep it. I'll look for another way to teach the movement, but... no, I can't just replace this tomorrow."
   },
   {
     "id": "text.e83cfecca58e36e8",
-    "pt": "Podem começar. Korr desmonta; você anota as peças que saírem.",
-    "en": "Go ahead. Korr takes it apart; you list the parts as they come off."
+    "pt": "Está bem. Korr desmonta. Ghork, anote cada peça que sair. Não vamos perder nada pelo chão.",
+    "en": "All right. Korr dismantles it. Ghork, list each part as it comes off. Let's not lose anything on the floor."
   },
   {
     "id": "text.f45044df4dfbdfb4",
-    "pt": "Vamos testar o primeiro conjunto antes de usar. Vai levar meu nome. Se algo falhar, quero que saibam quem fez.",
-    "en": "We'll test the first set before anyone wears it. It'll have my name on it. If something fails, I want people to know who made it."
+    "pt": "O primeiro conjunto vai ser testado antes de ser usado. E leva meu nome. Se der problema, quero que venham falar comigo.",
+    "en": "First set gets tested before it gets worn. And my name goes on it. If there's a problem, I want them coming to me."
   },
   {
     "id": "text.f3a1bf7d3d1f08d6",
-    "pt": "Preservar · Velka",
-    "en": "Preserve it · Velka"
+    "pt": "Vamos manter a estrutura para as aulas da Velka.",
+    "en": "Let's keep the frame for Velka's lessons."
   },
   {
     "id": "text.d912357e821b3753",
-    "pt": "Vou manter a armação inteira e ajudar Velka com as aulas.",
-    "en": "I'll keep the frame whole and help Velka with the lessons."
+    "pt": "A estrutura fica inteira. Velka, vou ajudar você a começar as aulas.",
+    "en": "The frame stays whole. Velka, I'll help you get the lessons going."
   },
   {
     "id": "text.36a6de42cf648b16",
-    "pt": "Vou buscar outro material. Só não deixem isso pegando poeira depois de tanta conversa.",
-    "en": "I'll find other material. Just don't leave this gathering dust after all that talk."
+    "pt": "Vou encontrar outro material. Só... usem, está bem? Depois disso tudo, não quero ver a estrutura aqui juntando poeira.",
+    "en": "I'll find something else to work with. Just... use it, all right? After all this, I don't want to see it sitting here gathering dust."
   },
   {
     "id": "text.9c4aaed729c35eb6",
-    "pt": "Também não quero isso. Vou combinar a primeira aula com Guedra.",
-    "en": "I don't want that either. I'll arrange the first lesson with Guedra."
+    "pt": "Nem eu. Vou falar com a Guedra e marcar a primeira aula.",
+    "en": "Neither do I. I'll speak to Guedra and arrange the first lesson."
   },
   {
     "id": "text.b0029304e4648a67",
-    "pt": "Então fica para as aulas. Vou registrar a entrega; a armação sai inteira.",
-    "en": "Then it's for the lessons. I'll record the handover. The frame leaves in one piece."
+    "pt": "Então fica para as aulas. Vou registrar a entrega. Uma estrutura, ainda inteira.",
+    "en": "Lessons, then. I'll record who it's going to. One frame, still in one piece."
   },
   {
     "id": "text.ca61b71cb6a70da6",
-    "pt": "A cisterna está quase pronta, mas os trabalhadores ainda não receberam. Queremos segurar a entrega até pagarem tudo.",
-    "en": "The cistern's almost done, but the workers still haven't been paid. We want to hold the handover until every wage is settled."
+    "pt": "Estamos quase terminando a cisterna e a equipe ainda não recebeu. Queremos o pagamento antes da entrega. Depois que a chave sair da nossa mão, o que sobra para negociar?",
+    "en": "We're nearly done with the cistern, and the crew still hasn't been paid. We want the wages settled before we hand it over. Once the key's gone, what have we got left to bargain with?"
   },
   {
     "id": "text.1b4105b52c1f71d7",
-    "pt": "Propus deixar o dinheiro com Jorvi, para ele liberar quando entregarmos. Precisamos conferir o valor e as condições primeiro.",
-    "en": "I proposed leaving the money with Jorvi, to release when we hand over the cistern. We need to check the amount and terms first."
+    "pt": "Propus deixar o dinheiro com Jorvi para liberar na entrega. Mas precisamos conferir a quantia e as condições. Não estou pedindo que ninguém aceite só na confiança.",
+    "en": "I've proposed having Jorvi hold the money and release it at the handover. But we need to check it--the amount and the terms. I'm not asking anyone to take it on trust."
   },
   {
     "id": "text.fcff4ace1ebcdcdc",
-    "pt": "O dinheiro está lá ou só prometeram?",
-    "en": "Is the money there, or did they just promise it?"
+    "pt": "O dinheiro já está com Jorvi? Ou ainda estamos falando de uma promessa?",
+    "en": "Is Jorvi holding the money already? Or are we still talking about a promise?"
   },
   {
     "id": "text.bc9d0080a5b47e57",
-    "pt": "Vou conferir. Não entrego a chave só porque alguém disse que pagou.",
-    "en": "I'll check. I'm not handing over the key just because someone says they've paid."
+    "pt": "Vamos descobrir. Até lá, a chave fica aqui. Alguém dizer que pagou não basta.",
+    "en": "Let's find out. The key stays here until we do. Someone saying they've paid isn't enough."
   },
   {
     "id": "text.5847bbab1031d224",
-    "pt": "Antes de voltar com tudo decidido, ouça quem está esperando receber.",
-    "en": "Before you come back with it all decided, hear from the people waiting to be paid."
+    "pt": "E, antes de voltar com a resposta pronta, ouça quem está esperando pelo salário.",
+    "en": "And before you come back with the answer all wrapped up, listen to the people waiting for their wages."
   },
   {
     "id": "text.db78d481c3c9282d",
-    "pt": "Os trabalhadores discutem como cobrar o pagamento.",
-    "en": "The workers discuss how to secure their pay."
+    "pt": "Os trabalhadores se reúnem para discutir os salários atrasados. Todos precisam do dinheiro, mas discordam sobre a entrega.",
+    "en": "The workers gather to discuss the unpaid wages. They agree they need the money; they disagree about the handover."
   },
   {
     "id": "text.e6f326aad94afc6c",
-    "pt": "Se entregarmos antes de receber, o que vai obrigar eles a pagar depois?",
-    "en": "If we hand it over before we're paid, what's going to make them pay afterward?"
+    "pt": "Já fizemos o trabalho. Se entregarmos a cisterna também, por que vão resolver pagar justamente depois?",
+    "en": "We've done the work. If we give them the cistern too, why would they suddenly decide to pay us?"
   },
   {
     "id": "text.a3251b45b10b29a1",
-    "pt": "Se pararmos, minhas contas não param junto. Quero saber se esse dinheiro existe mesmo.",
-    "en": "If we stop, my bills don't stop with us. I want to know if that money's really there."
+    "pt": "E, se pararmos, o que digo às pessoas a quem devo? Preciso saber se esse depósito existe mesmo.",
+    "en": "And if we stop, what do I tell the people I owe? I need to know whether that deposit is real."
   },
   {
     "id": "text.b380ffa5590ab08e",
-    "pt": "Vou conferir as contas e o depósito. Depois volto para vocês decidirem sabendo o que existe.",
-    "en": "I'll check the accounts and the deposit. Then I'll come back so you can decide knowing what's there."
+    "pt": "Vou comparar o que devem com o depósito e trazer a resposta. Assim vocês vão saber o que estão pedindo que aceitem.",
+    "en": "I'll check what's owed against the deposit and bring it back to you. Then you'll know what you're being asked to accept."
   },
   {
     "id": "text.035abb5ece04a90b",
-    "pt": "O dinheiro está aqui. Comparem esta cópia com a lista do que é devido.",
-    "en": "The money's here. Compare this copy with the list of what's owed."
+    "pt": "O dinheiro está aqui. Esta é a sua cópia do registro. Confira com cada pagamento devido.",
+    "en": "The money is here. Here's your copy of the record. Check it against every payment owed."
   },
   {
     "id": "text.39c22b5d2d894cca",
-    "pt": "O contratante pode sacar antes da entrega?",
-    "en": "Can the client take it back before the handover?"
+    "pt": "O cliente pode retirar o dinheiro antes de entregarmos a cisterna?",
+    "en": "Can the client pull it back out before we hand over the cistern?"
   },
   {
     "id": "text.93430d04600e613b",
-    "pt": "Pelo acordo que aceitei, não. Esse dinheiro está reservado para os pagamentos deste registro.",
-    "en": "Not under the agreement I accepted. That money is reserved for the payments on this record."
+    "pt": "Não. Pelo acordo que aceitei, está reservado para estes pagamentos. O cliente não pode simplesmente retirar.",
+    "en": "No. Under the agreement I accepted, it's reserved for these payments. The client can't simply withdraw it."
   },
   {
     "id": "text.3ed60af3ce7834df",
-    "pt": "Quem confirma a entrega?",
-    "en": "Who confirms the handover?"
+    "pt": "E quem precisa confirmar que a entrega foi concluída?",
+    "en": "And who has to say the handover is complete?"
   },
   {
     "id": "text.19d1fe1e3012e2cb",
-    "pt": "Quem receber a obra e os representantes dos trabalhadores. Não libero o dinheiro sem a confirmação deles.",
-    "en": "Whoever takes delivery and the workers' representatives. I won't release the money without their confirmation."
+    "pt": "Quem recebe e os representantes dos trabalhadores. Preciso da confirmação dos dois lados antes de liberar qualquer quantia.",
+    "en": "The recipient and the workers' representatives. I need confirmation from both before I release anything."
   },
   {
     "id": "text.4e6c1f8c1cc5e9e7",
-    "pt": "E se os trabalhadores não aceitarem o acordo?",
-    "en": "And if the workers don't accept the agreement?"
+    "pt": "E se os trabalhadores lerem isso e ainda assim não aceitarem?",
+    "en": "What if the workers read this and still say no?"
   },
   {
     "id": "text.9d26bbaeb37e85a2",
-    "pt": "Não entregue a chave como se tivessem aceitado. Leve uma cópia para discutirem.",
-    "en": "Don't hand over the key as though they did. Take a copy so they can discuss it."
+    "pt": "Então não entregue a chave dizendo que concordaram. Leve a cópia. Deixe que leiam por conta própria.",
+    "en": "Then don't hand over the key and claim they agreed. Take them the copy. Let them read it for themselves."
   },
   {
     "id": "text.726d7c532cdded58",
-    "pt": "Conferi a lista. O depósito cobre toda a dívida. Nessas condições, posso terminar a obra.",
-    "en": "I've checked the list. The deposit covers everything owed. Under those terms, I can finish the job."
+    "pt": "Conferi a lista. Está tudo lá, o suficiente para cobrir a dívida. Nessas condições, estou disposto a terminar e entregar.",
+    "en": "I've checked the list. It's all there, enough to cover what's owed. With those terms, I'm willing to finish and hand it over."
   },
   {
     "id": "text.86c67151794daeb8",
-    "pt": "Dinheiro reservado é melhor que promessa. Mas ainda quero receber antes de entregar. Enquanto a obra está conosco, podemos exigir isso.",
-    "en": "Money set aside is better than a promise. But I still want us paid before the handover. While we hold the work, we can demand that."
+    "pt": "É melhor do que uma promessa, sim. Ainda quero os salários pagos primeiro. Podemos exigir isso enquanto a cisterna estiver nas nossas mãos.",
+    "en": "It's better than a promise, yes. I still want the wages paid first. We can demand that while the cistern's in our hands."
   },
   {
     "id": "text.3c38d57e2669b91c",
-    "pt": "Apoiar a suspensão · Tessa",
-    "en": "Support the hold · Tessa"
+    "pt": "Estou com a Tessa. Paguem a equipe antes da entrega.",
+    "en": "I'm with Tessa. Pay the crew before the handover."
   },
   {
     "id": "text.a8f4417fdfdd4d37",
-    "pt": "O depósito existe, mas vou apoiar o pagamento antes da entrega.",
-    "en": "The deposit is real, but I'll back payment before the handover."
+    "pt": "Conferimos o depósito. Ele existe. Mesmo assim, apoio esperar o pagamento da equipe antes de entregar a chave.",
+    "en": "We've checked the deposit. It's real. I still support waiting until the crew is paid before handing over the key."
   },
   {
     "id": "text.b83b4db9282aec5d",
-    "pt": "Vou anotar quem apoia essa decisão comigo. Quem discordar pode falar, como acabou de fazer.",
-    "en": "I'll record who supports that decision with me. Anyone who disagrees can say so, just as you did."
+    "pt": "Vou anotar quem apoia essa decisão comigo. Quem não apoiar, pode dizer. Não vou falar por vocês.",
+    "en": "I'll put down who supports that with me. Anyone who doesn't, say so. I won't put words in your mouths."
   },
   {
     "id": "text.091f690bf74d90d5",
-    "pt": "Eu discordo. Vou respeitar a retenção da chave, mas preciso arranjar trabalho enquanto esperamos.",
-    "en": "I disagree. I'll respect holding the key, but I need to find work while we wait."
+    "pt": "Não concordo. Não vou tirar a chave das mãos de vocês, mas não posso passar essa espera sem trabalho. Vou ter que procurar.",
+    "en": "I don't agree. I won't take the key out of your hands, but I can't spend the wait without work. I'll have to find some."
   },
   {
     "id": "text.e3df3b58c3df1545",
-    "pt": "Essa conversa não quitou a dívida. Amanhã ainda vamos ter que negociar.",
-    "en": "This conversation hasn't paid the debt. Tomorrow we'll still have to negotiate."
+    "pt": "Ainda não recebemos, Ghork. Isso não acaba porque concordamos. Amanhã, vamos ter que negociar de novo.",
+    "en": "We still haven't been paid, Ghork. This doesn't end with us agreeing. Tomorrow, we negotiate again."
   },
   {
     "id": "text.c9299e133709a568",
-    "pt": "Eu sei. Vou manter meu apoio, sem fingir que esperar não custa nada.",
-    "en": "I know. I'll stand by my support without pretending the wait costs nothing."
+    "pt": "Eu sei. Vou manter o que disse. E não vou dizer ao Mavren que essa espera não custa nada a ele.",
+    "en": "I know. I'll stand by what I said. And I won't tell Mavren waiting doesn't cost him anything."
   },
   {
     "id": "text.adaf0f8f8ab93912",
-    "pt": "Concluir com garantia · Mavren",
-    "en": "Finish with secured payment · Mavren"
+    "pt": "Estou com o Mavren. Vamos concluir o trabalho com o pagamento garantido.",
+    "en": "I'm with Mavren. Finish the job with the payment secured."
   },
   {
     "id": "text.e9543f17fc525630",
-    "pt": "Vou ajudar a terminar. Conferimos o depósito, e o dinheiro só sai com a participação dos representantes.",
-    "en": "I'll help finish it. We've checked the deposit, and the money only moves with the representatives involved."
+    "pt": "Vou ajudar a terminar. Conferimos o dinheiro, e os representantes precisam confirmar a entrega antes da liberação.",
+    "en": "I'll help finish it. We've checked the money, and the representatives have to confirm the handover before it's released."
   },
   {
     "id": "text.ce6527cac24ef47f",
-    "pt": "A garantia existe. Eu preferia receber antes, mas quem aceitou esse acordo pode declarar seu apoio.",
-    "en": "The guarantee is real. I'd rather be paid first, but anyone who accepts this agreement can say so."
+    "pt": "O dinheiro está garantido. Reconheço isso. Ainda preferia receber primeiro. Quem quiser aceitar esse acordo pode falar por si.",
+    "en": "The money's secured. I accept that much. I'd still rather have it paid first. Anyone who wants this agreement can speak for themselves."
   },
   {
     "id": "text.9d8eb721aa0f6b36",
-    "pt": "Mavren entrega a chave a Ghork. Os representantes acompanham a conferência final.",
-    "en": "Mavren hands Ghork the key. The representatives watch the final check."
+    "pt": "Mavren passa a chave a Ghork. Os representantes acompanham a última conferência.",
+    "en": "Mavren passes Ghork the key. The representatives stay for the final check."
   },
   {
     "id": "text.af45f0ecc39ce9ea",
-    "pt": "Ghork entrega a chave ao responsável, diante dos representantes. Com a entrega confirmada, o dinheiro do depósito pode ser liberado.",
-    "en": "Ghork hands the key to the person receiving the cistern, in front of the representatives. With the handover confirmed, the deposited money can be released."
+    "pt": "Diante dos representantes, Ghork entrega a chave a quem recebe a cisterna. A confirmação dos dois lados autoriza a liberação do pagamento depositado.",
+    "en": "In front of the representatives, Ghork gives the key to the person receiving the cistern. Confirmation from both sides authorizes the release of the deposited payment."
   },
   {
     "id": "text.d8e999883c0ce03a",
-    "pt": "Chave entregue, pagamento autorizado. Antes de irmos, quero que cada um receba sua cópia.",
-    "en": "Key handed over, payment authorized. Before we leave, I want everyone to have their copy."
+    "pt": "A chave foi entregue. O pagamento está autorizado. Antes de alguém ir embora, confira se está com sua cópia.",
+    "en": "The key's handed over. Payment is authorized. Before anyone leaves, make sure you've got your copy."
   },
   {
     "id": "text.a7795dfab25f669d",
-    "pt": "Depois de carregar tanto papel, eu ia desconfiar se acabasse só num aperto de mão.",
-    "en": "After carrying all that paperwork, I'd be suspicious if we finished with just a handshake."
+    "pt": "Depois de carregar tanto papel, eu ficaria preocupado se isso terminasse num “confia em mim” e um aperto de mão.",
+    "en": "After carrying all that paper around, I'd be worried if this ended with “trust me” and a handshake."
   },
   {
     "id": "text.a08871624b5f5584",
-    "pt": "Tenho uma vaga de apresentação antes das eliminatórias e duas propostas. Não cabe tudo no horário.",
-    "en": "One exhibition slot before the knockout rounds. Two proposals. There isn't time for both."
+    "pt": "Tenho um horário de exibição antes do mata-mata. Duas propostas para ele. Por favor, não me peçam para encaixar as duas.",
+    "en": "I've got one exhibition slot before the knockout rounds. Two proposals for it. Please don't ask me to squeeze in both."
   },
   {
     "id": "text.5a680ff49c4dfff2",
-    "pt": "Quero fazer um espetáculo em benefício da enfermaria. Posso atrair público sem pôr os pacientes em exposição.",
-    "en": "I want a show to raise money for the infirmary. I can draw a crowd without putting the patients on display."
+    "pt": "Um espetáculo para arrecadar para a enfermaria. Consiga um público e eu dou a ele um motivo para abrir a bolsa. Os pacientes não vão precisar ficar lá sendo olhados.",
+    "en": "A show for the infirmary. Give me a crowd, I'll give them a reason to open their purses. The patients won't have to stand there and be stared at."
   },
   {
     "id": "text.36d6e417b531ccba",
-    "pt": "Quero mostrar o trabalho dos aprendizes, com o nome de cada um. Eles não vão ser figurantes de um lutador famoso.",
-    "en": "I want to show the apprentices' work, with each of them named. They won't be scenery for a famous fighter."
+    "pt": "Quero que os aprendizes mostrem seu trabalho. Com seus próprios nomes. Quando há um lutador famoso na frente, as pessoas esquecem de olhar para o resto.",
+    "en": "I want the apprentices to show their work. Under their own names. When there's a famous fighter in front of them, people forget to look at anyone else."
   },
   {
     "id": "text.fde2320e551b4061",
-    "pt": "E o que eu faço?",
-    "en": "And what do I do?"
+    "pt": "E onde eu entro? Além de ser quem tem que escolher.",
+    "en": "Where do I come into this? Apart from being the one who has to choose."
   },
   {
     "id": "text.38fb246553aafb85",
-    "pt": "Ajude a preparar a proposta que escolher. Depois me entregue o programa, para eu anunciar tudo direito.",
-    "en": "Help prepare whichever proposal you choose. Then bring me the program so I can announce it properly."
+    "pt": "Ajude a preparar a apresentação que escolher e traga o programa. Preciso saber o que vou anunciar antes de subir lá.",
+    "en": "Help prepare the show you choose, then bring me the program. I need to know what I'm announcing before I stand up there."
   },
   {
     "id": "text.302a5a167c913809",
-    "pt": "Espetáculo beneficente · Odrik",
-    "en": "Charity show · Odrik"
+    "pt": "Odrik, vamos fazer um espetáculo para ajudar a enfermaria.",
+    "en": "Odrik, let's put on a show for the infirmary."
   },
   {
     "id": "text.b74eb8fde459a502",
-    "pt": "Demonstração dos aprendizes · Lethra",
-    "en": "Apprentice demonstration · Lethra"
+    "pt": "Lethra, vamos dar esse espaço de exibição aos seus aprendizes.",
+    "en": "Lethra, let's give your apprentices the exhibition slot."
   },
   {
     "id": "text.8bf535c7e7764b5a",
-    "pt": "Pensei em \"Ghork, o terror que...\" Pela sua cara, não gostou.",
-    "en": "I was thinking, \"Ghork, the terror who--\" Judging by your face, no."
+    "pt": "Imagine: “Ghork, o terror que...” Não? Seu rosto está dizendo um não bem firme.",
+    "en": "Picture it: “Ghork, the terror who--” No? That is a very definite no on your face."
   },
   {
     "id": "text.467b6a6a5374766a",
-    "pt": "Meu nome já dá trabalho suficiente.",
-    "en": "My name causes enough trouble already."
+    "pt": "Meu nome já me dá problema suficiente sem a sua ajuda.",
+    "en": "My name gets me into enough trouble without your help."
   },
   {
     "id": "text.6378c97b69764ca8",
-    "pt": "Ghork, então. Guardo o terror para quando você atrasar minha entrada.",
-    "en": "Ghork it is. I'll save the terror for when you're late for my entrance."
+    "pt": "Só Ghork, então. Guardo o terror para quando você perder a hora da minha entrada.",
+    "en": "Just Ghork, then. I'll save the terror for you missing my entrance."
   },
   {
     "id": "text.12692657a31bf390",
-    "pt": "Anuncie a luta. Minha história eu conto.",
-    "en": "Announce the fight. I'll tell my own story."
+    "pt": "Conte sobre a luta. Minha história, deixe comigo.",
+    "en": "Tell them about the fight. Leave my story to me."
   },
   {
     "id": "text.bb14c8c21aa78be8",
-    "pt": "Justo. Vou chamar o público pelo que vamos mostrar aqui.",
-    "en": "Fair. I'll draw them in with what we're doing here."
+    "pt": "Justo. Temos uma apresentação que vale assistir. Posso atrair o público com isso.",
+    "en": "Fair enough. We've got a show worth coming for. I can sell them that."
   },
   {
     "id": "text.32abc527d2c63096",
-    "pt": "Odrik e seus parceiros se apresentam em benefício da enfermaria. Os organizadores recolherão as contribuições e prestarão contas do valor arrecadado.",
-    "en": "Odrik and his partners perform in support of the infirmary. The organizers will collect contributions and account for the money raised."
+    "pt": "Odrik e seus parceiros se apresentam em apoio à enfermaria! As contribuições serão recolhidas pelos organizadores, que prestarão contas do valor arrecadado.",
+    "en": "Odrik and his partners take the stage in support of the infirmary! Contributions will be collected by the organizers, who will account for the money raised."
   },
   {
     "id": "text.573f13884dfddb03",
-    "pt": "O público veio, ninguém virou motivo de humilhação e arrecadamos para a enfermaria. Gostei de trabalhar com você.",
-    "en": "We drew a crowd, nobody got humiliated, and we've got money for the infirmary. I liked working with you."
+    "pt": "Público, dinheiro para a enfermaria e ninguém virando piada. Nada mal, hein? Gostei, Ghork. De trabalhar com você.",
+    "en": "A crowd, money for the infirmary, and nobody made into the joke. Not bad, eh? I enjoyed that, Ghork. Working with you."
   },
   {
     "id": "text.52d19e2b53668bcc",
-    "pt": "Vou procurar outro lugar para os alunos. Espero que a próxima oportunidade não dependa de ter alguém famoso junto.",
-    "en": "I'll find another place for the students. I hope the next opportunity doesn't need someone famous attached to it."
+    "pt": "Vou encontrar outro lugar para os aprendizes. Queria que tivessem um público sem precisar pegar a fama de alguém emprestada.",
+    "en": "I'll find another place for the apprentices. I'd like them to get an audience without borrowing someone else's fame."
   },
   {
     "id": "text.38e8503664a746e7",
-    "pt": "Ghork, leia o programa como se estivesse anunciando. Quero saber se dá tempo de falar todos os nomes antes de começarmos.",
-    "en": "Ghork, read the program as if you're announcing it. I want to know if there's time for all the names before we start."
+    "pt": "Leia como se estivesse anunciando, Ghork. Todos os nomes. Quero saber quanto tempo leva antes de começarmos os movimentos.",
+    "en": "Read this like you're announcing it, Ghork. All the names. I want to know how long it takes before we start moving."
   },
   {
     "id": "text.6223d95a15fcfe24",
-    "pt": "Dá. Mas vocês já teriam dado o primeiro golpe antes de eu acabar.",
-    "en": "There is. But you'd have thrown the first strike before I finished."
+    "pt": "Dá tempo de falar todos. Mas você teria dado o primeiro golpe enquanto eu ainda estivesse lendo.",
+    "en": "They all fit. Though you'd have thrown the first strike while I was still reading."
   },
   {
     "id": "text.de0803138143fc73",
-    "pt": "Então vamos esperar o anúncio. O público precisa saber quem está vendo.",
-    "en": "Then we'll wait for the announcement. The audience needs to know who they're watching."
+    "pt": "Então o primeiro golpe pode esperar. Deixe o público ouvir quem vai assistir.",
+    "en": "Then the first strike can wait. Let people hear who they're about to watch."
   },
   {
     "id": "text.a6b172450c02fee8",
-    "pt": "Uma demonstração dos aprendizes de Lethra. Vamos apresentar cada participante antes de começarem o exercício.",
-    "en": "A demonstration by Lethra's apprentices. We'll introduce each participant before they begin the exercise."
+    "pt": "A seguir, uma demonstração dos aprendizes de Lethra! Cada participante será apresentado antes do início do exercício.",
+    "en": "Next, a demonstration by Lethra's apprentices! We'll introduce each participant before the exercise begins."
   },
   {
     "id": "text.1f92cf7015b999c7",
-    "pt": "Dessa vez, ouviram os nomes deles antes de olhar para mim. Obrigada por conferir o programa.",
-    "en": "This time, they heard the students' names before looking at me. Thanks for checking the program."
+    "pt": "Ouviram os nomes dos alunos antes de procurar por mim. Era isso que eu queria. Obrigada por conferir o programa.",
+    "en": "They heard the students' names before they looked for me. That's what I wanted. Thank you for going through the program."
   },
   {
     "id": "text.715714fe8cbc2f5b",
-    "pt": "Vou levar o espetáculo a outra equipe. Se quiser ajuda com a entrada, pode pedir. Mas eu queria essa vaga, sim.",
-    "en": "I'll take the show to another team. If you want help with the entrance, just ask. But yes, I did want that slot."
+    "pt": "Vou procurar outra equipe para o espetáculo. Se precisarem de ajuda com uma entrada, sabem onde me achar. E sim, eu queria esse horário. Posso ficar decepcionado.",
+    "en": "I'll find another team for the show. Need help with an entrance, you know where I am. And yes, I wanted that slot. I'm allowed to be disappointed."
   },
   {
     "id": "text.94512eb57903b38d",
-    "pt": "Q-X0 · Uma reserva para voltar",
-    "en": "Q-X0 · A reserve for the way back"
+    "pt": "Q-X0 · Um caminho de volta",
+    "en": "Q-X0 · A way back"
   },
   {
     "id": "text.cfdfc702303fe955",
@@ -3593,7 +3593,7 @@
   },
   {
     "id": "text.a66dc4625a29b8b6",
-    "pt": "Q-Y0 · Levar menos",
+    "pt": "Q-Y0 · Menos bagagem",
     "en": "Q-Y0 · Traveling light"
   },
   {
@@ -3603,23 +3603,23 @@
   },
   {
     "id": "text.7803dd883ee72d9c",
-    "pt": "E06 · Como faremos o trabalho",
-    "en": "E06 · How we'll do the job"
+    "pt": "E06 · A escolha da equipe",
+    "en": "E06 · Choosing a crew"
   },
   {
     "id": "text.549b9a7887f0c490",
-    "pt": "Escolher X ou Y",
-    "en": "Choose X or Y"
+    "pt": "Escolher a rota X ou Y",
+    "en": "Choose route X or Y"
   },
   {
     "id": "text.4955f4089db5ebf5",
-    "pt": "Confirmar X · preparar reserva de resgate",
-    "en": "Confirm X · prepare a rescue reserve"
+    "pt": "Escolher X · preparar uma reserva de resgate",
+    "en": "Choose X · prepare a rescue reserve"
   },
   {
     "id": "text.7429b0cc7c34bdf3",
-    "pt": "Confirmar Y · reconhecimento limitado",
-    "en": "Confirm Y · limited survey"
+    "pt": "Escolher Y · limitar o levantamento",
+    "en": "Choose Y · limit the survey"
   },
   {
     "id": "text.c7b770097f148ad6",
@@ -3628,7 +3628,7 @@
   },
   {
     "id": "text.75820d30e5b8dbcf",
-    "pt": "Receber os apoios preparados",
+    "pt": "Receber os esteios preparados",
     "en": "Collect the prepared braces"
   },
   {
@@ -3644,27 +3644,27 @@
   {
     "id": "text.7899ee8d99fd393f",
     "pt": "Entregar a carga e conferir as marcas do caminho",
-    "en": "Deliver the load and check the trail markers"
+    "en": "Deliver the load and check the route markers"
   },
   {
     "id": "text.a5c5686f8726167e",
-    "pt": "Q-X2 · Até onde pudemos verificar",
-    "en": "Q-X2 · As far as we could check"
+    "pt": "Q-X2 · Onde paramos",
+    "en": "Q-X2 · Where we stopped"
   },
   {
     "id": "text.24f323e201ee4b7e",
-    "pt": "Investigar as galerias e registrar o caminho de volta",
+    "pt": "Examinar as galerias e registrar o caminho de volta",
     "en": "Survey the mine tunnels and record the way back"
   },
   {
     "id": "text.97dec388698da4a6",
-    "pt": "Q-Y2 · Até onde pudemos verificar",
-    "en": "Q-Y2 · As far as we could check"
+    "pt": "Q-Y2 · Onde paramos",
+    "en": "Q-Y2 · Where we stopped"
   },
   {
     "id": "text.4316eb9819514c02",
-    "pt": "Q-20 · O nome na lista",
-    "en": "Q-20 · A name on the list"
+    "pt": "Q-20 · Meu nome na lista",
+    "en": "Q-20 · My name on the list"
   },
   {
     "id": "text.5e2c827450c39023",
@@ -3688,22 +3688,22 @@
   },
   {
     "id": "text.463e6081a6c2f6ec",
-    "pt": "Preparar-se com Guedra",
+    "pt": "Treinar com Guedra",
     "en": "Train with Guedra"
   },
   {
     "id": "text.e0c44a09a10aff4f",
-    "pt": "Contribuir para o material pedido por Dam",
-    "en": "Contribute to Dam's repair materials"
+    "pt": "Ajudar a pagar o material para o conserto de Dam",
+    "en": "Help pay for Dam's repair materials"
   },
   {
     "id": "text.a172fe310673a9f4",
-    "pt": "Guardar o dinheiro para a preparação",
-    "en": "Save the money for training"
+    "pt": "Guardar o dinheiro para os treinos",
+    "en": "Keep the money for training"
   },
   {
     "id": "text.0c71f1dcdea6361b",
-    "pt": "Pedir a Rheed uma testemunha dos horários · 1 Ludo",
+    "pt": "Pedir a Rheed uma testemunha do acordo dos treinos · 1 Ludo",
     "en": "Ask Rheed for a witness to the training agreement · 1 Ludo"
   },
   {
@@ -3718,13 +3718,13 @@
   },
   {
     "id": "text.b7821da526c335de",
-    "pt": "Escolher como usar o turno",
-    "en": "Choose how to use the time slot"
+    "pt": "Escolher como usar o horário noturno",
+    "en": "Choose how to use the evening slot"
   },
   {
     "id": "text.8566e5f91e5be7b7",
-    "pt": "Receber e conferir a lista",
-    "en": "Collect and check the list"
+    "pt": "Receber a lista de participantes e conferir",
+    "en": "Collect the attendance list and check it"
   },
   {
     "id": "text.e001d34c5b1c179e",
@@ -3748,13 +3748,13 @@
   },
   {
     "id": "text.d8e69e40e951b64c",
-    "pt": "Examinar o canto",
-    "en": "Inspect the corner"
+    "pt": "Examinar o canto para guardar material",
+    "en": "Inspect the storage corner"
   },
   {
     "id": "text.164da3c5d513ff1c",
-    "pt": "R2 · Os nomes no relato",
-    "en": "R2 · Names in the report"
+    "pt": "R2 · Quem põe o nome?",
+    "en": "R2 · Whose name goes on it?"
   },
   {
     "id": "text.50b9852324750fde",
@@ -3763,8 +3763,8 @@
   },
   {
     "id": "text.4e8f227686398d24",
-    "pt": "Entregar a autorização e buscar a peça",
-    "en": "Deliver the authorization and collect the piece"
+    "pt": "Entregar a autorização e buscar a peça quebrada",
+    "en": "Deliver the authorization and collect the broken piece"
   },
   {
     "id": "text.032b86405b85638c",
@@ -3778,7 +3778,7 @@
   },
   {
     "id": "text.7986ef1b5aaaff4d",
-    "pt": "Conferir o material e escolher como apresentar o caso",
+    "pt": "Conferir as provas e escolher como apresentar o caso",
     "en": "Check the evidence and choose how to present the case"
   },
   {
@@ -3788,8 +3788,8 @@
   },
   {
     "id": "text.fcac67a12633fadf",
-    "pt": "R3 · Uma armação inteira",
-    "en": "R3 · A frame in one piece"
+    "pt": "R3 · Antes de desmontar",
+    "en": "R3 · Before it comes apart"
   },
   {
     "id": "text.f90662ebff5230c6",
@@ -3803,8 +3803,8 @@
   },
   {
     "id": "text.e191e1a8b95190ea",
-    "pt": "Devolver a autorização e escolher o destino da armação",
-    "en": "Return the authorization and choose the frame's future"
+    "pt": "Devolver a autorização e escolher o destino da estrutura",
+    "en": "Return the authorization and choose what to do with the frame"
   },
   {
     "id": "text.ab5064b4812c6138",
@@ -3823,8 +3823,8 @@
   },
   {
     "id": "text.000762c941d3fbf0",
-    "pt": "Entregar o comprovante e escolher uma posição",
-    "en": "Deliver the receipt and choose a position"
+    "pt": "Entregar o comprovante e escolher qual posição apoiar",
+    "en": "Deliver the receipt and choose which position to support"
   },
   {
     "id": "text.0574f3277a434a78",
@@ -3838,23 +3838,23 @@
   },
   {
     "id": "text.bed06ec9a7a3e296",
-    "pt": "Ouvir quem quer segurar a entrega",
-    "en": "Hear from someone who wants to hold the handover"
+    "pt": "Ouvir quem quer adiar a entrega",
+    "en": "Hear the case for delaying the handover"
   },
   {
     "id": "text.5c05a003eef48362",
-    "pt": "Ouvir quem precisa receber",
-    "en": "Hear from someone who needs their pay"
+    "pt": "Ouvir quem precisa receber agora",
+    "en": "Hear from someone who needs their pay now"
   },
   {
     "id": "text.842f6590ffb82b6a",
-    "pt": "R5 · Uma chance diante do público",
-    "en": "R5 · A chance before the crowd"
+    "pt": "R5 · Uma vez diante do público",
+    "en": "R5 · A turn in the spotlight"
   },
   {
     "id": "text.ba8bf8ffd126ef65",
-    "pt": "Escolher o tipo de apresentação",
-    "en": "Choose the type of performance"
+    "pt": "Escolher qual apresentação apoiar",
+    "en": "Choose which performance to support"
   },
   {
     "id": "text.8df65ac27e5c0dad",
@@ -3864,442 +3864,442 @@
   {
     "id": "text.e4f499a664361b63",
     "pt": "Entregar o programa a Rask e fazer a apresentação",
-    "en": "Give Rask the program and perform"
+    "en": "Give Rask the program and put on the performance"
   },
   {
     "id": "text.06f9690bfe6d2bea",
-    "pt": "Seu plano cobre esse risco. Eu aceitei ter menos recursos para enfrentá-lo.",
-    "en": "Your plan covers that risk. I accepted having less to deal with it."
+    "pt": "Sua reserva cobriria isso. Eu sei. Estou aceitando o risco de ter menos recursos à mão.",
+    "en": "Your reserve would cover that. I know. I'm accepting the risk of having less to work with."
   },
   {
     "id": "text.0404700a6fcaceea",
-    "pt": "Nyra está preparando a mesa para quem chega do trabalho. Ela puxa uma cadeira para Ghork.",
-    "en": "Nyra is setting the table for the workers coming off their shift. She pulls up a chair for Ghork."
+    "pt": "Nyra arruma a mesa para os trabalhadores que estão saindo do turno. Puxa uma cadeira para Ghork.",
+    "en": "Nyra is laying out supper for the workers coming off their shift. She pulls up a chair for Ghork."
   },
   {
     "id": "text.cc7f551d73d50f76",
-    "pt": "Sente aqui e confira as porções. Se faltar comida para alguém da lista, me avise antes de eu tampar a panela.",
-    "en": "Sit down and check the portions. If anyone on that list is going hungry, tell me before I put the lid on."
+    "pt": "Sente aqui um instante? Veja se tem uma porção para cada pessoa da lista. Se faltar, me avise antes de eu tampar a panela.",
+    "en": "Sit here, will you? Check we've got a portion for everyone on the list. Tell me if we're short before I cover the pot."
   },
   {
     "id": "text.c90f6604c95b8b81",
-    "pt": "Um apelido aparece duas vezes na lista. Antes de riscar, Ghork pergunta: são duas pessoas diferentes. Nyra ri e pede que ele acrescente um detalhe para distinguir os dois, com a aprovação deles.",
-    "en": "The same nickname appears twice. Ghork asks before crossing it out: two different people. Nyra laughs and asks him to add a detail to tell them apart, something they're both happy with."
+    "pt": "Ghork encontra o mesmo apelido duas vezes e para antes de riscar um deles. São duas pessoas, afinal. Nyra ri. Vão precisar de um detalhe para distinguir os dois, e cada trabalhador pode opinar no seu.",
+    "en": "Ghork spots the same nickname twice and stops before crossing one out. Two people, it turns out. Nyra laughs. They'll need something to tell them apart, and both workers get a say in what it is."
   },
   {
     "id": "text.a57928d80a85d0ac",
-    "pt": "Ninguém perguntou pela Prova de Fogo. Só querem saber se o prato está separado.",
-    "en": "Nobody's asked about the Trial by Fire. They just want to know if their plate's ready."
+    "pt": "Ninguém perguntou pela Prova de Fogo. Só se guardei um prato para eles.",
+    "en": "Nobody's asked about the Trial by Fire. Just whether I've saved them a plate."
   },
   {
     "id": "text.10cc051edf94331f",
-    "pt": "Nyra confere as porções e convida Ghork para comer com os outros quando terminar. Ele aceita e fica à mesa.",
-    "en": "Nyra checks the portions and invites Ghork to eat with the others when he's done. He accepts and takes his seat."
+    "pt": "Nyra confere as porções. Quando o serviço termina, há um lugar para Ghork à mesa. Ele aceita e fica para comer com os outros.",
+    "en": "Nyra checks the portions. When the work is done, there's a place for Ghork at the table. He accepts and stays to eat with the others."
   },
   {
     "id": "text.76fec3170befffd1",
-    "pt": "No Coreto, três Ludos caem na sua mão. Rheed espera que você os guarde antes de continuar.",
-    "en": "Back at the Bandstand, three Ludos drop into your hand. Rheed waits for you to put them away before continuing."
+    "pt": "No Coreto, três Ludos caem na sua palma. Rheed espera você guardá-los antes de retomar a história.",
+    "en": "Back at the Bandstand, three Ludos land in your palm. Rheed waits for you to pocket them before picking up the story."
   },
   {
     "id": "text.2875a982b884b01e",
-    "pt": "Enquanto conferem a lista, um trabalhador corrige o horário e outro se oferece para trazer a tigela que falta. Nyra agradece e os libera para comer.",
-    "en": "As they check the list, one worker corrects a time and another offers to fetch the missing bowl. Nyra thanks them and tells them to go eat."
+    "pt": "Eles conferem a lista juntos. Um trabalhador corrige um horário; outro se oferece para buscar a tigela que falta. Nyra agradece e manda os dois comerem.",
+    "en": "They go over the list together. One worker corrects a time; another volunteers to fetch the missing bowl. Nyra thanks them and waves them toward the food."
   },
   {
     "id": "text.4921bde59e0ecc7a",
-    "pt": "Devolveram uma peça de uma bancada articulada a Durn, dizendo que o metal não prestava. Ele pede que Ghork explique o problema olhando para ele. Ao demonstrarem o movimento, percebem que o peso foi colocado no ponto errado.",
-    "en": "Someone has returned a part from Durn's folding workbench, blaming the metal. Durn asks Ghork to face him as he explains. When they demonstrate the movement, they see the weight was placed on the wrong spot."
+    "pt": "Uma peça da bancada articulada de Durn volta à oficina. Dizem que o metal não presta. Durn pede que Ghork olhe para ele ao explicar o problema. Mas, quando testam o movimento juntos, descobrem que o peso ficou apoiado no lugar errado.",
+    "en": "A part from Durn's folding workbench has come back to the shop. Bad metal, they say. Durn asks Ghork to face him while he explains the problem. But when they try the movement together, they find the weight has been resting in the wrong place."
   },
   {
     "id": "text.cab0720e3d9c975a",
-    "pt": "Puseram o peso aqui. Mas o pino foi feito para sustentar deste lado.",
-    "en": "They put the weight here. This pin's meant to take it from this side."
+    "pt": "Está vendo onde puseram o peso? Aqui. O pino sustenta a carga deste outro lado.",
+    "en": "See where they put the weight? Here. The pin takes the load on this side."
   },
   {
     "id": "text.5882ac9aa3a531dc",
-    "pt": "Isso estava explicado quando entregou?",
-    "en": "Did you explain that when you handed it over?"
+    "pt": "Você explicou isso quando entregou?",
+    "en": "Did they know that when you handed it over?"
   },
   {
     "id": "text.1846672b8be97cd7",
-    "pt": "Não expliquei direito. Vamos mostrar antes de devolver.",
-    "en": "Not clearly enough. Let's show them before we send it back."
+    "pt": "Pelo visto, não expliquei direito. Vamos mostrar antes de devolver.",
+    "en": "Not well enough, apparently. Let's show them before it goes back."
   },
   {
     "id": "text.a559031d0820a3df",
-    "pt": "A pessoa que trouxe a peça demonstra que entendeu o uso. Durn anota a correção nas instruções de entrega. Ghork acompanha a conversa; ninguém precisa passar vergonha para aprender.",
-    "en": "The person who brought the part shows they've understood. Durn corrects the instructions. Ghork follows the exchange; no one has to be shamed into learning."
+    "pt": "A pessoa que devolveu a peça tenta de novo, desta vez com o peso no lugar certo. Durn corrige as instruções enquanto Ghork acompanha. A bancada se move como deveria.",
+    "en": "The person who returned the part tries it again, this time with the weight in the right place. Durn corrects the instructions while Ghork watches. The workbench moves as it should."
   },
   {
     "id": "text.c45ce87b59d6135a",
-    "pt": "A instrução só parecia clara para quem havia feito a peça. Durn reescreve o aviso e agradece por apontarem a dúvida. Ghork sai da oficina sabendo explicar o conserto e o erro que o causou.",
-    "en": "The instructions only made sense if you'd built the thing. Durn rewrites the notice and thanks them for pointing it out. Ghork leaves knowing how to explain both the repair and what went wrong."
+    "pt": "Durn relê as instruções. Faziam sentido para quem tinha construído a peça; para os outros, nem tanto. Ele reescreve o aviso e agradece pela pergunta. Ghork sai sabendo explicar o conserto e o que causou o problema.",
+    "en": "Durn reads the instructions again. Clear enough if you built the thing; not much use if you didn't. He rewrites them and thanks Ghork for asking. Ghork leaves able to explain the repair and what went wrong."
   },
   {
     "id": "text.402472d159b2f543",
-    "pt": "Antes das eliminatórias, Seldan encontra materiais bloqueando a passagem do público. A entrega estava autorizada, mas ninguém podia deixá-los ali. Jorvi espera que decidam quem fará a retirada.",
-    "en": "Before the knockout rounds, Seldan finds supplies blocking the public entrance. The delivery was authorized; leaving it there wasn't. Jorvi is waiting for someone to decide who'll move it."
+    "pt": "Antes das eliminatórias, Seldan encontra materiais empilhados na entrada do público. A entrega foi autorizada, mas ninguém podia bloquear a passagem. Jorvi ainda espera que decidam quem vai tirar tudo dali.",
+    "en": "Before the knockout rounds, Seldan finds supplies piled across the public entrance. Someone authorized the delivery, but not the obstruction. Jorvi is still waiting to hear who is supposed to move it all."
   },
   {
     "id": "text.61a1b4ac029284d7",
-    "pt": "Eu confiro os volumes. Você confirma para onde vão? Assim tiramos tudo antes de abrir.",
-    "en": "I'll count the packages. Can you check where they're going? We can clear this before the gates open."
+    "pt": "Eu confiro os volumes. Veja para onde eles devem ir, pode ser? Precisamos liberar isso antes de abrir os portões.",
+    "en": "I'll check the packages. Find out where they're supposed to go, will you? We need this clear before the gates open."
   },
   {
     "id": "text.32704ba2248424fa",
-    "pt": "Deixei isso para o próximo turno. Vou autorizar a retirada agora.",
-    "en": "I left this for the next shift. I'll sign the removal order now."
+    "pt": "Deixei para o próximo turno. Foi erro meu. Vou autorizar a retirada agora.",
+    "en": "I left it for the next shift. That was my mistake. I'll authorize the move now."
   },
   {
     "id": "text.ff21db95997cfa02",
-    "pt": "Jorvi confere os volumes. Seldan percorre o acesso desocupado e guarda a ordem de remoção.",
-    "en": "Jorvi checks the packages. Seldan walks through the cleared entrance and files the removal order."
+    "pt": "Jorvi confere os volumes um a um. Com a entrada livre, Seldan percorre a passagem e guarda a ordem de retirada.",
+    "en": "Jorvi checks off the packages. With the entrance clear, Seldan walks its length and puts the removal order away."
   },
   {
     "id": "text.035f301ea366a038",
-    "pt": "Ghork confirma o destino, Jorvi confere a quantidade e Seldan registra quem autorizou a retirada. A passagem fica livre.",
-    "en": "Ghork checks the destination, Jorvi counts the packages, and Seldan records who authorized the move. The passage is clear."
+    "pt": "Ghork confirma para onde vão os materiais, Jorvi confere a quantidade e Seldan registra a autorização. Enfim, há espaço para o público passar.",
+    "en": "Ghork checks where the supplies are going, Jorvi counts them, and Seldan records the authorization. At last, there's room for the crowd to pass."
   },
   {
     "id": "text.3d67bada8d743a51",
-    "pt": "Você volta a sentir o banco sob as mãos. Rheed espera sem fechar o frasco.",
-    "en": "You feel the bench beneath your hands again. Rheed waits, leaving the vial open."
+    "pt": "Você volta a sentir o banco sob as mãos. Rheed espera, ainda com o frasco aberto.",
+    "en": "The bench is solid beneath your hands again. Rheed waits with the vial still open."
   },
   {
     "id": "text.686c6a6fc3f9c82d",
-    "pt": "Ele mal chegou e já quer saber onde vai parar. Primeiro precisa conseguir andar até lá.",
-    "en": "He's barely arrived and already planning where he'll end up. First, he needs to be able to walk there."
+    "pt": "Mal passou pelo portão e já está planejando um futuro grandioso. Vamos primeiro pôr esse rapaz de pé?",
+    "en": "Barely through the gate and he's planning his grand future. Let's get him walking first, shall we?"
   },
   {
     "id": "text.dacf0534f29cd122",
-    "pt": "Uma nova rolagem custa um Ludo. Ou você pode guardar a moeda: se perder, Ghork descansa e pede revanche. Não vou acabar com a história por causa de um tropeço.",
-    "en": "A reroll costs one Ludo. Or keep your coin: if Ghork loses, he can rest and ask for a rematch. I'm not ending the story over a stumble."
+    "pt": "Um Ludo dá direito a outra rolagem. Mas pode guardar a moeda. Se Ghork perder, ele descansa e pede revanche. Achou que eu ia deixar um tropeço acabar com a história?",
+    "en": "One Ludo buys you another roll. You can keep it, too. If Ghork loses, he rests and asks for a rematch. Did you think I'd let one stumble end the story?"
   },
   {
     "id": "text.c16e231fc82c508a",
-    "pt": "Os três ajudaram Ghork. E agora ele precisa escolher. Está vendo por que demorou tanto para responder?",
-    "en": "All three helped Ghork. Now he has to choose. See why the answer took him so long?"
+    "pt": "Os três ajudaram. Agora ele precisa escolher um. Não parece tão simples depois de conhecer cada um, não é?",
+    "en": "All three helped him. Now he's got to choose one. Not quite so easy when you've met them, is it?"
   },
   {
     "id": "text.0fd7dc2154299c57",
-    "pt": "Ghork já escolheu sua guilda. Agora vamos ver como esse pessoal trabalha junto nas minas.",
-    "en": "Ghork has chosen his guild. Now let's see how they work together down in the mines."
+    "pt": "Pois bem, Ghork já tem sua guilda. Vamos ver como eles se entendem com uma mina para explorar.",
+    "en": "Well, Ghork has his guild. Let's see how they get on with a mine to survey."
   },
   {
     "id": "text.7041100c1a761913",
-    "pt": "Voltaram com o levantamento das minas. Ghork tem contas para acertar e bastante coisa para contar a Lala.",
-    "en": "They're back with the mine survey. Ghork has expenses to settle and quite a bit to tell Lala."
+    "pt": "Enfim, de volta das minas. Tem levantamento para entregar, contas para acertar... e Lala esperando para saber como foi.",
+    "en": "Back from the mines at last. There's a survey to deliver, bills to settle... and Lala waiting to hear how it went."
   },
   {
     "id": "text.13bba5528d3b2e66",
-    "pt": "Reconheceu quem está do outro lado? Pois é. Ghork também.",
-    "en": "Recognize someone on the other side? So does Ghork."
+    "pt": "Conhece alguns daqueles rostos do outro lado da arena, não conhece? Ghork também.",
+    "en": "You know some of those faces across the arena, don't you? So does Ghork."
   },
   {
     "id": "text.fafe3acdf96eacc5",
-    "pt": "Ouviu a torcida? Vamos deixar Ghork aproveitar a vitória mais um pouco.",
-    "en": "Hear that crowd? Let's give Ghork a little longer to enjoy his victory."
+    "pt": "Ouça essa torcida! Vamos deixar que ele aproveite mais um pouco. Essa parte ele conquistou.",
+    "en": "Listen to them cheer! Let him enjoy it a little longer. He's earned this part."
   },
   {
     "id": "text.7334e03a2639a224",
-    "pt": "Vamos dar um instante a Ghork. Ele precisa recuperar o fôlego antes de voltar àquela passagem.",
-    "en": "Give Ghork a moment. He needs to catch his breath before he goes back into that passage."
+    "pt": "Um instante. Deixe Ghork recuperar o fôlego antes de mandá-lo de volta àquela passagem.",
+    "en": "A moment, now. Let Ghork catch his breath before we send him back down that passage."
   },
   {
     "id": "text.83d3b99599761c0c",
-    "pt": "Confira sua equipe antes de entrar. Ao confirmar, você encerra os convites. Se ainda quer procurar alguém, esta é a hora.",
-    "en": "Check your team before you enter. Once you confirm, recruitment closes. If there's anyone else you want to find, do it now."
+    "pt": "Última conferência antes de entrar. Depois que confirmar a equipe, os convites se encerram. Se ainda quer procurar alguém, é agora.",
+    "en": "Last check before you go in. Once you confirm your team, no more invitations. If there's someone you still want to find, now's your chance."
   },
   {
     "id": "text.b406385f4537c1af",
     "pt": "Vou entrar sozinho.",
-    "en": "I'm going in alone."
+    "en": "I'll go in on my own."
   },
   {
     "id": "text.3a71144fdc81f124",
-    "pt": "Sua inscrição permite. Confirme quando estiver pronto para enfrentar os adversários.",
-    "en": "Your entry allows it. Confirm when you're ready to face your opponents."
+    "pt": "Sua inscrição permite. Confirme quando estiver pronto para enfrentá-los.",
+    "en": "You're registered for that. Confirm when you're ready to face them."
   },
   {
     "id": "text.00fc8490b07e9205",
-    "pt": "Inscrição confirmada. Já vamos anunciar a primeira partida.",
-    "en": "Entry confirmed. We'll announce the first match shortly."
+    "pt": "Confirmado. Aguarde a chamada para a primeira partida.",
+    "en": "Confirmed. Stand by for the first match."
   },
   {
     "id": "text.5dde6ed064a8c3f3",
-    "pt": "Esta é a equipe. Vamos entrar.",
-    "en": "This is my team. Let's go in."
+    "pt": "Esta é a minha equipe. Estamos prontos.",
+    "en": "This is my team. We're ready."
   },
   {
     "id": "text.f4bb31ea78bd55b1",
-    "pt": "Conseguimos outro serviço para manter a equipe. Eu queria aquele contrato, mas não fiquei esperando você se arrepender.",
-    "en": "We found other work to keep the team going. I wanted that contract, but I wasn't sitting around waiting for you to regret it."
+    "pt": "Arranjamos outro serviço para manter o pessoal. Eu queria aquele contrato, claro. Mas não dava para ficar sentado esperando você mudar de ideia.",
+    "en": "We found other work to keep the crew going. I wanted that contract, sure. Couldn't sit around hoping you'd change your mind."
   },
   {
     "id": "text.78e8e3648bf633cb",
-    "pt": "Fico feliz que tenham seguido em frente. Mas ainda quero vencer.",
-    "en": "I'm glad you kept going. I still plan to win, though."
+    "pt": "Que bom que vocês se acertaram. Mas ainda quero ganhar de vocês.",
+    "en": "Glad you found your feet. Still want to beat you, though."
   },
   {
     "id": "text.1e855f90d132fdc5",
-    "pt": "Pode tentar. Eles sabem se virar.",
-    "en": "You can try. They know how to handle themselves."
+    "pt": "Pode tentar. Eles vão dar trabalho.",
+    "en": "Give it a try. They'll make you work for it."
   },
   {
     "id": "text.49c1734d8e1c2745",
-    "pt": "Você já me ajudou bastante. Hoje não vou pedir conselho.",
-    "en": "You've helped me plenty. I won't ask for advice today."
+    "pt": "Você já me deu bastante conselho. Hoje eu não vou pedir nenhum.",
+    "en": "You've given me plenty of advice. I won't ask for any today."
   },
   {
     "id": "text.54ca467ad4f212ea",
-    "pt": "Ainda bem. Hoje meus conselhos vão para eles.",
-    "en": "Good. Today, my advice is for them."
+    "pt": "Ainda bem. Hoje os conselhos são para eles.",
+    "en": "Just as well. Today, they get the advice."
   },
   {
     "id": "text.d257d83f6b30368c",
-    "pt": "Equipe de Ghork contra os representantes da guilda de Borun. Preparem-se.",
-    "en": "Ghork's team against Borun's guild! Get ready."
+    "pt": "Equipe de Ghork contra a guilda de Borun! Lutadores, preparem-se.",
+    "en": "Ghork's team against Borun's guild! Fighters, get ready."
   },
   {
     "id": "text.b18670bb57b2bd5e",
-    "pt": "Minha equipe quer vencer. O trabalho que perdemos no contrato ainda precisa ser financiado.",
-    "en": "My team intends to win. We still need to fund the work that contract would have paid for."
+    "pt": "Minha equipe veio para vencer. Ainda temos pacientes para atender, e aquele contrato teria ajudado a pagar o trabalho.",
+    "en": "My team means to win. We still have patients to care for, and that contract would have paid for the work."
   },
   {
     "id": "text.295fecba5e2a5797",
-    "pt": "Eu lembro.",
-    "en": "I remember."
+    "pt": "Eu não esqueci.",
+    "en": "I haven't forgotten."
   },
   {
     "id": "text.2bcba5f41f72d06c",
-    "pt": "E isso não quer dizer que eu vá tirar minha equipe da disputa.",
-    "en": "And that doesn't mean I'll pull my team out of the match."
+    "pt": "Que bom. Então entende por que não vou pedir que abram caminho para você.",
+    "en": "Good. Then you understand why I won't ask them to step aside for you."
   },
   {
     "id": "text.2629e9c139e6a644",
-    "pt": "Nem pediria. Você me ajudou, mas eles vieram para lutar.",
-    "en": "I wouldn't ask you to. You helped me, but they came here to fight."
+    "pt": "Nem pediria. Você me ajudou, mas eles também vieram disputar esta luta.",
+    "en": "I wouldn't ask you to. You helped me. They still deserve their fight."
   },
   {
     "id": "text.06b9147b12186a55",
-    "pt": "Então estamos entendidos.",
-    "en": "Then we understand each other."
+    "pt": "Então não temos mais nada para acertar antes da partida.",
+    "en": "Then there's nothing more to settle before the match."
   },
   {
     "id": "text.c7b250327d2a31c9",
-    "pt": "Quero ganhar de vocês também.",
-    "en": "I want to beat you, too."
+    "pt": "Quero ganhar deles numa luta de verdade.",
+    "en": "I want to beat them fair and square."
   },
   {
     "id": "text.0d2e6806ca8e8d50",
-    "pt": "Ainda bem. Eles vieram disputar uma luta de verdade.",
-    "en": "Good. They came for a proper fight."
+    "pt": "Ainda bem. Foi para isso que eles vieram.",
+    "en": "Good. That's the fight they came for."
   },
   {
     "id": "text.07fd5b744a1f68eb",
-    "pt": "Equipe de Ghork contra os representantes da guilda de Virmura. Aos lugares.",
+    "pt": "Equipe de Ghork contra a guilda de Virmura! Aos lugares.",
     "en": "Ghork's team against Virmura's guild! Take your positions."
   },
   {
     "id": "text.ae814368da154b7b",
-    "pt": "Você leu bem a luta. Só não espere que eu fique feliz com o resultado.",
-    "en": "You read that fight well. Don't expect me to be happy about the result."
+    "pt": "Você leu bem a luta. Só não me peça para comemorar.",
+    "en": "You read the fight well. Don't ask me to cheer about it."
   },
   {
     "id": "text.941bfe3e75d0e1c7",
-    "pt": "Não esperava. Gostei o suficiente por nós dois.",
-    "en": "Wasn't expecting you to. I'm happy enough for both of us."
+    "pt": "Nem ia pedir. Eu comemoro o suficiente por nós dois.",
+    "en": "Wasn't going to. I can do enough cheering for both of us."
   },
   {
     "id": "text.17d810b9c2a7c051",
-    "pt": "Resultado confirmado. A equipe de Ghork avança.",
-    "en": "The result is confirmed. Ghork's team advances!"
+    "pt": "Resultado confirmado! A equipe de Ghork avança!",
+    "en": "The result stands! Ghork's team advances!"
   },
   {
     "id": "text.0ff5d10f36e045fb",
-    "pt": "Vocês venceram. Se precisarem de atendimento, vamos cuidar dos feridos dos dois lados.",
-    "en": "You won. If you need treatment, we'll tend to the wounded on both sides."
+    "pt": "Vocês venceram. Agora, alguém precisa de atendimento? Vamos cuidar das duas equipes.",
+    "en": "You won. Now, does anyone need treatment? We'll see to both teams."
   },
   {
     "id": "text.6e7da21bcc816440",
-    "pt": "Obrigado. E diga a eles que não foi fácil.",
-    "en": "Thank you. Tell them they didn't make it easy."
+    "pt": "Obrigado. Diga a eles que deram trabalho.",
+    "en": "Thank you. Tell them they made us work for it."
   },
   {
     "id": "text.b382cb392bdfc499",
-    "pt": "Minha escola continuou trabalhando depois da sua escolha. Meus representantes estão prontos para mostrar o que aprenderam.",
-    "en": "My school kept working after your choice. My representatives are ready to show you what they learned."
+    "pt": "Minha escola não parou quando você escolheu outra guilda. Meus representantes querem mostrar o que aprenderam.",
+    "en": "My school didn't stop when you chose another guild. My representatives would like to show you what they've learned."
   },
   {
     "id": "text.2d78cf5e39a3583f",
-    "pt": "Quero ver o que prepararam.",
-    "en": "I'd like to see what they've prepared."
+    "pt": "Estou curioso para ver o que prepararam para a arena.",
+    "en": "I've been wondering what they'd bring to the arena."
   },
   {
     "id": "text.3ab327f767ddfe4c",
-    "pt": "Verá de perto.",
-    "en": "You'll have a close view."
+    "pt": "Vai poder conferir de perto.",
+    "en": "You'll see it at close quarters."
   },
   {
     "id": "text.cc93247d50414ddc",
-    "pt": "Não preciso me arrepender para reconhecer que são bons.",
-    "en": "I can respect their skill without regretting my choice."
+    "pt": "Eles são bons. Posso reconhecer isso e continuar satisfeito com minha escolha.",
+    "en": "They're good. I can say that and still stand by my choice."
   },
   {
     "id": "text.10ba9a5ccdd50803",
-    "pt": "Espero que continue pensando assim depois da partida.",
-    "en": "I hope you still think so after the match."
+    "pt": "Veremos se diz o mesmo depois da partida.",
+    "en": "Let's see if you say the same after the match."
   },
   {
     "id": "text.692f7a09a0c05f0e",
-    "pt": "Equipe de Ghork contra os representantes da escola de Sevrak. Podem assumir as posições.",
-    "en": "Ghork's team against Sevrak's school! Take your positions."
+    "pt": "Equipe de Ghork contra a escola de Sevrak! Lutadores, aos lugares.",
+    "en": "Ghork's team against Sevrak's school! Fighters, take your positions."
   },
   {
     "id": "text.7f706b52e792e90a",
-    "pt": "Você venceu. Reconheço sua competência, mas continuo discordando da escolha no contrato.",
-    "en": "You won. I recognize your ability. I still disagree with your choice over the contract."
+    "pt": "Você lutou bem. A vitória é sua. Isso não mudou minha opinião sobre o contrato.",
+    "en": "You fought well. The victory is yours. It hasn't changed my mind about the contract."
   },
   {
     "id": "text.3676dc108d9be036",
-    "pt": "E eu posso ouvir isso sem voltar a pedir uma vaga na sua escola.",
-    "en": "And I can hear that without asking for a place in your school again."
+    "pt": "Não esperava que mudasse. E não estou pedindo para me aceitar de volta.",
+    "en": "I didn't expect it to. And I'm not asking you to take me back."
   },
   {
     "id": "text.a0411558cf407d76",
-    "pt": "Nas quartas de final, a equipe de Ghork enfrenta os Faíscas, apoiados por uma das guildas adversárias.",
-    "en": "In the quarterfinals, Ghork's team faces The Sparks, backed by one of the rival guilds."
+    "pt": "Quartas de final! A equipe de Ghork enfrenta os Faíscas, com apoio de uma guilda adversária!",
+    "en": "The quarterfinals! Ghork's team faces The Sparks, with backing from a rival guild!"
   },
   {
     "id": "text.b9d04ef3da7a112c",
-    "pt": "Conseguimos apoio para preparar a equipe. Quero que veja o que fizemos com os recursos que tínhamos.",
-    "en": "We found backing to prepare the team. I want you to see what we did with what we had."
+    "pt": "Conseguimos apoio. Investimos no treino. Venha ver o que esse pessoal sabe fazer.",
+    "en": "Found ourselves some backing. Put it into training. Come see what this crew can do."
   },
   {
     "id": "text.d1e6b757fa6c7bd5",
-    "pt": "Eu não disse que vocês eram incapazes.",
-    "en": "I never said you couldn't do it."
+    "pt": "Eu nunca duvidei de que vocês soubessem lutar.",
+    "en": "I never doubted you could fight."
   },
   {
     "id": "text.214722bc1bf557eb",
-    "pt": "Naquela reunião, parecia que aceitar nosso plano era concordar em abandonar alguém lá embaixo.",
-    "en": "At that meeting, you made it sound like choosing our plan meant leaving someone down there."
+    "pt": "Eu sei. Mas saí daquela reunião sentindo que ainda precisava provar que minha equipe traria todo mundo de volta.",
+    "en": "I know. But I left that meeting feeling I still had to prove my crew could bring everyone home."
   },
   {
     "id": "text.cf139b0067774d8a",
-    "pt": "Escolhi uma reserva maior para aquele serviço. Não quis dizer que vocês abandonariam alguém.",
-    "en": "I chose a bigger safety reserve for that job. I wasn't saying you'd abandon anyone."
+    "pt": "Eu queria uma reserva de segurança maior para aquele serviço. Não estava dizendo que vocês abandonariam alguém.",
+    "en": "I wanted a bigger safety reserve for that job. I wasn't saying you'd leave anyone behind."
   },
   {
     "id": "text.2681baae6bb1283e",
-    "pt": "Então vamos ver o que acha do nosso trabalho na arena.",
-    "en": "Then let's see what you think of our work in the arena."
+    "pt": "Então deixe nossa luta falar por nós.",
+    "en": "Then let our fighting speak for itself."
   },
   {
     "id": "text.c97b4501ac46f903",
-    "pt": "Eu podia ter explicado melhor. Mas ainda escolheria a reserva.",
-    "en": "I could've explained it better. I'd still choose the reserve."
+    "pt": "Eu podia ter explicado melhor. Ainda assim, colocaria o dinheiro na reserva.",
+    "en": "I could've said it better. I'd still put the money into the reserve."
   },
   {
     "id": "text.e333478f402ef703",
-    "pt": "Isso eu consigo ouvir. Ainda quero vencer você.",
-    "en": "That I can hear. I still want to beat you."
+    "pt": "Isso eu aceito. Mas ainda vou tentar ganhar de você.",
+    "en": "Fair enough. Still going to try to beat you."
   },
   {
     "id": "text.dde9c04fe923f1ac",
-    "pt": "Nas quartas de final, a equipe de Ghork enfrenta os Esteios, apoiados por uma das guildas adversárias.",
-    "en": "In the quarterfinals, Ghork's team faces The Stays, backed by one of the rival guilds."
+    "pt": "Quartas de final! A equipe de Ghork enfrenta os Esteios, com apoio de uma guilda adversária!",
+    "en": "The quarterfinals! Ghork's team faces The Stays, with backing from a rival guild!"
   },
   {
     "id": "text.43c7ade4f5844a9e",
-    "pt": "Gastamos com segurança e mesmo assim chegamos às quartas. Conseguimos apoio e treinamos.",
-    "en": "We spent on safety and still made the quarterfinals. We found backing and trained."
+    "pt": "Pagamos pela segurança e mesmo assim chegamos às quartas. Conseguimos apoio e pusemos o treino em dia.",
+    "en": "We paid for safety and still made the quarterfinals. Found some backing. Got the training done."
   },
   {
     "id": "text.34ff3831cbd2188f",
-    "pt": "Eu não achei que vocês fossem ficar parados.",
-    "en": "I didn't think you'd sit around."
+    "pt": "Não achei que vocês fossem desistir.",
+    "en": "I didn't think you'd give up."
   },
   {
     "id": "text.cfba0a083cc13581",
-    "pt": "Naquela reunião, pareceu que a segurança dos meus era só uma despesa que vocês não queriam pagar.",
-    "en": "At that meeting, keeping my people safe sounded like an expense nobody wanted to cover."
+    "pt": "Eu ouvi. Mesmo assim, doeu ver minha reserva de segurança virar algo de que vocês podiam abrir mão.",
+    "en": "I heard you. It still stung to see my safety reserve treated as something you could do without."
   },
   {
     "id": "text.97b662a4d5c4f203",
-    "pt": "Aceitei menos reserva porque o reconhecimento era limitado. Entendi por que você queria mais.",
-    "en": "I accepted a smaller reserve because the survey was limited. I understood why you wanted more."
+    "pt": "Era um reconhecimento limitado. Por isso aceitei uma reserva menor. Eu entendi por que você queria mais.",
+    "en": "It was a limited survey. That's why I accepted the smaller reserve. I understood why you wanted more."
   },
   {
     "id": "text.0b70416fe25c88d0",
-    "pt": "Espero que lembre disso quando contar o contrato.",
-    "en": "I hope you remember that when you tell people about the contract."
+    "pt": "Então lembre dessa parte quando contar como foi o serviço.",
+    "en": "Then remember that part when you tell people how the job went."
   },
   {
     "id": "text.7e596eb2c22f6125",
-    "pt": "Eu podia ter reconhecido melhor o risco que você queria evitar.",
-    "en": "I could've given more weight to the risk you were trying to avoid."
+    "pt": "Eu devia ter dado mais atenção ao risco que você estava explicando.",
+    "en": "I should've listened harder when you explained the risk."
   },
   {
     "id": "text.b3ccf70865c15048",
-    "pt": "Podia. Agora temos outra disputa para resolver.",
-    "en": "You could have. Now we've got a different contest to settle."
+    "pt": "Devia. Mas, agora, temos uma partida pela frente.",
+    "en": "Yes. You should. But right now, we've got a match to fight."
   },
   {
     "id": "text.d38466e39ecff268",
-    "pt": "Você passou. Mas demos trabalho.",
-    "en": "You're through. We made you work for it."
+    "pt": "Você passou. Não foi fácil, hein?",
+    "en": "You're through. Didn't make it easy for you, did we?"
   },
   {
     "id": "text.73d70a9ca88478b0",
-    "pt": "Deram. Ganhar não muda isso.",
-    "en": "You did. Winning doesn't change that."
+    "pt": "Não foi mesmo. Vou lembrar dessa luta por um tempo.",
+    "en": "No, you didn't. I'll be feeling that one."
   },
   {
     "id": "text.9bde356d27656ef4",
-    "pt": "Você venceu. Vou cuidar do retorno dos meus.",
-    "en": "You won. I'll get my people home."
+    "pt": "Você venceu. Vou cuidar da volta do meu pessoal.",
+    "en": "You won. I'll see my crew home."
   },
   {
     "id": "text.92c965757aa99adf",
-    "pt": "Boa volta. Obrigado pela luta.",
-    "en": "Get home safe. Thanks for the fight."
+    "pt": "Boa viagem. E obrigado pela luta.",
+    "en": "Safe journey. And thanks for the fight."
   },
   {
     "id": "text.eff35cb52fbfdcd6",
-    "pt": "Do outro lado, cinco adversários. Talvez vocês já tenham se encontrado pela cidade. Hoje, todos querem a vaga na final.",
-    "en": "Five opponents across the arena. You may have met around the city. Today, you're all fighting for a place in the final."
+    "pt": "Cinco adversários entre vocês e a final! Talvez já tenham se encontrado pela cidade. Hoje, eles vieram disputar a mesma vaga que vocês.",
+    "en": "Five opponents stand between you and the final! You may have met them around the city. Today, they've come for the same place you have."
   },
   {
     "id": "text.6e4bd522e0b0c7f8",
-    "pt": "Alguns eu ainda não conheço. Com os outros, já tenho conversa pendente.",
-    "en": "Some of them are new to me. The others and I have plenty to talk about."
+    "pt": "Alguns rostos novos. E algumas conversas que ainda não terminaram.",
+    "en": "Some new faces. Some unfinished conversations, too."
   },
   {
     "id": "text.9bcdb154f66d35bd",
-    "pt": "Não resolvemos o uso daquele pátio. Mas esta luta, pelo menos, está marcada.",
-    "en": "We never settled who gets that yard. At least this fight's on the schedule."
+    "pt": "Ainda não acertamos o uso daquele pátio, hein? Pelo menos achamos um lugar para lutar.",
+    "en": "Still no agreement over that yard, eh? Well, at least we've found somewhere to fight."
   },
   {
     "id": "text.1121fcc3defcaa1f",
-    "pt": "O caso dos feridos continua aberto. Nossa luta não vai resolvê-lo.",
-    "en": "The injured workers' case is still open. This fight won't settle it."
+    "pt": "Ainda precisamos resolver como tratar o caso dos feridos. Uma vitória aqui não vai decidir isso por nós.",
+    "en": "We still need to settle how the injured workers' case is handled. A win here won't decide that for us."
   },
   {
     "id": "text.7eb29e91de983afa",
-    "pt": "Ainda não decidimos o destino da armação. Mas eu continuei treinando.",
-    "en": "We still haven't decided what to do with the frame. I kept training, though."
+    "pt": "A armação ainda espera uma decisão. Eu não esperei para treinar.",
+    "en": "Frame's still waiting for a decision. I haven't been waiting to train."
   },
   {
     "id": "text.a69228167619864a",
-    "pt": "Ainda precisamos acertar o pagamento da cisterna. Hoje vim lutar por esta equipe.",
-    "en": "We still need to settle the cistern payments. Today, I'm here to fight for this team."
+    "pt": "Os pagamentos da cisterna ainda precisam ser acertados. Por enquanto, esta equipe está contando comigo.",
+    "en": "The cistern payments still need sorting out. For now, this team is counting on me."
   },
   {
     "id": "text.bb559d9531cb0896",
-    "pt": "A apresentação ficou pendente. Esta entrada eu já ensaiei.",
-    "en": "We never settled that performance. This entrance, I've rehearsed."
+    "pt": "Nossa apresentação ainda espera uma vaga. Mas esta entrada? Deu tempo de ensaiar.",
+    "en": "Our performance is still waiting for its slot. This entrance, though? I've had time to rehearse."
   },
   {
     "id": "text.36fa4d4d3765f17f",
@@ -4308,8 +4308,8 @@
   },
   {
     "id": "text.bc9d718a574ed6cf",
-    "pt": "Boa luta. Quero chegar à final tanto quanto vocês.",
-    "en": "Have a good fight. I want that place in the final as much as you do."
+    "pt": "Vamos fazer uma boa luta. Quero chegar à final tanto quanto vocês.",
+    "en": "Let's have a good fight. I want that final as much as you do."
   },
   {
     "id": "text.80e79eacee70dc32",
@@ -4318,353 +4318,353 @@
   },
   {
     "id": "text.0e82f37cbda4fee4",
-    "pt": "Quero vencer vocês. Não preciso fingir que nunca nos conhecemos.",
-    "en": "I want to beat you. I don't need to pretend we've never met."
+    "pt": "Quero ganhar de vocês. Nem por isso precisamos fingir que nunca nos vimos.",
+    "en": "I want to beat you. Doesn't mean we have to pretend we're strangers."
   },
   {
     "id": "text.8ffabf23f8965979",
-    "pt": "Conhecidos ou não, só uma equipe passa. Preparem-se.",
-    "en": "Friends or strangers, only one team goes through. Get ready."
+    "pt": "Conhecidos ou não, só uma equipe passa. Preparem-se!",
+    "en": "Friends or strangers, only one team advances. Get ready!"
   },
   {
     "id": "text.e547b777631f16f0",
-    "pt": "Não acertamos o turno do pátio. Esta partida, pelo menos, tem hora marcada.",
-    "en": "We never settled that yard shift. At least this match has a start time."
+    "pt": "Ainda não acertamos o turno do pátio. Pelo menos ninguém mudou o horário desta partida.",
+    "en": "We still haven't sorted out the yard shift. At least nobody's changed the time of this match."
   },
   {
     "id": "text.857bd76f82b1eb0b",
-    "pt": "Ainda temos documentos para conferir. Aqui, pelo menos, sabemos o que está em disputa.",
-    "en": "We still have documents to check. Here, at least, we know what's at stake."
+    "pt": "Aqueles registros ainda precisam ser conferidos. Aqui, pelo menos, está claro o que disputamos: uma vaga na final.",
+    "en": "Those records still need checking. Here, at least, the terms are clear. One place in the final."
   },
   {
     "id": "text.e3064e89df78d301",
-    "pt": "Ainda não decidimos o destino do instrumento. Vamos decidir esta partida.",
-    "en": "We haven't settled the training frame's future. We can settle this match."
+    "pt": "A armação pode esperar até depois da partida. Espero que esteja pronto.",
+    "en": "The frame can wait until after the match. I hope you're ready."
   },
   {
     "id": "text.3825bfc251a7e7be",
-    "pt": "Ainda precisamos fechar aquele acordo. Com esta equipe, já está tudo combinado.",
-    "en": "We still need to settle that agreement. This team and I have already settled ours."
+    "pt": "Nosso acordo ainda não foi fechado. Mas esta equipe está contando comigo, e eu vim fazer minha parte.",
+    "en": "Our agreement's still unfinished. But this team's counting on me, and I'm here to do my part."
   },
   {
     "id": "text.81120a2a7df050d1",
-    "pt": "Ainda podíamos discutir a vaga da apresentação. Mas agora é hora da semifinal.",
-    "en": "We could've kept discussing that performance slot. But it's time for the semifinal."
+    "pt": "Ainda temos uma conversa para terminar sobre a vaga da apresentação. Depois da semifinal.",
+    "en": "There's still a conversation to finish about that performance slot. After the semifinal."
   },
   {
     "id": "text.29e73840904c57fa",
-    "pt": "Sou Brakka. Trabalho de dia e luto quando consigo. Hoje consegui.",
-    "en": "I'm Brakka. I work days and fight when I can. Today, I can."
+    "pt": "Brakka. Trabalho o dia todo, luto quando dá. Estava esperando por esta chance.",
+    "en": "Brakka. Work all day, fight when I get the chance. Been looking forward to this."
   },
   {
     "id": "text.60529d0228114929",
-    "pt": "Sou Sura. Também sei lutar. Você vai ver.",
-    "en": "I'm Sura. I can fight, too. You're about to find out."
+    "pt": "Sura. Se ouviu dizer que sou curandeira, é verdade. Mas não é só isso que sei fazer.",
+    "en": "Sura. If you've heard I'm a healer, that's true. It isn't all I do."
   },
   {
     "id": "text.50ff4d84345ec531",
-    "pt": "Korr. Se ouvir um rangido, pode ser minha proteção. Já testei.",
-    "en": "Korr. If you hear a creak, it might be my armor. Don't worry, I tested it."
+    "pt": "Korr. Se ouvir um rangido, deve ser minha proteção. Já testei. Pode acreditar.",
+    "en": "Korr. If something creaks, it's probably my armor. I tested it. Honest."
   },
   {
     "id": "text.a612dd5e4b9abb86",
-    "pt": "Tessa. Tem gente contando comigo, como deve haver com você.",
-    "en": "Tessa. People are counting on me. I expect they are on you, too."
+    "pt": "Tessa. Tem gente contando comigo. Imagino que com você também.",
+    "en": "Tessa. I've got people counting on me. Guessing you do, too."
   },
   {
     "id": "text.135433b9fd61651c",
-    "pt": "Odrik. Pode guardar o aplauso para depois, se conseguir.",
-    "en": "Odrik. Save your applause for later. If you can."
+    "pt": "Odrik. Tente guardar os aplausos para depois.",
+    "en": "Odrik. Do try to save the applause for afterward."
   },
   {
     "id": "text.5992f25722492460",
-    "pt": "Nima. Minha equipe faz entregas pela cidade. Hoje viemos disputar uma luta.",
-    "en": "Nima. My crew handles deliveries around the city. Today, we're here for a fight."
+    "pt": "Nima. Fazemos entregas pela cidade inteira. Hoje, o pessoal veio lutar.",
+    "en": "Nima. We make deliveries all over the city. Today, the crew's here to fight."
   },
   {
     "id": "text.1b0aa6b6254d5894",
-    "pt": "Edrin. Prefiro uma apresentação curta antes de uma disputa longa.",
-    "en": "Edrin. A short introduction before a long contest."
+    "pt": "Edrin. Vou poupar tempo na apresentação. Imagino que a luta dure mais.",
+    "en": "Edrin. I'll keep the introductions brief. I expect the fight to take longer."
   },
   {
     "id": "text.7c2876c01a478926",
-    "pt": "Velka. Repare nos meus pés antes de tentar acompanhar o movimento.",
-    "en": "Velka. Watch my footing before you try to follow the move."
+    "pt": "Velka. Observe meus pés. Vai ter mais chance de acompanhar o movimento.",
+    "en": "Velka. Watch my feet. You'll have a better chance of keeping up."
   },
   {
     "id": "text.7891f8d4c2c9bdae",
-    "pt": "Mavren. Vim ganhar a chance de escolher meu próximo serviço.",
-    "en": "Mavren. I'm here to earn a say in what work I take next."
+    "pt": "Mavren. Espero que uma vitória aqui me deixe escolher o próximo serviço, para variar.",
+    "en": "Mavren. I'm hoping a win here lets me choose my next job for once."
   },
   {
     "id": "text.cd4d4bdb757e8094",
-    "pt": "Lethra. Meus alunos vão reparar na minha base antes da sua.",
-    "en": "Lethra. My students will be watching my stance before they look at yours."
+    "pt": "Lethra. Meus alunos estão assistindo. Vão julgar minha base antes de reparar na sua.",
+    "en": "Lethra. My students are watching, so they'll be judging my stance before they get to yours."
   },
   {
     "id": "text.2edf4edeab6f9ecc",
-    "pt": "Já conhecemos alguns deles. E todos querem chegar à final tanto quanto nós.",
-    "en": "We know some of them already. And they want that final as much as we do."
+    "pt": "Já conhecemos alguns deles. Não esperem facilidade: eles também querem chegar à final.",
+    "en": "We know some of them. Don't expect them to go easy on us; they want the final, too."
   },
   {
     "id": "text.f959cc11980f3887",
-    "pt": "Você escolheu o treino. Eu busquei outro apoio para os entregadores.",
-    "en": "You chose the training sessions. I found other backing for the delivery crew."
+    "pt": "Você deixou o pátio para o treino. Eu consegui outro apoio para os entregadores. Continuamos aqui.",
+    "en": "You gave the yard to the training sessions. I found someone else to back the delivery crew. We're still here."
   },
   {
     "id": "text.94a01b6f3839fd81",
-    "pt": "Continuei defendendo os depoimentos públicos. Respeito o trabalho de Sura, mas também quero vencer.",
-    "en": "I kept pushing for public testimony. I respect Sura's work. I still want to win."
+    "pt": "Ainda acho que aquelas testemunhas deviam ser ouvidas em público. Sura fez um bom trabalho. Agora vamos ver quem fica com a vaga na final.",
+    "en": "I still believe those witnesses should have been heard in public. Sura did good work. Now let's see who takes the final spot."
   },
   {
     "id": "text.2b3d0d9b382c33fc",
-    "pt": "Reaproveitaram o material. Continuei ensinando com o que restou.",
-    "en": "The material was repurposed. I kept teaching with what I had left."
+    "pt": "Deram uso ao material. Continuei as aulas com o que restou. Hoje você vai ver o que aprendemos.",
+    "en": "They put the material to use. I've kept the lessons going with what was left. Today, you'll see what we learned."
   },
   {
     "id": "text.b623082bed854b25",
-    "pt": "Você apoiou a suspensão. Procurei outro trabalho e segui com este grupo.",
-    "en": "You backed the work stoppage. I found another job and joined this team."
+    "pt": "Você apoiou a suspensão do serviço. Eu arranjei outro trabalho e um lugar nesta equipe. Precisava seguir em frente.",
+    "en": "You backed the work stoppage. I found another job, then a place on this team. Had to keep going."
   },
   {
     "id": "text.d3fb2dc30b8945a7",
-    "pt": "O espetáculo ficou com a vaga. Eu segui procurando espaço para os alunos.",
-    "en": "The show got the slot. I kept looking for room for my students."
+    "pt": "O espetáculo ficou com a vaga. Continuei procurando espaço para os alunos praticarem. Meu treino também não parou.",
+    "en": "The show got the slot. I've kept looking for somewhere the students can practice. My own practice hasn't stopped."
   },
   {
     "id": "text.a5b76cadc24367e3",
-    "pt": "O pátio ficou para as entregas. Encontrei outro apoio para o treino e cheguei até aqui.",
-    "en": "The delivery crew got the yard. I found other backing for our training, and here I am."
+    "pt": "As entregas ficaram com o pátio. Arranjamos outro apoio para o treino. Deu certo o bastante para chegarmos até aqui!",
+    "en": "The deliveries got the yard. We found other help with the training. Worked out well enough to get us here!"
   },
   {
     "id": "text.ad8861c1be11f099",
-    "pt": "Você escolheu os depoimentos públicos. Continuei cuidando dos feridos e preparando minha equipe.",
-    "en": "You chose public testimony. I kept caring for the injured and preparing my team."
+    "pt": "Você escolheu os depoimentos públicos. Continuei atendendo os feridos, e minha equipe continuou treinando. Estamos prontos para enfrentar vocês.",
+    "en": "You chose public testimony. I've kept treating the injured, and my team's kept training. We're ready for you."
   },
   {
     "id": "text.1afcbcd70acbb3ff",
-    "pt": "Você preservou a armação. Procurei outros materiais e outro grupo.",
-    "en": "You kept the frame intact. I found other materials and another team."
+    "pt": "Você preservou a armação. Eu encontrei outros materiais e uma equipe para lutar comigo. Venha ver o que montamos.",
+    "en": "You saved the frame. I found other materials and a team to fight with. Come see what we put together."
   },
   {
     "id": "text.4caf97ad64eafbb2",
-    "pt": "O dinheiro estava garantido, eu sei. Mas ainda prefiro receber antes de entregar o serviço.",
-    "en": "I know the money was guaranteed. I still prefer getting paid before handing over the work."
+    "pt": "Eu sei que o pagamento estava garantido. Ainda prefiro ver o dinheiro antes de entregar o serviço. Podemos discordar e fazer uma boa luta.",
+    "en": "I know the payment was guaranteed. I'd still rather see the money before we hand over the work. We can disagree and have a good fight."
   },
   {
     "id": "text.f8897e88a014c570",
-    "pt": "Levei o espetáculo a outro grupo. Não faltou vontade de entrar na arena.",
-    "en": "I took the show to another group. Still wanted my turn in the arena."
+    "pt": "Arranjei outro grupo para o espetáculo. Achou que eu ia perder minha chance de entrar na arena?",
+    "en": "Found another group for the show. You didn't think I'd miss my chance at the arena, did you?"
   },
   {
     "id": "text.3a0b8e680f5cb61b",
-    "pt": "O treino continua. Entrei nesta equipe. Obrigado por ajudar a garantir nosso espaço.",
-    "en": "We're still training. I joined this team. Thanks for helping us secure the space."
+    "pt": "Aquele espaço de treino que você ajudou a garantir? Ainda estamos usando. Entrei nesta equipe para o campeonato. Vamos ver se o treino valeu!",
+    "en": "That training space you helped us get? Still using it. I joined this lot for the tournament. Let's see if the practice paid off!"
   },
   {
     "id": "text.93b1f221ea96d7c1",
-    "pt": "Você respeitou o sigilo. Continuo grata, mesmo defendendo esta equipe.",
-    "en": "You respected their privacy. I'm still grateful, even fighting for this team."
+    "pt": "Não esqueci como você protegeu o sigilo dos pacientes. Sou grata. E também vou dar o melhor de mim por esta equipe.",
+    "en": "I haven't forgotten how you protected the patients' privacy. I'm grateful. I'm also going to give this team my best."
   },
   {
     "id": "text.a20001c4d433d202",
-    "pt": "Usei o material. Agora vamos ver se minhas proteções aguentam uma luta contra você.",
-    "en": "I used the material. Now let's see if my armor can take a fight against you."
+    "pt": "Lembra daquele material? Aproveitei bem. Agora vou descobrir se a proteção aguenta uma luta contra você.",
+    "en": "Remember that material? Put it to good use. Now I get to find out if the armor holds up against you."
   },
   {
     "id": "text.4392f9ee3842ba42",
-    "pt": "Obrigada por sustentar a posição dos trabalhadores. Aqui estamos em lados distintos.",
-    "en": "Thanks for standing with the workers. Today, we're on opposite sides."
+    "pt": "Você ficou ao lado dos trabalhadores. Obrigada por isso. Hoje, minha equipe precisa de mim deste lado da arena.",
+    "en": "You stood with the workers. Thank you for that. Today, my team needs me on this side of the arena."
   },
   {
     "id": "text.f8dbfa4f19a6f3e3",
-    "pt": "A exibição valeu o trabalho. Hoje não combinamos quem cai.",
-    "en": "That exhibition was worth the work. Today, we haven't agreed on who falls."
+    "pt": "Aquela exibição valeu todo o trabalho. Mas aviso: hoje ninguém combinou quem vai cair.",
+    "en": "That exhibition was worth every bit of work. Mind you, nobody's agreed to take a fall today."
   },
   {
     "id": "text.d3570674f2e4d262",
-    "pt": "As entregas estão funcionando. Para o campeonato, me inscrevi com este grupo.",
-    "en": "The deliveries are running. For the tournament, I signed up with this team."
+    "pt": "As entregas estão em dia. Para o campeonato, me inscrevi com este grupo. Estamos prontos quando você estiver.",
+    "en": "Deliveries are running on schedule. I signed up with this crew for the tournament. Ready when you are."
   },
   {
     "id": "text.70ceae22a187234f",
-    "pt": "Você respaldou os depoimentos. Hoje nos inscrevemos em lados diferentes.",
-    "en": "You backed the witnesses. Today, we signed up on different sides."
+    "pt": "Você deu apoio às testemunhas. Eu respeito isso. Estar na equipe adversária não muda nada.",
+    "en": "You stood by the witnesses. I respect that. Being on opposite teams doesn't change it."
   },
   {
     "id": "text.822617ea2fb1e300",
-    "pt": "Estamos usando o instrumento nas aulas. Obrigada pela ajuda. Agora vou tentar vencer você.",
-    "en": "We're using the frame in class. Thank you for your help. Now I'll try to beat you."
+    "pt": "Estamos usando a armação nas aulas. Obrigada. Agora, espero que não se importe se eu tentar vencer você.",
+    "en": "We're using the frame in class. Thank you. Now, I hope you won't mind if I try to beat you."
   },
   {
     "id": "text.82718f48c2bf237e",
-    "pt": "Conferimos a garantia juntos. Não esqueço isso porque agora vou enfrentá-lo.",
-    "en": "We checked that guarantee together. I haven't forgotten just because I'm about to fight you."
+    "pt": "Conferimos aquela garantia juntos. Eu lembro. Nem por isso posso pegar leve agora.",
+    "en": "We checked that guarantee together. I remember. Doesn't mean I can hold back now."
   },
   {
     "id": "text.facb40b455ee5447",
-    "pt": "Obrigada por dar lugar aos aprendizes. Agora quero conquistar o meu na final.",
-    "en": "Thanks for making room for the apprentices. Now I want to earn my own place in the final."
+    "pt": "Você garantiu um lugar para os aprendizes. Obrigada. Agora quero conquistar minha própria vaga na final.",
+    "en": "You made room for the apprentices. Thank you. Now I'd like to earn a place in that final myself."
   },
   {
     "id": "text.f7bd20250cb832cb",
-    "pt": "A equipe de Ghork está na final.",
-    "en": "Ghork's team is in the final!"
+    "pt": "A equipe de Ghork está na final!",
+    "en": "Ghork's team is through to the final!"
   },
   {
     "id": "text.24835dbb3498dbf2",
-    "pt": "Obrigado pela luta. Foi bom encontrar vocês. Melhor ainda ganhar.",
-    "en": "Thanks for the fight. Good to see you all. Even better to win."
+    "pt": "Que luta. Foi bom encontrar vocês de novo. Melhor ainda ganhar.",
+    "en": "That was a fight. Good to see you all again. Even better to win."
   },
   {
     "id": "text.19a197039e93c222",
-    "pt": "Antes da chamada, Ghork tem tempo para uma conversa.",
-    "en": "Before the announcement, Ghork has time for one conversation."
+    "pt": "Ainda dá tempo de uma conversa antes de chamarem Ghork para a final.",
+    "en": "There's time for one conversation before Ghork is called to the final."
   },
   {
     "id": "text.8238880b841fcb7b",
     "pt": "Vou passar na sede antes da chamada.",
-    "en": "I'll stop by the guild before they call us."
+    "en": "I'll stop by the guild before they call us in."
   },
   {
     "id": "text.69e51f97d58d7e22",
-    "pt": "Vou encontrar o pessoal do contrato no espaço de treino.",
-    "en": "I'll meet the mine crew at the training grounds."
+    "pt": "Vou encontrar o pessoal das minas no espaço de treino.",
+    "en": "I'll find the mine crew at the training grounds."
   },
   {
     "id": "text.1489ca3497918c6c",
-    "pt": "Quero que você saia dessa luta inteiro. Ainda há muito para viver depois dela.",
-    "en": "I want you coming out of that fight in one piece. You have a life to live afterward."
+    "pt": "Volte inteiro dessa luta. Quero ver o que vai fazer com todos os dias que vêm depois dela.",
+    "en": "Come back from this fight in one piece. I want to see what you do with all the days after it."
   },
   {
     "id": "text.f10b174c4da3716f",
-    "pt": "Quando cheguei, achei que bastava ganhar um título para todo mundo parar de me tratar como inútil.",
-    "en": "When I got here, I thought a title would make everyone stop treating me like I was useless."
+    "pt": "Quando cheguei, eu pensei... é só ganhar um título, e vão parar de olhar para mim como se eu não servisse para nada.",
+    "en": "When I got here, I thought... win a title, and they'd stop looking at me like I was useless."
   },
   {
     "id": "text.65ce2d6438faf79d",
-    "pt": "Alguns vão continuar discordando, mesmo se você vencer.",
-    "en": "Some people will still disagree with you, even if you win."
+    "pt": "Talvez alguns nunca enxerguem você como gostaria. Mesmo com esse título.",
+    "en": "Some of them may never see you the way you want. Even with that title."
   },
   {
     "id": "text.3cdbb1368c2c4ed2",
-    "pt": "Está bem. Vou cuidar dos nossos.",
-    "en": "All right. I'll look after our people."
+    "pt": "Está bem. Vá, então. Eu cuido dos nossos.",
+    "en": "All right. Go on, then. I'll look after our people."
   },
   {
     "id": "text.e76987220d7688a0",
-    "pt": "Trouxe a versão final do levantamento. Registrei a reserva de segurança e o custo, como você pediu.",
-    "en": "I brought the final survey. The safety reserve and the costs are recorded, just as you asked."
+    "pt": "Aqui está o levantamento completo. Reserva de segurança, custos... tudo registrado, como você pediu.",
+    "en": "Here's the finished survey. Safety reserve, costs... all written down, as you asked."
   },
   {
     "id": "text.02c9d6cb435408a6",
-    "pt": "Obrigado. Não achei que fosse querer ver um relatório antes da final.",
-    "en": "Thanks. Didn't think I'd want to read a report before the final."
+    "pt": "Obrigado. Se alguém me dissesse que eu ia ficar feliz de ver um relatório antes da final...",
+    "en": "Thanks. If you'd told me I'd be glad to see a report before the final..."
   },
   {
     "id": "text.a94305418a9cedcc",
-    "pt": "Pode deixar aí. Quero ver sua base, não sua caligrafia.",
-    "en": "Leave it there. I want to see your stance, not your handwriting."
+    "pt": "Deixe isso de lado um instante. Pedi para ver sua base, não sua caligrafia.",
+    "en": "Put it down for a moment. I asked to see your stance, not your handwriting."
   },
   {
     "id": "text.554adc3dc8cd576c",
-    "pt": "Eu achava que ganhar esta luta resolveria tudo. Já tenho uma lista do que vai continuar pendente.",
-    "en": "I thought winning this fight would settle everything. I've already got a list of what it won't."
+    "pt": "Achei que uma vitória ia resolver tudo. Pelo visto, tem uma lista inteira me esperando depois.",
+    "en": "I thought one win would settle everything. Turns out I've got a whole list waiting for me afterward."
   },
   {
     "id": "text.d5c1415043753be6",
-    "pt": "Vou ganhar o título. As outras respostas eu dou depois.",
-    "en": "I'll win the title. The other answers can wait."
+    "pt": "Primeiro, vou ganhar o título. Das outras perguntas eu cuido depois.",
+    "en": "First, I'll win the title. I'll deal with the other questions afterward."
   },
   {
     "id": "text.48bf222412a24a35",
-    "pt": "Quero lutar sem prometer que a vitória vai resolver tudo.",
-    "en": "I want to fight without promising a win will fix everything."
+    "pt": "Ainda quero ganhar. Só não posso prometer que isso vai resolver tudo.",
+    "en": "I still want to win. I just can't promise it'll fix everything."
   },
   {
     "id": "text.82a66c1255262f9c",
-    "pt": "Isso eu consigo entender.",
-    "en": "That I can work with."
+    "pt": "Está bem. Agora vá se preparar para a luta.",
+    "en": "All right. You've got a fight to get ready for."
   },
   {
     "id": "text.ebb97a6263ced086",
-    "pt": "Mostre sua base. Depois vá para a chamada.",
-    "en": "Show me your stance. Then go answer that call."
+    "pt": "Primeiro, a base. Depois vá quando chamarem.",
+    "en": "Stance first. Then go when they call you."
   },
   {
     "id": "text.e74aff976fd72ba3",
-    "pt": "A versão final deixa claro qual trecho não verificamos. Não deixei ninguém exagerar o alcance da nossa viagem.",
-    "en": "The final report makes it clear which stretch we didn't check. I didn't let anyone turn our trip into more than it was."
+    "pt": "O relatório final aponta o trecho que não verificamos. Ninguém vai dizer que exploramos mais do que de fato vimos.",
+    "en": "The final report names the stretch we didn't check. Nobody gets to pretend we surveyed more than we did."
   },
   {
     "id": "text.e649f5e6c38c8c55",
-    "pt": "Bom. Prometa que vai lutar, então.",
-    "en": "Good. Then promise me you'll fight."
+    "pt": "Ótimo. Então me prometa uma boa luta.",
+    "en": "Good. Promise me a fight, then."
   },
   {
     "id": "text.7b02cd39245f050b",
-    "pt": "Quero ouvir como pretende enfrentar Torvak.",
-    "en": "Tell me how you plan to face Torvak."
+    "pt": "Então me conte. Como pretende enfrentar Torvak?",
+    "en": "All right. How are you planning to take on Torvak?"
   },
   {
     "id": "text.b66206cef0097517",
-    "pt": "Torvak tem o título há anos. Você viu como ainda cobra reconhecimento dos outros.",
-    "en": "Torvak's had the title for years. You've seen how he still demands recognition."
+    "pt": "Torvak tem esse título há anos. Não foi o bastante para ele parar de cobrar reverência dos outros, foi?",
+    "en": "Torvak's had that title for years. Hasn't stopped him asking everyone to bow and scrape, has it?"
   },
   {
     "id": "text.1f3cb67ba3117718",
-    "pt": "Então vá. Você não precisa da minha aprovação para cada passo.",
-    "en": "Then go. You don't need my approval for every step."
+    "pt": "Então vá. Não precisa parar para pedir minha aprovação a cada passo.",
+    "en": "Off you go, then. No need to stop and ask me at every turn."
   },
   {
     "id": "text.a2f71bf64892d957",
-    "pt": "A final mostrará à cidade o trabalho que fizemos.",
-    "en": "The final will show the city what we've worked for."
+    "pt": "A cidade inteira vai ver você na final. Mostre o que nosso trabalho produziu.",
+    "en": "The whole city will see you in the final. Let them see what our work has produced."
   },
   {
     "id": "text.0a77b25063e85aa0",
-    "pt": "Podem concordar com o resultado e continuar discordando sobre você.",
-    "en": "They can agree on the result and still disagree about you."
+    "pt": "Podem aceitar o resultado. Isso não significa que todos vão aceitar você.",
+    "en": "They may accept the result. That doesn't mean they'll all accept you."
   },
   {
     "id": "text.1e4e9c04c6f46da9",
-    "pt": "Defenda essa posição quando sair da arena também.",
-    "en": "Stand by that when you leave the arena, too."
+    "pt": "Lembre do que acabou de dizer. Vai precisar sustentar essa posição fora da arena também.",
+    "en": "Remember you said that. You'll need to stand by it outside the arena, too."
   },
   {
     "id": "text.6c5e34a0fc056ae9",
-    "pt": "Você chegou. O general não está aqui para ver.",
-    "en": "You made it. The general isn't here to see."
+    "pt": "Então você chegou. Pena que o general não está aqui para ver.",
+    "en": "So you made it. Shame the general isn't here to see."
   },
   {
     "id": "text.e0416ad71cbc6dd7",
-    "pt": "Não preciso dele aqui para lutar.",
-    "en": "I don't need him here to fight."
+    "pt": "Posso lutar sem ele assistindo.",
+    "en": "I can fight without him watching."
   },
   {
     "id": "text.1cc04663ed71b7c3",
-    "pt": "Sua guilda vai usar qualquer resultado contra mim. Até depois de tudo que fiz por esta cidade.",
-    "en": "Your guild will use any result against me. Even after everything I've done for this city."
+    "pt": "Aconteça o que acontecer aqui, sua guilda vai usar isso contra mim. Depois de tudo que fiz por esta cidade.",
+    "en": "Whatever happens here, your guild will turn it against me. After everything I've done for this city."
   },
   {
     "id": "text.6a941469bcf941e4",
-    "pt": "Você cancelou nossos treinos porque meu mentor não pediu desculpas. Chegamos aqui apesar de você.",
-    "en": "You canceled our training slots because my mentor wouldn't apologize. We made it here despite you."
+    "pt": "Você tirou nossos horários de treino porque meu mentor não pediu desculpas. Tentou nos impedir. Chegamos mesmo assim.",
+    "en": "You took away our training slots because my mentor wouldn't apologize. You tried to stop us. We're here anyway."
   },
   {
     "id": "text.bccc993642aa7dc2",
-    "pt": "E agora acha que merece ocupar meu lugar?",
-    "en": "And now you think you deserve my place?"
+    "pt": "E acha que isso lhe dá o direito de tomar meu lugar?",
+    "en": "And you think that earns you my place?"
   },
   {
     "id": "text.ae4d4c99290b4f18",
-    "pt": "Quero conquistar o título. Você ainda vai ter que lutar para mantê-lo.",
-    "en": "I want to earn the title. You'll still have to fight to keep it."
+    "pt": "Vim conquistar o título. Se quiser ficar com ele, vai ter que me vencer.",
+    "en": "I'm here to earn the title. If you want to keep it, you'll have to beat me."
   },
   {
     "id": "text.0893c3e0c8734083",
-    "pt": "É o que pretendo fazer.",
-    "en": "That's exactly what I intend to do."
+    "pt": "Foi para isso que vim.",
+    "en": "That's what I came to do."
   },
   {
     "id": "text.8565e0a8744c10d6",
@@ -4673,13 +4673,13 @@
   },
   {
     "id": "text.45a9c10dcca29514",
-    "pt": "Então pare de falar dos meus e entre na arena.",
-    "en": "Then stop talking about mine and step into the arena."
+    "pt": "Então chega de falar do meu. Entre na arena.",
+    "en": "Then enough talk about mine. Into the arena."
   },
   {
     "id": "text.76c26c93bfb9bae5",
-    "pt": "Final do campeonato de guildas de Terminus. Torvak e sua equipe contra a equipe de Ghork.",
-    "en": "The final of the Terminus guild tournament! Torvak and his team against Ghork's team!"
+    "pt": "Final do campeonato de guildas de Terminus! Torvak e sua equipe enfrentam a equipe de Ghork!",
+    "en": "The final of the Terminus guild tournament! Torvak and his team face Ghork's team!"
   },
   {
     "id": "text.bcd72b15a94ec150",
@@ -4698,18 +4698,18 @@
   },
   {
     "id": "text.8d90a63c1d6a5990",
-    "pt": "Pode repetir? Quero ouvir mais uma vez.",
-    "en": "Could you say that again? I want to hear it one more time."
+    "pt": "Pode repetir? Só mais uma vez.",
+    "en": "Say that again? Just once more."
   },
   {
     "id": "text.8d940f4b7c0657a2",
-    "pt": "Ghork, campeão de Terminus!",
-    "en": "Ghork, champion of Terminus!"
+    "pt": "Ghork! Campeão de Terminus!",
+    "en": "Ghork! Champion of Terminus!"
   },
   {
     "id": "text.03e63986a1efbfc0",
-    "pt": "Eu consegui.",
-    "en": "I did it."
+    "pt": "Eu... eu consegui.",
+    "en": "I... I did it."
   },
   {
     "id": "text.9379b61bdc9e1e10",
@@ -4718,48 +4718,48 @@
   },
   {
     "id": "text.727b7bbe1c283509",
-    "pt": "E se Rask desse um momento para ele falar?",
-    "en": "What if Rask gave him a moment to speak?"
+    "pt": "Rask podia deixar ele falar um pouquinho?",
+    "en": "Could Rask let him say something?"
   },
   {
     "id": "text.85dc4877ff5b7316",
-    "pt": "Pela primeira vez em muito tempo, Rask deixou um anúncio para depois e ouviu outra pessoa.",
-    "en": "For the first time in a long while, Rask put off an announcement to let someone else speak."
+    "pt": "E, por uma vez, Rask deixou o próximo anúncio para depois. A palavra era de outra pessoa.",
+    "en": "And for once, Rask set aside his next announcement. Someone else had the floor."
   },
   {
     "id": "text.010977c1209ebbb3",
-    "pt": "Ghork quer dizer uma coisa.",
-    "en": "Ghork has something to say."
+    "pt": "Nosso campeão quer dizer uma coisa!",
+    "en": "Our champion has something to say!"
   },
   {
     "id": "text.a9f80710ca18b475",
-    "pt": "Lutei sozinho, mas muita gente me ajudou desde que cheguei. Alguns até tentaram ganhar de mim hoje.",
-    "en": "I fought alone, but a lot of people have helped me since I got here. Some of them even tried to beat me today."
+    "pt": "Entrei na arena sozinho. Mas, desde que cheguei, muita gente me ajudou. Alguns até fizeram bastante esforço para ganhar de mim hoje.",
+    "en": "I went into the arena alone. But ever since I got here, people have helped me. A few of them tried very hard to beat me today, too."
   },
   {
     "id": "text.336359490acee276",
-    "pt": "Obrigado. Vou aproveitar este título.",
-    "en": "Thank you. I'm going to enjoy this title."
+    "pt": "Então... obrigado. E eu vou aproveitar esse título.",
+    "en": "So... thank you. And I'm going to enjoy being champion."
   },
   {
     "id": "text.d5c228de530255ff",
-    "pt": "Eu perdi. Ouvi o resultado.",
-    "en": "I lost. I heard the result."
+    "pt": "Eu ouvi. Perdi.",
+    "en": "I heard him. I lost."
   },
   {
     "id": "text.91b70a92459eb392",
-    "pt": "Eu também. Não vou pedir que goste dele.",
-    "en": "So did I. I won't ask you to like it."
+    "pt": "Eu também ouvi. Você não precisa gostar.",
+    "en": "I heard him, too. You don't have to like it."
   },
   {
     "id": "text.dfc4b41b580d1d6e",
-    "pt": "Parte da torcida gritava o nome de Ghork até perder a voz. Outros ainda defendiam o antigo campeão. Ghork demorou a sair da arena e ouviu os dois lados.",
-    "en": "Some of the crowd shouted Ghork's name until their voices gave out. Others still cheered for the old champion. Ghork lingered in the arena long enough to hear them both."
+    "pt": "Parte da torcida grita o nome de Ghork até a voz falhar. Outros ainda aplaudem o antigo campeão. Ghork fica mais um pouco na arena, ouvindo os dois lados.",
+    "en": "Part of the crowd shouts Ghork's name until their voices crack. Others still cheer the old champion. Ghork stays in the arena a while, listening to both."
   },
   {
     "id": "text.eba924a7f7b1f9fa",
-    "pt": "Conseguimos. Quero que ouçam os nomes de quem lutou comigo.",
-    "en": "We did it. I want you to hear the names of everyone who fought beside me."
+    "pt": "Conseguimos! E vocês vão ouvir o nome de cada pessoa que lutou comigo.",
+    "en": "We did it! And you're going to hear every name of the people who fought beside me."
   },
   {
     "id": "text.73674865748b92e3",
@@ -4788,28 +4788,28 @@
   },
   {
     "id": "text.8e019aeff8a7e8cd",
-    "pt": "Vai ter assunto no próximo turno.",
-    "en": "We'll have plenty to talk about next shift."
+    "pt": "Ah, o pessoal do próximo turno vai ouvir essa história.",
+    "en": "Oh, the next shift is going to hear about this."
   },
   {
     "id": "text.0e5909fbae6833a6",
-    "pt": "Primeiro, deixa eu ver esse braço. Depois comemoro com vocês.",
-    "en": "Let me see that arm first. Then I'll celebrate with you."
+    "pt": "Fique quieto um instante. Deixe eu ver esse braço... depois você me puxa para a comemoração.",
+    "en": "Hold still. Let me look at that arm... then you can pull me into the cheering."
   },
   {
     "id": "text.df4988c39f421556",
-    "pt": "A proteção aguentou. Eu também, por pouco.",
-    "en": "The armor held. So did I. Barely."
+    "pt": "A proteção aguentou! Eu também. Por pouco.",
+    "en": "Armor held up! So did I. Just about."
   },
   {
     "id": "text.7b42a68c5b869a58",
-    "pt": "Tem muita gente que vai querer saber como foi.",
-    "en": "A lot of people are going to want to hear about this."
+    "pt": "Quero só ver quando contarmos a todo mundo como foi.",
+    "en": "Wait until we tell everyone how it happened."
   },
   {
     "id": "text.e862046810eeb0f7",
-    "pt": "Eu tinha um discurso pronto. Esqueci tudo. Nós ganhamos!",
-    "en": "I had a whole speech ready. Forgot every word. We won!"
+    "pt": "Eu tinha um discurso. Dos bons! Não lembro uma palavra. Nós ganhamos!",
+    "en": "I had a speech. A good one! Can't remember a word of it. We won!"
   },
   {
     "id": "text.1e18427857d560a4",
@@ -4838,298 +4838,298 @@
   },
   {
     "id": "text.32c2a92b7c52f504",
-    "pt": "Todo mundo aqui? Então podemos comemorar.",
-    "en": "Everyone here? Then we can celebrate."
+    "pt": "Está todo mundo aqui? Ótimo. Agora podemos comemorar!",
+    "en": "Everyone here? Good. Now we celebrate!"
   },
   {
     "id": "text.9f3abe89d650d010",
-    "pt": "Este resultado eu faço questão de registrar.",
-    "en": "This result, I'm definitely putting on record."
+    "pt": "Este resultado eu vou registrar com gosto.",
+    "en": "I'll be happy to put this result on record."
   },
   {
     "id": "text.99971a0c9cf24217",
-    "pt": "Quero guardar aquele último movimento na memória.",
-    "en": "I want to remember that last move."
+    "pt": "Aquele último movimento... quero lembrar exatamente como foi.",
+    "en": "That last move... I want to remember exactly how it felt."
   },
   {
     "id": "text.39b5dff827df0143",
-    "pt": "Finalmente um trabalho que faço questão de anunciar.",
-    "en": "Finally, a finished job I actually want to shout about."
+    "pt": "Esse é um trabalho que eu faço questão de anunciar!",
+    "en": "Now that's a job I don't mind telling everyone about!"
   },
   {
     "id": "text.8dfdb578b911db68",
-    "pt": "Meus alunos vão comentar cada passo que eu dei.",
-    "en": "My students are going to pick apart every step I took."
+    "pt": "Meus alunos viram tudo. Vou ouvir falar dessa luta por um bom tempo!",
+    "en": "My students saw all of that. I'll never hear the end of it!"
   },
   {
     "id": "text.a09729845e3fa784",
-    "pt": "Conseguiu. Agora pode se gabar um pouco.",
-    "en": "You did. Now you're allowed a little bragging."
+    "pt": "Conseguiu. Vá, pode se gabar um pouco. Não vou impedir.",
+    "en": "You did it. Go on, have a little brag. I won't stop you."
   },
   {
     "id": "text.8ddf95f4cc847d09",
-    "pt": "Você trabalhou por esta vitória. Aproveite.",
-    "en": "You worked for this win. Enjoy it."
+    "pt": "Você trabalhou por esta vitória. Tire um instante para aproveitar.",
+    "en": "You worked for this victory. Take a moment to enjoy it."
   },
   {
     "id": "text.e3920fa58c4df8d3",
-    "pt": "Homens armados saem do meio das equipes de serviço e bloqueiam as passagens.",
-    "en": "Armed men step out from among the service crews and block the exits."
+    "pt": "Homens armados saem do meio das equipes de serviço e se espalham pelas saídas.",
+    "en": "Armed men break away from the service crews and spread across the exits."
   },
   {
     "id": "text.4a570314551a6b7c",
-    "pt": "As cargas estavam autorizadas. Homens armados bloqueando o público, não. Saiam da frente da saída!",
-    "en": "The deliveries were authorized. Armed men blocking the crowd were not. Clear that exit!"
+    "pt": "Autorizei aquelas entregas, não homens armados! Saiam das saídas. Deixem o público passar!",
+    "en": "I cleared those deliveries, not armed men! Get out of the exits. Let the crowd through!"
   },
   {
     "id": "text.952db1041b1570f2",
-    "pt": "Mantenha a ordem. A arena fica sob nosso comando até acertarmos as condições com as outras guildas.",
-    "en": "Keep order. The arena stays under our command until we've settled terms with the other guilds."
+    "pt": "Mantenham a ordem. A arena fica sob nosso comando até acertarmos as condições com as outras guildas.",
+    "en": "Keep order. We hold the arena until the other guilds agree to terms."
   },
   {
     "id": "text.532019f62cd3ba15",
-    "pt": "Vocês prepararam isso antes da luta.",
-    "en": "You planned this before the fight."
+    "pt": "Vocês prepararam isso antes mesmo da nossa luta.",
+    "en": "You had this ready before we even fought."
   },
   {
     "id": "text.15a8db0159d00903",
-    "pt": "A tomada da arena estava combinada. Eu...",
+    "pt": "Combinamos a tomada da arena. Eu...",
     "en": "We agreed to take the arena. I..."
   },
   {
     "id": "text.752b82600e0c3f86",
-    "pt": "Invasores arrastam espectadores e um companheiro da quarta guilda para junto dos carregamentos.",
-    "en": "The invaders drag spectators and a member of the fourth guild toward the shipments."
+    "pt": "Os invasores arrastam espectadores para perto das cargas. Entre eles está um companheiro da própria guilda de Torvak.",
+    "en": "The invaders drag spectators toward the shipments. Among them is one of Torvak's own guildmates."
   },
   {
     "id": "text.dc87d720285dbea5",
-    "pt": "Soltem essas pessoas. Não era isso que vocês me disseram.",
-    "en": "Let them go. This isn't what you told me."
+    "pt": "Soltem essas pessoas! Vocês não falaram nada disso.",
+    "en": "Let them go! You never said anything about this."
   },
   {
     "id": "text.9ddd081f350fd666",
-    "pt": "Precisamos de gente para sustentar a produção. Você precisa da próxima dose. Cumpra sua parte.",
-    "en": "We need people to keep production running. You need your next dose. Do your part."
+    "pt": "A produção precisa de gente. E você precisa de outra dose. Cumpra sua parte do acordo.",
+    "en": "Production requires people. And you require another dose. Keep your side of the bargain."
   },
   {
     "id": "text.2e109d5b93be2b45",
-    "pt": "Eu aceitei tomar a arena. Não vou entregar os meus para você.",
-    "en": "I agreed to take the arena. I'm not handing my people over to you."
+    "pt": "Concordei em tomar a arena. Não em entregar meu pessoal para você.",
+    "en": "I agreed to take the arena. Not to hand you my people."
   },
   {
     "id": "text.475086e2ccf0335c",
-    "pt": "Vai voltar a pedir quando sentir falta da dose.",
-    "en": "You'll come asking again when the withdrawal starts."
+    "pt": "Vai voltar a pedir. Quando começar a sentir falta da dose.",
+    "en": "You'll ask again. Once you start to feel the lack of it."
   },
   {
     "id": "text.d5f70df34f6ad2e1",
-    "pt": "Então vai ter que esperar até eu tirar essas pessoas daqui.",
-    "en": "Then you'll have to wait until I've got these people out."
+    "pt": "Então vai esperar. Vou tirar essas pessoas daqui.",
+    "en": "Then you'll wait. I'm getting these people out."
   },
   {
     "id": "text.323a7284b868eb8c",
-    "pt": "Torvak enfrenta os invasores e abre uma saída. O fornecedor abandona o disfarce: é Neral, que assume o comando dos atacantes.",
-    "en": "Torvak fights the invaders and opens an escape route. The supplier sheds his disguise: Neral takes command of the attackers."
+    "pt": "Torvak se volta contra os invasores e luta para abrir uma saída. O fornecedor abandona o disfarce. Savel é Neral, e os atacantes obedecem às suas ordens.",
+    "en": "Torvak turns on the invaders, fighting to open a way out. The supplier drops his disguise. Savel is Neral, and the attackers answer to him."
   },
   {
     "id": "text.2b298f6c4b848b1c",
-    "pt": "Continuem levando os capturados. Eu cuido de quem chegar ao corredor.",
-    "en": "Keep moving the captives. I'll deal with anyone who reaches the corridor."
+    "pt": "Continuem levando os capturados. Quem chegar ao corredor fica por minha conta.",
+    "en": "Keep the captives moving. Anyone who reaches the corridor is mine to deal with."
   },
   {
     "id": "text.e7dd8c74cd5bfa29",
-    "pt": "Feridos por aqui. Deixem esta passagem livre!",
-    "en": "Wounded through here. Keep this passage clear!"
+    "pt": "Tragam os feridos por aqui! Deixem a passagem livre!",
+    "en": "Bring the wounded this way! Keep the passage clear!"
   },
   {
     "id": "text.38b15ec5aa5a2824",
-    "pt": "A saída lateral está livre. Eu fico aqui até o último passar.",
-    "en": "The side exit's clear. I'm staying until the last one's through."
+    "pt": "A saída lateral está livre! Só saio daqui quando o último de vocês passar.",
+    "en": "Side exit's clear! I'm staying until the last of you is through."
   },
   {
     "id": "text.392b94f727f79426",
-    "pt": "Aprendizes comigo. Retirem o obstáculo sem bloquear quem está vindo.",
-    "en": "Apprentices, with me. Clear that obstruction. Don't block the people coming through."
+    "pt": "Aprendizes, comigo! Retirem aquele obstáculo. Deixem espaço para quem está passando.",
+    "en": "Apprentices, with me! Move that obstruction. Leave room for the people coming through."
   },
   {
     "id": "text.14c236fe1f4742da",
-    "pt": "Sigam as orientações nas saídas. Não voltem para buscar seus pertences!",
-    "en": "Follow the directions at the exits. Do not go back for your belongings!"
+    "pt": "Sigam as orientações nas saídas! Deixem os pertences. Não voltem para buscar nada!",
+    "en": "Follow the instructions at the exits! Leave your belongings. Do not turn back!"
   },
   {
     "id": "text.537765b0acc12e5b",
-    "pt": "Eu vou atrás do fornecedor. Mantenham a passagem.",
-    "en": "I'm going after the supplier. Keep the passage open."
+    "pt": "Vou atrás do fornecedor. Mantenham esta passagem livre.",
+    "en": "I'm going after the supplier. Keep this way open."
   },
   {
     "id": "text.2e13f4403244f7c2",
-    "pt": "Vá pelo corredor de serviço. Estamos tirando o público deste lado.",
-    "en": "Take the service corridor. We're getting the crowd out this way."
+    "pt": "Corredor de serviço! Vá por lá. Estamos tirando o público por aqui.",
+    "en": "Service corridor! Go that way. We're bringing the crowd out here."
   },
   {
     "id": "text.a5374e7b3c97249f",
-    "pt": "Quem está cuidando dos que já saíram?",
-    "en": "Who's looking after the people outside?"
+    "pt": "Quem está cuidando de quem já saiu?",
+    "en": "Who's taking care of the people already outside?"
   },
   {
     "id": "text.e96b7cc321560ffe",
-    "pt": "Nyra e Jorvi estão recebendo quem saiu. Pirka cuida do transporte. Vá atrás de quem está dando as ordens.",
-    "en": "Nyra and Jorvi are looking after the people outside. Pirka is arranging transport. Go after the one giving the orders."
+    "pt": "Nyra e Jorvi estão com eles. Pirka cuida do transporte. Vá. Encontre quem está dando essas ordens.",
+    "en": "Nyra and Jorvi are with them. Pirka has the transport. Go. Find the one giving these orders."
   },
   {
     "id": "text.c0581cdecb90fea3",
-    "pt": "O fornecedor está junto das caixas. Eu fico com estes aqui.",
-    "en": "The supplier's by the crates. I'll stay with these people."
+    "pt": "Ele está junto das caixas. Eu tiro essas pessoas daqui.",
+    "en": "He's by the crates. I'll get these people clear."
   },
   {
     "id": "text.2656ff59428b4b87",
-    "pt": "Vou atrás dele. Depois, você ainda vai responder pelo que combinou.",
-    "en": "I'll get to him. Afterward, you still have to answer for what you agreed to."
+    "pt": "Vou atrás dele. Isso não livra você de responder pelo acordo que fez.",
+    "en": "I'll get him. This doesn't let you off for the deal you made."
   },
   {
     "id": "text.9e46a0cee4c01e64",
-    "pt": "Sei.",
+    "pt": "Eu sei.",
     "en": "I know."
   },
   {
     "id": "text.c723f90c54c0e70a",
-    "pt": "Você viu quantos dependem de mim. Acha que matar o fornecedor acaba com a necessidade da dose?",
-    "en": "You've seen how many depend on me. Do you think killing their supplier will make them stop needing the dose?"
+    "pt": "Você viu quantas pessoas precisam de mim. Mate o fornecedor, e depois? Acha que a necessidade morre com ele?",
+    "en": "You've seen how many people need me. Kill their supplier, and what then? Do you imagine the need dies with him?"
   },
   {
     "id": "text.9e7c7df6993b4ac3",
-    "pt": "Vi você usar isso para mandar levar pessoas à força.",
-    "en": "I saw you use that need to have people dragged away."
+    "pt": "Vi você usar isso para ameaçar essas pessoas. Depois, mandar arrastar outras à força.",
+    "en": "I saw you threaten them with it. Then have people dragged away."
   },
   {
     "id": "text.c368a12d24fd6127",
-    "pt": "Quando eu era pequeno, só recebia a dose quem tinha força ou posição. Aprendi a produzi-la. Depois, aprendi a decidir quem recebia.",
-    "en": "When I was young, the dose went to the strong and the powerful. I learned to make it. Then I learned to decide who received it."
+    "pt": "Quando eu era criança, via as doses irem para quem tinha força ou posição para exigi-las. Então aprendi a produzi-las. Com o tempo, fui eu quem passou a decidir quem recebia.",
+    "en": "When I was a child, I watched the doses go to whoever had the strength or standing to claim them. So I learned to make my own. Eventually, I was the one deciding who received them."
   },
   {
     "id": "text.aa853d218857aa2f",
-    "pt": "E passou a fazer com os outros o que fizeram com você.",
-    "en": "And started doing to others what they did to you."
+    "pt": "E agora faz com eles o que fizeram com você.",
+    "en": "And now you're doing to them what was done to you."
   },
   {
     "id": "text.f42393493f2285b1",
-    "pt": "Passei a decidir. Não vou abrir mão disso.",
-    "en": "I became the one who decides. I won't give that up."
+    "pt": "Agora eu decido. Não pretendo abrir mão disso.",
+    "en": "Now I decide. I have no intention of giving that up."
   },
   {
     "id": "text.51170b2810475a7c",
-    "pt": "Solte os capturados. Eles não são pagamento.",
-    "en": "Release the captives. They're not payment."
+    "pt": "Solte essas pessoas. Elas não são pagamento.",
+    "en": "Let them go. People aren't payment."
   },
   {
     "id": "text.50c7a379fba8091b",
-    "pt": "São o que permite que tudo continue funcionando.",
-    "en": "They're what keeps all of this running."
+    "pt": "Sem elas, a produção para. É simples assim.",
+    "en": "Without them, production stops. It really is that simple."
   },
   {
     "id": "text.89260fbfeda32db3",
-    "pt": "Neral usa sangue para erguer uma proteção ritual. Ghork pressiona sua defesa, e o alquimista bebe os concentrados. Seu corpo se deforma. Os golpes ficam mais fortes, mas menos precisos.",
-    "en": "Neral uses blood to raise a ritual ward. Ghork presses his defense, and the alchemist drinks the concentrates. His body twists out of shape. His blows grow stronger, but less precise."
+    "pt": "Neral usa sangue para erguer uma proteção ritual. Ghork pressiona a defesa. O alquimista bebe os concentrados, e seu corpo incha e se deforma. Os golpes ficam mais fortes, mas ele perde a precisão.",
+    "en": "Neral draws on blood to raise a ritual ward. Ghork bears down on it. The alchemist drinks his concentrates, and his body twists and swells. His blows hit harder now, but his aim is slipping."
   },
   {
     "id": "text.3cd1bf7ca278a056",
-    "pt": "Eu conheço as doses. As fórmulas são minhas.",
-    "en": "I know the doses. These formulas are mine."
+    "pt": "Eu criei essas fórmulas. Conheço as doses!",
+    "en": "I made these formulas. I know the doses!"
   },
   {
     "id": "text.3cb2bb46693f158f",
-    "pt": "Então sabe o que está tomando.",
-    "en": "Then you know what you're drinking."
+    "pt": "Então sabe o que está engolindo.",
+    "en": "Then you know what you're swallowing."
   },
   {
     "id": "text.cff68407c3847263",
-    "pt": "Sei o que posso fazer com isso.",
-    "en": "I know what I can do with it."
+    "pt": "Sei o que elas me permitem fazer.",
+    "en": "I know what they let me do."
   },
   {
     "id": "text.6a577cfdd5f3f20b",
-    "pt": "Acha que só tenho gente aqui? Há outros grupos. Em Daratrine... até no Conselho. Vamos tomar este continente antes que percebam por onde entramos.",
-    "en": "You think my people are only here? There are other groups. In Daratrine... even on the Council. We'll take this continent before you see where we got in."
+    "pt": "Acha que isso termina aqui? Existem outros grupos. Em Daratrine... até no Conselho. Teremos este continente antes que vocês descubram por onde entramos.",
+    "en": "You think this ends here? There are others. In Daratrine... even on the Council. We'll have this continent before you ever see how we got in."
   },
   {
     "id": "text.d36ae5febf3ca97b",
-    "pt": "Quem está no Conselho?",
-    "en": "Who's on the Council?"
+    "pt": "Quem? Quem está no Conselho?",
+    "en": "Who? Who on the Council?"
   },
   {
     "id": "text.40485753909f17ae",
-    "pt": "Neral morre sem dar nomes. O selo continua intacto. Enquanto isso, os demais concluem a evacuação e libertam os capturados.",
-    "en": "Neral dies without giving any names. The seal remains intact. Meanwhile, the others finish the evacuation and free the captives."
+    "pt": "Neral morre antes de dizer um nome. O selo continua intacto. Nos outros setores da arena, os últimos espectadores são retirados em segurança e os capturados são libertados.",
+    "en": "Neral dies before he gives a name. The seal is still intact. Elsewhere in the arena, the last spectators are brought to safety and the captives are freed."
   },
   {
     "id": "text.b321e480de284154",
-    "pt": "Vou registrar onde encontraram a correspondência. Mantenham esses papéis separados das cargas de retirada.",
-    "en": "I'll record where you found the correspondence. Keep these papers separate from the supplies being moved out."
+    "pt": "Mostre onde encontraram estas cartas. Preciso registrar. Deixem separadas dos materiais que estão retirando.",
+    "en": "Show me where you found these letters. I need to record it. Keep them apart from the supplies being taken out."
   },
   {
     "id": "text.cd10a50116ed1be0",
-    "pt": "Ele falou no Conselho de Daratrine. Isso tem relação?",
-    "en": "He mentioned the Council of Daratrine. Is this connected?"
+    "pt": "Ele falou no Conselho de Daratrine. É disso que tratam estas cartas?",
+    "en": "He mentioned the Council of Daratrine. Is that what these are about?"
   },
   {
     "id": "text.62a563a7f0ae8fa5",
-    "pt": "Nosso contato no Conselho de Daratrine confirmou o recebimento anterior. Enviem as próximas instruções por este mesmo meio. Não incluam nomes na remessa.",
-    "en": "Our contact on the Council of Daratrine has confirmed the previous delivery. Send further instructions through this same channel. Include no names with the shipment."
+    "pt": "Nosso contato no Conselho de Daratrine confirmou o recebimento da remessa anterior. Enviem as próximas instruções por este meio. Não incluam nomes.",
+    "en": "Our contact on the Council of Daratrine has confirmed receipt of the previous shipment. Send the next instructions through this channel. Do not include names."
   },
   {
     "id": "text.9e1aab534f0ca2ea",
-    "pt": "As informações dos registros conferem. Eles tinham contato dentro do Conselho, mas não há nome aqui.",
-    "en": "The records match. They had a contact inside the Council, but there's no name here."
+    "pt": "Os registros conferem. Havia um contato dentro do Conselho. Nada aqui diz quem era.",
+    "en": "The records check out. They had a contact inside the Council. Nothing here tells us who."
   },
   {
     "id": "text.e680528c6d299655",
-    "pt": "Então não vou sair acusando alguém só por causa da ameaça que ele fez antes de morrer.",
-    "en": "Then I'm not going to accuse someone just because he left me with a dying threat."
+    "pt": "Então não temos um nome. Não vou acusar alguém só porque ele quis me assustar antes de morrer.",
+    "en": "Then we don't have a name. I'm not going to accuse someone just because he wanted to frighten me before he died."
   },
   {
     "id": "text.67d3511764643ee7",
-    "pt": "Estamos cuidando dos resgatados. Quem tomava as doses também precisa de tratamento. A morte dele não acabou com a dependência.",
-    "en": "We're treating the people we rescued. Those taking the doses need care, too. His death hasn't ended their dependence."
+    "pt": "Estamos cuidando dos resgatados. Quem tomava as doses dele também precisa de atendimento. A morte dele não acaba com a abstinência.",
+    "en": "We're tending to the people we rescued. Anyone who took his doses needs care as well. His death won't stop the withdrawal."
   },
   {
     "id": "text.80698b254e8f0714",
-    "pt": "Pressionei Rask para cancelar os treinos de vocês. Aceitei tomar a arena. Queria forçar a cidade a devolver nosso lugar.",
-    "en": "I pressured Rask to cancel your training. I agreed to take the arena. I wanted to force the city to give us our place back."
+    "pt": "Pressionei Rask para cancelar seus treinos. Concordei em tomar a arena. Achei que podia obrigar esta cidade a devolver nosso lugar.",
+    "en": "I made Rask cancel your training. I agreed to seize the arena. I thought I could force this city to give us our place back."
   },
   {
     "id": "text.87ad8cb38190407b",
-    "pt": "Você ajudou no resgate. Mas aquelas pessoas foram capturadas por causa do acordo que você aceitou.",
-    "en": "You helped rescue them. But those people were captured because of the deal you accepted."
+    "pt": "Você ajudou a tirá-los de lá. Eu vi. Mas foi o seu acordo que permitiu que aquelas pessoas fossem capturadas.",
+    "en": "You helped get them out. I saw that. But your deal is what let those people be taken in the first place."
   },
   {
     "id": "text.4ceca71f8f2036f2",
-    "pt": "Eu sei. O resgate não desfaz o que aceitei.",
-    "en": "I know. Rescuing them doesn't undo what I agreed to."
+    "pt": "Eu sei. Tirar as pessoas de lá não desfaz o que fiz.",
+    "en": "I know. Getting them out doesn't undo it."
   },
   {
     "id": "text.6d5a611ad4fe7fd7",
-    "pt": "Não estou pronto para perdoar.",
+    "pt": "Não estou pronto para perdoar você.",
     "en": "I'm not ready to forgive you."
   },
   {
     "id": "text.8a46d84e24e83cbd",
-    "pt": "Não vou pedir que decida agora.",
-    "en": "I won't ask you to decide now."
+    "pt": "Não vou pedir que decida isso agora.",
+    "en": "I won't ask you to decide that now."
   },
   {
     "id": "text.bc61ac43686ceb8b",
     "pt": "Quero que você responda pelo que fez.",
-    "en": "I want you to answer for what you did."
+    "en": "I want you held responsible for what you did."
   },
   {
     "id": "text.b893b43a13dd052a",
     "pt": "Vou ter que responder.",
-    "en": "I'll have to."
+    "en": "I will have to be."
   },
   {
     "id": "text.146a84335277c89b",
-    "pt": "Primeiro, ele precisa de tratamento. Depois ainda terá de responder pelo que fez.",
-    "en": "First, he needs treatment. He will still have to answer for what he did."
+    "pt": "Primeiro, ele precisa de tratamento. Isso não vai livrá-lo de responder pelo que fez.",
+    "en": "He needs treatment first. That won't spare him from answering for any of it."
   },
   {
     "id": "text.80fe8d86664ab47d",
@@ -5138,108 +5138,108 @@
   },
   {
     "id": "text.25fc5b1235709020",
-    "pt": "Estou vivo. Ganhei o campeonato.",
-    "en": "I'm alive. I won the tournament."
+    "pt": "Estou vivo. E ganhei o campeonato.",
+    "en": "I'm alive. And I won the tournament."
   },
   {
     "id": "text.d15b71920c11b4bc",
-    "pt": "Ganhou? Ghork! Espera... por que começou dizendo que está vivo?",
-    "en": "You won? Ghork! Wait... why did you start with being alive?"
+    "pt": "Você ganhou? Ghork! Espere... por que estar vivo foi a primeira coisa que você disse?",
+    "en": "You won? Ghork! Wait... why was being alive the first thing you mentioned?"
   },
   {
     "id": "text.ceab133ac84f2bce",
-    "pt": "Atacaram a festa. Libertamos os capturados e derrotamos quem comandava. Ainda tem feridos e muita coisa para fazer.",
-    "en": "They attacked the celebration. We freed the captives and took down the one in charge. People are hurt. There's still a lot to do."
+    "pt": "Atacaram a festa. Levaram pessoas à força. Conseguimos libertá-las e derrotamos quem comandava, mas... ainda tem feridos. O trabalho não terminou.",
+    "en": "They attacked the celebration. Took people captive. We got them out and defeated the one in charge, but... there are still wounded. We're not done yet."
   },
   {
     "id": "text.9c441151caca612a",
-    "pt": "Você ganhou... e depois passou por tudo isso. Conte no seu tempo. Estou ouvindo.",
-    "en": "You won... and then all that happened. Take your time. I'm listening."
+    "pt": "Você ganhou e depois... tudo isso. Vá com calma, Ghork. Estou aqui.",
+    "en": "You won, and then... all that. Take your time, Ghork. I'm here."
   },
   {
     "id": "text.4ddbc4e5abff5f0c",
-    "pt": "Quero contar a final primeiro.",
-    "en": "I want to tell you about the final first."
+    "pt": "Posso contar a final primeiro?",
+    "en": "Can I tell you about the final first?"
   },
   {
     "id": "text.e91dc5c41710002f",
-    "pt": "Conte. Mas depois vai me contar o que aconteceu na festa também.",
-    "en": "Go on. But afterward, you're telling me what happened at the celebration, too."
+    "pt": "Claro. Mas depois quero saber o que aconteceu na festa. Está bem?",
+    "en": "Of course. But afterward, I want to hear what happened at the celebration. All right?"
   },
   {
     "id": "text.8330de40edccf2a4",
-    "pt": "Primeiro, me diga como você está.",
-    "en": "Tell me how you are first."
+    "pt": "Primeiro, me conte como você está.",
+    "en": "First, tell me how you're doing."
   },
   {
     "id": "text.fb61e542656ed138",
-    "pt": "Continuo trabalhando nas peças. E tentando entender como cabe tanta notícia numa conversa com você.",
-    "en": "Still working on my pieces. And wondering how you fit so much news into one conversation."
+    "pt": "Continuo trabalhando nas peças. E, pelo visto, tentando acompanhar você. É muita notícia para uma conversa só.",
+    "en": "Still working on my pieces. Trying to keep up with you, apparently. That's a lot of news for one conversation."
   },
   {
     "id": "text.52f9d8a46d249af9",
-    "pt": "E as peças?",
-    "en": "How are the pieces coming along?"
+    "pt": "Como vai o trabalho com as peças?",
+    "en": "How's the work going?"
   },
   {
     "id": "text.8fa213d3d7dfd3ce",
-    "pt": "Comecei a mostrar para as pessoas. Algumas gostaram, outras pediram ajustes. Estou descobrindo o trabalho que cada encomenda dá.",
-    "en": "I've started showing them around. Some people like them; others want adjustments. I'm learning how much work each order takes."
+    "pt": "Comecei a mostrar para as pessoas. Algumas gostam como estão; outras sugerem mudanças. Estou descobrindo quanto trabalho pode dar até um ajuste pequeno.",
+    "en": "I've started showing people. Some like them as they are; others suggest changes. I'm finding out how much work even a little adjustment can take."
   },
   {
     "id": "text.e2b17ab146093042",
-    "pt": "Dam mandou um recado: \"Sua contribuição chegou. Compramos parte do material e estamos acertando o resto do reparo. Obrigado por dizer quanto podia mandar.\"",
-    "en": "Dam sent a message: \"Your contribution arrived. We bought some of the materials and we're working out the rest of the repairs. Thanks for telling us how much you could send.\""
+    "pt": "Dam mandou um recado: \"O dinheiro chegou. Compramos parte do material e estamos acertando o resto do reparo. Obrigado por avisar quanto podia mandar.\"",
+    "en": "Dam sent you a message: \"The money got here. We've bought some of the materials and we're sorting out the rest of the repairs. Thanks for letting us know what you could send.\""
   },
   {
     "id": "text.c79809d0d06db2b4",
-    "pt": "Uma parte do material. Ainda longe da casa que prometi.",
-    "en": "Some of the materials. Still a long way from the house I promised."
+    "pt": "Parte do material. Ainda está longe da casa que prometi.",
+    "en": "Some materials. Not quite the house I promised him."
   },
   {
     "id": "text.65a819d29566b9eb",
-    "pt": "Mas era dessa parte que ele precisava agora.",
-    "en": "But that part was what he needed right now."
+    "pt": "Era disso que ele precisava agora, Ghork.",
+    "en": "It was what he needed now, Ghork."
   },
   {
     "id": "text.0ef9a8af1fadf0bf",
-    "pt": "Quero continuar minha vida aqui. Hoje tenho uma vitória para contar. Antes de prometer outra coisa, preciso saber como vou cumprir.",
-    "en": "I want to keep building a life here. Today, I've got a victory to tell you about. Before I promise anything else, I need to know how I'll do it."
+    "pt": "Quero ficar aqui. Construir minha vida. Já tenho uma vitória para contar, pelo menos... mas, antes de prometer outra coisa, preciso saber como vou cumprir.",
+    "en": "I want to stay here. Make a life. I've got a victory to tell you about, at least... but before I promise anything else, I need to know how I'll keep it."
   },
   {
     "id": "text.65dbae7f6c051b00",
-    "pt": "Pode começar prometendo notícias.",
-    "en": "Start by promising to keep in touch."
+    "pt": "Pode prometer que vai dar notícias. Eu aceito.",
+    "en": "You could promise to keep in touch. I'd take that."
   },
   {
     "id": "text.1f0ea05dae94972a",
-    "pt": "Essa eu faço questão de cumprir.",
-    "en": "That's one I want to keep."
+    "pt": "Essa eu vou cumprir.",
+    "en": "That one I'm keeping."
   },
   {
     "id": "text.11cfc6eeb3abb4da",
-    "pt": "Encontramos documentos ligados ao Conselho. Ainda não sabemos quem está envolvido. Preciso contar isso, mas não quero que acusem alguém sem prova.",
-    "en": "We found documents linked to the Council. We don't know who's involved yet. I needed to tell you, but I don't want anyone accused without proof."
+    "pt": "Tem outra coisa. Encontramos papéis ligando esse grupo ao Conselho. Ainda não sabemos a quem. Eu precisava contar, mas... não deixe que comecem a acusar pessoas sem prova.",
+    "en": "There's something else. We found papers linking them to the Council. We don't know who yet. I had to tell you, but... don't let people start throwing names around without proof."
   },
   {
     "id": "text.35293a22c4b0f956",
-    "pt": "Vou contar o que você sabe. E deixar claro o que ainda não sabemos.",
-    "en": "I'll pass on what you know. And make it clear what we don't know yet."
+    "pt": "Vou contar o que vocês descobriram. E deixar claro o que ainda não sabem.",
+    "en": "I'll tell them what you've found. And I'll be clear about what you haven't."
   },
   {
     "id": "text.b240f2ab9712c81b",
-    "pt": "Foi assim que terminou aquela vitória em Terminus. Ghork ficou com o título. E ainda havia quem discordasse dele.",
-    "en": "That's how that victory ended in Terminus. Ghork kept the title. And there were still people who disagreed with him."
+    "pt": "E assim foi a vitória de Ghork em Terminus. O título era dele. A aprovação de todo mundo, veja bem, não. Mas o título era dele.",
+    "en": "And that was Ghork's victory in Terminus. The title was his. Not everyone's good opinion, mind you. But the title was his."
   },
   {
     "id": "text.cc7ba9fc02556609",
-    "pt": "E ele foi para Daratrine?",
-    "en": "Did he go to Daratrine?"
+    "pt": "Depois ele foi para Daratrine?",
+    "en": "Did he go to Daratrine after that?"
   },
   {
     "id": "text.361c80f54e868a1c",
-    "pt": "Esta história termina em Terminus. Os papéis ficam para outra conversa.",
-    "en": "This story ends in Terminus. Those papers are for another conversation."
+    "pt": "Este conto termina em Terminus. Aqueles papéis vão ter que esperar outra conversa.",
+    "en": "This tale ends in Terminus. Those papers will have to wait for another conversation."
   },
   {
     "id": "text.16a7b6a5db38cad7",
@@ -5248,213 +5248,213 @@
   },
   {
     "id": "text.fa5c0984b2e188a2",
-    "pt": "Queria. Aprender a fazer uma promessa que podia cumprir não diminuiu esse sonho.",
-    "en": "He did. Learning to make a promise he could keep didn't make that dream any smaller."
+    "pt": "Ah, queria. Os sonhos não tinham acabado. Só aprendeu a pensar um pouco mais antes de prometer uma casa a alguém.",
+    "en": "Oh, yes. He hadn't run out of dreams. Just learned to think a little harder before promising someone a house."
   },
   {
     "id": "text.4e0e23d6941d0dab",
-    "pt": "Agora posso guardar o frasco. Ele também trabalhou bastante hoje.",
-    "en": "Now I can put the vial away. It's done quite enough work for one night."
+    "pt": "Pronto. Já posso guardar o frasco. A noite dele também foi movimentada.",
+    "en": "There. I can put the vial away now. It's had quite a night, too."
   },
   {
     "id": "text.6ef497cc2a7e7737",
-    "pt": "Dam mandou um recado: \"Reorganizei o reparo sem contar com o dinheiro. Ainda falta material. Queria sua ajuda, mas prefiro saber com o que posso contar a ficar esperando sem prazo. Me conte como você está.\"",
-    "en": "Dam sent a message: \"I rearranged the repairs without counting on the money. We still need materials. I wanted your help, but I would rather know what I can count on than wait with no date. Tell me how you are doing.\""
+    "pt": "Dam mandou um recado: \"Reorganizei o reparo sem contar com seu dinheiro. Ainda falta material. Queria sua ajuda, mas prefiro saber como estão as coisas a continuar esperando. Me conte como você está.\"",
+    "en": "Dam sent a message: \"I've rearranged the repairs without counting on your money. We're still short of materials. I wanted your help, but I'd rather know where things stand than keep waiting. Tell me how you're doing.\""
   },
   {
     "id": "text.9a8d4c58eca595cb",
-    "pt": "Ganhar o campeonato não pagou aquele reparo. Eu sei.",
-    "en": "Winning the tournament didn't pay for those repairs. I know."
+    "pt": "Ganhar não pagou aquele reparo. Eu sei.",
+    "en": "Winning didn't pay for those repairs. I know that."
   },
   {
     "id": "text.a369b056124494d1",
-    "pt": "Então conte como você está. Sem prometer uma casa só para encerrar o assunto.",
-    "en": "Then tell him how you are. Don't promise a house just to end the conversation."
+    "pt": "Então conte como você está. Não precisa prometer uma casa inteira para responder isso.",
+    "en": "Then tell him how you're doing. You don't have to promise him a whole house to answer that."
   },
   {
     "id": "text.1f519b3fbb244a27",
-    "pt": "Quero que entre na minha equipe para o campeonato. Vamos?",
-    "en": "I want you on my team for the tournament. Coming?"
+    "pt": "Quero você na minha equipe para o campeonato. O que me diz?",
+    "en": "I want you on my team for the tournament. What do you say?"
   },
   {
     "id": "text.30cea0ba4f532915",
-    "pt": "Vamos. Quero que vejam os trabalhadores lutando, não só carregando coisas para a arena dos outros.",
-    "en": "Let's go. I want people to see workers fighting, not just hauling things into someone else's arena."
+    "pt": "Estou dentro. Está na hora de verem os trabalhadores lutando, em vez de carregar as coisas para a luta dos outros.",
+    "en": "I'm in. Let them see us workers fight for once, instead of hauling gear for everyone else's matches."
   },
   {
     "id": "text.0ab0c30a8a22bf16",
-    "pt": "Vou. Já dividimos os turnos das entregas. Posso representar o grupo sem fazer todo o serviço sozinha.",
-    "en": "I'm in. We've split the delivery shifts. I can represent the crew without doing all the work myself."
+    "pt": "Conte comigo. Dividimos os turnos das entregas. Posso lutar pelo grupo sem tentar fazer o trabalho de todo mundo.",
+    "en": "Count me in. We've shared out the delivery shifts. I can fight for the crew without trying to do everyone's job."
   },
   {
     "id": "text.04a21d733b551e41",
-    "pt": "Justamente naquele dia, apareceu alguém disposto a dividir o serviço. Separaram as tarefas antes que começasse outra discussão. Uma novidade nesta história.",
-    "en": "That very day, someone turned up willing to share the work. They divided the tasks before another argument could start. A first for this story."
+    "pt": "Por acaso, justamente naquele dia, apareceu alguém com tempo para dividir o serviço. Acertaram as tarefas antes de começar outra discussão. Uma coincidência e tanto, não acha?",
+    "en": "As it happened, someone had time to share the work that very day. They divided it up before a fresh argument could get going. Remarkable timing, wouldn't you say?"
   },
   {
     "id": "text.00a95af2c5ce2d92",
-    "pt": "Levaram os preparativos para o próprio depósito. O pátio está livre nesse turno de novo. Vamos ouvir as duas propostas.",
-    "en": "They moved the preparations to their own warehouse. The yard's free for that shift again. Let's hear both proposals."
+    "pt": "Levaram os preparativos para o próprio depósito. Aquele turno no pátio está livre de novo. Vamos ouvir as duas propostas.",
+    "en": "They've moved the preparations into their own warehouse. That shift in the yard is free again. Let's hear both proposals."
   },
   {
     "id": "text.edb239fa1a0e2459",
-    "pt": "Outro responsável assumiu o turno. Posso ir com você.",
-    "en": "Someone else has taken the shift. I can come with you."
+    "pt": "Assumiram meu turno. Posso ir com você.",
+    "en": "Someone's taken over my shift. I'm free to come with you."
   },
   {
     "id": "text.8a9263ca02248d05",
-    "pt": "Conseguimos alguém para o turno. Posso aceitar o convite.",
-    "en": "We've got the shift covered. I can accept."
+    "pt": "O turno está coberto. Conte comigo.",
+    "en": "Shift's covered. Count me in."
   },
   {
     "id": "text.176a91304484a897",
-    "pt": "Você respeitou o que os pacientes autorizaram. Gosto de trabalhar com alguém assim. Conte comigo.",
-    "en": "You respected what the patients agreed to share. I like working with someone I can trust like that. Count me in."
+    "pt": "Você respeitou o que os pacientes queriam compartilhar. Posso confiar que vai me ouvir também. Conte comigo.",
+    "en": "You listened to what the patients were willing to share. I can trust you to listen to me, too. I'm in."
   },
   {
     "id": "text.3cc78ebc27f14ee9",
-    "pt": "Você conferiu o relato antes de usá-lo. Quero alguém com esse cuidado ao meu lado na arena.",
-    "en": "You checked the account before using it. I want someone that careful beside me in the arena."
+    "pt": "Você conferiu o relato antes de agir. É bom ter alguém com esse cuidado ao meu lado na arena.",
+    "en": "You checked the account before acting on it. I could use that kind of care beside me in the arena."
   },
   {
     "id": "text.d22584ad09841fc2",
-    "pt": "Conseguimos quem cuide dos atendimentos nesse período. Agora podemos acompanhar a conferência. Os pacientes ainda decidem o que autorizam.",
-    "en": "We've found someone to cover patient care for that period. Now we can oversee the review. The patients still decide what they authorize."
+    "pt": "Conseguimos quem cuide dos pacientes enquanto acompanhamos a conferência. Isso nos dá tempo. Não muda o que eles autorizaram compartilhar.",
+    "en": "Someone can cover the patients while we oversee the review. That gives us time. It doesn't change what the patients have agreed to share."
   },
   {
     "id": "text.294b8c27c5203fd2",
-    "pt": "Conseguimos quem cuide dos atendimentos. Agora posso ir com você.",
-    "en": "Patient care is covered. Now I can come with you."
+    "pt": "Os pacientes já têm quem cuide deles. Agora posso ir com você.",
+    "en": "The patients have someone to look after them. I can come with you now."
   },
   {
     "id": "text.042275a6397324ed",
-    "pt": "Dividimos a conferência dos registros. Posso lutar com você.",
-    "en": "We've split the records review. I can fight with you."
+    "pt": "Dividimos a conferência dos registros. Estou livre para entrar na equipe.",
+    "en": "We've shared out the records review. I'm free to join your team."
   },
   {
     "id": "text.504d92fa18c9bf8e",
-    "pt": "Quero. Está na hora de testar essas proteções numa luta de verdade.",
-    "en": "I'm in. Time to test this armor in a real fight."
+    "pt": "Estou dentro. Já passou da hora de testar essas proteções numa luta de verdade.",
+    "en": "I'm in. About time this armor saw a proper fight."
   },
   {
     "id": "text.c8bb1925a82c1a4f",
-    "pt": "Quero. Deixei alguém responsável pela prática. Agora vou mostrar a técnica na arena.",
-    "en": "I do. Someone's taking over the practice sessions. Now I'll show the technique in the arena."
+    "pt": "Sim. Deixei alguém cuidando da prática. Está na hora de usar a técnica na arena.",
+    "en": "Yes. Someone's covering the practice sessions. Time I put the technique to use in the arena."
   },
   {
     "id": "text.df1ed7aeb4cc073a",
-    "pt": "Quem tinha reservado a armação encontrou outro conjunto. Podemos decidir como usá-la.",
-    "en": "Whoever reserved the frame found another set. We can decide how to use this one."
+    "pt": "Quem tinha reservado a armação encontrou outro conjunto. Podemos voltar a decidir o que fazer com esta.",
+    "en": "The people who reserved that frame found another set. This one's ours to decide about again."
   },
   {
     "id": "text.f173f9a808d4840a",
     "pt": "A oficina dividiu o acabamento. Posso ir sem atrasar a entrega.",
-    "en": "The workshop split up the finishing work. I can go without holding up the delivery."
+    "en": "The workshop's sharing the finishing work. I can come along without holding up the delivery."
   },
   {
     "id": "text.17cd8277423659a5",
-    "pt": "Outra pessoa que conduz os exercícios assumiu a prática. Posso entrar na equipe.",
-    "en": "Another instructor has taken over the practice session. I can join the team."
+    "pt": "Outra pessoa vai conduzir os exercícios. Posso entrar na equipe.",
+    "en": "Another instructor is taking the practice session. I can join you."
   },
   {
     "id": "text.77729d6a32fa0277",
-    "pt": "Vamos. Os outros representantes continuam a negociação. Quero levar nossa posição para a arena.",
-    "en": "Let's do it. The other representatives will keep negotiating. I want our position heard in the arena."
+    "pt": "Vamos. Os outros representantes continuam a negociação. Eu levo nossa luta para a arena.",
+    "en": "Let's do it. The other representatives can carry on negotiating. I'll take our fight into the arena."
   },
   {
     "id": "text.53ba8d10508f6096",
-    "pt": "Vou. Quero ganhar a liberdade de escolher o próximo serviço, em vez de só pagar as dívidas do anterior.",
-    "en": "I'm in. I want the freedom to choose my next job, instead of just paying off the last one."
+    "pt": "Vou. Para variar, quero escolher o próximo serviço, em vez de aceitar só para pagar as dívidas do anterior.",
+    "en": "I'm in. For once, I'd like to choose my next job instead of taking it to pay off the last one."
   },
   {
     "id": "text.6f21a56427123ae7",
-    "pt": "Reorganizamos os turnos e reunimos os envolvidos. Agora podemos discutir as duas propostas.",
-    "en": "We've rearranged the shifts and got everyone together. Now we can discuss both proposals."
+    "pt": "Reorganizamos os turnos e reunimos os envolvidos. Agora podemos ouvir as duas propostas com atenção.",
+    "en": "We've moved the shifts around and got everyone together. Now we can hear both proposals properly."
   },
   {
     "id": "text.c8e491dae03d01b6",
-    "pt": "Os outros representantes aceitaram dividir as reuniões. Posso lutar com você.",
-    "en": "The other representatives agreed to split the meetings. I can fight with you."
+    "pt": "Os outros representantes vão dividir as reuniões. Posso lutar com você.",
+    "en": "The other representatives will share the meetings between them. I can fight with you."
   },
   {
     "id": "text.930772fb9b92969a",
-    "pt": "Outra pessoa assumiu essa etapa. Posso aceitar o convite.",
-    "en": "Someone else has taken over this stage of the work. I can accept."
+    "pt": "Outra pessoa assumiu esta etapa do serviço. Agora posso aceitar.",
+    "en": "Someone's taking over this stage of the job. I can say yes now."
   },
   {
     "id": "text.03f72afca7088f88",
-    "pt": "Quero. Numa apresentação, a gente combina quem cai. Na semifinal, vou fazer de tudo para ficar de pé.",
-    "en": "I'm in. In a show, we agree on who takes the fall. In the semifinal, I'll fight to stay on my feet."
+    "pt": "Com prazer. Num espetáculo, combinamos quem vai cair. Na semifinal? Vou fazer de tudo para continuar de pé.",
+    "en": "Gladly. In a show, we agree on who takes the fall. In the semifinal? I'll be doing my best to stay upright."
   },
   {
     "id": "text.56be09c1dfc8a6b6",
-    "pt": "Quero. Os aprendizes continuam com a prática combinada. Eu também tenho uma luta para fazer.",
-    "en": "I do. The apprentices will keep to their practice. I've got a fight of my own."
+    "pt": "Sim. A prática dos aprendizes está acertada. Eu também quero fazer minha luta.",
+    "en": "Yes. The apprentices have their practice arranged. I'd like a fight of my own."
   },
   {
     "id": "text.8ae32a9eafc7b84e",
-    "pt": "Terminamos o ajuste dos treinos mais cedo. Sobrou tempo para uma apresentação. Vamos ouvir as duas propostas.",
-    "en": "We finished adjusting the training schedule early. There's room for a performance. Let's hear both proposals."
+    "pt": "Terminamos de ajustar os treinos mais cedo. Afinal, sobrou tempo para uma apresentação. Vamos ouvir as duas propostas.",
+    "en": "We finished sorting out the training schedule early. There's time for a performance after all. Let's hear both proposals."
   },
   {
     "id": "text.31258449d06e33e8",
-    "pt": "Dividimos os preparativos da apresentação. Posso lutar com você.",
-    "en": "We've split up the show preparations. I can fight with you."
+    "pt": "Dividimos os preparativos do espetáculo. Estou livre para lutar com você.",
+    "en": "The show's preparations are shared out. I'm free to fight with you."
   },
   {
     "id": "text.aa9e9f4f53cfc880",
-    "pt": "Consegui quem acompanhe os aprendizes. Posso entrar na equipe.",
-    "en": "I've found someone to supervise the apprentices. I can join the team."
+    "pt": "Consegui quem acompanhe os aprendizes. Estou pronta para entrar na equipe.",
+    "en": "I've found someone to look after the apprentices. I'm ready to join."
   },
   {
     "id": "text.2e39eed05b8f8850",
-    "pt": "Eles fecharam os dois lados. Na próxima, mantenha uma saída livre.",
-    "en": "They cut us off on both sides. Next time, keep an escape route clear."
+    "pt": "Fecharam os dois lados. Na próxima, precisamos deixar uma saída livre.",
+    "en": "They closed in from both sides. Next time, we keep one way out."
   },
   {
     "id": "text.2ecde81a7798a9f2",
-    "pt": "Vou recuperar o fardo. Primeiro preciso recuperar o fôlego.",
-    "en": "I'll get that bundle back. First, I need my breath back."
+    "pt": "Vou recuperar o fardo. Só... deixe eu recuperar o fôlego primeiro.",
+    "en": "I'll get that bundle back. Just... let me catch my breath first."
   },
   {
     "id": "text.3f16f28c657a2d06",
-    "pt": "Acabou. O estojo já foi devolvido. Você pode tentar o desafio de novo.",
-    "en": "It's over. The training case has already been returned. You can try the challenge again."
+    "pt": "Esta tentativa acabou. O estojo já foi devolvido. Você pode tentar o desafio de novo.",
+    "en": "That's the end of this attempt. The training case is back where it belongs. You can try the challenge again."
   },
   {
     "id": "text.9e12d73e578c4436",
-    "pt": "Desta vez eu perdi. Vou voltar.",
-    "en": "I lost this time. I'll be back."
+    "pt": "Essa eu perdi. Vou voltar.",
+    "en": "Lost that one. I'll be back."
   },
   {
     "id": "text.6b187f2444bdc358",
-    "pt": "A equipe adversária venceu esta tentativa. Vocês podem pedir revanche. Falem comigo quando estiverem prontos.",
-    "en": "The opposing team wins this attempt. You may request a rematch. Come to me when you're ready."
+    "pt": "A equipe adversária vence esta luta. Vocês podem pedir revanche. Falem comigo quando estiverem prontos.",
+    "en": "The opposing team wins this bout. You're entitled to a rematch. Come see me when you're ready."
   },
   {
     "id": "text.76be7ae578e38d0e",
-    "pt": "Vou me preparar para voltar.",
-    "en": "I'll prepare and come back."
+    "pt": "Preciso de um tempo para me preparar. Vou voltar.",
+    "en": "Give me a little time to prepare. I'm coming back."
   },
   {
     "id": "text.0ac18ed037d59f0f",
-    "pt": "Ghork é forçado a recuar para uma reentrância do corredor. Os outros continuam retirando o público.",
-    "en": "Ghork is forced back into an alcove. The others keep evacuating the crowd."
+    "pt": "Ghork é forçado a recuar para uma reentrância do corredor. Mais adiante, os outros continuam retirando o público.",
+    "en": "Ghork is driven back into a recess in the corridor. Beyond him, the others keep bringing people out."
   },
   {
     "id": "text.922f2e0b46121ae5",
-    "pt": "Ainda não consegui passar.",
-    "en": "I still can't get through."
+    "pt": "Ainda não consigo passar.",
+    "en": "Can't get through yet."
   },
   {
     "id": "text.1c7ccdb17b78ddd3",
-    "pt": "Recue por aqui. A saída continua aberta.",
-    "en": "Fall back this way. The exit's still open."
+    "pt": "Recue por aqui! A saída ainda está livre.",
+    "en": "Back this way! The exit's still clear."
   },
   {
     "id": "text.aff1cc9e37de171f",
-    "pt": "Uma mesa para quem chega",
-    "en": "A table for late arrivals"
+    "pt": "Um lugar à mesa",
+    "en": "A place at the table"
   },
   {
     "id": "text.967d7b7d9be6f545",
@@ -5463,7 +5463,7 @@
   },
   {
     "id": "text.415109c3357728c6",
-    "pt": "Pedir que os recém-chegados ajudem a conferir.",
+    "pt": "Pedir a quem acabou de chegar que ajude a conferir a lista.",
     "en": "Ask the new arrivals to help check the list."
   },
   {
@@ -5473,28 +5473,28 @@
   },
   {
     "id": "text.e0722dc3cc459eab",
-    "pt": "Mostrar primeiro o uso correto e depois o limite.",
-    "en": "Demonstrate the proper use, then its limits."
+    "pt": "Mostrar como usar a peça e quanto ela aguenta.",
+    "en": "Show how to use the part and how much it can bear."
   },
   {
     "id": "text.fac965ed9fee17c1",
-    "pt": "Pedir à pessoa que explique qual instrução não entendeu.",
-    "en": "Ask which instruction they didn't understand."
+    "pt": "Perguntar qual instrução ficou confusa.",
+    "en": "Ask which instruction was unclear."
   },
   {
     "id": "text.8fadd72ceb485066",
-    "pt": "Uma passagem para o público",
-    "en": "A passage for the crowd"
+    "pt": "Uma entrada livre",
+    "en": "Clear the entrance"
   },
   {
     "id": "text.de5587e050e7cdaf",
-    "pt": "Acompanhar a retirada até liberar a passagem.",
-    "en": "Stay with the removal crew until the passage is clear."
+    "pt": "Acompanhar a retirada dos materiais até liberar a passagem.",
+    "en": "Stay until the supplies are moved and the passage is clear."
   },
   {
     "id": "text.8ad5f05778d8ec2d",
-    "pt": "Dividir a conferência com Jorvi e cobrar o registro.",
-    "en": "Split the checks with Jorvi and make sure the move is recorded."
+    "pt": "Dividir a conferência com Jorvi e garantir o registro da retirada.",
+    "en": "Share the checks with Jorvi and make sure the move is recorded."
   },
   {
     "id": "text.a4919699e8fdbc01",
@@ -5508,18 +5508,18 @@
   },
   {
     "id": "text.108ceeb7c3be3b06",
-    "pt": "Confirmar equipe e encerrar convites",
-    "en": "Confirm team and close recruitment"
+    "pt": "Confirmar a equipe e encerrar os convites",
+    "en": "Confirm your team and close recruitment"
   },
   {
     "id": "text.aa0d841d66035fcb",
-    "pt": "Q-31 · As duas guildas do outro lado",
+    "pt": "Q-31 · As duas guildas adversárias",
     "en": "Q-31 · The two rival guilds"
   },
   {
     "id": "text.360467280e619943",
-    "pt": "Responder à guilda adversária",
-    "en": "Answer the opposing guild"
+    "pt": "Conversar com a guilda adversária",
+    "en": "Speak to the opposing guild"
   },
   {
     "id": "text.1aab6ad184f0a40e",
@@ -5528,13 +5528,13 @@
   },
   {
     "id": "text.b8b6b5c8256147ac",
-    "pt": "Q-32 · As duas guildas do outro lado",
+    "pt": "Q-32 · As duas guildas adversárias",
     "en": "Q-32 · The two rival guilds"
   },
   {
     "id": "text.a118828f5bb7ac8b",
     "pt": "Q-33 · A equipe que seguiu sem você",
-    "en": "Q-33 · The team that went on without you"
+    "en": "Q-33 · The team that carried on without you"
   },
   {
     "id": "text.d09a948835db2eb5",
@@ -5553,8 +5553,8 @@
   },
   {
     "id": "text.b7f5916116bc9617",
-    "pt": "Q-34 · Gente conhecida, lado contrário",
-    "en": "Q-34 · Familiar faces, opposite sides"
+    "pt": "Q-34 · Conhecidos do outro lado da arena",
+    "en": "Q-34 · Familiar faces across the arena"
   },
   {
     "id": "text.a19caa9ee73bcf03",
@@ -5563,7 +5563,7 @@
   },
   {
     "id": "text.c16911dbb819c44b",
-    "pt": "Receber a chamada para a final",
+    "pt": "Ouvir a chamada para a final",
     "en": "Hear the call for the final"
   },
   {
@@ -5574,7 +5574,7 @@
   {
     "id": "text.6606edaaee25a314",
     "pt": "Escolher com quem conversar",
-    "en": "Choose whom to talk to"
+    "en": "Choose someone to talk to"
   },
   {
     "id": "text.23dc7fdc6ecfd3de",
@@ -5608,8 +5608,8 @@
   },
   {
     "id": "text.a1614ade7e25175f",
-    "pt": "O título de Terminus",
-    "en": "The title of Terminus"
+    "pt": "Campeão de Terminus",
+    "en": "Champion of Terminus"
   },
   {
     "id": "text.35b407205b23b01d",
@@ -5629,7 +5629,7 @@
   {
     "id": "text.2969f1d62daccf18",
     "pt": "Q-36 · As portas da festa",
-    "en": "Q-36 · The doors of the celebration"
+    "en": "Q-36 · The celebration gates"
   },
   {
     "id": "text.d9a6d6f7f33053e4",
@@ -5653,7 +5653,7 @@
   },
   {
     "id": "text.4d2ce12e93553334",
-    "pt": "Derrotar o comando local",
+    "pt": "Derrotar o comandante local",
     "en": "Defeat the local leader"
   },
   {
@@ -5684,7 +5684,7 @@
   {
     "id": "text.46c85d85fdaf85db",
     "pt": "Combinar a participação",
-    "en": "Arrange their participation"
+    "en": "Arrange for them to join you"
   },
   {
     "id": "text.64ed860c7f183289",
@@ -5708,78 +5708,78 @@
   },
   {
     "id": "text.7a60ae782168ee4c",
-    "pt": "Precisei usar o pátio para os preparativos que ficaram pendentes. Não posso liberar esse turno agora.",
-    "en": "I needed the yard for the preparations we still have left. I can't free up that shift right now."
+    "pt": "Precisei usar o pátio para pôr os preparativos em dia. Não posso liberar esse turno agora.",
+    "en": "I had to use the yard to catch up on the preparations. I can't spare that shift right now."
   },
   {
     "id": "text.6b0201679967dbac",
-    "pt": "Nossa equipe está ocupada com os atendimentos. Não temos quem acompanhe a conferência e a apresentação dos relatos.",
-    "en": "Our team is busy caring for patients. No one's free to oversee the review and presentation of their accounts."
+    "pt": "Precisamos de toda a equipe no atendimento. Não sobra ninguém para acompanhar a conferência e apresentar os relatos.",
+    "en": "We're all needed with the patients. There's no one free to oversee the review or present their accounts."
   },
   {
     "id": "text.f187332e1311ac5e",
-    "pt": "Reservaram a armação para os preparativos. Não posso prometer o mesmo material para dois projetos.",
-    "en": "The frame's been reserved for preparations. I can't promise the same material to two projects."
+    "pt": "A armação está reservada para os preparativos. Não posso prometer a mesma peça para dois serviços.",
+    "en": "That frame's reserved for the preparations. Can't promise the same piece to two different jobs."
   },
   {
     "id": "text.51b4fc42dee44748",
-    "pt": "Alguns dos envolvidos não conseguem vir à reunião. Não vou pedir que os outros decidam por eles.",
-    "en": "Some of the people involved can't make the meeting. I'm not asking everyone else to decide for them."
+    "pt": "Alguns dos envolvidos não conseguem vir à reunião. Não vou decidir por eles.",
+    "en": "Some of the people involved can't get to the meeting. I'm not making their decision for them."
   },
   {
     "id": "text.c2f3735f755a9c35",
-    "pt": "A reorganização dos treinos ocupou a vaga da apresentação. Não tenho outro intervalo agora.",
-    "en": "Rearranging the training took up the performance slot. I don't have another opening right now."
+    "pt": "Os treinos remarcados ocuparam a vaga da apresentação. Não tenho outro intervalo agora.",
+    "en": "The rescheduled training has filled the performance slot. I don't have another opening right now."
   },
   {
     "id": "text.561d0050e1dd82dd",
-    "pt": "Preciso acompanhar um turno de trabalhadores. Não posso prometer estar na arena ao mesmo tempo.",
-    "en": "I need to supervise a work shift. I can't promise to be in the arena at the same time."
+    "pt": "Tenho um turno de trabalhadores para acompanhar. Não posso dizer a eles que vou estar lá e prometer o mesmo a você.",
+    "en": "I've got a work shift to look after. Can't tell them I'll be there and promise you the same."
   },
   {
     "id": "text.71a4a70659645061",
-    "pt": "Ficou um turno de entregas sem responsável. Estou cobrindo até acertarem.",
-    "en": "One delivery shift was left without a supervisor. I'm covering it until they sort that out."
+    "pt": "Um turno de entregas ficou sem responsável. Estou cobrindo até resolvermos.",
+    "en": "One delivery shift has no one in charge. I'm covering until we sort it out."
   },
   {
     "id": "text.f3e6ed43460865e2",
-    "pt": "Preciso cobrir atendimento. Sem alguém no meu lugar, não posso entrar na equipe.",
-    "en": "I need to cover patient care. Without someone to take my place, I can't join the team."
+    "pt": "Os pacientes precisam de mim aqui. Se conseguirmos alguém para cobrir meu lugar, posso entrar na equipe.",
+    "en": "The patients need me here. With someone to cover for me, I could join you."
   },
   {
     "id": "text.ad0e2856f983a37f",
-    "pt": "Marquei uma conferência de registros no mesmo horário da preparação da equipe.",
-    "en": "I'm scheduled to review records at the same time as the team's preparations."
+    "pt": "Já marquei a conferência dos registros. É no mesmo horário da preparação da equipe.",
+    "en": "I've already arranged to review the records. It clashes with the team's preparations."
   },
   {
     "id": "text.02dc59fba7aa01b8",
-    "pt": "Ainda respondo por uma entrega de proteções. Não vou abandonar o serviço pela metade.",
-    "en": "I'm still responsible for an armor delivery. I'm not leaving the job half-finished."
+    "pt": "Tenho proteções para terminar e entregar. Não posso deixar pela metade.",
+    "en": "I've got armor to finish and deliver. Can't leave it half-done."
   },
   {
     "id": "text.2353e29e5935951d",
-    "pt": "Combinei acompanhar uma prática e não tenho quem assuma.",
-    "en": "I agreed to supervise a practice session. There's no one to take over."
+    "pt": "Prometi acompanhar uma prática. Não tenho quem assuma meu lugar.",
+    "en": "I promised to supervise a practice session. No one's free to take my place."
   },
   {
     "id": "text.6151af9d6ecfd2df",
-    "pt": "Preciso acompanhar uma negociação. As pessoas me escolheram para estar lá.",
-    "en": "I need to attend a negotiation. Those people chose me to represent them."
+    "pt": "Me escolheram para representar o grupo na negociação. Preciso estar lá.",
+    "en": "They chose me to represent them at the negotiations. I need to be there."
   },
   {
     "id": "text.73e840ad31932f9d",
-    "pt": "Sou responsável por uma etapa da obra. Não posso largar tudo sem alguém no meu lugar.",
-    "en": "I'm responsible for a stage of the construction. I can't walk away without someone taking over."
+    "pt": "Esta etapa da obra é responsabilidade minha. Alguém precisa assumir antes de eu sair.",
+    "en": "This part of the construction is my responsibility. Someone has to take over before I can leave."
   },
   {
     "id": "text.66a6c92c3834f331",
-    "pt": "Já estou preparando outra apresentação. Não consigo me comprometer com as duas.",
-    "en": "I'm already preparing another show. I can't commit to both."
+    "pt": "Já estou preparando outro espetáculo. Queria dizer sim, mas não consigo prometer os dois.",
+    "en": "I'm already getting another show ready. I'd like to say yes, but I can't promise to do both."
   },
   {
     "id": "text.fdd84d3ed8b0e56c",
-    "pt": "Preciso acompanhar os aprendizes. Ainda não há quem assuma essa prática.",
-    "en": "I need to supervise the apprentices. No one's available to take over their practice yet."
+    "pt": "Os aprendizes estão contando comigo na prática. Ainda não consegui quem assuma.",
+    "en": "The apprentices are counting on me for practice. I haven't found anyone to take over yet."
   },
   {
     "id": "ui.72df3c4394407553",
@@ -9017,21 +9017,9 @@
     "en": "Used the preserved copy of the correspondence."
   },
   {
-    "id": "ui.667b4db216525c86",
-    "pt": "E00 · Um lugar perto do contador: {p0}",
-    "en": "E00 · A Seat by the Storyteller: {p0}",
-    "template": true
-  },
-  {
     "id": "ui.9ed1734aaff3259d",
     "pt": "Q-A1 · Um trabalho que cabe sentado: {p0}",
     "en": "Q-A1 · A Job You Can Do Sitting Down: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.c3a94f1416ce4cbc",
-    "pt": "E01 · O mesmo problema sobre a mesa: {p0}",
-    "en": "E01 · The Same Problem on the Table: {p0}",
     "template": true
   },
   {
@@ -9047,21 +9035,9 @@
     "template": true
   },
   {
-    "id": "ui.c0730c6b7737bc12",
-    "pt": "E08 · Aprender a escapar do golpe: {p0}",
-    "en": "E08 · Learning to Get Out of the Way: {p0}",
-    "template": true
-  },
-  {
     "id": "ui.f0d38cab634c99aa",
     "pt": "Q-A2 · O caminho de volta: {p0}",
     "en": "Q-A2 · The Way Back: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.c4e132ed198fb120",
-    "pt": "Q-A3 · Quem fica sem atendimento: {p0}",
-    "en": "Q-A3 · Who Gets Left Without Care: {p0}",
     "template": true
   },
   {
@@ -9074,12 +9050,6 @@
     "id": "ui.13d6ef4d3cbd3fcb",
     "pt": "Q-B1 · O corredor errado: {p0}",
     "en": "Q-B1 · The Wrong Passage: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.d9866733748cbaaa",
-    "pt": "Q-B2 · A carga que chegou antes: {p0}",
-    "en": "Q-B2 · The Cargo That Arrived First: {p0}",
     "template": true
   },
   {
@@ -9161,24 +9131,6 @@
     "template": true
   },
   {
-    "id": "ui.7077a2afa3da0fda",
-    "pt": "Q-X0 · Uma reserva para voltar: {p0}",
-    "en": "Q-X0 · A reserve for the way back: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.4d112be2f2b5ac34",
-    "pt": "Q-Y0 · Levar menos: {p0}",
-    "en": "Q-Y0 · Traveling light: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.6ec17e8d0db03e40",
-    "pt": "E06 · Como faremos o trabalho: {p0}",
-    "en": "E06 · How we'll do the job: {p0}",
-    "template": true
-  },
-  {
     "id": "ui.460b02d4653df215",
     "pt": "Q-X1 · Antes de entrar: {p0}",
     "en": "Q-X1 · Before we go in: {p0}",
@@ -9191,39 +9143,9 @@
     "template": true
   },
   {
-    "id": "ui.9a8910b9aa750c15",
-    "pt": "Q-X2 · Até onde pudemos verificar: {p0}",
-    "en": "Q-X2 · As far as we could check: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.6f1e2fefa7631dff",
-    "pt": "Q-Y2 · Até onde pudemos verificar: {p0}",
-    "en": "Q-Y2 · As far as we could check: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.7d656986020ca9f3",
-    "pt": "Q-20 · O nome na lista: {p0}",
-    "en": "Q-20 · A name on the list: {p0}",
-    "template": true
-  },
-  {
     "id": "ui.4938c0b38558a37d",
     "pt": "R1 · Um pátio, dois planos: {p0}",
     "en": "R1 · One yard, two plans: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.4f4c6a36e52ddf13",
-    "pt": "R2 · Os nomes no relato: {p0}",
-    "en": "R2 · Names in the report: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.161431b252f1b002",
-    "pt": "R3 · Uma armação inteira: {p0}",
-    "en": "R3 · A frame in one piece: {p0}",
     "template": true
   },
   {
@@ -9233,27 +9155,9 @@
     "template": true
   },
   {
-    "id": "ui.51401d450713b08c",
-    "pt": "R5 · Uma chance diante do público: {p0}",
-    "en": "R5 · A chance before the crowd: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.c4140987f905c3bc",
-    "pt": "Uma mesa para quem chega: {p0}",
-    "en": "A table for late arrivals: {p0}",
-    "template": true
-  },
-  {
     "id": "ui.34ee107d3ca8acb9",
     "pt": "A peça devolvida: {p0}",
     "en": "The returned part: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.a19cd659fbcbb4d3",
-    "pt": "Uma passagem para o público: {p0}",
-    "en": "A passage for the crowd: {p0}",
     "template": true
   },
   {
@@ -9269,39 +9173,15 @@
     "template": true
   },
   {
-    "id": "ui.087ccea178ff0592",
-    "pt": "Q-31 · As duas guildas do outro lado: {p0}",
-    "en": "Q-31 · The two rival guilds: {p0}",
-    "template": true
-  },
-  {
     "id": "ui.9d21093d3a6c473d",
     "pt": "Resultado da partida: {p0}",
     "en": "Match result: {p0}",
     "template": true
   },
   {
-    "id": "ui.a8a837348200ffa1",
-    "pt": "Q-32 · As duas guildas do outro lado: {p0}",
-    "en": "Q-32 · The two rival guilds: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.a37d411c3d6a30cb",
-    "pt": "Q-33 · A equipe que seguiu sem você: {p0}",
-    "en": "Q-33 · The team that went on without you: {p0}",
-    "template": true
-  },
-  {
     "id": "ui.539b35a2f092e288",
     "pt": "Resultado das quartas: {p0}",
     "en": "Quarterfinal result: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.f0f9b8b4833da4b0",
-    "pt": "Q-34 · Gente conhecida, lado contrário: {p0}",
-    "en": "Q-34 · Familiar faces, opposite sides: {p0}",
     "template": true
   },
   {
@@ -9323,21 +9203,9 @@
     "template": true
   },
   {
-    "id": "ui.6f8aef85bf09569e",
-    "pt": "O título de Terminus: {p0}",
-    "en": "The title of Terminus: {p0}",
-    "template": true
-  },
-  {
     "id": "ui.f621d23f607918ad",
     "pt": "Celebrar a vitória: {p0}",
     "en": "Celebrate the victory: {p0}",
-    "template": true
-  },
-  {
-    "id": "ui.8a4001101b2ac33d",
-    "pt": "Q-36 · As portas da festa: {p0}",
-    "en": "Q-36 · The doors of the celebration: {p0}",
     "template": true
   },
   {
@@ -9400,6 +9268,138 @@
     "id": "ui.8c99caebb839beeb",
     "pt": "O outro acompanha a retirada: bifurcação, passagem estreita, entrada.",
     "en": "The other follows the retreat: fork, narrow passage, entrance."
+  },
+  {
+    "id": "ui.667b4db216525c86",
+    "pt": "E00 · Um lugar perto do contador: {p0}",
+    "en": "E00 · A Place Beside the Storyteller: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.f7d5054a6ad88b5b",
+    "pt": "E01 · Dois mapas, um contrato: {p0}",
+    "en": "E01 · Two Maps, One Contract: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.3621ce7474f48cbd",
+    "pt": "E08 · Aprender a recuar: {p0}",
+    "en": "E08 · Learning When to Step Back: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.dd4f7e6bf74136c8",
+    "pt": "Q-A3 · Alguém precisa ficar: {p0}",
+    "en": "Q-A3 · Someone Has to Stay: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.b433138f6eb3e6b0",
+    "pt": "Q-B2 · Onde a carroça parou: {p0}",
+    "en": "Q-B2 · Where the Cart Stopped: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.aa3505e69820ffc8",
+    "pt": "Q-X0 · Um caminho de volta: {p0}",
+    "en": "Q-X0 · A way back: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.fef86d03432e406e",
+    "pt": "Q-Y0 · Menos bagagem: {p0}",
+    "en": "Q-Y0 · Traveling light: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.2096d5ffc9f7009d",
+    "pt": "E06 · A escolha da equipe: {p0}",
+    "en": "E06 · Choosing a crew: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.35b761a9d592b11a",
+    "pt": "Q-X2 · Onde paramos: {p0}",
+    "en": "Q-X2 · Where we stopped: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.4f255c578cbb1958",
+    "pt": "Q-Y2 · Onde paramos: {p0}",
+    "en": "Q-Y2 · Where we stopped: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.38a1a951457e7f9b",
+    "pt": "Q-20 · Meu nome na lista: {p0}",
+    "en": "Q-20 · My name on the list: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.19926a2048337db3",
+    "pt": "R2 · Quem põe o nome?: {p0}",
+    "en": "R2 · Whose name goes on it?: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.bbc0d8e38b712f35",
+    "pt": "R3 · Antes de desmontar: {p0}",
+    "en": "R3 · Before it comes apart: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.395157622c09e91b",
+    "pt": "R5 · Uma vez diante do público: {p0}",
+    "en": "R5 · A turn in the spotlight: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.9d3e8f259d09a674",
+    "pt": "Um lugar à mesa: {p0}",
+    "en": "A place at the table: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.f641476b488ee37f",
+    "pt": "Uma entrada livre: {p0}",
+    "en": "Clear the entrance: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.5a8e53e1a2c8f6f1",
+    "pt": "Q-31 · As duas guildas adversárias: {p0}",
+    "en": "Q-31 · The two rival guilds: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.0a27f4015c499cc1",
+    "pt": "Q-32 · As duas guildas adversárias: {p0}",
+    "en": "Q-32 · The two rival guilds: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.a37d411c3d6a30cb",
+    "pt": "Q-33 · A equipe que seguiu sem você: {p0}",
+    "en": "Q-33 · The team that carried on without you: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.6ea24102e2da9e85",
+    "pt": "Q-34 · Conhecidos do outro lado da arena: {p0}",
+    "en": "Q-34 · Familiar faces across the arena: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.a86c46ebc7b47223",
+    "pt": "Campeão de Terminus: {p0}",
+    "en": "Champion of Terminus: {p0}",
+    "template": true
+  },
+  {
+    "id": "ui.8a4001101b2ac33d",
+    "pt": "Q-36 · As portas da festa: {p0}",
+    "en": "Q-36 · The celebration gates: {p0}",
+    "template": true
   }
 ];
   root.TerminusLocale = records;

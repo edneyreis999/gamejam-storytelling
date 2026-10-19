@@ -2,6 +2,8 @@
 
 Status: em desenvolvimento.
 
+Para jogar sem ferramentas de produção, abra a [edição para jogadores](../jogo/index.html). Ela compartilha esta campanha, usa saves separados com importação V3 e tem [instruções próprias de uso e manutenção](../jogo/README.md).
+
 Abra [index.html](index.html) em um navegador atual. O jogo roda localmente, sem build, servidor ou instalação. Também pode ser servido a partir da raiz do repositório; mantenha a pasta `assets/terminus/` disponível, pois o protótipo referencia esses arquivos diretamente.
 
 A V3 integra o [roteiro de quests](../storytelling/quests-da-campanha.md): quinze quests de guilda, sete do arco 2, cinco conflitos de recrutamento, campeonato, invasão, encerramento e cenas compartilhadas E00–E08. Preserva as três secundárias e permite terminar sozinho, sem gastar Ludos.
@@ -10,7 +12,9 @@ A V3 integra o [roteiro de quests](../storytelling/quests-da-campanha.md): quinz
 
 O jogo abre em **English**. O seletor **Português / English** está na abertura e no menu; a escolha fica em `terminus-language`, separada do save. Trocar idioma redesenha a apresentação sem avançar a leitura, repetir entregas ou alterar resultados. Os saves V3 continuam usando os mesmos comandos.
 
-A revisão aprovada no [piloto](editorial/piloto.md) cobre **1.156 unidades narrativas e de objetivos/escolhas**, com português revisado e inglês final nos [lotes A](editorial/lote-a.json), [B](editorial/lote-b.json) e [C](editorial/lote-c.json). Os inventários `editorial/inventory-*.json` preservam original, ID, cenas, participantes, ocorrências e linhas de origem; os lotes usam os mesmos IDs. Seus registros de variantes remetem aos [contextos observados nas prévias](editorial/variant-contexts.json); as condições completas continuam nas fontes. As variantes também podem ser lidas em **Cenas e variantes**. O [relatório de integração](editorial/integracao.json) registra a migração aplicada às fontes.
+A segunda rodada cobre **1.156 unidades narrativas e de objetivos/escolhas**, com revisão em EN-US seguida de localização para PT-BR nos [lotes A](editorial/lote-a.json), [B](editorial/lote-b.json) e [C](editorial/lote-c.json). Cada entrada conserva o ID, as versões anteriores (`previousPt` e `previousEn`), a rodada de revisão e a direção de expressão. Os arquivos `round2-*.json` registram as propostas integradas. O [registro editorial](REVISAO-EDITORIAL.md) distingue os resultados desta rodada da revisão inicial aprovada no [piloto](editorial/piloto.md).
+
+Os inventários `editorial/inventory-*.json` preservam original, ID, cenas, participantes, ocorrências e linhas de origem da captura inicial. Essas linhas são referências históricas; para localizar o texto atual, use o ID no lote e busque sua versão `pt` na fonte indicada. Os registros de variantes remetem aos [contextos observados nas prévias](editorial/variant-contexts.json), atualizados após a integração; as condições completas continuam nas fontes. As variantes também podem ser lidas em **Cenas e variantes**. O [relatório da primeira integração](editorial/integracao.json) permanece como histórico daquela migração.
 
 O português jogável permanece em `quests-da-campanha.md`, `campaign.js`, `content.js` e `supplementary.js`. O inglês é gerado em `locales/en-US.js` a partir dos lotes, do [glossário](editorial/glossario.json) e do [catálogo de interface](editorial/interface-en.json). Este último inclui itens, ações geradas, diário, batalha, mapa, avisos e acessibilidade. As ferramentas internas de produção podem conservar português.
 
@@ -20,6 +24,8 @@ Para corrigir um texto depois desta integração:
 2. Preserve as linhas estruturais do Markdown: os recortes de montagem ainda dependem de seus intervalos. Regenere `quest-script.js` quando alterar o roteiro principal.
 3. Gere o catálogo e execute a cobertura abaixo. O teste aponta variantes, textos ou parâmetros ausentes; não aceite uma entrada sem inglês como conclusão da revisão.
 
+Toda fala tem uma expressão explícita: `neutro`, `feliz`, `triste`, `raiva` ou `confuso`. No roteiro, escreva `**Ghork:** [expressao=triste] Fala.`; para uma escolha, `1. **“Resposta.”** [expressao=feliz] — **Lala:** [expressao=neutro] Réplica.`. Nas variantes de mentor, use `Virmura: [expressao=neutro] “Fala.”`. Mantenha a anotação na mesma linha. O extrator separa a direção do texto exibido e das condições. No JavaScript, registre a expressão na fala correspondente; `expressionOverrides` no lote documenta diferenças por ocorrência.
+
 ```powershell
 node docs/terminus/prototipo/scripts/extract-quest-script.cjs
 node docs/terminus/prototipo/scripts/build-locales.cjs
@@ -27,11 +33,14 @@ node docs/terminus/prototipo/scripts/report-editorial.cjs --write
 node docs/terminus/prototipo/scripts/integrate-editorial.cjs --check
 node --test docs/terminus/prototipo/tests/*.test.cjs docs/terminus/prototipo/tests/localization.cjs docs/terminus/prototipo/tests/localization-messages.cjs
 node docs/terminus/prototipo/tests/localization-browser.cjs
+node coreto/tools/qa/runner/node_modules/playwright/cli.js test -c docs/terminus/prototipo/tests/narrative.playwright.config.cjs --project=narrative
 ```
 
 `integrate-editorial.cjs --write` é a migração inicial, já aplicada; não é o comando de edição cotidiana. A verificação `--check` não depende de Acorn. `localization.js` resolve chaves de conteúdo estáveis e templates explícitos na apresentação, sem usar somente a posição da passagem: falas diferentes na mesma posição têm registros próprios. O relatório exportado acompanha o idioma selecionado.
 
 O teste visual de idiomas aceita as mesmas variáveis do teste de mapa: `$env:TERMINUS_QA_BROWSER="chrome"` e `$env:TERMINUS_QA_TRANSPORT="file"` executam a abertura direta do HTML no Chrome, sem acesso HTTP. Seu relatório e capturas ficam em `.artifacts/terminus-localization/browser/`.
+
+Os 12 cenários de `narrative.browser.cjs` verificam texto, identidade, expressão e posição de leitura nos dois idiomas. Usam saves preparados para alcançar cada cena e importados pela interface pública. A seleção `--project=narrative` executa esse arquivo com um worker e um navegador, respeitando os limites de `loki.config.json`; o Edge é o padrão. A configuração também registra os testes da [edição para jogadores](../jogo/README.md). As novas capturas ficam em `.artifacts/terminus-player/browser/` e o relatório em `.artifacts/terminus-player/browser-results.json`; as capturas anteriores permanecem em `.artifacts/terminus-localization/round2/`. A preparação dos saves não equivale a um playtest humano completo.
 
 A resposta da rota Y omitida no recorte original foi recuperada como segunda opção. A opção que já existia conserva o índice zero para manter o sentido dos comandos de saves anteriores. Não foram acrescentados efeitos, páginas ou recompensas.
 
@@ -66,7 +75,7 @@ R1/R2 podem ser resolvidos desde Q-A1. Os convites aguardam a trajetória X/Y co
 
 ## Arte e revisão
 
-São **19 fundos selecionados**, **210 expressões disponíveis para 42 visuais** e **15 artes do mapa** (terreno, 13 fachadas e portal). A encenação usa o subconjunto correspondente aos participantes e às expressões explicitamente escolhidas. Os arquivos continuam **em avaliação artística**. Concepts orientam identidade e enquadramento; as expressões são os bustos do palco. Lala e figurantes sem imagem permanecem provisórios. Savel, Neral revelado e Neral transformado usam visuais distintos.
+São **19 fundos selecionados**, **255 expressões disponíveis para 51 visuais** e **15 artes do mapa** (terreno, 13 fachadas e portal). A encenação usa o subconjunto correspondente aos participantes e às expressões explicitamente escolhidas. Os arquivos continuam **em avaliação artística**. Concepts orientam identidade e enquadramento; as expressões são os bustos do palco. Lala e oito visuais de figurantes usam a arte já produzida; vozes coletivas sem imagem correspondente permanecem provisórias. Savel, Neral revelado e Neral transformado usam visuais distintos.
 
 O registro `art.js`, alimentado por `asset-files.js`, é compartilhado pelo palco e pelo catálogo. As imagens mantêm proporções e transparência. Os fundos têm 1672 × 941 px, exceto a recepção de Virmura, com 1672 × 940; os bustos têm 504 × 672 px RGBA. Falhas de carregamento mostram o arquivo esperado e uma mensagem legível.
 
@@ -74,6 +83,8 @@ O registro `art.js`, alimentado por `asset-files.js`, é compartilhado pelo palc
 - **Inventário de arte:** fichas, usos, filtros e exportação CSV. O [inventário gerado](INVENTARIO.md) distingue referências com uso no roteiro das demais disponíveis.
 - **Direção de arte:** mostra IDs e referências nas prévias editoriais. O jogo permanece sem essas informações.
 - **Prévia do mapa:** consulta as artes da cidade sem visitar locais nem modificar o save.
+
+Os **35 objetos usados nas cenas** possuem PNGs transparentes associados ao palco e ao catálogo, em avaliação artística. Consulte a [galeria dos objetos](../arte/objetos/galeria.md) e sua [documentação de produção](../arte/objetos/README.md).
 
 As prévias contêm spoilers e contextos editoriais que não são partidas reais. Consulte os [fundos selecionados](../arte/locais/README.md), os [concepts](../arte/bustos/README.md) e a [matriz de expressões](../arte/bustos/expressoes/README.md). Sprites de movimentação não são usados. A composição e a procedência do mapa estão em [mapa/README.md](mapa/README.md).
 

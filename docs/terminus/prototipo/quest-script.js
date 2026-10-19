@@ -2,7 +2,7 @@
 (function(root) {
   const data = {
   "source": "../storytelling/quests-da-campanha.md",
-  "sha256": "6f7e1c31a42efb320b75a7ff11160166e0019d1aa53f553abfa4045ae1810f01",
+  "sha256": "9f15826f983e37df7de70573ec742d8cd621e524a1a8681c842ebf9c5990d839",
   "records": [
     {
       "line": 117,
@@ -10,7 +10,8 @@
         {
           "speaker": "Rheed",
           "condition": "",
-          "text": "Chegou bem na hora. A história começa com alguém que quase não chegou ao seu destino."
+          "expression": "feliz",
+          "text": "Aí está você. Chegue mais perto; guardamos um lugar. Eu ia contar justamente a história de alguém que quase não chegou."
         }
       ]
     },
@@ -27,12 +28,14 @@
     {
       "line": 121,
       "speaker": "Criança",
-      "choice": "Quem?",
+      "choice": "Quem não chegou?",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Rheed",
           "condition": "",
-          "text": "Ghork. Guardem esse nome. Ele ficaria muito satisfeito de me ouvir dizendo isso."
+          "expression": "feliz",
+          "text": "Ghork. Guardem esse nome, todos vocês. Ele ia adorar saber que eu pedi."
         }
       ],
       "question": false
@@ -40,12 +43,14 @@
     {
       "line": 122,
       "speaker": "Criança",
-      "choice": "Essa história acaba mal?",
+      "choice": "Espera... essa história tem um final triste?",
+      "expression": "triste",
       "response": [
         {
           "speaker": "Rheed",
           "condition": "",
-          "text": "Tem partes difíceis. Mas vamos chegar ao final juntos, sem pular nada."
+          "expression": "neutro",
+          "text": "Tem seus momentos difíceis. Fique por perto, e vamos passar por eles juntos. Mas nada de espiar o final. Acabei de abrir o frasco."
         }
       ],
       "question": false
@@ -56,7 +61,8 @@
         {
           "speaker": "Rheed",
           "condition": "",
-          "text": "Ghork foi a Terminus atrás de trabalho. Mas, quando chegou, precisava primeiro de alguém que tratasse sua perna."
+          "expression": "neutro",
+          "text": "Ghork tinha vindo de longe, de Daratrine. Trabalho, um novo começo, alguém que cuidasse da perna ferida... Terminus devia ter tudo isso. Mas, quando chegou, mal conseguia respirar."
         }
       ]
     },
@@ -66,7 +72,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu consigo... só preciso..."
+          "expression": "triste",
+          "text": "Eu consigo... só preciso de um instante..."
         }
       ]
     },
@@ -76,7 +83,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Não tente levantar. Olhe para mim."
+          "expression": "neutro",
+          "text": "Calma. Não tente levantar. Olhe para mim, aqui."
         }
       ]
     },
@@ -86,7 +94,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Isto é... Terminus?"
+          "expression": "confuso",
+          "text": "Eu cheguei...? Aqui é Terminus?"
         }
       ]
     },
@@ -96,7 +105,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "É. Você chegou. Agora fique comigo."
+          "expression": "neutro",
+          "text": "É. Você chegou. Continue olhando para mim, Ghork. Agora deixe o trabalho comigo."
         }
       ]
     },
@@ -106,7 +116,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu tinha pensado numa apresentação melhor."
+          "expression": "feliz",
+          "text": "Bom... eu tinha planejado uma primeira impressão melhor."
         }
       ]
     },
@@ -116,7 +127,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Essa quase foi a última. Deixe o discurso para quando tiver fôlego."
+          "expression": "neutro",
+          "text": "Eu já me contento com uma que você sobreviva para contar. Guarde o discurso, está bem? Mal recuperou o fôlego."
         }
       ]
     },
@@ -126,7 +138,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Foi você que me...?"
+          "expression": "neutro",
+          "text": "Foi você que... Você me salvou?"
         }
       ]
     },
@@ -136,7 +149,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Fui. E ainda não terminei de cuidar de você."
+          "expression": "neutro",
+          "text": "Salvei. E você ainda está sob meus cuidados. Nada de começar a me agradecer saindo da cama."
         }
       ]
     },
@@ -146,7 +160,8 @@
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Estes dois mapas não parecem descrever as mesmas galerias. Os relatos também não esclarecem isso. Antes de financiar uma investigação maior, preciso entender o que temos."
+          "expression": "neutro",
+          "text": "Olhem estes dois mapas. Supostamente da mesma mina, mas não parecem concordar. Os relatos também não ajudam muito. Estou disposta a financiar uma investigação completa, mas antes preciso saber quem é capaz de entender isso."
         }
       ]
     },
@@ -156,7 +171,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Quer que a gente entre nas minas para conferir?"
+          "expression": "confuso",
+          "text": "Então quer que a gente entre lá e veja qual mapa está certo?"
         }
       ]
     },
@@ -166,7 +182,8 @@
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Só depois de eu escolher uma guilda. Primeiro, vocês vão mostrar o que conseguem descobrir com os mapas e as fontes aqui fora."
+          "expression": "neutro",
+          "text": "Ainda não. Primeiro vou escolher uma guilda. Por enquanto, trabalhem com os mapas e as fontes que podemos consultar aqui fora. Mostrem o que conseguem descobrir antes de alguém pôr os pés nas galerias."
         }
       ]
     },
@@ -176,7 +193,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "E como vão trazer a equipe de volta em segurança."
+          "expression": "neutro",
+          "text": "E mostrem como pretendem tirar sua gente de lá depois. De preferência, inteira."
         }
       ]
     },
@@ -186,7 +204,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Voltar vivo costuma ser a melhor parte do trabalho."
+          "expression": "feliz",
+          "text": "Também gosto bastante dessa parte. Fica difícil aproveitar o pagamento quando a gente não volta."
         }
       ]
     },
@@ -196,7 +215,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Todas as guildas terão acesso às mesmas cópias?"
+          "expression": "neutro",
+          "text": "Antes de começarmos: todas as guildas recebem as mesmas cópias, correto?"
         }
       ]
     },
@@ -206,7 +226,8 @@
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Sim. O pagamento é alto, mas o contrato será de uma só guilda. Preciso de uma equipe responsável pelo levantamento inteiro."
+          "expression": "neutro",
+          "text": "Correto. O pagamento é alto, e o contrato é exclusivo. Uma guilda responde pelo levantamento inteiro. Não vou dividir o trabalho entre três planos concorrentes."
         }
       ]
     },
@@ -223,12 +244,14 @@
     {
       "line": 169,
       "speaker": "Ghork",
-      "choice": "Por que não contratar quem já conhece as minas?",
+      "choice": "Não seria mais fácil contratar alguém que já andou por essas minas?",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Cada um conhece um trecho. Preciso de quem consiga juntar esses relatos e admitir o que ainda não sabe."
+          "expression": "neutro",
+          "text": "Cada pessoa conhece um pedaço. Preciso de alguém que junte esses relatos e me diga onde faltam informações. Até agora, ninguém conseguiu me mostrar o quadro completo."
         }
       ],
       "question": true
@@ -236,12 +259,14 @@
     {
       "line": 170,
       "speaker": "Ghork",
-      "choice": "O dinheiro pode ajudar na preparação para o campeonato?",
+      "choice": "E a guilda poderia usar uma parte do pagamento para se preparar para o campeonato?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "A guilda pode usar a parte dela no campeonato. Eu estou pagando pelo levantamento das minas. Ganhar na arena é com vocês."
+          "expression": "neutro",
+          "text": "Depois de ganhar sua parte, a guilda decide o que fazer com ela. Eu estou pagando por um levantamento das minas, Ghork. Se quiser um título na arena também, vai ter de conquistá-lo por conta própria."
         }
       ],
       "question": true
@@ -249,12 +274,14 @@
     {
       "line": 171,
       "speaker": "Ghork",
-      "choice": "Posso ouvir as três propostas antes de escolher?",
+      "choice": "Posso ouvir o que as três guildas pretendem fazer antes de escolher uma?",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Pode. Mas, quando defender uma delas aqui, estará assumindo um compromisso com aquela guilda."
+          "expression": "neutro",
+          "text": "Pode. Ouvir uma proposta não obriga você a aceitá-la. Mas, quando vier a esta mesa e se comprometer a executar uma delas, estará entrando naquela guilda. Tenha certeza antes de decidir."
         }
       ],
       "question": true
@@ -265,7 +292,8 @@
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Quero saber de onde vieram as informações, como vão conferir os mapas e o que ainda ficará sem resposta. Vou ouvir as três guildas. Ghork, pode aprender com todas antes de decidir a quem vai se juntar."
+          "expression": "neutro",
+          "text": "Tragam suas fontes e mostrem como vão conferir os mapas. Se algo continuar incerto, digam. Cada guilda será ouvida. Ghork, conheça o trabalho delas antes de escolher de qual vai fazer parte."
         }
       ]
     },
@@ -275,7 +303,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Já ouviu falar do campeão?"
+          "expression": "neutro",
+          "text": "Você anda olhando bastante para o coliseu. Já ouviu falar do campeão de lá?"
         }
       ]
     },
@@ -285,7 +314,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Desde que cheguei, vi o nome dele mais vezes do que o meu."
+          "expression": "feliz",
+          "text": "O nome dele está em todo lugar. Desde que cheguei, vi mais vezes que o meu."
         }
       ]
     },
@@ -295,7 +325,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Torvak lutou ao lado de Orcquius e Glavius."
+          "expression": "neutro",
+          "text": "Então vou contar uma coisa que não está nos cartazes. Torvak lutou ao lado de Orcquius e Glavius."
         }
       ]
     },
@@ -305,7 +336,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Dos dois?"
+          "expression": "confuso",
+          "text": "Orcquius e Glavius? Os dois?"
         }
       ]
     },
@@ -315,7 +347,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Os três eram do mesmo time. Agora cada um segue seu caminho."
+          "expression": "neutro",
+          "text": "Os três eram do mesmo time. Isso acabou. Cada um seguiu seu caminho."
         }
       ]
     },
@@ -325,7 +358,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Se eu vencer alguém que lutou ao lado de Orcquius..."
+          "expression": "neutro",
+          "text": "Se eu vencesse alguém que lutou ao lado de Orcquius... ele ia ter de..."
         }
       ]
     },
@@ -335,7 +369,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Você terá vencido Torvak. Primeiro conheça o homem. Não faça dessa luta um recado para o general."
+          "expression": "neutro",
+          "text": "Você teria vencido Torvak, Ghork. Já é bastante coisa para querer. Conheça o homem antes de transformar essa luta num recado para o general."
         }
       ]
     },
@@ -345,7 +380,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Ele carregou dois dos nossos até a saída. Quem for contar como voltamos vivos precisa contar essa parte também."
+          "expression": "feliz",
+          "text": "Este homem carregou dois dos nossos até a saída! Se vão contar como voltamos para casa, tratem de contar a parte dele também."
         }
       ]
     },
@@ -355,7 +391,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Você lutou com Orcquius e Glavius?"
+          "expression": "confuso",
+          "text": "Torvak? É verdade que você lutou ao lado de Orcquius e Glavius?"
         }
       ]
     },
@@ -365,7 +402,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Lutei. Você é de Daratrine?"
+          "expression": "neutro",
+          "text": "É verdade. Pelo jeito, você veio de Daratrine?"
         }
       ]
     },
@@ -375,7 +413,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Sou. Ghork."
+          "expression": "neutro",
+          "text": "Vim. Meu nome é Ghork."
         }
       ]
     },
@@ -385,7 +424,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "E agora anda com essas guildas que acham que podem me ensinar a comandar uma arena."
+          "expression": "neutro",
+          "text": "Ghork. E agora está andando com aquelas guildas que acham que podem me ensinar a administrar uma arena."
         }
       ]
     },
@@ -402,12 +442,14 @@
     {
       "line": 212,
       "speaker": "Ghork",
-      "choice": "Quero chegar à final.",
+      "choice": "Vou tentar chegar à final. Quero enfrentar você lá.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Então tem muito trabalho pela frente antes da nossa próxima conversa."
+          "expression": "feliz",
+          "text": "Então tem um bocado de trabalho antes da nossa próxima conversa. Melhor começar."
         }
       ],
       "question": false
@@ -415,12 +457,14 @@
     {
       "line": 213,
       "speaker": "Ghork",
-      "choice": "Por que vocês se separaram?",
+      "choice": "O que aconteceu com seu antigo time? Por que vocês se separaram?",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "A equipe acabou. É tudo que vou dizer."
+          "expression": "neutro",
+          "text": "A equipe acabou. Essa parte da minha vida não está aberta a perguntas."
         }
       ],
       "question": false
@@ -431,7 +475,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Se eu chegar à final, vai lembrar do meu nome?"
+          "expression": "neutro",
+          "text": "Se eu conseguir chegar à final... vai lembrar do meu nome, não vai?"
         }
       ]
     },
@@ -441,7 +486,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Rask vai anunciar bem alto. Não tem como esquecer."
+          "expression": "feliz",
+          "text": "Rask vai gritar seu nome para o coliseu inteiro. Acredite, não vai precisar me lembrar."
         }
       ]
     },
@@ -451,7 +497,8 @@
         {
           "speaker": "Savel",
           "condition": "",
-          "text": "Ghork. Ouvi sua conversa. Para chegar à final, vai precisar manter o ritmo dos treinos."
+          "expression": "neutro",
+          "text": "Ghork, não é? Acabei ouvindo a conversa. Chegar à final é uma bela ambição. A parte difícil vai ser acompanhar o ritmo dos treinos."
         }
       ]
     },
@@ -461,7 +508,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E você vende uma solução para isso?"
+          "expression": "confuso",
+          "text": "Deixe eu adivinhar. Você vende alguma coisa que ajuda?"
         }
       ]
     },
@@ -471,7 +519,8 @@
         {
           "speaker": "Savel",
           "condition": "",
-          "text": "Tenho algumas preparações. Já ajudaram gente que não conseguia mais trabalhar por causa do desgaste."
+          "expression": "neutro",
+          "text": "Preparo fórmulas para quem já não consegue acompanhar o esforço que o trabalho exige. Alguns puderam voltar a ganhar a vida. Achei que gostaria de saber."
         }
       ]
     },
@@ -481,7 +530,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Minha perna ainda está sendo tratada."
+          "expression": "neutro",
+          "text": "Já estou tratando essa perna. Não quero atrapalhar o tratamento."
         }
       ]
     },
@@ -491,7 +541,8 @@
         {
           "speaker": "Savel",
           "condition": "",
-          "text": "Eu percebi. Preferi falar com você antes que se machuque tentando acompanhar os outros."
+          "expression": "neutro",
+          "text": "Claro. Percebi que ainda está se recuperando. Por isso vim falar agora, antes que a pressão para acompanhar os outros acabe em outro ferimento."
         }
       ]
     },
@@ -508,22 +559,26 @@
     {
       "line": 238,
       "speaker": "Ghork",
-      "choice": "O que tem no frasco?",
+      "choice": "Antes de falar em tomar isso... o que tem nesse frasco?",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Savel",
           "condition": "",
-          "text": "A fórmula depende de como o corpo está. Não seria responsável oferecer uma dose e deixar você sem acompanhamento."
+          "expression": "neutro",
+          "text": "A preparação dependeria do seu estado. Eu não entregaria uma dose para depois deixar você por sua conta. Seria preciso acompanhar o tratamento."
         },
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Você ainda não disse o que tem dentro."
+          "expression": "neutro",
+          "text": "Está bem, mas você ainda não me disse o que tem dentro."
         },
         {
           "speaker": "Savel",
           "condition": "",
-          "text": "Podemos conversar com calma no boticário."
+          "expression": "neutro",
+          "text": "Passe no boticário. Lá podemos conversar com calma sobre suas dúvidas."
         }
       ],
       "question": false
@@ -531,12 +586,14 @@
     {
       "line": 239,
       "speaker": "Ghork",
-      "choice": "Por enquanto, vou continuar com o tratamento que tenho.",
+      "choice": "Por enquanto, vou continuar com o tratamento que já tenho. Está ajudando.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Savel",
           "condition": "",
-          "text": "Continue. Se precisar de outra coisa, já sabe onde me encontrar."
+          "expression": "neutro",
+          "text": "Como preferir. Se sentir que precisa de algo mais, já sabe onde procurar."
         }
       ],
       "question": false
@@ -547,7 +604,8 @@
         {
           "speaker": "Savel",
           "condition": "",
-          "text": "Boa sorte na seleção. Às vezes, só falta uma oportunidade para alguém mostrar do que é capaz."
+          "expression": "neutro",
+          "text": "Boa sorte para conquistar sua vaga, Ghork. É uma pena ver alguém capaz passar despercebido por falta de uma única oportunidade."
         }
       ]
     },
@@ -557,7 +615,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Uma basta para começar."
+          "expression": "neutro",
+          "text": "Me deem uma. O resto eu faço."
         }
       ]
     },
@@ -567,7 +626,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Pode começar a praticar movimentos curtos, com alguém acompanhando. Se a perna falhar, pare. Estar melhor não significa que você deva aguentar qualquer dor."
+          "expression": "neutro",
+          "text": "Você já pode praticar movimentos curtos, com alguém acompanhando. Se essa perna falhar, pare. Eu sei que está se sentindo melhor. Isso não significa que pode ignorar qualquer dor e continuar."
         }
       ]
     },
@@ -577,7 +637,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu quero lutar. Também quero conseguir voltar andando."
+          "expression": "neutro",
+          "text": "Eu quero lutar, Virmura. Mas também gostaria de voltar andando depois."
         }
       ]
     },
@@ -587,7 +648,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Guedra sabe adaptar o treino a quem está aprendendo. Vá falar com ela."
+          "expression": "neutro",
+          "text": "Ótimo. Diga isso à Guedra. Ela sabe preparar um treino que sirva para você, em vez de obrigar você a caber no exercício dos outros."
         }
       ]
     },
@@ -597,7 +659,8 @@
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "Sou Guedra. Mostre como recua quando alguém avança. Não tente me vencer ainda."
+          "expression": "neutro",
+          "text": "Sou Guedra. Vamos ver como você se move. Vou avançar; mostre como recuaria. Ainda não estamos tentando ganhar nada."
         }
       ]
     },
@@ -607,7 +670,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E eu preparando uma entrada triunfal..."
+          "expression": "feliz",
+          "text": "E eu tinha planejado um primeiro ataque tão magnífico..."
         }
       ]
     },
@@ -617,7 +681,8 @@
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "Prepare a saída primeiro."
+          "expression": "feliz",
+          "text": "Guarde para depois. Primeiro me mostre uma fuga magnífica."
         }
       ]
     },
@@ -627,7 +692,8 @@
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "Já pode enfrentar alguém sem depender de um resgate. Mas ainda precisa perceber quando é hora de recuar."
+          "expression": "neutro",
+          "text": "Você já pode enfrentar alguém sem depender de um resgate. Aprendeu a deixar espaço para recuar. Agora precisa reconhecer quando usá-lo, mesmo que queira continuar lutando."
         }
       ]
     },
@@ -644,12 +710,14 @@
     {
       "line": 274,
       "speaker": "Ghork",
-      "choice": "Posso começar por alguém que não seja o maior da arena?",
+      "choice": "Meu primeiro adversário pode ser alguém que não seja o maior lutador da arena? Só para começar com calma.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "Pode. Saber escolher a luta também faz parte do treino."
+          "expression": "neutro",
+          "text": "Pode. Escolher uma luta que consegue enfrentar faz parte do treino. Não precisa se arriscar só para impressionar alguém."
         }
       ],
       "question": false
@@ -657,12 +725,14 @@
     {
       "line": 275,
       "speaker": "Ghork",
-      "choice": "Se eu deixar fecharem minha saída, pelo menos vou saber o que fiz errado.",
+      "choice": "E, se eu deixar alguém fechar minha saída, pelo menos vou saber onde errei.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "E vai precisar praticar. Saber qual foi o erro não faz seu corpo corrigir o movimento."
+          "expression": "neutro",
+          "text": "Vai saber. Depois vai praticar de novo. Entender o erro é um começo; fazer os pés se moverem de outro jeito exige treino."
         }
       ],
       "question": false
@@ -673,7 +743,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Separe as ataduras limpas das que precisam de lavagem. Sentado. Se cansar, me avise."
+          "expression": "neutro",
+          "text": "Está vendo esta caixa? Ataduras limpas de um lado, as que precisam de lavagem do outro. Pode fazer sentado. Se cansar, me avise."
         }
       ]
     },
@@ -683,7 +754,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Com esse trabalho, posso ficar aqui?"
+          "expression": "confuso",
+          "text": "E se eu ajudar... posso ficar aqui? Ainda não tenho onde morar."
         }
       ]
     },
@@ -693,7 +765,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Pode. Você ajuda no que conseguir enquanto se recupera. O atendimento de quando chegou não é uma dívida."
+          "expression": "neutro",
+          "text": "Pode. Um lugar para ficar, em troca do trabalho que conseguir fazer enquanto melhora. Esse é o acordo. Ter salvado sua vida não faz de você meu devedor."
         }
       ]
     },
@@ -710,12 +783,14 @@
     {
       "line": 299,
       "speaker": "Ghork",
-      "choice": "Quero ajudar. Só não sei quanto vou conseguir fazer.",
+      "choice": "Quero ajudar. Só não quero prometer mais do que essa perna vai deixar.",
+      "expression": "triste",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Comece por essa caixa. Ela não vai fugir se você precisar parar."
+          "expression": "feliz",
+          "text": "Então comece pela caixa. Se precisar descansar, ela continua aqui. Ataduras não têm o costume de fugir."
         }
       ],
       "question": false
@@ -723,12 +798,14 @@
     {
       "line": 300,
       "speaker": "Ghork",
-      "choice": "Então vou impressionar você com minhas ataduras.",
+      "choice": "Então prepare-se para ver uma separação de ataduras digna de entrar para a história.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Deixe as limpas de um lado e já vou ficar impressionada o bastante por hoje."
+          "expression": "feliz",
+          "text": "As limpas numa pilha separada, por favor. Vamos conseguir isso antes de encomendar sua estátua."
         }
       ],
       "question": false
@@ -739,7 +816,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vocês também vão buscar os feridos?"
+          "expression": "confuso",
+          "text": "Então vocês não cuidam só de quem chega aqui? Também saem para buscar os feridos?"
         }
       ]
     },
@@ -749,7 +827,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Vamos. E precisamos de gente que saiba encontrar o caminho de volta. Braços fortes não resolvem tudo."
+          "expression": "neutro",
+          "text": "Saímos. E alguém precisa encontrar o caminho para trazer todos de volta. Braços fortes não adiantam muito se a equipe inteira se perder."
         }
       ]
     },
@@ -759,7 +838,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu quero entrar no campeonato. Se eu ganhar... quero ver continuarem dizendo que não sirvo para nada."
+          "expression": "neutro",
+          "text": "Eu quero entrar no campeonato. E ganhar. Se eu voltar com esse título... quero ver dizerem outra vez que não sirvo para nada."
         }
       ]
     },
@@ -769,7 +849,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Pode sonhar com o título. Por hoje, termine essas ataduras."
+          "expression": "neutro",
+          "text": "Pode me contar tudo sobre esse título enquanto separa. As ataduras não vão se arrumar sozinhas, campeão."
         }
       ]
     },
@@ -779,7 +860,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Lala disse que alguém que soubesse usar mana podia recarregar o colar."
+          "expression": "neutro",
+          "text": "Lala me deu esse colar para a gente continuar conversando. Disse que alguém que sabe usar mana pode recarregar. Você conseguiria...?"
         }
       ]
     },
@@ -789,7 +871,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Eu posso recarregar. Depois fale com ela. Deve estar esperando notícias suas."
+          "expression": "neutro",
+          "text": "Me dê aqui. Isso eu consigo. Depois fale com ela e conte que chegou. Imagino que queira ouvir de você."
         }
       ]
     },
@@ -799,7 +882,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Ghork! Você chegou! Espera... onde é que você está?"
+          "expression": "feliz",
+          "text": "Ghork! Até que enfim! Eu estava... espera. Onde você está? O que é isso atrás de você?"
         }
       ]
     },
@@ -816,12 +900,14 @@
     {
       "line": 322,
       "speaker": "Ghork",
-      "choice": "Numa enfermaria. A perna estava pior do que eu pensava.",
+      "choice": "É uma enfermaria. A perna estava pior do que eu pensava, Lala.",
+      "expression": "triste",
       "response": [
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "E quando você ia me contar? Tem alguém cuidando de você?"
+          "expression": "confuso",
+          "text": "Uma enfermaria? Ghork, por que não falou logo? Tem alguém aí com você?"
         }
       ],
       "question": false
@@ -829,12 +915,14 @@
     {
       "line": 323,
       "speaker": "Ghork",
-      "choice": "Encontrei uma curandeira. Ela se chama Virmura.",
+      "choice": "Encontrei uma curandeira. Virmura. Ela está cuidando de mim.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Ainda bem. Agora me conta o que aconteceu."
+          "expression": "neutro",
+          "text": "Ai, ainda bem. Está bem. Me conta o que aconteceu, desde o começo."
         }
       ],
       "question": false
@@ -845,7 +933,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Quase não cheguei vivo. Virmura me salvou. Vou ficar aqui até melhorar e ajudar no que conseguir."
+          "expression": "triste",
+          "text": "Quase não cheguei vivo. Virmura salvou minha vida. Vai me deixar ficar enquanto melhoro, e eu ajudo no que conseguir."
         }
       ]
     },
@@ -855,7 +944,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Sem se forçar, ouviu? O resto você me conta depois. Dam quer saber como está sua perna, onde você está dormindo e se está comendo. Nessa ordem. Fez questão."
+          "expression": "neutro",
+          "text": "Então deixe ela cuidar de você, por favor. Depois você me conta da cidade. Dam me passou uma lista: como está sua perna, onde está dormindo e se está comendo. Nessa ordem. Pelo visto, não posso improvisar."
         }
       ]
     },
@@ -865,7 +955,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Pode dizer que não tiram o olho de mim."
+          "expression": "feliz",
+          "text": "Diga que estou sendo muito bem vigiado. Nem consegui impressionar a curandeira com as ataduras ainda."
         }
       ]
     },
@@ -875,7 +966,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Vou dizer que estão cuidando de você. Vigiado? Você sempre dava um jeito de escapar."
+          "expression": "feliz",
+          "text": "Vou dizer que tem alguém cuidando de você. Ser vigiado nunca impediu você de se meter em confusão."
         }
       ]
     },
@@ -885,7 +977,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Tenho duas entregas perto daqui: uma no mercado, outra no coliseu. Escolha por qual começar. E pare para descansar quando precisar."
+          "expression": "neutro",
+          "text": "Tenho duas entregas aqui perto que você pode fazer: uma no mercado, outra no coliseu. Escolha por qual começar. E, se precisar descansar, pare. Os pacotes podem esperar junto com você."
         }
       ]
     },
@@ -895,7 +988,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Este registro descreve o resgate de um ferido. Vamos ocultar o nome. Para o contrato, só precisamos do trajeto."
+          "expression": "neutro",
+          "text": "Podemos usar este registro de resgate. Cubra o nome do paciente antes de copiar. Meruna precisa conhecer o caminho, não saber de quem eram os ferimentos que nos levaram até lá."
         }
       ]
     },
@@ -905,7 +999,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Diz: \"Da passagem estreita até o ponto de troca da maca.\" Mas começaram a contar a distância de onde?"
+          "expression": "confuso",
+          "text": "Olhe isto: \"Da passagem estreita até o ponto de troca da maca.\" Tem uma distância, mas... começaram a contar de onde?"
         }
       ]
     },
@@ -915,7 +1010,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "E precisamos saber se dá para passar andando ou levando alguém numa maca."
+          "expression": "neutro",
+          "text": "Essa é uma pergunta. Outra: passaram andando por esse espaço ou levaram uma maca? Não quero descobrir a diferença com um paciente em cima."
         }
       ]
     },
@@ -932,12 +1028,14 @@
     {
       "line": 352,
       "speaker": "Ghork",
-      "choice": "Vou marcar os pontos que identificam o caminho.",
+      "choice": "Vou marcar os pontos de referência. Pelo menos assim dá para ver de que parte do caminho estão falando.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Marque só o que o relato diz. O que faltar, anote como pergunta."
+          "expression": "neutro",
+          "text": "Só os que realmente descreveram. Se precisar adivinhar, deixe uma pergunta. Podemos procurar a resposta depois; um erro que parece certeza só atrapalha."
         }
       ],
       "question": true
@@ -945,12 +1043,14 @@
     {
       "line": 353,
       "speaker": "Ghork",
-      "choice": "Quero saber quem carregava a maca.",
+      "choice": "Quem carregava a maca? Isso não mudaria o tempo do percurso?",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Uma equipe de resgate. O tempo que levaram não é o mesmo de alguém andando sozinho."
+          "expression": "neutro",
+          "text": "Uma equipe de resgate. E mudaria, sim. Carregar alguém em grupo é diferente de andar sozinho. Não use o passo de uma pessoa para calcular o deles."
         }
       ],
       "question": true
@@ -961,7 +1061,8 @@
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Posso ficar com uma cópia? Preciso desse registro junto dos mapas para comparar."
+          "expression": "neutro",
+          "text": "Posso ficar com uma cópia? Preciso pôr ao lado dos mapas e acompanhar o caminho como está descrito."
         }
       ]
     },
@@ -971,7 +1072,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Virmura autorizou compartilhar o trajeto. Tirei os nomes."
+          "expression": "neutro",
+          "text": "Virmura autorizou compartilhar o trajeto. Tirei os nomes, para a história dos pacientes não ir junto."
         }
       ]
     },
@@ -981,7 +1083,8 @@
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Ótimo. Leve estas anotações. Antes de comparar o registro com os mapas, preciso que confirmem onde o trajeto começou."
+          "expression": "neutro",
+          "text": "Obrigada. Leve estas anotações para ela. Consigo comparar os marcos, mas preciso confirmar de onde partiram para essas distâncias fazerem sentido."
         }
       ]
     },
@@ -991,7 +1094,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Não parece muita coisa para ganhar um contrato."
+          "expression": "triste",
+          "text": "Depois de tudo isso, só podemos garantir um trecho? Eu esperava ter mais para mostrar à Meruna."
         }
       ]
     },
@@ -1001,7 +1105,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "É menos vistoso do que prometer que sabemos tudo. Mas é o que podemos provar."
+          "expression": "neutro",
+          "text": "Preferia ficar na frente dela e fingir que conhece a mina inteira? Podemos mostrar como conferimos esta parte. Nisso ela pode confiar."
         }
       ]
     },
@@ -1011,7 +1116,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Então vou apresentar bem o que temos."
+          "expression": "neutro",
+          "text": "Não. Quero que ela acredite na gente. Vou mostrar o trabalho que deu chegar até aqui."
         }
       ]
     },
@@ -1021,7 +1127,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Se levarmos todos que sabem fazer resgate, Meruna vai ver uma equipe enorme."
+          "expression": "feliz",
+          "text": "E se levássemos todo mundo que entende de resgate para a demonstração? Meruna ia ver quanta ajuda esta guilda pode oferecer."
         }
       ]
     },
@@ -1031,7 +1138,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "E vai encontrar a enfermaria vazia se precisar de atendimento."
+          "expression": "neutro",
+          "text": "E, se precisasse de uma curandeira depois, encontraria uma bela enfermaria vazia."
         }
       ]
     },
@@ -1041,7 +1149,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "É. Quantos podemos levar sem deixar a enfermaria descoberta?"
+          "expression": "confuso",
+          "text": "É. Não pensei nisso. Quantos podemos levar sem fazer falta aqui?"
         }
       ]
     },
@@ -1051,7 +1160,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Para a demonstração, basta uma equipe pequena, cada um com sua tarefa. Depois calculamos quanto custa manter o atendimento e o trabalho de campo."
+          "expression": "neutro",
+          "text": "Uma equipe pequena basta para mostrar como trabalhamos. Cada um com uma tarefa. Depois fazemos a conta direito: quem vai a campo e quem mantém este lugar funcionando."
         }
       ]
     },
@@ -1068,12 +1178,14 @@
     {
       "line": 390,
       "speaker": "Ghork",
-      "choice": "Eu registro quem fica e quem sai.",
+      "choice": "Vou preparar uma escala. Quem sai, quem fica e do que cada pessoa vai cuidar.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Anote a função de cada um. Ninguém pode estar nos dois lugares ao mesmo tempo."
+          "expression": "neutro",
+          "text": "Ótimo. Nada de pôr a mesma pessoa nas duas listas. Eu adoraria aprender esse truque, mas ainda não consegui."
         }
       ],
       "question": false
@@ -1081,12 +1193,14 @@
     {
       "line": 391,
       "speaker": "Ghork",
-      "choice": "Quero explicar isso à Meruna.",
+      "choice": "Deixe eu explicar à Meruna. Ela precisa saber por que não vamos levar a guilda inteira.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Explique. Só não prometa que a enfermaria vai bancar a expedição sem receber nada."
+          "expression": "neutro",
+          "text": "Explique. Só não ofereça o trabalho da enfermaria de graça para melhorar a proposta. Alguém precisa pagar pelo atendimento que continua aqui."
         }
       ],
       "question": false
@@ -1097,7 +1211,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Durn tem uma maca de demonstração e os suportes. Leve este pedido. A equipe carrega o material; você confere as peças."
+          "expression": "neutro",
+          "text": "Leve este pedido a Durn. Ele tem uma maca e suportes para a demonstração. A equipe vai carregar. Seu trabalho é conferir se vieram todas as peças."
         }
       ]
     },
@@ -1107,7 +1222,8 @@
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "É emprestado para o teste, certo? Quero tudo de volta depois."
+          "expression": "neutro",
+          "text": "Vão pegar emprestado para o teste? Está bem. Depois me devolvam cada peça. Inclusive as pequenas que o pessoal costuma esquecer."
         }
       ]
     },
@@ -1117,7 +1233,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Certo. Posso conferir as peças com você?"
+          "expression": "neutro",
+          "text": "Entendido. Podemos conferir juntos antes de a equipe levar? Quero saber pelo que estou respondendo."
         }
       ]
     },
@@ -1127,7 +1244,8 @@
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "Pode. Fique de frente para mim enquanto explico como encaixam."
+          "expression": "neutro",
+          "text": "Podemos. Fique onde eu consiga ver seu rosto quando falar. Vou mostrar como as peças encaixam, e você pergunta o que precisar."
         }
       ]
     },
@@ -1137,7 +1255,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E ainda precisamos de gente e tempo para o campeonato."
+          "expression": "confuso",
+          "text": "Depois de cuidar da enfermaria e da equipe de campo... ainda vai sobrar gente e tempo para o campeonato?"
         }
       ]
     },
@@ -1147,7 +1266,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Precisamos. O contrato ajudaria a pagar esse trabalho. Não vai pôr mais horas no dia."
+          "expression": "neutro",
+          "text": "Isso faz parte do planejamento. O contrato ajudaria a pagar o trabalho. Não vai espremer mais uma hora no dia, por mais bonito que você peça."
         }
       ]
     },
@@ -1157,7 +1277,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Já ouvi gente prometer isso. Nunca vi conseguir."
+          "expression": "feliz",
+          "text": "Já ouvi umas promessas bem confiantes sobre isso. Ainda estou esperando alguém cumprir."
         }
       ]
     },
@@ -1167,7 +1288,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Você orienta a passagem da maca. A equipe segue suas instruções."
+          "expression": "neutro",
+          "text": "Sua vez de orientar a passagem da maca. A equipe vai seguir o que você disser. Dê tempo para entenderem antes de se mover."
         }
       ]
     },
@@ -1177,7 +1299,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Para a esquerda, depois... Não, a minha esquerda."
+          "expression": "confuso",
+          "text": "Um pouco para a esquerda, depois... espera, a minha esquerda. Desculpem. Assim não ajuda, não é?"
         }
       ]
     },
@@ -1187,7 +1310,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Onde você quer que coloquem a maca?"
+          "expression": "neutro",
+          "text": "Diga onde a maca precisa chegar. Escolha alguma coisa que todos na sala consigam ver."
         }
       ]
     },
@@ -1204,12 +1328,14 @@
     {
       "line": 432,
       "speaker": "Ghork",
-      "choice": "Perto da porta. Vou usar os pontos da sala como referência.",
+      "choice": "Ao lado da porta. Vou usar a sala como referência, para ninguém precisar descobrir para que lado estou virado.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Tente de novo. Eles ainda não leem pensamento."
+          "expression": "feliz",
+          "text": "Melhor. Tente de novo. A gente ensinou a equipe a carregar uma maca, não a ler sua cabeça."
         }
       ],
       "question": false
@@ -1217,12 +1343,14 @@
     {
       "line": 433,
       "speaker": "Ghork",
-      "choice": "Posso marcar onde cada um deve parar?",
+      "choice": "Posso marcar onde cada um deve parar? Assim eles mesmos podem conferir.",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Pode. Confira se todos conseguem ver a marca."
+          "expression": "neutro",
+          "text": "Pode. Dê uma volta e confira se cada pessoa consegue ver a marca do lado em que está."
         }
       ],
       "question": false
@@ -1233,7 +1361,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Melhor errar com a maca vazia."
+          "expression": "neutro",
+          "text": "Ainda bem que não tem ninguém nessa maca. Eu não queria aprender isso com alguém esperando atendimento."
         }
       ]
     },
@@ -1243,7 +1372,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "E anote a correção. Vamos mostrar como o teste melhorou o procedimento."
+          "expression": "neutro",
+          "text": "É por isso que estamos praticando. Anote o que mudou enquanto ainda lembra bem. Meruna precisa ver a correção, não só a tentativa."
         }
       ]
     },
@@ -1253,7 +1383,8 @@
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "Alguma peça cedeu?"
+          "expression": "neutro",
+          "text": "Como se saiu? Alguma peça entortou ou saiu do lugar com o peso?"
         }
       ]
     },
@@ -1263,7 +1394,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Não. Minhas primeiras instruções é que saíram tortas. Corrigi antes de continuarmos."
+          "expression": "feliz",
+          "text": "A maca estava boa. Minhas instruções é que saíram meio tortas. Arrumamos isso antes de continuar."
         }
       ]
     },
@@ -1273,7 +1405,8 @@
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "Então o teste serviu. Está tudo aqui."
+          "expression": "feliz",
+          "text": "Então o teste serviu para alguma coisa. Deixe eu contar... sim, está tudo aqui. Obrigado por devolver direito."
         }
       ]
     },
@@ -1283,7 +1416,8 @@
         {
           "speaker": "Ghork",
           "condition": ", se escolheu registro em A3",
-          "text": "A escala está pronta. Quem atende na enfermaria não entra na lista da equipe de campo."
+          "expression": "neutro",
+          "text": "A escala está pronta. Conferi as duas listas: ninguém ficou encarregado de estar em campo e junto a um leito da enfermaria ao mesmo tempo."
         }
       ]
     },
@@ -1293,7 +1427,8 @@
         {
           "speaker": "Ghork",
           "condition": ", se escolheu explicação em A3",
-          "text": "Vou começar explicando por que parte da guilda precisa ficar na enfermaria."
+          "expression": "neutro",
+          "text": "Então vou explicar por que precisamos de gente aqui e em campo. É por aí que quero começar."
         }
       ]
     },
@@ -1303,7 +1438,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Depois mostramos o registro de resgate e as instruções que você testou. Meruna precisa saber o que conseguimos conferir e como vamos cuidar de quem voltar ferido."
+          "expression": "neutro",
+          "text": "Ótimo. Junte com o registro de resgate e as instruções que testou. Meruna precisa ver o que conferimos. E, se alguém voltar ferido, precisa saber que deixamos gente aqui para cuidar."
         }
       ]
     },
@@ -1313,7 +1449,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E o trecho do mapa que não conseguimos explicar?"
+          "expression": "confuso",
+          "text": "O que eu digo quando ela apontar as partes do mapa que ainda não sabemos explicar?"
         }
       ]
     },
@@ -1323,7 +1460,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Vamos marcar que não sabemos. Não vou esconder um perigo de quem terá de entrar lá."
+          "expression": "neutro",
+          "text": "Que não sabemos. Marque bem. Quem entrar lá merece ver onde faltam informações antes de ter de descobrir no escuro."
         }
       ]
     },
@@ -1333,7 +1471,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Se eu apoiar vocês, Borun e Sevrak perdem esse contrato."
+          "expression": "triste",
+          "text": "Se eu ficar do seu lado naquela reunião, Borun e Sevrak vão perder o contrato. Depois de tudo que fizeram por mim..."
         }
       ]
     },
@@ -1343,7 +1482,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Sim. Os dois têm planos para esse dinheiro. Você precisa saber disso antes de decidir trabalhar conosco."
+          "expression": "neutro",
+          "text": "Sim. Eles também precisam desse dinheiro, e não vão gostar. Não vou fingir o contrário para convencer você a entrar. Pense nisso antes de me dar sua palavra."
         }
       ]
     },
@@ -1373,7 +1513,8 @@
         {
           "speaker": "Jorvi",
           "condition": "",
-          "text": "Ataduras e material de lavagem. Está tudo na bolsa. Confira antes de sair."
+          "expression": "neutro",
+          "text": "Ataduras e material de lavagem para Virmura. Coloquei tudo nesta bolsa. Confira antes de sair; é mais fácil corrigir um erro enquanto você está aqui."
         }
       ]
     },
@@ -1383,7 +1524,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Se estiver faltando algo, melhor descobrir aqui do que lá na enfermaria."
+          "expression": "neutro",
+          "text": "Prefiro descobrir agora a ter de explicar uma bolsa vazia para Virmura. Vamos ver..."
         }
       ]
     },
@@ -1393,7 +1535,8 @@
         {
           "speaker": "Assaltante",
           "condition": "",
-          "text": "Deixa a bolsa e pode ir embora."
+          "expression": "raiva",
+          "text": "A bolsa. Deixa no chão e pode continuar andando."
         }
       ]
     },
@@ -1403,7 +1546,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vão fazer curativo um no outro? Porque só tem isso aqui."
+          "expression": "confuso",
+          "text": "São ataduras. Vão fazer curativo um no outro? Escolheram a bolsa errada."
         }
       ]
     },
@@ -1413,7 +1557,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "O carrinho vazio, Ghork! Empurre para cá!"
+          "expression": "neutro",
+          "text": "Ghork! Aquele carrinho vazio... empurre para cá. Agora!"
         }
       ]
     },
@@ -1423,7 +1568,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Como sabia meu nome?"
+          "expression": "confuso",
+          "text": "Você sabia meu nome. Como sabia meu nome?"
         }
       ]
     },
@@ -1433,7 +1579,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Ouvi quando você buscou a bolsa. Depois vi aqueles dois largarem o trabalho para seguir você."
+          "expression": "neutro",
+          "text": "Ouvi quando você pegou a bolsa. Depois aqueles dois largaram o que estavam fazendo e seguiram você. Achei que valia ficar de olho."
         }
       ]
     },
@@ -1450,12 +1597,14 @@
     {
       "line": 509,
       "speaker": "Ghork",
-      "choice": "Eu não percebi.",
+      "choice": "Eu não percebi nada. Só quando fecharam a passagem.",
+      "expression": "triste",
       "response": [
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Agora sabe o que procurar. Neste mercado, um sorriso não é garantia de nada."
+          "expression": "neutro",
+          "text": "É fácil não perceber quando ainda está tentando se achar por aqui. Agora você já viu uma vez. Na próxima, olhe o que as pessoas fazem, não só o sorriso que mostram."
         }
       ],
       "question": false
@@ -1463,12 +1612,14 @@
     {
       "line": 510,
       "speaker": "Ghork",
-      "choice": "Achei que só estavam esperando para passar.",
+      "choice": "Achei que estavam esperando espaço para passar. Tinha tanta gente.",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Eu também. Até deixarem passar uma abertura bem na frente deles."
+          "expression": "neutro",
+          "text": "Eu também achei, no começo. Mas abriu um espaço bem na frente deles e nenhum se moveu. Não estavam esperando passagem. Estavam esperando você."
         }
       ],
       "question": false
@@ -1479,7 +1630,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Obrigado por me tirar de lá. E por explicar o que viu."
+          "expression": "neutro",
+          "text": "Obrigado. Por me tirar de lá e por ficar para explicar. Eu ia continuar tentando entender o que não percebi."
         }
       ]
     },
@@ -1489,7 +1641,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Sou Borun. Minha guilda conhece os caminhos daqui. Até os que começam mal assim. Vou com você até sairmos dessa confusão."
+          "expression": "feliz",
+          "text": "Borun. Minha guilda se chama Caminhos Abertos. Tentamos fazer jus ao nome, até em manhãs como esta. Venha, acompanho você até passarmos dessa confusão."
         }
       ]
     },
@@ -1499,7 +1652,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Você sabe como funciona o campeonato?"
+          "expression": "neutro",
+          "text": "Caminhos Abertos... vocês entram no campeonato? Estou tentando entender como funciona."
         }
       ]
     },
@@ -1509,7 +1663,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Sei. Sei também que o campeão quer os melhores horários para a equipe dele. Se vai entrar, escolha bem quem vai trabalhar com você."
+          "expression": "neutro",
+          "text": "Entramos. Encontrar uma equipe é uma parte. Achar onde treinar é outra, com o campeão querendo os melhores horários para os dele. Conheça quem vai trabalhar com você antes de se comprometer."
         }
       ]
     },
@@ -1519,7 +1674,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Demorou. O que aconteceu?"
+          "expression": "confuso",
+          "text": "Aí está você. Demorou mais do que eu esperava. O que houve?"
         }
       ]
     },
@@ -1529,7 +1685,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Dois homens tentaram roubar os materiais. Borun me ajudou a escapar. Consegui trazer a bolsa."
+          "expression": "triste",
+          "text": "Dois homens tentaram levar os materiais. Borun me ajudou a sair do corredor. Não perdi a bolsa, está vendo? Está tudo aqui."
         }
       ]
     },
@@ -1539,7 +1696,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Sente um pouco. Já vi que a bolsa está inteira. Quero saber como você está."
+          "expression": "neutro",
+          "text": "Ponha a bolsa aí e sente um pouco. Estou vendo que os materiais estão bem. Estou perguntando de você."
         }
       ]
     },
@@ -1549,7 +1707,8 @@
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "O registro acompanha a carga. Quem olha só a data de chegada acha que eu fui com ela até o fim da galeria."
+          "expression": "neutro",
+          "text": "Este registro acompanha a carga, não a mim. Se olhar só essa data de chegada, parece que levei a carroça até o fim da galeria."
         }
       ]
     },
@@ -1559,7 +1718,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E não foi?"
+          "expression": "confuso",
+          "text": "Você não foi até o fim com ela?"
         }
       ]
     },
@@ -1569,7 +1729,8 @@
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "Fui até onde a carroça cabia. Depois passei a carga para quem ia seguir a pé."
+          "expression": "neutro",
+          "text": "Só até onde a carroça cabia. Dali em diante, entreguei a carga. O resto do caminho foi outra pessoa que fez, a pé."
         }
       ]
     },
@@ -1579,7 +1740,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Agora entende por que eu queria que perguntasse a ela?"
+          "expression": "neutro",
+          "text": "Entendeu por que eu queria que ouvisse a Pirka? O registro não conta onde ela deixou de acompanhar a carga."
         }
       ]
     },
@@ -1596,12 +1758,14 @@
     {
       "line": 545,
       "speaker": "Ghork",
-      "choice": "Onde aconteceu a troca?",
+      "choice": "Onde exatamente você passou a carga adiante? Dá para achar esse ponto no mapa?",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "O ponto está descrito aqui. Copie a descrição junto com o nome. Já perdi uma tarde procurando um lugar que só me disseram como se chamava."
+          "expression": "neutro",
+          "text": "Tem uma descrição aqui. Copie também, não só o nome do lugar. Já perdi uma tarde procurando um ponto que todo mundo sabia nomear e ninguém sabia indicar."
         }
       ],
       "question": true
@@ -1609,12 +1773,14 @@
     {
       "line": 546,
       "speaker": "Ghork",
-      "choice": "Você chegou a ver o caminho depois da troca?",
+      "choice": "Você chegou a ver o caminho depois desse ponto, mesmo sem levar a carga até lá?",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "Não. Se alguém disser que eu vi, mande essa pessoa conversar comigo."
+          "expression": "neutro",
+          "text": "Não. Minha parte termina ali. Se alguém disser que vi mais alguma coisa, traga aqui. Eu mesma quero ouvir essa história."
         }
       ],
       "question": true
@@ -1625,7 +1791,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Então você percorreu menos do que o registro dava a entender."
+          "expression": "neutro",
+          "text": "Então o registro fez sua parte da viagem parecer maior. Vou marcar onde você realmente parou."
         }
       ]
     },
@@ -1635,7 +1802,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "E agora sabemos exatamente que parte ela pode descrever."
+          "expression": "neutro",
+          "text": "Ótimo. Agora sabemos sobre que trecho perguntar a ela e onde precisamos procurar outra pessoa."
         }
       ]
     },
@@ -1645,7 +1813,8 @@
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "E eu consigo voltar ao trabalho?"
+          "expression": "neutro",
+          "text": "Falando em viagem, tenho outra carga para cuidar. Terminamos por aqui?"
         }
       ]
     },
@@ -1655,7 +1824,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Só preciso da cópia para levar a Elune."
+          "expression": "neutro",
+          "text": "Quase. Posso levar uma cópia para Elune? Ela vai precisar comparar com os mapas."
         }
       ]
     },
@@ -1665,7 +1835,8 @@
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "Leve esta. O original fica comigo. Preciso conferir a próxima carga."
+          "expression": "neutro",
+          "text": "Leve esta. O original fica comigo; preciso dele para conferir a próxima carga."
         }
       ]
     },
@@ -1675,7 +1846,8 @@
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Você trouxe as perguntas ou Borun ficou com tudo?"
+          "expression": "confuso",
+          "text": "Achei que Borun vinha com você. Trouxe as perguntas ou ficaram com ele também?"
         }
       ]
     },
@@ -1685,7 +1857,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Trouxe. Só achei que ele ia pensar em perguntas melhores."
+          "expression": "triste",
+          "text": "Trouxe. Só estava esperando que ele viesse para pensar nas que eu deixei passar."
         }
       ]
     },
@@ -1695,7 +1868,8 @@
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Podemos começar pelas suas."
+          "expression": "neutro",
+          "text": "Bom, você está aqui. Quero ouvir as suas. Podemos começar por elas."
         }
       ]
     },
@@ -1712,12 +1886,14 @@
     {
       "line": 577,
       "speaker": "Ghork",
-      "choice": "Quero separar o que Pirka viu do que contaram a ela.",
+      "choice": "Primeiro, quero separar o que Pirka viu do que contaram a ela depois.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Então mantenha marcado onde ela passou a carga adiante. Depois desse ponto, precisamos ouvir outra pessoa."
+          "expression": "neutro",
+          "text": "Então não perca esse ponto de troca. O relato dela leva até ali. Depois, precisamos de alguém que tenha seguido pelo caminho."
         }
       ],
       "question": false
@@ -1725,12 +1901,14 @@
     {
       "line": 578,
       "speaker": "Ghork",
-      "choice": "Quero que outra pessoa possa conferir como chegamos à conclusão.",
+      "choice": "Quero que alguém leia isto depois e entenda como chegamos à resposta, sem ter de acreditar só na minha palavra.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Anote de onde veio cada informação. Assim, quem tiver dúvida vai saber a quem perguntar."
+          "expression": "neutro",
+          "text": "Então ponha uma fonte ao lado de cada informação. Se alguma coisa não bater, saberão onde conferir, sem precisar procurar você primeiro."
         }
       ],
       "question": false
@@ -1741,7 +1919,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Fiquei preso numa descarga. Deu conta da conversa?"
+          "expression": "neutro",
+          "text": "Aí está você. Uma carga me prendeu na descarga. Como foi com Elune?"
         }
       ]
     },
@@ -1751,7 +1930,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Deu certo. Mas você podia ter avisado."
+          "expression": "neutro",
+          "text": "Deu certo. Mas eu fiquei esperando você. Podia ter mandado um recado."
         }
       ]
     },
@@ -1761,7 +1941,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Podia. Vou combinar melhor os horários com Pirka."
+          "expression": "triste",
+          "text": "Devia ter mandado. Vou combinar os horários com Pirka e avisar quando mudarem."
         }
       ]
     },
@@ -1771,7 +1952,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Não vou fingir que você me deixou sozinho de propósito, para ensinar uma lição."
+          "expression": "neutro",
+          "text": "Ótimo. Porque eu não ia fingir que você me deixou lá para me ensinar a ser independente."
         }
       ]
     },
@@ -1781,7 +1963,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Ainda bem. Eu podia me acostumar com uma desculpa dessas."
+          "expression": "feliz",
+          "text": "Não finja mesmo. Uma desculpa tão boa dessas, sou capaz de acabar acreditando."
         }
       ]
     },
@@ -1791,7 +1974,8 @@
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "Roubaram as cordas e estacas que separei para a demonstração. Dois homens no corredor: um levou o fardo e o outro bloqueou a passagem."
+          "expression": "raiva",
+          "text": "Levaram as cordas e estacas da nossa demonstração. Dois homens no corredor: um saiu com o fardo enquanto o outro impedia a gente de ir atrás."
         }
       ]
     },
@@ -1801,7 +1985,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Será que são os mesmos que me cercaram?"
+          "expression": "confuso",
+          "text": "Dois, agindo juntos? Será que são os mesmos que me cercaram?"
         }
       ]
     },
@@ -1811,7 +1996,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "A descrição bate. Antes de ir atrás deles, descubra por onde pode sair. Você está melhor para lutar, mas ainda precisa se proteger."
+          "expression": "neutro",
+          "text": "Parece. Antes de ir atrás, descubra como sair daquele corredor. Você já pode tentar uma luta, mas isso não significa deixar os dois prenderem você de novo."
         }
       ]
     },
@@ -1821,7 +2007,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou recuperar a carga. Não vou lá bancar o invencível."
+          "expression": "neutro",
+          "text": "Eu lembro de como foi. Vou buscar a carga da Pirka, não provar que nada pode me machucar."
         }
       ]
     },
@@ -1838,12 +2025,14 @@
     {
       "line": 611,
       "speaker": "Ghork",
-      "choice": "Esse fardo é da Pirka. Devolvam.",
+      "choice": "Vocês levaram o fardo da Pirka. Devolvam, e podemos encerrar isso aqui.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Assaltante",
           "condition": "",
-          "text": "Hoje veio sem o velho?"
+          "expression": "feliz",
+          "text": "Olha quem voltou. Veio sem o velho para se esconder atrás dele?"
         }
       ],
       "question": false
@@ -1851,12 +2040,14 @@
     {
       "line": 612,
       "speaker": "Ghork",
-      "choice": "Da outra vez, vocês tentaram roubar ataduras. Agora acharam algo que sabem vender?",
+      "choice": "Da outra vez eram ataduras. Finalmente acharam uma bolsa que vale roubar ou pegam qualquer coisa que estiver perto?",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Assaltante",
           "condition": "",
-          "text": "Veio buscar a carga ou perder os dentes?"
+          "expression": "raiva",
+          "text": "Quer o fardo ou quer perder os dentes?"
         }
       ],
       "question": false
@@ -1867,7 +2058,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vim buscar a carga."
+          "expression": "neutro",
+          "text": "O fardo. Foi para isso que eu vim."
         }
       ]
     },
@@ -1877,7 +2069,8 @@
         {
           "speaker": "Assaltante",
           "condition": "",
-          "text": "Leva! Não vale apanhar por isso."
+          "expression": "triste",
+          "text": "Está bem! Leva! Não vou apanhar mais por um saco de cordas."
         }
       ]
     },
@@ -1887,7 +2080,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Então parem de roubar."
+          "expression": "raiva",
+          "text": "Então parem de levar o que não é de vocês."
         }
       ]
     },
@@ -1897,7 +2091,8 @@
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "É a nossa marca. Vamos ver se está tudo aqui."
+          "expression": "neutro",
+          "text": "É a nossa marca no fardo. Ótimo. Ponha aqui; quero ver o que deixaram dentro."
         }
       ]
     },
@@ -1907,7 +2102,8 @@
         {
           "speaker": "Jorvi",
           "condition": "",
-          "text": "Todas as cordas e estacas. Aqui está o recibo."
+          "expression": "neutro",
+          "text": "Cordas, estacas... está tudo aqui. Este é o recibo, para ninguém precisar ficar só na nossa palavra de que chegou."
         }
       ]
     },
@@ -1917,7 +2113,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Quero uma cópia para Borun."
+          "expression": "neutro",
+          "text": "Posso ficar com uma cópia para Borun? Ele vai querer saber que recuperamos tudo."
         }
       ]
     },
@@ -1927,7 +2124,8 @@
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "E me mostre como descreveu o caminho. Se eu precisar que você explique por fora, ainda falta arrumar o texto."
+          "expression": "neutro",
+          "text": "Já que está aqui, me mostre as instruções. Eu preciso conseguir seguir sem você ao meu lado explicando cada curva."
         }
       ]
     },
@@ -1962,7 +2160,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "O recibo está aqui. E a carga?"
+          "expression": "confuso",
+          "text": "Está com o recibo. E a carga? Veio tudo?"
         }
       ]
     },
@@ -1972,7 +2171,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Pirka e Jorvi conferiram tudo. Também corrigi a descrição do corredor. Antes, só entendia quem já conhecia o lugar."
+          "expression": "neutro",
+          "text": "Pirka e Jorvi conferiram cada peça. Também arrumei as instruções do corredor. Percebi que tinha escrito para quem já conhecia o caminho."
         }
       ]
     },
@@ -1982,7 +2182,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Leia como ficou."
+          "expression": "neutro",
+          "text": "É fácil cair nessa. Vamos lá, leia a versão nova."
         }
       ]
     },
@@ -1992,7 +2193,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Passe pela área de descarga, ao lado da banca. Melhor do que escrever \"pelo caminho de sempre\" para quem nunca veio aqui."
+          "expression": "feliz",
+          "text": "Passe pela área de descarga, ao lado da banca. Isso alguém novo consegue achar. \"Pelo caminho de sempre\" só ajuda quem já tem um caminho de sempre."
         }
       ]
     },
@@ -2002,7 +2204,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Vamos levar o registro da carga, o relato da Pirka e as instruções que outra pessoa conseguiu seguir. Esse contrato serve para pôr gente em campo e trazer informação que preste."
+          "expression": "neutro",
+          "text": "Vamos pôr o relato da Pirka ao lado do registro da carga e mostrar as instruções que outra pessoa conseguiu seguir. É esse trabalho que quero financiar com o contrato: gente saindo, olhando direito e trazendo algo útil para a próxima equipe."
         }
       ]
     },
@@ -2012,7 +2215,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Você também quer usar o dinheiro para resgates."
+          "expression": "neutro",
+          "text": "E usaria parte do dinheiro para resgates. Você falou disso antes."
         }
       ]
     },
@@ -2022,7 +2226,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Quero. Tem contratante que só pensa no caminho de volta quando falta alguém."
+          "expression": "neutro",
+          "text": "Usaria. Tem contratante muito interessado no caminho de ida que só pergunta pelo de volta quando alguém não aparece."
         }
       ]
     },
@@ -2032,7 +2237,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Meruna pode reclamar que os relatos estão incompletos."
+          "expression": "confuso",
+          "text": "E se Meruna disser que os relatos estão incompletos demais para confiar?"
         }
       ]
     },
@@ -2042,7 +2248,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "E estão. Mostre o que conseguimos comparar e o que ainda falta conferir. Se prometer que nunca erramos, eu desminto na hora."
+          "expression": "neutro",
+          "text": "Mostre exatamente o que pudemos conferir e o que ainda precisa de uma visita. Os relatos estão incompletos. Blefar não melhora isso. E, se prometer que nunca erramos, vou ter de interromper você."
         }
       ]
     },
@@ -2052,7 +2259,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Virmura cuidou de mim. Sevrak também me ajudou."
+          "expression": "triste",
+          "text": "Virmura salvou minha vida. Sevrak também me protegeu. É estranho falar em escolher entre vocês."
         }
       ]
     },
@@ -2062,7 +2270,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Escolher a nossa guilda não apaga isso. Mas também não faz os dois desistirem do que querem."
+          "expression": "neutro",
+          "text": "Pode ser grato aos dois e ainda escolher seu trabalho. Mas eles têm guildas para cuidar, assim como eu. Não espere que sua gratidão faça os dois saírem do caminho."
         }
       ]
     },
@@ -2092,7 +2301,8 @@
         {
           "speaker": "Veterano",
           "condition": "",
-          "text": "De novo. Vê se dessa vez continua de pé."
+          "expression": "raiva",
+          "text": "Levanta. De novo. Vai passar o treino inteiro no chão?"
         }
       ]
     },
@@ -2102,7 +2312,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Ele ergue o ombro antes de atacar. Espere o ombro subir e saia do alcance."
+          "expression": "neutro",
+          "text": "Olhe o ombro dele! Ele ergue antes de atacar. Quando subir, saia do alcance. Não espere pelo golpe."
         }
       ]
     },
@@ -2112,7 +2323,8 @@
         {
           "speaker": "Veterano",
           "condition": "",
-          "text": "Quer mostrar como se faz?"
+          "expression": "raiva",
+          "text": "Então ajudou ele a escapar de um. Acha que consegue fazer melhor? Venha mostrar."
         }
       ]
     },
@@ -2122,7 +2334,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "O treino acabou para você."
+          "expression": "raiva",
+          "text": "Basta. Seu treino acabou."
         }
       ]
     },
@@ -2132,7 +2345,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu só estava..."
+          "expression": "confuso",
+          "text": "Eu só estava tentando ajudar o rapaz. Não queria..."
         }
       ]
     },
@@ -2142,7 +2356,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Eu vi. Agora explique o que percebeu."
+          "expression": "neutro",
+          "text": "Eu vi o que aconteceu. Pode parar de se justificar e explicar o movimento. O que percebeu?"
         }
       ]
     },
@@ -2159,12 +2374,14 @@
     {
       "line": 704,
       "speaker": "Ghork",
-      "choice": "Ele se preparava do mesmo jeito antes de cada ataque.",
+      "choice": "Ele se preparava do mesmo jeito toda vez. Depois que percebi, dava para saber quando vinha o próximo ataque.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "E o rapaz só reagia quando o golpe já vinha. Você percebeu o aviso antes."
+          "expression": "neutro",
+          "text": "Enquanto o rapaz esperava ver o próprio golpe. Você deu a ele um sinal que permitia agir antes. Uma diferença útil."
         }
       ],
       "question": false
@@ -2172,12 +2389,14 @@
     {
       "line": 705,
       "speaker": "Ghork",
-      "choice": "O rapaz precisava aprender a escapar, não a cair mais uma vez.",
+      "choice": "Alguém precisava dizer ao rapaz como escapar. Derrubar de novo não estava ensinando nada.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "E você soube explicar como. Mostre o que chamou sua atenção."
+          "expression": "neutro",
+          "text": "E você tinha mais a oferecer do que compaixão. Deu uma instrução que ele conseguiu usar. Mostre o que viu."
         }
       ],
       "question": false
@@ -2188,7 +2407,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "O ombro. Ele mexia antes do resto do corpo."
+          "expression": "neutro",
+          "text": "O ombro, ali. Mexia antes do resto do corpo. Quando o braço avançava, o aviso já tinha passado."
         }
       ]
     },
@@ -2198,7 +2418,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Sevrak Vey. Na minha escola, saber observar assim tem utilidade."
+          "expression": "neutro",
+          "text": "Sevrak Vey. Dirijo uma escola em que vale a pena desenvolver esse tipo de observação. Já pensou no que poderia fazer com isso?"
         }
       ]
     },
@@ -2208,7 +2429,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Ghork. Obrigado por me poupar da demonstração prática."
+          "expression": "feliz",
+          "text": "Ghork. E obrigado. Eu preferia não descobrir pessoalmente como é receber aquele golpe."
         }
       ]
     },
@@ -2218,7 +2440,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Faça sua entrega. Depois venha conhecer a escola. Precisamos de alunos que saibam mais do que copiar movimentos."
+          "expression": "neutro",
+          "text": "Parece que tem uma entrega para terminar. Depois, venha conhecer a escola. Tenho muitos alunos que sabem copiar um movimento. Gostaria de ter mais que soubessem explicar."
         }
       ]
     },
@@ -2228,7 +2451,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "As ataduras de Virmura? Pode entregar. Ela pediu confirmação; leve este recibo."
+          "expression": "neutro",
+          "text": "São as ataduras de Virmura? Obrigado, pode entregar. Ela pediu confirmação, então leve este recibo para ela."
         }
       ]
     },
@@ -2238,7 +2462,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Levo. E preciso avisar: um veterano tentou me agredir no treino. Sevrak impediu."
+          "expression": "neutro",
+          "text": "Levo. Rask, aconteceu uma coisa na entrada. Um veterano tentou me bater durante o treino. Sevrak impediu, mas você precisa saber."
         }
       ]
     },
@@ -2248,7 +2473,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Vou falar com os envolvidos. Obrigado pela entrega e pelo aviso."
+          "expression": "neutro",
+          "text": "Vou conversar com os envolvidos. Fez bem em me contar. E obrigado por trazer os materiais."
         }
       ]
     },
@@ -2258,7 +2484,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "O que podemos concluir colocando uma cópia sobre a outra?"
+          "expression": "neutro",
+          "text": "Aqui estão as duas cópias. Digamos que coloquemos uma sobre a outra. O que isso permite concluir?"
         }
       ]
     },
@@ -2268,7 +2495,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Que o papel de cima impede a gente de ler o de baixo."
+          "expression": "feliz",
+          "text": "Que não dá mais para ler a de baixo."
         }
       ]
     },
@@ -2278,7 +2506,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "E além dessa observação indispensável?"
+          "expression": "neutro",
+          "text": "Uma descoberta indispensável. Agora, o que tornaria a comparação útil?"
         }
       ]
     },
@@ -2295,12 +2524,14 @@
     {
       "line": 738,
       "speaker": "Ghork",
-      "choice": "Precisamos conferir os pontos de referência antes de comparar os desenhos.",
+      "choice": "Precisaríamos conferir os pontos de referência primeiro. Senão podemos estar comparando desenhos de lugares diferentes.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Anote quais. Outra pessoa deve conseguir repetir o que você fez."
+          "expression": "neutro",
+          "text": "Então identifique os marcos e escreva como vai compará-los. Quero que outra pessoa consiga fazer isso sem você apontando para o papel."
         }
       ],
       "question": false
@@ -2308,12 +2539,14 @@
     {
       "line": 739,
       "speaker": "Ghork",
-      "choice": "Os desenhos podem ser diferentes por mais de um motivo.",
+      "choice": "Uma diferença nos desenhos pode significar várias coisas. Não devíamos escolher uma explicação só porque foi a primeira que veio à cabeça.",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Liste as possibilidades. Depois procure informações que permitam eliminar alguma."
+          "expression": "neutro",
+          "text": "Concordo. Anote as possibilidades. Depois procure algo que possa conferir para eliminar uma delas. Uma lista de palpites é só o começo."
         }
       ],
       "question": false
@@ -2324,7 +2557,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Você já sabe a resposta?"
+          "expression": "confuso",
+          "text": "Está esperando que eu descubra uma resposta que você já sabe?"
         }
       ]
     },
@@ -2334,7 +2568,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Sei que seria um erro dar uma resposta sem ter como sustentá-la. Quero ver como você chega à sua."
+          "expression": "neutro",
+          "text": "Estou esperando para ver o que consegue sustentar. Dar uma conclusão sem as provas só ensinaria você a me repetir. Mostre como chega à sua."
         }
       ]
     },
@@ -2344,7 +2579,8 @@
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Sevrak quer que eu confira o resultado?"
+          "expression": "confuso",
+          "text": "Sevrak mandou você com isto? O que ele quer conferir, o resultado?"
         }
       ]
     },
@@ -2354,7 +2590,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E o modo como chegamos nele. Se precisa do mestre para explicar, o texto ainda não está bom."
+          "expression": "neutro",
+          "text": "Isso, e se você consegue seguir as etapas sem ele ao lado. Se precisar chamar o mestre para explicar cada linha, não escrevi muito bem."
         }
       ]
     },
@@ -2364,7 +2601,8 @@
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Você escreveu \"normalizar\" aqui. O que exatamente quer que eu faça?"
+          "expression": "confuso",
+          "text": "Então foi aqui que me perdi. \"Normalizar.\" O que devo fazer com o mapa quando chegar nessa palavra?"
         }
       ]
     },
@@ -2381,12 +2619,14 @@
     {
       "line": 762,
       "speaker": "Ghork",
-      "choice": "Vou escrever os passos em vez de deixar só esse termo.",
+      "choice": "Entendi o problema. Vou escrever o que fazer, passo a passo, em vez de esconder tudo numa palavra.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Melhor. Agora posso seguir o que você fez, sem adivinhar o que quis dizer."
+          "expression": "neutro",
+          "text": "Obrigada. Agora posso tentar a mesma comparação que você fez, sem ter de adivinhar o que quis dizer."
         }
       ],
       "question": false
@@ -2394,12 +2634,14 @@
     {
       "line": 763,
       "speaker": "Ghork",
-      "choice": "Vou incluir um exemplo, deixando claro que ele não é um dado das minas.",
+      "choice": "Vou incluir um exemplo explicado. E marcar que é só um exemplo, para ninguém confundir com medidas tiradas da mina.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Deixe bem claro. Não quero ver alguém citando o exemplo como se tivesse sido medido lá."
+          "expression": "neutro",
+          "text": "Ponha o aviso onde ninguém deixe de ver. Essas páginas são copiadas. Não quero uma medida inventada circulando sem a explicação."
         }
       ],
       "question": false
@@ -2410,7 +2652,8 @@
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Daqui em diante, faltam informações. Não posso preencher por você."
+          "expression": "neutro",
+          "text": "Até aqui consigo acompanhar. Depois deste ponto, faltam informações. Não posso preencher os espaços só para terminar a página."
         }
       ]
     },
@@ -2420,7 +2663,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Nem quero. Sevrak ia perguntar de onde tirei."
+          "expression": "feliz",
+          "text": "Por favor, não preencha. Sevrak ia perguntar onde achei as informações que faltavam, e minha resposta seria bem constrangedora."
         }
       ]
     },
@@ -2430,7 +2674,8 @@
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Eu perguntaria também."
+          "expression": "neutro",
+          "text": "Ele não seria o único a perguntar."
         }
       ]
     },
@@ -2440,7 +2685,8 @@
         {
           "speaker": "Iniciante",
           "condition": "",
-          "text": "Ele quer que Ghork repita a explicação sobre o ombro. Mas sem você por perto, Sevrak."
+          "expression": "triste",
+          "text": "Sevrak, aquele veterano não quer devolver seu estojo de treino. Diz que Ghork tem de ir buscar e explicar de novo o truque do ombro. Sem você por perto."
         }
       ]
     },
@@ -2450,7 +2696,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Vou falar com Rask para devolverem o estojo."
+          "expression": "neutro",
+          "text": "Reter meu equipamento para forçar um confronto? Vou falar com Rask. O estojo tem de ser devolvido."
         }
       ]
     },
@@ -2460,7 +2707,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu vou buscar. Quero ver se ele repete isso na minha frente."
+          "expression": "raiva",
+          "text": "Eu vou buscar. Se tem alguma coisa para dizer de mim, pode dizer na minha frente."
         }
       ]
     },
@@ -2470,7 +2718,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Você está preparado para um duelo supervisionado. Se aceitar lutar, exija um juiz. Não precisa se arriscar para defender meu orgulho."
+          "expression": "neutro",
+          "text": "Você já pode enfrentar um duelo supervisionado. Se aceitar lutar, exija um juiz. E tenha clareza do motivo. Meu orgulho ferido não é razão para você se arriscar."
         }
       ]
     },
@@ -2480,7 +2729,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Disseram que você queria falar comigo."
+          "expression": "neutro",
+          "text": "Mandou me chamar. Estou aqui. O que queria dizer?"
         }
       ]
     },
@@ -2490,7 +2740,8 @@
         {
           "speaker": "Veterano",
           "condition": "",
-          "text": "Quero ver se sabe lutar ou só dar palpite."
+          "expression": "raiva",
+          "text": "Quero ver se tem um lutador por trás de tanto conselho. Ou só sabe falar?"
         }
       ]
     },
@@ -2500,7 +2751,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Primeiro, devolva o estojo. Não é seu."
+          "expression": "neutro",
+          "text": "Pode descobrir depois de devolver o estojo. Ele pertence à escola."
         }
       ]
     },
@@ -2510,7 +2762,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Vou recolher o estojo para devolução. Fui avisado da agressão e devia ter impedido essa intimidação. Se quiserem lutar, será na área de duelo, comigo supervisionando."
+          "expression": "neutro",
+          "text": "Entregue para mim. O estojo será devolvido, aconteça o que acontecer aqui. Ghork me avisou da agressão; eu devia ter impedido que isso continuasse. Se os dois querem lutar, usem a área de duelo. Eu mesmo vou supervisionar."
         }
       ]
     },
@@ -2527,12 +2780,14 @@
     {
       "line": 806,
       "speaker": "Ghork",
-      "choice": "Queria me ver lutar? Vamos.",
+      "choice": "Queria saber se consigo lutar. Está bem. Vamos fazer isso direito.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Veterano",
           "condition": "",
-          "text": "Espero que tenha aprendido mais de um movimento."
+          "expression": "raiva",
+          "text": "Vamos torcer para ter aprendido alguma coisa além de olhar ombros."
         }
       ],
       "question": false
@@ -2540,12 +2795,14 @@
     {
       "line": 807,
       "speaker": "Ghork",
-      "choice": "Antes eu vi de fora. Agora vou ver de perto.",
+      "choice": "Da outra vez eu estava olhando de fora. Vamos ver o que percebo de perto.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Veterano",
           "condition": "",
-          "text": "Quero ver você terminar essa frase deitado no chão."
+          "expression": "raiva",
+          "text": "Continue falando. Quero ver como fica esperto de costas no chão."
         }
       ],
       "question": false
@@ -2556,7 +2813,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Quando eu mandar parar, os dois param. Encerro a luta se alguém não puder continuar."
+          "expression": "neutro",
+          "text": "Quando eu mandar parar, os dois param. Se um dos lutadores não puder continuar, a luta acaba ali. Entendido?"
         }
       ]
     },
@@ -2566,7 +2824,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Acabou. Ghork venceu."
+          "expression": "neutro",
+          "text": "Parem! A luta acabou. Ghork venceu."
         }
       ]
     },
@@ -2576,7 +2835,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "O rapaz aprendeu quando alguém deu uma chance. Você podia ter tentado ensinar."
+          "expression": "neutro",
+          "text": "Aquele rapaz aprendeu quando alguém deu uma chance. Você podia ter feito isso por ele, em vez de deixar com medo de levantar outra vez."
         }
       ]
     },
@@ -2586,7 +2846,8 @@
         {
           "speaker": "Veterano",
           "condition": "",
-          "text": "Já ganhou. Precisa fazer discurso também?"
+          "expression": "raiva",
+          "text": "Já ganhou. Ainda tenho de ouvir sermão?"
         }
       ]
     },
@@ -2596,7 +2857,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Quero pegar o estojo e ir embora."
+          "expression": "neutro",
+          "text": "Não. Vou levar o estojo de volta para a escola. Já estou indo."
         }
       ]
     },
@@ -2626,7 +2888,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Trouxe o estojo. Como foi o duelo?"
+          "expression": "neutro",
+          "text": "O estojo voltou. Ótimo. Agora me diga como foi o duelo."
         }
       ]
     },
@@ -2636,7 +2899,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Rask supervisionou. Eu ganhei. Mas vencer uma luta não prova que eu estava certo em tudo."
+          "expression": "neutro",
+          "text": "Rask foi o juiz. Eu ganhei. Foi bom, mas... vencer não faz tudo que eu disse estar certo. Essa parte ainda precisa se sustentar sozinha."
         }
       ]
     },
@@ -2646,7 +2910,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Bom. De volta ao relatório: você colocou o que não sabemos antes do resultado."
+          "expression": "neutro",
+          "text": "Uma diferença que vale guardar. Agora, seu relatório: você colocou o que não sabemos antes do que descobrimos. Por que começar por aí?"
         }
       ]
     },
@@ -2656,19 +2921,22 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Não quero que essa parte passe despercebida."
+          "expression": "neutro",
+          "text": "Porque alguém pode ler o resultado e parar ali. Não quero Meruna mandando gente para a mina com metade da explicação."
         }
       ]
     },
     {
       "line": 837,
       "speaker": "Ghork",
-      "choice": "Coloco ao lado da conclusão. Assim, quem ler uma também vê a outra.",
+      "choice": "Vou pôr o aviso ao lado da conclusão. Assim ela vê o que descobrimos e onde deixa de haver certeza.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Faça. Se continuar legível, serve."
+          "expression": "neutro",
+          "text": "Tente. Se eu conseguir ler os dois sem procurar pela página, deve servir."
         }
       ],
       "question": false
@@ -2676,12 +2944,14 @@
     {
       "line": 838,
       "speaker": "Ghork",
-      "choice": "Quero explicar primeiro o que não sabemos. Depois mostro o que conseguimos fazer mesmo assim.",
+      "choice": "Prefiro explicar primeiro o que não conseguimos descobrir. Depois mostro quanto ainda conseguimos conferir.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Então esteja pronto para defender essa escolha. Não vou responder por você."
+          "expression": "neutro",
+          "text": "Então esteja pronto para explicar isso à Meruna. Essa escolha de apresentação é sua. Não vou intervir para defendê-la por você."
         }
       ],
       "question": false
@@ -2692,7 +2962,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Vamos apresentar um método que Meruna possa verificar. Se conseguir o contrato, a escola poderá ensinar outras pessoas a fazer esse levantamento."
+          "expression": "neutro",
+          "text": "Meruna poderá conferir nosso trabalho por conta própria. É isso que oferecemos. Com o contrato, a escola pode ensinar mais pessoas a fazer o mesmo levantamento, em vez de depender do julgamento de uma só."
         }
       ]
     },
@@ -2702,7 +2973,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E o contrato paga o trabalho da sua escola."
+          "expression": "neutro",
+          "text": "E o dinheiro mantém sua escola funcionando. Não se trata só dos mapas."
         }
       ]
     },
@@ -2712,7 +2984,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Nossa escola, se você se juntar a ela."
+          "expression": "neutro",
+          "text": "Ela poderia ser sua escola também, Ghork. Se decidir entrar."
         }
       ]
     },
@@ -2722,7 +2995,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Ainda estou decidindo."
+          "expression": "neutro",
+          "text": "Ainda não decidi. Quero deixar isso claro."
         }
       ]
     },
@@ -2732,7 +3006,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Então saiba o que estou pedindo. Quero você na investigação e na preparação para o campeonato. Fazer parte da escola vai exigir trabalho."
+          "expression": "neutro",
+          "text": "Então também vou ser claro. Quero você trabalhando na investigação e se preparando para o campeonato. Vejo algo em você que vale desenvolver, mas entrar na escola significa trabalhar."
         }
       ]
     },
@@ -2742,7 +3017,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Você quer que eu repita seu método ou que aponte quando ele estiver errado?"
+          "expression": "confuso",
+          "text": "E se eu encontrar um erro no seu método? Quer que eu aponte ou aprenda a fazer do seu jeito mesmo assim?"
         }
       ]
     },
@@ -2752,7 +3028,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Que demonstre o erro. Eu esperaria a mesma cobrança sobre meu trabalho."
+          "expression": "neutro",
+          "text": "Mostre o erro. Dizer que discorda não basta, mas demonstrar uma falha é útil. Você deve exigir de mim o mesmo cuidado."
         }
       ]
     },
@@ -2782,7 +3059,8 @@
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "As três guildas apresentaram suas propostas. Ghork, qual delas você vai ajudar a executar?"
+          "expression": "neutro",
+          "text": "Ghork, você conheceu o trabalho dessas guildas. Agora preciso de uma resposta: qual proposta vai ajudar a executar?"
         }
       ]
     },
@@ -2792,7 +3070,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "A de Virmura. Comparamos o trajeto de um resgate com os mapas. Testamos as instruções usando uma maca e dividimos a equipe entre o trabalho de campo e a enfermaria."
+          "expression": "neutro",
+          "text": "A de Virmura. Conferimos um trajeto de resgate com os mapas e depois testamos as instruções com uma maca. Sabemos quem vai a campo e quem fica para cuidar de quem precisa da guilda."
         }
       ]
     },
@@ -2802,7 +3081,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Um relato de resgate não cobre a mina inteira."
+          "expression": "neutro",
+          "text": "Conferiram um trajeto de resgate. Uma mina tem um pouco mais do que isso. O que vão dizer à Meruna sobre o restante?"
         }
       ]
     },
@@ -2819,14 +3099,16 @@
     {
       "line": 890,
       "speaker": "Ghork",
-      "choice": "Nem dissemos que cobre. Marcamos o que ainda precisa ser investigado.",
+      "choice": "Que ainda precisa ser investigado. Está marcado na proposta. Não estamos pedindo que acredite que conferimos mais do que realmente conferimos.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
     {
       "line": 891,
       "speaker": "Ghork",
-      "choice": "É para isso que serve o contrato: investigar o resto. Já testamos como vamos trabalhar.",
+      "choice": "É isso que o contrato vai pagar para investigar. O que mostramos hoje foi como vamos fazer. Já testamos o procedimento.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
@@ -2836,7 +3118,8 @@
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Está claro o que vocês já fizeram e o que ainda vão entregar. Virmura, registre no plano os custos da enfermaria e da equipe de campo."
+          "expression": "neutro",
+          "text": "Consigo distinguir o que conferiram do que estão propondo. Ótimo. Virmura, inclua os custos da enfermaria no plano, junto com os da equipe de campo. Preciso ver o custo completo desse acordo."
         }
       ]
     },
@@ -2846,7 +3129,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "A de Borun. Conferimos o registro com quem transportou a carga, separamos o que ela viu do que ouviu e pedimos a outra pessoa para seguir as instruções."
+          "expression": "neutro",
+          "text": "A de Borun. Conferimos o registro da carga com Pirka, que fez o transporte. Separamos o que ela viu do que contaram a ela e depois demos as instruções a outra pessoa, para ver se conseguia seguir."
         }
       ]
     },
@@ -2856,7 +3140,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "E se esses relatos não bastarem para saber como retirar alguém?"
+          "expression": "neutro",
+          "text": "E quando alguém se machucar lá embaixo? O que acontece se esses relatos não bastarem para indicar como tirar a pessoa?"
         }
       ]
     },
@@ -2873,14 +3158,16 @@
     {
       "line": 903,
       "speaker": "Ghork",
-      "choice": "Vamos anotar o que falta antes de entrar. Ninguém vai chamar um palpite de rota segura.",
+      "choice": "Anotamos o que falta antes de alguém entrar. Se não podemos confirmar uma saída, não marcamos como segura e torcemos para dar certo.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
     {
       "line": 904,
       "speaker": "Ghork",
-      "choice": "Se a equipe não conseguir conferir, volta sem a resposta. Estar sendo pago não obriga ninguém a inventar uma.",
+      "choice": "Então a equipe volta com essa pergunta sem resposta. Receber pelo trabalho não obriga ninguém a inventar o que não conseguiu descobrir.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
@@ -2890,7 +3177,8 @@
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Inclua isso no relatório. Borun, a conferência das fontes em campo fica sob sua responsabilidade."
+          "expression": "neutro",
+          "text": "Inclua esse limite no relatório. Borun, você fica responsável por conferir essas fontes em campo. Espero que o registro mostre o que realmente encontraram."
         }
       ]
     },
@@ -2900,7 +3188,8 @@
         {
           "speaker": "Ghork",
           "condition": ", se C4 começou pelo limite",
-          "text": "Vou explicar primeiro o que não conseguimos verificar. Depois mostro como conferimos o restante."
+          "expression": "neutro",
+          "text": "Antes de mostrar o resultado, quero apontar o que não conseguimos verificar. Depois explico como conferimos o restante."
         }
       ]
     },
@@ -2910,7 +3199,8 @@
         {
           "speaker": "Ghork",
           "condition": ", se C4 colocou a ressalva ao lado",
-          "text": "Cada conclusão vem com uma nota sobre o que ainda não sabemos. Elune conseguiu repetir o método sem precisar chamar Sevrak."
+          "expression": "neutro",
+          "text": "Escolho a proposta de Sevrak. Cada conclusão indica o que ainda não sabemos. Elune conseguiu repetir o método sem chamar o mestre para explicar, então você também pode conferir nosso trabalho."
         }
       ]
     },
@@ -2920,7 +3210,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Mesmo um método bem explicado pode partir de um relato errado."
+          "expression": "neutro",
+          "text": "Instruções bem arrumadas não fazem um relato errado virar verdade. E se a pessoa que passou a informação tiver se enganado?"
         }
       ]
     },
@@ -2937,14 +3228,16 @@
     {
       "line": 918,
       "speaker": "Ghork",
-      "choice": "Por isso anotamos de onde veio cada informação.",
+      "choice": "É por isso que cada informação tem uma fonte ao lado. Se alguma coisa não bater, sabemos onde voltar para conferir.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
     {
       "line": 919,
       "speaker": "Ghork",
-      "choice": "Por isso deixamos as etapas escritas. Quem discordar pode conferir e apontar o erro.",
+      "choice": "Então alguém pode seguir as etapas escritas e mostrar onde erramos. Não precisa aceitar só porque Sevrak ou eu dissemos.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
@@ -2954,7 +3247,8 @@
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Sevrak, mantenha esse registro durante a investigação. Mesmo quando os resultados contrariarem sua primeira hipótese."
+          "expression": "neutro",
+          "text": "Sevrak, quero esse registro mantido durante toda a investigação. Especialmente quando um resultado contrariar sua primeira explicação. Não pago a mais para manter coerência com um erro."
         }
       ]
     },
@@ -2974,7 +3268,8 @@
         {
           "speaker": "Virmura",
           "condition": ", se rejeitada",
-          "text": "Eu contava com esse dinheiro para a equipe de campo. Não posso ceder gente nem materiais de que a enfermaria precisa. Minha guilda vai disputar os próximos contratos e o campeonato contra a sua."
+          "expression": "triste",
+          "text": "Eu contava com esse dinheiro para pôr uma equipe em campo. Sem ele, não posso ceder gente e materiais que fazem falta na enfermaria. Vamos disputar os próximos contratos. E vamos enfrentar vocês no campeonato."
         }
       ]
     },
@@ -2984,7 +3279,8 @@
         {
           "speaker": "Borun",
           "condition": ", se rejeitado",
-          "text": "Vou procurar trabalho para a minha gente. Nossa guilda não vai acompanhar essa expedição. E, na arena, vamos estar do outro lado."
+          "expression": "triste",
+          "text": "Então vou ter de procurar outro trabalho para minha gente. Não vamos acompanhar sua expedição. E, quando chegar o campeonato, lembre que vamos competir contra você."
         }
       ]
     },
@@ -2994,7 +3290,8 @@
         {
           "speaker": "Sevrak",
           "condition": ", se rejeitado",
-          "text": "Nossos instrutores e métodos ficam na escola. Haverá outras oportunidades de mostrar o que poderíamos fazer. O campeonato é uma delas."
+          "expression": "neutro",
+          "text": "Nossos instrutores e métodos continuam na escola. Terá a chance de ver do que abriu mão, Ghork. Imagino que o campeonato ofereça uma."
         }
       ]
     },
@@ -3011,17 +3308,20 @@
     {
       "line": 937,
       "speaker": "Ghork",
-      "choice": "Continuo grato pelo que fizeram por mim.",
+      "choice": "Não esqueci o que fizeram por mim. Escolher esta guilda não significa que deixei de ser grato.",
+      "expression": "triste",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "primeiro-rejeitado",
-          "text": "Eu sei. Mas ainda preciso cuidar do trabalho da minha guilda."
+          "expression": "triste",
+          "text": "Eu sei que é grato. Não estou pedindo que negue isso. Mas ainda tenho uma guilda cheia de gente dependendo de mim."
         },
         {
           "speaker": "Borun",
           "condition": "primeiro-rejeitado",
-          "text": "Eu sei. Isso não acaba só porque escolhemos lados diferentes."
+          "expression": "triste",
+          "text": "Eu sei, rapaz. Não acho que esqueceu. Mas, neste trabalho, ainda vamos seguir caminhos diferentes."
         },
         {
           "speaker": "Sevrak",
@@ -3034,12 +3334,14 @@
     {
       "line": 938,
       "speaker": "Ghork",
-      "choice": "Escolhi o trabalho que quero fazer. Nunca prometi entrar nas três guildas.",
+      "choice": "Escolhi o trabalho que quero fazer. Nunca prometi entrar nas três guildas, e nem conseguiria cumprir essa promessa.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Havia um contrato, não três. Vamos registrar quem vai assumir o trabalho."
+          "expression": "neutro",
+          "text": "Ofereci um contrato. Alguém ia sair daqui sem ele. Vamos registrar quem assume a responsabilidade pelo trabalho."
         }
       ],
       "question": false
@@ -3050,7 +3352,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "É a minha equipe que traz o público que paga por este coliseu. Querem usar a arena que sustentamos e ainda chamam nossa prioridade de abuso?"
+          "expression": "raiva",
+          "text": "Minha equipe traz o público que mantém este coliseu aberto. Vocês querem treinar na arena que pagamos e chamam de abuso quando pedimos prioridade?"
         }
       ]
     },
@@ -3060,17 +3363,20 @@
         {
           "speaker": "Virmura",
           "condition": "papel:Virmura",
-          "text": "Quando toma o que já foi concedido a outra equipe, é abuso."
+          "expression": "raiva",
+          "text": "Quando sua prioridade tira o horário já prometido a outra equipe, sim. É exatamente de abuso que estou chamando."
         },
         {
           "speaker": "Borun",
           "condition": "papel:Borun",
-          "text": "Quero que cumpram o combinado."
+          "expression": "raiva",
+          "text": "Estou pedindo que cumpra o acordo. Não devíamos ter de implorar por um horário que já era nosso."
         },
         {
           "speaker": "Sevrak",
           "condition": "papel:Sevrak",
-          "text": "Quero uma resposta à pergunta."
+          "expression": "neutro",
+          "text": "Uma descrição da sua popularidade não responde à pergunta. Que regra permite isso?"
         }
       ]
     },
@@ -3080,7 +3386,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Retire a acusação. Agora."
+          "expression": "raiva",
+          "text": "Retire o que disse. Aqui, na frente de todos."
         }
       ]
     },
@@ -3090,17 +3397,20 @@
         {
           "speaker": "Virmura",
           "condition": "papel:Virmura",
-          "text": "Não retiro."
+          "expression": "raiva",
+          "text": "Não. Você ouviu muito bem."
         },
         {
           "speaker": "Borun",
           "condition": "papel:Borun",
-          "text": "Não vou pedir desculpas por isso."
+          "expression": "raiva",
+          "text": "Não. Não vou pedir desculpas por esperar que cumpram a palavra."
         },
         {
           "speaker": "Sevrak",
           "condition": "papel:Sevrak",
-          "text": "Mantenho o que disse."
+          "expression": "neutro",
+          "text": "Mantenho a pergunta. Não vejo motivo para retirá-la."
         }
       ]
     },
@@ -3110,7 +3420,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Rask, resolva os horários dessa guilda. Ou reveja se pode contar comigo no seu campeonato."
+          "expression": "raiva",
+          "text": "Rask. Cancele os horários de treino dessa guilda. Se não consegue fazer isso, talvez deva ver como seu campeonato se sai sem mim."
         }
       ]
     },
@@ -3120,7 +3431,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Vocês terão de treinar fora do coliseu. A inscrição no campeonato continua válida."
+          "expression": "triste",
+          "text": "Estou retirando seus horários de treino. Vocês terão de treinar fora do coliseu. A inscrição no campeonato continua válida... isso não vou retirar."
         }
       ]
     },
@@ -3137,12 +3449,14 @@
     {
       "line": 975,
       "speaker": "Ghork",
-      "choice": "Você está desfazendo uma decisão que já tinha confirmado.",
+      "choice": "Você já tinha confirmado esses horários. Agora vai tirar porque ele mandou?",
+      "expression": "raiva",
       "response": [
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Estou. Não vou fingir que houve um erro na lista."
+          "expression": "triste",
+          "text": "Sim. Tem todo o direito de dizer que voltei atrás no que prometi. Não foi um erro na agenda."
         }
       ],
       "question": false
@@ -3150,12 +3464,14 @@
     {
       "line": 976,
       "speaker": "Ghork",
-      "choice": "E ele fica com a arena?",
+      "choice": "E ele fica com a arena? Ele ameaça ir embora, e nós perdemos nosso lugar?",
+      "expression": "raiva",
       "response": [
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Minha equipe fica com o espaço de que precisa para treinar."
+          "expression": "raiva",
+          "text": "Minha equipe vai ter o espaço de que precisa. Fizemos o bastante por este coliseu para merecer isso."
         }
       ],
       "question": false
@@ -3166,7 +3482,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vamos ter de organizar os treinos outra vez."
+          "expression": "triste",
+          "text": "A gente já tinha organizado os treinos. Agora vai ter de encontrar espaço para tudo outra vez."
         }
       ]
     },
@@ -3176,17 +3493,20 @@
         {
           "speaker": "Virmura",
           "condition": "papel:Virmura",
-          "text": "Na sede. E ninguém vai perder descanso por causa disso."
+          "expression": "neutro",
+          "text": "Vamos abrir espaço na sede. E ninguém vai perder descanso para pagar pela birra dele."
         },
         {
           "speaker": "Borun",
           "condition": "papel:Borun",
-          "text": "Vamos dividir o trabalho. Eu acompanho os treinos que prometi."
+          "expression": "neutro",
+          "text": "Vamos dividir o trabalho na sede. Prometi acompanhar aqueles treinos e vou acompanhar. Vamos ver o que cabe em cada espaço."
         },
         {
           "speaker": "Sevrak",
           "condition": "papel:Sevrak",
-          "text": "Vamos adaptar os exercícios à escola. Primeiro, precisamos conferir o espaço."
+          "expression": "neutro",
+          "text": "Na escola, então. Vamos avaliar o espaço e adaptar os exercícios. Ainda temos um campeonato para preparar."
         }
       ]
     },
@@ -3196,7 +3516,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou ajudar no que conseguir. Se não der conta de algo, aviso."
+          "expression": "neutro",
+          "text": "Vou ajudar no que puder. E, se não der conta de alguma coisa, aviso antes que vire outro problema."
         }
       ]
     },
@@ -3206,7 +3527,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Este suporte fica de reserva. Se levarmos tudo para avançar, o que sobra para tirar alguém de lá?"
+          "expression": "neutro",
+          "text": "Esse esteio fica aqui. Se levarmos todos lá para dentro, o que sobra para trazer alguém de volta?"
         }
       ]
     },
@@ -3216,7 +3538,8 @@
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "E não adianta ter suporte sem saber montar. É preciso saber onde a peça aguenta o peso."
+          "expression": "neutro",
+          "text": "Primeiro, aprendam a montar. Um esteio no lugar errado não sustenta grande coisa."
         }
       ]
     },
@@ -3226,7 +3549,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Quanto disso sai do pagamento?"
+          "expression": "confuso",
+          "text": "E tudo isso sai do nosso pagamento? Quanto, mais ou menos?"
         }
       ]
     },
@@ -3236,7 +3560,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Mais do que no plano de Zagra. Vamos pagar inspeções, apoios e gente pronta para ajudar na retirada. Sobra menos para o torneio."
+          "expression": "neutro",
+          "text": "Mais do que a Zagra está pedindo. Vamos pagar pelas inspeções, pelos esteios, por gente pronta para ajudar na saída. Vai sobrar menos para o campeonato."
         }
       ]
     },
@@ -3253,12 +3578,14 @@
     {
       "line": 1014,
       "speaker": "Ghork",
-      "choice": "O que conseguimos fazer com essa reserva?",
+      "choice": "Digamos que alguma coisa dê errado. O que essa reserva permite fazer?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Parar e organizar a volta com gente descansada, sem tirar ninguém do transporte dos feridos. Ainda pode haver acidentes."
+          "expression": "neutro",
+          "text": "Parar. Preparar a volta. Ter alguém livre para ajudar, em vez de todo mundo ocupado carregando os feridos. Não nos torna invulneráveis."
         }
       ],
       "question": true
@@ -3266,12 +3593,14 @@
     {
       "line": 1015,
       "speaker": "Ghork",
-      "choice": "E se não precisarmos usar?",
+      "choice": "E se a gente sair sem usar nada disso?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Ainda teremos pago pelo material e pela equipe. Preciso que você aceite esse custo antes de entrarmos."
+          "expression": "neutro",
+          "text": "O material continua custando. O tempo da equipe também. Prefiro que você reclame do custo aqui em cima. Pior seria só descobrir isso lá embaixo."
         }
       ],
       "question": true
@@ -3282,7 +3611,8 @@
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "Olhe o encaixe. Confira a marca e anote o resultado do teste. Deixe o peso comigo."
+          "expression": "neutro",
+          "text": "Chegue mais perto. Está vendo esta junção? Confira com a marca e anote o que acontecer no teste. O peso fica comigo."
         }
       ]
     },
@@ -3292,7 +3622,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Pelo menos agora sei pelo que estamos pagando."
+          "expression": "neutro",
+          "text": "Está bem. Fica mais fácil entender a conta quando vejo o que estamos pagando."
         }
       ]
     },
@@ -3302,7 +3633,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "É um começo. Ouça Zagra antes de decidir."
+          "expression": "neutro",
+          "text": "Ótimo. Agora deixe a Zagra mostrar a dela. Você ainda não escolheu."
         }
       ]
     },
@@ -3312,7 +3644,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Levamos estas cargas. A reserva pesada fica para trás neste primeiro reconhecimento. Vamos examinar um trecho curto e voltar."
+          "expression": "neutro",
+          "text": "Estas cargas vão conosco. A reserva pesada fica aqui em cima. Levantamos um trecho curto e voltamos. Esse é o trabalho que estou propondo."
         }
       ]
     },
@@ -3322,7 +3655,8 @@
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "Menos carga barateia o transporte. Mas minha carroça continua sem caber numa galeria."
+          "expression": "feliz",
+          "text": "Menos peso, frete mais barato. Só lembrem: onde começa o túnel, termina o caminho da minha carroça."
         }
       ]
     },
@@ -3332,7 +3666,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Então, se alguém se machucar lá dentro..."
+          "expression": "confuso",
+          "text": "E se alguém se machucar depois desse ponto... a gente traz de volta por conta própria?"
         }
       ]
     },
@@ -3342,7 +3677,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Teremos menos meios de tirar essa pessoa de lá. Esse é o risco. Em troca, sobra mais do pagamento para nossa preparação."
+          "expression": "neutro",
+          "text": "Com menos equipamento para ajudar. Sim. Não vou enfeitar isso. Em troca, sobraria mais do pagamento para os treinos."
         }
       ]
     },
@@ -3359,12 +3695,14 @@
     {
       "line": 1042,
       "speaker": "Ghork",
-      "choice": "O que faria vocês voltarem antes do ponto combinado?",
+      "choice": "O que faria você encerrar o trabalho antes de terminar?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Sinais de instabilidade, perda das referências do caminho ou alguém sem condições de continuar. Não vou prometer uma saída que não posso encontrar."
+          "expression": "neutro",
+          "text": "Rocha instável. Perder o caminho. Alguém sem condições de continuar. Se eu não enxergar uma saída, não levo vocês mais para dentro."
         }
       ],
       "question": true
@@ -3372,12 +3710,14 @@
     {
       "line": 1043,
       "speaker": "Ghork",
-      "choice": "O que você se recusa a cortar?",
+      "choice": "Tem alguma coisa de que você não abre mão para economizar?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Marcas para achar a saída, comunicação entre nós e um limite de carga que todos consigam carregar. Sem isso, o plano não funciona."
+          "expression": "neutro",
+          "text": "Marcas para encontrar a saída. Um jeito de manter contato. Cargas que cada um consiga carregar. Sem isso, já não é o trabalho que propus."
         }
       ],
       "question": true
@@ -3388,7 +3728,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Você e Darvek já trabalharam juntos."
+          "expression": "neutro",
+          "text": "Você e o Darvek já trabalharam na mesma equipe, não foi?"
         }
       ]
     },
@@ -3398,7 +3739,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Sim. Ele leva uma reserva maior. Eu limito o serviço para precisar de menos. Nós já discutíamos isso muito antes de você chegar."
+          "expression": "neutro",
+          "text": "Já. Ele leva o suficiente para enfrentar um problema maior. Eu aceito um trabalho menor. Pode acreditar: essa discussão é mais velha que o seu contrato."
         }
       ]
     },
@@ -3408,17 +3750,20 @@
         {
           "speaker": "Virmura",
           "condition": "papel:Virmura",
-          "text": "Ouviu os dois. Que risco vai aceitar? E como vai explicar isso à equipe?"
+          "expression": "neutro",
+          "text": "Você ouviu os dois planos. Agora escolha um que consiga defender quando a equipe perguntar por quê."
         },
         {
           "speaker": "Borun",
           "condition": "papel:Borun",
-          "text": "Conte o que você conferiu, não só qual conversa agradou mais."
+          "expression": "neutro",
+          "text": "Antes de me contar quem convenceu você, conte o que foi conferir por conta própria."
         },
         {
           "speaker": "Sevrak",
           "condition": "papel:Sevrak",
-          "text": "Escolha o método adequado ao trabalho. Depois, terá de responder pelo resultado."
+          "expression": "neutro",
+          "text": "Uma proposta convincente não basta. Escolha um método que consiga justificar quando tivermos o resultado."
         }
       ]
     },
@@ -3428,7 +3773,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Quero deixar a reserva de resgate pronta antes de entrar. Aceito ficar com menos dinheiro depois."
+          "expression": "neutro",
+          "text": "Vamos com o Darvek. Quero essa reserva pronta antes de alguém entrar. Vou ter que me virar com menos para os treinos."
         }
       ]
     },
@@ -3438,7 +3784,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Então começamos testando os apoios."
+          "expression": "neutro",
+          "text": "Está bem. Venha ajudar a testar os esteios."
         }
       ]
     },
@@ -3448,7 +3795,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Você ouviu os limites do meu plano. Ainda acha que eu só entro torcendo para ninguém se machucar?"
+          "expression": "raiva",
+          "text": "Você ouviu até onde eu iria. Ainda acha que eu arrastaria minha equipe para dentro e torceria para dar certo?"
         }
       ]
     },
@@ -3465,14 +3813,16 @@
     {
       "line": 1074,
       "speaker": "Ghork",
-      "choice": "Ouvi. Para este trabalho, prefiro ter mais recursos para a volta.",
+      "choice": "Eu ouvi. Mesmo assim, quero mais ajuda preparada se a volta der errado.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
     {
       "line": 1075,
       "speaker": "Ghork",
-      "choice": "Não acho que você abandone os seus. Só quero uma margem maior de segurança.",
+      "choice": "Não acho que você abandonaria ninguém. Eu só dormiria melhor sabendo que temos mais recursos à mão.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
@@ -3482,7 +3832,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Minha equipe ainda vai mostrar o que sabe fazer. Com ou sem você."
+          "expression": "raiva",
+          "text": "Está bem. Minha equipe sabe fazer esse trabalho. Vamos encontrar alguém disposto a vir conosco."
         }
       ]
     },
@@ -3492,7 +3843,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vamos com Zagra e ficamos no reconhecimento limitado. Quero guardar recursos, mas não vou prometer mais do que podemos investigar."
+          "expression": "neutro",
+          "text": "Vamos com a Zagra. Um levantamento curto, com dinheiro sobrando para os treinos. Se não der para verificar um trecho com o que levamos, deixamos esse trecho para depois."
         }
       ]
     },
@@ -3502,7 +3854,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Com esses limites por escrito, podemos preparar a carga."
+          "expression": "neutro",
+          "text": "Então ponha isso no plano. Quero que todos ouçam a mesma coisa antes de arrumarmos a carga."
         }
       ]
     },
@@ -3512,7 +3865,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "E se precisarem de mais do que levaram para sair de lá? Minha reserva já virou exagero?"
+          "expression": "triste",
+          "text": "E se a volta exigir mais de vocês do que a ida? A minha reserva ainda vai parecer exagero?"
         }
       ]
     },
@@ -3529,14 +3883,16 @@
     {
       "line": 1089,
       "speaker": "Ghork",
-      "choice": "Seu plano cobre esse risco. Eu aceitei ter menos recursos para enfrentá-lo.",
+      "choice": "Sua reserva cobriria isso. Eu sei. Estou aceitando o risco de ter menos recursos à mão.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
     {
       "line": 1090,
       "speaker": "Ghork",
-      "choice": "Não estou chamando você de medroso. Estou escolhendo fazer um trabalho menor.",
+      "choice": "Não estou chamando você de covarde, Darvek. Estou dizendo que vamos parar antes.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
@@ -3546,7 +3902,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Espero que respeite esse limite lá dentro. Vou procurar quem queira trabalhar com a minha equipe."
+          "expression": "neutro",
+          "text": "Então lembre disso quando faltar só mais uma curva para verificar. Vou encontrar trabalho para minha equipe."
         }
       ]
     },
@@ -3556,7 +3913,8 @@
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "As peças estão prontas. Quem vai montar?"
+          "expression": "neutro",
+          "text": "As peças estão prontas. Quem vai montar? Quero mostrar as junções a essa pessoa."
         }
       ]
     },
@@ -3566,7 +3924,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Minha equipe. Ghork confere a lista e o caminho até o ponto de espera."
+          "expression": "neutro",
+          "text": "Minha equipe monta. Ghork, confira a lista e o caminho até o ponto de espera. Veja se conseguimos chegar lá com tudo isso."
         }
       ]
     },
@@ -3576,7 +3935,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Posso acompanhar o teste."
+          "expression": "neutro",
+          "text": "Quero ficar para o teste. Fui eu que disse que precisávamos disso."
         }
       ]
     },
@@ -3586,7 +3946,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Fique. Se eu não explicar alguma coisa direito, não dê essa parte por conferida."
+          "expression": "neutro",
+          "text": "Então fique. E pergunte. Não aprove nada por vergonha de dizer que não entendeu minha explicação."
         }
       ]
     },
@@ -3603,12 +3964,14 @@
     {
       "line": 1113,
       "speaker": "Ghork",
-      "choice": "Quero ver quem pega a carga se alguém precisar parar.",
+      "choice": "Digamos que um de nós precise parar. Quem fica com a carga dessa pessoa?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Troquem de posição. Vamos ver se ainda conseguem voltar."
+          "expression": "neutro",
+          "text": "Boa pergunta. Troquem de lugar, pessoal. Vamos tentar a volta desse jeito."
         }
       ],
       "question": false
@@ -3616,12 +3979,14 @@
     {
       "line": 1114,
       "speaker": "Ghork",
-      "choice": "Quero ver se conseguimos alcançar os apoios com a equipe passando.",
+      "choice": "Com todo mundo passando por aqui, ainda dá para alcançar os esteios?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Boa pergunta. Liberem o corredor antes de tentar de novo."
+          "expression": "neutro",
+          "text": "Assim, não. Desobstruam a passagem. Vamos tentar de novo."
         }
       ],
       "question": false
@@ -3632,7 +3997,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Pronto. Aqui está o custo da reserva, separado do material que vamos usar na investigação."
+          "expression": "neutro",
+          "text": "Agora sim. Aqui está o custo da reserva, separado do material que vamos usar no levantamento."
         }
       ]
     },
@@ -3642,7 +4008,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Isso já levou boa parte do que eu queria gastar na preparação."
+          "expression": "triste",
+          "text": "Isso dá... um bom número de treinos, empilhados na forma de esteios."
         }
       ]
     },
@@ -3652,7 +4019,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Levou. Pode conferir cada gasto. Não vou fingir que isso saiu de graça."
+          "expression": "neutro",
+          "text": "Dá mesmo. Confira as contas comigo se quiser. Pedi que você abrisse mão disso; não vou esconder o preço."
         }
       ]
     },
@@ -3662,7 +4030,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Vamos parar aqui. Preciso conferir esse apoio antes de continuar."
+          "expression": "neutro",
+          "text": "Parem aqui. Não gostei daquele suporte. Vamos conferir antes de alguém avançar."
         }
       ]
     },
@@ -3672,7 +4041,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Depois de toda aquela preparação, ainda precisamos parar?"
+          "expression": "confuso",
+          "text": "Já vamos parar? Depois de todo o tempo que passamos preparando a entrada?"
         }
       ]
     },
@@ -3682,7 +4052,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Nós nos preparamos para poder parar e organizar a saída. A rocha ainda pode ceder."
+          "expression": "neutro",
+          "text": "Foi para isso que nos preparamos. Para poder parar e organizar a saída. Aqueles esteios não mudam a rocha."
         }
       ]
     },
@@ -3699,12 +4070,14 @@
     {
       "line": 1141,
       "speaker": "Ghork",
-      "choice": "Vou anotar o que vimos enquanto vocês conferem.",
+      "choice": "Está bem. Enquanto você verifica, vou anotar o que vimos.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Marque até onde chegamos. Do restante, ainda não sabemos."
+          "expression": "neutro",
+          "text": "Marque onde paramos. Deixe o resto em branco; ainda não vimos o que há lá."
         }
       ],
       "question": false
@@ -3712,12 +4085,14 @@
     {
       "line": 1142,
       "speaker": "Ghork",
-      "choice": "Mostre o que precisa conferir. Quero saber explicar o atraso.",
+      "choice": "Mostre o que está preocupando você. Se perguntarem por que paramos, quero saber responder.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Este apoio sustenta a passagem. Minha equipe vai examiná-lo. Anote por que paramos."
+          "expression": "neutro",
+          "text": "Aquele suporte sustenta esta passagem. Minha equipe vai verificar. Anote isso como o motivo da parada."
         }
       ],
       "question": false
@@ -3728,7 +4103,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vamos entregar menos do que eu queria."
+          "expression": "triste",
+          "text": "Achei que teríamos mais para mostrar na volta."
         }
       ]
     },
@@ -3738,7 +4114,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Vamos entregar o que verificamos e explicar por que não fomos além."
+          "expression": "neutro",
+          "text": "Eu também. Vamos mostrar o que conferimos e explicar por que não avançamos."
         }
       ]
     },
@@ -3748,7 +4125,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu escolhi esse plano. Também vou explicar os gastos."
+          "expression": "neutro",
+          "text": "E quanto custou. Eu escolhi a reserva. Não vou deixar você explicar a conta sozinho."
         }
       ]
     },
@@ -3758,7 +4136,8 @@
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "A lista diminuiu. O risco não aparece na balança; confiram tudo antes de subir."
+          "expression": "neutro",
+          "text": "Lista curta. Confiram mesmo assim. O que esquecerem aqui não vai ficar mais perto depois que sairmos."
         }
       ]
     },
@@ -3768,7 +4147,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Ghork, diga o que não vamos fazer lá dentro. Quero ter certeza de que entendemos o serviço do mesmo jeito."
+          "expression": "neutro",
+          "text": "Ghork. Antes de carregar, diga onde esse trabalho termina. Não quero que cada um esteja concordando com uma coisa diferente."
         }
       ]
     },
@@ -3785,12 +4165,14 @@
     {
       "line": 1165,
       "speaker": "Ghork",
-      "choice": "Não vamos entrar num trecho que exija uma operação maior.",
+      "choice": "Se um trecho exigir mais equipamento ou gente do que levamos, não entramos nele.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Certo. Esse limite vai constar no relatório."
+          "expression": "neutro",
+          "text": "Isso. Ponha no relatório também. Ninguém vai chamar de serviço incompleto porque resolveu querer mais depois."
         }
       ],
       "question": false
@@ -3798,12 +4180,14 @@
     {
       "line": 1166,
       "speaker": "Ghork",
-      "choice": "Guardar dinheiro não nos dá a reserva de Darvek.",
+      "choice": "E o dinheiro que vamos guardar não vai ajudar a carregar alguém para fora. Não teremos a reserva do Darvek.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Isso. Se precisarmos dela, encerramos o reconhecimento."
+          "expression": "neutro",
+          "text": "Certo. Se o trabalho exigir essa reserva, nosso serviço termina ali."
         }
       ],
       "question": false
@@ -3814,7 +4198,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E se alguém tiver vergonha de pedir para voltar?"
+          "expression": "confuso",
+          "text": "E se alguém quiser voltar, mas não quiser ser a pessoa que pede?"
         }
       ]
     },
@@ -3824,7 +4209,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Eu pergunto antes de avançarmos. Você também pode falar. Se eu apressar alguém, me avise."
+          "expression": "neutro",
+          "text": "Vou perguntar antes de avançar. Você também pode perguntar. E, se for eu quem estiver apressando os outros, espero que me interrompa."
         }
       ]
     },
@@ -3834,7 +4220,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Combinado. Não quero descobrir depois que todo mundo foi sem querer."
+          "expression": "neutro",
+          "text": "Isso eu consigo. Prefiro uma conversa desconfortável aqui a descobrir lá embaixo que ninguém queria ir."
         }
       ]
     },
@@ -3844,7 +4231,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Com o equipamento que trouxemos, não vamos além daqui."
+          "expression": "neutro",
+          "text": "Este é o nosso limite. Não trouxemos o suficiente para passar daqui."
         }
       ]
     },
@@ -3854,7 +4242,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Ainda não chegamos ao trecho que queríamos ver."
+          "expression": "triste",
+          "text": "Mas o trecho que viemos examinar ainda está mais à frente."
         }
       ]
     },
@@ -3864,7 +4253,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Não. Mas, se alguém se machucar ali, teremos menos meios de tirá-lo. Combinamos que pararíamos nessas condições."
+          "expression": "neutro",
+          "text": "Eu sei. E, se alguém se machucar lá dentro, teremos pouca coisa para ajudar na volta. Foi aqui que eu disse que pararíamos."
         }
       ]
     },
@@ -3881,12 +4271,14 @@
     {
       "line": 1193,
       "speaker": "Ghork",
-      "choice": "Vou marcar onde paramos.",
+      "choice": "Então vou marcar este ponto. Pelo menos vão saber até onde chegamos.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Anote o que vimos e por que paramos. Não diga que é impossível passar. Nós não conferimos."
+          "expression": "neutro",
+          "text": "E por quê. Não marque o próximo trecho como intransponível. Não sabemos disso; não fomos conferir."
         }
       ],
       "question": false
@@ -3894,12 +4286,14 @@
     {
       "line": 1194,
       "speaker": "Ghork",
-      "choice": "Eu explico por que paramos quando entregarmos o trabalho.",
+      "choice": "Na entrega, eu explico por que voltamos.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Explique comigo. Fui eu quem propôs esse plano."
+          "expression": "neutro",
+          "text": "Nós explicamos. Eu propus esse plano, Ghork. Você não precisa responder por ele sozinho."
         }
       ],
       "question": false
@@ -3910,7 +4304,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vamos voltar com mais dinheiro, mas sem saber o que há naquele trecho."
+          "expression": "triste",
+          "text": "Então continuo com o dinheiro dos treinos. E continuo sem poder dizer o que tem lá embaixo."
         }
       ]
     },
@@ -3920,7 +4315,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Sim. E as duas coisas precisam constar no relatório."
+          "expression": "neutro",
+          "text": "Foi o que aconteceu. Ponha as duas coisas no relatório, mesmo que não seja o final que queríamos."
         }
       ]
     },
@@ -3930,7 +4326,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Não quero que façam piada de Darvek quando contarmos."
+          "expression": "neutro",
+          "text": "Seja lá o que dissermos, não quero que o Darvek vire piada."
         }
       ]
     },
@@ -3940,7 +4337,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Nem eu. A reserva dele teria sido útil aqui. Também teria custado mais."
+          "expression": "neutro",
+          "text": "Não vai virar, se depender de mim. A reserva dele teria ajudado aqui. Também teríamos pago por ela."
         }
       ]
     },
@@ -3950,7 +4348,8 @@
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Mostrem o que investigaram e o que ainda não puderam verificar."
+          "expression": "neutro",
+          "text": "Primeiro, mostrem por onde passaram. Depois, onde tiveram que parar."
         }
       ]
     },
@@ -3960,7 +4359,8 @@
         {
           "speaker": "Ghork",
           "condition": ", X",
-          "text": "Preparamos uma reserva. Paramos para conferir um apoio e a usamos para reorganizar a retirada. Sobrou menos dinheiro para a preparação."
+          "expression": "neutro",
+          "text": "Montamos a reserva. Quando foi preciso verificar um suporte, paramos e usamos a reserva para organizar a saída. Sobrou menos do pagamento para os treinos."
         }
       ]
     },
@@ -3970,7 +4370,8 @@
         {
           "speaker": "Ghork",
           "condition": ", Y",
-          "text": "Levamos menos equipamento e voltamos ao encontrar instabilidade. Sobrou mais dinheiro, mas não examinamos o trecho além desta marca."
+          "expression": "neutro",
+          "text": "Levamos menos equipamento. Quando chegamos ao terreno instável, voltamos. Sobrou mais dinheiro, mas depois desta marca? Não conseguimos verificar."
         }
       ]
     },
@@ -3980,7 +4381,8 @@
         {
           "speaker": "Elune",
           "condition": "",
-          "text": "Vou marcar onde fizeram cada observação. O mapa também precisa mostrar o que ainda não sabemos."
+          "expression": "neutro",
+          "text": "Vou colocar cada observação aqui, onde vocês a fizeram. O espaço em branco fica em branco. Não quero que a próxima equipe entenda isso como caminho livre."
         }
       ]
     },
@@ -3990,7 +4392,8 @@
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "O relatório descreve o que vocês fizeram. Não prova que o restante esteja seguro para explorar. A guilda receberá o pagamento combinado; vocês o dividem conforme seu acordo."
+          "expression": "neutro",
+          "text": "Isso explica o serviço feito. Não libera o restante da mina para exploração. O pagamento combinado vai para a guilda; a divisão segue o acordo de vocês."
         }
       ]
     },
@@ -4007,12 +4410,14 @@
     {
       "line": 1227,
       "speaker": "Ghork",
-      "choice": "Quero incluir os gastos do plano.",
+      "choice": "Quero incluir o custo do plano também. Isso pesou na nossa escolha.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Inclua. Vou precisar desses valores para avaliar outra investigação."
+          "expression": "neutro",
+          "text": "Inclua. Se contratarmos outro levantamento, vou precisar saber quanto este exigiu."
         }
       ],
       "question": false
@@ -4020,12 +4425,14 @@
     {
       "line": 1228,
       "speaker": "Ghork",
-      "choice": "Quero explicar por que paramos.",
+      "choice": "Podemos explicar melhor a parada? Não quero que pareça que só nos cansamos do serviço.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Descreva o que encontraram. Não prometa que o próximo grupo encontrará as mesmas condições."
+          "expression": "neutro",
+          "text": "Descreva o que fez vocês pararem. Seja específico, mas não diga à próxima equipe o que ela vai encontrar. As condições podem mudar."
         }
       ],
       "question": false
@@ -4036,12 +4443,14 @@
         {
           "speaker": "Darvek",
           "condition": "papel:Darvek",
-          "text": "Usamos a reserva para reorganizar a equipe. Aqui estão os gastos."
+          "expression": "neutro",
+          "text": "A reserva permitiu reorganizar a equipe para a volta. Aqui estão as despesas, uma por uma."
         },
         {
           "speaker": "Zagra",
           "condition": "papel:Zagra",
-          "text": "Respeitamos o limite. O pagamento não muda aquilo que conseguimos descobrir."
+          "expression": "neutro",
+          "text": "Nosso plano terminava ali. Respeitamos isso. Receber o pagamento não nos dá uma resposta sobre o resto."
         }
       ]
     },
@@ -4051,7 +4460,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Terminei duas peças! Vou começar a oferecer meu trabalho."
+          "expression": "feliz",
+          "text": "Duas peças prontas! Duas! Vou começar a mostrar para as pessoas. Ver se alguém quer comprar alguma coisa."
         }
       ]
     },
@@ -4061,7 +4471,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Já?"
+          "expression": "confuso",
+          "text": "Duas? Quando você achou tempo para tudo isso?"
         }
       ]
     },
@@ -4071,7 +4482,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Era para eu esperar pela loja? Primeiro preciso descobrir quem quer comprar minhas roupas."
+          "expression": "feliz",
+          "text": "O quê, era para esperar a loja aparecer? Preciso de clientes antes de precisar de um balcão."
         }
       ]
     },
@@ -4088,12 +4500,14 @@
     {
       "line": 1246,
       "speaker": "Ghork",
-      "choice": "Deixa eu ver como ficaram.",
+      "choice": "Vamos, mostre. Quero ver o que você fez.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Esta é minha preferida. A outra deu mais trabalho... ainda estou brigada com aquela manga."
+          "expression": "feliz",
+          "text": "Esta é minha preferida. Aquela deu mais trabalho. Não pergunte pela manga. Eu e a manga ainda estamos discutindo."
         }
       ],
       "question": false
@@ -4101,12 +4515,14 @@
     {
       "line": 1247,
       "speaker": "Ghork",
-      "choice": "Ainda quero ajudar você com a loja.",
+      "choice": "Eu estava falando sério sobre a loja. Ainda quero ajudar você a chegar lá.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Eu sei. Mas olha o que já consegui fazer. Está vendo essa manga?"
+          "expression": "feliz",
+          "text": "Eu sei. Mas olhe esta parte primeiro. Aqui, a manga. Fui eu que fiz, Ghork."
         }
       ],
       "question": false
@@ -4117,7 +4533,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Estou. Eu também terminei um trabalho. Nas minas."
+          "expression": "feliz",
+          "text": "Estou olhando. Ficou boa. Também tenho uma coisa para contar... terminei um trabalho nas minas."
         }
       ]
     },
@@ -4127,7 +4544,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Nas minas? Depois vai me contar essa história inteira. Antes, um recado de Dam. E não vale responder prometendo uma casa nova."
+          "expression": "confuso",
+          "text": "Nas minas? Ah, você vai me contar tudo. Mas, primeiro, o Dam mandou um recado. Escute antes de prometer uma casa inteira."
         }
       ]
     },
@@ -4137,7 +4555,8 @@
         {
           "speaker": "Lala",
           "condition": ", lendo o recado de Dam",
-          "text": "\"Tem uma goteira no quarto comum. Estou cuidando do conserto, mas ainda falta material. Você consegue ajudar agora? Preciso saber para organizar o resto.\""
+          "expression": "neutro",
+          "text": "“Apareceu uma goteira no quarto coletivo. Estou organizando o conserto, mas falta material. Você consegue ajudar com alguma coisa agora? Preciso saber o que mais vou ter que arranjar.”"
         }
       ]
     },
@@ -4147,7 +4566,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Recebi minha parte do pagamento. Estava guardando para treinar mais."
+          "expression": "triste",
+          "text": "Estou com a minha parte do pagamento. Ia usar para treinar mais..."
         }
       ]
     },
@@ -4157,7 +4577,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Ele precisa de uma resposta para se organizar. Vou passar o que você disser."
+          "expression": "neutro",
+          "text": "Ele precisa saber, seja qual for a resposta. Diga o que você consegue fazer e eu passo o recado."
         }
       ]
     },
@@ -4167,7 +4588,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Posso mandar uma parte para o material. A casa inteira ainda vai ter que esperar."
+          "expression": "neutro",
+          "text": "Consigo mandar uma parte para o material. Diga isso a ele. A casa inteira vai demorar um pouco mais."
         }
       ]
     },
@@ -4177,7 +4599,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Ótimo. É isso que vou dizer. Ele vai perguntar quando chega."
+          "expression": "feliz",
+          "text": "Vou dizer. Ele vai perguntar quando chega. O que respondo?"
         }
       ]
     },
@@ -4187,7 +4610,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou confirmar o envio antes de prometer uma data."
+          "expression": "neutro",
+          "text": "Que vou combinar a entrega primeiro. Não quero deixar ele esperando por uma data que inventei."
         }
       ]
     },
@@ -4197,7 +4621,8 @@
         {
           "speaker": "Jorvi",
           "condition": "",
-          "text": "Confira o valor e para quem vai. Pirka leva na saída combinada. Eu guardo uma cópia."
+          "expression": "neutro",
+          "text": "Confira aqui a quantia e o nome de quem recebe. A Pirka leva na saída que combinamos. Esta cópia fica comigo."
         }
       ]
     },
@@ -4207,7 +4632,8 @@
         {
           "speaker": "Pirka",
           "condition": "",
-          "text": "Levo o que está no registro. Se a saída mudar, aviso. Nada de dizer que chegou antes de chegar."
+          "expression": "neutro",
+          "text": "É isso que vou levar. Se a saída mudar, eu aviso. Enquanto eu não entregar, não diga a eles que já chegou."
         }
       ]
     },
@@ -4217,7 +4643,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Certo. Quero uma cópia também."
+          "expression": "neutro",
+          "text": "Entendi. Posso ficar com uma cópia? Quero passar os dados certos para o Dam."
         }
       ]
     },
@@ -4227,7 +4654,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou guardar o dinheiro para a preparação. Diga que não consigo contribuir agora."
+          "expression": "triste",
+          "text": "Desta vez, preciso guardar para os treinos. Diga a ele... diga que não consigo mandar nada agora."
         }
       ]
     },
@@ -4237,7 +4665,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Vou dizer. Ele pode ficar decepcionado, Ghork. Mas precisa saber."
+          "expression": "neutro",
+          "text": "Está bem. Talvez ele fique decepcionado. Prefiro dar a sua resposta a deixar ele esperando."
         }
       ]
     },
@@ -4247,7 +4676,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Queria ter mais para oferecer."
+          "expression": "triste",
+          "text": "Achei que a esta altura já teria mais para mandar para ele."
         }
       ]
     },
@@ -4257,7 +4687,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Por enquanto, dê essa resposta. E, na próxima conversa, me conte como você está."
+          "expression": "neutro",
+          "text": "Vou dar o recado a ele. Mas, da próxima vez, conte como você está também, está bem?"
         }
       ]
     },
@@ -4267,7 +4698,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Você também vai me contar se vendeu as peças."
+          "expression": "feliz",
+          "text": "E você tem que me contar quando vender essas peças. Quero saber disso."
         }
       ]
     },
@@ -4277,7 +4709,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Vou contar mesmo se não vender. Você ainda vai ouvir muito sobre aquela manga."
+          "expression": "feliz",
+          "text": "Vou contar vendendo ou não. Você não vai escapar da história da manga."
         }
       ]
     },
@@ -4287,7 +4720,8 @@
         {
           "speaker": "Dorga",
           "condition": "",
-          "text": "Nossa guilda bancou expedições quando ninguém mais aceitava o custo. Agora vocês dão os contratos a quem acabou de chegar."
+          "expression": "raiva",
+          "text": "Quando ninguém queria pagar por aquelas expedições, nossa guilda pagou. Agora os contratos vão para gente que nem estava lá."
         }
       ]
     },
@@ -4297,7 +4731,8 @@
         {
           "speaker": "Meruna",
           "condition": "",
-          "text": "Avalio as propostas que recebo hoje. Os serviços de antes não substituem as informações de que preciso agora."
+          "expression": "neutro",
+          "text": "Eu não esqueci. Mas estou avaliando o trabalho proposto agora. Preciso dos detalhes, seja quem for que traga a proposta."
         }
       ]
     },
@@ -4307,7 +4742,8 @@
         {
           "speaker": "Dorga",
           "condition": "",
-          "text": "As famílias dos veteranos continuam aqui. Mudar seus critérios não fez essas pessoas desaparecerem."
+          "expression": "raiva",
+          "text": "E as famílias dos nossos veteranos? Ainda estão aqui, Meruna. Você pode mudar os critérios. Não pode esperar que elas deixem de precisar de trabalho."
         }
       ]
     },
@@ -4324,12 +4760,14 @@
     {
       "line": 1309,
       "speaker": "Ghork",
-      "choice": "Sua mão está tremendo.",
+      "choice": "Sua mão... você está bem?",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Anos de luta cobram seu preço. Meu fornecedor está cuidando disso."
+          "expression": "neutro",
+          "text": "São os anos de arena. Uma hora eles pesam. Meu fornecedor está cuidando disso."
         }
       ],
       "question": false
@@ -4337,12 +4775,14 @@
     {
       "line": 1310,
       "speaker": "Ghork",
-      "choice": "Está pronto para a classificação?",
+      "choice": "Então, pronto para as eliminatórias?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Pronto para os próximos que vierem tomar meu lugar."
+          "expression": "feliz",
+          "text": "Estou pronto para quem achar que chegou sua vez de tomar meu lugar."
         }
       ],
       "question": false
@@ -4353,7 +4793,8 @@
         {
           "speaker": "Savel",
           "condition": "",
-          "text": "É preciso cuidado para manter a preparação. Parar as doses sem acompanhamento seria pior."
+          "expression": "neutro",
+          "text": "O treinamento dele exige muito do corpo. Interromper as doses sem acompanhamento só agravaria a situação."
         }
       ]
     },
@@ -4363,7 +4804,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E o nosso treino? Você mandou Rask cancelar nossos horários."
+          "expression": "raiva",
+          "text": "Já que estamos falando de treino... foi você que fez o Rask cancelar os nossos."
         }
       ]
     },
@@ -4373,7 +4815,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Mandei. Seu mentor podia ter retirado a acusação. Não vou tirar minha equipe do caminho toda vez que alguém contestar o que conquistamos."
+          "expression": "raiva",
+          "text": "Fui eu. Seu mentor poderia ter retirado aquela acusação. Minha equipe não vai abrir espaço toda vez que alguém decidir que não merecemos o que conquistamos."
         }
       ]
     },
@@ -4390,12 +4833,14 @@
     {
       "line": 1320,
       "speaker": "Ghork",
-      "choice": "Então admita. Não quero que mudem essa história depois.",
+      "choice": "Então diga isso com todas as letras. Não venha chamar de erro de agenda depois.",
+      "expression": "raiva",
       "response": [
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Está admitido. Ainda vai ter que vencer na arena."
+          "expression": "neutro",
+          "text": "Acabei de dizer. Pronto. Agora tente me vencer na arena."
         }
       ],
       "question": false
@@ -4403,12 +4848,14 @@
     {
       "line": 1321,
       "speaker": "Ghork",
-      "choice": "É fácil ter prioridade quando os outros pagam por ela.",
+      "choice": "É fácil chamar de conquista quando quem abre mão de alguma coisa são os outros.",
+      "expression": "raiva",
       "response": [
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Manter meu lugar por todos esses anos também custou. Volte depois de fazer a sua parte."
+          "expression": "raiva",
+          "text": "Acha que fiquei neste lugar por tantos anos sem pagar um preço? Volte quando tiver feito tanto quanto eu."
         }
       ],
       "question": false
@@ -4419,7 +4866,8 @@
         {
           "speaker": "Guedra",
           "condition": ", se contribuiu",
-          "text": "Sem a sessão extra, vamos aproveitar o tempo que já tínhamos combinado. Mostre onde você perde o equilíbrio."
+          "expression": "neutro",
+          "text": "Não temos o treino extra, mas ainda temos nosso horário marcado. Vamos aproveitar. Mostre onde você perde o apoio."
         }
       ]
     },
@@ -4429,7 +4877,8 @@
         {
           "speaker": "Guedra",
           "condition": ", se guardou",
-          "text": "Com a sessão extra, temos mais tempo para acertar sua base. A vitória eu não posso prometer."
+          "expression": "neutro",
+          "text": "Com esse treino extra, dá para dedicar mais tempo à sua base. Nisso, consigo ajudar. Ganhar já é outra história."
         }
       ]
     },
@@ -4439,7 +4888,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Podemos começar pela parte em que eu paro de esticar a perna para compensar o braço curto."
+          "expression": "feliz",
+          "text": "Vamos começar pela parte em que tento fazer a perna ficar mais comprida porque meus braços não alcançam."
         }
       ]
     },
@@ -4449,7 +4899,8 @@
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "Bom. Faça o movimento devagar."
+          "expression": "neutro",
+          "text": "Então vamos pegar esse momento. Devagar, para eu enxergar."
         }
       ]
     },
@@ -4459,7 +4910,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Sua equipe se classificou. Ainda dá para fazer convites antes das eliminatórias. Quando confirmar a entrada, a equipe fica fechada."
+          "expression": "neutro",
+          "text": "Sua equipe está classificada. Ainda dá tempo de convidar pessoas antes do mata-mata. Confirme a inscrição quando estiver pronto; depois disso, a equipe fica fechada."
         }
       ]
     },
@@ -4469,7 +4921,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Meu nome está na lista?"
+          "expression": "confuso",
+          "text": "Ali. É o meu nome?"
         }
       ]
     },
@@ -4479,7 +4932,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Está. Pode ler."
+          "expression": "feliz",
+          "text": "É seu. Pode ler de novo, se quiser."
         }
       ]
     },
@@ -4496,22 +4950,26 @@
     {
       "line": 1353,
       "speaker": "Ghork",
-      "choice": "Vocês me ajudaram. Mas as próximas decisões continuam sendo minhas.",
+      "choice": "Você me ajudou a chegar aqui. Não esqueci disso. Mas, daqui para a frente, quero fazer minhas próprias escolhas.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "papel:Virmura",
-          "text": "Então diga o que quer fazer. Vou tentar ouvir antes de responder por você."
+          "expression": "neutro",
+          "text": "Está bem. Conte o que está pensando. Vou tentar não responder por você antes que termine."
         },
         {
           "speaker": "Borun",
           "condition": "papel:Borun",
-          "text": "É o que eu espero."
+          "expression": "feliz",
+          "text": "Ótimo. Eu ficaria decepcionado se você não fizesse isso."
         },
         {
           "speaker": "Sevrak",
           "condition": "papel:Sevrak",
-          "text": "E esteja pronto para defendê-las."
+          "expression": "neutro",
+          "text": "Então esteja pronto para explicar essas escolhas quando alguém questionar."
         }
       ],
       "question": false
@@ -4519,22 +4977,26 @@
     {
       "line": 1354,
       "speaker": "Ghork",
-      "choice": "Posso comemorar antes de receber a próxima cobrança?",
+      "choice": "Posso aproveitar meu nome ali antes de chegarmos à próxima lista do que devo fazer por todo mundo?",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "papel:Virmura",
-          "text": "Justo. Hoje podemos comemorar."
+          "expression": "feliz",
+          "text": "Pode. Tem razão. Hoje, vamos comemorar."
         },
         {
           "speaker": "Borun",
           "condition": "papel:Borun",
-          "text": "Pode começar reclamando do tamanho da minha lista."
+          "expression": "feliz",
+          "text": "Ah, minha lista está tão comprida assim? Então é melhor começar a reclamar agora."
         },
         {
           "speaker": "Sevrak",
           "condition": "papel:Sevrak",
-          "text": "Comemore. As cobranças podem esperar até terminarmos esta conversa."
+          "expression": "feliz",
+          "text": "Muito bem. Comemore. Vou guardar minhas cobranças até você pelo menos terminar esta conversa."
         }
       ],
       "question": false
@@ -4545,7 +5007,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Classificado, Ghork. Seu mentor achou onde treinar depois de comprar aquela briga, então."
+          "expression": "neutro",
+          "text": "Então se classificou, Ghork. Seu mentor conseguiu onde treinar depois de toda aquela confusão."
         }
       ]
     },
@@ -4555,7 +5018,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Achou. Tivemos que refazer tudo o que você atrapalhou."
+          "expression": "raiva",
+          "text": "Conseguimos. Teria sido mais fácil sem você nos obrigar a refazer tudo."
         }
       ]
     },
@@ -4565,7 +5029,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Agora vamos ver se adiantou."
+          "expression": "neutro",
+          "text": "Então vamos ver o que conseguiram fazer."
         }
       ]
     },
@@ -4575,7 +5040,8 @@
         {
           "speaker": "Nyra",
           "condition": "",
-          "text": "Tenho um turno livre no pátio e duas propostas. Ghork, pode olhar o espaço com eles? Quero saber quem vai cuidar dele depois que eu abrir a porta."
+          "expression": "neutro",
+          "text": "Sobrou um horário à noite no pátio e tenho duas pessoas querendo usar. Ghork, dê uma olhada com elas. Antes de abrir, quero saber quem vai cuidar do lugar."
         }
       ]
     },
@@ -4585,7 +5051,8 @@
         {
           "speaker": "Brakka",
           "condition": "",
-          "text": "Quero oferecer treino depois do trabalho. Tem gente que nunca consegue chegar a tempo das aulas."
+          "expression": "neutro",
+          "text": "Treino depois do trabalho. É isso que estou pedindo. Tem gente ainda no serviço quando as aulas começam. Nunca consegue participar."
         }
       ]
     },
@@ -4595,7 +5062,8 @@
         {
           "speaker": "Nima",
           "condition": "",
-          "text": "Eu preciso de uma base para as entregas noturnas. Saímos juntos e conferimos quem voltou. Cada um saindo de um canto acaba sozinho na rua."
+          "expression": "neutro",
+          "text": "E eu preciso de um lugar para despachar as entregas noturnas. Saímos juntos, conferimos quem voltou. Sem uma base, cada um acaba andando sozinho por essas ruas."
         }
       ]
     },
@@ -4605,7 +5073,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Não dá para dividir o turno?"
+          "expression": "confuso",
+          "text": "Um de vocês não podia começar depois? Dividir a noite?"
         }
       ]
     },
@@ -4615,7 +5084,8 @@
         {
           "speaker": "Nyra",
           "condition": "",
-          "text": "Só se as caixas atravessarem quem está treinando. E não tenho quem cuide do pátio em outro horário."
+          "expression": "neutro",
+          "text": "Se conseguir fazer as caixas atravessarem as pessoas. É um horário, Ghork. Não tenho quem cuide do pátio em outro momento."
         }
       ]
     },
@@ -4625,7 +5095,8 @@
         {
           "speaker": "Nima",
           "condition": "",
-          "text": "A carga entra por aqui. Essa passagem precisa ficar livre."
+          "expression": "neutro",
+          "text": "As cargas passam por aqui. Bloqueie isso e nada entra nem sai."
         }
       ]
     },
@@ -4635,7 +5106,8 @@
         {
           "speaker": "Brakka",
           "condition": "",
-          "text": "Os bancos cabem aqui. Mas, se encher de caixas, não sobra espaço para treinar."
+          "expression": "neutro",
+          "text": "Posso pôr os bancos aqui. A menos que fique tudo cheio de caixas, claro. Aí terei uma turma sem espaço nem para ficar em pé."
         }
       ]
     },
@@ -4655,7 +5127,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou ajudar Brakka a organizar o treino."
+          "expression": "neutro",
+          "text": "Vamos abrir espaço para os treinos do Brakka. Eu ajudo a preparar."
         }
       ]
     },
@@ -4665,7 +5138,8 @@
         {
           "speaker": "Nima",
           "condition": "",
-          "text": "Então vou procurar outro lugar para o despacho. Mais trabalho do que eu esperava."
+          "expression": "triste",
+          "text": "Então preciso de outro lugar para as entregas. Achei que finalmente fôssemos resolver isso."
         }
       ]
     },
@@ -4675,7 +5149,8 @@
         {
           "speaker": "Brakka",
           "condition": "",
-          "text": "Vou começar pelos bancos. Ghork, pegue a lista e veja quem pode vir. Eu já estava contando até quem não respondeu."
+          "expression": "feliz",
+          "text": "Certo! Primeiro, os bancos. Ghork, confira esta lista, veja quem consegue vir. Talvez eu tenha me animado antes de receber todas as respostas."
         }
       ]
     },
@@ -4685,7 +5160,8 @@
         {
           "speaker": "Nyra",
           "condition": "",
-          "text": "Lista recebida. Quem guardar o material também fecha o pátio."
+          "expression": "neutro",
+          "text": "A lista está certa. Quem guardar o material tranca o pátio. Não quero que deixem isso para mim."
         }
       ]
     },
@@ -4695,7 +5171,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Combinado. Essa parte não vai sobrar para você."
+          "expression": "neutro",
+          "text": "Combinamos cuidar do lugar. Isso inclui a fechadura."
         }
       ]
     },
@@ -4705,7 +5182,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou ajudar Nima a organizar as entregas."
+          "expression": "neutro",
+          "text": "Vamos dar uma base às entregas da Nima. Eu ajudo com as caixas."
         }
       ]
     },
@@ -4715,7 +5193,8 @@
         {
           "speaker": "Brakka",
           "condition": "",
-          "text": "Certo. Ainda preciso de um lugar para treinar. Vou procurar outro apoio."
+          "expression": "triste",
+          "text": "Está bem. Vou continuar procurando. Aquelas pessoas ainda precisam de onde treinar, mesmo que não seja aqui."
         }
       ]
     },
@@ -4725,7 +5204,8 @@
         {
           "speaker": "Nima",
           "condition": "",
-          "text": "Ghork, leve estas etiquetas para as caixas e confira os retornos comigo. Se ninguém reconhecer uma caixa, separe."
+          "expression": "neutro",
+          "text": "Ótimo. Aqui estão as etiquetas. Confira as caixas comigo, depois os retornos. O que ninguém reconhecer fica de lado. Nada de adivinhar."
         }
       ]
     },
@@ -4735,7 +5215,8 @@
         {
           "speaker": "Nyra",
           "condition": "",
-          "text": "Recebido. E mantenham a passagem livre até o último voltar."
+          "expression": "neutro",
+          "text": "Está bem. Mantenham a passagem livre até a última pessoa voltar. Não só até cansarem de prestar atenção nela."
         }
       ]
     },
@@ -4745,7 +5226,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou lembrar de tirar o banco do caminho. Já descobri como isso atrapalha uma fuga."
+          "expression": "feliz",
+          "text": "Nada de banco no caminho. Pode acreditar: aprendi o estrago que um banco faz quando você precisa sair depressa."
         }
       ]
     },
@@ -4765,7 +5247,8 @@
         {
           "speaker": "Sura",
           "condition": "",
-          "text": "Quero evitar mais feridos naquele pátio. Posso reunir os registros de atendimento sem revelar quem são os pacientes."
+          "expression": "neutro",
+          "text": "Continuo atendendo gente que se machucou naquele pátio. Quero que isso pare. Podemos usar os registros de atendimento para mostrar o que acontece sem expor os pacientes."
         }
       ]
     },
@@ -4775,7 +5258,8 @@
         {
           "speaker": "Edrin",
           "condition": "",
-          "text": "Alguns querem falar em público. Proponho ouvir quem se oferecer e usar os depoimentos para cobrar os responsáveis."
+          "expression": "neutro",
+          "text": "Algumas dessas pessoas querem falar em público, com nome. Eu reuniria quem quiser depor e cobraria uma resposta dos responsáveis."
         }
       ]
     },
@@ -4785,7 +5269,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Querem resolver o mesmo problema, mas de jeitos diferentes."
+          "expression": "confuso",
+          "text": "Vocês dois querem impedir que mais gente se machuque. O que impede vocês de fazer isso juntos?"
         }
       ]
     },
@@ -4795,7 +5280,8 @@
         {
           "speaker": "Sura",
           "condition": "",
-          "text": "E discordamos sobre o risco de expor essas pessoas. Antes de decidir, ouça quem se machucou."
+          "expression": "neutro",
+          "text": "O que acontece com essas pessoas depois. É aí que discordamos. Antes de escolher, ouça alguém que se machucou."
         }
       ]
     },
@@ -4805,7 +5291,8 @@
         {
           "speaker": "Ferido",
           "condition": "",
-          "text": "Pode usar o que eu contar, mas sem meu nome. Não quero que quem ainda me dá trabalho me reconheça."
+          "expression": "triste",
+          "text": "Podem usar o que eu contar. Só... sem nome. Ainda preciso que aquela gente me contrate. Não posso deixar que me reconheçam nisso."
         }
       ]
     },
@@ -4822,12 +5309,14 @@
     {
       "line": 1485,
       "speaker": "Ghork",
-      "choice": "Vou respeitar isso.",
+      "choice": "Está bem. Seu nome fica de fora.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Ferido",
           "condition": "",
-          "text": "Então pode perguntar sobre o aparelho."
+          "expression": "neutro",
+          "text": "Então... pergunte sobre o equipamento. Disso eu posso falar."
         }
       ],
       "question": false
@@ -4835,12 +5324,14 @@
     {
       "line": 1486,
       "speaker": "Ghork",
-      "choice": "O que posso contar desta conversa?",
+      "choice": "Diga o que você se sente à vontade para deixar a gente contar.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Ferido",
           "condition": "",
-          "text": "O que aconteceu. Não diga meu nome nem onde trabalho."
+          "expression": "neutro",
+          "text": "O que aconteceu comigo. Meu nome, não. Nem onde trabalho."
         }
       ],
       "question": false
@@ -4851,7 +5342,8 @@
         {
           "speaker": "Ferido",
           "condition": "",
-          "text": "O apoio cedeu durante o exercício. Disseram que eu não tinha jeito. Quem me ajudou guardou uma peça e levou para Guedra examinar."
+          "expression": "triste",
+          "text": "O suporte cedeu no meio do exercício. Disseram que eu era desastrado. Quem me ajudou guardou um pedaço e levou para a Guedra. Pelo menos alguém quis olhar aquilo."
         }
       ]
     },
@@ -4861,7 +5353,8 @@
         {
           "speaker": "Sura",
           "condition": "",
-          "text": "Guedra aceitou emprestar a peça. Leve esta autorização e volte com ela. Primeiro precisamos examiná-la; só encontrá-la não prova de quem foi a culpa."
+          "expression": "neutro",
+          "text": "A Guedra vai nos emprestar a peça. Leve esta autorização e traga o pedaço. Vamos ver o que ele pode nos dizer antes de decidir de quem é a culpa."
         }
       ]
     },
@@ -4871,7 +5364,8 @@
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "Trouxeram a peça para mim. Eu não estava lá quando quebrou. Dou minhas aulas aqui, não naquele pátio."
+          "expression": "neutro",
+          "text": "Trouxeram isso para mim depois. Não vi quebrar, Ghork. Eu dou aula aqui; o acidente foi em outro pátio."
         }
       ]
     },
@@ -4881,7 +5375,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Preciso saber o que o desgaste revela, sem adivinhar o resto do acidente."
+          "expression": "neutro",
+          "text": "Entendi. Precisamos que alguém examine o dano, não que complete a história que ninguém viu."
         }
       ]
     },
@@ -4891,7 +5386,8 @@
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "Durn pode examinar. Aqui está. Traga de volta; precisamos guardar a peça."
+          "expression": "neutro",
+          "text": "Leve ao Durn. Ele pode fazer isso. E traga de volta depois. Precisamos guardar essa peça."
         }
       ]
     },
@@ -4901,7 +5397,8 @@
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "Dá para ver uma falha aqui. Mas só a peça não diz quem instalou nem quem sabia desse desgaste."
+          "expression": "neutro",
+          "text": "Está vendo aqui? Há uma falha. Isso eu consigo mostrar. Quem montou, quem percebeu o desgaste antes de quebrar... a peça não me conta isso."
         }
       ]
     },
@@ -4918,12 +5415,14 @@
     {
       "line": 1508,
       "speaker": "Ghork",
-      "choice": "Deixe isso claro no seu registro.",
+      "choice": "Anote isso também. Não quero que seu laudo diga mais do que você pode afirmar.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "Vou descrever o estado da peça. Para acusar alguém, precisam de outras provas."
+          "expression": "neutro",
+          "text": "Não vai dizer. Vou descrever o que encontrei. Para acusar alguém, vocês vão precisar de mais do que isso."
         }
       ],
       "question": false
@@ -4931,12 +5430,14 @@
     {
       "line": 1509,
       "speaker": "Ghork",
-      "choice": "Quero mostrar o exame aos envolvidos antes de levar o caso adiante.",
+      "choice": "Deixe as pessoas envolvidas lerem antes de levarmos isso adiante. Elas precisam saber o que estamos associando ao relato delas.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "Leve uma cópia. Se encontrarem algo errado, quero saber."
+          "expression": "neutro",
+          "text": "Leve uma cópia. Se encontrarem alguma coisa errada, tragam para mim. Prefiro corrigir agora."
         }
       ],
       "question": false
@@ -4947,7 +5448,8 @@
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "Vou guardar a peça junto com o registro de quem a examinou."
+          "expression": "neutro",
+          "text": "Vou guardar a peça aqui, junto com o registro de quem examinou. Podemos precisar dela de novo."
         }
       ]
     },
@@ -4957,7 +5459,8 @@
         {
           "speaker": "Edrin",
           "condition": ", na enfermaria",
-          "text": "Com isso, podemos pedir uma investigação. Ainda não prova o que alguém pretendia fazer."
+          "expression": "neutro",
+          "text": "Isso basta para pedir uma investigação. Não para dizer que alguém quis que acontecesse."
         }
       ]
     },
@@ -4967,7 +5470,8 @@
         {
           "speaker": "Sura",
           "condition": "",
-          "text": "Vou conferir se algum detalhe da cópia revela quem pediu sigilo."
+          "expression": "neutro",
+          "text": "Deixe eu conferir a cópia mais uma vez. Tirar o nome não protege ninguém se os detalhes entregarem a pessoa."
         }
       ]
     },
@@ -4977,7 +5481,8 @@
         {
           "speaker": "Edrin",
           "condition": "",
-          "text": "Posso reunir quem quiser depor. Quem pediu sigilo não entra na lista de nomes."
+          "expression": "neutro",
+          "text": "Vou reunir quem quer depor. Só essas pessoas. Quem pediu sigilo fica fora da lista de nomes."
         }
       ]
     },
@@ -4987,7 +5492,8 @@
         {
           "speaker": "Sura",
           "condition": "",
-          "text": "Posso apresentar as lesões e o exame sem revelar os pacientes. Ghork, escolha qual apresentação vai ajudar a preparar. Não dá para assumir as duas."
+          "expression": "neutro",
+          "text": "E eu posso apresentar os ferimentos e as conclusões do Durn sem identificar os pacientes. Ghork, qual apresentação você vai ajudar a preparar? Não dá tempo de fazer as duas."
         }
       ]
     },
@@ -4997,7 +5503,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Reunimos os relatos e o exame da peça. Os pacientes autorizaram o uso, desde que seus nomes não apareçam."
+          "expression": "neutro",
+          "text": "Aqui estão os relatos que recolhemos e as conclusões sobre a peça quebrada. Os pacientes permitiram que usássemos suas histórias. Não que revelássemos seus nomes."
         }
       ]
     },
@@ -5007,7 +5514,8 @@
         {
           "speaker": "Sura",
           "condition": "",
-          "text": "Pedimos uma investigação dos equipamentos e das condições do pátio. Estas são as informações que temos até agora."
+          "expression": "neutro",
+          "text": "Por favor, investigue o equipamento e as condições daquele pátio. Isto é o que conseguimos apurar. Não queremos esperar alguém se machucar de novo."
         }
       ]
     },
@@ -5017,7 +5525,8 @@
         {
           "speaker": "Seldan",
           "condition": "",
-          "text": "Vou receber o material e registrar o pedido de investigação. Ainda não temos como apontar um culpado."
+          "expression": "neutro",
+          "text": "Vou receber o material e registrar o pedido. Apontar um responsável vem depois da investigação, não antes."
         }
       ]
     },
@@ -5027,7 +5536,8 @@
         {
           "speaker": "Edrin",
           "condition": "",
-          "text": "Vou continuar procurando quem queira depor. Quem aparece nessa cópia terá seu sigilo respeitado."
+          "expression": "neutro",
+          "text": "Vou continuar procurando quem queira depor. Isso não muda o que prometemos aos pacientes deste relatório."
         }
       ]
     },
@@ -5037,7 +5547,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Estas pessoas decidiram falar. O relato de quem pediu sigilo continua separado."
+          "expression": "neutro",
+          "text": "Todos aqui escolheram falar. Mantivemos o relato sigiloso separado. Aquele paciente não faz parte destes depoimentos."
         }
       ]
     },
@@ -5047,7 +5558,8 @@
         {
           "speaker": "Edrin",
           "condition": "",
-          "text": "Antes de confirmar, cada testemunha pode corrigir o que disse. O exame explica o estado da peça; precisamos de vocês para contar o que viram."
+          "expression": "neutro",
+          "text": "Antes de confirmar qualquer coisa, releiam seus depoimentos. Corrijam o que precisar. Já temos o exame da peça; de vocês, precisamos do que viram."
         }
       ]
     },
@@ -5057,7 +5569,8 @@
         {
           "speaker": "Testemunha",
           "condition": "figurante",
-          "text": "Quero corrigir quando aconteceu. Foi depois de mudarem o exercício, não antes."
+          "expression": "confuso",
+          "text": "Esta parte está errada. A ordem. Aconteceu depois que mudaram o exercício, não antes."
         }
       ]
     },
@@ -5067,7 +5580,8 @@
         {
           "speaker": "Edrin",
           "condition": "",
-          "text": "Corrigido. O restante está certo?"
+          "expression": "neutro",
+          "text": "Depois da mudança. Pronto, corrigido. O resto está como você lembra?"
         }
       ]
     },
@@ -5077,7 +5591,8 @@
         {
           "speaker": "Testemunha",
           "condition": "",
-          "text": "Está."
+          "expression": "neutro",
+          "text": "Sim. Está certo."
         }
       ]
     },
@@ -5087,7 +5602,8 @@
         {
           "speaker": "Seldan",
           "condition": "",
-          "text": "Vou receber os depoimentos e o pedido. Na investigação, também teremos de ouvir os responsáveis pelo pátio."
+          "expression": "neutro",
+          "text": "Vou receber os depoimentos e o pedido. Também precisamos ouvir os responsáveis pelo pátio antes de chegar a uma conclusão."
         }
       ]
     },
@@ -5097,7 +5613,8 @@
         {
           "speaker": "Sura",
           "condition": "",
-          "text": "Continuarei atendendo quem precisar. E o paciente que pediu sigilo não aceitou ser identificado só porque houve uma audiência."
+          "expression": "neutro",
+          "text": "Vou continuar atendendo quem precisar de mim. E, por favor, lembrem: uma audiência pública não desfaz uma promessa de sigilo."
         }
       ]
     },
@@ -5117,7 +5634,8 @@
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "Vou ceder esta armação a um projeto. Korr quer aproveitar as peças; Velka quer usá-la inteira. Vamos decidir antes que alguém pegue uma ferramenta."
+          "expression": "neutro",
+          "text": "Vou doar esta estrutura para um projeto. Korr quer as peças; Velka quer ela inteira. Ninguém pega ferramenta até decidirmos."
         }
       ]
     },
@@ -5127,7 +5645,8 @@
         {
           "speaker": "Korr",
           "condition": "",
-          "text": "Com esse material, faço proteções para quem não pode pagar caro. Não dá para equipar a cidade inteira."
+          "expression": "feliz",
+          "text": "Olhe esse material! Dá para fazer proteção que as pessoas consigam pagar. Não para Terminus inteira, antes que alguém pergunte. Mas alguns conjuntos."
         }
       ]
     },
@@ -5137,7 +5656,8 @@
         {
           "speaker": "Velka",
           "condition": "",
-          "text": "Eu a uso para ensinar um movimento. Posso demonstrar. Se desmontarmos, não teremos como praticá-lo aqui."
+          "expression": "neutro",
+          "text": "E eu posso ensinar com ela assim. Deixem eu mostrar o movimento. Depois de desmontada, perdemos onde praticar."
         }
       ]
     },
@@ -5147,7 +5667,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Quero ver antes de escolher."
+          "expression": "neutro",
+          "text": "Quero ver. Não quero escolher só pelas duas descrições do mesmo monte de metal."
         }
       ]
     },
@@ -5157,7 +5678,8 @@
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "Deixem a passagem livre. Velka, mostre onde muda o apoio."
+          "expression": "neutro",
+          "text": "Deem espaço para ela. Mantenham a passagem livre. Velka, mostre a transferência de peso."
         }
       ]
     },
@@ -5167,7 +5689,8 @@
         {
           "speaker": "Velka",
           "condition": "",
-          "text": "Aqui. Precisamos deste intervalo entre os apoios. Ghork, observe primeiro. Não precisa forçar a perna para concordar comigo."
+          "expression": "neutro",
+          "text": "Aqui. Viu quanto espaço preciso entre os apoios? Por enquanto, só olhe, Ghork. Não preciso que você force a perna para provar meu argumento."
         }
       ]
     },
@@ -5177,7 +5700,8 @@
         {
           "speaker": "Korr",
           "condition": "",
-          "text": "Agora entendi. Mas preciso justamente dessas partes. Se eu tirar, não dá mais para fazer o movimento."
+          "expression": "neutro",
+          "text": "Ah. Sim, agora entendi. Mas são justamente as peças que eu usaria. Não consigo tirar sem acabar com esse movimento."
         }
       ]
     },
@@ -5194,12 +5718,14 @@
     {
       "line": 1589,
       "speaker": "Ghork",
-      "choice": "Korr, o que você conseguiria fazer?",
+      "choice": "Korr, explique melhor. O que daria para fazer com isso?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Korr",
           "condition": "",
-          "text": "Alguns conjuntos de proteção, todos testados antes do uso. Quero aproveitar esse material para quem não consegue comprar equipamento novo."
+          "expression": "feliz",
+          "text": "Alguns conjuntos de proteção. Testados antes de alguém vestir, claro. Pense em quem está se virando como pode porque equipamento novo custa caro demais."
         }
       ],
       "question": true
@@ -5207,12 +5733,14 @@
     {
       "line": 1590,
       "speaker": "Ghork",
-      "choice": "Velka, quem vai poder aprender?",
+      "choice": "Velka, se mantivermos a estrutura, quem vai poder usar?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Velka",
           "condition": "",
-          "text": "Quem vier às práticas que eu organizar. Não basta guardar a armação; vou ter que dar as aulas."
+          "expression": "neutro",
+          "text": "Quem vier às aulas que eu organizar. E eu vou ensinar. Não pediria para você preservar isso só para eu admirar a estrutura parada aqui."
         }
       ],
       "question": true
@@ -5223,7 +5751,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou apoiar as proteções. Korr, vamos conferir as peças antes de desmontar."
+          "expression": "neutro",
+          "text": "Vou apoiar as proteções. Korr, vamos conferir o que temos antes de soltar qualquer peça."
         }
       ]
     },
@@ -5233,7 +5762,8 @@
         {
           "speaker": "Velka",
           "condition": "",
-          "text": "Eu queria manter a armação. Vou buscar outra forma de ensinar, mas não vou fingir que consigo substituí-la amanhã."
+          "expression": "triste",
+          "text": "Eu queria manter a estrutura. Vou procurar outro jeito de ensinar o movimento, mas... não, não consigo substituir isso amanhã."
         }
       ]
     },
@@ -5243,7 +5773,8 @@
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "Podem começar. Korr desmonta; você anota as peças que saírem."
+          "expression": "neutro",
+          "text": "Está bem. Korr desmonta. Ghork, anote cada peça que sair. Não vamos perder nada pelo chão."
         }
       ]
     },
@@ -5253,7 +5784,8 @@
         {
           "speaker": "Korr",
           "condition": "",
-          "text": "Vamos testar o primeiro conjunto antes de usar. Vai levar meu nome. Se algo falhar, quero que saibam quem fez."
+          "expression": "neutro",
+          "text": "O primeiro conjunto vai ser testado antes de ser usado. E leva meu nome. Se der problema, quero que venham falar comigo."
         }
       ]
     },
@@ -5263,7 +5795,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou manter a armação inteira e ajudar Velka com as aulas."
+          "expression": "neutro",
+          "text": "A estrutura fica inteira. Velka, vou ajudar você a começar as aulas."
         }
       ]
     },
@@ -5273,7 +5806,8 @@
         {
           "speaker": "Korr",
           "condition": "",
-          "text": "Vou buscar outro material. Só não deixem isso pegando poeira depois de tanta conversa."
+          "expression": "triste",
+          "text": "Vou encontrar outro material. Só... usem, está bem? Depois disso tudo, não quero ver a estrutura aqui juntando poeira."
         }
       ]
     },
@@ -5283,7 +5817,8 @@
         {
           "speaker": "Velka",
           "condition": "",
-          "text": "Também não quero isso. Vou combinar a primeira aula com Guedra."
+          "expression": "neutro",
+          "text": "Nem eu. Vou falar com a Guedra e marcar a primeira aula."
         }
       ]
     },
@@ -5293,7 +5828,8 @@
         {
           "speaker": "Durn",
           "condition": "",
-          "text": "Então fica para as aulas. Vou registrar a entrega; a armação sai inteira."
+          "expression": "neutro",
+          "text": "Então fica para as aulas. Vou registrar a entrega. Uma estrutura, ainda inteira."
         }
       ]
     },
@@ -5313,7 +5849,8 @@
         {
           "speaker": "Tessa",
           "condition": "",
-          "text": "A cisterna está quase pronta, mas os trabalhadores ainda não receberam. Queremos segurar a entrega até pagarem tudo."
+          "expression": "raiva",
+          "text": "Estamos quase terminando a cisterna e a equipe ainda não recebeu. Queremos o pagamento antes da entrega. Depois que a chave sair da nossa mão, o que sobra para negociar?"
         }
       ]
     },
@@ -5323,7 +5860,8 @@
         {
           "speaker": "Mavren",
           "condition": "",
-          "text": "Propus deixar o dinheiro com Jorvi, para ele liberar quando entregarmos. Precisamos conferir o valor e as condições primeiro."
+          "expression": "neutro",
+          "text": "Propus deixar o dinheiro com Jorvi para liberar na entrega. Mas precisamos conferir a quantia e as condições. Não estou pedindo que ninguém aceite só na confiança."
         }
       ]
     },
@@ -5333,7 +5871,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "O dinheiro está lá ou só prometeram?"
+          "expression": "neutro",
+          "text": "O dinheiro já está com Jorvi? Ou ainda estamos falando de uma promessa?"
         }
       ]
     },
@@ -5343,7 +5882,8 @@
         {
           "speaker": "Mavren",
           "condition": "",
-          "text": "Vou conferir. Não entrego a chave só porque alguém disse que pagou."
+          "expression": "neutro",
+          "text": "Vamos descobrir. Até lá, a chave fica aqui. Alguém dizer que pagou não basta."
         }
       ]
     },
@@ -5353,7 +5893,8 @@
         {
           "speaker": "Tessa",
           "condition": "",
-          "text": "Antes de voltar com tudo decidido, ouça quem está esperando receber."
+          "expression": "neutro",
+          "text": "E, antes de voltar com a resposta pronta, ouça quem está esperando pelo salário."
         }
       ]
     },
@@ -5363,7 +5904,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou conferir as contas e o depósito. Depois volto para vocês decidirem sabendo o que existe."
+          "expression": "neutro",
+          "text": "Vou comparar o que devem com o depósito e trazer a resposta. Assim vocês vão saber o que estão pedindo que aceitem."
         }
       ]
     },
@@ -5373,7 +5915,8 @@
         {
           "speaker": "Jorvi",
           "condition": "",
-          "text": "O dinheiro está aqui. Comparem esta cópia com a lista do que é devido."
+          "expression": "neutro",
+          "text": "O dinheiro está aqui. Esta é a sua cópia do registro. Confira com cada pagamento devido."
         }
       ]
     },
@@ -5390,12 +5933,14 @@
     {
       "line": 1658,
       "speaker": "Ghork",
-      "choice": "O contratante pode sacar antes da entrega?",
+      "choice": "O cliente pode retirar o dinheiro antes de entregarmos a cisterna?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Jorvi",
           "condition": "",
-          "text": "Pelo acordo que aceitei, não. Esse dinheiro está reservado para os pagamentos deste registro."
+          "expression": "neutro",
+          "text": "Não. Pelo acordo que aceitei, está reservado para estes pagamentos. O cliente não pode simplesmente retirar."
         }
       ],
       "question": true
@@ -5403,12 +5948,14 @@
     {
       "line": 1659,
       "speaker": "Ghork",
-      "choice": "Quem confirma a entrega?",
+      "choice": "E quem precisa confirmar que a entrega foi concluída?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Jorvi",
           "condition": "",
-          "text": "Quem receber a obra e os representantes dos trabalhadores. Não libero o dinheiro sem a confirmação deles."
+          "expression": "neutro",
+          "text": "Quem recebe e os representantes dos trabalhadores. Preciso da confirmação dos dois lados antes de liberar qualquer quantia."
         }
       ],
       "question": true
@@ -5419,7 +5966,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E se os trabalhadores não aceitarem o acordo?"
+          "expression": "neutro",
+          "text": "E se os trabalhadores lerem isso e ainda assim não aceitarem?"
         }
       ]
     },
@@ -5429,7 +5977,8 @@
         {
           "speaker": "Jorvi",
           "condition": "",
-          "text": "Não entregue a chave como se tivessem aceitado. Leve uma cópia para discutirem."
+          "expression": "neutro",
+          "text": "Então não entregue a chave dizendo que concordaram. Leve a cópia. Deixe que leiam por conta própria."
         }
       ]
     },
@@ -5439,7 +5988,8 @@
         {
           "speaker": "Mavren",
           "condition": "",
-          "text": "Conferi a lista. O depósito cobre toda a dívida. Nessas condições, posso terminar a obra."
+          "expression": "neutro",
+          "text": "Conferi a lista. Está tudo lá, o suficiente para cobrir a dívida. Nessas condições, estou disposto a terminar e entregar."
         }
       ]
     },
@@ -5449,7 +5999,8 @@
         {
           "speaker": "Tessa",
           "condition": "",
-          "text": "Dinheiro reservado é melhor que promessa. Mas ainda quero receber antes de entregar. Enquanto a obra está conosco, podemos exigir isso."
+          "expression": "neutro",
+          "text": "É melhor do que uma promessa, sim. Ainda quero os salários pagos primeiro. Podemos exigir isso enquanto a cisterna estiver nas nossas mãos."
         }
       ]
     },
@@ -5490,7 +6041,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "O depósito existe, mas vou apoiar o pagamento antes da entrega."
+          "expression": "neutro",
+          "text": "Conferimos o depósito. Ele existe. Mesmo assim, apoio esperar o pagamento da equipe antes de entregar a chave."
         }
       ]
     },
@@ -5500,7 +6052,8 @@
         {
           "speaker": "Tessa",
           "condition": "",
-          "text": "Vou anotar quem apoia essa decisão comigo. Quem discordar pode falar, como acabou de fazer."
+          "expression": "neutro",
+          "text": "Vou anotar quem apoia essa decisão comigo. Quem não apoiar, pode dizer. Não vou falar por vocês."
         }
       ]
     },
@@ -5510,7 +6063,8 @@
         {
           "speaker": "Mavren",
           "condition": "",
-          "text": "Eu discordo. Vou respeitar a retenção da chave, mas preciso arranjar trabalho enquanto esperamos."
+          "expression": "triste",
+          "text": "Não concordo. Não vou tirar a chave das mãos de vocês, mas não posso passar essa espera sem trabalho. Vou ter que procurar."
         }
       ]
     },
@@ -5520,7 +6074,8 @@
         {
           "speaker": "Tessa",
           "condition": "",
-          "text": "Essa conversa não quitou a dívida. Amanhã ainda vamos ter que negociar."
+          "expression": "neutro",
+          "text": "Ainda não recebemos, Ghork. Isso não acaba porque concordamos. Amanhã, vamos ter que negociar de novo."
         }
       ]
     },
@@ -5530,7 +6085,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu sei. Vou manter meu apoio, sem fingir que esperar não custa nada."
+          "expression": "neutro",
+          "text": "Eu sei. Vou manter o que disse. E não vou dizer ao Mavren que essa espera não custa nada a ele."
         }
       ]
     },
@@ -5540,7 +6096,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou ajudar a terminar. Conferimos o depósito, e o dinheiro só sai com a participação dos representantes."
+          "expression": "neutro",
+          "text": "Vou ajudar a terminar. Conferimos o dinheiro, e os representantes precisam confirmar a entrega antes da liberação."
         }
       ]
     },
@@ -5550,7 +6107,8 @@
         {
           "speaker": "Tessa",
           "condition": "",
-          "text": "A garantia existe. Eu preferia receber antes, mas quem aceitou esse acordo pode declarar seu apoio."
+          "expression": "neutro",
+          "text": "O dinheiro está garantido. Reconheço isso. Ainda preferia receber primeiro. Quem quiser aceitar esse acordo pode falar por si."
         }
       ]
     },
@@ -5560,7 +6118,8 @@
         {
           "speaker": "Mavren",
           "condition": "",
-          "text": "Chave entregue, pagamento autorizado. Antes de irmos, quero que cada um receba sua cópia."
+          "expression": "neutro",
+          "text": "A chave foi entregue. O pagamento está autorizado. Antes de alguém ir embora, confira se está com sua cópia."
         }
       ]
     },
@@ -5570,7 +6129,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Depois de carregar tanto papel, eu ia desconfiar se acabasse só num aperto de mão."
+          "expression": "feliz",
+          "text": "Depois de carregar tanto papel, eu ficaria preocupado se isso terminasse num “confia em mim” e um aperto de mão."
         }
       ]
     },
@@ -5590,7 +6150,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Tenho uma vaga de apresentação antes das eliminatórias e duas propostas. Não cabe tudo no horário."
+          "expression": "neutro",
+          "text": "Tenho um horário de exibição antes do mata-mata. Duas propostas para ele. Por favor, não me peçam para encaixar as duas."
         }
       ]
     },
@@ -5600,7 +6161,8 @@
         {
           "speaker": "Odrik",
           "condition": "",
-          "text": "Quero fazer um espetáculo em benefício da enfermaria. Posso atrair público sem pôr os pacientes em exposição."
+          "expression": "feliz",
+          "text": "Um espetáculo para arrecadar para a enfermaria. Consiga um público e eu dou a ele um motivo para abrir a bolsa. Os pacientes não vão precisar ficar lá sendo olhados."
         }
       ]
     },
@@ -5610,7 +6172,8 @@
         {
           "speaker": "Lethra",
           "condition": "",
-          "text": "Quero mostrar o trabalho dos aprendizes, com o nome de cada um. Eles não vão ser figurantes de um lutador famoso."
+          "expression": "neutro",
+          "text": "Quero que os aprendizes mostrem seu trabalho. Com seus próprios nomes. Quando há um lutador famoso na frente, as pessoas esquecem de olhar para o resto."
         }
       ]
     },
@@ -5620,7 +6183,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E o que eu faço?"
+          "expression": "confuso",
+          "text": "E onde eu entro? Além de ser quem tem que escolher."
         }
       ]
     },
@@ -5630,7 +6194,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Ajude a preparar a proposta que escolher. Depois me entregue o programa, para eu anunciar tudo direito."
+          "expression": "neutro",
+          "text": "Ajude a preparar a apresentação que escolher e traga o programa. Preciso saber o que vou anunciar antes de subir lá."
         }
       ]
     },
@@ -5640,7 +6205,8 @@
         {
           "speaker": "Odrik",
           "condition": "",
-          "text": "Pensei em \"Ghork, o terror que...\" Pela sua cara, não gostou."
+          "expression": "feliz",
+          "text": "Imagine: “Ghork, o terror que...” Não? Seu rosto está dizendo um não bem firme."
         }
       ]
     },
@@ -5657,12 +6223,14 @@
     {
       "line": 1741,
       "speaker": "Ghork",
-      "choice": "Meu nome já dá trabalho suficiente.",
+      "choice": "Meu nome já me dá problema suficiente sem a sua ajuda.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Odrik",
           "condition": "",
-          "text": "Ghork, então. Guardo o terror para quando você atrasar minha entrada."
+          "expression": "feliz",
+          "text": "Só Ghork, então. Guardo o terror para quando você perder a hora da minha entrada."
         }
       ],
       "question": false
@@ -5670,12 +6238,14 @@
     {
       "line": 1742,
       "speaker": "Ghork",
-      "choice": "Anuncie a luta. Minha história eu conto.",
+      "choice": "Conte sobre a luta. Minha história, deixe comigo.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Odrik",
           "condition": "",
-          "text": "Justo. Vou chamar o público pelo que vamos mostrar aqui."
+          "expression": "neutro",
+          "text": "Justo. Temos uma apresentação que vale assistir. Posso atrair o público com isso."
         }
       ],
       "question": false
@@ -5686,7 +6256,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Odrik e seus parceiros se apresentam em benefício da enfermaria. Os organizadores recolherão as contribuições e prestarão contas do valor arrecadado."
+          "expression": "neutro",
+          "text": "Odrik e seus parceiros se apresentam em apoio à enfermaria! As contribuições serão recolhidas pelos organizadores, que prestarão contas do valor arrecadado."
         }
       ]
     },
@@ -5696,7 +6267,8 @@
         {
           "speaker": "Odrik",
           "condition": "",
-          "text": "O público veio, ninguém virou motivo de humilhação e arrecadamos para a enfermaria. Gostei de trabalhar com você."
+          "expression": "feliz",
+          "text": "Público, dinheiro para a enfermaria e ninguém virando piada. Nada mal, hein? Gostei, Ghork. De trabalhar com você."
         }
       ]
     },
@@ -5706,7 +6278,8 @@
         {
           "speaker": "Lethra",
           "condition": "",
-          "text": "Vou procurar outro lugar para os alunos. Espero que a próxima oportunidade não dependa de ter alguém famoso junto."
+          "expression": "triste",
+          "text": "Vou encontrar outro lugar para os aprendizes. Queria que tivessem um público sem precisar pegar a fama de alguém emprestada."
         }
       ]
     },
@@ -5716,7 +6289,8 @@
         {
           "speaker": "Lethra",
           "condition": "",
-          "text": "Ghork, leia o programa como se estivesse anunciando. Quero saber se dá tempo de falar todos os nomes antes de começarmos."
+          "expression": "neutro",
+          "text": "Leia como se estivesse anunciando, Ghork. Todos os nomes. Quero saber quanto tempo leva antes de começarmos os movimentos."
         }
       ]
     },
@@ -5726,7 +6300,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Dá. Mas vocês já teriam dado o primeiro golpe antes de eu acabar."
+          "expression": "feliz",
+          "text": "Dá tempo de falar todos. Mas você teria dado o primeiro golpe enquanto eu ainda estivesse lendo."
         }
       ]
     },
@@ -5736,7 +6311,8 @@
         {
           "speaker": "Lethra",
           "condition": "",
-          "text": "Então vamos esperar o anúncio. O público precisa saber quem está vendo."
+          "expression": "neutro",
+          "text": "Então o primeiro golpe pode esperar. Deixe o público ouvir quem vai assistir."
         }
       ]
     },
@@ -5746,7 +6322,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Uma demonstração dos aprendizes de Lethra. Vamos apresentar cada participante antes de começarem o exercício."
+          "expression": "neutro",
+          "text": "A seguir, uma demonstração dos aprendizes de Lethra! Cada participante será apresentado antes do início do exercício."
         }
       ]
     },
@@ -5756,7 +6333,8 @@
         {
           "speaker": "Lethra",
           "condition": "",
-          "text": "Dessa vez, ouviram os nomes deles antes de olhar para mim. Obrigada por conferir o programa."
+          "expression": "feliz",
+          "text": "Ouviram os nomes dos alunos antes de procurar por mim. Era isso que eu queria. Obrigada por conferir o programa."
         }
       ]
     },
@@ -5766,7 +6344,8 @@
         {
           "speaker": "Odrik",
           "condition": "",
-          "text": "Vou levar o espetáculo a outra equipe. Se quiser ajuda com a entrada, pode pedir. Mas eu queria essa vaga, sim."
+          "expression": "neutro",
+          "text": "Vou procurar outra equipe para o espetáculo. Se precisarem de ajuda com uma entrada, sabem onde me achar. E sim, eu queria esse horário. Posso ficar decepcionado."
         }
       ]
     },
@@ -5786,7 +6365,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Confira sua equipe antes de entrar. Ao confirmar, você encerra os convites. Se ainda quer procurar alguém, esta é a hora."
+          "expression": "neutro",
+          "text": "Última conferência antes de entrar. Depois que confirmar a equipe, os convites se encerram. Se ainda quer procurar alguém, é agora."
         }
       ]
     },
@@ -5796,6 +6376,7 @@
         {
           "speaker": "Ghork",
           "condition": ", zero recrutados",
+          "expression": "neutro",
           "text": "Vou entrar sozinho."
         }
       ]
@@ -5806,7 +6387,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Sua inscrição permite. Confirme quando estiver pronto para enfrentar os adversários."
+          "expression": "neutro",
+          "text": "Sua inscrição permite. Confirme quando estiver pronto para enfrentá-los."
         }
       ]
     },
@@ -5816,7 +6398,8 @@
         {
           "speaker": "Ghork",
           "condition": ", com aliados",
-          "text": "Esta é a equipe. Vamos entrar."
+          "expression": "feliz",
+          "text": "Esta é a minha equipe. Estamos prontos."
         }
       ]
     },
@@ -5826,7 +6409,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Inscrição confirmada. Já vamos anunciar a primeira partida."
+          "expression": "neutro",
+          "text": "Confirmado. Aguarde a chamada para a primeira partida."
         }
       ]
     },
@@ -5836,7 +6420,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Minha equipe quer vencer. O trabalho que perdemos no contrato ainda precisa ser financiado."
+          "expression": "neutro",
+          "text": "Minha equipe veio para vencer. Ainda temos pacientes para atender, e aquele contrato teria ajudado a pagar o trabalho."
         }
       ]
     },
@@ -5846,7 +6431,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu lembro."
+          "expression": "neutro",
+          "text": "Eu não esqueci."
         }
       ]
     },
@@ -5856,7 +6442,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "E isso não quer dizer que eu vá tirar minha equipe da disputa."
+          "expression": "neutro",
+          "text": "Que bom. Então entende por que não vou pedir que abram caminho para você."
         }
       ]
     },
@@ -5873,12 +6460,14 @@
     {
       "line": 1820,
       "speaker": "Ghork",
-      "choice": "Nem pediria. Você me ajudou, mas eles vieram para lutar.",
+      "choice": "Nem pediria. Você me ajudou, mas eles também vieram disputar esta luta.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Então estamos entendidos."
+          "expression": "neutro",
+          "text": "Então não temos mais nada para acertar antes da partida."
         }
       ],
       "question": false
@@ -5886,12 +6475,14 @@
     {
       "line": 1821,
       "speaker": "Ghork",
-      "choice": "Quero ganhar de vocês também.",
+      "choice": "Quero ganhar deles numa luta de verdade.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Ainda bem. Eles vieram disputar uma luta de verdade."
+          "expression": "feliz",
+          "text": "Ainda bem. Foi para isso que eles vieram."
         }
       ],
       "question": false
@@ -5902,7 +6493,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Equipe de Ghork contra os representantes da guilda de Virmura. Aos lugares."
+          "expression": "neutro",
+          "text": "Equipe de Ghork contra a guilda de Virmura! Aos lugares."
         }
       ]
     },
@@ -5912,7 +6504,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Vocês venceram. Se precisarem de atendimento, vamos cuidar dos feridos dos dois lados."
+          "expression": "neutro",
+          "text": "Vocês venceram. Agora, alguém precisa de atendimento? Vamos cuidar das duas equipes."
         }
       ]
     },
@@ -5922,7 +6515,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Obrigado. E diga a eles que não foi fácil."
+          "expression": "neutro",
+          "text": "Obrigado. Diga a eles que deram trabalho."
         }
       ]
     },
@@ -5942,7 +6536,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Conseguimos outro serviço para manter a equipe. Eu queria aquele contrato, mas não fiquei esperando você se arrepender."
+          "expression": "neutro",
+          "text": "Arranjamos outro serviço para manter o pessoal. Eu queria aquele contrato, claro. Mas não dava para ficar sentado esperando você mudar de ideia."
         }
       ]
     },
@@ -5959,12 +6554,14 @@
     {
       "line": 1837,
       "speaker": "Ghork",
-      "choice": "Fico feliz que tenham seguido em frente. Mas ainda quero vencer.",
+      "choice": "Que bom que vocês se acertaram. Mas ainda quero ganhar de vocês.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Pode tentar. Eles sabem se virar."
+          "expression": "feliz",
+          "text": "Pode tentar. Eles vão dar trabalho."
         }
       ],
       "question": false
@@ -5972,12 +6569,14 @@
     {
       "line": 1838,
       "speaker": "Ghork",
-      "choice": "Você já me ajudou bastante. Hoje não vou pedir conselho.",
+      "choice": "Você já me deu bastante conselho. Hoje eu não vou pedir nenhum.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Ainda bem. Hoje meus conselhos vão para eles."
+          "expression": "feliz",
+          "text": "Ainda bem. Hoje os conselhos são para eles."
         }
       ],
       "question": false
@@ -5988,7 +6587,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Equipe de Ghork contra os representantes da guilda de Borun. Preparem-se."
+          "expression": "neutro",
+          "text": "Equipe de Ghork contra a guilda de Borun! Lutadores, preparem-se."
         }
       ]
     },
@@ -5998,7 +6598,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Você leu bem a luta. Só não espere que eu fique feliz com o resultado."
+          "expression": "neutro",
+          "text": "Você leu bem a luta. Só não me peça para comemorar."
         }
       ]
     },
@@ -6008,7 +6609,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Não esperava. Gostei o suficiente por nós dois."
+          "expression": "feliz",
+          "text": "Nem ia pedir. Eu comemoro o suficiente por nós dois."
         }
       ]
     },
@@ -6028,7 +6630,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Minha escola continuou trabalhando depois da sua escolha. Meus representantes estão prontos para mostrar o que aprenderam."
+          "expression": "neutro",
+          "text": "Minha escola não parou quando você escolheu outra guilda. Meus representantes querem mostrar o que aprenderam."
         }
       ]
     },
@@ -6045,12 +6648,14 @@
     {
       "line": 1854,
       "speaker": "Ghork",
-      "choice": "Quero ver o que prepararam.",
+      "choice": "Estou curioso para ver o que prepararam para a arena.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Verá de perto."
+          "expression": "neutro",
+          "text": "Vai poder conferir de perto."
         }
       ],
       "question": false
@@ -6058,12 +6663,14 @@
     {
       "line": 1855,
       "speaker": "Ghork",
-      "choice": "Não preciso me arrepender para reconhecer que são bons.",
+      "choice": "Eles são bons. Posso reconhecer isso e continuar satisfeito com minha escolha.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Espero que continue pensando assim depois da partida."
+          "expression": "neutro",
+          "text": "Veremos se diz o mesmo depois da partida."
         }
       ],
       "question": false
@@ -6074,7 +6681,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Equipe de Ghork contra os representantes da escola de Sevrak. Podem assumir as posições."
+          "expression": "neutro",
+          "text": "Equipe de Ghork contra a escola de Sevrak! Lutadores, aos lugares."
         }
       ]
     },
@@ -6084,7 +6692,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Você venceu. Reconheço sua competência, mas continuo discordando da escolha no contrato."
+          "expression": "neutro",
+          "text": "Você lutou bem. A vitória é sua. Isso não mudou minha opinião sobre o contrato."
         }
       ]
     },
@@ -6094,7 +6703,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E eu posso ouvir isso sem voltar a pedir uma vaga na sua escola."
+          "expression": "neutro",
+          "text": "Não esperava que mudasse. E não estou pedindo para me aceitar de volta."
         }
       ]
     },
@@ -6114,7 +6724,8 @@
         {
           "speaker": "Rask",
           "condition": ", vitória",
-          "text": "Resultado confirmado. A equipe de Ghork avança."
+          "expression": "feliz",
+          "text": "Resultado confirmado! A equipe de Ghork avança!"
         }
       ]
     },
@@ -6124,7 +6735,8 @@
         {
           "speaker": "Rask",
           "condition": ", revés",
-          "text": "A equipe adversária venceu esta tentativa. Vocês podem pedir revanche. Falem comigo quando estiverem prontos."
+          "expression": "neutro",
+          "text": "A equipe adversária vence esta luta. Vocês podem pedir revanche. Falem comigo quando estiverem prontos."
         }
       ]
     },
@@ -6144,7 +6756,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Conseguimos apoio para preparar a equipe. Quero que veja o que fizemos com os recursos que tínhamos."
+          "expression": "neutro",
+          "text": "Conseguimos apoio. Investimos no treino. Venha ver o que esse pessoal sabe fazer."
         }
       ]
     },
@@ -6154,7 +6767,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu não disse que vocês eram incapazes."
+          "expression": "neutro",
+          "text": "Eu nunca duvidei de que vocês soubessem lutar."
         }
       ]
     },
@@ -6164,7 +6778,8 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Naquela reunião, parecia que aceitar nosso plano era concordar em abandonar alguém lá embaixo."
+          "expression": "neutro",
+          "text": "Eu sei. Mas saí daquela reunião sentindo que ainda precisava provar que minha equipe traria todo mundo de volta."
         }
       ]
     },
@@ -6181,12 +6796,14 @@
     {
       "line": 1890,
       "speaker": "Ghork",
-      "choice": "Escolhi uma reserva maior para aquele serviço. Não quis dizer que vocês abandonariam alguém.",
+      "choice": "Eu queria uma reserva de segurança maior para aquele serviço. Não estava dizendo que vocês abandonariam alguém.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Então vamos ver o que acha do nosso trabalho na arena."
+          "expression": "neutro",
+          "text": "Então deixe nossa luta falar por nós."
         }
       ],
       "question": false
@@ -6194,12 +6811,14 @@
     {
       "line": 1891,
       "speaker": "Ghork",
-      "choice": "Eu podia ter explicado melhor. Mas ainda escolheria a reserva.",
+      "choice": "Eu podia ter explicado melhor. Ainda assim, colocaria o dinheiro na reserva.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Isso eu consigo ouvir. Ainda quero vencer você."
+          "expression": "neutro",
+          "text": "Isso eu aceito. Mas ainda vou tentar ganhar de você."
         }
       ],
       "question": false
@@ -6210,7 +6829,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Gastamos com segurança e mesmo assim chegamos às quartas. Conseguimos apoio e treinamos."
+          "expression": "neutro",
+          "text": "Pagamos pela segurança e mesmo assim chegamos às quartas. Conseguimos apoio e pusemos o treino em dia."
         }
       ]
     },
@@ -6220,7 +6840,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu não achei que vocês fossem ficar parados."
+          "expression": "neutro",
+          "text": "Não achei que vocês fossem desistir."
         }
       ]
     },
@@ -6230,7 +6851,8 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Naquela reunião, pareceu que a segurança dos meus era só uma despesa que vocês não queriam pagar."
+          "expression": "neutro",
+          "text": "Eu ouvi. Mesmo assim, doeu ver minha reserva de segurança virar algo de que vocês podiam abrir mão."
         }
       ]
     },
@@ -6247,12 +6869,14 @@
     {
       "line": 1903,
       "speaker": "Ghork",
-      "choice": "Aceitei menos reserva porque o reconhecimento era limitado. Entendi por que você queria mais.",
+      "choice": "Era um reconhecimento limitado. Por isso aceitei uma reserva menor. Eu entendi por que você queria mais.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Espero que lembre disso quando contar o contrato."
+          "expression": "neutro",
+          "text": "Então lembre dessa parte quando contar como foi o serviço."
         }
       ],
       "question": false
@@ -6260,12 +6884,14 @@
     {
       "line": 1904,
       "speaker": "Ghork",
-      "choice": "Eu podia ter reconhecido melhor o risco que você queria evitar.",
+      "choice": "Eu devia ter dado mais atenção ao risco que você estava explicando.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Podia. Agora temos outra disputa para resolver."
+          "expression": "neutro",
+          "text": "Devia. Mas, agora, temos uma partida pela frente."
         }
       ],
       "question": false
@@ -6276,12 +6902,14 @@
         {
           "speaker": "Zagra",
           "condition": "",
-          "text": "Você passou. Mas demos trabalho."
+          "expression": "neutro",
+          "text": "Você passou. Não foi fácil, hein?"
         },
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Deram. Ganhar não muda isso."
+          "expression": "feliz",
+          "text": "Não foi mesmo. Vou lembrar dessa luta por um tempo."
         }
       ]
     },
@@ -6291,12 +6919,14 @@
         {
           "speaker": "Darvek",
           "condition": "",
-          "text": "Você venceu. Vou cuidar do retorno dos meus."
+          "expression": "neutro",
+          "text": "Você venceu. Vou cuidar da volta do meu pessoal."
         },
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Boa volta. Obrigado pela luta."
+          "expression": "neutro",
+          "text": "Boa viagem. E obrigado pela luta."
         }
       ]
     },
@@ -6331,7 +6961,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Do outro lado, cinco adversários. Talvez vocês já tenham se encontrado pela cidade. Hoje, todos querem a vaga na final."
+          "expression": "neutro",
+          "text": "Cinco adversários entre vocês e a final! Talvez já tenham se encontrado pela cidade. Hoje, eles vieram disputar a mesma vaga que vocês."
         }
       ]
     },
@@ -6341,7 +6972,8 @@
         {
           "speaker": "Ghork",
           "condition": ", zero aliados",
-          "text": "Alguns eu ainda não conheço. Com os outros, já tenho conversa pendente."
+          "expression": "neutro",
+          "text": "Alguns rostos novos. E algumas conversas que ainda não terminaram."
         }
       ]
     },
@@ -6351,7 +6983,8 @@
         {
           "speaker": "Ghork",
           "condition": ", com aliados",
-          "text": "Já conhecemos alguns deles. E todos querem chegar à final tanto quanto nós."
+          "expression": "neutro",
+          "text": "Já conhecemos alguns deles. Não esperem facilidade: eles também querem chegar à final."
         }
       ]
     },
@@ -6368,11 +7001,13 @@
     {
       "line": 1946,
       "speaker": "Ghork",
-      "choice": "Boa luta. Quero chegar à final tanto quanto vocês.",
+      "choice": "Vamos fazer uma boa luta. Quero chegar à final tanto quanto vocês.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Rask",
           "condition": "",
+          "expression": "neutro",
           "text": "Aos lugares."
         }
       ],
@@ -6381,12 +7016,14 @@
     {
       "line": 1947,
       "speaker": "Ghork",
-      "choice": "Quero vencer vocês. Não preciso fingir que nunca nos conhecemos.",
+      "choice": "Quero ganhar de vocês. Nem por isso precisamos fingir que nunca nos vimos.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Conhecidos ou não, só uma equipe passa. Preparem-se."
+          "expression": "neutro",
+          "text": "Conhecidos ou não, só uma equipe passa. Preparem-se!"
         }
       ],
       "question": false
@@ -6397,7 +7034,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "A equipe de Ghork está na final."
+          "expression": "feliz",
+          "text": "A equipe de Ghork está na final!"
         }
       ]
     },
@@ -6407,7 +7045,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Obrigado pela luta. Foi bom encontrar vocês. Melhor ainda ganhar."
+          "expression": "feliz",
+          "text": "Que luta. Foi bom encontrar vocês de novo. Melhor ainda ganhar."
         }
       ]
     },
@@ -6437,17 +7076,20 @@
         {
           "speaker": "Virmura",
           "condition": "papel:Virmura",
-          "text": "Quero que você saia dessa luta inteiro. Ainda há muito para viver depois dela."
+          "expression": "neutro",
+          "text": "Volte inteiro dessa luta. Quero ver o que vai fazer com todos os dias que vêm depois dela."
         },
         {
           "speaker": "Borun",
           "condition": "papel:Borun",
-          "text": "Quero ouvir como pretende enfrentar Torvak."
+          "expression": "neutro",
+          "text": "Então me conte. Como pretende enfrentar Torvak?"
         },
         {
           "speaker": "Sevrak",
           "condition": "papel:Sevrak",
-          "text": "A final mostrará à cidade o trabalho que fizemos."
+          "expression": "neutro",
+          "text": "A cidade inteira vai ver você na final. Mostre o que nosso trabalho produziu."
         }
       ]
     },
@@ -6457,7 +7099,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Quando cheguei, achei que bastava ganhar um título para todo mundo parar de me tratar como inútil."
+          "expression": "triste",
+          "text": "Quando cheguei, eu pensei... é só ganhar um título, e vão parar de olhar para mim como se eu não servisse para nada."
         }
       ]
     },
@@ -6467,17 +7110,20 @@
         {
           "speaker": "Virmura",
           "condition": "papel:Virmura",
-          "text": "Alguns vão continuar discordando, mesmo se você vencer."
+          "expression": "neutro",
+          "text": "Talvez alguns nunca enxerguem você como gostaria. Mesmo com esse título."
         },
         {
           "speaker": "Borun",
           "condition": "papel:Borun",
-          "text": "Torvak tem o título há anos. Você viu como ainda cobra reconhecimento dos outros."
+          "expression": "neutro",
+          "text": "Torvak tem esse título há anos. Não foi o bastante para ele parar de cobrar reverência dos outros, foi?"
         },
         {
           "speaker": "Sevrak",
           "condition": "papel:Sevrak",
-          "text": "Podem concordar com o resultado e continuar discordando sobre você."
+          "expression": "neutro",
+          "text": "Podem aceitar o resultado. Isso não significa que todos vão aceitar você."
         }
       ]
     },
@@ -6511,17 +7157,20 @@
         {
           "speaker": "Virmura",
           "condition": "papel:Virmura",
-          "text": "Está bem. Vou cuidar dos nossos."
+          "expression": "feliz",
+          "text": "Está bem. Vá, então. Eu cuido dos nossos."
         },
         {
           "speaker": "Borun",
           "condition": "papel:Borun",
-          "text": "Então vá. Você não precisa da minha aprovação para cada passo."
+          "expression": "feliz",
+          "text": "Então vá. Não precisa parar para pedir minha aprovação a cada passo."
         },
         {
           "speaker": "Sevrak",
           "condition": "papel:Sevrak",
-          "text": "Defenda essa posição quando sair da arena também."
+          "expression": "neutro",
+          "text": "Lembre do que acabou de dizer. Vai precisar sustentar essa posição fora da arena também."
         }
       ]
     },
@@ -6531,7 +7180,8 @@
         {
           "speaker": "Darvek",
           "condition": ", se X",
-          "text": "Trouxe a versão final do levantamento. Registrei a reserva de segurança e o custo, como você pediu."
+          "expression": "neutro",
+          "text": "Aqui está o levantamento completo. Reserva de segurança, custos... tudo registrado, como você pediu."
         }
       ]
     },
@@ -6541,7 +7191,8 @@
         {
           "speaker": "Zagra",
           "condition": ", se Y",
-          "text": "A versão final deixa claro qual trecho não verificamos. Não deixei ninguém exagerar o alcance da nossa viagem."
+          "expression": "neutro",
+          "text": "O relatório final aponta o trecho que não verificamos. Ninguém vai dizer que exploramos mais do que de fato vimos."
         }
       ]
     },
@@ -6551,7 +7202,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Obrigado. Não achei que fosse querer ver um relatório antes da final."
+          "expression": "feliz",
+          "text": "Obrigado. Se alguém me dissesse que eu ia ficar feliz de ver um relatório antes da final..."
         }
       ]
     },
@@ -6561,7 +7213,8 @@
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "Pode deixar aí. Quero ver sua base, não sua caligrafia."
+          "expression": "feliz",
+          "text": "Deixe isso de lado um instante. Pedi para ver sua base, não sua caligrafia."
         }
       ]
     },
@@ -6571,7 +7224,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu achava que ganhar esta luta resolveria tudo. Já tenho uma lista do que vai continuar pendente."
+          "expression": "neutro",
+          "text": "Achei que uma vitória ia resolver tudo. Pelo visto, tem uma lista inteira me esperando depois."
         }
       ]
     },
@@ -6588,14 +7242,16 @@
     {
       "line": 2005,
       "speaker": "Ghork",
-      "choice": "Vou ganhar o título. As outras respostas eu dou depois.",
+      "choice": "Primeiro, vou ganhar o título. Das outras perguntas eu cuido depois.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
     {
       "line": 2006,
       "speaker": "Ghork",
-      "choice": "Quero lutar sem prometer que a vitória vai resolver tudo.",
+      "choice": "Ainda quero ganhar. Só não posso prometer que isso vai resolver tudo.",
+      "expression": "neutro",
       "response": [],
       "question": false
     },
@@ -6605,12 +7261,14 @@
         {
           "speaker": "Darvek",
           "condition": "papel:Darvek",
-          "text": "Isso eu consigo entender."
+          "expression": "neutro",
+          "text": "Está bem. Agora vá se preparar para a luta."
         },
         {
           "speaker": "Zagra",
           "condition": "papel:Zagra",
-          "text": "Bom. Prometa que vai lutar, então."
+          "expression": "feliz",
+          "text": "Ótimo. Então me prometa uma boa luta."
         }
       ]
     },
@@ -6620,7 +7278,8 @@
         {
           "speaker": "Guedra",
           "condition": "",
-          "text": "Mostre sua base. Depois vá para a chamada."
+          "expression": "neutro",
+          "text": "Primeiro, a base. Depois vá quando chamarem."
         }
       ]
     },
@@ -6630,7 +7289,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Você chegou. O general não está aqui para ver."
+          "expression": "neutro",
+          "text": "Então você chegou. Pena que o general não está aqui para ver."
         }
       ]
     },
@@ -6640,7 +7300,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Não preciso dele aqui para lutar."
+          "expression": "neutro",
+          "text": "Posso lutar sem ele assistindo."
         }
       ]
     },
@@ -6650,7 +7311,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Sua guilda vai usar qualquer resultado contra mim. Até depois de tudo que fiz por esta cidade."
+          "expression": "raiva",
+          "text": "Aconteça o que acontecer aqui, sua guilda vai usar isso contra mim. Depois de tudo que fiz por esta cidade."
         }
       ]
     },
@@ -6660,7 +7322,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Você cancelou nossos treinos porque meu mentor não pediu desculpas. Chegamos aqui apesar de você."
+          "expression": "raiva",
+          "text": "Você tirou nossos horários de treino porque meu mentor não pediu desculpas. Tentou nos impedir. Chegamos mesmo assim."
         }
       ]
     },
@@ -6670,7 +7333,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "E agora acha que merece ocupar meu lugar?"
+          "expression": "raiva",
+          "text": "E acha que isso lhe dá o direito de tomar meu lugar?"
         }
       ]
     },
@@ -6687,12 +7351,14 @@
     {
       "line": 2026,
       "speaker": "Ghork",
-      "choice": "Quero conquistar o título. Você ainda vai ter que lutar para mantê-lo.",
+      "choice": "Vim conquistar o título. Se quiser ficar com ele, vai ter que me vencer.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "É o que pretendo fazer."
+          "expression": "neutro",
+          "text": "Foi para isso que vim."
         }
       ],
       "question": false
@@ -6701,11 +7367,13 @@
       "line": 2027,
       "speaker": "Ghork",
       "choice": "Você já fez seu nome. Vim conquistar o meu.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Então pare de falar dos meus e entre na arena."
+          "expression": "raiva",
+          "text": "Então chega de falar do meu. Entre na arena."
         }
       ],
       "question": false
@@ -6716,7 +7384,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Final do campeonato de guildas de Terminus. Torvak e sua equipe contra a equipe de Ghork."
+          "expression": "neutro",
+          "text": "Final do campeonato de guildas de Terminus! Torvak e sua equipe enfrentam a equipe de Ghork!"
         }
       ]
     },
@@ -6763,12 +7432,14 @@
     {
       "line": 2045,
       "speaker": "Ghork",
-      "choice": "Pode repetir? Quero ouvir mais uma vez.",
+      "choice": "Pode repetir? Só mais uma vez.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Ghork, campeão de Terminus!"
+          "expression": "feliz",
+          "text": "Ghork! Campeão de Terminus!"
         }
       ],
       "question": false
@@ -6776,22 +7447,26 @@
     {
       "line": 2046,
       "speaker": "Ghork",
-      "choice": "Eu consegui.",
+      "choice": "Eu... eu consegui.",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "papel:Virmura",
+          "expression": "feliz",
           "text": "Conseguiu."
         },
         {
           "speaker": "Borun",
           "condition": "papel:Borun",
-          "text": "Conseguiu. Agora pode se gabar um pouco."
+          "expression": "feliz",
+          "text": "Conseguiu. Vá, pode se gabar um pouco. Não vou impedir."
         },
         {
           "speaker": "Sevrak",
           "condition": "papel:Sevrak",
-          "text": "Você trabalhou por esta vitória. Aproveite."
+          "expression": "feliz",
+          "text": "Você trabalhou por esta vitória. Tire um instante para aproveitar."
         }
       ],
       "question": false
@@ -6802,7 +7477,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Eu perdi. Ouvi o resultado."
+          "expression": "neutro",
+          "text": "Eu ouvi. Perdi."
         }
       ]
     },
@@ -6812,7 +7488,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Eu também. Não vou pedir que goste dele."
+          "expression": "neutro",
+          "text": "Eu também ouvi. Você não precisa gostar."
         }
       ]
     },
@@ -6822,7 +7499,7 @@
         {
           "speaker": "Rheed",
           "condition": "",
-          "text": "Parte da torcida gritava o nome de Ghork até perder a voz. Outros ainda defendiam o antigo campeão. Ghork demorou a sair da arena e ouviu os dois lados."
+          "text": "Parte da torcida grita o nome de Ghork até a voz falhar. Outros ainda aplaudem o antigo campeão. Ghork fica mais um pouco na arena, ouvindo os dois lados."
         }
       ]
     },
@@ -6832,7 +7509,8 @@
         {
           "speaker": "Seldan",
           "condition": "",
-          "text": "As cargas estavam autorizadas. Homens armados bloqueando o público, não. Saiam da frente da saída!"
+          "expression": "raiva",
+          "text": "Autorizei aquelas entregas, não homens armados! Saiam das saídas. Deixem o público passar!"
         }
       ]
     },
@@ -6842,7 +7520,8 @@
         {
           "speaker": "Dorga",
           "condition": "",
-          "text": "Mantenha a ordem. A arena fica sob nosso comando até acertarmos as condições com as outras guildas."
+          "expression": "neutro",
+          "text": "Mantenham a ordem. A arena fica sob nosso comando até acertarmos as condições com as outras guildas."
         }
       ]
     },
@@ -6852,7 +7531,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vocês prepararam isso antes da luta."
+          "expression": "raiva",
+          "text": "Vocês prepararam isso antes mesmo da nossa luta."
         }
       ]
     },
@@ -6862,7 +7542,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "A tomada da arena estava combinada. Eu..."
+          "expression": "confuso",
+          "text": "Combinamos a tomada da arena. Eu..."
         }
       ]
     },
@@ -6872,7 +7553,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Soltem essas pessoas. Não era isso que vocês me disseram."
+          "expression": "raiva",
+          "text": "Soltem essas pessoas! Vocês não falaram nada disso."
         }
       ]
     },
@@ -6882,7 +7564,8 @@
         {
           "speaker": "Savel",
           "condition": "",
-          "text": "Precisamos de gente para sustentar a produção. Você precisa da próxima dose. Cumpra sua parte."
+          "expression": "neutro",
+          "text": "A produção precisa de gente. E você precisa de outra dose. Cumpra sua parte do acordo."
         }
       ]
     },
@@ -6892,7 +7575,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Eu aceitei tomar a arena. Não vou entregar os meus para você."
+          "expression": "raiva",
+          "text": "Concordei em tomar a arena. Não em entregar meu pessoal para você."
         }
       ]
     },
@@ -6902,7 +7586,8 @@
         {
           "speaker": "Savel",
           "condition": "",
-          "text": "Vai voltar a pedir quando sentir falta da dose."
+          "expression": "neutro",
+          "text": "Vai voltar a pedir. Quando começar a sentir falta da dose."
         }
       ]
     },
@@ -6912,7 +7597,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Então vai ter que esperar até eu tirar essas pessoas daqui."
+          "expression": "raiva",
+          "text": "Então vai esperar. Vou tirar essas pessoas daqui."
         }
       ]
     },
@@ -6922,7 +7608,8 @@
         {
           "speaker": "Neral",
           "condition": "",
-          "text": "Continuem levando os capturados. Eu cuido de quem chegar ao corredor."
+          "expression": "neutro",
+          "text": "Continuem levando os capturados. Quem chegar ao corredor fica por minha conta."
         }
       ]
     },
@@ -6932,7 +7619,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Feridos por aqui. Deixem esta passagem livre!"
+          "expression": "neutro",
+          "text": "Tragam os feridos por aqui! Deixem a passagem livre!"
         }
       ]
     },
@@ -6942,7 +7630,8 @@
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "A saída lateral está livre. Eu fico aqui até o último passar."
+          "expression": "neutro",
+          "text": "A saída lateral está livre! Só saio daqui quando o último de vocês passar."
         }
       ]
     },
@@ -6952,7 +7641,8 @@
         {
           "speaker": "Sevrak",
           "condition": "",
-          "text": "Aprendizes comigo. Retirem o obstáculo sem bloquear quem está vindo."
+          "expression": "neutro",
+          "text": "Aprendizes, comigo! Retirem aquele obstáculo. Deixem espaço para quem está passando."
         }
       ]
     },
@@ -6962,7 +7652,8 @@
         {
           "speaker": "Rask",
           "condition": "",
-          "text": "Sigam as orientações nas saídas. Não voltem para buscar seus pertences!"
+          "expression": "neutro",
+          "text": "Sigam as orientações nas saídas! Deixem os pertences. Não voltem para buscar nada!"
         }
       ]
     },
@@ -6979,12 +7670,14 @@
     {
       "line": 2103,
       "speaker": "Ghork",
-      "choice": "Eu vou atrás do fornecedor. Mantenham a passagem.",
+      "choice": "Vou atrás do fornecedor. Mantenham esta passagem livre.",
+      "expression": "raiva",
       "response": [
         {
           "speaker": "Borun",
           "condition": "",
-          "text": "Vá pelo corredor de serviço. Estamos tirando o público deste lado."
+          "expression": "neutro",
+          "text": "Corredor de serviço! Vá por lá. Estamos tirando o público por aqui."
         }
       ],
       "question": false
@@ -6992,12 +7685,14 @@
     {
       "line": 2104,
       "speaker": "Ghork",
-      "choice": "Quem está cuidando dos que já saíram?",
+      "choice": "Quem está cuidando de quem já saiu?",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Nyra e Jorvi estão recebendo quem saiu. Pirka cuida do transporte. Vá atrás de quem está dando as ordens."
+          "expression": "neutro",
+          "text": "Nyra e Jorvi estão com eles. Pirka cuida do transporte. Vá. Encontre quem está dando essas ordens."
         }
       ],
       "question": false
@@ -7008,7 +7703,8 @@
         {
           "speaker": "Torvak",
           "condition": ", ao cruzar Ghork",
-          "text": "O fornecedor está junto das caixas. Eu fico com estes aqui."
+          "expression": "neutro",
+          "text": "Ele está junto das caixas. Eu tiro essas pessoas daqui."
         }
       ]
     },
@@ -7018,7 +7714,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vou atrás dele. Depois, você ainda vai responder pelo que combinou."
+          "expression": "raiva",
+          "text": "Vou atrás dele. Isso não livra você de responder pelo acordo que fez."
         }
       ]
     },
@@ -7028,7 +7725,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Sei."
+          "expression": "neutro",
+          "text": "Eu sei."
         }
       ]
     },
@@ -7038,7 +7736,8 @@
         {
           "speaker": "Neral",
           "condition": "",
-          "text": "Você viu quantos dependem de mim. Acha que matar o fornecedor acaba com a necessidade da dose?"
+          "expression": "neutro",
+          "text": "Você viu quantas pessoas precisam de mim. Mate o fornecedor, e depois? Acha que a necessidade morre com ele?"
         }
       ]
     },
@@ -7048,7 +7747,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Vi você usar isso para mandar levar pessoas à força."
+          "expression": "raiva",
+          "text": "Vi você usar isso para ameaçar essas pessoas. Depois, mandar arrastar outras à força."
         }
       ]
     },
@@ -7058,7 +7758,8 @@
         {
           "speaker": "Neral",
           "condition": "",
-          "text": "Quando eu era pequeno, só recebia a dose quem tinha força ou posição. Aprendi a produzi-la. Depois, aprendi a decidir quem recebia."
+          "expression": "neutro",
+          "text": "Quando eu era criança, via as doses irem para quem tinha força ou posição para exigi-las. Então aprendi a produzi-las. Com o tempo, fui eu quem passou a decidir quem recebia."
         }
       ]
     },
@@ -7075,12 +7776,14 @@
     {
       "line": 2124,
       "speaker": "Ghork",
-      "choice": "E passou a fazer com os outros o que fizeram com você.",
+      "choice": "E agora faz com eles o que fizeram com você.",
+      "expression": "raiva",
       "response": [
         {
           "speaker": "Neral",
           "condition": "",
-          "text": "Passei a decidir. Não vou abrir mão disso."
+          "expression": "neutro",
+          "text": "Agora eu decido. Não pretendo abrir mão disso."
         }
       ],
       "question": false
@@ -7088,12 +7791,14 @@
     {
       "line": 2125,
       "speaker": "Ghork",
-      "choice": "Solte os capturados. Eles não são pagamento.",
+      "choice": "Solte essas pessoas. Elas não são pagamento.",
+      "expression": "raiva",
       "response": [
         {
           "speaker": "Neral",
           "condition": "",
-          "text": "São o que permite que tudo continue funcionando."
+          "expression": "neutro",
+          "text": "Sem elas, a produção para. É simples assim."
         }
       ],
       "question": false
@@ -7104,7 +7809,8 @@
         {
           "speaker": "Neral",
           "condition": "",
-          "text": "Eu conheço as doses. As fórmulas são minhas."
+          "expression": "raiva",
+          "text": "Eu criei essas fórmulas. Conheço as doses!"
         }
       ]
     },
@@ -7114,7 +7820,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Então sabe o que está tomando."
+          "expression": "neutro",
+          "text": "Então sabe o que está engolindo."
         }
       ]
     },
@@ -7124,7 +7831,8 @@
         {
           "speaker": "Neral",
           "condition": "",
-          "text": "Sei o que posso fazer com isso."
+          "expression": "raiva",
+          "text": "Sei o que elas me permitem fazer."
         }
       ]
     },
@@ -7159,7 +7867,8 @@
         {
           "speaker": "Neral",
           "condition": "",
-          "text": "Acha que só tenho gente aqui? Há outros grupos. Em Daratrine... até no Conselho. Vamos tomar este continente antes que percebam por onde entramos."
+          "expression": "raiva",
+          "text": "Acha que isso termina aqui? Existem outros grupos. Em Daratrine... até no Conselho. Teremos este continente antes que vocês descubram por onde entramos."
         }
       ]
     },
@@ -7169,7 +7878,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Quem está no Conselho?"
+          "expression": "confuso",
+          "text": "Quem? Quem está no Conselho?"
         }
       ]
     },
@@ -7179,7 +7889,8 @@
         {
           "speaker": "Seldan",
           "condition": "",
-          "text": "Vou registrar onde encontraram a correspondência. Mantenham esses papéis separados das cargas de retirada."
+          "expression": "neutro",
+          "text": "Mostre onde encontraram estas cartas. Preciso registrar. Deixem separadas dos materiais que estão retirando."
         }
       ]
     },
@@ -7189,7 +7900,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Ele falou no Conselho de Daratrine. Isso tem relação?"
+          "expression": "confuso",
+          "text": "Ele falou no Conselho de Daratrine. É disso que tratam estas cartas?"
         }
       ]
     },
@@ -7199,7 +7911,8 @@
         {
           "speaker": "Seldan",
           "condition": "",
-          "text": "As informações dos registros conferem. Eles tinham contato dentro do Conselho, mas não há nome aqui."
+          "expression": "neutro",
+          "text": "Os registros conferem. Havia um contato dentro do Conselho. Nada aqui diz quem era."
         }
       ]
     },
@@ -7209,7 +7922,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Então não vou sair acusando alguém só por causa da ameaça que ele fez antes de morrer."
+          "expression": "neutro",
+          "text": "Então não temos um nome. Não vou acusar alguém só porque ele quis me assustar antes de morrer."
         }
       ]
     },
@@ -7219,7 +7933,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Estamos cuidando dos resgatados. Quem tomava as doses também precisa de tratamento. A morte dele não acabou com a dependência."
+          "expression": "neutro",
+          "text": "Estamos cuidando dos resgatados. Quem tomava as doses dele também precisa de atendimento. A morte dele não acaba com a abstinência."
         }
       ]
     },
@@ -7229,7 +7944,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Pressionei Rask para cancelar os treinos de vocês. Aceitei tomar a arena. Queria forçar a cidade a devolver nosso lugar."
+          "expression": "neutro",
+          "text": "Pressionei Rask para cancelar seus treinos. Concordei em tomar a arena. Achei que podia obrigar esta cidade a devolver nosso lugar."
         }
       ]
     },
@@ -7239,7 +7955,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Você ajudou no resgate. Mas aquelas pessoas foram capturadas por causa do acordo que você aceitou."
+          "expression": "raiva",
+          "text": "Você ajudou a tirá-los de lá. Eu vi. Mas foi o seu acordo que permitiu que aquelas pessoas fossem capturadas."
         }
       ]
     },
@@ -7249,7 +7966,8 @@
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Eu sei. O resgate não desfaz o que aceitei."
+          "expression": "triste",
+          "text": "Eu sei. Tirar as pessoas de lá não desfaz o que fiz."
         }
       ]
     },
@@ -7266,12 +7984,14 @@
     {
       "line": 2182,
       "speaker": "Ghork",
-      "choice": "Não estou pronto para perdoar.",
+      "choice": "Não estou pronto para perdoar você.",
+      "expression": "triste",
       "response": [
         {
           "speaker": "Torvak",
           "condition": "",
-          "text": "Não vou pedir que decida agora."
+          "expression": "neutro",
+          "text": "Não vou pedir que decida isso agora."
         }
       ],
       "question": false
@@ -7280,10 +8000,12 @@
       "line": 2183,
       "speaker": "Ghork",
       "choice": "Quero que você responda pelo que fez.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Torvak",
           "condition": "",
+          "expression": "neutro",
           "text": "Vou ter que responder."
         }
       ],
@@ -7295,7 +8017,8 @@
         {
           "speaker": "Virmura",
           "condition": "",
-          "text": "Primeiro, ele precisa de tratamento. Depois ainda terá de responder pelo que fez."
+          "expression": "neutro",
+          "text": "Primeiro, ele precisa de tratamento. Isso não vai livrá-lo de responder pelo que fez."
         }
       ]
     },
@@ -7305,6 +8028,7 @@
         {
           "speaker": "Lala",
           "condition": "",
+          "expression": "confuso",
           "text": "Ghork? Você está bem?"
         }
       ]
@@ -7315,7 +8039,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Estou vivo. Ganhei o campeonato."
+          "expression": "feliz",
+          "text": "Estou vivo. E ganhei o campeonato."
         }
       ]
     },
@@ -7325,7 +8050,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Ganhou? Ghork! Espera... por que começou dizendo que está vivo?"
+          "expression": "confuso",
+          "text": "Você ganhou? Ghork! Espere... por que estar vivo foi a primeira coisa que você disse?"
         }
       ]
     },
@@ -7335,7 +8061,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Atacaram a festa. Libertamos os capturados e derrotamos quem comandava. Ainda tem feridos e muita coisa para fazer."
+          "expression": "neutro",
+          "text": "Atacaram a festa. Levaram pessoas à força. Conseguimos libertá-las e derrotamos quem comandava, mas... ainda tem feridos. O trabalho não terminou."
         }
       ]
     },
@@ -7345,7 +8072,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Você ganhou... e depois passou por tudo isso. Conte no seu tempo. Estou ouvindo."
+          "expression": "neutro",
+          "text": "Você ganhou e depois... tudo isso. Vá com calma, Ghork. Estou aqui."
         }
       ]
     },
@@ -7362,12 +8090,14 @@
     {
       "line": 2203,
       "speaker": "Ghork",
-      "choice": "Quero contar a final primeiro.",
+      "choice": "Posso contar a final primeiro?",
+      "expression": "feliz",
       "response": [
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Conte. Mas depois vai me contar o que aconteceu na festa também."
+          "expression": "feliz",
+          "text": "Claro. Mas depois quero saber o que aconteceu na festa. Está bem?"
         }
       ],
       "question": false
@@ -7375,12 +8105,14 @@
     {
       "line": 2204,
       "speaker": "Ghork",
-      "choice": "Primeiro, me diga como você está.",
+      "choice": "Primeiro, me conte como você está.",
+      "expression": "neutro",
       "response": [
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Continuo trabalhando nas peças. E tentando entender como cabe tanta notícia numa conversa com você."
+          "expression": "feliz",
+          "text": "Continuo trabalhando nas peças. E, pelo visto, tentando acompanhar você. É muita notícia para uma conversa só."
         }
       ],
       "question": false
@@ -7391,7 +8123,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "E as peças?"
+          "expression": "feliz",
+          "text": "Como vai o trabalho com as peças?"
         }
       ]
     },
@@ -7401,7 +8134,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Comecei a mostrar para as pessoas. Algumas gostaram, outras pediram ajustes. Estou descobrindo o trabalho que cada encomenda dá."
+          "expression": "feliz",
+          "text": "Comecei a mostrar para as pessoas. Algumas gostam como estão; outras sugerem mudanças. Estou descobrindo quanto trabalho pode dar até um ajuste pequeno."
         }
       ]
     },
@@ -7411,7 +8145,8 @@
         {
           "speaker": "Lala",
           "condition": ", recado de Dam",
-          "text": "Dam mandou um recado: \"Sua contribuição chegou. Compramos parte do material e estamos acertando o resto do reparo. Obrigado por dizer quanto podia mandar.\""
+          "expression": "neutro",
+          "text": "Dam mandou um recado: \"O dinheiro chegou. Compramos parte do material e estamos acertando o resto do reparo. Obrigado por avisar quanto podia mandar.\""
         }
       ]
     },
@@ -7421,7 +8156,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Uma parte do material. Ainda longe da casa que prometi."
+          "expression": "triste",
+          "text": "Parte do material. Ainda está longe da casa que prometi."
         }
       ]
     },
@@ -7431,7 +8167,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Mas era dessa parte que ele precisava agora."
+          "expression": "neutro",
+          "text": "Era disso que ele precisava agora, Ghork."
         }
       ]
     },
@@ -7441,7 +8178,8 @@
         {
           "speaker": "Lala",
           "condition": ", recado de Dam",
-          "text": "Dam mandou um recado: \"Reorganizei o reparo sem contar com o dinheiro. Ainda falta material. Queria sua ajuda, mas prefiro saber com o que posso contar a ficar esperando sem prazo. Me conte como você está.\""
+          "expression": "neutro",
+          "text": "Dam mandou um recado: \"Reorganizei o reparo sem contar com seu dinheiro. Ainda falta material. Queria sua ajuda, mas prefiro saber como estão as coisas a continuar esperando. Me conte como você está.\""
         }
       ]
     },
@@ -7451,7 +8189,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Ganhar o campeonato não pagou aquele reparo. Eu sei."
+          "expression": "triste",
+          "text": "Ganhar não pagou aquele reparo. Eu sei."
         }
       ]
     },
@@ -7461,7 +8200,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Então conte como você está. Sem prometer uma casa só para encerrar o assunto."
+          "expression": "neutro",
+          "text": "Então conte como você está. Não precisa prometer uma casa inteira para responder isso."
         }
       ]
     },
@@ -7471,7 +8211,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Quero continuar minha vida aqui. Hoje tenho uma vitória para contar. Antes de prometer outra coisa, preciso saber como vou cumprir."
+          "expression": "neutro",
+          "text": "Quero ficar aqui. Construir minha vida. Já tenho uma vitória para contar, pelo menos... mas, antes de prometer outra coisa, preciso saber como vou cumprir."
         }
       ]
     },
@@ -7481,7 +8222,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Pode começar prometendo notícias."
+          "expression": "feliz",
+          "text": "Pode prometer que vai dar notícias. Eu aceito."
         }
       ]
     },
@@ -7491,7 +8233,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Essa eu faço questão de cumprir."
+          "expression": "feliz",
+          "text": "Essa eu vou cumprir."
         }
       ]
     },
@@ -7501,7 +8244,8 @@
         {
           "speaker": "Ghork",
           "condition": "",
-          "text": "Encontramos documentos ligados ao Conselho. Ainda não sabemos quem está envolvido. Preciso contar isso, mas não quero que acusem alguém sem prova."
+          "expression": "neutro",
+          "text": "Tem outra coisa. Encontramos papéis ligando esse grupo ao Conselho. Ainda não sabemos a quem. Eu precisava contar, mas... não deixe que comecem a acusar pessoas sem prova."
         }
       ]
     },
@@ -7511,7 +8255,8 @@
         {
           "speaker": "Lala",
           "condition": "",
-          "text": "Vou contar o que você sabe. E deixar claro o que ainda não sabemos."
+          "expression": "neutro",
+          "text": "Vou contar o que vocês descobriram. E deixar claro o que ainda não sabem."
         }
       ]
     },
@@ -7521,7 +8266,8 @@
         {
           "speaker": "Rheed",
           "condition": "",
-          "text": "Foi assim que terminou aquela vitória em Terminus. Ghork ficou com o título. E ainda havia quem discordasse dele."
+          "expression": "feliz",
+          "text": "E assim foi a vitória de Ghork em Terminus. O título era dele. A aprovação de todo mundo, veja bem, não. Mas o título era dele."
         }
       ]
     },
@@ -7538,12 +8284,14 @@
     {
       "line": 2244,
       "speaker": "Criança",
-      "choice": "E ele foi para Daratrine?",
+      "choice": "Depois ele foi para Daratrine?",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Rheed",
           "condition": "",
-          "text": "Esta história termina em Terminus. Os papéis ficam para outra conversa."
+          "expression": "neutro",
+          "text": "Este conto termina em Terminus. Aqueles papéis vão ter que esperar outra conversa."
         }
       ],
       "question": false
@@ -7552,11 +8300,13 @@
       "line": 2245,
       "speaker": "Criança",
       "choice": "Ele ainda queria ser um grande mercenário?",
+      "expression": "confuso",
       "response": [
         {
           "speaker": "Rheed",
           "condition": "",
-          "text": "Queria. Aprender a fazer uma promessa que podia cumprir não diminuiu esse sonho."
+          "expression": "feliz",
+          "text": "Ah, queria. Os sonhos não tinham acabado. Só aprendeu a pensar um pouco mais antes de prometer uma casa a alguém."
         }
       ],
       "question": false
@@ -7567,7 +8317,8 @@
         {
           "speaker": "Rheed",
           "condition": "",
-          "text": "Agora posso guardar o frasco. Ele também trabalhou bastante hoje."
+          "expression": "feliz",
+          "text": "Pronto. Já posso guardar o frasco. A noite dele também foi movimentada."
         }
       ]
     }

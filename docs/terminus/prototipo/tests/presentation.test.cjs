@@ -56,9 +56,9 @@ test("Recorte de autoria corresponde ao roteiro usado na montagem", () => {
   );
 });
 
-test("19 fundos, 42 conceitos e 210 expressões produzidas existem; bustos têm canal alfa", () => {
+test("19 fundos e 51 visuais com cinco expressões existem; bustos têm canal alfa", () => {
   assert.equal(Object.keys(files.backgrounds).length, 19);
-  assert.equal(Object.keys(files.portraits).length, 42);
+  assert.equal(Object.keys(files.portraits).length, 51);
   const read = (relative) =>
     fs.readFileSync(path.resolve(__dirname, "..", relative));
   for (const file of Object.values(files.backgrounds)) {
@@ -91,19 +91,17 @@ test("19 fundos, 42 conceitos e 210 expressões produzidas existem; bustos têm 
     assert.ok(read(asset.preview).length, asset.id);
 });
 
-test("Identidades e três formas de Neral não emprestam bustos a personagens provisórios", () => {
+test("Identidades, figurantes e três formas de Neral usam seus próprios bustos", () => {
   assert.match(A.assets[A.portrait("Savel")].preview, /neral-disfarce/);
   assert.match(A.assets[A.portrait("Neral")].preview, /neral-revelado/);
   assert.match(
     A.assets[A.portrait("Neral", "hostil", "transformado")].preview,
     /neral-transformado/,
   );
-  for (const name of [
-    "Lala",
-    "Assaltante",
-    "Trabalhador",
-    "Responsável pela cisterna",
-  ])
+  for (const [name, visual] of [["Lala", "lala"], ["Assaltante", "assaltante-1"], ["Trabalhador", "trabalhador-1"], ["Ferido", "ferido"], ["Testemunha", "testemunha"], ["Veterano", "veterano"], ["Iniciante", "iniciante"]])
+    assert.ok(A.assets[A.portrait(name)].preview.includes(`/expressoes/${visual}/`));
+  assert.match(A.assets[A.portrait("Trabalhador", "triste", "segundo")].preview, /trabalhador-2/);
+  for (const name of ["Responsável pela cisterna", "Pirka e Jorvi", "Representantes dos trabalhadores"])
     assert.equal(A.assets[A.portrait(name)].preview, null);
   assert.match(A.assets[A.portrait("Criança")].preview, /crianca/);
   for (const asset of data.records.filter((a) => a.preview))

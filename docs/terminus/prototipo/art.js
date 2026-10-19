@@ -70,12 +70,20 @@
     ],
   };
   function register(asset) {
+    const objectFile = asset.category === "object" && files.objects[asset.id];
     if (!assets[asset.id])
       assets[asset.id] = {
         editorial: "Proposta de encenação",
         status: "A produzir",
         file: asset.preview || `assets/${asset.category}/${asset.id}.png`,
         ...asset,
+        ...(objectFile ? {
+          preview: objectFile,
+          file: objectFile,
+          status: "Em avaliação artística",
+          reference: "../arte/objetos/README.md",
+          format: "PNG RGBA · 720 × 540 · sRGB · fundo transparente",
+        } : {}),
       };
     return asset.id;
   }
@@ -251,7 +259,7 @@
         ? {
             source: "../storytelling/quests-da-campanha.md",
             appearance:
-              "Figurante identificado pelo papel; aparência provisória.",
+              "Figurante identificado pelo papel; consultar a disponibilidade no registro de arte.",
             notes: "Sem imagem correspondente.",
           }
         : null);
@@ -273,7 +281,11 @@
           ? pose === "transformado"
             ? "neral-transformado"
             : "neral-revelado"
-          : key;
+          : speaker === "Assaltante"
+            ? "assaltante-1"
+            : speaker === "Trabalhador"
+              ? pose === "segundo" ? "trabalhador-2" : "trabalhador-1"
+              : key;
     const available = files.portraits[visual];
     if (!exp) throw new Error(`Expressão sem direção de arte: ${expression}`);
     const persona = speaker === "Savel" ? "savel" : key;
@@ -290,7 +302,9 @@
       variant: selected,
       source: person.source,
       brief: `${person.appearance}\n\nRosto: ${exp[1]}\nPostura: ${exp[2]}${pose === "transformado" ? "\nPose nova: corpo deformado pelo concentrado, silhueta ampliada e assimétrica. Manter sinais que permitam reconhecer Neral. Anatomia adicional é proposta, não poder novo." : ""}${speaker === "Savel" ? "\nDisfarce público de Neral como fornecedor: aparência comercial, sem revelar antecipadamente sinais da transformação." : ""}${speaker === "Lala" ? "\nContato à distância pelo colar. Mostrar busto recortado sem cenário de Daratrine; não implica presença física em Terminus." : ""}`,
-      reference: person.notes,
+      reference: available && provisional.includes(speaker)
+        ? "Arte existente: ../arte/bustos/expressoes/lala-figurantes.md"
+        : person.notes,
       format: available
         ? "PNG transparente · 504 × 672 · cabeça e tronco; proporção e transparência preservadas"
         : "Representação provisória · cabeça e tronco, sem ilustração correspondente",

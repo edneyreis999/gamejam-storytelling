@@ -3,9 +3,13 @@ const fs = require("node:fs");
 const path = require("node:path");
 const crypto = require("node:crypto");
 const source = path.join(__dirname, "../../storytelling/quests-da-campanha.md");
-const text = fs.readFileSync(source, "utf8");
-const lines = text.split(/\r?\n/);
-const records = [];
+const expressionTag = /\[expressao=(neutro|feliz|triste|raiva|confuso)\]/;
+function expression(text) {
+  const value = text.match(expressionTag)?.[1];
+  if (/\[expressao=/.test(text) && !value)
+    throw new Error(`Expressão desconhecida: ${text}`);
+  return value;
+}
 const names =
   "Rheed|Criança|Ghork|Virmura|Borun|Sevrak|Meruna|Torvak|Savel|Neral|Elune|Durn|Pirka|Jorvi|Rask|Guedra|Lala|Nyra|Brakka|Nima|Sura|Edrin|Korr|Velka|Tessa|Mavren|Odrik|Lethra|Darvek|Zagra|Dorga|Seldan|Assaltante|Veterano|Iniciante|Ferido|Testemunha";
 const speech = new RegExp(`\\*\\*(${names})([^*]*?):\\*\\*\\s*`, "g");
@@ -15,58 +19,68 @@ function dialogue(line) {
     "**$1:**",
   );
   const matches = [...line.matchAll(speech)];
-  const body = matches.map((m, i) => ({
-    speaker: m[1],
-    condition: m[2].trim(),
-    text: line
-      .slice(m.index + m[0].length, matches[i + 1]?.index)
-      .replace(/\[[^\]]*\]/g, "")
-      .replace(/\*\*/g, "")
-      .trim(),
-  }));
+  const body = matches.map((m, i) => {
+    const raw = line.slice(m.index + m[0].length, matches[i + 1]?.index);
+    return {
+      speaker: m[1],
+      condition: m[2].trim(),
+      expression: expression(raw),
+      text: raw.replace(/\[[^\]]*\]/g, "").replace(/\*\*/g, "").trim(),
+    };
+  });
   if (/\*\*(Mentor|Representante)/.test(line)) {
     for (const m of line.matchAll(
-      /(Virmura|Borun|Sevrak|Darvek|Zagra): “([^”]+)”/g,
+      /(Virmura|Borun|Sevrak|Darvek|Zagra):\s*(\[expressao=[^\]]+\]\s*)?“([^”]+)”/g,
     ))
       body.push({
         speaker: m[1],
         condition: line.includes("Mentor rejeitado")
           ? "primeiro-rejeitado"
           : `papel:${m[1]}`,
-        text: m[2],
+        expression: expression(m[2] || ""),
+        text: m[3],
       });
   }
   return body;
 }
-let choiceSpeaker = "Ghork";
-for (let i = 0; i < 2252; i++) {
-  const line = lines[i];
-  if (line.startsWith("### ")) choiceSpeaker = "Ghork";
-  if (/^\*\*(Criança|Ghork) —/.test(line))
-    choiceSpeaker = line.startsWith("**Criança") ? "Criança" : "Ghork";
-  const choice = line.match(/^(?:\d+\.|-) \*\*“(.+?)”\*\*(.*)$/);
-  if (choice)
-    records.push({
-      line: i + 1,
-      speaker: choiceSpeaker,
-      choice: choice[1],
-      response: dialogue(choice[2]),
-      question: line.startsWith("-"),
-    });
-  else if (line.startsWith("**")) {
-    const body = dialogue(line);
-    if (body.length) records.push({ line: i + 1, body });
+function extract(text) {
+  const lines = text.split(/\r?\n/);
+  const records = [];
+  let choiceSpeaker = "Ghork";
+  for (let i = 0; i < Math.min(2252, lines.length); i++) {
+    const line = lines[i];
+    if (line.startsWith("### ")) choiceSpeaker = "Ghork";
+    if (/^\*\*(Criança|Ghork) —/.test(line))
+      choiceSpeaker = line.startsWith("**Criança") ? "Criança" : "Ghork";
+    const choice = line.match(/^(?:\d+\.|-) \*\*“(.+?)”\*\*(.*)$/);
+    if (choice)
+      records.push({
+        line: i + 1,
+        speaker: choiceSpeaker,
+        choice: choice[1],
+        expression: expression(choice[2].split("**")[0]),
+        response: dialogue(choice[2]),
+        question: line.startsWith("-"),
+      });
+    else if (line.startsWith("**")) {
+      const body = dialogue(line);
+      if (body.length) records.push({ line: i + 1, body });
+    }
   }
+  return {
+    source: "../storytelling/quests-da-campanha.md",
+    sha256: crypto
+      .createHash("sha256")
+      .update(text.replace(/\r\n/g, "\n"))
+      .digest("hex"),
+    records,
+  };
 }
-const output = {
-  source: "../storytelling/quests-da-campanha.md",
-  sha256: crypto
-    .createHash("sha256")
-    .update(text.replace(/\r\n/g, "\n"))
-    .digest("hex"),
-  records,
-};
-fs.writeFileSync(
-  path.join(__dirname, "../quest-script.js"),
-  `/* Gerado por scripts/extract-quest-script.cjs; recorte para montagem explícita em campaign.js. */\n(function(root) {\n  const data = ${JSON.stringify(output, null, 2)};\n  root.TerminusQuestScript = data;\n  if (typeof module !== 'undefined') module.exports = data;\n})(globalThis);\n`,
-);
+if (require.main === module) {
+  const output = extract(fs.readFileSync(source, "utf8"));
+  fs.writeFileSync(
+    path.join(__dirname, "../quest-script.js"),
+    `/* Gerado por scripts/extract-quest-script.cjs; recorte para montagem explícita em campaign.js. */\n(function(root) {\n  const data = ${JSON.stringify(output, null, 2)};\n  root.TerminusQuestScript = data;\n  if (typeof module !== 'undefined') module.exports = data;\n})(globalThis);\n`,
+  );
+}
+module.exports = { extract };

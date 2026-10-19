@@ -29,7 +29,7 @@
         body: (s) => [
           {
             ...n(
-              "Você volta a sentir o banco sob as mãos. Rheed espera sem fechar o frasco.",
+              "Você volta a sentir o banco sob as mãos. Rheed espera, ainda com o frasco aberto.",
               "bg-coreto",
             ),
             era: "present",
@@ -38,24 +38,24 @@
             "Rheed",
             s.stage === 1
               ? Object.values(s.progress).every((n) => n >= 1)
-                ? "Os três ajudaram Ghork. E agora ele precisa escolher. Está vendo por que demorou tanto para responder?"
-                : "Ele mal chegou e já quer saber onde vai parar. Primeiro precisa conseguir andar até lá."
+                ? "Os três ajudaram. Agora ele precisa escolher um. Não parece tão simples depois de conhecer cada um, não é?"
+                : "Mal passou pelo portão e já está planejando um futuro grandioso. Vamos primeiro pôr esse rapaz de pé?"
               : s.stage === 2
                 ? s.routeProgress === 2
-                  ? "Voltaram com o levantamento das minas. Ghork tem contas para acertar e bastante coisa para contar a Lala."
-                  : "Ghork já escolheu sua guilda. Agora vamos ver como esse pessoal trabalha junto nas minas."
+                  ? "Enfim, de volta das minas. Tem levantamento para entregar, contas para acertar... e Lala esperando para saber como foi."
+                  : "Pois bem, Ghork já tem sua guilda. Vamos ver como eles se entendem com uma mina para explorar."
                 : s.completed.includes("invasion")
-                  ? "Vamos dar um instante a Ghork. Ele precisa recuperar o fôlego antes de voltar àquela passagem."
+                  ? "Um instante. Deixe Ghork recuperar o fôlego antes de mandá-lo de volta àquela passagem."
                   : s.completed.includes("after4")
-                    ? "Ouviu a torcida? Vamos deixar Ghork aproveitar a vitória mais um pouco."
-                    : "Reconheceu quem está do outro lado? Pois é. Ghork também.",
-            "reflexivo",
+                    ? "Ouça essa torcida! Vamos deixar que ele aproveite mais um pouco. Essa parte ele conquistou."
+                    : "Conhece alguns daqueles rostos do outro lado da arena, não conhece? Ghork também.",
+            (s.stage === 1 ? (Object.values(s.progress).every((n) => n >= 1) ? "neutro" : "feliz") : (s.stage === 2 ? (s.routeProgress === 2 ? "neutro" : "feliz") : (s.completed.includes("invasion") ? "neutro" : "feliz"))),
             "present",
           ),
           d(
             "Rheed",
-            "Uma nova rolagem custa um Ludo. Ou você pode guardar a moeda: se perder, Ghork descansa e pede revanche. Não vou acabar com a história por causa de um tropeço.",
-            "ironico",
+            "Um Ludo dá direito a outra rolagem. Mas pode guardar a moeda. Se Ghork perder, ele descansa e pede revanche. Achou que eu ia deixar um tropeço acabar com a história?",
+            "feliz",
             "present",
           ),
         ],

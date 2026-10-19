@@ -1,5 +1,7 @@
 // Somente leitura: imprime um retrato do catálogo para documentação.
 const { build } = require("../catalog.js");
+const files = require("../asset-files.js");
+const portraits = Object.values(files.portraits);
 const { records, uses, variants } = build();
 const used = records.filter((a) => a.uses.length);
 const of = (category) => used.filter((a) => a.category === category);
@@ -12,7 +14,7 @@ const rows = [
   "",
   "Status: em desenvolvimento.",
   "",
-  "Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estão no inventário HTML. O registro integra 19 fundos, 210 expressões produzidas para 42 visuais e 15 artes do mapa. A tabela conta referências usadas nas passagens ou na navegação, incluindo representações provisórias; não é uma encomenda de novos desenhos.",
+  `Retrato gerado por \`scripts/report-art.cjs\`. As fichas completas e os usos estão no inventário HTML. O registro integra ${Object.keys(files.backgrounds).length} fundos, ${portraits.reduce((sum, portrait) => sum + Object.keys(portrait.files).length, 0)} expressões produzidas para ${portraits.length} visuais e 15 artes do mapa. A tabela conta referências usadas nas passagens ou na navegação, incluindo representações provisórias; não é uma encomenda de novos desenhos.`,
   "",
   "| Categoria | Imagens/componentes com uso |",
   "| --- | ---: |",
@@ -21,7 +23,9 @@ const rows = [
       `| ${["Fundos", "Bustos", "Objetos", "Interface e mapa"][i]} | ${of(category).length} |`,
   ),
   "",
-  `${new Set(busts.map((a) => a.base)).size} bases agrupam as ${busts.length} imagens de bustos; não são desenhos adicionais. ${owners.length} identidades visuais, com Savel e Neral separados. A criança usa o visual produzido. Lala e figurantes sem arquivo permanecem provisórios.`,
+  `${new Set(busts.map((a) => a.base)).size} bases agrupam as ${busts.length} imagens de bustos; não são desenhos adicionais. ${owners.length} identidades visuais, com Savel e Neral separados. A criança, Lala e figurantes com arte produzida usam seus arquivos; vozes coletivas sem correspondência permanecem provisórias.`,
+  "",
+  `${of("object").filter((a) => a.preview).length} objetos usados possuem ilustração associada. As imagens permanecem em avaliação artística; consulte a [galeria dos objetos](../arte/objetos/galeria.md).`,
   "",
   "## Bustos por personagem",
   "",
