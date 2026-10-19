@@ -15,15 +15,15 @@ Status: em desenvolvimento.
 
 ## 2. Função narrativa
 
-- **Importância para Ghork:** Oferecer pertencimento e mostrar a tensão entre proteção, autonomia e competição institucional.
+- **Importância para Ghork:** Virmura salva sua vida e oferece abrigo em troca de trabalho durante a recuperação, criando o vínculo inicial com a guilda sem exigir adesão. Propõe-se que a enfermaria existente receba o atendimento. A tensão entre proteção, autonomia e competição institucional permanece como desenvolvimento posterior proposto.
 - **Personagens associados:** [Virmura](../personagens/virmura.md) — líder e curandeira; [Sura](../personagens/sura.md) — curandeira de campo proposta; [Edrin](../personagens/edrin.md) — interlocutor na proposta de R2.
-- **Missões e acontecimentos associados:** Apresentação obrigatória da guilda A, preparação para o contrato, conversas de R2 e cuidado durante a crise.
+- **Missões e acontecimentos associados:** Convívio confirmado com Virmura durante a recuperação; apresentação obrigatória da guilda A, preparação para o contrato, conversas de R2 e cuidado durante a crise. O local do atendimento inicial e a acomodação oferecida ainda serão definidos.
 - **Conflitos presentes:** A disputa do contrato convive com o dever de tratar feridos. A divergência entre Sura e Edrin não autoriza exposição de pacientes sem consentimento.
 - **Motivos para retornar:** Acompanhar Virmura e Sura, preparar missões e reconhecer efeitos do desgaste dos combatentes.
 
 ## 3. Acesso e continuidade
 
-- **Primeira aparição proposta:** Arco 1, na apresentação de uma das três guildas.
+- **Primeira aparição proposta:** Na abertura em Terminus, para o atendimento de Ghork. O salvamento por Virmura está confirmado; sua localização na enfermaria e a ligação com a apresentação obrigatória da guilda ainda são propostas.
 - **Condições de acesso:** Apresentação acessível antes da adesão. Depois da escolha, apoio institucional depende da rota; atendimento não desfaz hostilidade. Não usar um recrutamento bloqueado para impedir a campanha ou exigir cura paga.
 - **Conexões narrativas:** [Casa de contratos](casa-de-contratos-e-mapas.md), [treino de Guedra](espaco-de-treino.md) e [coliseu](coliseu.md) por preparação e feridos.
 - **Mudanças durante a campanha:** Arco 1: acolhimento e disputa. Arco 2: proposta de observação de desgaste. Arco 3: atendimento e retirada de vítimas, sem cura automática da dependência após a vitória.
@@ -60,11 +60,12 @@ Aplicam-se as [diretrizes comuns de arte e produção](README.md#diretrizes-comu
 | Fonte | Informação sustentada | Adaptação nesta ficha | Estado |
 | --- | --- | --- | --- |
 | [Visão do jogo](../visao-do-jogo.md) | Virmura lidera os curandeiros, não governa Terminus; a adesão torna as outras duas guildas hostis. | Uso do local dentro dessa estrutura | Base confirmada; encenação adicional proposta |
+| [Abertura](../visao-do-jogo.md#premissa-e-abertura) e [leitura das notas antigas](../storytelling/ghork-chegada-anotacoes-antigas.md) | Virmura salva Ghork quando ele chega quase morrendo; nas notas, atende numa tenda. | Proposta de aproveitar a enfermaria já catalogada para o resgate | Resgate confirmado; local exato e encenação pendentes |
 | [Virmura](../personagens/virmura.md), [Sura](../personagens/sura.md), [Edrin](../personagens/edrin.md) | Papéis e relações descritos nas fichas | O cuidado preservado por Virmura e a proposta de R2 recebem uma enfermaria. | Preservar o estado editorial das fichas de origem |
 | [Organização adotada](README.md#organização-e-estado-editorial) e [modelo](../modelo-ficha-local.md) | Organização do catálogo e apresentação da visual novel | Enfermaria pública integrada à sede; cuidado e colaboração institucional são distintos. | Organização autorizada; descrição visual proposta |
 
 - **Propostas ainda não validadas individualmente:** descrição visual, enquadramentos e a encenação de R2 e do atendimento na crise.
-- **Pendências narrativas:** Nome Mãos do Amparo, detalhes de R2 e limites concretos de colaboração após a rejeição.
+- **Pendências narrativas:** Atendimento inicial de Ghork nesta enfermaria, etapas e duração da recuperação e encenação da acomodação oferecida; o acordo de abrigo e trabalho já está confirmado. Nome Mãos do Amparo, detalhes de R2 e limites concretos de colaboração após a rejeição.
 
 ### Validação visual pendente
 

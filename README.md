@@ -18,13 +18,26 @@ Status: em desenvolvimento.
 
 | Para | Consulte |
 | --- | --- |
+| Jogar e revisar cenas e desenhos | [Protótipo HTML](docs/terminus/prototipo/index.html) · [guia de uso e testes](docs/terminus/prototipo/README.md) · [inventário de arte](docs/terminus/prototipo/INVENTARIO.md) |
 | Conhecer as decisões confirmadas e os pontos em aberto | [Visão do jogo](docs/terminus/visao-do-jogo.md) |
+| Ler os arcos de Ghork e do campeão e a sequência da campanha | [Storytelling de Terminus](docs/terminus/storytelling/README.md) |
 | Escrever personagens, cenas e diálogos | [Índice do elenco e guia de leitura](docs/terminus/personagens/README.md) |
 | Consultar cenários e orientar a produção de fundos | [Catálogo de locais e guia de leitura](docs/terminus/locais/README.md) |
-| Retomar o desenvolvimento da história com o autor | [Roteiro para a próxima entrevista](docs/terminus/proxima-entrevista.md) |
-| Consultar os diagramas e a proposta de matriz de acessos | [Apresentação da campanha — Decisões que se acumulam](docs/terminus/campanha-decisoes-acumuladas.html) |
+| Retomar o desenvolvimento da história com o autor | [Roteiro para a próxima entrevista](docs/terminus/storytelling/proxima-entrevista.md) |
 
-A apresentação ainda não incorpora as decisões narrativas mais recentes. A visão registra as decisões confirmadas; as fichas e a análise identificam propostas que aguardam validação. Os materiais em `docs/docs_externas/` são referências.
+A visão concentra estrutura e regras; a base narrativa preserva os detalhes confirmados. O arco de Ghork tem eixo aprovado; suas cenas, as fichas e a análise identificam propostas que aguardam validação. Os materiais em `docs/docs_externas/` são referências.
+
+## Desenvolvimento e histórico
+
+- Para alterar o protótipo, consulte seu [guia de manutenção](docs/terminus/prototipo/README.md#testar-e-manter) e a [skill de visual novel HTML](.agents/skills/game-prototype-vn-html/SKILL.md).
+- Para preparar ou consultar publicações, use o [índice de devlogs](docs/terminus/devlogs/README.md), que distingue posts publicados de rascunhos.
+- Para consultar a continuação anterior ao livro, use o [índice das anotações antigas](docs/docs_externas/universo-coreto/anotacoes-antigas/README.md); esses documentos não substituem as decisões do jogo.
+
+Teste a campanha a partir da raiz:
+
+```sh
+node --test --test-reporter=spec docs/terminus/prototipo/tests/*.test.cjs
+```
 
 ## Projeto RPG Maker MZ
 

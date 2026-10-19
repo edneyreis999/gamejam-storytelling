@@ -36,7 +36,7 @@ Status: em desenvolvimento.
 - **Elementos marcantes:** Troféus de tamanhos diferentes, suportes vazios e estandartes sem brasão definitivo.
 - **Iluminação:** Luz alta ressalta as conquistas sem esconder o ambiente em sombras de vilania.
 - **Atmosfera:** Prestígio ainda vivo e manutenção custosa.
-- **Detalhes a evitar:** Símbolos ignotos públicos, retrato definitivo do campeão pintado no fundo ou cena da ocupação do treino tratada como aprovada.
+- **Detalhes a evitar:** Símbolos ignotos públicos, retrato definitivo do campeão pintado no fundo ou elementos que inventem a causa da ruptura com Orcquius e Glavius. A retaliação confirmada cancela horários de preparação no coliseu; não exige uma cena adicional de ocupação de treino nesta sede.
 
 ## 5. Fundos e composição
 

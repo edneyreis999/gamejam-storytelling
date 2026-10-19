@@ -2,7 +2,7 @@
 
 Status: em desenvolvimento.
 
-[Índice do elenco](README.md) · [Análise e confrontos](../analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
+[Índice do elenco](README.md) · [Análise e confrontos](../storytelling/analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
 
 **ID:** `zagra` · **Camada:** Estrutura da campanha.
 
@@ -113,6 +113,6 @@ Duas lâminas curtas, deslocamento rápido e adaptação a cargas leves. Luta po
 | [Tyler](../../docs_externas/punch-club/punch-club-quests.html#s%3Atyler_ask_fight) | Porta de entrada para o circuito informal de lutas. | Referência externa; função adaptada, não biografia transferida. |
 | [Big Bobo / big_bo](../../docs_externas/punch-club/punch-club-quests.html#s%3Abobo_work) | Poder local e trabalho associados a relações assimétricas. | Referência externa; função adaptada, não biografia transferida. |
 
-**Pendência específica:** Risco concreto, gastos e atribuição de Y permanecem propostas; motivo da mágoa continua adiado.
+**Pendência específica:** Risco concreto, gastos e atribuição de Y permanecem propostas; a mágoa profissional de [B2](../storytelling/acontecimentos-da-campanha.md#b2--a-justificativa-fica-na-memória-de-quem-perdeu) ainda aguarda confirmação.
 
 **Estado editorial:** caracterização e cenas propostas aguardam validação do autor.

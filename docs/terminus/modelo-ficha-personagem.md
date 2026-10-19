@@ -13,7 +13,7 @@ Use a [visão do jogo](visao-do-jogo.md) para conferir as decisões de Terminus.
 
 Status: em desenvolvimento.
 
-[Índice do elenco](README.md) · [Análise e confrontos](../analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
+[Índice do elenco](README.md) · [Análise e confrontos](../storytelling/analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
 
 **ID:** `[id estável]` · **Camada:** [Estrutura da campanha / Coadjuvante recorrente / Reserva narrativa].
 

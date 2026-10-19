@@ -2,7 +2,7 @@
 
 Status: em desenvolvimento.
 
-[Índice do elenco](README.md) · [Análise e confrontos](../analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
+[Índice do elenco](README.md) · [Análise e confrontos](../storytelling/analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
 
 **ID:** `darvek` · **Camada:** Estrutura da campanha.
 
@@ -97,7 +97,7 @@ Proposta: trabalhou com Zagra em expedições e se separou dela após divergênc
 | [Borun Passo-Largo](borun.md) | Antigo contato de estrada; discorda quando ele usa improviso como solução suficiente. |
 | [Durn Sete-Rebites](durn.md) | Pode fornecer esteios e peças, sem exclusividade de rota. |
 
-**Conversas e entrada na campanha:** Apresentação e rota X propostas para o arco 2. Se preterido, os Esteios recebem apoio de guilda rejeitada e enfrentam Ghork nas quartas. A causa específica da mágoa e a guilda patrocinadora continuam adiadas. A equipe opera o contrato, mas não integra o bônus de batalha de Ghork.
+**Conversas e entrada na campanha:** Apresentação e rota X propostas para o arco 2. Se preterido, os Esteios recebem apoio de guilda rejeitada e enfrentam Ghork nas quartas. A [mágoa profissional de B2](../storytelling/acontecimentos-da-campanha.md#b2--a-justificativa-fica-na-memória-de-quem-perdeu) é uma proposta para confirmação; a guilda patrocinadora continua adiada. A equipe opera o contrato, mas não integra o bônus de batalha de Ghork.
 
 ## 8. Capacidades, limites e confrontos
 
@@ -113,6 +113,6 @@ Escudo largo, resgate com corda e contenção. Quer vencer para demonstrar que c
 | [Roy](../../docs_externas/punch-club/punch-club-quests.html#s%3Ared_hi) | Amizade, convívio, treino e apoio entre lutadores. | Referência externa; função adaptada, não biografia transferida. |
 | [Casey](../../docs_externas/punch-club/punch-club-quests.html#s%3Acasey_hi) | Comida, trabalho e acesso a outra rede de relações. | Referência externa; função adaptada, não biografia transferida. |
 
-**Pendência específica:** Atribuição de X à cautela e despesas são propostas; não fechar o motivo da mágoa nem o patrocinador rejeitado.
+**Pendência específica:** Atribuição de X à cautela e despesas são propostas; validar a proposta de mágoa em B2 e definir o patrocinador entre as guildas rejeitadas.
 
 **Estado editorial:** caracterização e cenas propostas aguardam validação do autor.

@@ -2,7 +2,7 @@
 
 Status: em desenvolvimento.
 
-[Índice do elenco](README.md) · [Análise e confrontos](../analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
+[Índice do elenco](README.md) · [Análise e confrontos](../storytelling/analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
 
 **ID:** `lethra` · **Camada:** Estrutura da campanha.
 
@@ -115,6 +115,6 @@ Esgrima de treino, esquiva e precisão de alcance. Luta por reconhecimento do of
 | [Ruth](../../docs_externas/punch-club/punch-club-2-quests.html#event%3AEvent_I-RuthSparring) | Rivalidade e interação em treino e combate. | Referência externa; função adaptada, não biografia transferida. |
 | [Silver / Freddie](../../docs_externas/punch-club/punch-club-quests.html#s%3Athird_place_rookie_silver) | Treinador competente envolvido em dívida e interesses próprios. | Referência externa; função adaptada, não biografia transferida. |
 
-**Pendência específica:** Exibição e alunos permanecem propostas; não nomear novos alunos obrigatórios que ultrapassem as 40 fichas.
+**Pendência específica:** Exibição e alunos permanecem propostas; não nomear novos alunos obrigatórios que ultrapassem as 42 fichas.
 
 **Estado editorial:** caracterização e cenas propostas aguardam validação do autor.

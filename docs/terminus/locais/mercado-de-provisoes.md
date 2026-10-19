@@ -4,7 +4,7 @@ Status: em desenvolvimento.
 
 [Catálogo de locais](README.md) · [Visão do jogo](../visao-do-jogo.md) · [Modelo da ficha](../modelo-ficha-local.md)
 
-**Estado editorial:** descrições e cenas adicionais são propostas. Consulte a [organização adotada](README.md#organização-e-estado-editorial) e a seção 7 para distinguir decisões e pendências.
+**Estado editorial:** o encontro de Ghork com Borun está confirmado. Descrições visuais e outras cenas adicionais são propostas. Consulte a [organização adotada](README.md#organização-e-estado-editorial) e a seção 7 para distinguir decisões e pendências.
 
 ## 1. Identificação
 
@@ -16,14 +16,14 @@ Status: em desenvolvimento.
 ## 2. Função narrativa
 
 - **Importância para Ghork:** Mostrar quem sustenta as equipes fora da arena e onde relações de confiança envolvem recursos concretos.
-- **Personagens associados:** [Jorvi](../personagens/jorvi.md) — comerciante e possível custodiante de R4; [Pirka](../personagens/pirka.md) — traz e retira cargas; [Nima](../personagens/nima.md) — organiza entregas; [Tessa](../personagens/tessa.md) — confere pagamentos na proposta de R4; [Mavren](../personagens/mavren.md) — propõe garantia verificável.
-- **Missões e acontecimentos associados:** Abastecimento nos três arcos e conferência do depósito de R4, caso o conflito seja adotado.
+- **Personagens associados:** [Borun](../personagens/borun.md) — ajuda Ghork na retirada do assalto; [Jorvi](../personagens/jorvi.md) — comerciante e possível custodiante de R4; [Pirka](../personagens/pirka.md) — traz e retira cargas; [Nima](../personagens/nima.md) — organiza entregas; [Tessa](../personagens/tessa.md) — confere pagamentos na proposta de R4; [Mavren](../personagens/mavren.md) — propõe garantia verificável.
+- **Missões e acontecimentos associados:** Encontro confirmado com Borun durante o assalto no corredor de cargas, integrado à apresentação obrigatória de B. Abastecimento nos três arcos e conferência do depósito de R4, caso o conflito seja adotado.
 - **Conflitos presentes:** Necessidade de provisões, crédito e prova de pagamento; Jorvi não garante dinheiro que não recebeu.
 - **Motivos para retornar:** Consultar registros e acompanhar mudanças na procura por mantimentos.
 
 ## 3. Acesso e continuidade
 
-- **Primeira aparição proposta:** Arco 1, em encontros cotidianos.
+- **Presença inicial confirmada:** Arco 1, no encontro com Borun. Ghork transporta materiais para Virmura depois de melhorar o suficiente para pequenos deslocamentos. O assalto e a retirada usam o corredor de cargas já previsto, sem cenário adicional; outras visitas anteriores permanecem propostas.
 - **Condições de acesso:** O espaço comercial pode ser visitado por qualquer rota. A cena de R4 só abre após as duas missões exclusivas X/Y; compras não são exigidas para vencer batalhas.
 - **Conexões narrativas:** [Estalagem](estalagem-de-nyra.md) e [cisterna](cisterna-em-obras.md) por provisões e garantias.
 - **Mudanças durante a campanha:** Arco 2: conversas podem destacar recursos destinados às expedições. Arco 3: apoio ao abastecimento na crise, sem pressupor saque ou fechamento definitivo.
@@ -58,6 +58,7 @@ Aplicam-se as [diretrizes comuns de arte e produção](README.md#diretrizes-comu
 
 | Fonte | Informação sustentada | Adaptação nesta ficha | Estado |
 | --- | --- | --- | --- |
+| [Primeiros vínculos com os mentores](../visao-do-jogo.md#primeiros-vínculos-com-os-mentores) | Dois assaltantes cercam Ghork; Borun abre passagem e Ghork usa um carrinho vazio para dificultar a perseguição. | Corredor de cargas e área movimentada no cenário existente; figurantes sem ficha própria. | Sinopse confirmada; diálogos e encenação detalhada pendentes; sem batalha de D20 |
 | [Visão do jogo](../visao-do-jogo.md) | R4 abre após as duas missões exclusivas X/Y; a campanha mantém percurso gratuito e zero recrutados. | Uso do local dentro dessa estrutura | Base confirmada; encenação adicional proposta |
 | [Jorvi](../personagens/jorvi.md), [Pirka](../personagens/pirka.md), [Nima](../personagens/nima.md), [Tessa](../personagens/tessa.md), [Mavren](../personagens/mavren.md) | Papéis e relações descritos nas fichas | Jorvi e a custódia verificável da proposta de R4 ganham um ponto de encontro. | Preservar o estado editorial das fichas de origem |
 | [Organização adotada](README.md#organização-e-estado-editorial) e [modelo](../modelo-ficha-local.md) | Organização do catálogo e apresentação da visual novel | A banca e a circulação de cargas integram uma única ficha de mercado. | Organização autorizada; descrição visual proposta |
