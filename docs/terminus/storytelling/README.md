@@ -13,6 +13,7 @@ Este núcleo reúne a história, sua preparação e as referências usadas pelo 
 | Entender o que muda em Ghork | [Arco de Ghork](arco-de-ghork.md) |
 | Entender o campeão, seus bastidores e a construção da final | [Arco do campeão e sua rivalidade com Ghork](arco-do-campeao.md) |
 | Acompanhar decisões, custos e reencontros | [Acontecimentos da campanha](acontecimentos-da-campanha.md) |
+| Revisar quests, diálogos completos, entregas e combates | [Quests da campanha e recrutamentos](quests-da-campanha.md), primeira versão com propostas e pendências identificadas |
 | Escrever uma conversa ou situar uma cena | [Personagens](../personagens/README.md) e [locais](../locais/README.md), depois as fichas envolvidas |
 | Conferir relações, pares e adversários | [Análise do elenco](analise-do-elenco.md) |
 | Confirmar as propostas com o autor | [Próxima entrevista](proxima-entrevista.md) |
@@ -31,5 +32,7 @@ A **visão** registra estrutura, regras, direções confirmadas e pendências. A
 O eixo do **arco de Ghork** foi confirmado. O **arco do campeão** reúne o passado compartilhado com Orcquius e Glavius, a rivalidade com as três guildas e a retaliação confirmada, além de desenvolver sua trajetória fora de vista. A **sequência de acontecimentos** integra esses fatos à campanha. Cada trecho distingue sua base aprovada da encenação nova; os detalhes ainda propostos não são aprovados automaticamente pela autorização de escrita.
 
 As fichas concentram personalidade, voz, relações e participação de cada pessoa; os locais concentram acesso e orientação de cenário. Não é necessário retirar esses conteúdos dos catálogos para reunir o storytelling. Os [devlogs](../devlogs/README.md) preservam publicações históricas e não são um registro atualizado de decisões.
+
+O [roteiro de quests](quests-da-campanha.md) distribui os acontecimentos na estrutura jogável e escreve os diálogos, itens de missão, deslocamentos, convites e revanches. Inclui dois confrontos de cobrança solicitados pelo autor nas cadeias de Borun e Sevrak. A solicitação de escrita e de combates não aprova automaticamente as encenações, a matriz de recrutamento ou as soluções novas; a visão e a base continuam sendo os registros das decisões confirmadas.
 
 Ao confirmar uma proposta, atualizar a decisão na visão, seu detalhe na base quando necessário, o acontecimento e as fichas afetadas. O roteiro de entrevista deve apontar para esses registros, preservando as questões ainda abertas.
