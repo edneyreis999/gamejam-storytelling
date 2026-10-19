@@ -2,11 +2,11 @@
 
 Status: em desenvolvimento.
 
-[Índice do elenco](README.md) · [Análise e confrontos](../analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
+[Índice do elenco](README.md) · [Análise e confrontos](../storytelling/analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
 
 **ID:** `borun` · **Camada:** Estrutura da campanha.
 
-Proposta de caracterização e integração; consultar a separação de fontes ao final.
+O primeiro encontro com Ghork está confirmado. A caracterização adicional permanece proposta; consultar a separação de fontes ao final.
 
 ## 1. Identificação
 
@@ -88,17 +88,22 @@ Exercícios de voz; não são cenas aprovadas nem citações das fontes.
 
 Proposta: guia veterano de caravanas que fundou uma guilda de reconhecimento e resgate depois de ver combatentes fortes se perderem em terreno mal lido. Nunca foi mestre de Ghork em Daratrine. Jiraiya fornece a relação entre experiência, investigação e formação; Mick fornece acolhimento e porta de entrada para a luta.
 
+**Primeiro encontro confirmado:** acompanha a descarga de uma caravana no mercado quando dois assaltantes cercam Ghork. Abre uma passagem com o bastão e orienta o jovem a usar um carrinho vazio para dificultar a perseguição. Depois de alcançarem a área movimentada, acompanha Ghork por parte do caminho e explica os sinais que percebeu. A [sinopse na visão](../visao-do-jogo.md#primeiros-vínculos-com-os-mentores) é uma criação confirmada para o jogo; não aprova toda a biografia proposta acima.
+
 ## 7. Relações e participação
 
 | Pessoa | Relação |
 | --- | --- |
-| [Ghork](ghork.md) | Quer ensinar leitura de situação, sem exigir mudança de corpo para reconhecer valor. |
+| [Ghork](ghork.md) | Ajuda-o a escapar do assalto com participação do próprio Ghork. A retirada e a explicação posterior estabelecem confiança em sua experiência; o ensino de leitura de situação pode se desenvolver a partir desse encontro. |
 | [Virmura](virmura.md) | Confia nela para resgates, mas resiste quando cuidado vira proibição. |
 | [Sevrak Vey](sevrak.md) | Discute sua tentativa de transformar discípulos em demonstrações. |
+| [Torvak](torvak.md) | Rivalidade confirmada anterior à chegada de Ghork. Se escolhido, contesta seus privilégios, recusa retratar-se e tem os horários de preparação da guilda cancelados por pressão dele. |
 | [Darvek do Esteio](darvek.md) | Respeita a cautela do antigo guia; considera que ela pode virar imobilidade. |
 | [Pirka Roda-Seca](pirka.md) | Troca informações de estrada e recebe cobranças por horários perdidos. |
 
-**Conversas e entrada na campanha:** Apresenta a guilda e uma abordagem do contrato baseada em observação e depoimentos. Se rejeitado, continua adversário institucional e não oferece vantagens clandestinas a Ghork. Na invasão, a proposta o mantém abrindo rotas e retirando espectadores; não substitui o protagonista no confronto final.
+**Conversas e entrada na campanha:** O encontro no mercado integra a apresentação obrigatória de B, após Ghork melhorar o suficiente para pequenos deslocamentos, sem depender de já conhecer Sevrak. É uma intervenção narrada, sem batalha de D20 ou adesão automática. A abordagem do contrato baseada em observação e depoimentos continua proposta. Se rejeitado, permanece adversário institucional e não oferece vantagens clandestinas a Ghork. Na invasão, a proposta o mantém abrindo rotas e retirando espectadores; não substitui o protagonista no confronto final.
+
+**Desenvolvimento da rivalidade:** o cancelamento pelo campeão está confirmado quando Ghork escolhe esta guilda, sem retirar sua inscrição. Propõe-se que Borun redistribua as práticas e o acompanhamento nas instalações disponíveis, assuma o trabalho adicional e recuse trocar independência por um favor de Torvak. Deve explicar as mudanças a Ghork, em vez de transformar o abuso em uma lição conveniente. Ver o [arco do campeão](../storytelling/arco-do-campeao.md). Se preterido, combater os privilégios da quarta guilda não o torna aliado de Ghork.
 
 ## 8. Capacidades, limites e confrontos
 
@@ -110,10 +115,11 @@ Bastão, deslocamento em terreno irregular, rastreamento e orientação de grupo
 
 | Fonte e localização | Evidência ou decisão | Interpretação e uso em Terminus |
 | --- | --- | --- |
+| [Primeiros vínculos com os mentores](../visao-do-jogo.md#primeiros-vínculos-com-os-mentores) | Retirada com Ghork durante o assalto no mercado, confirmada pelo autor. | Integra a apresentação de B; diálogos e encenação detalhada pendentes. |
 | [Jiraiya, retrospectiva oficial](https://naruto-official.com/en/news/01_1643) | Experiência de viagem, investigação e formação de novos combatentes. | Referência confirmada; Borun e sua biografia são propostas. |
 | [Mick](../../docs_externas/punch-club/punch-club-quests.html#s%3Amick_first_time) | Mentor, acolhimento e entrada no circuito de luta. | Referência externa; função adaptada, não biografia transferida. |
 | [Ivan](../../docs_externas/punch-club/punch-club-quests.html#s%3Arussia_start) | Acolhimento e treino fora da cidade de origem. | Referência externa; função adaptada, não biografia transferida. |
 
 **Pendência específica:** Nome da guilda, passado e limitação física são propostas; não estabelecer equipe lendária conjunta com Virmura e Sevrak por analogia automática.
 
-**Estado editorial:** caracterização e cenas propostas aguardam validação do autor.
+**Estado editorial:** primeiro encontro e participação na rivalidade com o campeão confirmados; diálogos pendentes. Reação específica ao cancelamento, caracterização adicional e demais cenas propostas aguardam validação do autor.

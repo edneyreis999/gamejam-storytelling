@@ -2,7 +2,7 @@
 
 Status: em desenvolvimento.
 
-[Índice do elenco](README.md) · [Análise e confrontos](../analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
+[Índice do elenco](README.md) · [Análise e confrontos](../storytelling/analise-do-elenco.md) · [Modelo de escrita](../modelo-ficha-personagem.md)
 
 **ID:** `meruna` · **Camada:** Estrutura da campanha.
 
@@ -113,6 +113,6 @@ Leitura de contratos e avaliação de evidências; não é combatente nem recrut
 | [Visão do jogo](../visao-do-jogo.md) | Estrutura, recrutamentos, confrontos, regras e desfecho registrados. | Base confirmada; identidade e cenas novas continuam propostas. |
 | [Din Kong / Manager](../../docs_externas/punch-club/punch-club-quests.html#s%3Amanager_hi) | Empresário enquadra o lutador como narrativa vendável. | Referência externa; função adaptada, não biografia transferida. |
 
-**Pendência específica:** Critério concreto da seleção e erro passado permanecem propostas de escrita; a divergência dos mapas continua adiada.
+**Pendência específica:** A demonstração e a escolha em [A5–A6](../storytelling/acontecimentos-da-campanha.md#a5--três-maneiras-de-disputar-o-mesmo-trabalho) permanecem propostas para confirmação, assim como seu erro passado. A causa da divergência dos mapas continua adiada.
 
 **Estado editorial:** caracterização e cenas propostas aguardam validação do autor.

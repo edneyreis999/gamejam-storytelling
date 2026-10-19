@@ -61,3 +61,7 @@ Retificação de Neral em 18/10/2026: capuz e cobertura integral valem somente p
 
 
 Revisão de Ghork e Virmura em 18/10/2026: os concepts enviados pelo autor orientam a aparência dos bustos v2, mantendo o acabamento sépia do Coreto. [Ghork](referencias/ghork-concept-autor.png) preserva as mechas grossas, cavanhaque, torso descoberto, colar e meio sorriso. [Virmura](referencias/virmura-concept-autor.png) preserva o penteado alto com duas tranças laterais, gola de peles, adornos, couro costurado e equipamento de cura. Nesta revisão visual, esses concepts prevalecem sobre as interpretações anteriores das sprites; as fichas narrativas e as sprites não foram alteradas. Os dois bustos aguardam avaliação do autor.
+
+## Uso no protótipo V3
+
+O [protótipo HTML](../../prototipo/index.html) usa as expressões dos participantes efetivamente presentes, preservando as três formas de Neral. Concepts permanecem como referência de identidade. Lala e figurantes sem arquivo correspondente continuam provisórios. Consulte o [inventário de uso](../../prototipo/INVENTARIO.md) e a [verificação](../../prototipo/VERIFICACAO-V3.md); a integração não altera o status de avaliação artística.

@@ -17,13 +17,13 @@ Status: em desenvolvimento.
 
 - **Importância para Ghork:** Materializar a promessa de reconhecimento pela inteligência e determinação, com a pressão de corresponder ao método de um mentor.
 - **Personagens associados:** [Sevrak](../personagens/sevrak.md) — líder proposto da guilda C; [Velka](../personagens/velka.md) — interlocutora sobre preservação de técnicas.
-- **Missões e acontecimentos associados:** Apresentação obrigatória de C, estudo para o contrato e conversas de formação.
+- **Missões e acontecimentos associados:** Continuação da apresentação de C, estudo para o contrato e conversas de formação. O primeiro encontro com Sevrak ocorre no [coliseu](coliseu.md), quando protege Ghork do veterano, e já integra a apresentação obrigatória.
 - **Conflitos presentes:** Reconhecimento sincero convive com o desejo de moldar um sucessor; não implica poder oculto de Ghork ou práticas ignotas.
 - **Motivos para retornar:** Debater métodos e acompanhar a relação com o mentor sem acrescentar uma árvore de habilidades.
 
 ## 3. Acesso e continuidade
 
-- **Primeira aparição proposta:** Arco 1, durante as apresentações.
+- **Primeira aparição proposta da sede:** Arco 1, após o encontro com Sevrak no coliseu. A visita desenvolve a mesma apresentação de C, sem missão adicional; não depende de conhecer Borun.
 - **Condições de acesso:** Apresentação anterior à escolha. Apoio posterior depende da adesão; eventual visita à sede rejeitada não oferece serviços que neutralizem sua oposição.
 - **Conexões narrativas:** [Casa de contratos](casa-de-contratos-e-mapas.md) pelo estudo; [oficina](oficina-de-durn.md) e [treino independente](espaco-de-treino.md) por comparação de métodos, sem subordinação desses espaços.
 - **Mudanças durante a campanha:** A recepção muda após o compromisso de Ghork. A atuação de Sevrak na evacuação é proposta para o coliseu, não motivo para criar uma batalha nesta sede.

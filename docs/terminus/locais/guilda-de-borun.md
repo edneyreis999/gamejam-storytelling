@@ -17,13 +17,13 @@ Status: em desenvolvimento.
 
 - **Importância para Ghork:** Apresentar um mentor que valoriza observação e experiência, com espaço para a iniciativa de Ghork.
 - **Personagens associados:** [Borun](../personagens/borun.md) — líder proposto da guilda B; [Pirka](../personagens/pirka.md) — interlocutora das rotas; [Darvek](../personagens/darvek.md) — contato de resgate; [Elune](../personagens/elune.md) — consulta registros de campo.
-- **Missões e acontecimentos associados:** Apresentação obrigatória de B, desenvolvimento da proposta para o contrato e preparação de expedições.
+- **Missões e acontecimentos associados:** Continuação da apresentação de B, desenvolvimento da proposta para o contrato e preparação de expedições. O primeiro encontro com Borun ocorre no [mercado](mercado-de-provisoes.md), durante a retirada do assalto, e já integra a apresentação obrigatória.
 - **Conflitos presentes:** O valor da experiência precisa conviver com informação verificável e planejamento; a guilda disputa o mesmo contrato das outras.
 - **Motivos para retornar:** Discutir relatos e acompanhar a relação com Borun conforme a escolha de guilda.
 
 ## 3. Acesso e continuidade
 
-- **Primeira aparição proposta:** Arco 1, durante as apresentações.
+- **Primeira aparição proposta da sede:** Arco 1, após o encontro com Borun no mercado. A visita desenvolve a mesma apresentação de B, sem missão adicional; não depende de conhecer Sevrak.
 - **Condições de acesso:** Apresentação disponível antes do compromisso. Se rejeitada, não concede atalhos ou apoio secreto que anulem a hostilidade; reencontros dependem das cenas existentes.
 - **Conexões narrativas:** [Casa de contratos](casa-de-contratos-e-mapas.md) e [minas](minas-e-galerias.md) por relatos e preparação.
 - **Mudanças durante a campanha:** A adesão muda o tratamento institucional. Na invasão, Borun pode atuar na retirada do coliseu; isso não exige uma cena adicional nesta sede.
