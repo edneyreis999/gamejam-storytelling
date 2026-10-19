@@ -2,6 +2,8 @@
 
 Status: em desenvolvimento.
 
+Revisão de Rheed em 19/10/2026: o busto base v2 e as cinco expressões seguem [Reed final, referência indicada pelo autor](referencias/rheed-concept-autor.png). Foram adequados rosto, barba volumosa com pontas laterais atadas, figurino ornamentado, mangas bufantes e caneca. O tapa-olho aparece à direita de quem olha, sobre o olho anatômico esquerdo, conforme essa imagem; nesta revisão visual ela prevalece sobre a lateralidade registrada anteriormente na ficha. A ficha narrativa e as sprites não foram alteradas. O busto anterior e as expressões substituídas estão no [histórico](historico/rheed-2026-10-19/), fora da entrega. Os novos bustos aguardam avaliação artística do autor.
+
 As cinco expressões por visual estão disponíveis em pasta própria: [galeria e controle das 210 expressões](expressoes/README.md). A produção e a revisão interna foram concluídas; a avaliação artística do autor permanece pendente. Os bustos abaixo são as referências preservadas dessa produção.
 
 42 bustos cobrem as 40 fichas do elenco, incluindo as três formas de Neral. Em 18/10/2026 foram produzidos 15 no lote inicial, 13 na primeira continuação e os 14 restantes no terceiro lote.
@@ -15,7 +17,7 @@ Os arquivos abaixo aguardam avaliação do autor, exceto os aceites específicos
 | Personagem | Imagem | Prompt e referências |
 | --- | --- | --- |
 | Ghork | [PNG v2](../../../../assets/terminus/bustos/em-revisao/ghork-v2.png) | [Registro](ghork-v2.json) |
-| Theodor Rheed | [PNG v1](../../../../assets/terminus/bustos/em-revisao/rheed-v1.png) | [Registro](rheed-v1.json) |
+| Theodor Rheed | [PNG v2](../../../../assets/terminus/bustos/em-revisao/rheed-v2.png) | [Registro](rheed-v2.json) |
 | Criança jogadora | [PNG v1](../../../../assets/terminus/bustos/em-revisao/crianca-v1.png) | [Registro](crianca-v1.json) |
 | Borun Passo-Largo | [PNG v1](../../../../assets/terminus/bustos/em-revisao/borun-v1.png) | [Registro](borun-v1.json) |
 | Sevrak Vey | [PNG v1](../../../../assets/terminus/bustos/em-revisao/sevrak-v1.png) | [Registro](sevrak-v1.json) |

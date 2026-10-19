@@ -2,6 +2,8 @@
 
 Status: em desenvolvimento.
 
+Rheed foi atualizado em 19/10/2026 conforme a nova referência do autor: [busto base e registro v2](../rheed-v2.json). As cinco expressões preservam o figurino ornamentado, a caneca e o tapa-olho à direita da imagem. Prompts e verificações atuais estão em `registros/rheed-*.json`; os arquivos anteriores permanecem no [histórico da revisão](../historico/rheed-2026-10-19/).
+
 Produção concluída de 210 bustos: cinco expressões para cada um dos 42 visuais do elenco, incluindo as três formas de Neral. Os 42 concepts atuais permanecem preservados. Todos os conjuntos passaram pela revisão interna; a aprovação artística do autor permanece pendente.
 
 [Galeria comparativa](galeria.md) · [Controle de produção](controle.json) · [Matriz de referências e atuação](matriz.json) · [Verificação final](verificacao-final.json)
