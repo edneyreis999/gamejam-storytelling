@@ -9,46 +9,54 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <main id="stage" aria-label="Mapa panorâmico de Terminus">
-    <section id="city" aria-label="Explorar a cidade">
-      <div id="viewport" aria-label="Panorama arrastável">
-        <div id="world"><img id="terrain" alt="" draggable="false"><div id="destinations"></div></div>
-      </div>
-      <header class="masthead">
-        <h1>Terminus</h1>
-        <p>Escolha seu próximo destino</p>
-      </header>
-      <div id="portal-anchor"></div>
-      <nav class="pan-controls" aria-label="Mover a câmera">
-        <button id="pan-left" class="pan" aria-label="Mover para a esquerda" title="Mover para a esquerda">‹</button>
-        <button id="pan-right" class="pan" aria-label="Mover para a direita" title="Mover para a direita">›</button>
-      </nav>
-      <aside id="load-panel" class="notice" aria-live="polite">
-        <h2 id="load-title">Preparando a cidade</h2>
-        <p id="load-message">Carregando o panorama e as fachadas…</p>
-        <button id="retry-city" hidden>Carregar novamente</button>
-      </aside>
-      <footer class="destination-bar">
-        <div class="selection-copy" aria-live="polite" aria-atomic="true">
-          <span class="eyebrow" id="selection-state">Destino selecionado</span>
-          <h2 id="destination-name">Estalagem de Nyra</h2>
-          <p id="destination-detail">Salão · Pátio</p>
+  <section id="orientation" hidden role="status">
+    <h1>Explore a cidade na horizontal</h1>
+    <p>Gire o dispositivo ou amplie a janela para ver todos os destinos.</p>
+  </section>
+  <div id="frame">
+    <main id="stage" aria-label="Mapa da cidade de Terminus">
+      <h1 class="sr-only">Mapa da cidade de Terminus</h1>
+      <section id="city" aria-label="Destinos da cidade">
+        <div id="viewport">
+          <img id="terrain" alt="" draggable="false" width="1280" height="720">
+          <div id="destinations"></div>
         </div>
-        <p class="navigation-hint">Arraste para explorar<br><span>Tab e setas para navegar</span></p>
-        <button id="visit" class="primary" disabled>Visitar <span aria-hidden="true">→</span></button>
-      </footer>
-      <div class="camera-track" aria-hidden="true"><span id="camera-thumb"></span></div>
-    </section>
-    <dialog id="preview" aria-labelledby="preview-title">
-      <header class="preview-header">
-        <button id="back">← Voltar à cidade</button>
-        <div><span class="eyebrow">Prévia do local</span><h2 id="preview-title"></h2></div>
-      </header>
-      <figure id="scene"><img id="scene-image" alt=""><figcaption id="scene-status" role="status">Carregando o fundo…</figcaption><button id="retry-scene" hidden>Carregar fundo novamente</button></figure>
-      <nav id="view-controls" aria-label="Fundos deste local"></nav>
-    </dialog>
-    <svg class="clip-definitions" aria-hidden="true"><defs id="hit-shapes"></defs></svg>
-  </main>
+        <div id="portal-anchor"></div>
+        <aside id="load-panel" class="notice" aria-live="polite">
+          <h2 id="load-title">Preparando a cidade</h2>
+          <p id="load-message">Carregando a cidade e as fachadas…</p>
+          <button id="retry-city" class="primary" hidden>Carregar novamente</button>
+        </aside>
+        <footer class="destination-bar" aria-live="polite" aria-atomic="true">
+          <p id="empty-selection">Escolha seu próximo destino</p>
+          <div id="selection-copy" hidden>
+            <h2 id="destination-name"></h2>
+            <p id="destination-detail"></p>
+          </div>
+        </footer>
+      </section>
+      <svg class="clip-definitions" aria-hidden="true">
+        <defs id="hit-shapes">
+          <symbol id="bootprints" viewBox="0 0 40 32">
+            <g fill="currentColor" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round">
+              <path d="M7 17C4 13 5 7 8 4C10 2 14 3 15 7L17 16L13 20Z"/>
+              <path d="M9 20L14 22L12 28L6 26Z"/>
+              <path d="M25 10C24 6 27 2 30 2C34 2 36 6 35 10L32 19L26 17Z"/>
+              <path d="M26 20L32 22L30 28L24 26Z"/>
+            </g>
+          </symbol>
+        </defs>
+      </svg>
+    </main>
+  </div>
+  <dialog id="preview" aria-labelledby="preview-title">
+    <header class="preview-header">
+      <button id="back">← Voltar à cidade</button>
+      <div><span class="eyebrow">Prévia do local</span><h2 id="preview-title"></h2></div>
+    </header>
+    <figure id="scene"><img id="scene-image" alt=""><figcaption id="scene-status" role="status">Carregando o fundo…</figcaption><button id="retry-scene" class="primary" hidden>Carregar fundo novamente</button></figure>
+    <nav id="view-controls" aria-label="Fundos deste local"></nav>
+  </dialog>
   <noscript>Ative o JavaScript no navegador para explorar este protótipo.</noscript>
 </body>
 </html>
