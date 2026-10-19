@@ -21,3 +21,14 @@ Sevrak usa o chapéu em todas as aparições. Ghork o usa após a adesão a C; o
 ## Fontes do jogo
 
 O nome vigente está nas definições, glossário e unidades atuais de localização. `original`, `previousPt`, `previousEn`, inventários editoriais e propostas `round2` preservam a redação histórica; essas cópias não devem ser reaplicadas sobre o nome atual. O runtime da edição para jogadores é regenerado a partir das fontes do protótipo.
+
+
+## Verificação — 19/10/2026
+
+As 60 combinações foram exportadas e conferidas: PNG RGBA 504 × 672, perfil sRGB, sem entrelaçamento, alfa de 0 a 255 e margens mínimas de 12 px. Não há faltas nem duplicatas binárias. Os 297 arquivos anteriores registrados mantêm seus hashes. A galeria compara cada conjunto ao neutro original; os registros individuais guardam a revisão e os prompts. Velka triste recebeu uma edição adicional com `image_gen` para remover uma mancha isolada fora da silhueta.
+
+Passaram 111 testes Node de campanha, apresentação, localização e runtime, além de 64 cenários de navegador do protótipo e da edição para jogadores. A seleção dedicada conferiu Sevrak antes da adesão, Ghork durante a confirmação em PT/EN, aliados e adversários das rotas A/B/C, diário e retomada do save. Os testes de estado também cobrem campanha solo e convites pendentes. A revisão deslop não identificou necessidade de limpeza adicional no código desta alteração.
+
+A execução de navegador usou dois workers e até dois navegadores Edge, dentro dos limites 10/10 de `loki.config.json`. A primeira tentativa de lançamento foi bloqueada pelo sandbox; a execução autorizada fora dele passou. As fixtures encerraram os recursos sem falhas de limpeza.
+
+[Resultado técnico](verificacao.json). Evidências locais: `.artifacts/tiny-hat/unit-tests.tap`, `selection-results.json`, `selection-browser/`, `regression-results.json` e `regression-browser/`. Capturas do combate, diário e cena de adesão foram inspecionadas. Essa verificação não substitui aprovação artística do autor.
