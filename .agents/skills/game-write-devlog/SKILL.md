@@ -45,10 +45,12 @@ Para textos novos ou reescritos, faça uma revisão independente:
 
 Se não houver outro agente disponível, informe que a revisão independente está pendente. Não a substitua por autorrevisão nem declare o fluxo concluído.
 
-Salve os arquivos de Terminus em `docs/terminus/devlogs/`, no padrão `NNN-assunto.md`: use o número do devlog preenchido com zeros à esquerda até três dígitos, seguido de um assunto descritivo estável, como `002-quests.md` para o DevLog #2. Mantenha o prefixo ao revisar ou arquivar o mesmo post.
+Organize cada devlog em uma pasta `NNN-assunto/`, com o corpo e o frontmatter em `text.md` e suas imagens em `assets/`. Em Terminus, use `docs/terminus/devlogs/002-quests/text.md` como exemplo: número preenchido com zeros à esquerda até três dígitos e assunto descritivo estável. Preserve o nome da pasta ao revisar ou arquivar o mesmo post; ao migrar um arquivo existente, use seu nome sem `.md`.
+
+Referencie as imagens a partir de `text.md` como `assets/nome-do-arquivo`. Versione `assets/.gitkeep` enquanto a pasta estiver vazia e retire-o ao adicionar imagens. Atualize os links do índice e as referências locais quando mover um post.
 
 Use frontmatter para `status: em desenvolvimento`, `publicacao: rascunho` ou `publicado`, `commit` e `idioma`. Inclua `url` quando publicado e `titulo_publicado` quando o título local diferir do original. Esse bloco é controle editorial e fica fora do conteúdo enviado ao itch.io.
 
 Ao arquivar, preserve integralmente as cópias históricas de posts publicados e sua origem; identifique uma reescrita editorial separadamente do arquivo histórico. Uma cópia local marcada como rascunho não altera o post remoto. Publique ou edite no itch.io somente se isso fizer parte do pedido; a autorização já dada na conversa continua válida. Após publicar, confira o conteúdo e o estado público antes de registrar o link e mudar o estado local.
 
-Conclua quando todos os textos estiverem salvos no destino solicitado, com metadados que correspondam ao estado real da publicação, e cada texto novo ou reescrito tiver recebido a revisão independente e a conferência do autor, incluindo nova revisão após qualquer reescrita substancial.
+Conclua quando todos os posts seguirem essa estrutura, os links locais de texto e imagens resolverem, os metadados corresponderem ao estado real da publicação e cada texto novo ou reescrito tiver recebido a revisão independente e a conferência do autor, incluindo nova revisão após qualquer reescrita substancial.
