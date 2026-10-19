@@ -2,14 +2,14 @@
 
 Status: em desenvolvimento.
 
-Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estão no inventário HTML. O registro integra 19 fundos e 210 expressões produzidas para 42 visuais. A tabela conta apenas referências usadas nas passagens, incluindo representações provisórias; não é uma encomenda de novos desenhos.
+Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estão no inventário HTML. O registro integra 19 fundos, 210 expressões produzidas para 42 visuais e 15 artes do mapa. A tabela conta referências usadas nas passagens ou na navegação, incluindo representações provisórias; não é uma encomenda de novos desenhos.
 
 | Categoria | Imagens/componentes com uso |
 | --- | ---: |
 | Fundos | 17 |
 | Bustos | 63 |
 | Objetos | 35 |
-| Componentes CSS | 2 |
+| Interface e mapa | 17 |
 
 42 bases agrupam as 63 imagens de bustos; não são desenhos adicionais. 41 identidades visuais, com Savel e Neral separados. A criança usa o visual produzido. Lala e figurantes sem arquivo permanecem provisórios.
 
@@ -61,7 +61,7 @@ Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estã
 
 ## Fundos
 
-| ID | Desenho | Passagens com uso |
+| ID | Desenho | Usos |
 | --- | --- | ---: |
 | bg-estalagem-salao | Estalagem — salão | 9 |
 | bg-estalagem-patio | Estalagem — pátio | 26 |
@@ -83,7 +83,7 @@ Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estã
 
 ## Objetos
 
-| ID | Desenho | Passagens com uso |
+| ID | Desenho | Usos |
 | --- | --- | ---: |
 | obj-mapa-entrada | Mapa — entrada pelo pátio | 3 |
 | obj-mapa-retirada | Mapa — percurso de retirada | 3 |
@@ -121,9 +121,31 @@ Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estã
 | quest-correspondencia | Correspondência do fornecedor | 2 |
 | quest-copia-correspondencia | Cópia da correspondência preservada | 1 |
 
+## Interface e mapa
+
+| ID | Desenho | Usos |
+| --- | --- | ---: |
+| ui-description | Painel descritivo | 62 |
+| ui-dialogue | Caixa de diálogo | 922 |
+| map-terrain | Terreno de Terminus | 1 |
+| map-estalagem | Estalagem de Nyra | 1 |
+| map-mercado | Mercado de provisões | 1 |
+| map-boticario | Boticário | 1 |
+| map-contratos | Casa de contratos e mapas | 1 |
+| map-virmura | Guilda de Virmura | 1 |
+| map-borun | Guilda de Borun | 1 |
+| map-sevrak | Guilda de Sevrak | 1 |
+| map-treino | Espaço de treino | 1 |
+| map-quarta | Quarta guilda veterana | 1 |
+| map-coliseu | Coliseu | 1 |
+| map-oficina | Oficina de Durn | 1 |
+| map-cisterna | Cisterna em obras | 1 |
+| map-minas | Entrada das minas | 1 |
+| map-coreto | Portal para a Noite da História | 1 |
+
 ## Cobertura
 
-3164 relações entre imagem e passagem; 1213 variantes de apresentação/texto indexadas. Repetições em contextos diferentes não multiplicam a quantidade de desenhos.
+3179 relações entre arte e apresentação; 1213 variantes de apresentação/texto indexadas. Repetições em contextos diferentes não multiplicam a quantidade de desenhos.
 
 Referências sem passagem de roteiro indexada, excluídas das contagens (fundos de locais continuam acessíveis pelo mapa):
 

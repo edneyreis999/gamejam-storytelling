@@ -1,6 +1,7 @@
 (function () {
   "use strict";
   const C = TerminusContent,
+    L = TerminusLanguage,
     E = TerminusEngine,
     A = TerminusArt,
     K = TerminusCatalog,
@@ -14,7 +15,9 @@
     modal = document.querySelector("#modal");
   let game = null,
     view = "title",
-    storageAvailable = true;
+    storageAvailable = true,
+    focusMap = false,
+    mapReturnFocus = null;
   const arcNames = [
     "A Noite da História",
     "I · Uma bandeira",
@@ -26,12 +29,12 @@
     const node = document.createElement(tag);
     for (const [k, v] of Object.entries(attrs)) {
       if (k === "class") node.className = v;
-      else node.setAttribute(k, v);
+      else node.setAttribute(k, ['aria-label', 'title', 'alt'].includes(k) ? L.text(v) : v);
     }
     for (const child of children.flat()) {
       if (child !== null && child !== undefined)
         node.append(
-          typeof child === "string" ? document.createTextNode(child) : child,
+          typeof child === "string" ? document.createTextNode(L.text(child)) : child,
         );
     }
     return node;
@@ -43,13 +46,44 @@
   }
   function inform(text, error = false) {
     notice.hidden = !text;
-    notice.textContent = text;
+    notice.replaceChildren();
+    if (text) notice.append(el("span", {}, text), button("Fechar aviso", () => inform("")));
     notice.classList.toggle("error", error);
     notice.setAttribute("role", error ? "alert" : "status");
+    resizeFrame();
   }
   function paragraphs(text, parent = main) {
-    for (const part of text.split("\n\n")) parent.append(el("p", {}, part));
+    for (const part of L.text(text).split("\n\n")) parent.append(el("p", {}, part));
     return parent;
+  }
+  function languagePicker(id) {
+    const select = el('select', { id, 'data-language': '' },
+      el('option', { value: 'pt-BR', lang: 'pt-BR' }, 'Português'),
+      el('option', { value: 'en-US', lang: 'en-US' }, 'English'));
+    select.value = L.getLanguage();
+    select.addEventListener('change', () => {
+      const reopenMenu = document.querySelector('#game-menu').open;
+      L.setLanguage(select.value);
+      let saved = true;
+      try { localStorage.setItem('terminus-language', select.value); }
+      catch (error) { saved = false; }
+      render();
+      if (reopenMenu) document.querySelector('#game-menu').showModal();
+      document.getElementById(id)?.focus({ preventScroll: true });
+      inform(saved ? 'Idioma alterado. A posição na história foi preservada.' : 'Não foi possível lembrar o idioma neste navegador. A escolha vale até fechar a página.', !saved);
+    });
+    return el('label', { class: 'language-picker', for: id },
+      el('span', { 'data-language-label': '' }, 'Idioma'), select);
+  }
+  function refreshLanguage() {
+    document.documentElement.lang = L.getLanguage();
+    document.title = 'Terminus';
+    for (const item of staticLabels) {
+      if (item.attribute) item.node.setAttribute(item.attribute, L.text(item.original));
+      else item.node.data = item.original.replace(item.original.trim(), L.text(item.original.trim()));
+    }
+    document.querySelectorAll('[data-language]').forEach(select => { select.value = L.getLanguage(); });
+    document.querySelectorAll('[data-language-label]').forEach(label => { label.textContent = L.text('Idioma'); });
   }
   function persist() {
     try {
@@ -69,20 +103,14 @@
       persist();
       view = "play";
       if (storageAvailable) inform(message);
+      focusMap = ["map", "defer", "leaveCoreto"].includes(action.type) && game.state.location === null;
       render();
-      if (
-        ["map", "defer", "leaveCoreto"].includes(action.type) &&
-        game.state.location === null
-      )
-        document
-          .getElementById("destination-" + game.state.map.focus)
-          ?.focus({ preventScroll: true });
     } catch (error) {
       inform(error.message, true);
     }
   }
   function confirmAction(title, text, accept, label = "Confirmar escolha") {
-    document.querySelector("#modal-title").textContent = title;
+    document.querySelector("#modal-title").textContent = L.text(title);
     const body = document.querySelector("#modal-body");
     body.replaceChildren();
     paragraphs(text, body);
@@ -113,10 +141,11 @@
   function newGame() {
     const seed = crypto.getRandomValues(new Uint32Array(1))[0] || 1;
     game = E.create(seed);
+    mapReturnFocus = null;
     run({ type: "start", id: "intro" });
   }
   function start(id) {
-    rememberMap();
+    if (id === "coreto" && game.state.location === null) mapReturnFocus = "coreto";
     if (C.quests[id].kind === "commit") {
       confirmAction(
         "Assumir esta bandeira?",
@@ -130,7 +159,7 @@
       const s = game.state;
       const pending = C.pairs
         .filter((_, i) => !s.recruits[i].invited)
-        .map((p) => p.title);
+        .map((p) => L.text(p.title));
       confirmAction(
         "Encerrar os recrutamentos?",
         `Seu time tem ${E.allyCount(s)} de 5 aliados possíveis. Você pode vencer sozinho.\n\n${pending.length ? `Pares sem aliado no time: ${pending.join("; ")}.` : "Todos os cinco lugares estão preenchidos."}\n\nConfirmar fecha os convites, inclusive os que dependem de Ludos. Voltar permite cuidar das pendências.`,
@@ -150,6 +179,7 @@
     stats.replaceChildren();
     if (!game) {
       toolbar.append(
+        button("Voltar ao início", () => { view = "title"; render(); }),
         button("Como jogar", () => {
           view = "review";
           render();
@@ -180,8 +210,8 @@
         () => {
           start("coreto");
         },
-        locked || s.location === "coreto"
-          ? { disabled: "", title: "Disponível entre cenas e batalhas." }
+        locked || s.location === "coreto" || s.rematch === "t5"
+          ? { disabled: "", title: s.rematch === "t5" ? "A invasão continua no coliseu." : "Disponível entre cenas e batalhas." }
           : {},
       ),
       button("Exportar partida", () =>
@@ -208,7 +238,7 @@
       el(
         "span",
         {},
-        `${s.ludos} ${s.ludos === 1 ? "Ludo" : "Ludos"} · ${s.rerolls} ${s.rerolls === 1 ? "nova rolagem" : "novas rolagens"}`,
+        `${s.ludos} ${s.ludos === 1 ? "Ludo" : "Ludos"} · ${s.rerolls} ${L.text(s.rerolls === 1 ? "nova rolagem" : "novas rolagens")}`,
       ),
       el("span", {}, `${E.allyCount(s)}/5 aliados`),
     );
@@ -216,9 +246,11 @@
   function title() {
     const wrap = el("div", { class: "cover" }),
       copy = el("section");
+    copy.append(languagePicker('language-title'));
     copy.append(
       el("p", { class: "intro-number" }, "NOITE DA HISTÓRIA"),
-      el("h1", {}, "Nem toda vitória\nencerra uma rejeição."),
+      el("h1", {}, "Terminus"),
+      el("p", {class: "title-line"}, "Nem toda vitória encerra uma rejeição."),
       el(
         "p",
         { class: "lede" },
@@ -265,7 +297,7 @@
       ),
     );
   }
-  let inspect = true,
+  let inspect = false,
     reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   let assetId = null,
     assetReturn = "catalog";
@@ -295,15 +327,12 @@
     render();
   }
   function stage(p) {
-    return V.render(p, { inspect, reduced, onAsset: showAsset });
+    return V.render(p, { inspect: inspect && view === "scenes", reduced, onAsset: showAsset });
   }
   function scene() {
     const s = game.state,
       p = E.page(s);
-    heading(
-      p.title,
-      `${A.assets[p.passage.background].name} · passagem ${p.cursor + 1}/${p.count} · trecho ${p.index}/${p.total}`,
-    );
+    heading(p.title);
     main.append(stage(p.passage));
     const choices = el("div", {
       class: "choices",
@@ -446,7 +475,7 @@
       const q = C.quests[id];
       const label =
         q.kind === "guild"
-          ? `${C.guilds[q.guild].mentor} · ${q.title} · ${q.step}/5`
+          ? `${C.guilds[q.guild].mentor} · ${L.text(q.title)} · ${q.step}/5`
           : q.title;
       list.append(
         el(
@@ -461,12 +490,16 @@
   }
   function recruitment(parent, local = false) {
     const s = game.state;
+    const activities = local ? E.locationActivities(s, s.location) : [];
     const section = el("section", { "aria-label": "Equipe e convites" });
     section.append(el("h2", {}, "Equipe e convites"));
     C.pairs.forEach((pair, i) => {
       if (local && C.recruitPlaces[i] !== s.location) return;
       const r = s.recruits[i],
         status = E.recruitStatus(s, i);
+      if (!status.opened && !status.outcome) return;
+      const invitation = activities.find(a => a.id === `invite${i}`);
+      const intervention = activities.find(a => a.id === `unlock${i}`);
       const known =
         pair.names.some((name) => s.metCandidates.includes(name)) || r.outcome;
       const row = el(
@@ -482,11 +515,11 @@
         el("p", {}, status.reason),
       );
       if (r.name) row.append(el("p", {}, "Compromisso com " + r.name));
-      if (local && status.canInvite)
+      if (invitation?.available)
         row.append(
           button("Convidar " + r.name, () => run({ type: "invite", index: i })),
         );
-      if (local && status.canUnlock) {
+      if (intervention) {
         const dialogue = r.outcome
           ? C.recruitmentDialogue.candidates[r.name]
           : C.recruitmentDialogue.blocks[i];
@@ -494,7 +527,7 @@
           el(
             "p",
             {},
-            (r.name || dialogue.speaker) + ": “" + dialogue.blocked + "”",
+            L.text(r.name || dialogue.speaker) + ": “" + L.text(dialogue.blocked) + "”",
           ),
         );
         row.append(
@@ -507,21 +540,21 @@
                 () => run({ type: "unlock", index: i }),
                 "Pagar 3 Ludos e ouvir essa versão",
               ),
-            s.ludos >= 3 ? {} : { disabled: "" },
+            intervention.available ? {} : { disabled: "" },
           ),
         );
-        if (s.ludos < 3)
+        if (!intervention.available)
           row.append(
             el(
               "p",
               {},
-              "Ludos insuficientes. Você pode continuar sem a intervenção.",
+              intervention.reason,
             ),
           );
       }
       section.append(row);
     });
-    parent.append(section);
+    if (section.children.length > 1) parent.append(section);
   }
   function hub() {
     const s = game.state;
@@ -546,20 +579,21 @@
           text: "Escolha uma atividade neste local. Os deslocamentos são gratuitos.",
         }),
       );
-      const ids = E.localActions(s);
-      if (ids.length) {
+      const activities = E.locationActivities(s, s.location);
+      const missions = activities.filter(a => a.action.type === "start");
+      if (missions.length) {
         const list = el("ul", { class: "quest-list" });
-        for (const id of ids)
+        for (const activity of missions)
           list.append(
             el(
               "li",
               {},
-              el("small", {}, C.quests[id].title),
-              button(E.currentStep(s, id).title, () => start(id)),
+              el("small", {}, C.quests[activity.id].title),
+              button(activity.label, () => start(activity.id)),
             ),
           );
         main.append(list);
-      } else
+      } else if (!activities.some(a => a.available))
         main.append(
           el(
             "p",
@@ -567,8 +601,7 @@
             "Nenhuma atividade disponível neste local agora. Consulte os objetivos no diário ou volte ao mapa.",
           ),
         );
-      const rematchLocation = s.rematch === "B4" ? "mercado" : "coliseu";
-      if (s.rematch && s.location === rematchLocation)
+      if (activities.some(a => a.id === "rematch" && a.available))
         main.append(
           button("Tentar revanche gratuita", () => run({ type: "rematch" }), {
             class: "primary",
@@ -577,137 +610,32 @@
       recruitment(main, true);
       return;
     }
-    heading("Terminus", "Escolha um destino · deslocamento gratuito");
-    const shell = el("section", {
-      class: "city-shell",
-      "aria-label": "Mapa de Terminus",
-    });
-    const controls = el("div", { class: "map-controls" });
-    const viewport = el("div", {
-      class: "city-viewport",
-      tabindex: "0",
-      "aria-label":
-        "Mapa com rolagem horizontal. Use Tab para escolher destinos.",
-    });
-    const world = el("div", { class: "city-world" });
-    const groups = [
-      ["estalagem", "mercado", "boticario", "contratos"],
-      ["virmura", "borun", "sevrak", "treino"],
-      ["quarta", "coliseu", "oficina", "cisterna", "minas"],
-    ];
-    const buttons = [];
-    groups.forEach((ids, group) => {
-      const district = el("div", {
-        class: "map-group",
-        "data-group": String(group),
-      });
-      ids.forEach((id) => {
-        const activities = E.available(s).filter(
-          (q) => q !== "coreto" && E.destination(s, q) === id,
-        );
-        const invites = C.recruitPlaces.reduce(
-          (n, loc, i) =>
-            n +
-            (loc === id &&
-            (E.recruitStatus(s, i).canInvite || E.recruitStatus(s, i).canUnlock)
-              ? 1
-              : 0),
-          0,
-        );
-        const count =
-          activities.length +
-          invites +
-          (s.rematch && (s.rematch === "B4" ? "mercado" : "coliseu") === id
-            ? 1
-            : 0);
-        const visit = button(
-          "",
-          () =>
-            run({ type: "visit", location: id, scroll: viewport.scrollLeft }),
-          {
-            class: "map-destination",
-            id: "destination-" + id,
-            "data-destination": id,
-          },
-        );
-        if (s.rematch === "t5" && id !== "coliseu") visit.disabled = true;
-        visit.append(
-          el("small", {}, "LOCAL · PLACEHOLDER"),
-          el("strong", {}, C.places[id][0]),
-          el(
-            "span",
-            {},
-            count
-              ? count + " atividade(s) disponível(is)"
-              : "Sem atividade no momento",
-          ),
-        );
-        visit.addEventListener("keydown", (event) => {
-          const delta = {
-            ArrowRight: 1,
-            ArrowDown: 2,
-            ArrowLeft: -1,
-            ArrowUp: -2,
-          }[event.key];
-          if (delta) {
-            event.preventDefault();
-            buttons[
-              (buttons.indexOf(visit) + delta + buttons.length) % buttons.length
-            ].focus();
-          }
-        });
-        visit.addEventListener("focus", () =>
-          visit.scrollIntoView({
-            block: "nearest",
-            inline: "nearest",
-            behavior: "instant",
-          }),
-        );
-        district.append(visit);
-        if (!visit.disabled) buttons.push(visit);
-      });
-      world.append(district);
-    });
-    viewport.append(world);
-    controls.append(
-      button("← Mover mapa", () =>
-        viewport.scrollBy({ left: -400, behavior: "instant" }),
-      ),
-      button("Portal · Noite da História", () => start("coreto"), {
-        class: "portal-button",
-      }),
-      button("Mover mapa →", () =>
-        viewport.scrollBy({ left: 400, behavior: "instant" }),
-      ),
-    );
-    shell.append(controls, viewport);
-    main.append(shell);
-    viewport.scrollLeft = s.map.scroll;
-    viewport.addEventListener("scrollend", rememberMap);
-    main.append(
-      el(
-        "p",
-        { class: "muted" },
-        "Arraste a barra horizontal ou deslize no toque. Tab e setas percorrem os destinos; Enter ou Espaço abre o local.",
-      ),
-    );
+    main.append(TerminusMapView.render({
+      state: s, reduced, focusOnReady: focusMap, selected: mapReturnFocus || s.map.focus,
+      onVisit: (location) => { mapReturnFocus = null; run({type: "visit", location, scroll: 0}); },
+      onPortal: () => start("coreto"),
+      onFocus: rememberMap,
+    }));
+    focusMap = false;
   }
-  function rememberMap() {
-    const viewport = document.querySelector(".city-viewport");
-    if (
-      !viewport ||
-      !game ||
-      game.state.location !== null ||
-      game.state.scene ||
-      game.state.battle
-    )
-      return;
+  function rememberMap(focus) {
+    if (!game || game.state.location !== null || E.explorationBlock(game.state)) return;
+    mapReturnFocus = null;
     const previous = game.state.map;
-    const focus = document.activeElement?.dataset.destination || previous.focus;
-    if (previous.scroll === viewport.scrollLeft && previous.focus === focus)
-      return;
-    game.dispatch({ type: "mapPosition", scroll: viewport.scrollLeft, focus });
+    if (!focus || focus === "coreto" || focus === previous.focus) return;
+    game.dispatch({type: "mapPosition", scroll: 0, focus});
     persist();
+  }
+  function locate(location) {
+    if (E.explorationBlock(game.state)) return;
+    if (game.state.location === "coreto") game.dispatch({type: "leaveCoreto"});
+    if (game.state.location !== null) game.dispatch({type: "map"});
+    game.dispatch({type: "mapPosition", scroll: 0, focus: location});
+    persist();
+    view = "play";
+    focusMap = true;
+    mapReturnFocus = null;
+    render();
   }
   function coreto() {
     const s = game.state;
@@ -745,7 +673,7 @@
       if (s.scene && (action.type === "choose" || action.type === "advance")) {
         const pg = E.page(s);
         out.push(
-          `${pg.title} · ${pg.passage.id}\n${pg.passage.type === "dialogue" || pg.passage.type === "thought" ? pg.passage.speaker + "\n" : ""}${pg.body}`,
+          `${L.text(pg.title)} · ${pg.passage.id}\n${pg.passage.type === "dialogue" || pg.passage.type === "thought" ? L.text(pg.passage.speaker) + "\n" : ""}${L.text(pg.body)}`,
         );
       }
       replay.dispatch(action);
@@ -756,12 +684,12 @@
     const s = game.state,
       t = transcript(),
       words = t.trim().split(/\s+/).length;
-    return `TERMINUS — relatório de percurso\nStatus: em desenvolvimento\nGuilda: ${s.guild || "nenhuma"}; rota: ${s.xy || "nenhuma"}\nAliados: ${
+    return L.text(`TERMINUS — relatório de percurso\nStatus: em desenvolvimento\nGuilda: ${s.guild || "nenhuma"}; rota: ${s.xy || "nenhuma"}\nAliados: ${
       s.recruits
         .filter((r) => r.invited)
         .map((r) => r.name)
         .join(", ") || "nenhum"
-    }\nEtapa: ${arcNames[s.stage]}\nPalavras percorridas: ${words}\nLeitura estimada a 170–220 palavras/minuto: ${Math.round(words / 220)}–${Math.round(words / 170)} min, sem tempo de decisões. Não é medição humana.\n\nHISTÓRICO\n${s.history.join("\n")}\n\nTEXTO PERCORRIDO\n${t}`;
+    }\nEtapa: ${arcNames[s.stage]}\nPalavras percorridas: ${words}\nLeitura estimada a 170–220 palavras/minuto: ${Math.round(words / 220)}–${Math.round(words / 170)} min, sem tempo de decisões. Não é medição humana.\n\nHISTÓRICO\n${s.history.map(entry => L.text(entry)).join("\n")}\n\nTEXTO PERCORRIDO\n${t}`);
   }
   function journal() {
     const s = game.state;
@@ -771,7 +699,7 @@
         "p",
         { class: "lede" },
         s.guild
-          ? `Você representa ${C.guilds[s.guild].name}.${s.xy ? ` A investigação seguiu com ${s.xy === "X" ? "Darvek" : "Zagra"}.` : ""}`
+          ? L.text(`Você representa ${C.guilds[s.guild].name}.`) + (s.xy ? " " + L.text(`A investigação seguiu com ${s.xy === "X" ? "Darvek" : "Zagra"}.`) : "")
           : "Você ainda está conhecendo as guildas.",
       ),
       el(
@@ -811,7 +739,13 @@
           "ul",
           {},
           ...objectives.map((o) =>
-            el("li", {}, o.title + " · " + o.task + " — " + o.place),
+            el("li", {},
+              el("p", {}, L.text(o.title) + " · " + L.text(o.task) + " — " + L.text(o.place)),
+              button("Localizar no mapa", () => locate(o.location),
+                E.explorationBlock(s) || (s.rematch === "t5" && o.location !== "coliseu") || !Object.hasOwn(C.places, o.location)
+                  ? {disabled: ""} : {"data-locate": o.location}),
+              E.explorationBlock(s) ? el("small", {}, E.explorationBlock(s))
+                : s.rematch === "t5" && o.location !== "coliseu" ? el("small", {}, "A invasão continua no coliseu.") : null),
           ),
         ),
       );
@@ -898,7 +832,7 @@
     heading("Uma campanha para experimentar", "Em desenvolvimento");
     const prose = el("article", { class: "reading" });
     paragraphs(
-      "A V3 apresenta o roteiro de quests com fundos e bustos em avaliação artística. O mapa usa blocos provisórios: escolha um destino para ver suas atividades. Termine a conversa ou batalha antes de voltar pelo portal à Noite da História. Diário, itens e equipe são consultas e não avançam a campanha.\n\nA exploração abre depois de Q-A1. Ouvir uma proposta não confirma a guilda. A adesão e o fechamento dos convites têm confirmação própria. Ghork pode concluir a campanha sozinho, sem gastar Ludos. Derrotas permitem revanche gratuita.\n\nEconomia experimental: conflitos curtos rendem 2 Ludos; longos e secundárias, 3. Opções comuns e novas rolagens custam 1; exceções de recrutamento custam 3. B4 e C4 têm dificuldade 8. Campeonato e confronto final: 8, 9, 10, 11, 12 e 12. É preciso superar a dificuldade com D20 + aliados; empate é falha.\n\nA partida começa do zero no formato 3. Saves antigos não são migrados. Exportar e importar permite transportar o progresso. Cenas e variantes e Inventário de arte são ferramentas de revisão isoladas da partida.\n\nO roteiro segue em desenvolvimento. Use o relatório do percurso para apontar problemas de continuidade, voz ou clareza das escolhas.",
+      "A V3 apresenta o roteiro de quests com fundos e bustos em avaliação artística. O mapa ilustrado sinaliza missões, convites e intervenções possíveis agora. Escolha um destino para ver suas atividades; no toque, selecione e toque novamente para visitar. Termine a conversa ou batalha antes de voltar pelo portal à Noite da História. Diário, itens e equipe são consultas e não avançam a campanha.\n\nA exploração abre depois de Q-A1. Ouvir uma proposta não confirma a guilda. A adesão e o fechamento dos convites têm confirmação própria. Ghork pode concluir a campanha sozinho, sem gastar Ludos. Derrotas permitem revanche gratuita.\n\nEconomia experimental: conflitos curtos rendem 2 Ludos; longos e secundárias, 3. Opções comuns e novas rolagens custam 1; exceções de recrutamento custam 3. B4 e C4 têm dificuldade 8. Campeonato e confronto final: 8, 9, 10, 11, 12 e 12. É preciso superar a dificuldade com D20 + aliados; empate é falha.\n\nSaves V3 anteriores continuam compatíveis. Formatos anteriores à V3 não são aceitos. Exportar e importar permite transportar o progresso. Cenas e variantes e Inventário de arte são ferramentas de revisão isoladas da partida.\n\nO roteiro segue em desenvolvimento. Use o relatório do percurso para apontar problemas de continuidade, voz ou clareza das escolhas.",
       prose,
     );
     main.append(
@@ -961,7 +895,7 @@
         key === "bust"
           ? `${new Set(subset.map((a) => a.base)).size} poses-base · ${subset.length} imagens finais`
           : key === "interface"
-            ? "componentes em CSS; sem encomenda raster"
+            ? "artes do mapa e componentes em CSS"
             : `${subset.length} imagens finais`;
       summary.append(
         el(
@@ -1166,6 +1100,7 @@
     main.append(totals);
   }
   function openUse(use) {
+    if (use.scene === "city-map") { view = "map-preview"; render(); return; }
     preview = {
       id: use.scene,
       page: use.page,
@@ -1463,6 +1398,7 @@
   }
 
   function render() {
+    refreshLanguage();
     if (view === "play" && !game) view = "title";
     document
       .querySelectorAll("[data-view]")
@@ -1473,14 +1409,21 @@
         ),
       );
     nav();
-    const editorial = ["scenes", "catalog", "asset"].includes(view);
-    toolbar.hidden = editorial;
-    stats.hidden = editorial;
+    const editorial = ["scenes", "catalog", "asset", "map-preview"].includes(view);
+    document.body.classList.toggle("editorial", editorial);
+    document.body.classList.toggle("map-preview", view === "map-preview");
+    document.querySelector("#workspace-nav").hidden = !editorial || view === "map-preview";
+    document.querySelector("#game-menu").close();
+    main.className = "";
     main.replaceChildren();
     if (view === "title") title();
     else if (view === "review") review();
     else if (view === "journal") journal();
     else if (view === "coreto") coreto();
+    else if (view === "map-preview") main.append(TerminusMapView.render({
+      state: null, preview: true, reduced,
+      onVisit: (id) => showAsset("map-" + id), onPortal: () => showAsset("map-coreto"),
+    }));
     else if (view === "catalog") catalog();
     else if (view === "asset") asset();
     else if (view === "scenes") scenes();
@@ -1493,8 +1436,64 @@
       else if (s.location === "coreto") coreto();
       else hub();
     }
+    if (!editorial) composeGame();
+    resizeFrame();
     main.focus({ preventScroll: true });
   }
+  function composeGame() {
+    if (main.querySelector(".city-map")) { main.className = "map-screen"; return; }
+    const scene = main.querySelector(".scene-shell");
+    if (!scene) return;
+    const reading = !!game?.state.scene && view === "play";
+    main.className = reading ? "reading-screen" : "location-screen";
+    const panel = el("section", {class: reading ? "scene-controls" : "activity-panel", "aria-label": reading ? "Escolhas e leitura" : "Atividades"});
+    for (const child of [...main.children]) {
+      if (child === scene) continue;
+      if (reading && child.matches("h1,.eyebrow")) { child.classList.add("sr-only"); continue; }
+      panel.append(child);
+    }
+    main.append(panel);
+  }
+  function resizeFrame() {
+    const height = innerHeight - (notice.hidden ? 0 : notice.offsetHeight);
+    const width = Math.min(innerWidth, height * 16 / 9);
+    const blocked = innerHeight > innerWidth || width / 1280 < .4;
+    const frame = document.querySelector("#game-frame");
+    document.documentElement.style.setProperty("--frame-width", width + "px");
+    document.documentElement.style.setProperty("--frame-height", width * 9 / 16 + "px");
+    document.documentElement.style.setProperty("--map-scale", width / 1280);
+    document.querySelector("#orientation").hidden = !blocked;
+    frame.hidden = blocked;
+    frame.inert = blocked;
+    if (blocked) document.querySelector("#game-menu").close();
+    modal.inert = blocked;
+    modal.classList.toggle("orientation-blocked", blocked);
+  }
+  window.addEventListener("resize", resizeFrame);
+  const menu = document.querySelector("#game-menu");
+  const staticLabels = [];
+  const staticWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while (staticWalker.nextNode()) {
+    const node = staticWalker.currentNode;
+    if (node.data.trim() && !node.parentElement.closest('script, style, noscript'))
+      staticLabels.push({node, original: node.data});
+  }
+  document.querySelectorAll('[aria-label], [title], [alt]').forEach(node => {
+    for (const attribute of ['aria-label', 'title', 'alt'])
+      if (node.hasAttribute(attribute)) staticLabels.push({node, attribute, original: node.getAttribute(attribute)});
+  });
+  try {
+    const preferred = localStorage.getItem('terminus-language');
+    if (['pt-BR', 'en-US'].includes(preferred)) L.setLanguage(preferred);
+  } catch (error) {
+    inform('Não foi possível lembrar o idioma neste navegador. A escolha vale até fechar a página.', true);
+  }
+  menu.insertBefore(languagePicker('language-menu'), document.querySelector('#toolbar'));
+  document.querySelector("#menu-button").addEventListener("click", () => menu.showModal());
+  document.querySelector("#menu-close").addEventListener("click", () => menu.close());
+  menu.addEventListener("click", event => {
+    if (event.target.closest("button")) menu.close();
+  }, true);
   document.addEventListener("keydown", (event) => {
     if (
       (event.key === "Enter" || event.key === " ") &&
@@ -1545,6 +1544,8 @@
           "A partida local será substituída. Cancele se quiser exportar seu progresso atual primeiro.",
           () => {
             game = imported;
+            mapReturnFocus = null;
+            focusMap = true;
             persist();
             view = "play";
             if (storageAvailable)

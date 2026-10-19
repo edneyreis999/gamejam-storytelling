@@ -12,13 +12,13 @@ const rows = [
   "",
   "Status: em desenvolvimento.",
   "",
-  "Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estão no inventário HTML. O registro integra 19 fundos e 210 expressões produzidas para 42 visuais. A tabela conta apenas referências usadas nas passagens, incluindo representações provisórias; não é uma encomenda de novos desenhos.",
+  "Retrato gerado por `scripts/report-art.cjs`. As fichas completas e os usos estão no inventário HTML. O registro integra 19 fundos, 210 expressões produzidas para 42 visuais e 15 artes do mapa. A tabela conta referências usadas nas passagens ou na navegação, incluindo representações provisórias; não é uma encomenda de novos desenhos.",
   "",
   "| Categoria | Imagens/componentes com uso |",
   "| --- | ---: |",
   ...["background", "bust", "object", "interface"].map(
     (category, i) =>
-      `| ${["Fundos", "Bustos", "Objetos", "Componentes CSS"][i]} | ${of(category).length} |`,
+      `| ${["Fundos", "Bustos", "Objetos", "Interface e mapa"][i]} | ${of(category).length} |`,
   ),
   "",
   `${new Set(busts.map((a) => a.base)).size} bases agrupam as ${busts.length} imagens de bustos; não são desenhos adicionais. ${owners.length} identidades visuais, com Savel e Neral separados. A criança usa o visual produzido. Lala e figurantes sem arquivo permanecem provisórios.`,
@@ -35,12 +35,13 @@ const rows = [
 for (const [category, title] of [
   ["background", "Fundos"],
   ["object", "Objetos"],
+  ["interface", "Interface e mapa"],
 ]) {
   rows.push(
     "",
     `## ${title}`,
     "",
-    "| ID | Desenho | Passagens com uso |",
+    "| ID | Desenho | Usos |",
     "| --- | --- | ---: |",
   );
   for (const a of of(category))
@@ -50,7 +51,7 @@ rows.push(
   "",
   "## Cobertura",
   "",
-  `${uses.length} relações entre imagem e passagem; ${variants.length} variantes de apresentação/texto indexadas. Repetições em contextos diferentes não multiplicam a quantidade de desenhos.`,
+  `${uses.length} relações entre arte e apresentação; ${variants.length} variantes de apresentação/texto indexadas. Repetições em contextos diferentes não multiplicam a quantidade de desenhos.`,
   "",
   "Referências sem passagem de roteiro indexada, excluídas das contagens (fundos de locais continuam acessíveis pelo mapa):",
   "",

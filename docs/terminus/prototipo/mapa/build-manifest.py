@@ -19,12 +19,12 @@ PLACES = [
     ('borun', 'Guilda de Borun', 490, 287, 190, 'borun-v1', [('Salão de preparação', 'guilda-borun-v1')]),
     ('sevrak', 'Guilda de Sevrak', 735, 293, 160, 'sevrak-v1', [('Sala de estudos', 'guilda-sevrak-v1')]),
     ('treino', 'Espaço de treino', 470, 470, 190, 'treino-v1', [('Pátio de treino', 'espaco-treino-v1')]),
-    ('quarta-guilda', 'Quarta guilda veterana', 865, 90, 170, 'quarta-guilda-v1', [('Recepção', 'quarta-guilda-v1')]),
+    ('quarta', 'Quarta guilda veterana', 865, 90, 170, 'quarta-guilda-v1', [('Recepção', 'quarta-guilda-v1')]),
     ('coliseu', 'Coliseu', 1055, 155, 200, 'coliseu-v1', [('Entrada', 'coliseu-entrada-v2'), ('Arena', 'coliseu-arena-v1'), ('Serviço', 'coliseu-servico-v2')]),
     ('oficina', 'Oficina de Durn', 715, 482, 190, 'oficina-v1', [('Oficina', 'oficina-durn-v1')]),
     ('cisterna', 'Cisterna em obras', 945, 478, 175, 'cisterna-v1', [('Obras', 'cisterna-obras-v1')]),
     ('minas', 'Entrada das minas', 1045, 340, 190, 'minas-v1', [('Entrada', 'minas-entrada-v1'), ('Galeria', 'minas-galeria-v1')]),
-    ('portal', 'Portal para a Noite da História', 16, 16, 192, 'portal-v3', [('Coreto', 'coreto-noite-historia-v1')]),
+    ('coreto', 'Portal para a Noite da História', 16, 16, 192, 'portal-v3', [('Coreto', 'coreto-noite-historia-v1')]),
 ]
 
 destinations = []
@@ -53,16 +53,16 @@ for ident, name, x, y, width, facade, views in PLACES:
                 start = None
         rows.append(runs)
     destinations.append(dict(id=ident, name=name, x=x, y=y, width=width,
-                             height=160 if ident == 'portal' else round(width * image.height / image.width, 3),
-                             fixed=ident == 'portal', facade=facade + '.png', hitRows=rows,
+                             height=160 if ident == 'coreto' else round(width * image.height / image.width, 3),
+                             fixed=ident == 'coreto', facade=facade + '.png', hitRows=rows,
                              views=[dict(name=label, file=file + '.png') for label, file in views]))
     checks.append(dict(id=ident, file=facade + '.png', size=list(image.size),
                        transparentPixels=alpha.histogram()[0], hitCells=sum(b-a for r in rows for a,b in r)))
 
 manifest = dict(status='em desenvolvimento', width=1280, height=720,
-                hitGrid=GRID, background='cidade-v2.png', artRoot='../../../../assets/terminus/mapa/',
-                viewRoot='../../../../assets/terminus/locais/', destinations=destinations)
-(HERE / 'manifest.js').write_text('window.TERMINUS_MAP = ' + json.dumps(manifest, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')
-(HERE / 'verificacao').mkdir(exist_ok=True)
-(HERE / 'verificacao/alpha.json').write_text(json.dumps(dict(status='em desenvolvimento', grid=GRID, threshold=200, items=checks), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+                hitGrid=GRID, background='cidade-v2.png', artRoot='../../../assets/terminus/mapa/',
+                viewRoot='../../../assets/terminus/locais/', destinations=destinations)
+(HERE / 'manifest.js').write_text('globalThis.TERMINUS_MAP = ' + json.dumps(manifest, ensure_ascii=False, separators=(',', ':')) + ';\nif (typeof module !== "undefined") module.exports = globalThis.TERMINUS_MAP;\n', encoding='utf-8')
+(HERE / '../../../../.artifacts/terminus-prototipo').mkdir(parents=True, exist_ok=True)
+(HERE / '../../../../.artifacts/terminus-prototipo/alpha.json').write_text(json.dumps(dict(status='em desenvolvimento', grid=GRID, threshold=200, items=checks), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(f'{len(destinations)} destinations; {sum(len(d["views"]) for d in destinations)} backgrounds; alpha verified.')

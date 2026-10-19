@@ -203,34 +203,34 @@
       },
       d(
         "Elune",
-        "Este croqui começa na entrada da passagem estreita e segue até a bifurcação. O outro acompanha a retirada, no sentido inverso.",
+        "Este desenho vai da entrada da passagem estreita até a bifurcação. O outro mostra a retirada, no sentido contrário.",
         "investigativo",
       ),
       d(
         "Ghork",
-        "Então a esquerda de quem entra fica à direita de quem volta. Que registro confirma isso?",
+        "Então a esquerda de quem entra é a direita de quem sai. Temos algum registro que confirme o sentido?",
         "investigativo",
       ),
       d(
         "Elune",
-        "Os registros autorizados indicam onde cada percurso começou e para onde seguia. Vamos acompanhar as referências nessa ordem.",
+        "Os registros que nos deram mostram onde cada percurso começou e em que direção seguiu. Vamos acompanhar os marcos nessa ordem.",
         "firme",
       ),
       d(
         "Ghork",
-        "Entrada, passagem estreita, bifurcação. Na volta, bifurcação, passagem, entrada. O trecho coincide.",
+        "Entrada, passagem estreita, bifurcação. Na volta: bifurcação, passagem, entrada. É o mesmo trecho.",
         "firme",
       ),
       d(
         "Elune",
-        "Esse trecho. As outras galerias continuam sem informação suficiente. Vou marcar a comparação e deixar o restante em aberto.",
+        "Esse trecho, sim. Sobre as outras galerias ainda sabemos pouco. Vou marcar o que conferimos e deixar o resto em aberto.",
         "atento",
       ),
     ]),
   ];
   quest(
     "intro",
-    "E00 · Uma cadeira perto da história",
+    "E00 · Um lugar perto do contador",
     [
       step("cadeira", "coreto", "Ouvir Rheed", read(117, 127)),
       step(
@@ -240,7 +240,7 @@
         [
           page([
             n(
-              "Rheed bebe. O som da plateia cede à respiração de Ghork.",
+              "Rheed bebe a poção. As vozes da plateia somem, dando lugar à respiração de Ghork.",
               "bg-virmura-enfermaria",
             ),
           ]),
@@ -264,11 +264,11 @@
           ...read(314, 334),
           page([
             n(
-              "Os cuidados continuam. Com o tempo, Ghork passa a tolerar pequenos deslocamentos.",
+              "Os cuidados continuam. Aos poucos, Ghork consegue caminhar pequenas distâncias.",
             ),
             d(
               "Virmura",
-              "Tenho duas entregas curtas, uma no mercado e outra no coliseu. Pode escolher por qual começar. Se precisar parar, pare.",
+              "Tenho duas entregas perto daqui: uma no mercado, outra no coliseu. Escolha por qual começar. E pare para descansar quando precisar.",
               "firme",
             ),
           ]),
@@ -283,24 +283,24 @@
     excerpt(
       "contrato",
       "contratos",
-      "Conhecer o contrato das galerias",
+      "Conhecer o contrato das minas",
       153,
       174,
     ),
   ]);
-  quest("champion", "E02 · Um nome anterior ao cartaz", [
+  quest("champion", "E02 · O homem por trás do cartaz", [
     excerpt("passado", "virmura", "Conversar sobre o campeão", 182, 194),
     excerpt("torvak", "coliseu", "Conhecer Torvak", 198, 217),
   ]);
-  quest("E03", "E03 · Uma oferta para o corpo acompanhar", [
+  quest("E03", "E03 · Uma oferta para aguentar o treino", [
     excerpt("oferta", "coliseu", "Ouvir a oferta de Savel", 226, 243),
   ]);
-  quest("E08", "E08 · Aprender a sair do golpe", [
-    excerpt("cuidado", "virmura", "Rever os cuidados", 254, 258),
-    step("pratica", "treino", "Preparar movimentos e recuo", [
+  quest("E08", "E08 · Aprender a escapar do golpe", [
+    excerpt("cuidado", "virmura", "Conversar sobre os cuidados com a perna", 254, 258),
+    step("pratica", "treino", "Praticar movimentos e recuo", [
       page([
         n(
-          "Guedra acompanha práticas curtas. Entre as tentativas, Ghork aprende a preservar uma passagem de recuo.",
+          "Guedra acompanha as práticas curtas. A cada tentativa, Ghork aprende a deixar espaço para recuar.",
         ),
       ]),
       ...read(262, 275),
@@ -313,7 +313,7 @@
       excerpt(
         "registro",
         "virmura",
-        "Consultar e receber a cópia anônima",
+        "Consultar o registro e receber a cópia sem nomes",
         344,
         354,
         { receive: ["registro-retirada"], background: "bg-virmura-enfermaria" },
@@ -332,7 +332,7 @@
       excerpt(
         "retorno",
         "virmura",
-        "Entregar os apontamentos a Virmura",
+        "Levar as anotações a Virmura",
         365,
         370,
         { deliver: [deliver("apontamentos-a", "Virmura")] },
@@ -372,7 +372,7 @@
     "gA4",
     "Q-A4 · Uma maca na porta",
     [
-      excerpt("teste", "virmura", "Testar a passagem com a equipe", 422, 440, {
+      excerpt("teste", "virmura", "Testar a passagem da maca com a equipe", 422, 440, {
         requires: ["maca"],
       }),
       excerpt("devolucao", "oficina", "Devolver o conjunto a Durn", 443, 448, {
@@ -390,7 +390,7 @@
         "lista",
         "virmura",
         "Receber a lista de Virmura",
-        "Virmura entrega a lista de ataduras e material de lavagem para buscar com Jorvi.",
+        "Virmura entrega a Ghork uma lista de ataduras e material de lavagem. Ele deve buscá-los com Jorvi.",
         { receive: ["lista-virmura"] },
       ),
       step(
@@ -410,13 +410,13 @@
         [
           page([
             n(
-              "Dois assaltantes fecham o corredor. Ghork protege a bolsa. Borun interpõe o bastão junto à descarga.",
+              "Dois assaltantes bloqueiam o corredor. Ghork segura a bolsa junto ao corpo. Perto da área de descarga, Borun ergue o bastão entre eles.",
             ),
           ]),
           ...read(493, 501),
           page([
             n(
-              "Ghork empurra o carrinho, dificulta a perseguição e segue a passagem aberta por Borun.",
+              "Ghork empurra o carrinho para atrapalhar os assaltantes e escapa pela passagem que Borun abriu.",
             ),
           ]),
           ...read(503, 520),
@@ -437,7 +437,7 @@
       excerpt(
         "pirka",
         "mercado",
-        "Investigar e receber a cópia de Pirka",
+        "Investigar o percurso e receber a cópia de Pirka",
         535,
         559,
         { receive: ["registro-carga"] },
@@ -464,7 +464,7 @@
       excerpt(
         "retorno",
         "borun",
-        "Entregar os apontamentos a Borun",
+        "Levar as anotações a Borun",
         582,
         591,
         { deliver: [deliver("apontamentos-b", "Borun")] },
@@ -481,7 +481,7 @@
       excerpt(
         "cobranca",
         "mercado",
-        "Cobrar a devolução no corredor",
+        "Exigir a devolução no corredor",
         611,
         617,
         { battle: "B4" },
@@ -520,15 +520,15 @@
         "pacote",
         "virmura",
         "Receber o pacote de ataduras",
-        "Ghork recebe o pacote separado por Virmura. A entrega é para Rask, na entrada administrativa do coliseu.",
+        "Ghork recebe o pacote que Virmura separou. Deve entregá-lo a Rask, na entrada administrativa do coliseu.",
         { receive: ["ataduras"] },
       ),
       step("sevrak", "coliseu", "Intervir no treino", [
-        page([n("Um veterano derruba repetidamente um iniciante.")]),
+        page([n("Um veterano derruba o mesmo iniciante, de novo e de novo.")]),
         ...read(686, 696),
         page([
           n(
-            "O veterano tenta agredir Ghork. Sevrak intercepta o golpe e o desarma.",
+            "O veterano avança contra Ghork. Sevrak intercepta o golpe e o desarma.",
           ),
         ]),
         ...read(698, 713),
@@ -559,12 +559,12 @@
   );
   quest(
     "gC3",
-    "Q-C3 · Uma cópia sem o mestre",
+    "Q-C3 · Um método sem o mestre",
     [
       step(
         "elune",
         "contratos",
-        "Entregar o procedimento a Elune",
+        "Levar o procedimento escrito a Elune",
         [...read(754, 772), ...evidence],
         {
           deliver: [deliver("procedimento", "Elune")],
@@ -576,7 +576,7 @@
         "retorno",
         "sevrak",
         "Entregar a revisão a Sevrak",
-        "Ghork entrega na escola a cópia revisada por Elune. O trecho comparado e os limites da conclusão permanecem registrados.",
+        "Ghork leva à escola a cópia revisada por Elune. Ela mostra o trecho conferido e o que ainda não foi possível concluir.",
         { deliver: [deliver("apontamentos-c", "Sevrak")] },
       ),
     ],
@@ -593,7 +593,7 @@
       excerpt(
         "restituicao",
         "coliseu",
-        "Cobrar a restituição com Rask",
+        "Cobrar com Rask a devolução do estojo",
         794,
         800,
         { receive: ["estojo"] },
@@ -604,7 +604,7 @@
       excerpt("resultado", "coliseu", "Ouvir o resultado", 815, 821, {
         requiresWin: "C4",
       }),
-      step("retorno", "sevrak", "Devolver o estojo e revisar a ressalva", c4, {
+      step("retorno", "sevrak", "Devolver o estojo e revisar a nota sobre os limites", c4, {
         deliver: [deliver("estojo", "Sevrak")],
       }),
     ],
@@ -643,28 +643,28 @@
         step(
           "defesa",
           "contratos",
-          "Confirmar adesão e executar a estratégia",
+          "Confirmar adesão e defender a estratégia",
           [
             ...read(880, 880),
             ...read(a, b),
             page([
               d(
                 "Ghork",
-                "O primeiro croqui acompanha a entrada até a bifurcação. O segundo registra a retirada no sentido inverso. Os pontos de partida e a direção estão nas fontes autorizadas.",
+                "O primeiro desenho mostra a entrada até a bifurcação. O segundo mostra o caminho de volta. Os registros confirmam o ponto de partida e a direção de cada um.",
                 "firme",
               ),
               d(
                 "Meruna",
-                "A comparação sustenta esse trecho. O restante continua como trabalho a realizar. O contrato fica com a guilda que você escolheu.",
+                "Vocês conseguiram conferir esse trecho. O restante fica para a investigação. O contrato será da guilda que você escolheu.",
                 "firme",
               ),
             ]),
             ...read(929, 939),
             page(
               mentor(
-                "Sua parte de remuneração será separada dos recursos da equipe. Primeiro combinaremos o trabalho que pode assumir.",
-                "Vamos separar a sua parte da conta da guilda. Quero que saiba pelo que está trabalhando.",
-                "Sua remuneração pessoal e a verba da investigação terão registros distintos. Começaremos pela preparação.",
+                "Seu pagamento fica separado do dinheiro da equipe. Primeiro, vamos combinar que trabalho você pode assumir.",
+                "Seu pagamento fica separado das contas da guilda. Quero que saiba quanto recebe pelo seu trabalho.",
+                "Seu pagamento e o dinheiro da investigação terão registros separados. Vamos começar os preparativos.",
               ),
             ),
           ],
@@ -681,17 +681,17 @@
       step("horarios", "coliseu", "Contestar o cancelamento", [
         page(
           mentor(
-            "Nossa equipe recebeu esses horários. A quarta guilda não pode ocupar a preparação de todos porque tem um campeão.",
-            "Rask, você nos deu a faixa de treino. Se a palavra só vale depois de Torvak aprovar, devia ter dito antes.",
-            "Há um horário concedido à nossa escola. Qual regra permite que a quarta guilda o substitua pela própria preferência?",
+            "Esses horários foram reservados para a nossa equipe. Ter um campeão não dá à quarta guilda o direito de tomar o treino dos outros.",
+            "Rask, você nos prometeu esses horários. Se precisava da licença de Torvak para cumprir, devia ter avisado.",
+            "Nossa escola já tinha um horário. Que regra permite cancelá-lo para atender à preferência da quarta guilda?",
           ),
         ),
         ...read(959, 959),
         page(
           mentor(
-            "É abuso quando retira o que foi concedido aos outros.",
-            "Quero o que foi combinado.",
-            "Quero que responda à pergunta.",
+            "Quando toma o que já foi concedido a outra equipe, é abuso.",
+            "Quero que cumpram o combinado.",
+            "Quero uma resposta à pergunta.",
           ),
         ),
         ...read(963, 963),
@@ -699,29 +699,29 @@
           mentor(
             "Não retiro.",
             "Não vou pedir desculpas por isso.",
-            "Minha posição permanece.",
+            "Mantenho o que disse.",
           ),
         ),
         ...read(967, 979),
         page(
           mentor(
-            "Na sede. Sem cortar o descanso de ninguém.",
-            "Vamos dividir o trabalho. Eu assumo os horários que prometi acompanhar.",
-            "Adaptaremos os exercícios à escola. Começamos pelo espaço.",
+            "Na sede. E ninguém vai perder descanso por causa disso.",
+            "Vamos dividir o trabalho. Eu acompanho os treinos que prometi.",
+            "Vamos adaptar os exercícios à escola. Primeiro, precisamos conferir o espaço.",
           ),
         ),
       ]),
-      step("reorganizacao", home, "Reorganizar a preparação", [
+      step("reorganizacao", home, "Reorganizar os treinos", [
         page([
           n(
-            "Na sede, Ghork ajuda a reorganizar os materiais leves e os horários.",
+            "Na sede da guilda, Ghork ajuda a reorganizar os materiais leves e os horários de treino.",
           ),
         ]),
         page(
           mentor(
-            "O atendimento continua deste lado; a preparação fica do outro. Se os horários apertarem, me diga antes de tirar o descanso da conta.",
-            "Aqui cabe menos gente. Dividi o acompanhamento e avisei Pirka. Dessa vez você não vai descobrir meu atraso olhando uma cadeira vazia.",
-            "Mudei a sequência dos exercícios para este espaço. Quero que registre onde ela não funcionar. Não me serve um aluno que concorda e depois improvisa escondido.",
+            "O atendimento continua deste lado. O treino fica do outro. Se faltar tempo, fale comigo. Não corte seu descanso para fazer caber tudo.",
+            "Cabe menos gente aqui. Dividi os grupos e avisei Pirka dos horários. Desta vez você não vai descobrir que estou atrasado olhando para uma cadeira vazia.",
+            "Adaptei a sequência ao espaço disponível. Anote o que não funcionar. Concordar comigo e improvisar escondido depois não ajuda ninguém.",
           ),
         ),
         ...read(995, 995),
@@ -732,7 +732,7 @@
   );
   quest(
     "introX",
-    "Q-X0 · Uma reserva de retorno",
+    "Q-X0 · Uma reserva para voltar",
     [excerpt("reserva", "oficina", "Conhecer o plano de Darvek", 1004, 1024)],
     "xyIntro",
     { route: "X" },
@@ -744,24 +744,24 @@
     "xyIntro",
     { route: "Y" },
   );
-  quest("alliance", "E06 · Um método para este trabalho", [
+  quest("alliance", "E06 · Como faremos o trabalho", [
     step("escolha", "contratos", "Escolher X ou Y", [
       page(
         mentor(
-          "Ouviu os dois. Quero saber o risco que aceita e como vai explicá-lo à equipe.",
-          "Conte o que conferiu, não só quem gostou de ouvir.",
-          "Escolha pelo trabalho que pretende realizar. Depois terá de responder pelo resultado.",
+          "Ouviu os dois. Que risco vai aceitar? E como vai explicar isso à equipe?",
+          "Conte o que você conferiu, não só qual conversa agradou mais.",
+          "Escolha o método adequado ao trabalho. Depois, terá de responder pelo resultado.",
         ),
       ),
       page(
         [
           n(
-            "O compromisso abre as duas missões da abordagem escolhida. A equipe preterida seguirá com outra guilda.",
+            "A escolha abre duas missões da rota escolhida e fecha a outra rota. A equipe que ficar de fora seguirá com outra guilda.",
           ),
         ],
         [
           choice(
-            "Confirmar X · preparar reserva de retirada",
+            "Confirmar X · preparar reserva de resgate",
             joined(read(1066, 1072)),
             { routeChoice: "X" },
           ),
@@ -777,11 +777,15 @@
       when: (s) => s.flags.routeChoice === "X",
       automatic: true,
     }),
-    excerpt("resposta-y", "contratos", "Responder a Darvek", 1090, 1094, {
+    excerpt("resposta-y", "contratos", "Responder a Darvek", 1089, 1094, {
       when: (s) => s.flags.routeChoice === "Y",
       automatic: true,
     }),
   ]);
+  // Preserve the existing Y answer at index 0 for version-3 save replay.
+  C.quests.alliance.pages
+    .find((p) => C.quests.alliance.steps[p.step].id === "resposta-y")
+    .choices.reverse();
   quest(
     "X1",
     "Q-X1 · Antes de entrar",
@@ -792,7 +796,7 @@
       excerpt(
         "ensaio",
         "minas",
-        "Entregar os apoios e conferir a retirada",
+        "Entregar os apoios e testar a retirada",
         1111,
         1123,
         { deliver: [deliver("apoios", "Darvek")] },
@@ -816,7 +820,7 @@
       excerpt(
         "entrada",
         "minas",
-        "Entregar a carga e conferir as marcações",
+        "Entregar a carga e conferir as marcas do caminho",
         1170,
         1175,
         { deliver: [deliver("carga-leve", "Zagra")] },
@@ -831,12 +835,12 @@
   ])
     quest(
       `${route}2`,
-      `Q-${route}2 · Até o limite conferido`,
+      `Q-${route}2 · Até onde pudemos verificar`,
       [
         excerpt(
           "galeria",
           "minas",
-          "Investigar as galerias e registrar o retorno",
+          "Investigar as galerias e registrar o caminho de volta",
           a,
           b,
           { background: "bg-minas-subsolo", receive: ["levantamento"] },
@@ -859,17 +863,17 @@
       page(
         [
           n(
-            "Contribuir usa remuneração pessoal e abre mão de uma sessão adicional. Guardar preserva essa preparação. Nenhuma opção exige Ludos ou altera o D20.",
+            "Contribuir usa parte do pagamento pessoal de Ghork e dispensa uma sessão extra de treino. Guardar o dinheiro mantém essa sessão. Nenhuma escolha gasta Ludos ou muda o D20.",
           ),
         ],
         [
           choice(
-            "Contribuir com o material de Dam",
+            "Contribuir para o material pedido por Dam",
             (s) => read(1262, 1267).flatMap((p) => resolve(p.body, s)),
             { dam: "help" },
           ),
           choice(
-            "Guardar para a preparação",
+            "Guardar o dinheiro para a preparação",
             (s) => read(1278, 1285).flatMap((p) => resolve(p.body, s)),
             { dam: "defer" },
           ),
@@ -880,16 +884,16 @@
     excerpt(
       "remessa",
       "mercado",
-      "Registrar a remessa com Jorvi e Pirka",
+      "Combinar o envio com Jorvi e Pirka",
       1270,
       1275,
       { when: (s) => s.flags.dam === "help", receive: ["recibo-dam"] },
     ),
-    excerpt("dorga", "contratos", "Ouvir a cobrança de Dorga", 1299, 1303),
+    excerpt("dorga", "contratos", "Ouvir a reclamação de Dorga", 1299, 1303),
     step("dose", "coliseu", "Encontrar Torvak e Savel", [
       page([
         n(
-          "Um companheiro entrega uma dose a Torvak. Ele espera a mão firmar antes de cumprimentar o público. Savel recolhe o estojo.",
+          "Um companheiro entrega uma dose a Torvak. Ele espera o tremor da mão passar antes de saudar o público. Savel guarda o estojo.",
         ),
       ]),
       ...read(1307, 1321),
@@ -899,9 +903,9 @@
       ...read(1339, 1343),
       page(
         mentor(
-          "Você chegou até aqui respeitando os limites do trabalho. Quero que continue me dizendo quando precisar de ajuda.",
-          "Você consegue explicar como chegou até aqui. Não precisa esperar que eu conte por você.",
-          "A escola terá o que mostrar nesta classificação. Quero que nossa preparação seja reconhecida.",
+          "Você chegou até aqui sem ultrapassar seus limites no trabalho. Continue me dizendo quando precisar de ajuda.",
+          "Você sabe contar como chegou até aqui. Não precisa mais esperar que eu conte por você.",
+          "Essa classificação mostra o trabalho da escola. Quero que reconheçam nossa preparação.",
         ),
       ),
       ...read(1353, 1361),
@@ -911,7 +915,7 @@
     page(
       [
         n(
-          "Escolha o compromisso que vai assumir. Só uma das duas pessoas poderá ser convidada por esta missão.",
+          "Escolha qual projeto vai apoiar. Nesta missão, você só poderá convidar a pessoa favorecida pela decisão.",
         ),
       ],
       labels.map((label, i) =>
@@ -929,7 +933,7 @@
     );
   quest(
     "R1",
-    "R1 · Um pátio, dois turnos",
+    "R1 · Um pátio, dois planos",
     [
       step(
         "inspecao",
@@ -939,19 +943,19 @@
           ...read(1397, 1405),
           {
             ...page(
-              [n("Ghork examina a passagem e o canto de armazenamento.")],
+              [n("Ghork examina a passagem e o canto onde guardam os materiais.")],
               [
                 choice("Examinar a passagem", [
                   d(
                     "Nima",
-                    "É por aqui que recebemos a carga. Tem que ficar livre.",
+                    "A carga entra por aqui. Essa passagem precisa ficar livre.",
                     "firme",
                   ),
                 ]),
                 choice("Examinar o canto", [
                   d(
                     "Brakka",
-                    "Aqui cabem os bancos. Mas, se lotar de caixas, ninguém consegue praticar.",
+                    "Os bancos cabem aqui. Mas, se encher de caixas, não sobra espaço para treinar.",
                     "atento",
                   ),
                 ]),
@@ -965,7 +969,7 @@
       step(
         "turno",
         "estalagem",
-        "Escolher o uso do turno",
+        "Escolher como usar o turno",
         [
           outcomePage(
             "R1",
@@ -979,7 +983,7 @@
         "lista",
         "estalagem",
         "Receber e conferir a lista",
-        "Ghork recebe a lista de Brakka e confere quem consegue vir. Os trabalhadores movem os bancos.",
+        "Ghork pega a lista de Brakka e confere quem pode vir. Os trabalhadores arrastam os bancos.",
         {
           when: (s) => s.flags.R1 === "A",
           receive: ["lista-patio"],
@@ -989,8 +993,8 @@
       textStep(
         "etiquetas",
         "estalagem",
-        "Receber etiquetas e conferir os volumes",
-        "Nima entrega as etiquetas a Ghork. Eles identificam as caixas, separam as não reconhecidas e conferem os retornos.",
+        "Receber as etiquetas e conferir as caixas",
+        "Nima entrega as etiquetas a Ghork. Juntos, identificam as caixas, separam as que ninguém reconhece e conferem os retornos.",
         {
           when: (s) => s.flags.R1 === "B",
           receive: ["etiquetas-patio", "lista-patio"],
@@ -1000,8 +1004,8 @@
       textStep(
         "identificar",
         "estalagem",
-        "Aplicar as etiquetas aos volumes",
-        "Ghork fixa as etiquetas conferidas nas caixas do despacho.",
+        "Colocar as etiquetas nas caixas",
+        "Ghork coloca as etiquetas nas caixas que já conferiu.",
         {
           when: (s) => s.flags.R1 === "B",
           consume: ["etiquetas-patio"],
@@ -1036,7 +1040,7 @@
       excerpt(
         "autorizacao",
         "virmura",
-        "Obter autorização e relato anônimo",
+        "Obter a autorização e o relato anônimo",
         1473,
         1490,
         {
@@ -1047,7 +1051,7 @@
       excerpt(
         "peca",
         "treino",
-        "Entregar autorização e buscar a peça",
+        "Entregar a autorização e buscar a peça",
         1496,
         1500,
         {
@@ -1065,7 +1069,7 @@
       step(
         "conferir",
         "virmura",
-        "Conferir o material e escolher a apresentação",
+        "Conferir o material e escolher como apresentar o caso",
         [
           ...read(1515, 1523),
           outcomePage(
@@ -1082,7 +1086,7 @@
       step(
         "apresentar",
         "contratos",
-        "Entregar a apresentação a Seldan",
+        "Apresentar o caso a Seldan",
         [
           page((s) =>
             read(
@@ -1104,12 +1108,12 @@
   );
   quest(
     "R3",
-    "R3 · Uma peça inteira",
+    "R3 · Uma armação inteira",
     [
       excerpt(
         "autorizacao",
         "oficina",
-        "Receber autorização de apresentação",
+        "Receber a autorização para a demonstração",
         1571,
         1577,
         { receive: ["autorizacao-armacao"] },
@@ -1125,7 +1129,7 @@
       step(
         "destino",
         "oficina",
-        "Devolver a autorização e escolher o destino",
+        "Devolver a autorização e escolher o destino da armação",
         [
           outcomePage(
             "R3",
@@ -1151,19 +1155,19 @@
           ...read(1632, 1640),
           {
             ...page(
-              [n("Os trabalhadores querem conferir o que pode ser cobrado.")],
+              [n("Os trabalhadores discutem como cobrar o pagamento.")],
               [
-                choice("Ouvir quem quer reter a entrega", [
+                choice("Ouvir quem quer segurar a entrega", [
                   d(
                     "Trabalhador",
-                    "Se entregar antes de pagar, o que ainda podemos cobrar com a obra nas mãos deles?",
+                    "Se entregarmos antes de receber, o que vai obrigar eles a pagar depois?",
                     "preocupado",
                   ),
                 ]),
-                choice("Ouvir quem precisa do pagamento", [
+                choice("Ouvir quem precisa receber", [
                   d(
                     "Trabalhador",
-                    "Se parar, minha conta continua chegando. Quero saber se a garantia é dinheiro de verdade.",
+                    "Se pararmos, minhas contas não param junto. Quero saber se esse dinheiro existe mesmo.",
                     "preocupado",
                   ),
                 ]),
@@ -1178,7 +1182,7 @@
       excerpt(
         "deposito",
         "mercado",
-        "Conferir depósito e receber comprovante",
+        "Conferir o depósito e receber o comprovante",
         1654,
         1663,
         { requires: ["contas-cisterna"], receive: ["deposito"] },
@@ -1186,12 +1190,12 @@
       step(
         "acordo",
         "cisterna",
-        "Entregar comprovante e assumir posição",
+        "Entregar o comprovante e escolher uma posição",
         [
           ...read(1669, 1671),
           outcomePage(
             "R4",
-            ["Respaldar suspensão · Tessa", "Concluir com garantia · Mavren"],
+            ["Apoiar a suspensão · Tessa", "Concluir com garantia · Mavren"],
             [[[1683, 1693]], [[1697, 1699]]],
           ),
         ],
@@ -1201,7 +1205,7 @@
         "chave",
         "cisterna",
         "Receber a chave de Mavren",
-        "Mavren entrega a chave a Ghork. Os representantes acompanham a conferência.",
+        "Mavren entrega a chave a Ghork. Os representantes acompanham a conferência final.",
         { when: (s) => s.flags.R4 === "B", receive: ["chave-cisterna"] },
       ),
       step(
@@ -1211,7 +1215,7 @@
         [
           page([
             n(
-              "Diante dos representantes, Ghork entrega a chave ao responsável. A entrega autoriza o pagamento garantido pelo depósito.",
+              "Ghork entrega a chave ao responsável, diante dos representantes. Com a entrega confirmada, o dinheiro do depósito pode ser liberado.",
             ),
           ]),
           ...read(1703, 1705),
@@ -1227,9 +1231,9 @@
   );
   quest(
     "R5",
-    "R5 · Uma vaga diante do público",
+    "R5 · Uma chance diante do público",
     [
-      step("formato", "coliseu", "Escolher o formato da apresentação", [
+      step("formato", "coliseu", "Escolher o tipo de apresentação", [
         ...read(1723, 1731),
         outcomePage(
           "R5",
@@ -1259,7 +1263,7 @@
       step(
         "apresentacao",
         "coliseu",
-        "Entregar o programa a Rask e apresentar",
+        "Entregar o programa a Rask e fazer a apresentação",
         [
           page((s) =>
             read(
@@ -1349,7 +1353,7 @@
           page((s) => [
             d(
               "Rask",
-              `Nas quartas, a equipe de Ghork enfrenta ${s.xy === "X" ? "Faíscas" : "Esteios"}, com apoio de uma das guildas que já disputaram esta campanha.`,
+              `Nas quartas de final, a equipe de Ghork enfrenta os ${s.xy === "X" ? "Faíscas" : "Esteios"}, apoiados por uma das guildas adversárias.`,
             ),
           ]),
         ],
@@ -1375,19 +1379,19 @@
     "after2",
     "Resultado das quartas",
     [
-      step("resultado", "coliseu", "Reconhecer a luta", [
+      step("resultado", "coliseu", "Reconhecer o esforço dos adversários", [
         page((s) => [
           d(
             s.xy === "X" ? "Zagra" : "Darvek",
             s.xy === "X"
-              ? "Você passou. Nós fizemos uma luta de verdade."
+              ? "Você passou. Mas demos trabalho."
               : "Você venceu. Vou cuidar do retorno dos meus.",
             "firme",
           ),
           d(
             "Ghork",
             s.xy === "X"
-              ? "Fizeram. O resultado não apaga isso."
+              ? "Deram. Ganhar não muda isso."
               : "Boa volta. Obrigado pela luta.",
             "atento",
           ),
@@ -1463,7 +1467,7 @@
             [
               d(
                 "Ghork",
-                "Vou encontrar a equipe do contrato no treino.",
+                "Vou encontrar o pessoal do contrato no espaço de treino.",
                 "reflexivo",
               ),
             ],
@@ -1479,7 +1483,7 @@
       [
         page(
           mentor(
-            "Quero que você saia dessa luta em condição de continuar vivendo depois dela.",
+            "Quero que você saia dessa luta inteiro. Ainda há muito para viver depois dela.",
             "Quero ouvir como pretende enfrentar Torvak.",
             "A final mostrará à cidade o trabalho que fizemos.",
           ),
@@ -1487,22 +1491,22 @@
         page([
           d(
             "Ghork",
-            "Quando cheguei, achei que um título faria todo mundo parar de me olhar como alguém que não serve.",
+            "Quando cheguei, achei que bastava ganhar um título para todo mundo parar de me tratar como inútil.",
             "reflexivo",
           ),
         ]),
         page(
           mentor(
             "Alguns vão continuar discordando, mesmo se você vencer.",
-            "Torvak tem um título há bastante tempo. Você viu o que ainda exige dos outros.",
-            "Um resultado pode ser incontestável. A interpretação raramente é.",
+            "Torvak tem o título há anos. Você viu como ainda cobra reconhecimento dos outros.",
+            "Podem concordar com o resultado e continuar discordando sobre você.",
           ),
         ),
         ...read(1982, 1985),
         page(
           mentor(
-            "Eu ouvi. Estarei cuidando dos nossos.",
-            "Então vá. Seu plano não precisa caber inteiro numa aprovação minha.",
+            "Está bem. Vou cuidar dos nossos.",
+            "Então vá. Você não precisa da minha aprovação para cada passo.",
             "Defenda essa posição quando sair da arena também.",
           ),
         ),
@@ -1512,18 +1516,18 @@
     step(
       "equipe",
       "treino",
-      "Encontrar a equipe do contrato",
+      "Encontrar a equipe das minas",
       [
         ...read(1992, 2006),
         page((s) => [
           d(
             s.xy === "X" ? "Darvek" : "Zagra",
             s.xy === "X"
-              ? "É uma resposta com que consigo trabalhar."
+              ? "Isso eu consigo entender."
               : "Bom. Prometa que vai lutar, então.",
             "atento",
           ),
-          d("Guedra", "Mostre o apoio. Depois vá para a chamada.", "firme"),
+          d("Guedra", "Mostre sua base. Depois vá para a chamada.", "firme"),
         ]),
       ],
       { when: (s) => s.flags.uv === "V" },
@@ -1579,7 +1583,7 @@
         ),
         page([
           n(
-            "Houve quem gritasse o nome dele até perder a voz. Houve quem continuasse preferindo o antigo campeão. Ghork ficou ali tempo suficiente para ouvir os dois.",
+            "Parte da torcida gritava o nome de Ghork até perder a voz. Outros ainda defendiam o antigo campeão. Ghork demorou a sair da arena e ouviu os dois lados.",
           ),
         ]),
       ],
@@ -1594,7 +1598,7 @@
       [
         page([
           n(
-            "Homens armados misturados às equipes de serviço fecham as passagens.",
+            "Homens armados saem do meio das equipes de serviço e bloqueiam as passagens.",
           ),
         ]),
         ...read(2067, 2073),
@@ -1606,7 +1610,7 @@
         ...read(2077, 2085),
         page([
           n(
-            "Torvak abre uma retirada. O fornecedor abandona o disfarce e assume o comando como Neral.",
+            "Torvak enfrenta os invasores e abre uma saída. O fornecedor abandona o disfarce: é Neral, que assume o comando dos atacantes.",
           ),
           d(
             "Neral",
@@ -1631,9 +1635,9 @@
           ...read(2116, 2125),
           page([
             n(
-              "Neral usa sangue como catalisador e ergue uma proteção ritual. Pressionado por Ghork, ingere os concentrados. O corpo se deforma; a força aumenta e os movimentos perdem precisão.",
+              "Neral usa sangue para erguer uma proteção ritual. Ghork pressiona sua defesa, e o alquimista bebe os concentrados. Seu corpo se deforma. Os golpes ficam mais fortes, mas menos precisos.",
             ),
-            d("Neral", "Eu conheço as medidas. Eu fiz as fórmulas.", "hostil", {
+            d("Neral", "Eu conheço as doses. As fórmulas são minhas.", "hostil", {
               pose: "transformado",
             }),
             d("Ghork", "Então sabe o que está tomando.", "firme"),
@@ -1666,7 +1670,7 @@
           })),
           page([
             n(
-              "Neral morre sem identificar infiltrados. O selo permanece intacto. Os demais completam a retirada e libertam os capturados.",
+              "Neral morre sem dar nomes. O selo continua intacto. Enquanto isso, os demais concluem a evacuação e libertam os capturados.",
             ),
           ]),
         ],
@@ -1680,7 +1684,7 @@
           ...read(2151, 2153),
           page([
             n(
-              "O recebimento anterior foi confirmado pelo nosso contato dentro do Conselho de Daratrine. Mantenha as próximas instruções neste canal. Nenhum nome deve acompanhar a remessa.",
+              "Nosso contato no Conselho de Daratrine confirmou o recebimento anterior. Enviem as próximas instruções por este mesmo meio. Não incluam nomes na remessa.",
             ),
           ]),
           ...read(2159, 2163),
@@ -1694,7 +1698,7 @@
     ],
     "victory",
   );
-  quest("ending", "E07 · Notícias que cabem numa conversa", [
+  quest("ending", "E07 · Tanta coisa para contar", [
     excerpt("responsabilidade", "coliseu", "Ouvir Torvak", 2174, 2185),
     step("noticias", home, "Dar notícias a Lala", [
       ...read(2191, 2211),
@@ -1723,49 +1727,49 @@
   C.semifinalLines = {
     Brakka: [
       "Sou Brakka. Trabalho de dia e luto quando consigo. Hoje consegui.",
-      "Não acertamos aquele pátio. Vim disputar uma coisa que já está combinada.",
-      "O treino continua. Entrei por esta equipe; valeu por ajudar a abrir o espaço.",
-      "O despacho ficou com o pátio. Procurei apoio para o treino e cheguei até aqui.",
+      "Não resolvemos o uso daquele pátio. Mas esta luta, pelo menos, está marcada.",
+      "O treino continua. Entrei nesta equipe. Obrigado por ajudar a garantir nosso espaço.",
+      "O pátio ficou para as entregas. Encontrei outro apoio para o treino e cheguei até aqui.",
     ],
     Nima: [
-      "Nima. Meu grupo trabalha com entregas. Hoje a gente veio por esta entrada.",
-      "Ainda não fechamos aquele turno. Esta partida tem hora certa.",
-      "O despacho está funcionando. Minha inscrição ficou com este grupo.",
+      "Nima. Minha equipe faz entregas pela cidade. Hoje viemos disputar uma luta.",
+      "Não acertamos o turno do pátio. Esta partida, pelo menos, tem hora marcada.",
+      "As entregas estão funcionando. Para o campeonato, me inscrevi com este grupo.",
       "Você escolheu o treino. Eu busquei outro apoio para os entregadores.",
     ],
     Sura: [
-      "Sou Sura. Também sou combatente. Você vai conhecer essa parte agora.",
+      "Sou Sura. Também sei lutar. Você vai ver.",
       "O caso dos feridos continua aberto. Nossa luta não vai resolvê-lo.",
       "Você respeitou o sigilo. Continuo grata, mesmo defendendo esta equipe.",
-      "A audiência foi sua escolha. Meu cuidado continua; minha equipe também.",
+      "Você escolheu os depoimentos públicos. Continuei cuidando dos feridos e preparando minha equipe.",
     ],
     Edrin: [
       "Edrin. Prefiro uma apresentação curta antes de uma disputa longa.",
       "Ainda temos documentos para conferir. Aqui, pelo menos, sabemos o que está em disputa.",
       "Você respaldou os depoimentos. Hoje nos inscrevemos em lados diferentes.",
-      "Segui com a via pública. Não preciso negar o trabalho de Sura para querer vencer.",
+      "Continuei defendendo os depoimentos públicos. Respeito o trabalho de Sura, mas também quero vencer.",
     ],
     Korr: [
       "Korr. Se ouvir um rangido, pode ser minha proteção. Já testei.",
-      "A armação ainda espera uma decisão. Meu treino não ficou esperando junto.",
-      "Usei o material. Agora quero ver o trabalho aguentar uma luta contra você.",
+      "Ainda não decidimos o destino da armação. Mas eu continuei treinando.",
+      "Usei o material. Agora vamos ver se minhas proteções aguentam uma luta contra você.",
       "Você preservou a armação. Procurei outros materiais e outro grupo.",
     ],
     Velka: [
-      "Velka. Observe o apoio antes de tentar seguir o movimento.",
-      "Ainda não decidimos o instrumento. Podemos decidir esta partida.",
-      "O instrumento está em uso. Obrigada pelo apoio. Vou tentar derrotá-lo.",
-      "O material foi reaproveitado. Continuei ensinando com o que tinha.",
+      "Velka. Repare nos meus pés antes de tentar acompanhar o movimento.",
+      "Ainda não decidimos o destino do instrumento. Vamos decidir esta partida.",
+      "Estamos usando o instrumento nas aulas. Obrigada pela ajuda. Agora vou tentar vencer você.",
+      "Reaproveitaram o material. Continuei ensinando com o que restou.",
     ],
     Tessa: [
       "Tessa. Tem gente contando comigo, como deve haver com você.",
-      "A cisterna ainda exige um acordo. Hoje falo pela equipe que me inscreveu.",
+      "Ainda precisamos acertar o pagamento da cisterna. Hoje vim lutar por esta equipe.",
       "Obrigada por sustentar a posição dos trabalhadores. Aqui estamos em lados distintos.",
-      "A garantia existia. Eu preferia a quitação antes. Continuo defendendo isso.",
+      "O dinheiro estava garantido, eu sei. Mas ainda prefiro receber antes de entregar o serviço.",
     ],
     Mavren: [
-      "Mavren. Vim conquistar condições para escolher meu próximo trabalho.",
-      "Ainda precisamos concluir aquele acordo. Esta equipe já tem o seu.",
+      "Mavren. Vim ganhar a chance de escolher meu próximo serviço.",
+      "Ainda precisamos fechar aquele acordo. Com esta equipe, já está tudo combinado.",
       "Conferimos a garantia juntos. Não esqueço isso porque agora vou enfrentá-lo.",
       "Você apoiou a suspensão. Procurei outro trabalho e segui com este grupo.",
     ],
@@ -1777,22 +1781,22 @@
     ],
     Lethra: [
       "Lethra. Meus alunos vão reparar na minha base antes da sua.",
-      "A vaga ainda dava conversa. A semifinal já tem hora.",
+      "Ainda podíamos discutir a vaga da apresentação. Mas agora é hora da semifinal.",
       "Obrigada por dar lugar aos aprendizes. Agora quero conquistar o meu na final.",
       "O espetáculo ficou com a vaga. Eu segui procurando espaço para os alunos.",
     ],
   };
   C.celebrationLines = {
-    Brakka: "O turno de hoje vai dar assunto.",
+    Brakka: "Vai ter assunto no próximo turno.",
     Nima: "Todo mundo aqui? Então podemos comemorar.",
-    Sura: "Primeiro, deixem eu ver esse braço. Depois eu comemoro junto.",
+    Sura: "Primeiro, deixa eu ver esse braço. Depois comemoro com vocês.",
     Edrin: "Este resultado eu faço questão de registrar.",
     Korr: "A proteção aguentou. Eu também, por pouco.",
-    Velka: "Quero lembrar o último movimento.",
+    Velka: "Quero guardar aquele último movimento na memória.",
     Tessa: "Tem muita gente que vai querer saber como foi.",
-    Mavren: "Finalmente uma entrega que dá vontade de anunciar.",
-    Odrik: "Eu tinha uma fala pronta. Esqueci. Ganhei junto!",
-    Lethra: "Vou ouvir os alunos comentarem cada passo.",
+    Mavren: "Finalmente um trabalho que faço questão de anunciar.",
+    Odrik: "Eu tinha um discurso pronto. Esqueci tudo. Nós ganhamos!",
+    Lethra: "Meus alunos vão comentar cada passo que eu dei.",
   };
   C.items = {
     "lista-patio": "Lista conferida do pátio",
@@ -1835,29 +1839,29 @@
       .findLast((p) => p.choices.length)
       .choices.push(
         choice(
-          "Pedir a Rheed que Ghork termine sem interrupção · 1 Ludo",
+          "Pedir a Rheed que deixem Ghork terminar · 1 Ludo",
           (s) => [
             d(
               "Criança",
-              "E se ele conseguisse terminar sem alguém interromper?",
+              "E se deixassem ele terminar de falar sem interromper?",
               "investigativo",
             ),
             d(
               "Rheed",
-              "Meruna tinha um pequeno sino para controlar a reunião. Eu havia esquecido de pôr o sino na mesa.",
+              "Meruna tinha um sininho para pôr ordem na reunião. Esqueci de colocar na mesa. Ora, como fui esquecer o sino?",
               "ironico",
             ),
             d("Meruna", "Deixem Ghork concluir.", "firme"),
             d(
               "Ghork",
-              "Vou trabalhar pela guilda que escolhi. O que vocês fizeram por mim continua importante. Não vou oferecer metade de um contrato que não tenho como dividir.",
+              "Vou trabalhar com a guilda que escolhi. Continuo grato a vocês, mas não posso oferecer um pedaço de um contrato que não é divisível.",
               "firme",
             ),
             d(
               s.guild === "A" ? "Borun" : "Virmura",
               s.guild === "A"
-                ? "Ouvi. E vou disputar os próximos trabalhos com a sua."
-                : "Eu ouvi. Ainda preciso sustentar o trabalho da minha equipe.",
+                ? "Entendi. E nos próximos contratos, a sua guilda vai disputar com a minha."
+                : "Eu ouvi. E ainda preciso garantir o sustento da minha equipe.",
               "firme",
             ),
           ],
@@ -1877,27 +1881,27 @@
         [
           d(
             "Criança",
-            "Alguém que ouviu a promessa de Rask pode estar perto?",
+            "Não pode ter alguém por perto que ouviu Rask prometer os horários?",
             "investigativo",
           ),
           d(
             "Rheed",
-            "Uma pessoa tinha ido buscar um objeto esquecido e ficou ouvindo. Era uma demora bastante conveniente.",
+            "Alguém voltara para buscar um objeto esquecido e ficou ouvindo. Um atraso muito conveniente, não acha?",
             "ironico",
           ),
           d(
             "Guedra",
-            "Eu estava aqui quando os horários foram concedidos. Não houve dúvida no combinado.",
+            "Eu estava aqui quando Rask deu os horários a vocês. O combinado foi claro.",
             "firme",
           ),
           d(
             "Torvak",
-            "Não neguei que estavam concedidos. Eu mandei mudar.",
+            "Não neguei isso. Eu mandei mudar.",
             "hostil",
           ),
           d(
             "Ghork",
-            "Então não vou aceitar que contem isso como uma confusão nossa.",
+            "Então ninguém vai dizer que fomos nós que entendemos errado.",
             "firme",
           ),
         ],
@@ -1918,7 +1922,7 @@
           ),
           d(
             "Rheed",
-            "Pela primeira vez em muito tempo, Rask economizou um anúncio para ouvir outra voz.",
+            "Pela primeira vez em muito tempo, Rask deixou um anúncio para depois e ouviu outra pessoa.",
             "ironico",
           ),
           d("Rask", "Ghork quer dizer uma coisa.", "atento"),
@@ -1926,7 +1930,7 @@
             "Ghork",
             s.recruits.some((r) => r.invited)
               ? "Conseguimos. Quero que ouçam os nomes de quem lutou comigo."
-              : "Entrei sozinho na arena. Não cheguei sozinho a esta cidade. Muita gente me ajudou, e parte dela quis ganhar de mim hoje.",
+              : "Lutei sozinho, mas muita gente me ajudou desde que cheguei. Alguns até tentaram ganhar de mim hoje.",
             "alegre",
           ),
           ...s.recruits
@@ -1943,37 +1947,37 @@
       {
         speaker: "Nyra",
         blocked:
-          "Precisei ocupar o pátio com os preparativos que sobraram. Não consigo ceder esse turno agora.",
+          "Precisei usar o pátio para os preparativos que ficaram pendentes. Não posso liberar esse turno agora.",
         accepted:
-          "Os responsáveis aceitaram levar os preparativos ao próprio depósito. O turno voltou a ficar livre. Posso ouvir as duas propostas.",
+          "Levaram os preparativos para o próprio depósito. O pátio está livre nesse turno de novo. Vamos ouvir as duas propostas.",
       },
       {
         speaker: "Sura",
         blocked:
-          "Não temos como acompanhar a conferência e a apresentação enquanto a equipe está cobrindo os atendimentos.",
+          "Nossa equipe está ocupada com os atendimentos. Não temos quem acompanhe a conferência e a apresentação dos relatos.",
         accepted:
-          "Conseguimos cobertura para esse período. Os pacientes ainda decidem o que autorizam; agora podemos acompanhar o trabalho.",
+          "Conseguimos quem cuide dos atendimentos nesse período. Agora podemos acompanhar a conferência. Os pacientes ainda decidem o que autorizam.",
       },
       {
         speaker: "Durn",
         blocked:
-          "A armação foi reservada para uma tarefa de preparação. Não vou prometer o mesmo material aos dois projetos.",
+          "Reservaram a armação para os preparativos. Não posso prometer o mesmo material para dois projetos.",
         accepted:
-          "Quem reservou encontrou um conjunto próprio. A armação está disponível para escolhermos um destino.",
+          "Quem tinha reservado a armação encontrou outro conjunto. Podemos decidir como usá-la.",
       },
       {
         speaker: "Tessa",
         blocked:
-          "A reunião com os envolvidos ficou sem acompanhamento. Não vou pedir que escolham por quem não conseguiu vir.",
+          "Alguns dos envolvidos não conseguem vir à reunião. Não vou pedir que os outros decidam por eles.",
         accepted:
-          "Conseguimos reorganizar os turnos e reunir os envolvidos. Agora podemos discutir as duas propostas.",
+          "Reorganizamos os turnos e reunimos os envolvidos. Agora podemos discutir as duas propostas.",
       },
       {
         speaker: "Rask",
         blocked:
-          "O ajuste da preparação ocupou a vaga de exibição. Não tenho um intervalo para conceder agora.",
+          "A reorganização dos treinos ocupou a vaga da apresentação. Não tenho outro intervalo agora.",
         accepted:
-          "O ajuste foi concluído antes. Há tempo para uma apresentação. Vamos ouvir os dois formatos.",
+          "Terminamos o ajuste dos treinos mais cedo. Sobrou tempo para uma apresentação. Vamos ouvir as duas propostas.",
       },
     ],
     candidates: {
@@ -1984,71 +1988,71 @@
       },
       Nima: {
         blocked:
-          "A distribuição das entregas deixou um turno sem responsável. Estou cobrindo até acertarem.",
-        accepted: "O turno ganhou cobertura. Posso assumir o convite.",
+          "Ficou um turno de entregas sem responsável. Estou cobrindo até acertarem.",
+        accepted: "Conseguimos alguém para o turno. Posso aceitar o convite.",
       },
       Sura: {
         blocked:
           "Preciso cobrir atendimento. Sem alguém no meu lugar, não posso entrar na equipe.",
-        accepted: "O atendimento ficou coberto. Agora posso acompanhá-lo.",
+        accepted: "Conseguimos quem cuide dos atendimentos. Agora posso ir com você.",
       },
       Edrin: {
         blocked:
-          "Assumi uma conferência de registros que coincide com a preparação da equipe.",
-        accepted: "Conseguimos dividir a conferência. Posso lutar com você.",
+          "Marquei uma conferência de registros no mesmo horário da preparação da equipe.",
+        accepted: "Dividimos a conferência dos registros. Posso lutar com você.",
       },
       Korr: {
         blocked:
           "Ainda respondo por uma entrega de proteções. Não vou abandonar o serviço pela metade.",
         accepted:
-          "A oficina conseguiu dividir o acabamento. Posso ir sem deixar a entrega descoberta.",
+          "A oficina dividiu o acabamento. Posso ir sem atrasar a entrega.",
       },
       Velka: {
         blocked: "Combinei acompanhar uma prática e não tenho quem assuma.",
         accepted:
-          "Quem já conduz os exercícios aceitou acompanhar essa prática. Posso entrar na equipe.",
+          "Outra pessoa que conduz os exercícios assumiu a prática. Posso entrar na equipe.",
       },
       Tessa: {
         blocked:
           "Preciso acompanhar uma negociação. As pessoas me escolheram para estar lá.",
         accepted:
-          "Os demais representantes aceitaram dividir esse acompanhamento. Posso disputar com você.",
+          "Os outros representantes aceitaram dividir as reuniões. Posso lutar com você.",
       },
       Mavren: {
         blocked:
-          "Tenho uma etapa de trabalho sob minha responsabilidade. Não posso simplesmente deixar a chave.",
-        accepted: "A etapa ganhou outro responsável. Posso aceitar o convite.",
+          "Sou responsável por uma etapa da obra. Não posso largar tudo sem alguém no meu lugar.",
+        accepted: "Outra pessoa assumiu essa etapa. Posso aceitar o convite.",
       },
       Odrik: {
         blocked:
-          "Estou comprometido com a preparação de outra apresentação. Não consigo garantir as duas presenças.",
+          "Já estou preparando outra apresentação. Não consigo me comprometer com as duas.",
         accepted:
-          "Os responsáveis dividiram os preparativos. Posso lutar com você.",
+          "Dividimos os preparativos da apresentação. Posso lutar com você.",
       },
       Lethra: {
         blocked:
           "Preciso acompanhar os aprendizes. Ainda não há quem assuma essa prática.",
-        accepted: "A prática ficou acompanhada. Posso entrar na equipe.",
+        accepted: "Consegui quem acompanhe os aprendizes. Posso entrar na equipe.",
       },
     },
     invitations: {
       Brakka:
-        "Vamos. Quero que vejam os trabalhadores por outro motivo além de carregar a arena dos outros.",
-      Nima: "Vou. O despacho já tem gente dividindo os turnos. Não preciso fazer tudo para poder representar o grupo.",
-      Sura: "Você respeitou o que podia levar dos pacientes. Posso construir uma parceria assim. Quando o convite estiver disponível, conte comigo.",
+        "Vamos. Quero que vejam os trabalhadores lutando, não só carregando coisas para a arena dos outros.",
+      Nima: "Vou. Já dividimos os turnos das entregas. Posso representar o grupo sem fazer todo o serviço sozinha.",
+      Sura: "Você respeitou o que os pacientes autorizaram. Gosto de trabalhar com alguém assim. Conte comigo.",
       Edrin:
-        "Você conferiu o relato antes de usá-lo. Quero essa responsabilidade perto de mim na arena também.",
-      Korr: "Quero. E quero ver como as proteções se comportam em uso de verdade.",
+        "Você conferiu o relato antes de usá-lo. Quero alguém com esse cuidado ao meu lado na arena.",
+      Korr: "Quero. Está na hora de testar essas proteções numa luta de verdade.",
       Velka:
-        "Quero. A prática continua com quem deixei responsável; a técnica pode ser vista na arena também.",
+        "Quero. Deixei alguém responsável pela prática. Agora vou mostrar a técnica na arena.",
       Tessa:
-        "Podemos. A negociação continua com os demais representantes. Vou levar nossa posição para a arena.",
+        "Vamos. Os outros representantes continuam a negociação. Quero levar nossa posição para a arena.",
       Mavren:
-        "Vou. Quero que esse trabalho me dê autonomia para escolher o próximo, não só pagar o atraso do anterior.",
+        "Vou. Quero ganhar a liberdade de escolher o próximo serviço, em vez de só pagar as dívidas do anterior.",
       Odrik:
-        "Quero. Na apresentação eu posso combinar a queda. Na semifinal, vou lutar para continuar de pé.",
+        "Quero. Numa apresentação, a gente combina quem cai. Na semifinal, vou fazer de tudo para ficar de pé.",
       Lethra:
-        "Quero. Os aprendizes seguem com a prática combinada. Também tenho uma luta para fazer.",
+        "Quero. Os aprendizes continuam com a prática combinada. Eu também tenho uma luta para fazer.",
     },
   };
   C.recruitPlaces = ["estalagem", "virmura", "oficina", "cisterna", "coliseu"];
@@ -2078,11 +2082,11 @@
       "unlock" + i,
       "Uma ajuda que Rheed ainda não contou",
       [
-        step("cobertura", C.recruitPlaces[i], "Ouvir a versão com cobertura", [
+        step("cobertura", C.recruitPlaces[i], "Ouvir como conseguiram dividir o serviço", [
           page((s) => [
             d(
               "Rheed",
-              "Justamente naquele dia, alguém apareceu querendo terminar cedo. Pela primeira vez nesta história, uma lista foi repartida antes de virar discussão.",
+              "Justamente naquele dia, apareceu alguém disposto a dividir o serviço. Separaram as tarefas antes que começasse outra discussão. Uma novidade nesta história.",
               "ironico",
             ),
             d(
@@ -2106,7 +2110,7 @@
         ? [
             d(
               "Borun",
-              "Eles conseguiram fechar os dois lados. Na próxima aproximação, guarde a passagem por onde vai sair.",
+              "Eles fecharam os dois lados. Na próxima, mantenha uma saída livre.",
               "firme",
             ),
             d(
@@ -2119,15 +2123,15 @@
           ? [
               d(
                 "Rask",
-                "Encerrado. O estojo continua restituído. O desafio permanece aberto.",
+                "Acabou. O estojo já foi devolvido. Você pode tentar o desafio de novo.",
                 "firme",
               ),
-              d("Ghork", "Essa tentativa não venceu. Vou voltar.", "firme"),
+              d("Ghork", "Desta vez eu perdi. Vou voltar.", "firme"),
             ]
           : id === "t5"
             ? [
                 n(
-                  "Ghork é repelido para um recuo do corredor. A evacuação continua.",
+                  "Ghork é forçado a recuar para uma reentrância do corredor. Os outros continuam retirando o público.",
                 ),
                 d("Ghork", "Ainda não consegui passar.", "exausto"),
                 d("Borun", "Recue por aqui. A saída continua aberta.", "firme"),
@@ -2135,7 +2139,7 @@
             : [
                 d(
                   "Rask",
-                  "Esta tentativa ficou com a equipe adversária. A revanche permanece disponível; acertem a retomada comigo quando estiverem prontos.",
+                  "A equipe adversária venceu esta tentativa. Vocês podem pedir revanche. Falem comigo quando estiverem prontos.",
                   "atento",
                 ),
                 d("Ghork", "Vou me preparar para voltar.", "firme"),

@@ -1,17 +1,27 @@
 (function (root) {
   "use strict";
   const A = root.TerminusArt;
+  const L = root.TerminusLanguage;
   function el(tag, attrs = {}, ...children) {
     const node = document.createElement(tag);
-    for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+    for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, ['aria-label', 'title', 'alt'].includes(k) ? L.text(v) : v);
     for (const c of children.flat())
       if (c !== null && c !== undefined)
-        node.append(typeof c === "string" ? document.createTextNode(c) : c);
+        node.append(typeof c === "string" ? document.createTextNode(L.text(c)) : c);
     return node;
   }
   function picture(asset, alt, className, onError) {
     const img = el("img", { src: asset.preview, alt, class: className });
-    img.addEventListener("error", () => onError(), { once: true });
+    img.addEventListener("error", () => {
+      const parent = img.parentElement;
+      if (!parent) return;
+      onError();
+      const retry = el("button", {type: "button", class: "retry-image"}, "Carregar imagem novamente");
+      retry.addEventListener("click", () => {
+        parent.replaceChildren(picture(asset, alt, className, onError));
+      });
+      parent.append(retry);
+    }, { once: true });
     return img;
   }
   function render(p, { onAsset, inspect = false, reduced = false } = {}) {
@@ -73,12 +83,12 @@
     const bg = A.assets[p.background];
     if (bg.preview)
       backdrop.append(
-        picture(bg, `${bg.name} · ${bg.status}`, "background-image", () =>
+        picture(bg, inspect ? `${bg.name} · ${bg.status}` : bg.name, "background-image", () =>
           backdrop.replaceChildren(
             el(
               "p",
               { class: "asset-error", role: "alert" },
-              `Não foi possível abrir ${bg.preview}. Fundo previsto: ${bg.name}.`,
+              inspect ? `Não foi possível abrir ${bg.preview}. Fundo previsto: ${bg.name}.` : `Não foi possível abrir o cenário: ${bg.name}.`,
             ),
           ),
         ),
@@ -89,11 +99,11 @@
           "div",
           {
             class: "background-placeholder",
-            "aria-label": `Fundo a produzir: ${bg.name}`,
+            "aria-label": bg.name,
           },
-          el("span", {}, "FUNDO A PRODUZIR"),
+          inspect ? el("span", {}, "FUNDO A PRODUZIR") : null,
           el("strong", {}, bg.name),
-          el("small", {}, "1280 × 720 · imagem estática"),
+          inspect ? el("small", {}, "1280 × 720 · imagem estática") : null,
         ),
       );
     stage.append(backdrop);
@@ -102,7 +112,7 @@
         left = bust.owner === "Ghork";
       const portrait = el("figure", {
         class: `bust-placeholder ${left ? "left" : "right"}`,
-        "aria-label": `${bust.name} · ${bust.status}`,
+        "aria-label": inspect ? `${bust.name} · ${bust.status}` : bust.name,
       });
       const silhouette = el(
         "div",
@@ -131,7 +141,7 @@
             {},
             el("strong", {}, bust.owner),
             el("span", {}, bust.name.split(" — ")[1]),
-            el("small", {}, "Busto a produzir"),
+            inspect ? el("small", {}, "Busto a produzir") : null,
           ),
         );
       stage.append(portrait);
@@ -152,12 +162,12 @@
         );
       else
         object.append(
-          el("span", {}, "OBJETO A PRODUZIR"),
+          ...(inspect ? [el("span", {}, "OBJETO A PRODUZIR")] : []),
           el("strong", {}, obj.name),
           el(
             "small",
             {},
-            p.recipient ? `Entrega a ${p.recipient}` : "Destaque no centro",
+            p.recipient ? `Entrega a ${p.recipient}` : "",
           ),
         );
       stage.append(object);

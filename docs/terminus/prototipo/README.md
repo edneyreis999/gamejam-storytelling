@@ -6,16 +6,48 @@ Abra [index.html](index.html) em um navegador atual. O jogo roda localmente, sem
 
 A V3 integra o [roteiro de quests](../storytelling/quests-da-campanha.md): quinze quests de guilda, sete do arco 2, cinco conflitos de recrutamento, campeonato, invasão, encerramento e cenas compartilhadas E00–E08. Preserva as três secundárias e permite terminar sozinho, sem gastar Ludos.
 
+## Idiomas e revisão para a jam
+
+O jogo abre em **English**. O seletor **Português / English** está na abertura e no menu; a escolha fica em `terminus-language`, separada do save. Trocar idioma redesenha a apresentação sem avançar a leitura, repetir entregas ou alterar resultados. Os saves V3 continuam usando os mesmos comandos.
+
+A revisão aprovada no [piloto](editorial/piloto.md) cobre **1.156 unidades narrativas e de objetivos/escolhas**, com português revisado e inglês final nos [lotes A](editorial/lote-a.json), [B](editorial/lote-b.json) e [C](editorial/lote-c.json). Os inventários `editorial/inventory-*.json` preservam original, ID, cenas, participantes, ocorrências e linhas de origem; os lotes usam os mesmos IDs. Seus registros de variantes remetem aos [contextos observados nas prévias](editorial/variant-contexts.json); as condições completas continuam nas fontes. As variantes também podem ser lidas em **Cenas e variantes**. O [relatório de integração](editorial/integracao.json) registra a migração aplicada às fontes.
+
+O português jogável permanece em `quests-da-campanha.md`, `campaign.js`, `content.js` e `supplementary.js`. O inglês é gerado em `locales/en-US.js` a partir dos lotes, do [glossário](editorial/glossario.json) e do [catálogo de interface](editorial/interface-en.json). Este último inclui itens, ações geradas, diário, batalha, mapa, avisos e acessibilidade. As ferramentas internas de produção podem conservar português.
+
+Para corrigir um texto depois desta integração:
+
+1. Localize seu ID no inventário e ajuste a fonte PT e a entrada correspondente do lote, mantendo o ID. Para mensagens de interface, ajuste `interface-en.json`; parâmetros como `{p0}` precisam existir nos dois idiomas.
+2. Preserve as linhas estruturais do Markdown: os recortes de montagem ainda dependem de seus intervalos. Regenere `quest-script.js` quando alterar o roteiro principal.
+3. Gere o catálogo e execute a cobertura abaixo. O teste aponta variantes, textos ou parâmetros ausentes; não aceite uma entrada sem inglês como conclusão da revisão.
+
+```powershell
+node docs/terminus/prototipo/scripts/extract-quest-script.cjs
+node docs/terminus/prototipo/scripts/build-locales.cjs
+node docs/terminus/prototipo/scripts/report-editorial.cjs --write
+node docs/terminus/prototipo/scripts/integrate-editorial.cjs --check
+node --test docs/terminus/prototipo/tests/*.test.cjs docs/terminus/prototipo/tests/localization.cjs docs/terminus/prototipo/tests/localization-messages.cjs
+node docs/terminus/prototipo/tests/localization-browser.cjs
+```
+
+`integrate-editorial.cjs --write` é a migração inicial, já aplicada; não é o comando de edição cotidiana. A verificação `--check` não depende de Acorn. `localization.js` resolve chaves de conteúdo estáveis e templates explícitos na apresentação, sem usar somente a posição da passagem: falas diferentes na mesma posição têm registros próprios. O relatório exportado acompanha o idioma selecionado.
+
+O teste visual de idiomas aceita as mesmas variáveis do teste de mapa: `$env:TERMINUS_QA_BROWSER="chrome"` e `$env:TERMINUS_QA_TRANSPORT="file"` executam a abertura direta do HTML no Chrome, sem acesso HTTP. Seu relatório e capturas ficam em `.artifacts/terminus-localization/browser/`.
+
+A resposta da rota Y omitida no recorte original foi recuperada como segunda opção. A opção que já existia conserva o índice zero para manter o sentido dos comandos de saves anteriores. Não foram acrescentados efeitos, páginas ou recompensas.
+
 ## Jogar
 
-- A exploração abre depois de Q-A1. O mapa tem **13 destinos e um portal fixo**, todos com identificação textual. Os destinos são placeholders; as imagens de mapa ficam preservadas para uma integração futura.
+- A exploração abre depois de Q-A1. O mapa tem **13 destinos e um portal fixo**, todos com identificação textual. O terreno, as fachadas e o portal usam as ilustrações existentes. Clique para visitar; no toque, selecione e toque novamente no mesmo destino.
 - Abra um destino para ver o cenário e suas atividades. Buscas, entregas e retornos exigem visitar o local indicado. As cadeias podem ser intercaladas antes da adesão; ouvir uma proposta não escolhe a guilda.
-- Use mouse ou toque. No mapa, Tab e setas percorrem os destinos; Enter/Espaço abre o selecionado. Em telas estreitas, deslize a área do mapa horizontalmente. “Voltar ao mapa” restaura a posição e o foco do destino.
+- Use mouse ou toque. No mapa, Tab e setas percorrem os destinos; Enter/Espaço abre o selecionado. O mapa cabe inteiro na janela horizontal. “Voltar ao mapa” restaura a seleção e o foco do destino; não há deslocamento horizontal.
 - Enter/Espaço ou o botão avançam a leitura. Escolhas aparecem ao final do trecho. “Decidir depois” conserva a inspeção e a posição de leitura nos conflitos que permitem adiar.
 - O portal leva à Noite da História entre cenas. Termine conversas e batalhas antes de sair. Durante a revanche da invasão, o recuo permanece no corredor do coliseu.
-- O **Diário** consulta objetivos, itens em posse, equipe e histórico. Convites e intervenções acontecem nos locais dos personagens. A confirmação das eliminatórias encerra os recrutamentos, inclusive numa campanha solo.
+- Os pictogramas junto às construções indicam **missões**, **convites** e **intervenções com Ludos** disponíveis. Números indicam múltiplas ações da mesma categoria; a legenda explica as formas. O rodapé mostra a primeira atividade na ordem do local e quantas outras existem. Intervenções aparecem somente com saldo suficiente; os bloqueios conhecidos continuam explicados no local.
+- O **Diário** consulta objetivos, itens em posse, equipe e histórico. **Localizar no mapa** destaca o destino sem visitá-lo nem iniciar a missão; durante cenas e batalhas, o motivo da indisponibilidade aparece na consulta. Convites e intervenções acontecem nos locais dos personagens. A confirmação das eliminatórias encerra os recrutamentos, inclusive numa campanha solo.
 
-O palco tem referência de 1280 × 720. Textos aparecem completos, com um busto por vez. O painel descritivo preserva a composição anterior atenuada. A entrega de objetos é também descrita em texto e funciona com movimento reduzido.
+O menu no canto superior direito reúne Diário, recursos, exportação/importação, nova partida, ajuda, movimento reduzido e ferramentas editoriais. A apresentação segue o Style Guide Coreto r2: Cinzel Decorative, Averia Libre e Outfit locais, papel/tinta, ação roxa, hover lavanda e foco dourado.
+
+O quadro do jogo tem referência de 1280 × 720. Em retrato ou espaço insuficiente, uma orientação pede rotação/ampliação e suspende a interação. Textos extensos e atividades têm rolagem interna; avisos reservam espaço fora do quadro e podem ser fechados. Textos aparecem completos, com um busto por vez. O painel descritivo preserva a composição anterior atenuada. A entrega de objetos é também descrita em texto e funciona com movimento reduzido.
 
 ## Regras experimentais
 
@@ -34,21 +66,22 @@ R1/R2 podem ser resolvidos desde Q-A1. Os convites aguardam a trajetória X/Y co
 
 ## Arte e revisão
 
-São **19 fundos selecionados** e **210 expressões disponíveis para 42 visuais**. A encenação usa o subconjunto correspondente aos participantes e às expressões explicitamente escolhidas. Os arquivos continuam **em avaliação artística**. Concepts orientam identidade e enquadramento; as expressões são os bustos do palco. Lala e figurantes sem imagem permanecem provisórios. Savel, Neral revelado e Neral transformado usam visuais distintos.
+São **19 fundos selecionados**, **210 expressões disponíveis para 42 visuais** e **15 artes do mapa** (terreno, 13 fachadas e portal). A encenação usa o subconjunto correspondente aos participantes e às expressões explicitamente escolhidas. Os arquivos continuam **em avaliação artística**. Concepts orientam identidade e enquadramento; as expressões são os bustos do palco. Lala e figurantes sem imagem permanecem provisórios. Savel, Neral revelado e Neral transformado usam visuais distintos.
 
 O registro `art.js`, alimentado por `asset-files.js`, é compartilhado pelo palco e pelo catálogo. As imagens mantêm proporções e transparência. Os fundos têm 1672 × 941 px, exceto a recepção de Virmura, com 1672 × 940; os bustos têm 504 × 672 px RGBA. Falhas de carregamento mostram o arquivo esperado e uma mensagem legível.
 
 - **Cenas e variantes:** prévias por cena, trecho, resposta, guilda, X/Y e contexto, sem alterar o save. Incluem as quarenta reações da semifinal e os diferentes momentos do Coreto.
 - **Inventário de arte:** fichas, usos, filtros e exportação CSV. O [inventário gerado](INVENTARIO.md) distingue referências com uso no roteiro das demais disponíveis.
-- **Direção de arte:** mostra IDs e referências fora do palco; pode ser desligada para jogar.
+- **Direção de arte:** mostra IDs e referências nas prévias editoriais. O jogo permanece sem essas informações.
+- **Prévia do mapa:** consulta as artes da cidade sem visitar locais nem modificar o save.
 
-As prévias contêm spoilers e contextos editoriais que não são partidas reais. Consulte os [fundos selecionados](../arte/locais/README.md), os [concepts](../arte/bustos/README.md) e a [matriz de expressões](../arte/bustos/expressoes/README.md). Sprites de movimentação e assets do mapa não foram aplicados à apresentação VN.
+As prévias contêm spoilers e contextos editoriais que não são partidas reais. Consulte os [fundos selecionados](../arte/locais/README.md), os [concepts](../arte/bustos/README.md) e a [matriz de expressões](../arte/bustos/expressoes/README.md). Sprites de movimentação não são usados. A composição e a procedência do mapa estão em [mapa/README.md](mapa/README.md).
 
 ## Saves
 
 A campanha começa do zero. O formato é **3** e a chave própria é `terminus-campaign-v3`. Na abertura, somente a chave antiga conhecida `terminus-campaign-v2` é removida. Não há migração; a importação rejeita formatos anteriores.
 
-Exportação/importação usa JSON validado por replay. As ações reconstruem local, posição do mapa, etapas, posse e entrega de itens, escolhas, perguntas, cursor de leitura, Ludos, aliados e resultados aleatórios. Carregar não concede novamente objetos ou recompensas. O armazenamento depende da origem e das regras do navegador; use exportação para transportar partidas entre pastas, navegadores ou servidores.
+Exportação/importação usa JSON validado por replay. Os saves V3 anteriores continuam aceitos: comandos antigos de deslocamento horizontal são reproduzidos, mas a apresentação usa apenas o destino selecionado. As ações reconstruem local, posição histórica do mapa, etapas, posse e entrega de itens, escolhas, perguntas, cursor de leitura, Ludos, aliados e resultados aleatórios. Carregar não concede novamente objetos ou recompensas. O armazenamento depende da origem e das regras do navegador; use exportação para transportar partidas entre pastas, navegadores ou servidores.
 
 ## Manutenção
 
@@ -69,9 +102,10 @@ Comece pela tarefa na tabela. Arquivos gerados permanecem versionados quando sã
 | Atualizar descrições extraídas das fichas | [art-authority.js](art-authority.js) | Gerado das fichas de [personagens](../personagens/README.md) e [locais](../locais/README.md) por [refresh-art-authority.cjs](scripts/refresh-art-authority.cjs). |
 | Alterar IDs, variantes ou referências de arte | [art.js](art.js) | Registro editado manualmente; combina o manifesto e as descrições extraídas para palco e catálogo. |
 | Alterar prévias editoriais, usos ou CSV | [catalog.js](catalog.js) | Edição direta; consulta campanha, encenação e arte sem salvar uma partida. |
-| Alterar navegação e interface | [app.js](app.js), [style.css](style.css), [tokens.css](tokens.css) | Edição direta; tokens concentram os valores visuais compartilhados. |
+| Alterar navegação e interface | [app.js](app.js), [style.css](style.css), [game-shell.css](game-shell.css), [tokens.css](tokens.css) | Edição direta; tokens concentram os valores visuais compartilhados. |
+| Alterar mapa e indicadores | [map-view.js](map-view.js), [map.css](map.css), [manifesto](mapa/manifest.js) | O manifesto contém a composição. A consulta pura `locationActivities` em `engine.js` fornece ações para o mapa e o local. Marcadores não têm flags persistidas. |
 | Consultar ou atualizar o inventário textual | [INVENTARIO.md](INVENTARIO.md) | Gerado do catálogo por [report-art.cjs](scripts/report-art.cjs); atualizar as fontes, depois redirecionar o relatório. |
-| Verificar campanha, saves e apresentação | [campaign.test.cjs](tests/campaign.test.cjs), [presentation.test.cjs](tests/presentation.test.cjs) | Testes editados diretamente; executar com `node --test`. |
+| Verificar campanha, saves e apresentação | [campaign.test.cjs](tests/campaign.test.cjs), [presentation.test.cjs](tests/presentation.test.cjs), [map.test.cjs](tests/map.test.cjs) | Testes editados diretamente; executar com `node --test`. |
 | Manter percursos automatizados de teste | [helpers.cjs](tests/helpers.cjs) | Edição direta; apoio às suítes e aos relatórios de percurso. |
 | Estimar extensão dos percursos | [report.cjs](tests/report.cjs) | Edição direta; imprime JSON com palavras, estimativa de leitura e rolagens. Não mede playtest humano. |
 | Verificar a interface no navegador | [browser.cjs](tests/browser.cjs) | Edição direta; gera capturas e `browser.json` em `.artifacts/terminus-prototipo/`, na raiz. |
@@ -104,7 +138,7 @@ node docs/terminus/prototipo/tests/browser.cjs
 node .agents/skills/ui-craft/scripts/detect-token-drift.mjs docs/terminus/prototipo --token-paths tokens.css
 ```
 
-O teste de navegador usa a biblioteca Playwright das dependências de QA e o Edge local. Para instalar essas dependências, siga o [guia de QA](../../../coreto/docs/qa.md) e seus requisitos. A execução direta dessa biblioteca não equivale a executar o runner Coreto. O teste cria um servidor temporário e grava capturas e `browser.json` em `.artifacts/terminus-prototipo/`, já ignorado pelo Git.
+O teste de navegador usa a biblioteca Playwright das dependências de QA e o Edge local. Para instalar essas dependências, siga o [guia de QA](../../../coreto/docs/qa.md) e seus requisitos. A execução direta dessa biblioteca não equivale a executar o runner Coreto. Para usar Chrome, defina `$env:TERMINUS_QA_BROWSER="chrome"`. O teste cria um servidor temporário e grava capturas e `browser.json` em `.artifacts/terminus-prototipo/`, já ignorado pelo Git.
 
 Para guardar também o log de testes e o relatório de percursos localmente:
 
@@ -114,6 +148,6 @@ node --test --test-reporter=tap (Get-ChildItem docs/terminus/prototipo/tests/*.t
 node docs/terminus/prototipo/tests/report.cjs | Out-File -Encoding utf8 .artifacts/terminus-prototipo/percursos.json
 ```
 
-Consulte as [decisões editoriais vigentes](REVISAO-EDITORIAL.md) e o [resumo histórico da verificação V3](VERIFICACAO-V3.md). Os resultados locais podem ser substituídos a cada execução; o resumo identifica o commit que preserva as evidências originais. Toque é emulado; aparelho físico, leitor de tela, impressão, aceite artístico e playtest humano de ritmo exigem avaliação própria. O protótipo não exporta eventos automaticamente para RPG Maker.
+A [verificação da integração](VERIFICACAO-MAPA.md) separa os novos resultados do histórico. Consulte as [decisões editoriais vigentes](REVISAO-EDITORIAL.md) e o [resumo histórico da verificação V3](VERIFICACAO-V3.md). Os resultados locais podem ser substituídos a cada execução; o resumo identifica o commit que preserva as evidências originais. Toque é emulado; aparelho físico, leitor de tela, impressão, aceite artístico e playtest humano de ritmo exigem avaliação própria. O protótipo não exporta eventos automaticamente para RPG Maker.
 
 Para evoluir o protótipo, aplique a [skill game-prototype-vn-html](../../../.agents/skills/game-prototype-vn-html/SKILL.md). A [visão](../visao-do-jogo.md), o [guia de personagens](../personagens/README.md) e o roteiro permanecem as fontes de escopo e narrativa; os registros de arte não aprovam decisões narrativas por si sós.

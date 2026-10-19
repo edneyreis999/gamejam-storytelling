@@ -1,9 +1,65 @@
-(() => {
-  'use strict';
+'use strict';
+globalThis.TerminusMapView = { render({state, onVisit, onPortal, onFocus, reduced = false, preview = false, focusOnReady = false, selected = null}) {
   const map = window.TERMINUS_MAP;
-  const $ = id => document.getElementById(id);
-  const stage = $('stage');
-  const preview = $('preview');
+  const L = TerminusLanguage;
+  const stage = document.createElement('section');
+  stage.className = 'city-map' + (reduced ? ' reduce-motion' : '');
+  stage.setAttribute('aria-label', 'Mapa de Terminus');
+  stage.innerHTML = `
+      <h1 class="sr-only">Mapa da cidade de Terminus</h1>
+      <section id="city" aria-label="Destinos da cidade">
+        <div id="viewport">
+          <img id="terrain" alt="" draggable="false" width="1280" height="720">
+          <div id="destinations"></div>
+        </div>
+        <div id="portal-anchor"></div>
+        <aside id="load-panel" class="map-notice" aria-live="polite">
+          <h2 id="load-title">Preparando a cidade</h2>
+          <p id="load-message">Carregando a cidade e as fachadas…</p>
+          <button id="retry-city" class="primary" hidden>Carregar novamente</button>
+        </aside>
+        <footer class="destination-bar" aria-live="polite" aria-atomic="true">
+          <p id="empty-selection">Escolha seu próximo destino</p>
+          <div id="selection-copy" hidden>
+            <h2 id="destination-name"></h2>
+            <p id="destination-detail"></p>
+          </div>
+        <button type="button" id="map-legend-button">Legenda</button></footer>
+      </section>
+      <svg class="clip-definitions" aria-hidden="true">
+        <defs id="hit-shapes">
+          <symbol id="bootprints" viewBox="0 0 40 32">
+            <g fill="currentColor" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round">
+              <path d="M7 17C4 13 5 7 8 4C10 2 14 3 15 7L17 16L13 20Z"/>
+              <path d="M9 20L14 22L12 28L6 26Z"/>
+              <path d="M25 10C24 6 27 2 30 2C34 2 36 6 35 10L32 19L26 17Z"/>
+              <path d="M26 20L32 22L30 28L24 26Z"/>
+            </g>
+          </symbol>
+        </defs>
+      </svg>
+    `;
+  const $ = id => stage.querySelector('#' + id);
+  const summary = document.createElement('div');
+  summary.className = 'map-legend';
+  summary.hidden = true;
+  summary.setAttribute('role', 'region');
+  summary.setAttribute('aria-label', 'Legenda do mapa');
+  const icons = {mission: ['Quest', 'Missão ou revanche'], invite: ['Formation', 'Convite'], intervention: ['Coin', 'Intervenção com Ludos']};
+  for (const [icon, label] of Object.values(icons)) {
+    const entry = document.createElement('span');
+    const image = document.createElement('img');
+    image.src = '../../../tools/terminus-ui/icons/' + icon + '.svg';
+    image.alt = '';
+    entry.append(image, label);
+    summary.append(entry);
+  }
+  stage.append(summary);
+  $('map-legend-button').setAttribute('aria-expanded', 'false');
+  $('map-legend-button').addEventListener('click', () => {
+    summary.hidden = !summary.hidden;
+    $('map-legend-button').setAttribute('aria-expanded', String(!summary.hidden));
+  });
   const places = new Map();
   let retained = null;
   let hovered = null;
@@ -14,20 +70,8 @@
   let suppressClick = false;
   let touchHandled = false;
   let touchArmed = null;
-  let visiting = null;
-  let returnFocus = null;
-  let currentView = 0;
-  let viewRequest = 0;
-
-  function resize() {
-    const scale = Math.min(innerWidth / map.width, innerHeight / map.height);
-    const blocked = innerHeight > innerWidth || scale < .4;
-    document.documentElement.style.setProperty('--scale', scale);
-    $('orientation').hidden = !blocked;
-    $('frame').hidden = blocked;
-    $('frame').inert = blocked;
-    if (blocked && preview.open) closePreview();
-  }
+  const activities = new Map(map.destinations.map(place => [place.id, preview || place.fixed ? [] : TerminusEngine.locationActivities(state, place.id).filter(a => a.available)]));
+  const permitted = place => preview || state.rematch !== 't5' || place.id === 'coliseu';
 
   function renderSelection() {
     const active = hovered || retained;
@@ -40,8 +84,9 @@
     }
     $('empty-selection').hidden = !!active;
     $('selection-copy').hidden = !active;
-    $('destination-name').textContent = active ? active.name : '';
-    $('destination-detail').textContent = active ? active.views.map(view => view.name).join(' · ') : '';
+    $('destination-name').textContent = active ? L.text(active.name) : '';
+    const entries = active ? activities.get(active.id) : [];
+    $('destination-detail').textContent = !active ? '' : active.fixed ? L.text('Visitar a Noite da História') : !permitted(active) ? L.text('A invasão continua. Retorne ao coliseu.') : entries.length ? `${entries.length} ${L.text(entries.length === 1 ? 'ação disponível' : 'ações disponíveis')} · ${L.text(entries[0].label)}${entries.length > 1 ? ' · ' + L.text(`e mais ${entries.length - 1}`) : ''}` : L.text('Sem atividade disponível agora');
   }
 
   function retain(place, keyboard = false) {
@@ -49,6 +94,7 @@
     hovered = null;
     keyboardSelection = keyboard;
     renderSelection();
+    if (!preview && !place.fixed) onFocus(place.id);
   }
 
   function clearSelection() {
@@ -73,9 +119,11 @@
     button.type = 'button';
     button.className = 'destination-button ' + (place.fixed ? 'portal-button' : 'landmark-button');
     button.disabled = true;
-    button.setAttribute('aria-label', place.fixed ? 'Retornar ao Coreto' : place.name);
-    button.setAttribute('aria-haspopup', 'dialog');
-    button.setAttribute('aria-controls', 'preview');
+    button.id = 'destination-' + place.id;
+    button.dataset.destination = place.id;
+    const pending = activities.get(place.id);
+    button.setAttribute('aria-label', L.text(place.name) + (pending.length ? ' · ' + pending.map(a => L.text(a.label)).join('; ') : ''));
+    if (!permitted(place)) button.setAttribute('aria-label', L.text(place.name) + ' · ' + L.text('Indisponível durante a invasão'));
     let shadow = null;
     if (place.fixed) {
       const label = document.createElement('span');
@@ -108,6 +156,24 @@
     marker.setAttribute('aria-hidden', 'true');
     marker.innerHTML = '<use href="#bootprints"/>';
     wrapper.append(marker);
+    if (pending.length) {
+      const badges = document.createElement('div');
+      badges.className = 'quest-markers';
+      badges.setAttribute('aria-hidden', 'true');
+      for (const [category, [icon]] of Object.entries(icons)) {
+        const count = pending.filter(a => a.category === category).length;
+        if (!count) continue;
+        const badge = document.createElement('span');
+        badge.dataset.category = category;
+        const image = document.createElement('img');
+        image.alt = '';
+        image.src = '../../../tools/terminus-ui/icons/' + icon + '.svg';
+        badge.append(image);
+        if (count > 1) badge.append(String(count));
+        badges.append(badge);
+      }
+      wrapper.append(badges);
+    }
     button.addEventListener('pointermove', event => {
       if (event.pointerType !== 'touch' && !gesture && hovered !== place) {
         hovered = place;
@@ -133,7 +199,7 @@
     button.addEventListener('click', event => {
       if (event.detail > 0 && (suppressClick || touchHandled || event.pointerType === 'touch')) return;
       retain(place, event.detail === 0);
-      visit(place, button);
+      visit(place);
     });
     places.set(place.id, {place, wrapper, image, shadow, button});
   }
@@ -144,7 +210,7 @@
       return {x: rect.x + rect.width / 2, y: rect.y + rect.height / 2};
     };
     const origin = center(from);
-    const candidates = map.destinations.filter(place => place !== from).map(place => {
+    const candidates = map.destinations.filter(place => place !== from && permitted(place)).map(place => {
       const point = center(place);
       const x = point.x - origin.x;
       const y = point.y - origin.y;
@@ -154,11 +220,11 @@
   }
 
   function beginGesture(event) {
-    if (!ready || event.button !== 0 || !event.isPrimary || event.target.closest('.notice')) return;
+    if (!ready || event.button !== 0 || !event.isPrimary || event.target.closest('.map-notice, .destination-bar, .map-legend')) return;
     const button = event.target.closest('.destination-button');
     const id = button?.closest('.landmark').dataset.id;
     gesture = {id: event.pointerId, startX: event.clientX, startY: event.clientY,
-      place: id ? places.get(id).place : null, moved: false, type: event.pointerType};
+      place: id && permitted(places.get(id).place) ? places.get(id).place : null, moved: false, type: event.pointerType};
     suppressClick = false;
     touchHandled = false;
   }
@@ -194,7 +260,7 @@
       const open = touchArmed === ended.place.id;
       touchArmed = ended.place.id;
       retain(ended.place);
-      if (open) visit(ended.place, places.get(ended.place.id).button);
+      if (open) visit(ended.place);
     }
   }
 
@@ -212,23 +278,24 @@
     $('viewport').inert = true;
     $('portal-anchor').inert = true;
     $('load-panel').hidden = false;
-    $('load-title').textContent = 'Preparando a cidade';
-    $('load-message').textContent = 'Carregando a cidade e as fachadas…';
+    $('load-title').textContent = L.text('Preparando a cidade');
+    $('load-message').textContent = L.text('Carregando a cidade e as fachadas…');
     $('retry-city').hidden = true;
     for (const entry of places.values()) entry.button.disabled = true;
-    const assets = [{name: 'Fundo da cidade', image: $('terrain'), file: map.background},
-      ...Array.from(places.values(), entry => ({name: entry.place.name, image: entry.image, file: entry.place.facade}))];
-    const results = await Promise.allSettled(assets.map(asset => loadImage(asset.image, map.artRoot + asset.file)));
+    const assets = [{name: 'Fundo da cidade', image: $('terrain'), file: TerminusArt.assets['map-terrain'].preview},
+      ...Array.from(places.values(), entry => ({name: entry.place.name, image: entry.image, file: TerminusArt.assets['map-' + entry.place.id].preview}))];
+    const results = await Promise.allSettled(assets.map(asset => loadImage(asset.image, asset.file)));
+    if (!stage.isConnected) return;
     const missing = assets.filter((_, index) => results[index].status === 'rejected');
     if (missing.length) {
-      $('load-title').textContent = 'Não foi possível carregar a cidade';
-      $('load-message').textContent = 'Imagens ausentes: ' + missing.map(asset => asset.name).join(', ') + '. Mantenha a pasta assets junto ao projeto e tente novamente.';
+      $('load-title').textContent = L.text('Não foi possível carregar a cidade');
+      $('load-message').textContent = L.text('Imagens ausentes: ' + missing.map(asset => L.text(asset.name)).join(', ') + '. Mantenha a pasta assets junto ao projeto e tente novamente.');
       $('retry-city').hidden = false;
       return;
     }
     for (const entry of places.values()) {
       if (entry.shadow) entry.shadow.src = entry.image.src;
-      entry.button.disabled = false;
+      entry.button.disabled = !permitted(entry.place);
     }
     ready = true;
     stage.dataset.ready = 'true';
@@ -237,76 +304,40 @@
     const recovering = document.activeElement === $('retry-city');
     $('load-panel').hidden = true;
     renderSelection();
-    if (recovering) places.get(map.destinations[0].id).button.focus({preventScroll: true});
-  }
-
-  function visit(place, trigger) {
-    if (!ready || preview.open) return;
-    touchArmed = null;
-    visiting = place;
-    returnFocus = trigger;
-    $('preview-title').textContent = place.name;
-    $('view-controls').replaceChildren();
-    place.views.forEach((view, index) => {
-      const button = document.createElement('button');
-      button.textContent = view.name;
-      button.type = 'button';
-      button.addEventListener('click', () => showView(index));
-      $('view-controls').append(button);
-    });
-    preview.showModal();
-    $('back').focus({preventScroll: true});
-    showView(0);
-  }
-
-  async function showView(index) {
-    currentView = index;
-    const request = ++viewRequest;
-    const view = visiting.views[index];
-    for (const [i, button] of Array.from($('view-controls').children).entries()) button.setAttribute('aria-pressed', String(i === index));
-    $('scene-image').hidden = true;
-    $('scene-status').hidden = false;
-    $('scene-status').textContent = 'Carregando ' + view.name + '…';
-    $('retry-scene').hidden = true;
-    const image = new Image();
-    try {
-      await loadImage(image, map.viewRoot + view.file);
-      if (request !== viewRequest || !preview.open) return;
-      image.id = 'scene-image';
-      image.alt = visiting.name + ' — ' + view.name + ', ilustração em tinta preta e bege';
-      $('scene-image').replaceWith(image);
-      $('scene-status').textContent = view.name + ' carregado';
-      $('scene-status').hidden = true;
-    } catch {
-      if (request !== viewRequest || !preview.open) return;
-      $('scene-status').textContent = 'O fundo “' + view.name + '” não carregou. Confira a pasta assets/terminus/locais e tente novamente, ou volte à cidade.';
-      $('retry-scene').hidden = false;
+    if (recovering) places.get(map.destinations.find(permitted).id).button.focus({preventScroll: true});
+    else if (!preview && selected && places.has(selected)) {
+      const previous = places.get(selected);
+      if (permitted(previous.place)) {
+        retain(previous.place, true);
+        if (focusOnReady) previous.button.focus({preventScroll: true});
+      }
     }
   }
 
-  function closePreview() {
-    ++viewRequest;
-    preview.close();
-    retain(visiting, !pointerInput);
-    returnFocus.focus({preventScroll: true});
+  function visit(place) {
+    if (!ready || !permitted(place)) return;
+    touchArmed = null;
+    if (place.fixed) onPortal();
+    else onVisit(place.id);
   }
 
-  document.addEventListener('pointerdown', () => { pointerInput = true; }, true);
-  document.addEventListener('keydown', event => {
+  stage.addEventListener('pointerdown', () => { pointerInput = true; }, true);
+  stage.addEventListener('keydown', event => {
     pointerInput = false;
-    if (event.key === 'Escape' && !preview.open) { event.preventDefault(); clearSelection(); }
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      if (!summary.hidden) { summary.hidden = true; $('map-legend-button').setAttribute('aria-expanded', 'false'); $('map-legend-button').focus(); }
+      else clearSelection();
+    }
   }, true);
-  for (const place of map.destinations) createLandmark(place);
+  for (const place of [...map.destinations].sort((a, b) => a.y - b.y || a.x - b.x)) createLandmark(place);
   stage.addEventListener('pointerdown', beginGesture);
   stage.addEventListener('pointermove', moveGesture);
   stage.addEventListener('pointerup', endGesture);
   stage.addEventListener('pointercancel', endGesture);
-  $('back').addEventListener('click', closePreview);
-  preview.addEventListener('cancel', event => { event.preventDefault(); closePreview(); });
   $('retry-city').addEventListener('click', loadCity);
-  $('retry-scene').addEventListener('click', () => showView(currentView));
-  window.addEventListener('resize', resize);
-  resize();
+  L.localizeMarkup(stage);
   renderSelection();
   loadCity();
-})();
+  return stage;
+}};

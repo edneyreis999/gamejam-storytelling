@@ -226,6 +226,59 @@
       (id) => id !== "coreto" && destination(s, id) === s.location,
     );
   }
+  function explorationBlock(s) {
+    if (s.scene || s.battle) return "Termine a cena ou batalha para explorar.";
+    if (!done(s, "gA1")) return "Conclua a apresentação de Virmura para explorar.";
+    if (s.stage === 4) return "A história terminou.";
+    return "";
+  }
+  function locationActivities(s, location) {
+    if (explorationBlock(s) || (s.rematch === "t5" && location !== "coliseu"))
+      return [];
+    const entries = available(s)
+      .filter((id) => id !== "coreto" && destination(s, id) === location)
+      .map((id) => ({
+        id,
+        category: "mission",
+        label: currentStep(s, id).title,
+        available: true,
+        reason: "",
+        action: { type: "start", id },
+      }));
+    if (s.rematch && location === (s.rematch === "B4" ? "mercado" : "coliseu"))
+      entries.push({
+        id: "rematch",
+        category: "mission",
+        label: "Tentar revanche gratuita",
+        available: true,
+        reason: "",
+        action: { type: "rematch" },
+      });
+    C.recruitPlaces.forEach((place, index) => {
+      const status = recruitStatus(s, index);
+      if (place !== location || !status.opened || status.expired || status.invited)
+        return;
+      if (status.canUnlock)
+        entries.push({
+          id: `unlock${index}`,
+          category: "intervention",
+          label: "Pedir exceção · 3 Ludos",
+          available: s.ludos >= 3,
+          reason: s.ludos >= 3 ? "" : "Ludos insuficientes. A exceção custa 3 Ludos.",
+          action: { type: "unlock", index },
+        });
+      else if (status.outcome)
+        entries.push({
+          id: `invite${index}`,
+          category: "invite",
+          label: "Convidar " + status.name,
+          available: status.canInvite,
+          reason: status.canInvite ? "" : status.reason,
+          action: { type: "invite", index },
+        });
+    });
+    return entries;
+  }
   function itemName(id) {
     return C.items[id] || id;
   }
@@ -743,6 +796,8 @@
     currentStep,
     destination,
     localActions,
+    locationActivities,
+    explorationBlock,
     itemName,
     objectives,
   };

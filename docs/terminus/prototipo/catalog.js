@@ -327,6 +327,9 @@
             }
           }
         }
+    for (const asset of Object.values(A.assets).filter(a => a.variant === "Mapa da cidade"))
+      uses.set(asset.id, {asset: asset.id, scene: "city-map", title: "Mapa de Terminus", passage: asset.id,
+        contexts: ["Exploração após Q-A1; prévia editorial independente da campanha."]});
     const allUses = [...uses.values()];
     const records = Object.values(A.assets).map((a) => ({
       ...a,

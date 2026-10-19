@@ -101,15 +101,15 @@
       p(
         [
           n(
-            "Nyra precisa preparar uma mesa para quem chegará depois do serviço. Puxa uma cadeira para Ghork.",
+            "Nyra está preparando a mesa para quem chega do trabalho. Ela puxa uma cadeira para Ghork.",
           ),
           d(
             "Nyra",
-            "Sente aqui e confira as porções. Se sobrar alguém na lista, me avise antes de eu fechar a panela.",
+            "Sente aqui e confira as porções. Se faltar comida para alguém da lista, me avise antes de eu tampar a panela.",
             "atento",
           ),
           n(
-            `Um nome aparece duas vezes. Ele pergunta antes de riscar. São duas pessoas diferentes que deixaram o mesmo apelido. Nyra ri e pede que acrescente uma informação com a qual ambas concordem.`,
+            "Um apelido aparece duas vezes na lista. Antes de riscar, Ghork pergunta: são duas pessoas diferentes. Nyra ri e pede que ele acrescente um detalhe para distinguir os dois, com a aprovação deles.",
           ),
           t(
             "Ghork",
@@ -120,7 +120,7 @@
         [
           c("Separar as porções e deixar os recados claros.", [
             n(
-              `Nyra confere o trabalho e oferece companhia à mesa quando ele terminar. Ghork aceita sem transformar a refeição numa dívida que precise pagar com uma façanha.`,
+              "Nyra confere as porções e convida Ghork para comer com os outros quando terminar. Ele aceita e fica à mesa.",
             ),
             n(
               "No Coreto, três Ludos caem na sua mão. Rheed espera que você os guarde antes de continuar.",
@@ -129,7 +129,7 @@
           ]),
           c("Pedir que os recém-chegados ajudem a conferir.", [
             n(
-              `A conferência vira conversa. Um trabalhador corrige o horário e outro oferece trazer a tigela que falta. Nyra agradece a tarefa concluída; não ganhou empregados para sempre.`,
+              "Enquanto conferem a lista, um trabalhador corrige o horário e outro se oferece para trazer a tigela que falta. Nyra agradece e os libera para comer.",
             ),
             n(
               "No Coreto, três Ludos caem na sua mão. Rheed espera que você os guarde antes de continuar.",
@@ -150,33 +150,33 @@
       p(
         [
           n(
-            `Durn recebeu de volta uma peça de uma bancada articulada. Pede a Ghork que descreva o movimento olhando para ele, não para a bancada. O relato inicial culpa o metal; a demonstração mostra que a carga foi aplicada num ponto diferente do previsto.`,
+            "Devolveram uma peça de uma bancada articulada a Durn, dizendo que o metal não prestava. Ele pede que Ghork explique o problema olhando para ele. Ao demonstrarem o movimento, percebem que o peso foi colocado no ponto errado.",
           ),
           d(
             "Durn",
-            "A carga veio aqui. O pino foi feito para receber deste lado.",
+            "Puseram o peso aqui. Mas o pino foi feito para sustentar deste lado.",
             "investigativo",
           ),
           d("Ghork", "Isso estava explicado quando entregou?", "investigativo"),
           d(
             "Durn",
-            "Não estava claro. Vamos mostrar antes de devolver.",
+            "Não expliquei direito. Vamos mostrar antes de devolver.",
             "firme",
           ),
         ],
         [
           c("Mostrar primeiro o uso correto e depois o limite.", [
             n(
-              `A pessoa que trouxe a peça consegue repetir a explicação. Durn anota a alteração na entrega. Ghork reconhece o valor de uma correção que não precisa humilhar ninguém para ser lembrada.`,
+              "A pessoa que trouxe a peça demonstra que entendeu o uso. Durn anota a correção nas instruções de entrega. Ghork acompanha a conversa; ninguém precisa passar vergonha para aprender.",
             ),
             n(
               "No Coreto, três Ludos caem na sua mão. Rheed espera que você os guarde antes de continuar.",
               { era: "present", background: "bg-coreto" },
             ),
           ]),
-          c("Pedir ao usuário que explique onde se confundiu.", [
+          c("Pedir à pessoa que explique qual instrução não entendeu.", [
             n(
-              `A dúvida estava numa instrução que parecia clara apenas para quem fabricou a peça. Durn reescreve o aviso e agradece a explicação. Ghork deixa a oficina com uma história pequena que sabe contar até o fim.`,
+              "A instrução só parecia clara para quem havia feito a peça. Durn reescreve o aviso e agradece por apontarem a dúvida. Ghork sai da oficina sabendo explicar o conserto e o erro que o causou.",
             ),
             n(
               "No Coreto, três Ludos caem na sua mão. Rheed espera que você os guarde antes de continuar.",
@@ -197,16 +197,16 @@
       p(
         [
           n(
-            `Antes das eliminatórias, Seldan confere o acesso do público. Uma pilha de materiais está dentro da área de circulação. Tem autorização de entrega, mas não de permanência. Jorvi espera alguém decidir quem a moverá.`,
+            "Antes das eliminatórias, Seldan encontra materiais bloqueando a passagem do público. A entrega estava autorizada, mas ninguém podia deixá-los ali. Jorvi espera que decidam quem fará a retirada.",
           ),
           d(
             "Jorvi",
-            "Confiro os volumes. Se você conferir o destino, conseguimos tirar tudo antes da abertura.",
+            "Eu confiro os volumes. Você confirma para onde vão? Assim tiramos tudo antes de abrir.",
             "atento",
           ),
           d(
             "Seldan",
-            "Deixei para o próximo turno. Vou assinar a remoção agora.",
+            "Deixei isso para o próximo turno. Vou autorizar a retirada agora.",
             "preocupado",
           ),
         ],
@@ -228,7 +228,7 @@
             "Dividir a conferência com Jorvi e cobrar o registro.",
             [
               n(
-                `Ghork confere o destino; Jorvi, a quantidade. Seldan registra quem autorizou a retirada. A tarefa termina sem depender de um favor escondido.`,
+                "Ghork confirma o destino, Jorvi confere a quantidade e Seldan registra quem autorizou a retirada. A passagem fica livre.",
               ),
               n(
                 "No Coreto, três Ludos caem na sua mão. Rheed espera que você os guarde antes de continuar.",

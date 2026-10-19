@@ -1,60 +1,66 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en-US">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="color-scheme" content="light" />
     <meta
       name="description"
-      content="Terminus V3: campanha completa em visual novel e catálogo de produção de arte."
+      content="Terminus: a visual novel about finding your place, choosing a guild, and facing the cost of your choices."
     />
-    <title>Terminus V3 — roteiro e direção de arte</title>
+    <title>Terminus</title>
     <link rel="stylesheet" href="tokens.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="map.css" />
+    <link rel="stylesheet" href="game-shell.css" />
+    <link rel="stylesheet" href="localization.css" />
+    <script defer src="locales/en-US.js"></script>
+    <script defer src="localization.js"></script>
     <script defer src="content.js"></script>
     <script defer src="supplementary.js"></script>
     <script defer src="quest-script.js"></script>
     <script defer src="campaign.js"></script>
     <script defer src="art-authority.js"></script>
     <script defer src="asset-files.js"></script>
+    <script defer src="mapa/manifest.js"></script>
     <script defer src="art.js"></script>
     <script defer src="staging.js"></script>
     <script defer src="engine.js"></script>
     <script defer src="catalog.js"></script>
     <script defer src="stage-view.js"></script>
+    <script defer src="map-view.js"></script>
     <script defer src="app.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">Ir para o conteúdo</a>
-    <header class="masthead">
-      <a href="index.html" class="wordmark"
-        >TERMINUS<span>A história de Ghork</span></a
-      ><span class="edition">V3 · em desenvolvimento</span>
-    </header>
+    <section id="orientation" hidden role="status"><h1>Jogue na horizontal</h1><p>Gire o dispositivo ou amplie a janela para continuar.</p></section>
+    <div id="game-frame">
+    <button id="menu-button" type="button" aria-haspopup="dialog" aria-controls="game-menu">Menu</button>
     <nav id="workspace-nav" aria-label="Jogo e produção">
       <button type="button" data-view="play">Jogar</button
       ><button type="button" data-view="scenes">Cenas e variantes</button
       ><button type="button" data-view="catalog">Inventário de arte</button
       ><button type="button" data-view="review">Como usar</button>
       <label
-        ><input id="art-mode" type="checkbox" checked /> Direção de arte</label
+        ><input id="art-mode" type="checkbox" /> Direção de arte</label
       >
-      <label
-        ><input id="reduce-motion" type="checkbox" /> Reduzir movimento</label
-      >
+
     </nav>
-    <nav id="toolbar" aria-label="Controles da partida"></nav>
-    <div id="stats" class="statusbar"></div>
-    <p id="notice" role="status" class="notice" hidden></p>
     <main id="main" tabindex="-1"></main>
-    <footer>
-      <span
-        >Roteiro e arte em desenvolvimento · nenhuma silhueta é arte
-        final.</span
-      ><button id="review-button" type="button" class="text-button">
-        Sobre esta versão
-      </button>
-    </footer>
+    </div>
+    <div id="notice" role="status" class="notice" hidden></div>
+    <dialog id="game-menu" aria-labelledby="menu-title">
+      <header><h2 id="menu-title">Terminus</h2><button id="menu-close" type="button">Voltar ao jogo</button></header>
+      <div id="stats" class="statusbar"></div>
+      <nav id="toolbar" aria-label="Controles da partida"></nav>
+      <label><input id="reduce-motion" type="checkbox" /> Reduzir movimento</label>
+      <button id="review-button" type="button">Como jogar</button>
+      <details><summary>Ferramentas editoriais</summary><p>Prévias com spoilers. Não alteram sua partida.</p>
+        <button type="button" data-view="scenes">Cenas e variantes</button>
+        <button type="button" data-view="catalog">Inventário de arte</button>
+        <button type="button" data-view="map-preview">Prévia do mapa</button>
+      </details>
+    </dialog>
     <dialog id="modal" aria-labelledby="modal-title">
       <h2 id="modal-title"></h2>
       <div id="modal-body"></div>
@@ -68,7 +74,7 @@
       aria-label="Importar partida V3"
     />
     <noscript
-      ><p>
+      ><p lang="en-US">Enable JavaScript to play Terminus. No internet connection is required.</p><p lang="pt-BR">
         Ative JavaScript para jogar e consultar o inventário. Nenhuma conexão
         externa é necessária.
       </p></noscript

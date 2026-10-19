@@ -42,19 +42,19 @@
                 : "Ele mal chegou e já quer saber onde vai parar. Primeiro precisa conseguir andar até lá."
               : s.stage === 2
                 ? s.routeProgress === 2
-                  ? "Eles voltaram com o levantamento. Ghork agora tem uma conta e algumas coisas para contar a Lala."
-                  : "A bandeira já está escolhida. Agora quero ver como eles vão trabalhar juntos lá embaixo."
+                  ? "Voltaram com o levantamento das minas. Ghork tem contas para acertar e bastante coisa para contar a Lala."
+                  : "Ghork já escolheu sua guilda. Agora vamos ver como esse pessoal trabalha junto nas minas."
                 : s.completed.includes("invasion")
                   ? "Vamos dar um instante a Ghork. Ele precisa recuperar o fôlego antes de voltar àquela passagem."
                   : s.completed.includes("after4")
-                    ? "Ouviu a arquibancada? Não precisamos correr para fora dessa vitória."
+                    ? "Ouviu a torcida? Vamos deixar Ghork aproveitar a vitória mais um pouco."
                     : "Reconheceu quem está do outro lado? Pois é. Ghork também.",
             "reflexivo",
             "present",
           ),
           d(
             "Rheed",
-            "Se quiser guardar outra tentativa para uma rolagem ruim, custa um Ludo. Se preferir guardar a moeda, Ghork pode descansar e pedir revanche. Não vou encerrar a história por causa de um tropeço.",
+            "Uma nova rolagem custa um Ludo. Ou você pode guardar a moeda: se perder, Ghork descansa e pede revanche. Não vou acabar com a história por causa de um tropeço.",
             "ironico",
             "present",
           ),

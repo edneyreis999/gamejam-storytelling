@@ -493,6 +493,19 @@
       orientation: "Sem espelhamento automático.",
       reason: "Identificar a obtenção e a entrega no palco.",
     });
+  const map = typeof module !== "undefined" ? require("./mapa/manifest.js") : root.TERMINUS_MAP;
+  for (const [id, name, file, owner] of [
+    ["terrain", "Terreno de Terminus", map.background, "Terminus"],
+    ...map.destinations.map(place => [place.id, place.name, place.facade, place.name]),
+  ]) register({
+    id: `map-${id}`, category: "interface", name, owner,
+    base: null, variant: "Mapa da cidade", source: "mapa/prompts.json",
+    status: "Em avaliação artística", preview: map.artRoot + file,
+    brief: id === "terrain" ? "Terreno em nanquim e sépia, composição de 1280 × 720 unidades." : "Recorte transparente do destino; posição e alvo definidos pelo manifesto do mapa.",
+    reference: "mapa/README.md", format: "PNG · arte existente",
+    orientation: "Sem recorte ou espelhamento; proporção original preservada.",
+    reason: "Navegação da campanha após Q-A1.",
+  });
   root.TerminusArt = { assets, portrait, slug, expressions };
   if (typeof module !== "undefined") module.exports = root.TerminusArt;
 })(globalThis);

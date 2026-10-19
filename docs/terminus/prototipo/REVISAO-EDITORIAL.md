@@ -2,6 +2,18 @@
 
 Status: em desenvolvimento.
 
+## Revisão bilíngue para a jam — 19/10/2026
+
+O autor aprovou o padrão do [piloto E00/Q-A1/contrato](editorial/piloto.md) nesta revisão. Os textos jogáveis anteriores foram tratados como primeira versão, independentemente dos registros editoriais abaixo. Os três lotes passaram por coerência em PT-BR, tradução e polimento EN-US com `rewrite-en-us`, seguidos de segunda leitura e conferência da integração. A aprovação do padrão não substitui uma partida humana completa para avaliar ritmo.
+
+Foram integradas 1.156 unidades, com 809 reescritas em português e inglês final para todas. O [inventário e as instruções de manutenção](README.md#idiomas-e-revisão-para-a-jam) ligam originais, revisões, fontes e contextos das variantes. Itens, ações, avisos, objetivos e acessibilidade também recebem tradução. Nomes pessoais, Terminus, Daratrine e Ludos são preservados; o [glossário](editorial/glossario.json) fixa os nomes descritivos.
+
+Preservaram-se acontecimentos, custos e consequências. A alternativa de resposta Y omitida pelo recorte anterior foi recuperada sem deslocar o índice da resposta existente nos saves V3. As quarenta reações da semifinal, os recados de Dam por Lala e a identidade de Savel/Neral foram conferidos. Não há exceção narrativa pendente apontada pelos três revisores; playtest humano de ritmo e aceite artístico continuam distintos desta revisão.
+
+Verificação automática desta entrega: 81 testes aprovados, incluindo seis combinações guilda/rota e alternativas de recrutamento, além de uma auditoria de 12 percursos, 9.202 estados e 1.346 textos dinâmicos sem tradução ausente. A rodada no Chrome via arquivo local passou nos dois idiomas: preferência, retomada, mapa, diário, recrutamento, semifinal, invasão, encerramento, batalha e fala longa em 844 × 390. As capturas foram inspecionadas. Evidências reproduzíveis ficam em `.artifacts/terminus-localization/`, com `browser/report.json` e `all-tests.tap`.
+
+Limite do ambiente: o sandbox cancelou a gravação do relatório como download; seu conteúdo em inglês foi validado pelo Blob gerado pelo botão. A execução no Edge fora do sandbox não foi concluída devido a timeouts do serviço de aprovação, mesmo com autorização do autor. A verificação visual foi concluída dentro do sandbox com Chrome, sem liberar rede. Playtest humano de ritmo, aparelho físico e leitor de tela continuam pendentes.
+
 Este registro reúne as fontes, escolhas de voz e limites de adaptação vigentes no protótipo V3, integrado ao [roteiro de quests da campanha](../storytelling/quests-da-campanha.md). A [skill humanizer](../../../.agents/skills/humanizer/SKILL.md) orientou a revisão de naturalidade sem uniformizar os personagens. As hipóteses de encenação continuam sujeitas à confirmação do autor; a implementação não constitui aceite artístico ou revisão humana final. As versões anteriores deste registro permanecem no histórico do Git.
 
 ## Fontes e critérios

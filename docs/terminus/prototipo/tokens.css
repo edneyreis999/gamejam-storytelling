@@ -1,37 +1,51 @@
+@font-face {font-family:Outfit;src:url('../../../rpg-maker/Terminus/fonts/Outfit.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face {font-family:Outfit;src:url('../../../rpg-maker/Terminus/fonts/Outfit-Medium.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face {font-family:Averia;src:url('../../../rpg-maker/Terminus/fonts/AveriaLibre-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face {font-family:Cinzel;src:url('../../../rpg-maker/Terminus/fonts/CinzelDecorative-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
 :root {
-  --paper: #f5efdf;
-  --surface: #fffcf3;
-  --ink: #292923;
-  --muted: #626052;
-  --accent: #385b48;
-  --accent-soft: #e1e8dc;
-  --line: #87816e;
-  --error: #913e27;
-  --focus: #974b1c;
-  --shade: #24241c99;
-  --s1: 4px;
-  --s2: 8px;
-  --s3: 12px;
-  --s4: 16px;
-  --s6: 24px;
-  --s8: 32px;
-  --s12: 48px;
-  --s16: 64px;
-  --r: 4px;
-  --body: 1rem;
-  --small: 0.875rem;
-  --reading: 1.125rem;
+  --font-body: Outfit, sans-serif;
+  --font-section: Averia, serif;
+  --font-title: Cinzel, serif;
+  --paper: #f8e9cc;
+  --surface: #f9eacf;
+  --ink: #360a0b;
+  --muted: var(--ink);
+  --accent: #552070;
+  --accent-hover: #6d3185;
+  --pressed: #4d1d6b;
+  --accent-soft: #eedff2;
+  --on-accent: #fff8eb;
+  --line: #704737;
+  --subtle: #be9a6b;
+  --disabled: #d3c7b4;
+  --error: #af2933;
+  --focus: #edaa2f;
+  --hover: #8224ad;
+  --hover-surface: var(--accent-soft);
+  --shade: #360a0b99;
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px;
+  --s6: 24px; --s8: 32px; --s12: 48px; --s16: 64px;
+  --r: 6px; --panel-radius: 10px;
+  --body: 20px; --small: 16px; --reading: 20px;
   --measure: 68ch;
-}
-:root {
-  --stage-paper: #e8dfc9;
-  --stage-ink: #484739;
-  --stage-line: #aaa28d;
-  --stage-panel: #fffcf3f5;
-  --stage-dim: #29292355;
-  --stage-shadow: #29292333;
-  --stage-head: #c2b79b;
-  --stage-body: #aba38b;
+  --stage-paper: var(--paper);
+  --stage-ink: var(--ink);
+  --stage-line: var(--line);
+  --stage-panel: var(--surface);
+  --stage-dim: #360a0b55;
+  --stage-shadow: #360a0b40;
+  --stage-head: var(--subtle);
+  --stage-body: var(--disabled);
   --panel-width: 72%;
   --motion-delivery: 850ms;
+  --hover-halo: color-mix(in srgb,var(--hover) 50%,transparent);
+  --focus-halo: color-mix(in srgb,var(--focus) 65%,transparent);
+  --halo-radius: 4px;
+  --facade-zoom: 1.04;
+  --facade-shadow-opacity: .38;
+  --facade-shadow-blur: 4px;
+  --map-scale: 1;
+  --frame-width: 1280px;
+  --frame-height: 720px;
+  font-synthesis: none;
 }
