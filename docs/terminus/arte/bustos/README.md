@@ -4,7 +4,7 @@ Status: em desenvolvimento.
 
 Revisão de Rheed em 19/10/2026: o busto base v2 e as cinco expressões seguem [Reed final, referência indicada pelo autor](referencias/rheed-concept-autor.png). Foram adequados rosto, barba volumosa com pontas laterais atadas, figurino ornamentado, mangas bufantes e caneca. O tapa-olho aparece à direita de quem olha, sobre o olho anatômico esquerdo, conforme essa imagem; nesta revisão visual ela prevalece sobre a lateralidade registrada anteriormente na ficha. A ficha narrativa e as sprites não foram alteradas. O busto anterior e as expressões substituídas estão no [histórico](historico/rheed-2026-10-19/), fora da entrega. Os novos bustos aguardam avaliação artística do autor.
 
-As cinco expressões por visual estão disponíveis em pasta própria: [galeria e controle das 210 expressões](expressoes/README.md). A produção e a revisão interna foram concluídas; a avaliação artística do autor permanece pendente. Os bustos abaixo são as referências preservadas dessa produção.
+As cinco expressões por visual estão disponíveis em pasta própria: [galeria e controle das 255 expressões](expressoes/README.md). O lote de [Lala e oito figurantes](expressoes/lala-figurantes.md) acrescenta nove visuais, cujos neutros também servem como base. A produção e a revisão interna foram concluídas; a avaliação artística do autor permanece pendente. Os 42 bustos abaixo são as referências preservadas da produção anterior.
 
 42 bustos cobrem as 40 fichas do elenco, incluindo as três formas de Neral. Em 18/10/2026 foram produzidos 15 no lote inicial, 13 na primeira continuação e os 14 restantes no terceiro lote.
 
