@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminus — mapa da cidade</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="manifest.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main id="stage" aria-label="Mapa panorâmico de Terminus">
+    <section id="city" aria-label="Explorar a cidade">
+      <div id="viewport" aria-label="Panorama arrastável">
+        <div id="world"><img id="terrain" alt="" draggable="false"><div id="destinations"></div></div>
+      </div>
+      <header class="masthead">
+        <h1>Terminus</h1>
+        <p>Escolha seu próximo destino</p>
+      </header>
+      <div id="portal-anchor"></div>
+      <nav class="pan-controls" aria-label="Mover a câmera">
+        <button id="pan-left" class="pan" aria-label="Mover para a esquerda" title="Mover para a esquerda">‹</button>
+        <button id="pan-right" class="pan" aria-label="Mover para a direita" title="Mover para a direita">›</button>
+      </nav>
+      <aside id="load-panel" class="notice" aria-live="polite">
+        <h2 id="load-title">Preparando a cidade</h2>
+        <p id="load-message">Carregando o panorama e as fachadas…</p>
+        <button id="retry-city" hidden>Carregar novamente</button>
+      </aside>
+      <footer class="destination-bar">
+        <div class="selection-copy" aria-live="polite" aria-atomic="true">
+          <span class="eyebrow" id="selection-state">Destino selecionado</span>
+          <h2 id="destination-name">Estalagem de Nyra</h2>
+          <p id="destination-detail">Salão · Pátio</p>
+        </div>
+        <p class="navigation-hint">Arraste para explorar<br><span>Tab e setas para navegar</span></p>
+        <button id="visit" class="primary" disabled>Visitar <span aria-hidden="true">→</span></button>
+      </footer>
+      <div class="camera-track" aria-hidden="true"><span id="camera-thumb"></span></div>
+    </section>
+    <dialog id="preview" aria-labelledby="preview-title">
+      <header class="preview-header">
+        <button id="back">← Voltar à cidade</button>
+        <div><span class="eyebrow">Prévia do local</span><h2 id="preview-title"></h2></div>
+      </header>
+      <figure id="scene"><img id="scene-image" alt=""><figcaption id="scene-status" role="status">Carregando o fundo…</figcaption><button id="retry-scene" hidden>Carregar fundo novamente</button></figure>
+      <nav id="view-controls" aria-label="Fundos deste local"></nav>
+    </dialog>
+    <svg class="clip-definitions" aria-hidden="true"><defs id="hit-shapes"></defs></svg>
+  </main>
+  <noscript>Ative o JavaScript no navegador para explorar este protótipo.</noscript>
+</body>
+</html>

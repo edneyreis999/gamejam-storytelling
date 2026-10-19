@@ -24,7 +24,7 @@ Na correção seguinte, o autor indicou os dois Ignotos grandes das laterais de 
 
 Formato preciso do rosto, olhos sem pupilas aparentes, distribuição das deformidades, assimetria corporal e rasgos são soluções propostas para estes concepts, sujeitas à avaliação do autor. Não são uma anatomia obrigatória para todos os Ignotos. Não foram acrescentados membros, poderes ou símbolos de culto.
 
-Os [arquivos atuais e seus prompts](README.md) são registrados separadamente das versões históricas. As spritesheets anteriores ainda precisam de adaptação; esta entrega corrige os bustos/concepts.
+Os [arquivos atuais e seus prompts](README.md) são registrados separadamente dos registros históricos, cujas imagens substituídas foram excluídas a pedido do autor. As spritesheets anteriores ainda precisam de adaptação; esta entrega corrige os bustos/concepts.
 
 
 Em 18/10/2026, o autor aprovou o concept transformado v4 e solicitou sua adaptação para a spritesheet. O aceite do concept não antecipa o aceite dos quadros de caminhada.
