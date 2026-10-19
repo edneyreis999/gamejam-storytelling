@@ -14,7 +14,7 @@
         },
       },
       rheed: {
-        concept: "../../../assets/terminus/bustos/em-revisao/rheed-v1.png",
+        concept: "../../../assets/terminus/bustos/em-revisao/rheed-v2.png",
         files: {
           neutro: "../../../assets/terminus/bustos/expressoes/rheed/neutro.png",
           feliz: "../../../assets/terminus/bustos/expressoes/rheed/feliz.png",
