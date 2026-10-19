@@ -1,6 +1,7 @@
 ---
 status: em desenvolvimento
-publicacao: rascunho
+publicacao: publicado
+url: https://coretostudio.itch.io/terminus/devlog/1715784/devlog-4-figuring-out-where-it-all-happens
 commit: bb39ac4
 idioma: en
 ---
