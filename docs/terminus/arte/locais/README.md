@@ -122,4 +122,4 @@ As imagens a seguir usam os arquivos selecionados da tabela, sem personagens ou 
 
 ## Uso no protótipo V3
 
-Os 19 arquivos selecionados acima estão integrados ao [protótipo HTML](../../prototipo/index.html), por meio do registro compartilhado de arte. O mapa continua com placeholders. A [verificação da V3](../../prototipo/VERIFICACAO-V3.md) registra carregamento no navegador, falhas legíveis e inspeção de composição; não representa aceite artístico das imagens.
+Os 19 arquivos selecionados acima estão integrados ao [protótipo HTML](../../prototipo/index.html), por meio do registro compartilhado de arte. O mapa continua com placeholders. Consulte o [guia de manutenção e testes](../../prototipo/README.md#manutenção) para atualizar a seleção. O [resumo histórico da verificação V3](../../prototipo/VERIFICACAO-V3.md) registra carregamento no navegador, falhas legíveis e inspeção de composição da entrega original; não representa aceite artístico das imagens.

@@ -29,7 +29,7 @@ A visão concentra estrutura e regras; a base narrativa preserva os detalhes con
 
 ## Desenvolvimento e histórico
 
-- Para alterar o protótipo, consulte seu [guia de manutenção](docs/terminus/prototipo/README.md#testar-e-manter) e a [skill de visual novel HTML](.agents/skills/game-prototype-vn-html/SKILL.md).
+- Para alterar o protótipo, consulte seu [guia de manutenção](docs/terminus/prototipo/README.md#manutenção), com fontes editáveis, arquivos gerados e testes, e a [skill de visual novel HTML](.agents/skills/game-prototype-vn-html/SKILL.md).
 - Para preparar ou consultar publicações, use o [índice de devlogs](docs/terminus/devlogs/README.md), que distingue posts publicados de rascunhos.
 - Para consultar a continuação anterior ao livro, use o [índice das anotações antigas](docs/docs_externas/universo-coreto/anotacoes-antigas/README.md); esses documentos não substituem as decisões do jogo.
 

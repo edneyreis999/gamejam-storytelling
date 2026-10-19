@@ -66,4 +66,4 @@ Revisão de Ghork e Virmura em 18/10/2026: os concepts enviados pelo autor orien
 
 ## Uso no protótipo V3
 
-O [protótipo HTML](../../prototipo/index.html) usa as expressões dos participantes efetivamente presentes, preservando as três formas de Neral. Concepts permanecem como referência de identidade. Lala e figurantes sem arquivo correspondente continuam provisórios. Consulte o [inventário de uso](../../prototipo/INVENTARIO.md) e a [verificação](../../prototipo/VERIFICACAO-V3.md); a integração não altera o status de avaliação artística.
+O [protótipo HTML](../../prototipo/index.html) usa as expressões dos participantes efetivamente presentes, preservando as três formas de Neral. Concepts permanecem como referência de identidade. Lala e figurantes sem arquivo correspondente continuam provisórios. Consulte o [inventário de uso](../../prototipo/INVENTARIO.md) e o [guia de manutenção e testes](../../prototipo/README.md#manutenção). O [resumo histórico da verificação V3](../../prototipo/VERIFICACAO-V3.md) documenta a entrega original; a integração não altera o status de avaliação artística.

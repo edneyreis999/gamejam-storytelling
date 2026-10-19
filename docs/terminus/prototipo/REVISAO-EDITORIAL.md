@@ -2,7 +2,7 @@
 
 Status: em desenvolvimento.
 
-Este registro preserva fontes, escolhas de voz e limites de adaptação para futuras revisões do roteiro. A [skill humanizer](../../../.agents/skills/humanizer/SKILL.md) orientou a revisão de naturalidade sem uniformizar os personagens. As hipóteses de encenação continuam sujeitas à confirmação do autor.
+Este registro reúne as fontes, escolhas de voz e limites de adaptação vigentes no protótipo V3, integrado ao [roteiro de quests da campanha](../storytelling/quests-da-campanha.md). A [skill humanizer](../../../.agents/skills/humanizer/SKILL.md) orientou a revisão de naturalidade sem uniformizar os personagens. As hipóteses de encenação continuam sujeitas à confirmação do autor; a implementação não constitui aceite artístico ou revisão humana final. As versões anteriores deste registro permanecem no histórico do Git.
 
 ## Fontes e critérios
 
@@ -34,37 +34,40 @@ Principais decisões de escrita:
 - Elune compara pontos concretos; Sevrak interroga o método; Borun provoca sem sempre concluir a lição; Virmura cobra cuidado e responsabilidade.
 - Darvek e Zagra expõem o custo e o limite de seus próprios planos. Nenhum se torna uma caricatura da posição rival.
 - Lala mostra seu trabalho e interrompe a pose de Ghork com intimidade. Os recados de Dam permanecem identificáveis como pedidos dele.
-- As dez pessoas da semifinal têm falas próprias para três situações: desconhecidos, projeto favorecido sem convite e projeto preterido. São 30 variantes escritas, não uma frase genérica repetida com nomes diferentes.
+- As dez pessoas da semifinal têm falas próprias para quatro situações: desconhecido, conhecido com conflito não resolvido, projeto favorecido sem convite e projeto preterido. São quarenta variantes.
 - A explicação sobre regras de recrutamento permanece na chamada de Rask, quando ele efetivamente precisa fechar inscrições. Comentários como “a história não cobra agora uma nova batalha” foram retirados da ficção.
 - As consequências do golpe aparecem na ação, nas ordens de Dorga, na ameaça de Neral e na declaração de Torvak. A recusa às capturas não apaga sua adesão ao golpe.
 
 ## Hipóteses e limites preservados
 
 - **Virmura:** a ficha mantém uma proposta cerimoniosa e registra a alternativa direta das notas antigas. O protótipo conserva uma direção direta e firme, com humor seco ocasional. Isso continua sendo uma hipótese de voz para avaliação; não houve alteração da ficha nem adoção automática de arcaísmos.
-- **Mapas:** orientação e origem distintas continuam sendo a hipótese experimentada no protótipo. O trecho sem correspondência permanece. A revisão não introduziu fraude, desabamento ou explicação canônica nova.
+- **Mapas — P01:** a resolução foi autorizada pelo autor para a integração do protótipo e registrada no roteiro. O croqui de entrada segue passagem estreita → bifurcação; o de retirada percorre o sentido inverso. Pontos de partida e direção estão nos registros autorizados. A2, B3 e C3 permitem a mesma comparação com Elune sem depender das outras cadeias. A defesa de E04 mostra o trecho reconciliado e mantém desconhecidas as demais galerias. Não foram introduzidos fraude, geografia mutável ou desabamento como causa.
 - **Nomes, guildas e conflitos locais:** conservam o estado experimental definido na documentação. O texto ser encenável não significa que suas hipóteses foram aprovadas.
 - **Colar:** Lala permanece em Daratrine, vista à distância. Dam não recebeu busto em comunicação direta; o colar não transporta objetos ou dinheiro.
-- **Torvak e Neral:** não foi criada uma causa para a separação de Orcquius/Glavius. Neral transforma-se na mesma batalha, com intenção de busto `transformado`; a operação local acaba, o selo permanece e a correspondência não identifica infiltrados.
+- **Torvak e Neral:** não foi criada uma causa para a separação de Orcquius/Glavius. Neral transforma-se na mesma batalha e conserva essa forma até morrer; a operação local acaba, o selo permanece e a correspondência não identifica infiltrados. A autenticação visual final da correspondência permanece em avaliação.
+- **Alianças e balanceamento:** a guilda que apoia a equipe X/Y preterida segue sem identidade específica. Dificuldades e preços são os valores experimentais solicitados para esta versão.
 
 ## Continuidade de apresentação
 
-- Rheed e a criança falam no presente. A autoria de Rheed nas descrições do passado não exige seu busto colorido. O retorno do Coreto restaura a composição do relato.
+- Rheed e a criança falam no presente. A autoria de Rheed nas descrições do passado não exige seu busto no palco. O retorno do Coreto restaura a composição do relato; a distinção entre presente e passado permanece textual e estrutural.
 - Lala é vista à distância sobre o cenário de Ghork. A troca de falante não leva a câmera a Daratrine. As respostas às escolhas herdam o fundo ao final do trecho anterior.
-- Na retaliação, o mentor escolhido recusa retratar-se antes do cancelamento. O quadro riscado aparece depois da decisão de Torvak.
+- Na retaliação, o cancelamento dos horários precede a reação de Ghork e a reorganização na sede.
 - No fim da classificação, a observação da dose ocorre na entrada do coliseu, depois do treino.
-- Em `side2`, Durn já recebeu a peça. Ghork a devolve depois de manuseá-la; o destaque não representa a chegada de uma peça que trouxe de fora.
+- Em `side2`, Durn já recebeu a peça de uma bancada articulada. Ghork a devolve depois de manuseá-la; o destaque não representa a chegada de uma peça que trouxe de fora. A bancada distingue a secundária do caso de lesões e da peça de treino investigado em R2.
 - O concentrado de Neral aparece antes da transformação. O selo narrativo intacto não é necessariamente um lacre de carta: a correspondência representa a ligação com o Conselho.
 - Reveses reconhecem cada adversário; o de Neral ocorre na área de serviço. Os intervalos do Coreto distinguem o momento da campanha, sem anunciar como futura uma tarefa concluída.
 
-As falas condicionais, respostas, intervalos e reveses pertencem ao roteiro, mesmo que não apareçam numa única partida. Consulte **Cenas e variantes** para revisá-los; a matriz de testes e os comandos estão no [guia do protótipo](README.md#testar-e-manter). Objetos mencionados só exigem imagem própria quando marcados na encenação; as quantidades são derivadas do catálogo.
+As falas condicionais, respostas, intervalos e reveses pertencem ao roteiro, mesmo que não apareçam numa única partida. Consulte **Cenas e variantes** para revisá-los; os testes e os comandos estão no [guia do protótipo](README.md#manutenção). Objetos mencionados só exigem imagem própria quando marcados na encenação; as quantidades são derivadas do catálogo.
 
-## Integração V3 — 19/10/2026
+## Arte integrada
 
-Status: em desenvolvimento.
+A criança usa o visual produzido. Lala e figurantes sem correspondência continuam provisórios; nenhuma identidade recebe o retrato de outra. Savel, Neral revelado e Neral transformado são separados no registro. O palco usa cinco expressões produzidas, com mapeamento documentado das intenções anteriores. Os fundos atuais, inclusive o Coreto, seguem a produção em tinta e bege. Isso não converte a imagem sépia em aprovação de uma futura direção colorida.
 
-Esta seção atualiza o registro anterior para o roteiro de [quests da campanha](../storytelling/quests-da-campanha.md), incorporado da `main`. As observações anteriores descrevem a revisão da V2; quando houver diferença, vale o estado da V3 abaixo.
+Consulte os [registros de fundos](../arte/locais/README.md), [concepts](../arte/bustos/README.md), [expressões](../arte/bustos/expressoes/README.md) e o [inventário de uso](INVENTARIO.md). A seleção para o protótipo preserva o status de avaliação artística.
 
-A revisão direta aplicou `humanizer` às adaptações, mantendo as vozes definidas nas fichas. O recorte das falas foi comparado com o roteiro; limites de intervalo que omitiram perguntas, respostas ou encerramentos foram corrigidos. A encenação é experimental e não constitui aceite artístico ou revisão humana final.
+## Cobertura da integração V3
+
+A revisão de 19/10/2026 comparou o recorte das falas com o roteiro e corrigiu intervalos que omitiam perguntas, respostas ou encerramentos. A tabela registra a cobertura daquela integração; alterações posteriores exigem nova conferência dos trechos afetados.
 
 | Cobertura | Conferência na V3 |
 | --- | --- |
@@ -80,10 +83,4 @@ A revisão direta aplicou `humanizer` às adaptações, mantendo as vozes defini
 | Intervenções L1/L2/L3, bloqueios e convites | Retorno explícito a Rheed e à criança; custo visível antes de escolher; consequências principais e continuação gratuita preservadas. |
 | Secundárias, Coreto e reveses | Três secundárias preservadas, intervalos adequados ao progresso, recompensa uma vez; recuo da invasão localizado no coliseu. |
 
-**P01:** a resolução foi autorizada no plano desta integração e registrada no roteiro. O croqui de entrada segue passagem estreita → bifurcação; o de retirada percorre o sentido inverso. Pontos de partida e direção estão nos registros autorizados. A2, B3 e C3 permitem a mesma comparação com Elune sem depender das outras cadeias. A defesa de E04 mostra o trecho reconciliado e mantém desconhecidas as demais galerias. Não foram introduzidos fraude, geografia mutável ou desabamento como causa.
-
-**Arte:** a criança passa a usar o visual produzido. Lala e figurantes sem correspondência continuam provisórios; nenhuma identidade recebe o retrato de outra. Savel, Neral revelado e Neral transformado são separados no registro. O palco usa cinco expressões produzidas, com mapeamento documentado das intenções anteriores. Os fundos atuais, inclusive o Coreto, seguem a produção em tinta e bege; a distinção entre presente e passado permanece textual e estrutural. Isso não converte a imagem sépia em aprovação de uma futura direção colorida.
-
-**Limites:** a voz direta de Virmura permanece como no roteiro integrado. A guilda que apoia a equipe X/Y preterida segue sem identidade específica. A correspondência comprova o vínculo narrativo, mas sua autenticação visual final permanece em avaliação. Dificuldades e preços são os valores experimentais solicitados para esta versão. Os [testes e capturas](VERIFICACAO-V3.md) verificam execução e continuidade de estado; não medem recepção humana, duração real ou aprovação das falas.
-
-Na secundária `side2`, a peça pertence a uma bancada articulada. Essa distinção evita repetir o caso de lesões e da peça de treino investigado em R2, preservando a tarefa de explicar o uso e sua recompensa.
+O [resumo histórico da verificação V3](VERIFICACAO-V3.md) registra os resultados e limites dos testes daquela entrega. Eles verificam execução e continuidade de estado; não medem recepção humana, duração real ou aprovação das falas.

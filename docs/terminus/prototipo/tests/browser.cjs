@@ -6,7 +6,7 @@ const {
 const { play, finishQuest, start } = require("./helpers.cjs");
 const E = require("../engine");
 const root = path.resolve(__dirname, "../../../..");
-const out = path.join(__dirname, "../verificacao");
+const out = path.join(root, ".artifacts", "terminus-prototipo");
 fs.mkdirSync(out, { recursive: true });
 const http = require("http");
 const server = http.createServer((req, res) => {

@@ -52,18 +52,35 @@ Exportação/importação usa JSON validado por replay. As ações reconstruem l
 
 ## Manutenção
 
-| Arquivo | Responsabilidade |
-| --- | --- |
-| `quest-script.js` | Recorte gerado do roteiro, com linha de origem e hash |
-| `campaign.js` | Montagem explícita das quests, etapas, locais, falas condicionais e efeitos |
-| `content.js`, `supplementary.js` | Matriz, definições comuns, secundárias e intervalos |
-| `engine.js` | Ações validadas, progresso, inventário e replay |
-| `staging.js`, `stage-view.js` | Passagens, composição e renderização |
-| `asset-files.js`, `art.js`, `art-authority.js` | Arquivos selecionados, registro e recorte das fichas |
-| `catalog.js` | Variantes, contextos editoriais, usos e CSV |
-| `app.js`, `style.css`, `tokens.css` | Navegação e apresentação |
+Comece pela tarefa na tabela. Arquivos gerados permanecem versionados quando são necessários para abrir o jogo sem build ou consultar seu inventário em texto. Edite suas fontes e use os comandos de geração abaixo; evidências de uma execução ficam fora da documentação versionada.
 
-As etapas têm IDs próprios. Os intervalos de linhas usados em `campaign.js` são deliberados: ao editar o roteiro, revise esses intervalos e suas condições antes de regenerar o recorte. O hash detecta fonte desatualizada; não substitui revisão narrativa.
+| Tarefa | Arquivo responsável | Fonte editável e atualização |
+| --- | --- | --- |
+| Abrir o jogo ou alterar a ordem de carregamento | [index.html](index.html) | Edição direta; carrega os scripts locais e os estilos. |
+| Revisar o roteiro principal | [quests da campanha](../storytelling/quests-da-campanha.md) | Fonte narrativa; seguir o [guia do elenco](../personagens/README.md) e revisar a montagem antes de extrair. |
+| Atualizar as falas extraídas | [quest-script.js](quest-script.js) | Gerado do roteiro por [extract-quest-script.cjs](scripts/extract-quest-script.cjs), com linhas de origem e hash. |
+| Montar quests, etapas, locais, condições e efeitos | [campaign.js](campaign.js) | Edição direta; combina o recorte do roteiro com as definições comuns e adaptações de encenação. |
+| Alterar matriz, definições comuns ou secundárias | [content.js](content.js) | Edição direta; fonte das três secundárias, guildas, pares e matriz experimental. |
+| Alterar intervalos e reveses | [supplementary.js](supplementary.js) | Edição direta; complementa o conteúdo usado pela campanha. |
+| Alterar regras de execução ou save | [engine.js](engine.js) | Edição direta; valida ações, progresso, inventário e replay. |
+| Preparar passagens e composição visual | [staging.js](staging.js) | Edição direta; resolve a apresentação a partir da campanha e do registro de arte. |
+| Renderizar o palco | [stage-view.js](stage-view.js) | Edição direta; transforma as passagens em elementos visuais. |
+| Selecionar arquivos de imagem | [asset-files.js](asset-files.js) | Manifesto editado manualmente conforme os [fundos](../arte/locais/README.md), [concepts](../arte/bustos/README.md) e [expressões](../arte/bustos/expressoes/README.md). |
+| Atualizar descrições extraídas das fichas | [art-authority.js](art-authority.js) | Gerado das fichas de [personagens](../personagens/README.md) e [locais](../locais/README.md) por [refresh-art-authority.cjs](scripts/refresh-art-authority.cjs). |
+| Alterar IDs, variantes ou referências de arte | [art.js](art.js) | Registro editado manualmente; combina o manifesto e as descrições extraídas para palco e catálogo. |
+| Alterar prévias editoriais, usos ou CSV | [catalog.js](catalog.js) | Edição direta; consulta campanha, encenação e arte sem salvar uma partida. |
+| Alterar navegação e interface | [app.js](app.js), [style.css](style.css), [tokens.css](tokens.css) | Edição direta; tokens concentram os valores visuais compartilhados. |
+| Consultar ou atualizar o inventário textual | [INVENTARIO.md](INVENTARIO.md) | Gerado do catálogo por [report-art.cjs](scripts/report-art.cjs); atualizar as fontes, depois redirecionar o relatório. |
+| Verificar campanha, saves e apresentação | [campaign.test.cjs](tests/campaign.test.cjs), [presentation.test.cjs](tests/presentation.test.cjs) | Testes editados diretamente; executar com `node --test`. |
+| Manter percursos automatizados de teste | [helpers.cjs](tests/helpers.cjs) | Edição direta; apoio às suítes e aos relatórios de percurso. |
+| Estimar extensão dos percursos | [report.cjs](tests/report.cjs) | Edição direta; imprime JSON com palavras, estimativa de leitura e rolagens. Não mede playtest humano. |
+| Verificar a interface no navegador | [browser.cjs](tests/browser.cjs) | Edição direta; gera capturas e `browser.json` em `.artifacts/terminus-prototipo/`, na raiz. |
+| Consultar decisões e pendências da adaptação | [REVISAO-EDITORIAL.md](REVISAO-EDITORIAL.md) | Registro vigente da V3; atualizar a partir das fontes e decisões do autor. |
+| Consultar resultados da entrega original | [VERIFICACAO-V3.md](VERIFICACAO-V3.md) | Resumo histórico vinculado ao commit; não representa o resultado dos testes atuais. |
+
+O fluxo de autoria é **roteiro → extrator → `quest-script.js` → montagem em `campaign.js`**. As etapas têm IDs próprios, mas a seleção de falas ainda depende dos intervalos de linhas em `campaign.js` e do limite explícito `i < 2252` no extrator. Ao inserir ou remover linhas do roteiro, confira ambos, as condições e os limites entre cenas antes de regenerar. O hash detecta uma fonte desatualizada; regenerar sozinho não comprova que a seleção das falas continua correta.
+
+### Atualizar arquivos gerados
 
 Com Node.js 20 ou posterior, na raiz do repositório:
 
@@ -74,14 +91,29 @@ node docs/terminus/prototipo/scripts/refresh-art-authority.cjs
 
 # Relatório somente leitura; o redirecionamento atualiza o retrato documental.
 node docs/terminus/prototipo/scripts/report-art.cjs | Out-File -Encoding utf8 docs/terminus/prototipo/INVENTARIO.md
+```
 
+### Executar testes e relatórios
+
+Na raiz do repositório:
+
+```powershell
 node --test (Get-ChildItem docs/terminus/prototipo/tests/*.test.cjs).FullName
 node docs/terminus/prototipo/tests/report.cjs
+node docs/terminus/prototipo/tests/browser.cjs
 node .agents/skills/ui-craft/scripts/detect-token-drift.mjs docs/terminus/prototipo --token-paths tokens.css
 ```
 
-O teste de navegador usa a biblioteca Playwright já instalada nas dependências de QA e o Edge local: `node docs/terminus/prototipo/tests/browser.cjs`. Ele cria um servidor temporário e gera evidências em `verificacao/`. Para instalar essas dependências, siga o [guia de QA](../../../coreto/docs/qa.md) e seus requisitos. A execução direta da biblioteca nesta entrega não equivale a executar o runner Coreto.
+O teste de navegador usa a biblioteca Playwright das dependências de QA e o Edge local. Para instalar essas dependências, siga o [guia de QA](../../../coreto/docs/qa.md) e seus requisitos. A execução direta dessa biblioteca não equivale a executar o runner Coreto. O teste cria um servidor temporário e grava capturas e `browser.json` em `.artifacts/terminus-prototipo/`, já ignorado pelo Git.
 
-Veja [verificação e auditoria da V3](VERIFICACAO-V3.md) e [revisão editorial](REVISAO-EDITORIAL.md). Toque foi emulado; não houve ensaio em aparelho físico, leitor de tela ou impressão. Aceite artístico e playtest humano de ritmo permanecem fora dessa verificação. Esta entrega não modifica a engine, plugins congelados ou eventos do RPG Maker e não exporta eventos automaticamente.
+Para guardar também o log de testes e o relatório de percursos localmente:
+
+```powershell
+New-Item -ItemType Directory -Force .artifacts/terminus-prototipo | Out-Null
+node --test --test-reporter=tap (Get-ChildItem docs/terminus/prototipo/tests/*.test.cjs).FullName | Out-File -Encoding utf8 .artifacts/terminus-prototipo/unit-tests.tap
+node docs/terminus/prototipo/tests/report.cjs | Out-File -Encoding utf8 .artifacts/terminus-prototipo/percursos.json
+```
+
+Consulte as [decisões editoriais vigentes](REVISAO-EDITORIAL.md) e o [resumo histórico da verificação V3](VERIFICACAO-V3.md). Os resultados locais podem ser substituídos a cada execução; o resumo identifica o commit que preserva as evidências originais. Toque é emulado; aparelho físico, leitor de tela, impressão, aceite artístico e playtest humano de ritmo exigem avaliação própria. O protótipo não exporta eventos automaticamente para RPG Maker.
 
 Para evoluir o protótipo, aplique a [skill game-prototype-vn-html](../../../.agents/skills/game-prototype-vn-html/SKILL.md). A [visão](../visao-do-jogo.md), o [guia de personagens](../personagens/README.md) e o roteiro permanecem as fontes de escopo e narrativa; os registros de arte não aprovam decisões narrativas por si sós.
