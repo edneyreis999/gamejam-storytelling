@@ -150,74 +150,8 @@
     return { allies, enemies };
   }
 
-  const sounds = {
-    selection: [[440, 0, 0.05]],
-    confirm: [[392, 0, 0.08], [587, 0.06, 0.12]],
-    step: [[130, 0, 0.035]],
-    dice: [[220, 0, 0.04], [330, 0.055, 0.04], [440, 0.11, 0.06]],
-    win: [[392, 0, 0.12], [494, 0.1, 0.12], [587, 0.2, 0.22]],
-    fail: [[294, 0, 0.12], [220, 0.12, 0.2]],
-    reward: [[587, 0, 0.08], [784, 0.08, 0.16]],
-    portal: [[196, 0, 0.18], [294, 0.08, 0.18], [392, 0.16, 0.25]],
-  };
-
-  function createAudio() {
-    let context = null;
-    let disposed = false;
-    const active = new Set();
-    function unlock() {
-      if (disposed) return Promise.resolve(false);
-      const Audio = root.AudioContext || root.webkitAudioContext;
-      if (!Audio) return Promise.resolve(false);
-      if (!context) {
-        try { context = new Audio(); }
-        catch { return Promise.resolve(false); }
-      }
-      if (context.state === "running") return Promise.resolve(true);
-      return context.resume().then(() => context.state === "running", () => false);
-    }
-    function play(kind, volume = 0.4) {
-      if (!context || context.state !== "running" || disposed) return;
-      const notes = sounds[kind];
-      const level = Math.min(1, Math.max(0, volume));
-      if (!notes || !level) return;
-      const now = context.currentTime;
-      for (const [frequency, offset, duration] of notes) {
-        const oscillator = context.createOscillator();
-        const gain = context.createGain();
-        const start = now + offset;
-        oscillator.type = kind === "step" || kind === "dice" ? "triangle" : "sine";
-        oscillator.frequency.setValueAtTime(frequency, start);
-        gain.gain.setValueAtTime(0, start);
-        gain.gain.linearRampToValueAtTime(level * (kind === "step" ? 0.06 : 0.16), start + 0.008);
-        gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
-        oscillator.connect(gain);
-        gain.connect(context.destination);
-        active.add(oscillator);
-        oscillator.onended = () => {
-          active.delete(oscillator);
-          oscillator.disconnect();
-          gain.disconnect();
-        };
-        oscillator.start(start);
-        oscillator.stop(start + duration + 0.01);
-      }
-    }
-    function mute() {
-      for (const oscillator of active) oscillator.stop();
-      active.clear();
-    }
-    function dispose() {
-      disposed = true;
-      mute();
-      if (context && context.state !== "closed") return context.close();
-      return Promise.resolve();
-    }
-    return { unlock, play, mute, dispose };
-  }
-
   for (const point of Object.values(entrances)) Object.freeze(point);
-  const api = { spriteSource, entrances: Object.freeze(entrances), route, travel, battleRoster, createAudio };
+  const api = { spriteSource, entrances: Object.freeze(entrances), route, travel, battleRoster };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.TerminusPresentation = api;
 })(globalThis);

@@ -7,8 +7,8 @@
   const modal = document.querySelector('#modal'), effects = document.querySelector('#effects');
   const skip = document.querySelector('#skip-animation');
   const media = matchMedia('(prefers-reduced-motion: reduce)');
-  let audio = FX.createAudio();
-  const settings = {language: 'en-US', speed: 'normal', reduced: false, sound: true, volume: 0.35};
+  let audio = TerminusAudio.createAudio();
+  const settings = {language: 'en-US', speed: 'normal', reduced: false, sound: true, volume: 0.35, musicVolume: 0.25};
   let game = null, view = 'title', journalTab = 'objectives', busy = false;
   let travel = null, animationTimer = null, revealTimer = null, revealAll = null;
   let rewardTimer = null, lastPlace = 'virmura', mapFocus = null, restored = false;
@@ -33,12 +33,13 @@
     const node = el('button', {type: 'button', ...attrs}, label);
     node.addEventListener('click', event => {
       if (event.detail > 1 || !node.isConnected) return;
-      sound('selection');
+      const cue = attrs['data-sound'] || (attrs['data-choice'] !== undefined ? 'confirm' : 'selection');
+      if (!attrs['data-advance'] && cue !== 'none') sound(cue);
       action(event);
     });
     return node;
   }
-  function sound(kind) { if (settings.sound) audio.play(kind, settings.volume); }
+  function sound(kind) { if (settings.sound) audio.play(kind); }
   function image(id, className, alt = '') {
     const asset = A.assets[id];
     if (!asset?.preview) return el('span', {class: 'image-unavailable'}, alt || asset?.owner || '');
@@ -168,7 +169,7 @@
   function openMenu() {
     if (busy) return;
     revealAll?.();
-    menu.replaceChildren(el('header', {}, el('h2', {id: 'menu-title'}, 'Terminus'), button(say('Voltar ao jogo', 'Return to game'), () => menu.close(), {id: 'menu-close'})));
+    menu.replaceChildren(el('header', {}, el('h2', {id: 'menu-title'}, 'Terminus'), button(say('Voltar ao jogo', 'Return to game'), () => menu.close(), {id: 'menu-close', 'data-sound': 'cancel'})));
     const commands = el('div', {class: 'menu-actions'});
     if (game) commands.append(
       button(say('Diário', 'Journal'), () => { menu.close(); openJournal(); }),
@@ -186,14 +187,17 @@
     motion.disabled = media.matches;
     motion.onchange = () => { settings.reduced = motion.checked; saveSettings(); document.body.dataset.reduced = String(reduced()); };
     const soundToggle = el('input', {id: 'sound', type: 'checkbox'}); soundToggle.checked = settings.sound;
-    soundToggle.onchange = () => { settings.sound = soundToggle.checked; if (!settings.sound) audio.mute(); else { audio.unlock(); sound('confirm'); } saveSettings(); };
+    soundToggle.onchange = () => { settings.sound = soundToggle.checked; audio.configure(settings); if (settings.sound) { audio.unlock(); sound('confirm'); } saveSettings(); };
     const volume = el('input', {id: 'volume', type: 'range', min: '0', max: '1', step: '.05', value: settings.volume});
-    volume.oninput = () => { settings.volume = Number(volume.value); saveSettings(); };
+    volume.oninput = () => { settings.volume = Number(volume.value); audio.configure(settings); saveSettings(); };
     volume.onchange = () => sound('confirm');
+    const musicVolume = el('input', {id: 'music-volume', type: 'range', min: '0', max: '1', step: '.05', value: settings.musicVolume});
+    musicVolume.oninput = () => { settings.musicVolume = Number(musicVolume.value); audio.configure(settings); saveSettings(); };
     menu.append(commands, languagePicker('language'), el('label', {class: 'setting'}, say('Velocidade do texto', 'Text speed'), speed),
       el('label', {class: 'setting'}, motion, say('Reduzir movimento', 'Reduce motion')),
-      el('label', {class: 'setting'}, soundToggle, say('Efeitos sonoros', 'Sound effects')),
-      el('label', {class: 'setting'}, say('Volume', 'Volume'), volume));
+      el('label', {class: 'setting'}, soundToggle, say('Som ativado', 'Sound enabled')),
+      el('label', {class: 'setting'}, say('Volume dos efeitos', 'Effects volume'), volume),
+      el('label', {class: 'setting'}, say('Volume da música', 'Music volume'), musicVolume));
     menu.showModal();
   }
   function hud() {
@@ -354,7 +358,7 @@
     if (activities.some(a => a.id === 'rematch' && a.available)) list.append(button(say('Tentar revanche gratuita', 'Try a free rematch'), () => dispatch({type: 'rematch'}), {class: 'primary'}));
     if (!activities.some(a => a.available)) list.append(el('p', {}, say('Nenhuma atividade disponível agora. Consulte seu diário para escolher o próximo destino.', 'No activities available here right now. Check your journal for your next destination.')));
     panel.append(list); recruitment(panel);
-    panel.append(button(say('Voltar ao mapa', 'Return to map'), () => dispatch({type: 'map'}), {class: 'back-map'})); main.append(panel);
+    panel.append(button(say('Voltar ao mapa', 'Return to map'), () => dispatch({type: 'map'}), {class: 'back-map', 'data-sound': 'cancel'})); main.append(panel);
   }
   function battle() {
     const s = game.state, b = s.battle, q = C.quests[b.index === null ? `g${b.id}` : `fight${b.index}`];
@@ -377,9 +381,9 @@
     if (b.die !== null) result.append(el('p', {class: 'dice-result', role: 'status'}, `${b.die} + ${E.allyCount(s)} = ${b.total} · ${b.status === 'won' ? say('Vitória', 'Victory') : b.total === b.difficulty ? say('Empate — revés', 'Tie — setback') : say('Revés', 'Setback')}`));
     else result.append(el('p', {}, say('Supere a dificuldade. Empate é revés.', 'Beat the difficulty. A tie is a setback.')));
     const actions = el('div', {class: 'actions'});
-    if (b.status === 'ready') actions.append(button(say('Rolar o D20', 'Roll the D20'), () => dispatch({type: 'roll'}), {id: 'roll-die', class: 'primary'}));
+    if (b.status === 'ready') actions.append(button(say('Rolar o D20', 'Roll the D20'), () => dispatch({type: 'roll'}), {id: 'roll-die', 'data-sound': 'none', class: 'primary'}));
     if (b.status === 'failed') actions.append(
-      button(say(`Usar nova rolagem (${s.rerolls})`, `Use a reroll (${s.rerolls})`), () => dispatch({type: 'roll'}), {id: 'roll-die', class: 'primary', disabled: !s.rerolls}),
+      button(say(`Usar nova rolagem (${s.rerolls})`, `Use a reroll (${s.rerolls})`), () => dispatch({type: 'roll'}), {id: 'roll-die', 'data-sound': 'none', class: 'primary', disabled: !s.rerolls}),
       button(say('Aceitar revés e preparar revanche', 'Accept setback and prepare a rematch'), () => dispatch({type: 'acceptDefeat'}), {id: 'accept-defeat'}));
     if (b.status === 'won') actions.append(button(say('Ver o resultado da luta', 'See the outcome'), () => dispatch({type: 'acceptVictory'}), {id: 'accept-victory', class: 'primary'}));
     console.append(dice, result, actions); main.append(console);
@@ -479,6 +483,7 @@
     else if (game?.state.stage === 4) ending();
     else if (game) location();
     else title();
+    if (view !== 'journal' && view !== 'help') audio.setTrack(TerminusAudio.track(view, game?.state, game?.state.scene ? E.page(game.state).passage : null));
     resize(); main.focus({preventScroll: true});
   }
   function resize() {
@@ -515,11 +520,12 @@
   });
   for (const event of ['pointerdown', 'keydown']) document.addEventListener(event, () => { if (settings.sound) audio.unlock(); }, {capture: true});
   media.addEventListener('change', () => { revealAll?.(); if (busy) skip.onclick?.(); document.body.dataset.reduced = String(reduced()); });
+  document.addEventListener('visibilitychange', () => audio.visibility(document.hidden));
   window.addEventListener('resize', resize);
   window.addEventListener('pagehide', () => { cancelPresentation(); audio.dispose(); });
   window.addEventListener('pageshow', event => {
     if (!event.persisted) return;
-    audio = FX.createAudio(); restored = true; render();
+    audio = TerminusAudio.createAudio(); audio.configure(settings); audio.visibility(document.hidden); restored = true; render();
   });
   try {
     const stored = JSON.parse(localStorage.getItem(SETTINGS) || 'null');
@@ -527,10 +533,13 @@
       if (['en-US', 'pt-BR'].includes(stored.language)) settings.language = stored.language;
       if (['slow', 'normal', 'fast', 'instant'].includes(stored.speed)) settings.speed = stored.speed;
       if (typeof stored.reduced === 'boolean') settings.reduced = stored.reduced;
+      if (Number.isFinite(stored.musicVolume) && stored.musicVolume >= 0 && stored.musicVolume <= 1) settings.musicVolume = stored.musicVolume;
       if (typeof stored.sound === 'boolean') settings.sound = stored.sound;
       if (Number.isFinite(stored.volume) && stored.volume >= 0 && stored.volume <= 1) settings.volume = stored.volume;
     }
   } catch { notice(say('Não foi possível ler as opções salvas. As opções padrão estão ativas.', 'Saved settings could not be read. Default settings are active.'), true); }
+  audio.configure(settings);
+  audio.visibility(document.hidden);
   L.setLanguage(settings.language);
   try { const saved = localStorage.getItem(KEY); if (saved) { game = E.restore(JSON.parse(saved)); restorePosition(); } }
   catch { notice(say('A partida salva não pôde ser aberta. Importe uma cópia ou inicie outra história. O arquivo anterior foi preservado.', 'The saved game could not be opened. Import a copy or begin another story. The previous file was preserved.'), true); }
