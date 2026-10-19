@@ -6,7 +6,7 @@
     K = TerminusCatalog,
     P = TerminusStaging,
     V = TerminusStageView,
-    KEY = "terminus-campaign-v2";
+    KEY = "terminus-campaign-v3";
   const main = document.querySelector("#main"),
     toolbar = document.querySelector("#toolbar"),
     stats = document.querySelector("#stats");
@@ -70,6 +70,13 @@
       view = "play";
       if (storageAvailable) inform(message);
       render();
+      if (
+        ["map", "defer", "leaveCoreto"].includes(action.type) &&
+        game.state.location === null
+      )
+        document
+          .getElementById("destination-" + game.state.map.focus)
+          ?.focus({ preventScroll: true });
     } catch (error) {
       inform(error.message, true);
     }
@@ -109,7 +116,8 @@
     run({ type: "start", id: "intro" });
   }
   function start(id) {
-    if (C.quests[id].kind === "guild" && C.quests[id].step === 5) {
+    rememberMap();
+    if (C.quests[id].kind === "commit") {
       confirmAction(
         "Assumir esta bandeira?",
         `Você apoiará ${C.guilds[C.quests[id].guild].mentor} na seleção. A adesão será irreversível nesta partida. As outras duas guildas passarão a disputar trabalho e o campeonato contra você. Os conflitos de recrutamento já resolvidos serão preservados.`,
@@ -153,7 +161,11 @@
       return;
     }
     const s = game.state,
-      locked = !!s.scene || !!s.battle || s.stage === 0 || s.stage === 4;
+      locked =
+        !!s.scene ||
+        !!s.battle ||
+        !s.completed.includes("gA1") ||
+        s.stage === 4;
     toolbar.append(
       button(view === "title" ? "Continuar partida" : "História", () => {
         view = "play";
@@ -166,15 +178,15 @@
       button(
         "Coreto",
         () => {
-          run({ type: "start", id: "coreto" });
+          start("coreto");
         },
-        locked
+        locked || s.location === "coreto"
           ? { disabled: "", title: "Disponível entre cenas e batalhas." }
           : {},
       ),
       button("Exportar partida", () =>
         download(
-          "terminus-v2-partida.json",
+          "terminus-v3-partida.json",
           JSON.stringify(game.save(), null, 2),
         ),
       ),
@@ -215,7 +227,7 @@
       el(
         "p",
         { class: "muted" },
-        "V2 · campanha completa, leitura por passagens e inventário de arte. Fundos e bustos ainda usam representações provisórias identificadas.",
+        "V3 · Explore Terminus, acompanhe entregas e escolha seus compromissos. Roteiro e imagens em avaliação.",
       ),
     );
     copy.append(
@@ -236,7 +248,7 @@
         "figure",
         {},
         el("img", {
-          src: "assets/coreto.png",
+          src: A.assets["bg-coreto"].preview,
           alt: "Coreto de madeira à luz de lanternas, com um banco para o contador de histórias.",
           width: "1672",
           height: "941",
@@ -301,7 +313,7 @@
       p.choices.forEach((c, index) => {
         const b = button(
           c.label,
-          () => run({ type: "choose", index }),
+          () => run({ type: "choose", index: c.index }),
           c.affordable ? {} : { disabled: "" },
         );
         if (c.cost)
@@ -322,13 +334,24 @@
         }),
       );
     main.append(choices);
+    if (p.canDefer)
+      main.append(
+        button("Decidir depois · voltar ao mapa", () => run({ type: "defer" })),
+      );
   }
   function battle() {
     const s = game.state,
       b = s.battle,
-      diff = E.difficulties[b.index];
-    heading(C.quests[`fight${b.index}`].title, "Confronto · D20");
-    const last = P.sequence(`fight${b.index}`, 0, null, s).at(-1);
+      diff = b.difficulty;
+    const questId = b.index === null ? `g${b.id}` : `fight${b.index}`;
+    heading(C.quests[questId].title, "Confronto · D20");
+    const q = C.quests[questId];
+    const pageIndex = q.pages.findLastIndex(
+      (p) =>
+        q.steps[p.step].battle === b.id &&
+        (!q.steps[p.step].when || q.steps[p.step].when(s)),
+    );
+    const last = P.sequence(questId, pageIndex, null, s).at(-1);
     main.append(
       stage({
         ...last,
@@ -341,7 +364,7 @@
             : b.status === "failed"
               ? "Ghork precisa de outra tentativa."
               : "Ghork se prepara para o confronto.",
-        id: `fight${b.index}.battle`,
+        id: `${questId}.battle`,
       }),
     );
     const box = el("section", { class: "battle" });
@@ -436,130 +459,259 @@
     }
     return list;
   }
-  function hub() {
+  function recruitment(parent, local = false) {
     const s = game.state;
-    heading(
-      s.stage === 0
-        ? "A história espera"
-        : s.rematch !== null
-          ? "Recuperar o fôlego"
-          : "Entre uma escolha e outra",
-      arcNames[s.stage],
-    );
-    const layout = el("div", { class: "hub" }),
-      story = el("div"),
-      side = el("aside", { "aria-label": "Time e recrutamentos" });
-    if (s.rematch !== null) {
-      story.append(
-        el(
-          "div",
-          { class: "note" },
-          el("h2", {}, "Uma tentativa não encerra a história"),
-          el(
-            "p",
-            {},
-            "A pausa terminou. Você pode tentar outra vez sem custo.",
-          ),
-          el(
-            "p",
-            {},
-            "Guedra pede que Ghork reveja um movimento de cada vez. A preparação e a revanche são gratuitas. Os aliados permanecem no time.",
-          ),
-          button("Voltar para a revanche", () => run({ type: "rematch" }), {
-            class: "primary",
-          }),
-        ),
-      );
-    }
-    const ids = E.available(s),
-      primary = E.primary(s);
-    const mainSection = el("section");
-    mainSection.append(el("h2", {}, "Seguir a história"), questList(primary));
-    if (!primary.length && s.rematch === null)
-      mainSection.append(
-        el("p", {}, "Consulte o diário para acompanhar seu percurso."),
-      );
-    story.append(mainSection);
-    const optional = ids.filter(
-      (id) => !primary.includes(id) && C.quests[id].kind !== "recruit",
-    );
-    if (optional.length) {
-      const sec = el("section");
-      sec.append(el("h2", {}, "Outros encontros"), questList(optional));
-      story.append(sec);
-    }
-    side.append(
-      el("h2", {}, "Pessoas e compromissos"),
-      el(
-        "p",
-        { class: "muted" },
-        s.tournamentStarted
-          ? "Os convites estão encerrados. Cada aliado acompanha todas as batalhas."
-          : "Conhecer, ajudar e convidar são momentos diferentes. Cada par permite um aliado.",
-      ),
-    );
+    const section = el("section", { "aria-label": "Equipe e convites" });
+    section.append(el("h2", {}, "Equipe e convites"));
     C.pairs.forEach((pair, i) => {
+      if (local && C.recruitPlaces[i] !== s.location) return;
       const r = s.recruits[i],
-        status = E.recruitStatus(s, i),
-        item = el("section", { class: "recruit-item" });
-      item.append(
-        el("h3", {}, pair.names.join(" / ")),
-        el("p", {}, pair.title),
-        el("p", { class: "muted" }, status.reason),
+        status = E.recruitStatus(s, i);
+      const known =
+        pair.names.some((name) => s.metCandidates.includes(name)) || r.outcome;
+      const row = el(
+        "section",
+        { class: "recruit-item" },
+        el(
+          "h3",
+          {},
+          known
+            ? pair.names.join(" / ")
+            : pair.id + " · Oportunidade de recrutamento",
+        ),
+        el("p", {}, status.reason),
       );
-      if (status.opened && !status.expired) {
-        if (status.access === "PA" || status.access === "PB")
-          item.append(
+      if (r.name) row.append(el("p", {}, "Compromisso com " + r.name));
+      if (local && status.canInvite)
+        row.append(
+          button("Convidar " + r.name, () => run({ type: "invite", index: i })),
+        );
+      if (local && status.canUnlock) {
+        const dialogue = r.outcome
+          ? C.recruitmentDialogue.candidates[r.name]
+          : C.recruitmentDialogue.blocks[i];
+        row.append(
+          el(
+            "p",
+            {},
+            (r.name || dialogue.speaker) + ": “" + dialogue.blocked + "”",
+          ),
+        );
+        row.append(
+          button(
+            "Pedir exceção · 3 Ludos",
+            () =>
+              confirmAction(
+                "Uma tarefa com cobertura",
+                "Criança: “E se alguém pudesse assumir essa tarefa?”\n\nRheed: “Poderia. Eu teria de encaixar uma ajuda que não tinha contado. Esse pedido custa 3 Ludos.”\n\nO pagamento libera o acesso. O convite continua opcional.",
+                () => run({ type: "unlock", index: i }),
+                "Pagar 3 Ludos e ouvir essa versão",
+              ),
+            s.ludos >= 3 ? {} : { disabled: "" },
+          ),
+        );
+        if (s.ludos < 3)
+          row.append(
             el(
               "p",
-              { class: "muted" },
-              `Nesta trajetória, o convite de ${pair.names[status.access === "PA" ? 0 : 1]} exige 3 Ludos, salvo acesso já liberado. A outra alternativa precisa corresponder ao desfecho.`,
-            ),
-          );
-        if (s.stage === 1)
-          item.append(
-            el(
-              "p",
-              { class: "muted" },
-              "A adesão definirá as restrições de convite. Resolver este conflito não garante recrutamento gratuito.",
+              {},
+              "Ludos insuficientes. Você pode continuar sem a intervenção.",
             ),
           );
       }
-      const actions = el("div", { class: "actions" });
-      if (status.canPlay)
-        actions.append(button("Conhecer o conflito", () => start(pair.id)));
-      if (status.canUnlock)
-        actions.append(
-          button(
-            "Pedir uma exceção · 3 Ludos",
-            () =>
-              run(
-                { type: "unlock", index: i },
-                "Acesso liberado. Seu compromisso anterior permanece.",
-              ),
-            s.ludos >= 3
-              ? {}
-              : { disabled: "", title: "Você precisa de 3 Ludos." },
-          ),
-        );
-      if (status.canInvite)
-        actions.append(
-          button(`Convidar ${r.name}`, () =>
-            run(
-              { type: "invite", index: i },
-              `${r.name} aceita representar esse compromisso ao seu lado. O outro integrante do par seguirá com uma equipe diferente.`,
-            ),
-          ),
-        );
-      item.append(actions);
-      side.append(item);
+      section.append(row);
     });
-    layout.append(story, side);
-    main.append(layout);
+    parent.append(section);
+  }
+  function hub() {
+    const s = game.state;
+    if (!s.completed.includes("gA1")) {
+      heading("O começo em Terminus", arcNames[s.stage]);
+      main.append(questList(E.primary(s)));
+      return;
+    }
+    if (s.location && s.location !== "coreto") {
+      const place = C.places[s.location];
+      heading(place[0], arcNames[s.stage]);
+      main.append(button("Voltar ao mapa", () => run({ type: "map" })));
+      main.append(
+        stage({
+          id: "local." + s.location,
+          type: "description",
+          speaker: "Rheed",
+          era: "past",
+          background: "bg-" + place[1],
+          bust: null,
+          assets: ["bg-" + place[1]],
+          text: "Escolha uma atividade neste local. Os deslocamentos são gratuitos.",
+        }),
+      );
+      const ids = E.localActions(s);
+      if (ids.length) {
+        const list = el("ul", { class: "quest-list" });
+        for (const id of ids)
+          list.append(
+            el(
+              "li",
+              {},
+              el("small", {}, C.quests[id].title),
+              button(E.currentStep(s, id).title, () => start(id)),
+            ),
+          );
+        main.append(list);
+      } else
+        main.append(
+          el(
+            "p",
+            { class: "note" },
+            "Nenhuma atividade disponível neste local agora. Consulte os objetivos no diário ou volte ao mapa.",
+          ),
+        );
+      const rematchLocation = s.rematch === "B4" ? "mercado" : "coliseu";
+      if (s.rematch && s.location === rematchLocation)
+        main.append(
+          button("Tentar revanche gratuita", () => run({ type: "rematch" }), {
+            class: "primary",
+          }),
+        );
+      recruitment(main, true);
+      return;
+    }
+    heading("Terminus", "Escolha um destino · deslocamento gratuito");
+    const shell = el("section", {
+      class: "city-shell",
+      "aria-label": "Mapa de Terminus",
+    });
+    const controls = el("div", { class: "map-controls" });
+    const viewport = el("div", {
+      class: "city-viewport",
+      tabindex: "0",
+      "aria-label":
+        "Mapa com rolagem horizontal. Use Tab para escolher destinos.",
+    });
+    const world = el("div", { class: "city-world" });
+    const groups = [
+      ["estalagem", "mercado", "boticario", "contratos"],
+      ["virmura", "borun", "sevrak", "treino"],
+      ["quarta", "coliseu", "oficina", "cisterna", "minas"],
+    ];
+    const buttons = [];
+    groups.forEach((ids, group) => {
+      const district = el("div", {
+        class: "map-group",
+        "data-group": String(group),
+      });
+      ids.forEach((id) => {
+        const activities = E.available(s).filter(
+          (q) => q !== "coreto" && E.destination(s, q) === id,
+        );
+        const invites = C.recruitPlaces.reduce(
+          (n, loc, i) =>
+            n +
+            (loc === id &&
+            (E.recruitStatus(s, i).canInvite || E.recruitStatus(s, i).canUnlock)
+              ? 1
+              : 0),
+          0,
+        );
+        const count =
+          activities.length +
+          invites +
+          (s.rematch && (s.rematch === "B4" ? "mercado" : "coliseu") === id
+            ? 1
+            : 0);
+        const visit = button(
+          "",
+          () =>
+            run({ type: "visit", location: id, scroll: viewport.scrollLeft }),
+          {
+            class: "map-destination",
+            id: "destination-" + id,
+            "data-destination": id,
+          },
+        );
+        if (s.rematch === "t5" && id !== "coliseu") visit.disabled = true;
+        visit.append(
+          el("small", {}, "LOCAL · PLACEHOLDER"),
+          el("strong", {}, C.places[id][0]),
+          el(
+            "span",
+            {},
+            count
+              ? count + " atividade(s) disponível(is)"
+              : "Sem atividade no momento",
+          ),
+        );
+        visit.addEventListener("keydown", (event) => {
+          const delta = {
+            ArrowRight: 1,
+            ArrowDown: 2,
+            ArrowLeft: -1,
+            ArrowUp: -2,
+          }[event.key];
+          if (delta) {
+            event.preventDefault();
+            buttons[
+              (buttons.indexOf(visit) + delta + buttons.length) % buttons.length
+            ].focus();
+          }
+        });
+        visit.addEventListener("focus", () =>
+          visit.scrollIntoView({
+            block: "nearest",
+            inline: "nearest",
+            behavior: "instant",
+          }),
+        );
+        district.append(visit);
+        if (!visit.disabled) buttons.push(visit);
+      });
+      world.append(district);
+    });
+    viewport.append(world);
+    controls.append(
+      button("← Mover mapa", () =>
+        viewport.scrollBy({ left: -400, behavior: "instant" }),
+      ),
+      button("Portal · Noite da História", () => start("coreto"), {
+        class: "portal-button",
+      }),
+      button("Mover mapa →", () =>
+        viewport.scrollBy({ left: 400, behavior: "instant" }),
+      ),
+    );
+    shell.append(controls, viewport);
+    main.append(shell);
+    viewport.scrollLeft = s.map.scroll;
+    viewport.addEventListener("scrollend", rememberMap);
+    main.append(
+      el(
+        "p",
+        { class: "muted" },
+        "Arraste a barra horizontal ou deslize no toque. Tab e setas percorrem os destinos; Enter ou Espaço abre o local.",
+      ),
+    );
+  }
+  function rememberMap() {
+    const viewport = document.querySelector(".city-viewport");
+    if (
+      !viewport ||
+      !game ||
+      game.state.location !== null ||
+      game.state.scene ||
+      game.state.battle
+    )
+      return;
+    const previous = game.state.map;
+    const focus = document.activeElement?.dataset.destination || previous.focus;
+    if (previous.scroll === viewport.scrollLeft && previous.focus === focus)
+      return;
+    game.dispatch({ type: "mapPosition", scroll: viewport.scrollLeft, focus });
+    persist();
   }
   function coreto() {
     const s = game.state;
-    heading("Um intervalo com Rheed", "Noite da História · colorido");
+    heading("Um intervalo com Rheed", "Noite da História · presente");
     const passages = P.sequence("coreto", 0, null, s);
     main.append(
       stage(passages.at(-1)),
@@ -633,6 +785,47 @@
         }.`,
       ),
     );
+    main.append(el("h2", {}, "Objetivos pendentes"));
+    const objectives = E.objectives(s);
+    if (s.battle)
+      main.append(
+        el(
+          "p",
+          {},
+          "Concluir o confronto em andamento. A preparação e a revanche continuam gratuitas.",
+        ),
+      );
+    else if (s.rematch)
+      main.append(
+        el(
+          "p",
+          {},
+          "Revanche disponível em " +
+            (s.rematch === "B4" ? "Mercado de provisões" : "Coliseu") +
+            ".",
+        ),
+      );
+    if (objectives.length)
+      main.append(
+        el(
+          "ul",
+          {},
+          ...objectives.map((o) =>
+            el("li", {}, o.title + " · " + o.task + " — " + o.place),
+          ),
+        ),
+      );
+    else if (!s.battle && !s.rematch)
+      main.append(el("p", {}, "Nenhum objetivo pendente agora."));
+    main.append(el("h2", {}, "Itens de missão"));
+    const items = Object.keys(s.items);
+    main.append(
+      items.length
+        ? el("ul", {}, ...items.map((id) => el("li", {}, E.itemName(id))))
+        : el("p", {}, "Nenhum item de missão em posse."),
+    );
+    recruitment(main);
+    main.append(el("h2", {}, "Histórico"));
     const list = el("ol", { class: "history" });
     for (const entry of s.history) list.append(el("li", {}, entry));
     if (!s.history.length)
@@ -705,7 +898,7 @@
     heading("Uma campanha para experimentar", "Em desenvolvimento");
     const prose = el("article", { class: "reading" });
     paragraphs(
-      "A V2 apresenta a campanha completa como visual novel. Direção de arte mostra as imagens de cada passagem. Cenas e variantes permite consultar alternativas sem alterar sua partida. Inventário de arte reúne os pedidos de desenho, seus usos e a exportação CSV. Os bustos e objetos são representações provisórias identificadas; a V2 não contém as ilustrações finais. As decisões confirmadas vêm da visão do jogo e da base narrativa. Encenação, falas e soluções ainda abertas são hipóteses para avaliar jogando.\n\nEscolha atividades na cidade. Termine cada cena antes de voltar ao Coreto. O diário e a exportação permanecem disponíveis durante a leitura. A adesão a uma guilda e o fechamento dos recrutamentos têm aviso antes da confirmação.\n\nGhork pode concluir a história sozinho e sem gastar Ludos. Batalhas usam D20 + aliados, e é necessário superar a dificuldade. Derrota permite revanche gratuita.\n\nHipóteses desta versão: mapas com orientações diferentes; ruptura institucional; Darvek cauteloso e Zagra com reconhecimento limitado; patrocínio do preterido; conversa privada ou pública antes da final; contribuição a Dam; efeitos narrativos da amostra de Savel.\n\nEconomia experimental: conflitos curtos rendem 2 Ludos, longos 3; três secundárias rendem 3 cada. Intervenções comuns e novas rolagens custam 1; acesso de recrutamento custa 3. Dificuldades: 8, 9, 10, 11, 12 e 12.\n\nO relatório exporta as escolhas e o texto percorrido. Use-o para apontar onde uma consequência parece artificial, uma fala perde a voz do personagem ou uma escolha não oferece informação suficiente.",
+      "A V3 apresenta o roteiro de quests com fundos e bustos em avaliação artística. O mapa usa blocos provisórios: escolha um destino para ver suas atividades. Termine a conversa ou batalha antes de voltar pelo portal à Noite da História. Diário, itens e equipe são consultas e não avançam a campanha.\n\nA exploração abre depois de Q-A1. Ouvir uma proposta não confirma a guilda. A adesão e o fechamento dos convites têm confirmação própria. Ghork pode concluir a campanha sozinho, sem gastar Ludos. Derrotas permitem revanche gratuita.\n\nEconomia experimental: conflitos curtos rendem 2 Ludos; longos e secundárias, 3. Opções comuns e novas rolagens custam 1; exceções de recrutamento custam 3. B4 e C4 têm dificuldade 8. Campeonato e confronto final: 8, 9, 10, 11, 12 e 12. É preciso superar a dificuldade com D20 + aliados; empate é falha.\n\nA partida começa do zero no formato 3. Saves antigos não são migrados. Exportar e importar permite transportar o progresso. Cenas e variantes e Inventário de arte são ferramentas de revisão isoladas da partida.\n\nO roteiro segue em desenvolvimento. Use o relatório do percurso para apontar problemas de continuidade, voz ou clareza das escolhas.",
       prose,
     );
     main.append(
@@ -877,14 +1070,14 @@
         }),
         button("Exportar inventário CSV", () =>
           download(
-            "terminus-v2-inventario.csv",
+            "terminus-v3-inventario.csv",
             K.csv(),
             "text/csv;charset=utf-8",
           ),
         ),
         button("Exportar usos CSV", () =>
           download(
-            "terminus-v2-usos.csv",
+            "terminus-v3-usos.csv",
             K.csv("uses"),
             "text/csv;charset=utf-8",
           ),
@@ -1370,6 +1563,8 @@
       }
     });
   try {
+    for (const legacy of ["terminus-campaign-v2"])
+      localStorage.removeItem(legacy);
     const saved = localStorage.getItem(KEY);
     if (saved) game = E.restore(JSON.parse(saved));
   } catch (error) {

@@ -47,7 +47,7 @@
             el(
               "span",
               {},
-              ` · ${p.id} · ${p.era === "present" ? "Presente / colorido" : "Passado / pastel"}`,
+              ` · ${p.id} · ${p.era === "present" ? "Presente" : "Passado"}`,
             ),
           ),
           el("div", { class: "asset-links" }, ...links),
@@ -59,7 +59,7 @@
               : p.recipient
                 ? `Entrega de objeto → ${p.recipient}`
                 : p.bust
-                  ? "Um busto em cena. A silhueta representa uma imagem a produzir."
+                  ? "Um busto em cena. Consulte a ficha para verificar arquivo e situação artística."
                   : "Sem busto nesta passagem.",
           ),
         ),
@@ -102,7 +102,7 @@
         left = bust.owner === "Ghork";
       const portrait = el("figure", {
         class: `bust-placeholder ${left ? "left" : "right"}`,
-        "aria-label": `Busto a produzir: ${bust.name}`,
+        "aria-label": `${bust.name} · ${bust.status}`,
       });
       const silhouette = el(
         "div",

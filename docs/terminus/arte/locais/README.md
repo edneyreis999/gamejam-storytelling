@@ -119,3 +119,7 @@ As imagens a seguir usam os arquivos selecionados da tabela, sem personagens ou 
 ## Coreto da Noite da História — Coreto visto pelo ouvinte
 
 ![Coreto da Noite da História — Coreto visto pelo ouvinte](../../../../assets/terminus/locais/coreto-noite-historia-v1.png)
+
+## Uso no protótipo V3
+
+Os 19 arquivos selecionados acima estão integrados ao [protótipo HTML](../../prototipo/index.html), por meio do registro compartilhado de arte. O mapa continua com placeholders. A [verificação da V3](../../prototipo/VERIFICACAO-V3.md) registra carregamento no navegador, falhas legíveis e inspeção de composição; não representa aceite artístico das imagens.

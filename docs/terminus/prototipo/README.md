@@ -1,99 +1,87 @@
-# Protótipo de Terminus
+# Protótipo de Terminus — V3
 
 Status: em desenvolvimento.
 
-Campanha completa em HTML, com leitura por passagens e direção de arte para preparar a migração ao RPG Maker. Inclui três etapas, seis rotas de guilda/aliança, escolhas, recrutamento, economia e batalhas. Este diretório contém a versão vigente do protótipo.
+Abra [index.html](index.html) em um navegador atual. O jogo roda localmente, sem build, servidor ou instalação. Também pode ser servido a partir da raiz do repositório; mantenha a pasta `assets/terminus/` disponível, pois o protótipo referencia esses arquivos diretamente.
 
-## Abrir e revisar
+A V3 integra o [roteiro de quests](../storytelling/quests-da-campanha.md): quinze quests de guilda, sete do arco 2, cinco conflitos de recrutamento, campeonato, invasão, encerramento e cenas compartilhadas E00–E08. Preserva as três secundárias e permite terminar sozinho, sem gastar Ludos.
 
-Abra [index.html](index.html) no navegador ou, na raiz do repositório, execute:
+## Jogar
 
-```sh
-python3 -m http.server 8765 --bind 127.0.0.1
-```
+- A exploração abre depois de Q-A1. O mapa tem **13 destinos e um portal fixo**, todos com identificação textual. Os destinos são placeholders; as imagens de mapa ficam preservadas para uma integração futura.
+- Abra um destino para ver o cenário e suas atividades. Buscas, entregas e retornos exigem visitar o local indicado. As cadeias podem ser intercaladas antes da adesão; ouvir uma proposta não escolhe a guilda.
+- Use mouse ou toque. No mapa, Tab e setas percorrem os destinos; Enter/Espaço abre o selecionado. Em telas estreitas, deslize a área do mapa horizontalmente. “Voltar ao mapa” restaura a posição e o foco do destino.
+- Enter/Espaço ou o botão avançam a leitura. Escolhas aparecem ao final do trecho. “Decidir depois” conserva a inspeção e a posição de leitura nos conflitos que permitem adiar.
+- O portal leva à Noite da História entre cenas. Termine conversas e batalhas antes de sair. Durante a revanche da invasão, o recuo permanece no corredor do coliseu.
+- O **Diário** consulta objetivos, itens em posse, equipe e histórico. Convites e intervenções acontecem nos locais dos personagens. A confirmação das eliminatórias encerra os recrutamentos, inclusive numa campanha solo.
 
-Acesse `http://127.0.0.1:8765/docs/terminus/prototipo/`.
+O palco tem referência de 1280 × 720. Textos aparecem completos, com um busto por vez. O painel descritivo preserva a composição anterior atenuada. A entrega de objetos é também descrita em texto e funciona com movimento reduzido.
 
-- **Jogar:** campanha com progresso salvo. Enter, Espaço ou o botão avançam a leitura; escolhas aparecem após a última passagem do trecho.
-- **Cenas e variantes:** revisão isolada por cena, trecho, resposta, guilda, aliança e contexto. Não altera a partida. A semifinal permite conferir formações; o Coreto possui momentos diferentes da campanha.
-- **Direção de arte:** anotações acima do palco com tipo de passagem, tempo narrativo e imagens usadas. Cada imagem abre sua ficha.
-- **Inventário de arte:** filtros, contagens, fichas, usos por cena, CSV de imagens e CSV de usos. Cada uso abre a respectiva prévia. A ficha possui impressão própria.
+## Regras experimentais
 
-As prévias e o inventário contêm spoilers. Seus contextos são combinações editoriais para cobrir as alternativas escritas, não partidas reais nem uma promessa de que qualquer combinação seja alcançável.
+| Regra | Valor |
+| --- | --- |
+| Opção comum paga / nova rolagem | 1 Ludo |
+| Exceção de recrutamento | 3 Ludos, uma vez por par |
+| Conflito curto / longo | 2 / 3 Ludos |
+| Cada secundária | 3 Ludos |
+| B4 e C4 | Dificuldade 8; independentes do campeonato |
+| Campeonato e confronto final | 8, 9, 10, 11, 12 e 12 |
 
-## O que desenhar
+Vitória exige `D20 + aliados > dificuldade`; igualdade é falha. Ghork não entra no bônus. Uma nova rolagem consome uma carga comprada no Coreto e substitui o dado anterior. Aceitar o revés permite revanche gratuita. Em B4 o fardo só é recolhido depois da vitória; em C4 o estojo é restituído antes do duelo.
 
-O [levantamento gerado](INVENTARIO.md) registra a proposta atual: **18 fundos, 90 imagens de bustos e 15 objetos — 123 imagens finais**. Os bustos se organizam em 32 bases de pose; as bases agrupam variantes e não são 32 desenhos adicionais. Savel e Neral aparecem com identidades visuais distintas, embora sejam a mesma pessoa.
+R1/R2 podem ser resolvidos desde Q-A1. Os convites aguardam a trajetória X/Y concluída, exceto R2 da guilda A, cuja condição já está definida pela adesão. R3/R4 abrem depois da investigação; R5 depois da classificação. Resolver um conflito, convidar e pagar uma exceção são operações distintas.
 
-Há dois componentes de interface em CSS: **um painel descritivo reutilizável** e uma caixa de diálogo. Eles não exigem duas novas ilustrações. Uma proposta de fundo sem uso fica fora da conta. Locais e fundos não têm correspondência um para um: estalagem, minas e coliseu precisam de enquadramentos distintos. O catálogo informa a justificativa e as cenas de cada fundo.
+## Arte e revisão
 
-Esses números dimensionam a encenação proposta; não constituem encomenda aprovada. Silhuetas, cartões e fundos identificados são representações provisórias. A imagem existente do Coreto é uma referência em sépia; sua versão final no presente será colorida. A [procedência da imagem](assets/README.md) preserva a técnica e o prompt usados.
+São **19 fundos selecionados** e **210 expressões disponíveis para 42 visuais**. A encenação usa o subconjunto correspondente aos participantes e às expressões explicitamente escolhidas. Os arquivos continuam **em avaliação artística**. Concepts orientam identidade e enquadramento; as expressões são os bustos do palco. Lala e figurantes sem imagem permanecem provisórios. Savel, Neral revelado e Neral transformado usam visuais distintos.
 
-Cada ficha reúne aparência de origem, composição proposta, rosto, postura, orientação, transparência, tamanho, nome de arquivo e usos. O movimento de entrega reutiliza o mesmo objeto. Um item apenas mencionado no diálogo não vira automaticamente um pedido de desenho.
+O registro `art.js`, alimentado por `asset-files.js`, é compartilhado pelo palco e pelo catálogo. As imagens mantêm proporções e transparência. Os fundos têm 1672 × 941 px, exceto a recepção de Virmura, com 1672 × 940; os bustos têm 504 × 672 px RGBA. Falhas de carregamento mostram o arquivo esperado e uma mensagem legível.
 
-A criança permanece com nome e texto, sem busto nesta versão: sua identidade visual está pendente de confirmação do autor e não entrou na contagem. A revisão preserva a interpretação direta de Virmura experimentada no protótipo; a divergência com a possibilidade de voz cerimonial continua registrada, sem decidir novo cânone.
+- **Cenas e variantes:** prévias por cena, trecho, resposta, guilda, X/Y e contexto, sem alterar o save. Incluem as quarenta reações da semifinal e os diferentes momentos do Coreto.
+- **Inventário de arte:** fichas, usos, filtros e exportação CSV. O [inventário gerado](INVENTARIO.md) distingue referências com uso no roteiro das demais disponíveis.
+- **Direção de arte:** mostra IDs e referências fora do palco; pode ser desligada para jogar.
 
-## Contrato de apresentação
+As prévias contêm spoilers e contextos editoriais que não são partidas reais. Consulte os [fundos selecionados](../arte/locais/README.md), os [concepts](../arte/bustos/README.md) e a [matriz de expressões](../arte/bustos/expressoes/README.md). Sprites de movimentação e assets do mapa não foram aplicados à apresentação VN.
 
-O palco tem referência de **1280 × 720**. Diálogo e pensamento identificam quem fala/pensa e usam um busto por vez. O painel descritivo aparece no centro, esconde a caixa inferior e conserva o fundo e o busto anterior atenuados. Não mostra nome nem busto próprio do narrador.
+## Saves
 
-Rheed aparece no presente da Noite da História. Narrar o passado não o transporta para as cenas de Ghork. Retornos ao presente são passagens explícitas. Objetos possuem aparição, destinatário e operação de apresentação; a animação não executa recompensas. Com movimento reduzido, a entrega continua compreensível pelo texto e pelo destinatário.
+A campanha começa do zero. O formato é **3** e a chave própria é `terminus-campaign-v3`. Na abertura, somente a chave antiga conhecida `terminus-campaign-v2` é removida. Não há migração; a importação rejeita formatos anteriores.
 
-## Arquivos e substituição da arte
+Exportação/importação usa JSON validado por replay. As ações reconstruem local, posição do mapa, etapas, posse e entrega de itens, escolhas, perguntas, cursor de leitura, Ludos, aliados e resultados aleatórios. Carregar não concede novamente objetos ou recompensas. O armazenamento depende da origem e das regras do navegador; use exportação para transportar partidas entre pastas, navegadores ou servidores.
+
+## Manutenção
 
 | Arquivo | Responsabilidade |
 | --- | --- |
-| `content.js`, `supplementary.js` | Diálogo, pensamento, descrição, escolhas e variantes; intervalos e reveses |
-| `engine.js` | Regras, progresso, posição de leitura e replay do save |
-| `staging.js` | Composição das passagens e ações com objetos |
-| `art.js` | Registro de imagens, expressões, briefs e arquivos |
-| `art-authority.js` | Recorte gerado das fichas que fundamentam aparência e cenário |
-| `catalog.js` | Contextos editoriais, usos, variantes e CSV |
-| `stage-view.js`, `app.js` | Palco e interface de jogo/revisão |
-| `tokens.css`, `style.css` | Cores, escala visual, componentes e movimento reduzido |
+| `quest-script.js` | Recorte gerado do roteiro, com linha de origem e hash |
+| `campaign.js` | Montagem explícita das quests, etapas, locais, falas condicionais e efeitos |
+| `content.js`, `supplementary.js` | Matriz, definições comuns, secundárias e intervalos |
+| `engine.js` | Ações validadas, progresso, inventário e replay |
+| `staging.js`, `stage-view.js` | Passagens, composição e renderização |
+| `asset-files.js`, `art.js`, `art-authority.js` | Arquivos selecionados, registro e recorte das fichas |
+| `catalog.js` | Variantes, contextos editoriais, usos e CSV |
+| `app.js`, `style.css`, `tokens.css` | Navegação e apresentação |
 
-Para inserir uma imagem final, mantenha seu ID, coloque o arquivo no caminho indicado pela ficha e defina `preview` no respectivo registro em `art.js`. Para bustos, ajuste o registro construído por `portrait` ou forneça um mapa explícito por ID. Atualize também `status`. O campo `file` documenta o arquivo previsto; só `preview` habilita a imagem no palco. Fundo, busto e objeto possuem representação substituta identificada; erros de carregamento aparecem na interface.
+As etapas têm IDs próprios. Os intervalos de linhas usados em `campaign.js` são deliberados: ao editar o roteiro, revise esses intervalos e suas condições antes de regenerar o recorte. O hash detecta fonte desatualizada; não substitui revisão narrativa.
 
-Após editar aparência nas fichas, regenere o recorte com o helper **mutante**:
+Com Node.js 20 ou posterior, na raiz do repositório:
 
-```sh
-python3 docs/terminus/prototipo/scripts/refresh-art-authority.py
-```
+```powershell
+# Helpers mutantes: atualizam apenas os artefatos derivados do protótipo.
+node docs/terminus/prototipo/scripts/extract-quest-script.cjs
+node docs/terminus/prototipo/scripts/refresh-art-authority.cjs
 
-O helper de inventário é **somente leitura** e imprime Markdown; redirecionar sua saída atualiza o retrato documental:
+# Relatório somente leitura; o redirecionamento atualiza o retrato documental.
+node docs/terminus/prototipo/scripts/report-art.cjs | Out-File -Encoding utf8 docs/terminus/prototipo/INVENTARIO.md
 
-```sh
-node docs/terminus/prototipo/scripts/report-art.cjs > docs/terminus/prototipo/INVENTARIO.md
-```
-
-O catálogo HTML continua sendo a fonte operacional de contagens e usos, recalculada do roteiro. Consulte a [visão](../visao-do-jogo.md) e as [fichas](../personagens/README.md) antes de mudar narrativa. A adaptação não promove propostas de encenação a fatos aprovados.
-
-## Preparação para RPG Maker
-
-IDs de cena/passagem, tipo, falante, tempo, fundo, busto, objeto e escolha tornam a encenação revisável antes do port. A transferência deverá mapear essas passagens para eventos: mostrar/trocar imagens, mostrar texto, apresentar escolhas e mover/apagar objetos. O painel descritivo exige a mesma composição própria na implementação de destino.
-
-Esta entrega não altera o projeto RPG Maker nem exporta eventos automaticamente. Os briefs e CSVs servem como contrato de produção e rastreamento. A interface de revisão fica fora do palco e não precisa fazer parte do jogo final.
-
-## Saves e compatibilidade
-
-O formato permanece na versão 2 e a chave de armazenamento é `terminus-campaign-v2`. A consolidação do diretório preserva esses identificadores e as ações do save. Partidas do protótipo antigo com formato 1 não são migradas.
-
-Exportação/importação utiliza JSON validado por replay das ações; a posição de leitura e as consequências são reconstruídas sem repetir recompensas. No servidor HTTP, manter navegador, host e porta preserva o armazenamento mesmo com a mudança de pasta. Ao abrir diretamente por `file:`, o armazenamento depende das regras do navegador; use exportação/importação para transportar partidas entre origens.
-
-## Testar e manter
-
-Execute na raiz do repositório, com Node.js 18 ou posterior e Python 3 para os geradores. O jogo não requer instalação de pacotes nem build.
-
-```sh
-node --test --test-reporter=spec docs/terminus/prototipo/tests/*.test.cjs
+node --test (Get-ChildItem docs/terminus/prototipo/tests/*.test.cjs).FullName
 node docs/terminus/prototipo/tests/report.cjs
 node .agents/skills/ui-craft/scripts/detect-token-drift.mjs docs/terminus/prototipo --token-paths tokens.css
 ```
 
-A suíte cobre seis rotas com equipes vazias, completas e parciais; respostas alternativas, recrutamento, custos, novas rolagens, derrota e revanche. Também verifica saves inválidos, retomada de passagens, consequências únicas, referências de arte, variantes da semifinal, herança de composição e retornos ao Coreto. O relatório de palavras estima tempo de leitura; não substitui playtest cronometrado.
+O teste de navegador usa a biblioteca Playwright já instalada nas dependências de QA e o Edge local: `node docs/terminus/prototipo/tests/browser.cjs`. Ele cria um servidor temporário e gera evidências em `verificacao/`. Para instalar essas dependências, siga o [guia de QA](../../../coreto/docs/qa.md) e seus requisitos. A execução direta da biblioteca nesta entrega não equivale a executar o runner Coreto.
 
-Depois de alterar a apresentação, confira no navegador: abertura e fala identificada; painel descritivo preservando a composição; entrega com e sem movimento; recarga e continuação do save; cena → ficha de arte → uso; telas de 320, 768 e 1280 px. Registre o resultado no commit. Download, importação por seletor e impressão devem ser conferidos manualmente; o teste do conteúdo JSON/CSV não comprova esses fluxos do navegador.
+Veja [verificação e auditoria da V3](VERIFICACAO-V3.md) e [revisão editorial](REVISAO-EDITORIAL.md). Toque foi emulado; não houve ensaio em aparelho físico, leitor de tela ou impressão. Aceite artístico e playtest humano de ritmo permanecem fora dessa verificação. Esta entrega não modifica a engine, plugins congelados ou eventos do RPG Maker e não exporta eventos automaticamente.
 
-Não há exportador automático para RPG Maker, arte final completa ou auditoria formal de acessibilidade. A identidade visual da criança e a voz cerimonial/direta de Virmura continuam pendentes de confirmação. Consulte as [decisões editoriais e fontes](REVISAO-EDITORIAL.md) antes de alterar suas cenas.
-
-Para evoluir o protótipo, use a [skill game-prototype-vn-html](../../../.agents/skills/game-prototype-vn-html/SKILL.md). As fichas são a fonte de aparência; `art-authority.js` é gerado e deve ser atualizado pelo script. `INVENTARIO.md` é um retrato regenerável; os usos atuais são calculados no catálogo HTML.
+Para evoluir o protótipo, aplique a [skill game-prototype-vn-html](../../../.agents/skills/game-prototype-vn-html/SKILL.md). A [visão](../visao-do-jogo.md), o [guia de personagens](../personagens/README.md) e o roteiro permanecem as fontes de escopo e narrativa; os registros de arte não aprovam decisões narrativas por si sós.

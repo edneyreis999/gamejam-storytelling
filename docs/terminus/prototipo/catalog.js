@@ -3,7 +3,7 @@
   "use strict";
   const C =
     typeof module !== "undefined"
-      ? require("./supplementary.js")
+      ? require("./campaign.js")
       : root.TerminusContent;
   const P =
     typeof module !== "undefined"
@@ -12,6 +12,13 @@
   const A =
     typeof module !== "undefined" ? require("./art.js") : root.TerminusArt;
   const profiles = [
+    {
+      id: "conhecidos",
+      name: "Conhecidos · conflitos pendentes",
+      flags: { dam: "help", uv: "U" },
+      mode: "known",
+      side: 0,
+    },
     {
       id: "solo",
       name: "Solo · respostas respeitosas",
@@ -161,9 +168,27 @@
       routeProgress: 2,
       completed: [],
       progress: { A: 4, B: 4, C: 4 },
-      flags: { ...profile.flags, routeChoice: route },
+      flags: {
+        ...profile.flags,
+        routeChoice: route,
+        ...Object.fromEntries(
+          C.pairs.map((p) => [p.id, profile.side ? "B" : "A"]),
+        ),
+        a3: profile.side,
+        c4: profile.side,
+      },
+      questSteps:
+        profile.mode === "solo"
+          ? {}
+          : Object.fromEntries(C.pairs.map((p) => [p.id, 1])),
+      metCandidates:
+        profile.mode === "solo" ? [] : C.pairs.flatMap((p) => p.names),
       recruits: C.pairs.map((p, i) => ({
-        outcome: profile.mode === "solo" ? null : profile.side ? "B" : "A",
+        outcome: ["solo", "known"].includes(profile.mode)
+          ? null
+          : profile.side
+            ? "B"
+            : "A",
         name: p.names[profile.side],
         invited: profile.mode === "all",
         paid: false,
@@ -177,6 +202,7 @@
     };
   }
   function applicable(q, guild, route) {
+    if (q.kind === "commit") return q.guild === guild;
     if (q.kind === "guild") return q.guild === guild || q.step < 5;
     if (q.kind === "route") return q.route === route;
     return true;
@@ -186,6 +212,11 @@
     if (q.id === "coreto") s.stage = page || state.stage;
     if (choice !== null)
       Object.assign(s.flags, q.pages[page].choices[choice].flags);
+    if (choice !== null && q.pages[page].question)
+      s.questions = {
+        ...s.questions,
+        [`${q.id}.${page}`]: q.pages[page].choices.map((_, index) => index),
+      };
     return s;
   }
   function preview(id, page, choice, state) {
@@ -285,6 +316,8 @@
                 };
                 const label = `${guild}${route} · ${profile.name}${q.id === "fight3" ? ` · formação ${mask + 1}` : ""}${q.id === "coreto" ? ` · ${checkpoint.name}` : ""}`;
                 q.pages.forEach((p, page) => {
+                  const step = q.steps[p.step];
+                  if (step.when && !step.when(staged)) return;
                   index(q, page, null, staged, label, ref);
                   p.choices.forEach((_, choice) =>
                     index(q, page, choice, staged, label, ref),

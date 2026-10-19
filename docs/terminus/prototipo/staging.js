@@ -2,149 +2,10 @@
   "use strict";
   const C =
     typeof module !== "undefined"
-      ? require("./supplementary.js")
+      ? require("./campaign.js")
       : root.TerminusContent;
   const A =
     typeof module !== "undefined" ? require("./art.js") : root.TerminusArt;
-  // Cada destaque é uma decisão editorial, nunca uma busca por palavras na prosa.
-  const cues = {
-    "intro.0.body": [
-      {
-        after: 0,
-        object: "obj-frasco-rheed",
-        text: "O frasco de Rheed repousa ao alcance da mão.",
-      },
-    ],
-    "gA1.1.body": [
-      {
-        after: 0,
-        object: "obj-colar",
-        text: "A luz do colar se firma. O contato com Lala pode começar.",
-      },
-    ],
-    "gA2.0.body": [
-      {
-        after: 0,
-        object: "obj-registros",
-        text: "Ghork confere os registros de retirada.",
-      },
-    ],
-    "gA3.0.body": [
-      {
-        after: 0,
-        object: "obj-mapa-entrada",
-        text: "O primeiro mapa descreve a entrada pelo pátio.",
-      },
-      {
-        after: 0,
-        object: "obj-mapa-retirada",
-        text: "O segundo acompanha o percurso da retirada.",
-      },
-    ],
-    "gB3.0.body": [
-      {
-        after: 0,
-        object: "obj-mapa-entrada",
-        text: "O ponto de partida está marcado na margem.",
-      },
-    ],
-    "gC2.0.body": [
-      {
-        after: 0,
-        object: "obj-mapa-retirada",
-        text: "O relato de saída usa outra referência de orientação.",
-      },
-    ],
-    "retaliation.0.body": [
-      {
-        after: 6,
-        object: "obj-horarios",
-        text: "Os horários de preparação foram riscados.",
-      },
-    ],
-    "X1.0.body": [
-      {
-        after: 0,
-        object: "obj-maca",
-        text: "A equipe prepara a retirada com a maca antes de avançar.",
-      },
-    ],
-    "Y1.0.body": [
-      {
-        after: 0,
-        object: "obj-marcadores",
-        text: "As marcas permitem reconhecer o caminho de volta.",
-      },
-    ],
-    "R3.0.body": [
-      {
-        after: 0,
-        object: "obj-armacao",
-        text: "Os dois projetos dependem das mesmas articulações.",
-      },
-    ],
-    "side2.0.body": [
-      {
-        after: 0,
-        object: "obj-peca",
-        text: "Durn deixa a peça na bancada para Ghork conferir a posição de uso.",
-      },
-    ],
-    "side2.0.choice0": [
-      {
-        after: 0,
-        object: "obj-peca",
-        operation: "give",
-        recipient: "Durn",
-        text: "Ghork devolve a peça a Durn após a demonstração.",
-      },
-    ],
-    "side2.0.choice1": [
-      {
-        after: 0,
-        object: "obj-peca",
-        operation: "give",
-        recipient: "Durn",
-        text: "Ghork devolve a peça a Durn após a demonstração.",
-      },
-    ],
-    "potionVisit.0.body": [
-      {
-        after: 0,
-        object: "obj-dose",
-        text: "A marca no gargalo distingue a amostra oferecida por Savel.",
-      },
-    ],
-    "after5.0.body": [
-      {
-        after: 1,
-        object: "obj-correspondencia",
-        text: "As cartas e os registros apontam uma ligação com o Conselho.",
-      },
-    ],
-    "classify.1.choice0": [
-      {
-        after: 0,
-        object: "obj-recibo",
-        text: "O recibo registra a contribuição enviada para o reparo de Dam.",
-      },
-    ],
-    "ending.1.body": [
-      {
-        after: 0,
-        object: "obj-colar",
-        text: "Ghork volta a falar com Lala pelo colar.",
-      },
-    ],
-  };
-  for (const g of "ABC")
-    cues[`g${g}5.0.body`] = [
-      {
-        after: 0,
-        object: "obj-contrato",
-        text: "O contrato das galerias será assumido por uma das guildas.",
-      },
-    ];
   function resolve(value, state) {
     return typeof value === "function" ? value(state) : value;
   }
@@ -162,35 +23,40 @@
         throw new Error(
           `Passagem inválida em ${id}.${page}.${branch}.${index}`,
         );
-      if (id === "fight5" && branch === "body" && index === 4)
-        authored.push({
-          type: "action",
-          speaker: "Rheed",
-          era: "past",
-          text: "Neral leva o concentrado à boca.",
-          object: "obj-concentrado",
-          operation: "show",
-          id: `${id}.p${page + 1}.${branch}.art-concentrado`,
-        });
       authored.push({
         ...passage,
         id: `${id}.p${page + 1}.${branch}.${index + 1}`,
       });
-      for (const cue of cues[`${id}.${page}.${branch}`] || []) {
-        if (cue.after === index)
-          authored.push({
-            type: "action",
-            speaker: "Rheed",
-            era: passage.era,
-            background: passage.background,
-            text: cue.text,
-            object: cue.object,
-            operation: cue.operation || "show",
-            recipient: cue.recipient,
-            id: `${id}.p${page + 1}.${branch}.art-${cue.object}`,
-          });
-      }
     });
+    const answered = state.questions?.[`${id}.${page}`] || [];
+    const completesStep = raw.choices.length
+      ? choice !== null &&
+        (!raw.question || answered.length === raw.choices.length)
+      : choice === null;
+    if (raw.stepEnd && completesStep) {
+      const step = q.steps[raw.step];
+      for (const { item, to } of step.deliver || [])
+        authored.push({
+          type: "action",
+          speaker: "Rheed",
+          era: "past",
+          text: `Ghork entrega ${C.items[item]} a ${to}.`,
+          object: `quest-${item}`,
+          operation: "give",
+          recipient: to,
+          id: `${q.id}.${step.id}.deliver.${item}`,
+        });
+      for (const item of step.receive || [])
+        authored.push({
+          type: "action",
+          speaker: "Rheed",
+          era: "past",
+          text: `Ghork recebe ${C.items[item]}.`,
+          object: `quest-${item}`,
+          operation: "show",
+          id: `${q.id}.${step.id}.receive.${item}`,
+        });
+    }
     const defaultBg = resolve(raw.body, state)[0].background;
     if (!defaultBg)
       throw new Error(`Primeira passagem sem fundo: ${id}.${page}`);
@@ -246,6 +112,6 @@
       };
     });
   }
-  root.TerminusStaging = { sequence, resolve, cues };
+  root.TerminusStaging = { sequence, resolve };
   if (typeof module !== "undefined") module.exports = root.TerminusStaging;
 })(globalThis);

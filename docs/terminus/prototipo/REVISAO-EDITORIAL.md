@@ -57,3 +57,33 @@ Principais decisões de escrita:
 - Reveses reconhecem cada adversário; o de Neral ocorre na área de serviço. Os intervalos do Coreto distinguem o momento da campanha, sem anunciar como futura uma tarefa concluída.
 
 As falas condicionais, respostas, intervalos e reveses pertencem ao roteiro, mesmo que não apareçam numa única partida. Consulte **Cenas e variantes** para revisá-los; a matriz de testes e os comandos estão no [guia do protótipo](README.md#testar-e-manter). Objetos mencionados só exigem imagem própria quando marcados na encenação; as quantidades são derivadas do catálogo.
+
+## Integração V3 — 19/10/2026
+
+Status: em desenvolvimento.
+
+Esta seção atualiza o registro anterior para o roteiro de [quests da campanha](../storytelling/quests-da-campanha.md), incorporado da `main`. As observações anteriores descrevem a revisão da V2; quando houver diferença, vale o estado da V3 abaixo.
+
+A revisão direta aplicou `humanizer` às adaptações, mantendo as vozes definidas nas fichas. O recorte das falas foi comparado com o roteiro; limites de intervalo que omitiram perguntas, respostas ou encerramentos foram corrigidos. A encenação é experimental e não constitui aceite artístico ou revisão humana final.
+
+| Cobertura | Conferência na V3 |
+| --- | --- |
+| E00, Q-A1, E01–E03 e E08 | Moldura, socorro e pequenos deslocamentos antes da exploração; apresentação de Torvak e primeira oferta de Savel uma única vez; preparação antes de B4/C4. |
+| Q-A1–A5 | Sigilo dos registros, atendimento mantido, empréstimo e devolução da maca; proposta ouvida separada da adesão. |
+| Q-B1–B5 | Bolsa entregue após a fuga; cópia autorizada de Pirka; recuperação do fardo após vitória; recibo entregue a Borun. |
+| Q-C1–C5 | Entrega a Rask, procedimento contestável e estojo restituído antes do duelo; a ressalva escolhida retorna na defesa. |
+| E04–E06, X0/Y0, X1–X2/Y1–Y2 | Três apresentações e estratégia antes da adesão; duas recusas institucionais; cancelamento dos horários antes da reação de Ghork; reorganização na sede; ambas as propostas externas antes do compromisso. |
+| Q-20 e três contatos com Lala | Remuneração pessoal distinta de Ludos; contribuição opcional a Dam, registro no mercado e recado correspondente no encerramento; dose de Torvak sem consumo obrigatório de Ghork. |
+| R1–R5 | Dois desfechos por conflito, investigação e entregas, possibilidade de adiar, recompensa única, convites próprios e cobertura de trabalho para exceções. Nenhum pagamento escolhe outro favorecido ou recruta os dois. |
+| Q-31–Q-35 e U/V | Duas guildas rivais, equipe X/Y preterida, semifinal persistente e conversa antes da final. Quarenta falas de semifinal: desconhecido, conhecido não resolvido, favorecido sem convite e preterido. |
+| Celebração, Q-36 e E07 | Comemoração antes da invasão; Torvak coopera sem absolvição automática; transformação única; Neral conserva a forma até morrer; vínculo documental com o Conselho sem nomear infiltrados. |
+| Intervenções L1/L2/L3, bloqueios e convites | Retorno explícito a Rheed e à criança; custo visível antes de escolher; consequências principais e continuação gratuita preservadas. |
+| Secundárias, Coreto e reveses | Três secundárias preservadas, intervalos adequados ao progresso, recompensa uma vez; recuo da invasão localizado no coliseu. |
+
+**P01:** a resolução foi autorizada no plano desta integração e registrada no roteiro. O croqui de entrada segue passagem estreita → bifurcação; o de retirada percorre o sentido inverso. Pontos de partida e direção estão nos registros autorizados. A2, B3 e C3 permitem a mesma comparação com Elune sem depender das outras cadeias. A defesa de E04 mostra o trecho reconciliado e mantém desconhecidas as demais galerias. Não foram introduzidos fraude, geografia mutável ou desabamento como causa.
+
+**Arte:** a criança passa a usar o visual produzido. Lala e figurantes sem correspondência continuam provisórios; nenhuma identidade recebe o retrato de outra. Savel, Neral revelado e Neral transformado são separados no registro. O palco usa cinco expressões produzidas, com mapeamento documentado das intenções anteriores. Os fundos atuais, inclusive o Coreto, seguem a produção em tinta e bege; a distinção entre presente e passado permanece textual e estrutural. Isso não converte a imagem sépia em aprovação de uma futura direção colorida.
+
+**Limites:** a voz direta de Virmura permanece como no roteiro integrado. A guilda que apoia a equipe X/Y preterida segue sem identidade específica. A correspondência comprova o vínculo narrativo, mas sua autenticação visual final permanece em avaliação. Dificuldades e preços são os valores experimentais solicitados para esta versão. Os [testes e capturas](VERIFICACAO-V3.md) verificam execução e continuidade de estado; não medem recepção humana, duração real ou aprovação das falas.
+
+Na secundária `side2`, a peça pertence a uma bancada articulada. Essa distinção evita repetir o caso de lesões e da peça de treino investigado em R2, preservando a tarefa de explicar o uso e sua recompensa.

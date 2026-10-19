@@ -172,7 +172,7 @@ São objetos de missão com origem e destino, sem inventário de equipamento, pe
 
 **Meruna:** Tragam fontes, um procedimento e os limites da conclusão. Eu ouvirei as três guildas. Ghork, você não precisa prometer ajuda a todas para estudar com elas.
 
-**Saída:** volta à segunda missão que disparou E01. As demais segundas missões retomam o contrato sem repetir esta reunião. A pista cartográfica concreta é tratada na decisão P01, ao final; até sua definição não atribuir a divergência a fraude ou geografia mutável.
+**Saída:** volta à segunda missão que disparou E01. As demais segundas missões retomam o contrato sem repetir esta reunião. A pista cartográfica concreta é tratada na decisão P01, ao final; sua resolução não atribui a divergência a fraude ou geografia mutável.
 
 <a id="e02"></a>
 ### E02 — Um nome anterior ao cartaz
@@ -352,7 +352,7 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 - **“Vou separar as referências de percurso.”** — **Virmura:** Marque o que aparece no relato. Se não está aqui, deixe a pergunta ao lado.
 - **“Quero saber quem carregava a maca.”** — **Virmura:** Uma equipe de retirada. Não confunda o tempo deles com o de um viajante sozinho.
 
-[Ghork organiza e recebe uma cópia sem dados pessoais. O objetivo passa a ser levá-la a Elune, na casa de contratos. A evidência cartográfica específica depende de P01.]
+[Ghork organiza e recebe uma cópia sem dados pessoais. O objetivo passa a ser levá-la a Elune, na casa de contratos. A cópia registra o ponto de partida e a direção da retirada, conforme P01.]
 
 **Elune:** Posso ficar com uma cópia? Esta referência precisa acompanhar a comparação.
 
@@ -545,7 +545,7 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 - **“Onde aconteceu a troca?”** — **Pirka:** Aqui no registro está a referência usada pela equipe. Copie junto da descrição. Um nome solto já me fez perder uma tarde.
 - **“Você viu o trecho depois da troca?”** — **Pirka:** Não. Se alguém disser que eu vi, mande essa pessoa conversar comigo.
 
-[Ghork anota o limite do testemunho, sem preencher o trecho interno. A relação concreta com os mapas depende de P01.]
+[Ghork anota o limite do testemunho, sem preencher o trecho interno. A cópia registra o ponto de partida e a direção da entrada no trecho conhecido, conforme P01.]
 
 **Ghork:** Temos uma viagem menor do que parecia no papel.
 
@@ -738,7 +738,7 @@ As tarefas de A adaptam a aproximação por ajuda prática de PC1-Mick/Casey. A 
 1. **“Precisamos conferir as referências antes de comparar.”** — **Sevrak:** Registre quais. Outra pessoa precisa repetir sua verificação.
 2. **“Uma diferença no desenho pode ter mais de uma explicação.”** — **Sevrak:** Separe as hipóteses. Depois procure uma evidência que permita descartá-las.
 
-[Ghork prepara campos para origem da medida, referência e trecho descrito. O preenchimento específico depende de P01.]
+[Ghork prepara campos para origem da medida, referência e trecho descrito. As fontes autorizadas de entrada e retirada permitem preencher esses campos, conforme P01.]
 
 **Ghork:** Você já sabe a resposta?
 
@@ -2419,7 +2419,7 @@ O núcleo do golpe e dos Ignotos mantém as referências já confirmadas na [bas
 
 | ID | Onde aparece | Proposta e custo de adotá-la |
 | --- | --- | --- |
-| P01 | A2–A5, B2–B5, C2–C5, E04 e entrega do contrato | A causa dos mapas permanece explicitamente adiada. Foi apresentada ao autor a possibilidade de levantamentos feitos a partir de entradas e referências diferentes, conferíveis por registros de carga e retirada. Até confirmação, nenhuma fala assume essa causa. Falta inserir a evidência cartográfica concreta para que a investigação funcione como problema solucionável, e não apenas comparação de métodos. |
+| P01 | A2–A5, B2–B5, C2–C5, E04 e entrega do contrato | Resolvida para a integração do protótipo por instrução do autor: um croqui acompanha a entrada da passagem estreita até a bifurcação; o outro acompanha a retirada no sentido inverso. Registros autorizados comprovam os pontos de partida e a direção. Cada cadeia fornece evidências suficientes; Elune auxilia a comparação sem exigir completar as demais guildas. O trecho conhecido coincide; o restante permanece desconhecido. A demonstração integra A2/B3/C3 e a defesa de E04. |
 | P02 | E04 | A hostilidade se manifesta em recusa de recursos institucionais e competição por contratos e campeonato, preservando cuidado e gratidão. O custo dramático é que não há traição pessoal para justificar a ruptura; a disputa institucional precisa bastar para o tipo de inimizade desejado. |
 | P03 | E06 e Q-33 | Usar a mágoa profissional já proposta, sem perda presumida de emprego ou pagamento. A guilda patrocinadora continua sem identidade escolhida, por decisão anterior de adiar; as falas funcionam sem nomeá-la, mas seu emblema precisa de decisão antes da encenação final. |
 | P04 | A1, contatos e encerramento | Enfermaria e abrigo na sede; Virmura com fala direta; recargas necessárias acessíveis por ela em qualquer rota. O custo é preservar atendimento mesmo na hostilidade institucional. Não define cura, prazo ou preço de recarga. |
@@ -2431,7 +2431,7 @@ O núcleo do golpe e dos Ignotos mantém as referências já confirmadas na [bas
 | P10 | Intervenções e batalhas | Falas e condições de opções pagas nos três arcos, cobertura de recrutamento e reveses gratuitos. Preços, recompensas, dificuldades e ritmo das revanches continuam pendentes de balanceamento. O roteiro não resolve esses números por inferência. |
 | P11 | B4 e C4 | Dois confrontos de cobrança solicitados pelo autor, encaixados nas cinco quests das respectivas guildas. Não são novas cadeias, mas aumentam as batalhas de um percurso que explore essas rotas. Exigem validar a passagem da recuperação à condição de lutar, sem exigir cura completa. |
 
-P01 é a única lacuna deliberada que deixa sem conteúdo concreto parte da demonstração cartográfica. P03 permite diálogo completo com patrocinador não nomeado. As demais questões têm uma solução escrita para revisão, sem aprovação automática. Preços, dificuldades e autenticidade material dos documentos continuam limitações de implementação; não impedem a leitura do roteiro, mas precisam ser resolvidos antes de publicar uma versão jogável definitiva.
+P01 tem resolução concreta autorizada para esta integração, registrada acima. P03 permite diálogo completo com patrocinador não nomeado. As demais questões têm uma solução escrita para revisão, sem aprovação automática. Preços, dificuldades e autenticidade material dos documentos continuam limitações de implementação; não impedem a leitura do roteiro, mas precisam ser resolvidos antes de publicar uma versão jogável definitiva.
 
 ### Conferência por percurso
 

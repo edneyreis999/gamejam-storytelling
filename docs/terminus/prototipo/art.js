@@ -5,6 +5,10 @@
     typeof module !== "undefined"
       ? require("./art-authority.js")
       : root.TerminusArtAuthority;
+  const files =
+    typeof module !== "undefined"
+      ? require("./asset-files.js")
+      : root.TerminusAssetFiles;
   const assets = {};
   const slug = (text) =>
     text
@@ -70,7 +74,7 @@
       assets[asset.id] = {
         editorial: "Proposta de encenação",
         status: "A produzir",
-        file: `assets/${asset.category}/${asset.id}.png`,
+        file: asset.preview || `assets/${asset.category}/${asset.id}.png`,
         ...asset,
       };
     return asset.id;
@@ -202,42 +206,94 @@
       source: source.places[location].source,
       brief,
       reference: source.places[location].brief,
-      format: "PNG opaco · 1280 × 720 · 16:9",
+      format: `PNG opaco · arquivo 1672 × ${id === "virmura-sede" ? 940 : 941} · palco de referência 1280 × 720`,
       orientation:
         "Enquadramento fixo; faixa inferior de diálogo e centro de descrição livres de informação indispensável.",
       reason: "Situar as cenas deste enquadramento.",
-      preview: id === "coreto" ? "assets/coreto.png" : null,
-      status:
-        id === "coreto"
-          ? "Referência disponível; final colorido a produzir"
-          : "A produzir",
+      preview:
+        "../../../assets/terminus/locais/" + files.backgrounds[id] + ".png",
+      status: "Em avaliação artística",
     });
   function portrait(speaker, expression = "atento", pose = "base") {
-    if (speaker === "Criança") return null;
+    const expressionMap = {
+      atento: "neutro",
+      investigativo: "confuso",
+      firme: "neutro",
+      preocupado: "triste",
+      vulneravel: "triste",
+      alegre: "feliz",
+      ironico: "feliz",
+      exausto: "triste",
+      hostil: "raiva",
+      reflexivo: "neutro",
+    };
+    const selected = expressionMap[expression] || expression;
     const key =
       speaker === "Savel"
         ? "neral"
         : speaker === "Rheed"
           ? "rheed"
           : slug(speaker);
-    const person = source.characters[key];
+    const provisional = [
+      "Assaltante",
+      "Veterano",
+      "Iniciante",
+      "Ferido",
+      "Testemunha",
+      "Trabalhador",
+      "Pirka e Jorvi",
+      "Representantes dos trabalhadores",
+      "Responsável pela cisterna",
+    ];
+    const person =
+      source.characters[key] ||
+      (provisional.includes(speaker)
+        ? {
+            source: "../storytelling/quests-da-campanha.md",
+            appearance:
+              "Figurante identificado pelo papel; aparência provisória.",
+            notes: "Sem imagem correspondente.",
+          }
+        : null);
     if (!person) throw new Error(`Personagem sem ficha: ${speaker}`);
-    const exp = expressions[expression];
+    const exp =
+      expressions[
+        {
+          neutro: "atento",
+          confuso: "investigativo",
+          triste: "preocupado",
+          feliz: "alegre",
+          raiva: "hostil",
+        }[selected]
+      ];
+    const visual =
+      speaker === "Savel"
+        ? "neral-disfarce"
+        : speaker === "Neral"
+          ? pose === "transformado"
+            ? "neral-transformado"
+            : "neral-revelado"
+          : key;
+    const available = files.portraits[visual];
     if (!exp) throw new Error(`Expressão sem direção de arte: ${expression}`);
     const persona = speaker === "Savel" ? "savel" : key;
     const base = `pose-${persona}-${pose}`;
     return register({
-      id: `bust-${persona}-${pose}-${expression}`,
+      id: `bust-${persona}-${pose}-${selected}`,
+      preview: available ? available.files[selected] : null,
+      concept: available ? available.concept : null,
+      status: available ? "Em avaliação artística" : "Representação provisória",
       category: "bust",
-      name: `${speaker} — ${exp[0]}${pose === "base" ? "" : ` · ${pose}`}`,
+      name: `${speaker} — ${selected}${pose === "base" ? "" : ` · ${pose}`}`,
       owner: speaker,
       base,
-      variant: expression,
+      variant: selected,
       source: person.source,
       brief: `${person.appearance}\n\nRosto: ${exp[1]}\nPostura: ${exp[2]}${pose === "transformado" ? "\nPose nova: corpo deformado pelo concentrado, silhueta ampliada e assimétrica. Manter sinais que permitam reconhecer Neral. Anatomia adicional é proposta, não poder novo." : ""}${speaker === "Savel" ? "\nDisfarce público de Neral como fornecedor: aparência comercial, sem revelar antecipadamente sinais da transformação." : ""}${speaker === "Lala" ? "\nContato à distância pelo colar. Mostrar busto recortado sem cenário de Daratrine; não implica presença física em Terminus." : ""}`,
       reference: person.notes,
-      format:
-        "PNG transparente · tela 640 × 720 · cabeça e tronco; alinhar pés do recorte e olhos entre variantes",
+      format: available
+        ? "PNG transparente · 504 × 672 · cabeça e tronco; proporção e transparência preservadas"
+        : "Representação provisória · cabeça e tronco, sem ilustração correspondente",
       orientation:
         "Ghork à esquerda; interlocutores à direita, três quartos voltados ao centro. Rheed frontal no presente. Não espelhar assimetrias sem revisão.",
       reason: "Sustentar a intenção das falas e pensamentos referenciados.",
@@ -415,6 +471,27 @@
       reason: "Reutilizado por todas as passagens do tipo.",
       status: "Implementado em CSS",
       file: null,
+    });
+  const campaign =
+    typeof module !== "undefined"
+      ? require("./campaign.js")
+      : root.TerminusContent;
+  for (const [id, name] of Object.entries(campaign.items))
+    register({
+      id: `quest-${id}`,
+      category: "object",
+      name,
+      owner: "Ghork",
+      base: null,
+      variant: "Objeto de missão",
+      source: "../storytelling/quests-da-campanha.md",
+      status: "Representação provisória",
+      brief: `${name}, isolado sobre fundo transparente. Representa posse ou entrega; não compõe equipamento ou peso.`,
+      reference:
+        "Origem, destinatário e devolução definidos pelas etapas da quest.",
+      format: "PNG transparente · objeto central",
+      orientation: "Sem espelhamento automático.",
+      reason: "Identificar a obtenção e a entrega no palco.",
     });
   root.TerminusArt = { assets, portrait, slug, expressions };
   if (typeof module !== "undefined") module.exports = root.TerminusArt;
