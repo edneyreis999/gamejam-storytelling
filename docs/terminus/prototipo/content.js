@@ -10,7 +10,7 @@
     },
     B: { name: "Caminhos Abertos", mentor: "Borun", place: "Guilda de Borun" },
     C: {
-      name: "Ofício da Ascensão",
+      name: "Chapéu Minúsculo",
       mentor: "Sevrak",
       place: "Guilda de Sevrak",
     },

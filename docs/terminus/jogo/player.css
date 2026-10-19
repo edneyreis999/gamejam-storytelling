@@ -115,17 +115,41 @@ svg { flex-shrink: 0; }
 .reading-controls > .choices { width: 100%; margin-top: 0; }
 .reading-controls > span, .reading-controls .hint { margin-right: auto; font-size: var(--player-caption); }
 .advance { min-width: 144px; }
-.description-panel { left: 50%; bottom: 8%; transform: translateX(-50%); width: min(78%, 880px); }
+.describing::before { content: ""; position: absolute; inset: 0; background: var(--player-light-shadow); pointer-events: none; z-index: 1; }
+.description-panel {
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  width: min(78%, 880px);
+  max-height: 72%;
+  display: flex;
+  flex-direction: column;
+  background: var(--accent);
+  color: var(--paper);
+  border: 1px solid var(--player-gold);
+  border-left: var(--s2) solid var(--paper);
+  box-shadow: var(--player-shadow);
+  text-align: left;
+  overflow-y: auto;
+}
+.description-panel > p { min-height: 0; flex: 1 1 auto; max-height: none; }
+.description-panel .reading-controls { flex-shrink: 0; }
+.description-panel button.advance { background: var(--paper); color: var(--accent); border-color: var(--paper); box-shadow: var(--player-control-shadow); }
+.description-panel button.advance:hover { background: var(--accent-soft); }
+.description-panel .choices > button { border-left-color: var(--player-gold); }
 .description-panel .speaker-plate { display: none; }
 .choices { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s4); max-height: calc(var(--frame-height) * .25); overflow-y: auto; padding: var(--s1); }
 .choices > button { flex: 1 1 190px; text-align: left; border-left: 4px solid var(--accent); background: var(--surface); padding: var(--s3) var(--s4); }
 .choices > button:hover:not(:disabled) { transform: translateY(-2px); background: var(--accent-soft); }
 .choices button small { display: block; margin-top: var(--s1); font-size: var(--player-caption); }
 .scene-object { position: absolute; top: 17%; left: 38%; width: 24%; height: 30%; pointer-events: none; }
+.describing .scene-object { top: 8%; height: 24%; z-index: 2; }
 .scene-object img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 8px 12px var(--player-heavy-shadow)); }
 .scene-object figcaption { background: var(--paper); text-align: center; font-size: var(--player-label); }
 .location-panel { position: absolute; right: var(--s6); top: 14%; bottom: var(--s6); width: min(42%, 520px); padding: var(--s8); background: var(--player-soft-paper); border: 1px solid var(--player-border); box-shadow: var(--player-panel-shadow); overflow: auto; }
 .location-panel h1 { margin-bottom: var(--s4); }
+.coreto-visit .portrait { left: 1%; right: auto; }
 .location-panel > p { margin-bottom: var(--s4); }
 .actions, .menu-actions { display: flex; flex-wrap: wrap; gap: var(--s3); }
 .activities { display: grid; gap: var(--s3); margin: var(--s6) 0; }
@@ -261,10 +285,10 @@ noscript { position: fixed; inset: 0; display: grid; place-content: center; back
   .title-copy { top: 10%; }
   .title-actions { gap: var(--s2); margin-top: var(--s6); }
   .title-actions button { padding: var(--s2) var(--s4); }
-  .dialogue-panel, .description-panel { bottom: var(--s4); padding: var(--s4) var(--s6) var(--s3); max-height: 58%; }
-  .dialogue-panel { left: var(--s4); width: 75%; }
+  .dialogue-panel, .description-panel { padding: var(--s4) var(--s6) var(--s3); }
+  .dialogue-panel { left: var(--s4); bottom: var(--s4); width: 75%; max-height: 58%; }
   .scene-screen:has(.speaker-ghork:not(.portrait-out)) .dialogue-panel { right: var(--s4); }
-  .dialogue-panel > p, .description-panel > p { max-height: calc(var(--frame-height) * .24); }
+  .dialogue-panel > p { max-height: calc(var(--frame-height) * .24); }
   .speaker-plate { font-size: var(--player-body); }
   .reading-controls { margin-top: var(--s2); }
   .choices { gap: var(--s2); margin-top: var(--s2); }
@@ -292,7 +316,7 @@ noscript { position: fixed; inset: 0; display: grid; place-content: center; back
   .tagline { font-size: var(--player-body); }
   .studio { font-size: var(--player-caption); bottom: var(--s2); }
   .dialogue-panel { width: 82%; bottom: var(--s2); }
-  .description-panel { width: 84%; bottom: var(--s2); }
+  .description-panel { width: 84%; }
   .dialogue-panel > p, .description-panel > p { line-height: 1.35; }
   .reading-controls > span, .reading-controls .hint { display: none; }
   .speaker-plate { top: -16px; }

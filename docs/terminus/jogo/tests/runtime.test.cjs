@@ -12,6 +12,22 @@ const context = vm.createContext({});
 for (const file of ['art.js', 'map.js', 'locale.js', 'script.js'])
   vm.runInContext(fs.readFileSync(path.join(root, 'runtime', file), 'utf8'), context);
 
+test('Tiny Hat costume and five expressions resolve identically in the standalone runtime', () => {
+  const names = ['Sevrak', 'Ghork', 'Brakka', 'Nima', 'Sura', 'Edrin', 'Korr', 'Velka', 'Tessa', 'Mavren', 'Odrik', 'Lethra'];
+  for (const guild of [null, 'A', 'B', 'C']) {
+    for (const invited of [false, true]) {
+      const state = {guild, stage: guild ? 3 : 1, recruits: names.slice(2).map(name => ({name, invited}))};
+      for (const name of names) {
+        const outfit = context.TerminusArt.costume(name, state);
+        assert.equal(outfit, A.costume(name, state));
+        for (const expression of ['neutro', 'feliz', 'triste', 'raiva', 'confuso'])
+          assert.equal(context.TerminusArt.portrait(name, expression, 'base', outfit), A.portrait(name, expression, 'base', outfit));
+      }
+    }
+  }
+  assert.equal(context.TerminusArt.portrait('Sevrak', 'neutro'), A.portrait('Sevrak', 'neutro'));
+});
+
 test('Player runtime is synchronized with the production sources', () => {
   execFileSync(process.execPath, [path.join(root, 'scripts/build-runtime.cjs'), '--check']);
 });

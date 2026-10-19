@@ -200,7 +200,7 @@
       "coreto",
       "Coreto — Noite da História",
       "coreto-da-noite-da-historia",
-      "Tablado, banco e lanternas à noite. Presente narrativo em cores; Rheed separado do fundo. A referência sépia existente não é a arte final colorida.",
+      "Tablado, banco e lanternas à noite. Presente narrativo em cores: madeira quente, vegetação verde e sombras azuis e roxas. Rheed separado do fundo.",
     ],
   ];
   for (const [id, name, location, brief] of backgrounds)
@@ -222,7 +222,13 @@
         "../../../assets/terminus/locais/" + files.backgrounds[id] + ".png",
       status: "Em avaliação artística",
     });
-  function portrait(speaker, expression = "atento", pose = "base") {
+  function costume(speaker, state = {}) {
+    if (speaker === "Sevrak") return "tiny-hat";
+    if (state.guild !== "C") return "base";
+    return speaker === "Ghork" || state.recruits?.some(r => r.invited && r.name === speaker)
+      ? "tiny-hat" : "base";
+  }
+  function portrait(speaker, expression = "atento", pose = "base", outfit = speaker === "Sevrak" ? "tiny-hat" : "base") {
     const expressionMap = {
       atento: "neutro",
       investigativo: "confuso",
@@ -287,19 +293,22 @@
               ? pose === "segundo" ? "trabalhador-2" : "trabalhador-1"
               : key;
     const available = files.portraits[visual];
+    const selectedFiles = outfit === "base" ? available?.files : available?.costumes?.[outfit];
+    if (outfit !== "base" && !selectedFiles) throw new Error(`Traje sem arquivos: ${visual}/${outfit}`);
     if (!exp) throw new Error(`Expressão sem direção de arte: ${expression}`);
     const persona = speaker === "Savel" ? "savel" : key;
     const base = `pose-${persona}-${pose}`;
     return register({
-      id: `bust-${persona}-${pose}-${selected}`,
-      preview: available ? available.files[selected] : null,
+      id: `bust-${persona}-${pose}-${selected}${outfit === "base" ? "" : `-${outfit}`}`,
+      preview: selectedFiles ? selectedFiles[selected] : null,
       concept: available ? available.concept : null,
       status: available ? "Em avaliação artística" : "Representação provisória",
       category: "bust",
-      name: `${speaker} — ${selected}${pose === "base" ? "" : ` · ${pose}`}`,
+      name: `${speaker} — ${selected}${pose === "base" ? "" : ` · ${pose}`}${outfit === "tiny-hat" ? " · Chapéu Minúsculo" : ""}`,
       owner: speaker,
       base,
       variant: selected,
+      costume: outfit,
       source: person.source,
       brief: `${person.appearance}\n\nRosto: ${exp[1]}\nPostura: ${exp[2]}${pose === "transformado" ? "\nPose nova: corpo deformado pelo concentrado, silhueta ampliada e assimétrica. Manter sinais que permitam reconhecer Neral. Anatomia adicional é proposta, não poder novo." : ""}${speaker === "Savel" ? "\nDisfarce público de Neral como fornecedor: aparência comercial, sem revelar antecipadamente sinais da transformação." : ""}${speaker === "Lala" ? "\nContato à distância pelo colar. Mostrar busto recortado sem cenário de Daratrine; não implica presença física em Terminus." : ""}`,
       reference: available && provisional.includes(speaker)
@@ -520,6 +529,11 @@
     orientation: "Sem recorte ou espelhamento; proporção original preservada.",
     reason: "Navegação da campanha após Q-A1.",
   });
-  root.TerminusArt = { assets, portrait, slug, expressions };
+  for (const [id, entry] of Object.entries(files.portraits)) {
+    if (!entry.costumes) continue;
+    for (const expression of ["neutro", "feliz", "triste", "raiva", "confuso"])
+      portrait(id[0].toUpperCase() + id.slice(1), expression, "base", "tiny-hat");
+  }
+  root.TerminusArt = { assets, portrait, costume, slug, expressions };
   if (typeof module !== "undefined") module.exports = root.TerminusArt;
 })(globalThis);

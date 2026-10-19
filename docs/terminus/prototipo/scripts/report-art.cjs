@@ -2,6 +2,7 @@
 const { build } = require("../catalog.js");
 const files = require("../asset-files.js");
 const portraits = Object.values(files.portraits);
+const costumes = portraits.reduce((sum, portrait) => sum + Object.values(portrait.costumes || {}).reduce((count, expressions) => count + Object.keys(expressions).length, 0), 0);
 const { records, uses, variants } = build();
 const used = records.filter((a) => a.uses.length);
 const of = (category) => used.filter((a) => a.category === category);
@@ -14,7 +15,7 @@ const rows = [
   "",
   "Status: em desenvolvimento.",
   "",
-  `Retrato gerado por \`scripts/report-art.cjs\`. As fichas completas e os usos estão no inventário HTML. O registro integra ${Object.keys(files.backgrounds).length} fundos, ${portraits.reduce((sum, portrait) => sum + Object.keys(portrait.files).length, 0)} expressões produzidas para ${portraits.length} visuais e 15 artes do mapa. A tabela conta referências usadas nas passagens ou na navegação, incluindo representações provisórias; não é uma encomenda de novos desenhos.`,
+  `Retrato gerado por \`scripts/report-art.cjs\`. As fichas completas e os usos estão no inventário HTML. O registro integra ${Object.keys(files.backgrounds).length} fundos, ${portraits.reduce((sum, portrait) => sum + Object.keys(portrait.files).length, 0)} expressões produzidas para ${portraits.length} visuais, ${costumes} variantes de traje e 15 artes do mapa. A tabela conta referências usadas nas passagens ou na navegação, incluindo representações provisórias; não é uma encomenda de novos desenhos.`,
   "",
   "| Categoria | Imagens/componentes com uso |",
   "| --- | ---: |",

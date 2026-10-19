@@ -6,16 +6,23 @@ const A = require(path.join(prototype, 'art.js'));
 const K = require(path.join(prototype, 'catalog.js'));
 const portraits = {};
 const portrait = A.portrait;
-A.portrait = (speaker, expression = 'atento', pose = 'base') => {
-  const id = portrait(speaker, expression, pose);
-  portraits[JSON.stringify([speaker, expression, pose])] = id;
+A.portrait = (speaker, expression = 'atento', pose = 'base', outfit = speaker === 'Sevrak' ? 'tiny-hat' : 'base') => {
+  const id = portrait(speaker, expression, pose, outfit);
+  portraits[JSON.stringify([speaker, expression, pose, outfit])] = id;
   return id;
 };
 K.build();
+for (const [id, entry] of Object.entries(require(path.join(prototype, 'asset-files.js')).portraits)) {
+  if (!entry.costumes) continue;
+  const speaker = id[0].toUpperCase() + id.slice(1);
+  for (const outfit of ['base', ...Object.keys(entry.costumes)])
+    for (const expression of ['neutro', 'feliz', 'triste', 'raiva', 'confuso'])
+      A.portrait(speaker, expression, 'base', outfit);
+}
 for (const key of Object.keys(portraits)) {
-  const [speaker, , pose] = JSON.parse(key);
+  const [speaker, , pose, outfit] = JSON.parse(key);
   for (const expression of ['neutro', 'feliz', 'triste', 'raiva', 'confuso', ...Object.keys(A.expressions)])
-    A.portrait(speaker, expression, pose);
+    A.portrait(speaker, expression, pose, outfit);
 }
 const assets = Object.fromEntries(Object.entries(A.assets).map(([id, a]) => [id, {
   id, name: a.name, owner: a.owner, category: a.category, preview: a.preview || null,
@@ -32,7 +39,7 @@ const records = require(path.join(prototype, 'locales/en-US.js'))
   .map(({id, pt, en, template}) => ({id, pt, en, ...(template ? {template} : {})}));
 const script = require(path.join(prototype, 'quest-script.js'));
 const outputs = {
-  'art.js': `globalThis.TerminusArt = (() => {\nconst assets = ${JSON.stringify(assets)};\nconst portraits = ${JSON.stringify(portraits)};\nreturn {assets, portrait(speaker, expression = 'atento', pose = 'base') {\nconst id = portraits[JSON.stringify([speaker, expression, pose])];\nif (!id) throw new Error('Unknown portrait: ' + speaker + '/' + expression + '/' + pose);\nreturn id;\n}};\n})();\n`,
+  'art.js': `globalThis.TerminusArt = (() => {\nconst assets = ${JSON.stringify(assets)};\nconst portraits = ${JSON.stringify(portraits)};\nreturn {assets, costume: ${A.costume.toString()}, portrait(speaker, expression = 'atento', pose = 'base', outfit = speaker === 'Sevrak' ? 'tiny-hat' : 'base') {\nconst id = portraits[JSON.stringify([speaker, expression, pose, outfit])];\nif (!id) throw new Error('Unknown portrait: ' + speaker + '/' + expression + '/' + pose);\nreturn id;\n}};\n})();\n`,
   'map.js': `globalThis.TERMINUS_MAP = ${JSON.stringify(map)};\n`,
   'locale.js': `globalThis.TerminusLocale = ${JSON.stringify(records)};\n`,
   'script.js': `globalThis.TerminusQuestScript = ${JSON.stringify({records: script.records})};\n`,

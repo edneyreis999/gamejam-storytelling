@@ -12,6 +12,31 @@ const script = require("../quest-script");
 const { finishScene, finishQuest, start, play } = require("./helpers.cjs");
 const data = K.build();
 
+test("Chapéu Minúsculo acompanha adesão e convite, preservando os candidatos e outras rotas", () => {
+  const names = C.pairs.flatMap(pair => pair.names);
+  const expressions = ["neutro", "feliz", "triste", "raiva", "confuso"];
+  for (const guild of [null, "A", "B", "C"]) {
+    for (const invited of [false, true]) {
+      const state = { guild, stage: guild ? 2 : 1, recruits: names.map(name => ({ name, invited })) };
+      assert.equal(A.costume("Sevrak", state), "tiny-hat");
+      assert.equal(A.costume("Ghork", state), guild === "C" ? "tiny-hat" : "base");
+      for (const name of names) {
+        const outfit = A.costume(name, state);
+        assert.equal(outfit, guild === "C" && invited ? "tiny-hat" : "base", name);
+        for (const expression of expressions) {
+          const id = A.portrait(name, expression, "base", outfit);
+          assert.equal(A.assets[id].preview.includes("/tiny-hat/"), guild === "C" && invited);
+          assert.equal(A.assets[id].variant, expression);
+        }
+      }
+      assert.equal(A.costume("Virmura", state), "base");
+    }
+  }
+  assert.equal(A.costume("Ghork", {guild: "C", stage: 1}), "tiny-hat", "Adesão confirmada antes de concluir a cena");
+  assert.equal(A.costume("Ghork", {guild: "C", stage: 2, recruits: []}), "tiny-hat", "Campanha solo");
+  assert.equal(A.costume("Nima", {guild: "C", stage: 3, recruits: [{name: "Brakka", invited: true}]}), "base", "Adversária não recrutada");
+});
+
 test("Catálogo cobre todas as páginas e respostas aplicáveis sem instruções editoriais", () => {
   const ids = new Set(data.records.map((a) => a.id));
   assert.equal(ids.size, data.records.length);
@@ -40,6 +65,18 @@ test("Catálogo cobre todas as páginas e respostas aplicáveis sem instruções
     if (p.type === "dialogue")
       assert.equal(A.assets[p.bust].owner, p.speaker, p.id);
   }
+});
+
+test("Prévias editoriais respeitam adesão e não antecipam o convite do candidato", () => {
+  const context = K.context("C", "X", "aliados-a");
+  const passages = (id) => C.quests[id].pages.flatMap((_, page) => K.preview(id, page, null, context));
+  for (const p of passages("gC1")) {
+    if (p.speaker === "Ghork") assert.equal(A.assets[p.bust].costume, "base");
+    if (p.speaker === "Sevrak") assert.equal(A.assets[p.bust].costume, "tiny-hat");
+  }
+  assert.ok(passages("commitC").some(p => p.speaker === "Ghork" && A.assets[p.bust].costume === "tiny-hat"));
+  for (const p of passages("R1"))
+    if (C.pairs[0].names.includes(p.speaker)) assert.equal(A.assets[p.bust].costume, "base");
 });
 
 test("Recorte de autoria corresponde ao roteiro usado na montagem", () => {

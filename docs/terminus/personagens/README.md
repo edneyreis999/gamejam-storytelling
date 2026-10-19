@@ -38,7 +38,7 @@ As fichas de estrutura incluem dez heróis opcionais: isso não significa que to
 | [Criança jogadora](crianca.md) | Ponto de vista da moldura; uma identidade funcional |
 | [Virmura](virmura.md) | Líder da guilda dos curandeiros, proposta como Mãos do Amparo (A) |
 | [Borun Passo-Largo](borun.md) | Líder dos Caminhos Abertos (B); novo habitante |
-| [Sevrak Vey](sevrak.md) | Líder do Ofício da Ascensão (C); novo habitante |
+| [Sevrak Vey](sevrak.md) | Líder da Chapéu Minúsculo (C); novo habitante |
 | [Dorga Malho-Negro](dorga.md) | Dirigente do Estandarte de Ferro, quarta guilda |
 | [Torvak Quebra-Ferro](torvak.md) | Campeão fixo do torneio; representante do Estandarte de Ferro |
 | [Neral, apresentado como Savel](neral.md) | Vendedor recorrente e chefão Ignoto pós-campeonato; uma única identidade |

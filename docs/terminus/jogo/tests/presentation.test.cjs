@@ -35,7 +35,7 @@ function animationFixture() {
   };
 }
 
-test('Walking settles within 1.2 seconds and skipping/cancelling settle once', async () => {
+test('Walking settles within 2.4 seconds and skipping/cancelling settle once', async () => {
   for (const mode of ['natural', 'skip', 'cancel', 'reduced', 'stationary']) {
     const { api, pawn, frames, classes, tick } = animationFixture();
     const movement = api.travel(pawn, 'mercado', mode === 'stationary' ? 'mercado' : 'coliseu', { reduced: mode === 'reduced' });
@@ -46,6 +46,7 @@ test('Walking settles within 1.2 seconds and skipping/cancelling settle once', a
     tick(0);
     tick(600);
     tick(1200);
+    tick(2400);
     const result = await movement.finished;
     assert.equal(result.cancelled, mode === 'cancel');
     assert.equal(settled, 1);
@@ -57,6 +58,45 @@ test('Walking settles within 1.2 seconds and skipping/cancelling settle once', a
       assert.equal(pawn.style.transform, `translate(${x - 20}px, ${y - 52}px)`);
     }
   }
+});
+
+test('Every non-stationary route takes twice its original duration', async () => {
+  for (const from of map.destinations) for (const to of map.destinations) {
+    if (from.id === to.id) continue;
+    const path = P.route(from.id, to.id);
+    const distance = path.slice(1).reduce((sum, point, index) => sum + Math.hypot(point[0] - path[index][0], point[1] - path[index][1]), 0);
+    const previousDuration = Math.min(1200, Math.max(360, distance * 1.6));
+    const { api, pawn, frames, classes, tick } = animationFixture();
+    const movement = api.travel(pawn, from.id, to.id);
+    tick(0);
+    tick(previousDuration);
+    assert.ok(classes.has('is-walking'), `${from.id} → ${to.id} must still be walking at original duration`);
+    tick(previousDuration * 2 - 1);
+    assert.ok(classes.has('is-walking'));
+    tick(previousDuration * 2);
+    assert.equal((await movement.finished).cancelled, false);
+    assert.equal(frames.size, 0);
+  }
+});
+
+test('Walking frames and footfalls run at half the original cadence', async () => {
+  const { api, pawn, tick } = animationFixture();
+  let footsteps = 0;
+  const movement = api.travel(pawn, 'mercado', 'coliseu', { onStep: () => footsteps++ });
+  tick(0);
+  assert.equal(footsteps, 1);
+  assert.ok(pawn.style.backgroundPosition.startsWith('0px'));
+  tick(359);
+  assert.ok(pawn.style.backgroundPosition.startsWith('0px'));
+  tick(360);
+  assert.ok(pawn.style.backgroundPosition.startsWith('-40px'));
+  tick(719);
+  assert.equal(footsteps, 1);
+  tick(720);
+  assert.ok(pawn.style.backgroundPosition.startsWith('-80px'));
+  assert.equal(footsteps, 2);
+  movement.finish();
+  await movement.finished;
 });
 
 test('Combat roster reveals only recruited allies and already selected opponents', () => {

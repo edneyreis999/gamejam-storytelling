@@ -6,7 +6,7 @@ const L = require("../localization.js");
 const { play, start } = require("./helpers.cjs");
 const url = pathToFileURL(path.resolve(__dirname, "../index.html")).href;
 const cases = [
-  { id: "welcome", scene: "intro", passage: "intro.p1.body.1", visual: "rheed" },
+  { id: "welcome", scene: "intro", passage: "intro.p1.body.1", visual: "rheed-colorido-v1" },
   { id: "rescue", scene: "intro", passage: "intro.p4.body.1", visual: "ghork" },
   { id: "care", scene: "intro", passage: "intro.p4.body.4", visual: "virmura" },
   { id: "work-and-shelter", scene: "gA1", passage: "gA1.p1.body.3", visual: "virmura" },
