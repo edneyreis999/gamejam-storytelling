@@ -64,15 +64,9 @@ node .agents/skills/ui-craft/scripts/detect-token-drift.mjs docs/terminus/jogo -
 
 Os testes usam saves produzidos pelas regras reais e importados pela interface. Verificação automatizada não representa aceite artístico, dispositivo físico ou playtest humano completo. O protótipo editorial continua em [prototipo/index.html](../prototipo/index.html).
 
-### Resultado em 19 de outubro de 2026
-
-Passaram 93 testes Node e 40 cenários de navegador (28 da edição para jogadores e 12 do protótipo), sem cenários ignorados ou instáveis. A execução final usou dois workers e dois navegadores; os limites de dez workers e dez navegadores vieram de `loki.config.json`. Durante a inspeção visual paralela, o pico coordenado foi de três navegadores. Contextos, navegadores e servidores de teste foram encerrados sem falhas de limpeza.
-
-As evidências estão em `.artifacts/terminus-player/unit-tests.tap`, `.artifacts/terminus-player/browser-results.json` e nas pastas `browser/` e `visual/` desse mesmo diretório. A conferência incluiu abertura local e por servidor, retomada de navegação, áudio após interação, leitura e escolhas em janela estreita, além das verificações de campanha, idiomas e saves. A entrega permanece **em desenvolvimento**.
-
 ## Áudio
 
-As 16 gravações de `audio/` são cópias sem alteração de `rpg-maker/Terminus/audio/`. O catálogo em `audio.js` registra seus caminhos e ganhos por efeito. O HTML usa somente as cópias locais; não precisa acessar a pasta do RPG Maker para reproduzi-las.
+As 16 gravações de [audio/](audio/) são cópias sem alteração de [rpg-maker/Terminus/audio/](../../../rpg-maker/Terminus/audio/). O catálogo em [audio.js](audio.js) registra seus caminhos e ganhos por efeito. O HTML usa somente as cópias locais; não precisa acessar a pasta do RPG Maker para reproduzi-las.
 
 | Contexto | Arquivo em audio/ |
 | --- | --- |
@@ -93,4 +87,4 @@ Os padrões são música em 25% e efeitos em 35%, com som ativado. Preferências
 
 Para trocar uma gravação, copie o arquivo de origem para a categoria correspondente e atualize o catálogo e esta tabela. Mantenha a seleção por contexto fora das regras da campanha. A ausência de áudio não bloqueia a história.
 
-Verificação da sonorização: 96 testes Node e 30 cenários da edição no Edge passaram, incluindo reprodução por arquivo e HTTP, sinal de áudio, volumes independentes, silêncio persistente, trilhas de saves importados e ausência de recompensas repetidas. O teste de ciclo de vida cobre pausa, retomada, redução da música durante vinhetas e rejeição de reprodução. Foram usados dois workers e dois navegadores, abaixo dos limites 10/10 de `loki.config.json`; o runner encerrou os recursos sem erros de limpeza. Evidências: `.artifacts/terminus-player/audio-unit-tests.tap`, `browser-results.json` e capturas de menu em `browser/`. A inspeção visual cobriu inglês e português em janela estreita. Esta verificação técnica não inclui avaliação auditiva da seleção musical.
+A verificação técnica não substitui a avaliação auditiva da seleção musical, que permanece pendente.
