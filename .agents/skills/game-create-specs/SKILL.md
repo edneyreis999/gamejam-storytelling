@@ -24,6 +24,7 @@ A spec states intent, scope, behavior, necessary content, decided constraints, a
 
 | Companion | Write it when | Template |
 | --- | --- | --- |
+| `_execution-metrics.md` | The user requests execution instrumentation; reference [spec-execution-metrics](../spec-execution-metrics/SKILL.md), without starting collection during authorship | [activation companion](references/execution-metrics-template.md) |
 | `_user_stories.md` | Always; it is the canonical behavior catalog | [user-stories-template](references/user-stories-template.md) |
 | `_uiux.md` | Screens, menus, HUD, controls, or player feedback change | [uiux-template](references/uiux-template.md) |
 | `_dx.md` | An author- or developer-facing surface changes: editor commands and parameters, tools, delivered instructions | [dx-template](references/dx-template.md) |

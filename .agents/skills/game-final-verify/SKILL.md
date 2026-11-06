@@ -5,6 +5,8 @@ description: "On explicit request, verify a game delivery and improve its affect
 
 # Game Final Verify
 
+For an explicitly invoked verification whose spec contains `_execution-metrics.md`, use [spec-execution-metrics](../spec-execution-metrics/SKILL.md) before context preparation. Reuse its active execution or initialize a direct one; observe review, check, repair and closure activities, commands and findings, and link metrics/gaps in the existing verification record. Freeze direct-execution boundaries at closure. Collection does not invoke this procedure or widen review-only authorization.
+
 Verify the contracted behavior and the candidate that will actually be delivered. Review test value before the final verdict, apply justified changes within authorization, then validate the retained guarantees. Fewer cases or a shorter run is not a success criterion by itself.
 
 Use only when explicitly requested. Do not attach this procedure automatically to a task or delivery loop. A request to execute Final Verify authorizes supported test improvements and repairs within the delivery's scope. An expressly review-only request authorizes inspection and proposals, not edits. Neither request authorizes relaxing accepted requirements, recording human acceptance, committing, pushing, or publishing.

@@ -10,8 +10,6 @@ allowed-tools: Bash(playwright-cli:*) Bash(npx playwright:*) Bash(npx --no-insta
 
 # Browser Automation with playwright-cli
 
-Loki adaptation of Microsoft's skill; provenance and local changes are recorded in [UPSTREAM.md](UPSTREAM.md).
-
 Use this skill for browser operation within the requested task. [Game Playwright Best Practices](../game-playwright-best-practices/SKILL.md) owns test design and reliability; [Game Execute QA](../game-execute-qa/SKILL.md) owns persona sessions. Discover the project's technology guidance for engine-specific interaction and runtime constraints.
 
 Use existing project setup and scenario criteria. Exploration needs no new spec or seed test. Generated code captures actions, not independent expected results. Do not rewrite accepted behavior or skip a failing check to match what the current game does. A CLI session is not a substitute for the maintained test runner.

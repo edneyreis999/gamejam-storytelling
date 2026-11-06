@@ -1,6 +1,6 @@
 # Running Custom Playwright Code
 
-Loki adaptation of the Microsoft reference. Commands assume the uniquely named session established in [session management](session-management.md); preserve task scope and resource ownership.
+Commands assume the uniquely named session established in [session management](session-management.md); preserve task scope and resource ownership.
 
 Use `run-code` for scoped Playwright operations on the selected page when a CLI command is insufficient. Preparation and diagnosis may use internal observations; persona journeys retain their public interaction and observation requirements. Do not launch a hidden browser or turn an interactive session into another suite runner.
 

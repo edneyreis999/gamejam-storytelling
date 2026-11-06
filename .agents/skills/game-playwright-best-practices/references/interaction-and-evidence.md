@@ -57,3 +57,4 @@ Wait for the intended scene, assets/fonts, and animation state before capturing.
 For a stable rendered state, use `expect(canvas).toHaveScreenshot('menu.png')`. Choose tolerances from the visual contract and inspect diffs before accepting a new baseline. Do not raise thresholds to hide missing text or controls. Pixel/geometry assertions remain appropriate when they directly measure that contract.
 
 Playwright's `animations: 'disabled'` controls CSS/Web Animations, not the JavaScript game loop. Do not replace `requestAnimationFrame` globally or stop the game loop in a live E2E journey to make screenshots stable. A deterministic paused-frame integration test is a different sensor and cannot establish live progression. For a WebGL canvas, do not request a 2D context or use an arbitrary pixel as a generic readiness check. Capture the rendered canvas or use a justified renderer observation for the asserted visual outcome.
+

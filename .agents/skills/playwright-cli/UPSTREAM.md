@@ -12,5 +12,3 @@ Retained operational references cover sessions, custom code, storage, request mo
 Example corrections also cover awaited route responses, propagating operation failures, simulated-geolocation reset, and password fields located by label. API checks use the official [BrowserContext](https://playwright.dev/docs/api/class-browsercontext), [routing](https://playwright.dev/docs/api/class-route), and [locator](https://playwright.dev/docs/locators) documentation.
 
 Omitted upstream files: `references/test-generation.md` (its mandatory specs/seeds and plan/generate/heal ownership conflict with Loki) and `references/pr-attachments.md` (external publication is outside this skill's task). No implicit spec amendment, skip/fixme policy, global tool installation, or publication flow is adopted.
-
-The original installed in the construction repository is separate from this delivered adaptation. Future updates should diff the full upstream directory against this revision and preserve local changes, license, and attribution. Do not replace this package wholesale through the skill installer.

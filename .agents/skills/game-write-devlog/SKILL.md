@@ -3,54 +3,54 @@ name: game-write-devlog
 description: Devlogs for itch.io. Use when writing or revising development posts from project work, or archiving published devlogs. Do not use for changelogs, internal design records, or general marketing copy.
 ---
 
-# Escrever devlogs
+# Write Devlogs
 
-## 1. Conferir o trabalho e o histórico
+## 1. Check the work and history
 
-Leia as instruções do projeto, os commits indicados e seus diffs. Consulte a visão do jogo e os documentos relacionados ao assunto; em Terminus, comece por `docs/terminus/visao-do-jogo.md`. Ao tratar de personagens ou locais, siga os percursos dos respectivos índices. Resolva diferenças entre a documentação atual e o commit antes de atribuir uma decisão àquela entrega.
+Read the project instructions, the selected commits, and their diffs. Consult the game vision and documents related to the subject. When discussing characters or locations, follow their respective indexes. Resolve differences between current documentation and the commit before attributing a decision to that delivery.
 
-Separe propostas, decisões confirmadas, implementação e validação. Uma ficha escrita comprova trabalho de escrita; uma imagem de referência não comprova arte produzida. Use fontes externas conforme a precedência definida pelo projeto.
+Distinguish proposals, confirmed decisions, implementation, and validation. A written character sheet proves writing work; a reference image does not prove finished artwork. Use external sources according to the project's source precedence.
 
-Confira os devlogs locais e o histórico publicado disponível. Reutilize o número de um post ao revisá-lo ou arquivá-lo. Para um novo post, continue a sequência conhecida com o título `DevLog #X — Título`. Pergunte quando houver conflito de numeração que as fontes não resolvam.
+Check local devlogs and the available publication history. Reuse a post's number when revising or archiving it. For a new post, continue the known sequence with the title `DevLog #X — Title`. Ask when sources cannot resolve a numbering conflict.
 
-Conclua quando cada post tiver fonte, assunto, número e estado de publicação identificados.
+Finish this step when each post has an identified source, subject, number, and publication state.
 
-## 2. Escolher o que contar
+## 2. Choose what to tell
 
-Escreva para leitores do itch.io, incluindo participantes da jam que nunca viram o repositório. Use inglês por padrão, primeira pessoa do plural para a equipe e aproximadamente 250–350 palavras, salvo orientação diferente do usuário.
+Write for itch.io readers, including jam participants who have never seen the repository. Default to English, first-person plural for the team, and approximately 250–350 words unless the user directs otherwise.
 
-Escolha um avanço concreto e explique por que ele interessa à experiência de jogar ou ao processo de criação. Use o enfoque emocional informado pelo autor. Quando ele não estiver disponível, relate as decisões e o trabalho observável; não invente sentimentos, conversas da equipe, sessões de trabalho, reações de jogadores ou resultados de testes.
+Choose a concrete development and explain why it matters to the playing experience or creative process. Use the emotional perspective supplied by the author. When none is available, describe decisions and observable work; do not invent feelings, team conversations, work sessions, player reactions, or test results.
 
-Selecione um ou dois detalhes que sustentem o assunto. Preserve o estado de proposta dos exemplos e evite revelar reviravoltas da história sem solicitação. Mantenha números de commits e caminhos de arquivos nos metadados, fora do texto para os leitores.
+Select one or two details that support the subject. Keep proposed examples clearly identified as proposals, and avoid revealing story twists unless requested. Keep commit identifiers and file paths in metadata, outside the reader-facing text.
 
-Conclua quando houver um assunto central, exemplos verificáveis e limites claros sobre o que já foi feito.
+Finish this step with a central subject, verifiable examples, and clear limits on what has already been done.
 
-## Estilo de escrita
+## Writing style
 
-- Escreva como alguém contando a outro participante da jam o que acabou de trabalhar. Use contrações naturais em inglês e vocabulário cotidiano.
-- Prefira detalhes observáveis a elogios ao próprio projeto. Explique uma decisão pelo que ela muda, sem transformar o texto em uma lista de funcionalidades.
-- Varie o comprimento das frases e dos parágrafos conforme o pensamento. Preserve a gramática; informalidade não exige erros fabricados, gírias forçadas ou entusiasmo constante.
-- Escolha a abertura e o encerramento a partir do assunto de cada post. Compare com os posts anteriores para evitar repetir o mesmo percurso emocional ou bordão.
-- Use prosa contínua, sem emojis ou destaques decorativos. Reserve listas para conteúdo que realmente precise de comparação ou sequência.
-- Corte slogans, perguntas retóricas, contrastes formulaicos e encerramentos motivacionais genéricos. Termine em uma observação ou trabalho seguinte sustentado pelas fontes.
-- Trate medo do prazo, humor e entusiasmo como escolhas do autor, não como ingredientes obrigatórios de todo devlog.
+- Write as someone telling another jam participant what they just worked on. Use natural English contractions and everyday vocabulary.
+- Prefer observable details to praise for the project. Explain a decision through what it changes, without turning the text into a feature list.
+- Vary sentence and paragraph length with the thought. Preserve grammar; informality does not require manufactured mistakes, forced slang, or constant enthusiasm.
+- Choose the opening and ending from each post's subject. Compare with previous posts to avoid repeating the same emotional arc or catchphrase.
+- Use continuous prose without emojis or decorative emphasis. Reserve lists for content that needs comparison or sequence.
+- Cut slogans, rhetorical questions, formulaic contrasts, and generic motivational endings. End with an observation or next piece of work supported by the sources.
+- Treat deadline anxiety, humor, and enthusiasm as the author's choices, not mandatory ingredients of every devlog.
 
-## 3. Revisar e guardar
+## 3. Review and save
 
-Para textos novos ou reescritos, faça uma revisão independente:
+For new or rewritten text, obtain an independent review:
 
-1. Como agente autor, prepare o rascunho e delegue a revisão de voz a outro agente. Envie o texto, o público do itch.io, as preferências de estilo desta skill e do usuário e os fatos que precisam ser preservados.
-2. Instrua o agente revisor a ler integralmente [a skill humanizer](../humanizer/SKILL.md) e aplicá-la ao texto. Reserve a aplicação de humanizer exclusivamente ao revisor. Peça que devolva o texto revisado e um resumo curto das mudanças, sem publicar nem delegar novamente.
-3. Ao receber a revisão, confira cada afirmação factual contra as fontes. Confira também idioma, número, título, possíveis spoilers e metadados antes de salvar. Se reescrever substancialmente o texto após a revisão, encaminhe a nova versão ao revisor e repita a conferência antes de concluir.
+1. As the authoring agent, prepare the draft and delegate voice review to another agent. Provide the text, the itch.io audience, this skill's and the user's style preferences, and the facts that must be preserved.
+2. Instruct the reviewer to locate the installed `humanizer` skill, read it in full, and apply it to the text. Only the reviewer applies `humanizer`. Request the revised text and a short summary of changes, without publishing or further delegation.
+3. After receiving the review, check every factual claim against the sources. Also check language, number, title, possible spoilers, and metadata before saving. If you substantially rewrite the text after review, send the new version to the reviewer and repeat the checks before finishing.
 
-Se não houver outro agente disponível, informe que a revisão independente está pendente. Não a substitua por autorrevisão nem declare o fluxo concluído.
+If another agent or the `humanizer` skill is unavailable, report that independent review is pending. Do not replace it with self-review or declare the workflow complete.
 
-Organize cada devlog em uma pasta `NNN-assunto/`, com o corpo e o frontmatter em `text.md` e suas imagens em `assets/`. Em Terminus, use `docs/terminus/devlogs/002-quests/text.md` como exemplo: número preenchido com zeros à esquerda até três dígitos e assunto descritivo estável. Preserve o nome da pasta ao revisar ou arquivar o mesmo post; ao migrar um arquivo existente, use seu nome sem `.md`.
+Organize each devlog under `docs/devlogs/` in an `NNN-subject/` directory, with its body and frontmatter in `text.md` and its images in `assets/`. For example, `docs/devlogs/002-quests/text.md` uses a three-digit, zero-padded number and a stable descriptive subject. Preserve the directory name when revising or archiving the same post; when moving an existing file into this structure, use its filename without `.md`.
 
-Referencie as imagens a partir de `text.md` como `assets/nome-do-arquivo`. Versione `assets/.gitkeep` enquanto a pasta estiver vazia e retire-o ao adicionar imagens. Atualize os links do índice e as referências locais quando mover um post.
+Reference images from `text.md` as `assets/filename`. Track `assets/.gitkeep` while the directory is empty and remove it when adding images. Update index links and local references when moving a post.
 
-Use frontmatter para `status: em desenvolvimento`, `publicacao: rascunho` ou `publicado`, `commit` e `idioma`. Inclua `url` quando publicado e `titulo_publicado` quando o título local diferir do original. Esse bloco é controle editorial e fica fora do conteúdo enviado ao itch.io.
+Use frontmatter for `status: in-development`, `publication: draft` or `published`, `commit`, and `language`. Include `url` when published and `published_title` when the local title differs from the original. This block is editorial metadata and stays outside the content sent to itch.io.
 
-Ao arquivar, preserve integralmente as cópias históricas de posts publicados e sua origem; identifique uma reescrita editorial separadamente do arquivo histórico. Uma cópia local marcada como rascunho não altera o post remoto. Publique ou edite no itch.io somente se isso fizer parte do pedido; a autorização já dada na conversa continua válida. Após publicar, confira o conteúdo e o estado público antes de registrar o link e mudar o estado local.
+When archiving, preserve historical copies of published posts and their origin in full; identify an editorial rewrite separately from the historical archive. Marking a local copy as a draft does not change the remote post. Publish or edit on itch.io only when included in the request; authorization already given in the conversation remains valid. After publishing, check the content and public state before recording the link and changing the local state.
 
-Conclua quando todos os posts seguirem essa estrutura, os links locais de texto e imagens resolverem, os metadados corresponderem ao estado real da publicação e cada texto novo ou reescrito tiver recebido a revisão independente e a conferência do autor, incluindo nova revisão após qualquer reescrita substancial.
+Finish when all posts follow this structure, local text and image links resolve, metadata matches the actual publication state, and every new or rewritten text has received independent review and the author's factual checks, including another review after any substantial rewrite.

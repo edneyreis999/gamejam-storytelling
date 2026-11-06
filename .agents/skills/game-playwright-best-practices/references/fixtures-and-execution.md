@@ -53,3 +53,4 @@ Use the maintained project command's selection, trace, and repetition options. P
 | Passes alone, fails in parallel | Shared writable inputs, saves, ports, outputs, focus, and renderer contention |
 | Continue has no save after reopening | IndexedDB capture/write completion, profile, and exact origin |
 | Assertions pass but the command hangs | Fixture teardown, additional contexts, server handles, and worker shutdown |
+

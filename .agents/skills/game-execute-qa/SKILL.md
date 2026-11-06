@@ -5,6 +5,8 @@ description: Run persona-based dogfooding of a game or its authoring tools from 
 
 # Game Execute QA
 
+Before mission preparation, check the owning spec for `_execution-metrics.md`. When present, use [spec-execution-metrics](../spec-execution-metrics/SKILL.md), reusing the caller’s execution or initializing a direct one. Record preparation, persona QA, investigation, repairs and retests; preserve persona discovery provenance and link metrics/gaps in the existing session evidence. Freeze a direct execution at closure; nested calls leave closure to their caller. Collection failure does not interrupt the mission.
+
 Experience the game or its authoring tools as a real user would: adopt a persona, walk a journey to its true end state, explore through one theme, and report what happened. Planned steps guide the walk without reducing it to an automated recipe. A session can reveal both functional defects and friction that no assertion fails.
 
 Use for an authorized QA task or direct dogfooding request. Routine test runs use the project command. The calling task owns its technical checks and completion; this skill owns the persona session and its evidence. Neither a session nor a passing suite records human acceptance or invokes final verification automatically.

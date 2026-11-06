@@ -1,6 +1,6 @@
 # Running, recording, and debugging tests
 
-Loki adaptation of the Microsoft reference. Use the maintained project command and existing scenario criteria. [Game Playwright Best Practices](../../game-playwright-best-practices/SKILL.md) owns registration, fixtures, evidence, and reliability.
+Use the maintained project command and existing scenario criteria. [Game Playwright Best Practices](../../game-playwright-best-practices/SKILL.md) owns registration, fixtures, evidence, and reliability.
 
 ## Run the selected tests
 

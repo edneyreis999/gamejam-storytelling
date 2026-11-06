@@ -1,6 +1,6 @@
 # Video recording
 
-Loki adaptation of the Microsoft reference. Commands assume the uniquely named session established in [session management](session-management.md). Check installed command help before using optional recording or annotation features.
+Commands assume the uniquely named session established in [session management](session-management.md). Check installed command help before using optional recording or annotation features.
 
 ## Record a reproduction
 

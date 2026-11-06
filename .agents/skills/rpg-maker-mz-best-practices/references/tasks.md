@@ -27,6 +27,10 @@ Every task that changes a project plugin or any other custom code boots the game
 
 A task that adds a project plugin also adds its `js/plugins.js` entry, with its load order and parameters.
 
+## CLI documentation delivery
+
+For tasks that create or change public CLI descriptions, include in `Done When`: the independently defined affected scope (including containers and delegations), the filled CP-01–20 author record, a passing current-description check, and its receipt cited in the task. Read the [CLI documentation checklist](cli-documentation-checklist.md) in full for that deliverable. Assign a missing project integration to the first consuming task; later tasks reuse the maintained command. The independent-evaluation preparation task repeats the check against the descriptions it will hand over. In an existing graph, adjust only future affected tasks; completed tasks retain their historical status.
+
 ## Automated runtime checks
 
 Assign missing infrastructure to its first consumer as described by `game-create-game-tasks`, using [game-test-infrastructure](../../game-test-infrastructure/SKILL.md) during authorized execution. Read [runtime test execution](runtime-test-execution.md) for MZ preparation constraints: distinguish browser storage from Playtest saves, identify shared plugin builds/catalogues, and preserve dependencies between fixture producers and consumers before assigning concurrent work. Later tasks reuse the project command and root slow-test limits.

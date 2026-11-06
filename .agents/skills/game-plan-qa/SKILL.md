@@ -5,6 +5,8 @@ description: Plan or update QA for a game or its authoring tools from a QA-plan 
 
 # Game Plan QA
 
+When the owning spec has `_execution-metrics.md` and this is authorized execution, use [spec-execution-metrics](../spec-execution-metrics/SKILL.md) before preparation. Attach to the caller’s execution, or initialize a direct one; record planning/preparation activities and link observations or gaps in the existing handoff. Nested work reuses that identity. Freeze a direct execution at closure. The companion does not authorize executing a planning-only request.
+
 Turn the requested scope into a plan an executor can follow without guessing the persona, starting state, expected result, or observation method. Plan by changed behavior and risk, reusing valid coverage and earlier findings.
 
 Use when performing a QA-plan task, repairing its missing or invalidated coverage, or answering a direct QA-planning request. Graph construction stays with [game-create-playtest-tasks](../game-create-playtest-tasks/SKILL.md). Persona sessions belong to [game-execute-qa](../game-execute-qa/SKILL.md); technical execution and task status stay with the caller. Standalone dogfooding can prepare its own mission without a separate planning invocation.

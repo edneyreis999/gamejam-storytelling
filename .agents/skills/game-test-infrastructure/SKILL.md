@@ -5,6 +5,8 @@ description: Create, extend, or repair project-owned test infrastructure when a 
 
 # Game Test Infrastructure
 
+When invoked within a spec containing `_execution-metrics.md`, use [spec-execution-metrics](../spec-execution-metrics/SKILL.md) before preparation: attach to the existing execution or initialize the authorized direct one, distinguish infrastructure work from test creation and product correction, and observe maintained commands. Return activity references and collection gaps to the existing evidence owner. Freeze only direct-execution closure; nested calls retain the caller’s identity and boundaries. Collection never authorizes infrastructure work by itself.
+
 Make the support needed by concrete checks available through the project's reusable test command. Build it with its first consumer and extend it when later checks need a new capability. This procedure covers fast logic and static checks as well as runtime checks; a spec does not need every kind.
 
 Use on a direct request or when an authorized task or verification encounters missing or defective infrastructure. A standalone request needs no spec package. Planning and review-only requests produce findings or a proposed change, without installing dependencies, writing files, or launching a runtime. Continue authorized implementation and repair without routine approval checkpoints; ask only for an unresolved decision or unavailable external input that blocks correct work.

@@ -89,6 +89,6 @@ Use the [persistence scenario guidance](../../game-playwright-best-practices/ref
 
 MZ's game canvas uses WebGL. Do not request its 2D context. Wait for the relevant Pixi assets, fonts, dialogue and animation state before capture. Stopping `SceneManager` or the graphics loop creates an integration-test condition; it does not prove live player progression.
 
-## Provenance
+## Version applicability
 
-Engine-specific observations were checked against MZ 1.10.0 and Pixi-Rework input/fixture investigations. Confirm them against the consuming game's engine and plugins. General Playwright sources and adaptation history are maintained with [Game Playwright Best Practices](../../game-playwright-best-practices/SKILL.md).
+These engine-specific observations were checked against MZ 1.10.0. Confirm them against this game's engine version and active plugins.

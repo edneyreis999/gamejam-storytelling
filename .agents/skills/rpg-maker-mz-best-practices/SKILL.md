@@ -1,6 +1,6 @@
 ---
 name: rpg-maker-mz-best-practices
-description: RPG Maker MZ engine facts, conventions, and hazards for projects containing game.rmmzproject — plugins, events, maps, saves, Playwright E2E, test infrastructure, specs, task planning, editor authoring, QA, and verification. Load before specifying, planning, changing, testing, or dogfooding an MZ game or its tools.
+description: RPG Maker MZ engine facts, conventions, and hazards for projects containing game.rmmzproject — plugins and their CLIs, events, maps, saves, Playwright E2E, test infrastructure, specs, task planning, editor authoring, QA, and verification. Load before specifying, planning, creating, changing, documenting, testing, or dogfooding an MZ game or its tools. Do not use for projects without RPG Maker MZ.
 ---
 
 # RPG Maker MZ Best Practices
@@ -37,10 +37,11 @@ The editor's Playtest runs the game in the editor's embedded NW.js, loading proj
 | Writing, updating, or reviewing a spec for an MZ game | [MZ input to specs](references/specs.md) |
 | Decomposing an MZ spec into tasks, including its QA and playtest tail | [MZ input to task planning](references/tasks.md) |
 | Preparing or walking persona QA journeys in the game or its authoring tools | [MZ QA sessions](references/qa-sessions.md) |
+| Creating, updating, or reviewing documentation, help, or public descriptors for an MZ plugin CLI | Read the [CLI documentation checklist](references/cli-documentation-checklist.md) in full; fill the review record, run its verifier, and cite the passing receipt in the task before authoring closure or independent evaluation |
 | Adding or changing custom code, or verifying in more than one runtime | [Runtime floor](references/runtime.md); run `scripts/check-runtime-compat/` and `scripts/probe-nwjs.mjs` |
 | Any write to `data/*.json`, plugin parameters, or `js/plugins.js`, even one value (such as the start map in `System.json`), or reviewing one | [Native data shapes](references/data.md); run `scripts/check-native-data.mjs` and `scripts/validate_plugins_js_envelope.py` |
 | Changing event command lists, plugin commands, or data by script | [Data and plugin mutation](references/mutation.md) and the [data shapes](references/data.md) it points to; run `scripts/check-event-lists.mjs` and `scripts/check-native-data.mjs` afterwards |
 | Writing, running, or pruning automated tests for an MZ game, or creating or repairing their infrastructure | [Tests and their upkeep](references/tests.md); for runtime fixtures, executor preparation, or slow-test parallelism, also read [runtime test execution](references/runtime-test-execution.md) |
 | Writing, reviewing, running, or debugging Playwright E2E journeys in MZ | [Playwright E2E for MZ](references/playwright-e2e.md), alongside the general [Game Playwright Best Practices](../game-playwright-best-practices/SKILL.md) |
 
-The scripts only read the project. Their usage, exit codes, and what they prove are in the references above; run them from this skill's directory.
+Resolve helper paths from this installed skill's directory. The project checks are read-only. The CLI review helper bootstraps a pending record or verifies it read-only; only explicitly requested outputs are written. Its [integration contract](references/cli-review-integration.md) explains inputs, failures and repair before retry.

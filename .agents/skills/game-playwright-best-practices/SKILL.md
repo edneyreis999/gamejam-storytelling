@@ -40,5 +40,3 @@ Keep expected results anchored in the agreed behavior. Generated action code and
 | Prepare reproducible data/helpers or test persistence, time, failures, locales, or accessibility | Relevant section of [Test scenarios](references/test-scenarios.md) |
 
 Use only branches required by the game and requested checks. Validate changes with the affected cases through the maintained command; static review alone is not proof that a journey passes or stability improved. Preserve failed attempts and disclose unexecuted work.
-
-Source attribution, selected upstream references, and local changes: [UPSTREAM.md](UPSTREAM.md). The source skill need not be installed in consuming game projects.

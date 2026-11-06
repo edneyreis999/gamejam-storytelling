@@ -1,6 +1,6 @@
 # MZ Tests and Their Upkeep
 
-Read when writing, running, reviewing, or pruning automated tests for an MZ game, including a final-verification purge of the tests a delivery added. These facts come from the gamejam-vn-terror project's test rules; confirm each against the project's own harness.
+Read when writing, running, reviewing, or pruning automated tests for an MZ game, including a final-verification purge of the tests a delivery added. Apply these practices to the game's actual test setup and active plugins.
 
 - **Test what the game loads.** A test reads only what the shipped game uses: no disabled plugin, unused asset, or editor-only file. When the published build is pruned, run the suite against that pruned build so a test cannot pass on a file the player never gets.
 - **Compare keys, not translated text.** Where text lives in a localization file and events hold only a key, tests assert the key or the value read from that file. `$gameMessage.choices()` holds the raw key, not the displayed text.

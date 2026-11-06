@@ -7,6 +7,8 @@ argument-hint: "[--pr N | --base REF | --staged | --worktree] [--files p1,p2] [-
 
 # Deep Review
 
+When this invoked review belongs to an authorized spec execution containing `_execution-metrics.md`, use [spec-execution-metrics](../spec-execution-metrics/SKILL.md) before preparation. Reuse the execution identity and register delegated sessions, observe review activities and commands, and link metrics/gaps in the existing review evidence. A standalone measured execution freezes its boundaries at closure; a nested review returns to its caller. Metrics do not initiate reviews, publication or product repairs.
+
 Find actionable defects and improvements with complete selected-hunk and project-rule accounting. Scripts handle discovery, partitions, artifact assembly and validation; the model supplies applicability decisions and evidence-based review. Keep source read-only; write review artifacts under `<out>` (default `.deep-review/<target>/`). Resolve `<skill-dir>` from this file and run bundled commands from the reviewed repository root.
 
 ## Contract

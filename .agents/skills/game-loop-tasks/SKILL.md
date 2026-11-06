@@ -5,6 +5,8 @@ description: Run a requested delivery loop over an approved game task graph — 
 
 # Game Loop Tasks
 
+Before reading execution context or running the baseline, check the spec directory for `_execution-metrics.md`. When present, use [spec-execution-metrics](../spec-execution-metrics/SKILL.md) to initialize or resume the authorized execution and declare preparation. Pass its execution identity to task and nested procedures; at loop closure, freeze participant boundaries and link observations or gaps in the existing evidence. Collection failure does not stop delivery. Without the companion, retain the normal workflow.
+
 Run the graph in `planos/tasks/<slug>/` to completion in one continuous session. Keep working through every task until all are closed or a proven external blocker stops the remaining work. A task boundary is a checkpoint, not a request for review or a place to end the turn.
 
 The loop starts only on the user's request for it. A single named task runs through `game-execute-task` directly. Planning is not execution: a graph whose `status` is not `approved`, or a spec not `approved`, is reported to the user.
@@ -17,7 +19,7 @@ The loop starts only on the user's request for it. A single named task runs thro
 
 ## Rules
 
-- You own graph order and check ownership. Reordering tasks or moving a check to another owner, while keeping every obligation, expected result, and acceptance criterion, needs no approval: apply it, update `_tasks.md`, and record old and new owner in Execution Notes. Changing scope or an expected result, or dropping a check, needs the user.
+- You own graph order and check ownership. Reordering tasks or moving a check to another owner, while keeping every obligation, expected result, and acceptance criterion, needs no approval: apply it, update `_tasks.md`, and record old and new owner in Execution Notes. Changing scope or a contracted outcome, or dropping a check, needs the user.
 - Never commit, push, or open a pull request. Leave the verified diff for the user.
 - Never count a skipped, waived, omitted, blocked, or unexecuted check as passed, and never record the user's acceptance for them. Human acceptance is the user's.
 - A pause the user gave for a specific moment applies only there; it does not carry to later runs or into the skills.

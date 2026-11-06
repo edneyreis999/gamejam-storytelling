@@ -1,6 +1,6 @@
 # Inspecting Element Attributes
 
-Loki adaptation of the Microsoft reference. Commands assume the uniquely named session established in [session management](session-management.md); preserve task scope and resource ownership.
+Commands assume the uniquely named session established in [session management](session-management.md); preserve task scope and resource ownership.
 
 When the snapshot doesn't show an element's `id`, `class`, `data-*` attributes, or other DOM properties, use `eval` to inspect them.
 

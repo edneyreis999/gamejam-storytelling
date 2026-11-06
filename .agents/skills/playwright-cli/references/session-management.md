@@ -1,6 +1,6 @@
 # Browser session management
 
-Loki adaptation of the Microsoft reference. Use one uniquely named session per invocation; a session preserves browser state across commands, not isolation between test cases.
+Use one uniquely named session per invocation; a session preserves browser state across commands, not isolation between test cases.
 
 ## Select and own a session
 

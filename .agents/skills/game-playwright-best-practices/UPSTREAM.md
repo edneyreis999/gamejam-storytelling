@@ -7,6 +7,4 @@
 
 Loki extracts shared Playwright guidance into this engine-independent package. Local changes preserve project-owned infrastructure, explicit test units, resource ownership, actual-context traces, complete lifecycle timing, and comparisons without test retries. Canvas, controlled clocks, independent expected values, and conditional game scenarios replace unrelated web-app examples and blanket rules. Engine implementation details remain outside this package.
 
-The original remains a repository-local research tool, not a runtime dependency. When updating, compare the complete upstream bundle with this recorded revision and reapply the documented boundaries; do not overwrite the adaptation with a fresh installer copy.
-
 API references: [fixtures](https://playwright.dev/docs/test-fixtures), [tracing](https://playwright.dev/docs/api/class-tracing), [assertion polling](https://playwright.dev/docs/test-assertions#expectpoll), and [screenshots](https://playwright.dev/docs/test-snapshots). Scenario-specific API links live with their examples. Validate against the consuming project's installed version.

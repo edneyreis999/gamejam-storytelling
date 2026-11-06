@@ -1,6 +1,6 @@
 # Request Mocking
 
-Loki adaptation of the Microsoft reference. Commands assume the uniquely named session established in [session management](session-management.md); preserve task scope and resource ownership.
+Commands assume the uniquely named session established in [session management](session-management.md); preserve task scope and resource ownership.
 
 Intercept, mock, modify, and block requests only for a declared preparation or failure scenario. Install routes before the relevant request, confirm the fault was exercised, and remove them during teardown. Do not manufacture success for the behavior under test. A mocked path does not prove the real service works.
 

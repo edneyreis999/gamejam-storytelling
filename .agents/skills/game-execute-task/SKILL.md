@@ -5,6 +5,8 @@ description: Execute one task of an approved game task graph end to end — impl
 
 # Game Execute Task
 
+At execution entry, before contract preparation or baseline, check the spec directory for `_execution-metrics.md`. When present, use [spec-execution-metrics](../spec-execution-metrics/SKILL.md): reuse the loop’s execution or initialize a direct execution, declare task activity transitions, observe existing commands, and mark the task/candidate before E2E acceptance. Nested infrastructure and QA reuse that execution. Link observations, findings and collection gaps in Execution Notes; freeze boundaries on direct-execution closure, leaving loop-owned closure to the caller. Metrics never change task status or block delivery.
+
 Deliver one `task_NN.md` under `planos/tasks/<slug>/`: the outcome works through its real entry path, the checks it owns pass, and the task file says so. Work without interruption; stop only for a proven external blocker or a product decision with no safe default, as defined in [the loop's blocker rules](../game-loop-tasks/references/repair-and-blockers.md) when a loop calls you.
 
 For a QA-plan task, use [game-plan-qa](../game-plan-qa/SKILL.md) for steps 2, 4, and 5 below: inspect the current plan's gaps, prepare the contracted missions and starting states, and verify the handoff is ready. Its proof concerns the plan and required preparation; do not run the downstream QA sessions or their technical checks to prove that planning task. This executor still owns the task's lifecycle and status.
@@ -17,7 +19,7 @@ For a QA-plan task, use [game-plan-qa](../game-plan-qa/SKILL.md) for steps 2, 4,
    - When the task calls for persona-based QA, use [game-execute-qa](../game-execute-qa/SKILL.md) with the QA plan's complete missions. Keep its incremental session results in this task's Execution Notes. This executor retains the separate technical checks and task status; session closure is not task completion or human acceptance.
    - Run every check the task owns. Expected values come from the spec or a reference, never from the candidate's own output; a check that reproduces the implementation proves nothing.
    - Run the real entry path at least once; a fixture that bypasses it does not prove the claim.
-   - When a check fails, read the failure and the code it names before changing anything. Fix production code first; edit a test only after writing why the code is correct and the test is wrong.
+   - When a check fails, read the failure and the code it names before changing anything.
    - Update the existing tests the change made obsolete and run them. Run a test you edited.
    - Record each command and its exit status. A check you did not run is recorded as not run, never as passed.
 6. **Clean up.** Delete single-use scripts and the task's delete targets. Check that the change leaves the game runnable.
@@ -29,4 +31,4 @@ For a QA-plan task, use [game-plan-qa](../game-plan-qa/SKILL.md) for steps 2, 4,
 - Never mark a task completed on a check that failed, was skipped, or depended on a failing sensor.
 - Never weaken a check, inflate a timeout, or add a retry to make a failure pass.
 - Never commit, push, or open a pull request; leave the diff for the user.
-- Moving a check to another task while keeping every obligation is routine: apply it and record old and new owner. Changing scope or an expected result, or dropping a check, needs the user.
+- Moving a check to another task while keeping every obligation is routine: apply it and record old and new owner. Changing scope or a contracted outcome, or dropping a check, needs the user.
